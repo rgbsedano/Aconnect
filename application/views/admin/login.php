@@ -221,7 +221,7 @@ defined('BASEPATH') or exit('No direct script access allowed');
         <div class="text-center mb-4">
           <h1 class="h3 mb-3 font-weight-normal"></h1>
         </div>
-        <P>ADMIN LOGIN</P>
+        <P>ADMIN LOGINN</P>
         <form class="form-signin" method="post" action="<?php echo site_url('adminlogin/admin'); ?>">
           <div class="form-label-group">
             <input type="text" id="username" name="username" class="form-control" placeholder="Admin Username" required
