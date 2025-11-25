@@ -1,4 +1,3 @@
-
 <style>
   /* Layout tweaks */
   .card-fixed { min-width: 260px; max-width: 320px; width: 100%; height: 300px; display: flex; flex-direction: column; }

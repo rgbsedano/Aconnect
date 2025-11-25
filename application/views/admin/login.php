@@ -86,9 +86,6 @@ defined('BASEPATH') or exit('No direct script access allowed');
       }
     }
 
-
-  
-
     .image-container {
       flex: 0 0 50vw;
       /* Take up 50% of the viewport width */
@@ -206,6 +203,7 @@ defined('BASEPATH') or exit('No direct script access allowed');
     }
   </style>
 </head>
+
 
 <body class="login-page">
   <div class="container-fluid">

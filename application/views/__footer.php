@@ -1,11 +1,4 @@
-      <!-- Footer -->
-      <footer class="sticky-footer bg-white">
-        <div class="container my-auto">
-          <div class="copyright text-center my-auto">
-		  <p class="footer">Page rendered in <strong>{elapsed_time}</strong> seconds. Copyright &copy; Your Website <?php echo date("Y"); ?></p>
-          </div>
-        </div>
-      </footer>
+
       <!-- End of Footer -->
 
     </div>

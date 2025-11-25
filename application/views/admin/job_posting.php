@@ -20,8 +20,6 @@
                 </div>
             </div>
 
-
-
             <!-- Create Job Modal -->
             <div class="modal fade" id="createJobModal" tabindex="-1">
                 <div class="modal-dialog modal-xl">
