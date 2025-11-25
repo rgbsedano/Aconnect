@@ -241,6 +241,12 @@ defined('BASEPATH') or exit('No direct script access allowed');
             </label>
           </div>
           <button class="btn btn-lg btn-primary btn-block" style="background: #700A0A" type="submit">Sign in</button>
+
+          <div class="text-center mt-2">
+              <a href="<?= base_url('login'); ?>" class="btn btn-sm btn-outline-dark">
+                  Go to Alumni Login
+              </a>
+          </div>
         </form>
       </div>
     </div>

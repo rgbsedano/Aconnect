@@ -23,7 +23,7 @@ class Register extends CI_Controller {
         $this->form_validation->set_rules('student_number', 'Student Number', 'required|is_unique[alumni.student_number]');
         $this->form_validation->set_rules('degree', 'Degree', 'required');
         $this->form_validation->set_rules('alumni_number', 'Alumni_Number', 'required');
-
+        $this->form_validation->set_rules('gender', 'Gender', 'required');
       
 
         if ($this->form_validation->run() == FALSE) {

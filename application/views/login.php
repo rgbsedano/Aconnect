@@ -239,6 +239,11 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                     <div class="register-link mt-3">
                         <p>Don't have an account? <a href="<?= base_url('register') ?>">Register here</a></p>
                     </div>
+                    <div class="text-center mt-2">
+                        <a href="<?= base_url('adminlogin'); ?>" class="btn btn-sm btn-outline-dark">
+                            Go to Admin Login
+                        </a>
+                    </div>
                 </form>
             </div>
         </div>
