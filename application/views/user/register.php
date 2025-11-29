@@ -23,7 +23,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
         font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
         background-color: #f7f7f7; 
         overflow-x: hidden; /* Prevent horizontal scrollbar, which can expose white space */
-        overflow-y: auto; 
+        overflow-y: hidden; /* CRUCIAL FIX: Hide vertical scrollbar */
     }
 
     .register-page {
@@ -76,8 +76,10 @@ defined('BASEPATH') OR exit('No direct script access allowed');
         display: flex;
         flex-direction: column;
         align-items: center;
-        justify-content: flex-start; /* Start content at the top */
-        padding: 40px 30px;
+        /* MODIFIED: Center content vertically to better utilize space */
+        justify-content: center; 
+        /* MODIFIED: Reduced vertical padding to save space */
+        padding: 20px 30px; 
         background-color: #fff; /* White background */
         min-height: 100vh;
         box-sizing: border-box;
@@ -85,43 +87,67 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 
     .login-logo-container {
         text-align: center;
-        margin-bottom: 1rem;
+        /* MODIFIED: Reduced margin */
+        margin-bottom: 0.5rem;
     }
 
     .login-logo {
-        max-width: 180px;
+        /* MODIFIED: Reduced logo size slightly */
+        max-width: 150px; 
         height: auto;
     }
 
     .register-form-wrapper {
         width: 100%;
-        max-width: 450px; /* Slightly wider form for more fields */
+        max-width: 450px; 
     }
 
     .register-form-wrapper h1 {
         text-align: center;
-        font-size: 1.8rem;
+        /* MODIFIED: Reduced title size slightly */
+        font-size: 1.6rem;
         font-weight: 700;
         color: #333;
-        margin-bottom: 2rem;
+        /* MODIFIED: Reduced margin */
+        margin-bottom: 1.5rem;
     }
 
     /* Input Fields (Text Boxes) - Consistent Styling */
     .form-group input, .form-control {
-        border-radius: 5px; /* Smoother edges */
-        height: 48px; /* Consistent height */
-        padding: 10px 15px;
-        margin-bottom: 15px;
+        border-radius: 5px; 
+        /* MODIFIED: Reduced height slightly to save vertical space */
+        height: 40px; 
+        padding: 8px 15px;
+        /* MODIFIED: Reduced margin-bottom */
+        margin-bottom: 10px; 
         width: 100%; 
         transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
-        border: 1px solid #ddd; /* Lighter border */
-        box-sizing: border-box; /* Include padding/border in element's total width/height */
+        border: 1px solid #ddd; 
+        box-sizing: border-box; 
     }
     
-    /* Focus Styling */
-    .form-group input:focus {
+    /* Select Dropdown specific styling to match inputs */
+    .form-group select {
+        /* Inherit the input styling */
+        border-radius: 5px; 
+        height: 40px; 
+        padding: 8px 15px;
+        margin-bottom: 10px; 
+        width: 100%; 
+        transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+        border: 1px solid #ddd; 
+        box-sizing: border-box;
+        appearance: none; /* Remove default browser styling for a cleaner look */
+        background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3E%3Cpath fill='none' stroke='%23343a40' stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M2 5l6 6 6-6'/%3E%3C/svg%3E");
+        background-repeat: no-repeat;
+        background-position: right 0.75rem center;
+        background-size: 14px 14px;
+    }
+    
+    .form-group input:focus, .form-group select:focus {
         border-color: #700A0A; /* Maroon border on focus */
         box-shadow: 0 0 0 0.15rem rgba(112, 10, 10, 0.2); /* Subtle maroon shadow */
+        outline: 0;
     }
 
     /* Register Button - Consistent Styling */
@@ -145,10 +171,11 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 
     /* Login Link */
     .login-link-container {
-        margin-top: 1.5rem;
+        /* MODIFIED: Reduced margin */
+        margin-top: 0.75rem; 
         text-align: center;
-        font-size: 0.9rem;
-        padding-top: 15px;
+        font-size: 0.85rem; /* Slightly smaller font */
+        padding-top: 10px;
         border-top: 1px solid #eee; /* Separator line */
     }
     .login-link-container a {
@@ -165,18 +192,22 @@ defined('BASEPATH') OR exit('No direct script access allowed');
     .validation-error {
         width: 100%;
         max-width: 450px;
-        margin-bottom: 1rem;
-        padding: 1rem;
+        margin-bottom: 0.5rem; /* Reduced margin */
+        padding: 0.75rem; /* Reduced padding */
         color: #721c24;
         background-color: #f8d7da;
         border: 1px solid #f5c6cb;
         border-radius: 5px;
-        font-size: 0.9rem;
+        font-size: 0.85rem;
         text-align: left;
     }
 
     /* Responsive adjustments */
     @media screen and (max-width: 767.98px) {
+        /* On mobile, allow scrolling because content still won't fit vertically */
+        html, body {
+            overflow-y: auto; 
+        }
         .image-container {
             display: none !important; /* Hide image on smaller screens */
             flex: none; /* Reset flex properties */
@@ -185,6 +216,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
         .form-container {
             flex: 0 0 100vw; /* Form takes full width */
             max-width: 100vw;
+            justify-content: flex-start; /* Revert to top alignment on mobile */
         }
     }
     </style>
@@ -216,34 +248,62 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                     <!-- Form Section -->
                     <form method="post" action="<?= base_url('register/submit') ?>">
                         <div class="form-group">
-                            <input type="text" name="alumni_number" placeholder="Alumni ID (e.g., A12345)" value="<?= set_value('alumni_number') ?>" required>
+                            <!-- Use 'text' type as Alumni IDs can contain letters -->
+                            <input type="text" name="alumni_number" placeholder="Alumni ID (e.g., A12345)" value="<?= set_value('alumni_number') ?>" required autocomplete="off">
                         </div>
                         <div class="form-group">
-                            <input type="text" name="first_name" placeholder="First Name" value="<?= set_value('first_name') ?>" required>
+                            <!-- Added autocomplete -->
+                            <input type="text" name="first_name" placeholder="First Name" value="<?= set_value('first_name') ?>" required autocomplete="given-name">
                         </div>
                         <div class="form-group">
-                            <input type="text" name="last_name" placeholder="Last Name" value="<?= set_value('last_name') ?>" required>
+                            <!-- Added autocomplete -->
+                            <input type="text" name="last_name" placeholder="Last Name" value="<?= set_value('last_name') ?>" required autocomplete="family-name">
                         </div>
                         <div class="form-group">
-                            <input type="email" name="email" placeholder="Email" value="<?= set_value('email') ?>" required>
+                            <!-- Changed type to 'email' and added autocomplete -->
+                            <input type="email" name="email" placeholder="Email" value="<?= set_value('email') ?>" required autocomplete="email">
                         </div>
                         <div class="form-group">
-                            <input type="password" name="password" placeholder="Password" required>
+                            <!-- Changed type to 'password' and added autocomplete -->
+                            <input type="password" name="password" placeholder="Password" required autocomplete="new-password">
                         </div>
                         <div class="form-group">
-                            <input type="text" name="phone" placeholder="Phone Number (e.g., 09xxxxxxxxx)" value="<?= set_value('phone') ?>" required>
+                            <!-- Changed type to 'tel' and added autocomplete -->
+                            <input type="tel" name="phone" placeholder="Phone Number (e.g., 09xxxxxxxxx)" value="<?= set_value('phone') ?>" required autocomplete="tel">
+                        </div>
+
+                        <!-- OPTIMIZATION: Use Select for Graduation Year -->
+                        <div class="form-group">
+                            <select name="graduation_year" required>
+                                <option value="" disabled selected>Graduation Year</option>
+                                <?php 
+                                // Generate options for a reasonable range of years (e.g., last 10 years to next 5 years)
+                                $current_year = date('Y');
+                                $start_year = $current_year - 10;
+                                $end_year = $current_year + 5;
+                                for ($year = $end_year; $year >= $start_year; $year--): ?>
+                                    <option value="<?= $year ?>" <?= (set_value('graduation_year') == $year) ? 'selected' : '' ?>>
+                                        <?= $year ?>
+                                    </option>
+                                <?php endfor; ?>
+                            </select>
+                        </div>
+
+                        <div class="form-group">
+                            <input type="text" name="student_number" placeholder="Student Number (e.g., 2017-00001)" value="<?= set_value('student_number') ?>" required autocomplete="off">
                         </div>
                         <div class="form-group">
-                            <input type="text" name="graduation_year" placeholder="Graduation Year (e.g., 2021)" value="<?= set_value('graduation_year') ?>" required>
+                            <input type="text" name="degree" placeholder="Degree (e.g., BS Information Technology)" value="<?= set_value('degree') ?>" required autocomplete="off">
                         </div>
+
+                        <!-- OPTIMIZATION: Use Select for Gender -->
                         <div class="form-group">
-                            <input type="text" name="student_number" placeholder="Student Number (e.g., 2017-00001)" value="<?= set_value('student_number') ?>" required>
-                        </div>
-                        <div class="form-group">
-                            <input type="text" name="degree" placeholder="Degree (e.g., BS Information Technology)" value="<?= set_value('degree') ?>" required>
-                        </div>
-                        <div class="form-group">
-                            <input type="text" name="gender" placeholder="Gender (e.g., Male/Female)" value="<?= set_value('gender') ?>" required>
+                            <select name="gender" required>
+                                <option value="" disabled selected>Gender</option>
+                                <option value="Male" <?= (set_value('gender') == 'Male') ? 'selected' : '' ?>>Male</option>
+                                <option value="Female" <?= (set_value('gender') == 'Female') ? 'selected' : '' ?>>Female</option>
+                                <option value="Other" <?= (set_value('gender') == 'Other') ? 'selected' : '' ?>>Other</option>
+                            </select>
                         </div>
                         
                         <div class="form-group mt-4">

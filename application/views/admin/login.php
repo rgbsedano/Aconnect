@@ -1,254 +1,240 @@
 <?php
-defined('BASEPATH') or exit('No direct script access allowed');
+defined('BASEPATH') OR exit('No direct script access allowed');
 ?><!DOCTYPE html>
 <html lang="en">
-
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-  <meta name="description" content="Admin Login Page">
-  <title>Admin Login</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="Admin Login Page for AConnect">
+    <title>AConnect | Admin Login</title>
 
-  <link href="<?php echo base_url('assets/css/bootstrap.min.css'); ?>" rel="stylesheet">
-  <style>
+    <!-- Assuming Bootstrap is loaded from your assets folder -->
+    <link href="<?php echo base_url('assets/css/bootstrap.min.css'); ?>" rel="stylesheet">
+    
+    <style>
+    /* Global/Layout Styles - Enforce no scroll and full height */
     html,
     body {
-      height: 100%;
-      margin: 0;
-      /* Remove default body margin */
-      overflow: hidden;
-      /* Prevent scrollbars if content overflows */
+        height: 100%;
+        margin: 0;
+        padding: 0;
+        font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+        background-color: #f7f7f7; 
+        overflow-x: hidden; 
+        overflow-y: hidden; /* CRUCIAL: Hide vertical scrollbar */
     }
 
     .login-page {
-      display: flex;
-      min-height: 100vh;
-      /* Ensure it takes the full viewport height */
-      background-color: #f8f9fa;
-      /* Optional: Light background color for the whole page */
-    }
-
-    .container-fluid {
-      display: flex;
-      width: 100%;
-      max-width: none !important;
-      /* Override Bootstrap's max-width */
-      height: 100vh;
-      /* Make it full viewport height */
-      box-shadow: none !important;
-      /* Remove container shadow */
-      border-radius: 0 !important;
-      /* Remove container border-radius */
-      overflow: hidden;
-      /* Hide any image overflow */
-      background-color: transparent;
-      /* Make container background transparent */
-      margin: 0 !important;
-      /* Remove container margins */
-      padding: 0 !important;
-      /* Remove container padding */
-    }
-
-    .row_container{
-        display: flex !important;
-
-      }
-
-    @media screen and (max-width: 676px) {
-      .image-container {
-        
-        /* Take up 50% of the viewport width */
-        display: none !important;
-    
-        /* Make the image container take the full viewport height */
-      }
-
-      .row_container{
-        display: block !important;
-        width: 100%;
-      }
-      .form-container {
-        flex: 0 0 50vw;
-        /* Take up 50% of the viewport width */
         display: flex;
-        flex-direction: column;
-        /* Arrange items vertically */
+        min-height: 100vh;
+        width: 100%;
+    }
+
+    /* FIX: Ensure the outer Bootstrap containers don't add unwanted padding/margin */
+    .container-fluid {
+        display: flex;
+        width: 100vw; 
+        min-height: 100vh;
+        margin: 0 !important;
+        padding: 0 !important;
+    }
+
+    .row_container {
+        display: flex !important;
+        width: 100%;
+        margin: 0 !important; 
+    }
+
+    /* Left Side: Image Container (Maroon) */
+    .image-container {
+        flex: 0 0 50%;
+        max-width: 50%; 
+        display: flex;
         align-items: center;
         justify-content: center;
-        /* Center items vertically */
-        padding: 30px;
-        /* Add some padding around the form */
+        overflow: hidden;
         min-height: 100vh;
-        /* Make the form container also take full viewport height */
-        background-color: #fff;
-        /* Optional: Background color for the form container */
-
-      }
-    }
-
-    .image-container {
-      flex: 0 0 50vw;
-      /* Take up 50% of the viewport width */
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      overflow: hidden;
-      /* Ensure the image doesn't overflow */
-      height: 100vh;
-      /* Make the image container take the full viewport height */
+        background-color: #920E0E; /* Deep Red/Maroon color */
+        padding: 0 !important;
     }
 
     .login-image {
-      display: block;
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      /* Maintain aspect ratio and cover the container */
+        display: block;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
     }
 
+    /* Right Side: Form Container (White) */
     .form-container {
-      flex: 0 0 50vw;
-      /* Take up 50% of the viewport width */
-      display: flex;
-      flex-direction: column;
-      /* Arrange items vertically */
-      align-items: center;
-      justify-content: center;
-      /* Center items vertically */
-      padding: 30px;
-      /* Add some padding around the form */
-      min-height: 100vh;
-      /* Make the form container also take full viewport height */
-      background-color: #fff;
-      /* Optional: Background color for the form container */
-
+        flex: 0 0 50%;
+        max-width: 50%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center; /* Center content vertically */
+        padding: 20px 30px; 
+        background-color: #fff; 
+        min-height: 100vh;
+        box-sizing: border-box;
     }
 
     .login-logo-container {
-      text-align: center;
-      /* Center the logo */
- 
-      /* Add some space below the logo */
+        text-align: center;
+        margin-bottom: 0.5rem;
     }
 
     .login-logo {
-      max-width: 300px;
-      /* Adjust the maximum width of the logo */
-      height: auto;
-      /* Maintain aspect ratio */
+        max-width: 150px; 
+        height: auto;
     }
 
-    .form-signin {
-      width: 100%;
-      max-width: 400px;
-      /* Adjust the maximum width of the form */
+    .login-form-wrapper {
+        width: 100%;
+        max-width: 400px; /* Standardize form width */
     }
 
-    .form-signin .checkbox {
-      font-weight: 400;
+    .login-form-wrapper h1 {
+        text-align: center;
+        font-size: 1.6rem;
+        font-weight: 700;
+        color: #333;
+        margin-bottom: 2.5rem;
+    }
+    
+    /* Input Fields Styling (Simplified for clean look) */
+    .form-control {
+        border-radius: 5px; 
+        height: 44px; /* Standard height for inputs */
+        padding: 10px 15px;
+        margin-bottom: 15px; 
+        width: 100%; 
+        transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+        border: 1px solid #ddd; 
+        box-sizing: border-box; 
+    }
+    
+    .form-control:focus {
+        border-color: #700A0A; /* Maroon border on focus */
+        box-shadow: 0 0 0 0.15rem rgba(112, 10, 10, 0.2); /* Subtle maroon shadow */
+        outline: 0;
     }
 
-    .form-signin .form-control {
-      position: relative;
-      box-sizing: border-box;
-      height: auto;
-      padding: 10px;
-      font-size: 16px;
+    /* Checkbox styling adjustment */
+    .form-check {
+        margin-bottom: 1rem;
     }
 
-    .form-signin .form-control:focus {
-      z-index: 2;
+    /* Sign In Button */
+    .btn-login {
+        width: 100%;
+        background-color: #700A0A !important; 
+        color: white;
+        border: none;
+        height: 48px;
+        font-size: 1rem;
+        text-transform: uppercase;
+        font-weight: 600;
+        border-radius: 5px; 
+        cursor: pointer;
+        transition: background-color 0.2s ease;
     }
 
-    .form-signin input[type="text"] {
-      margin-bottom: -1px;
-      border-bottom-right-radius: 0;
-      border-bottom-left-radius: 0;
+    .btn-login:hover {
+        background-color: #550808 !important; 
     }
 
-    .form-signin input[type="password"] {
-      margin-bottom: 10px;
-      border-top-left-radius: 0;
-      border-top-right-radius: 0;
+    /* Link to Alumni Login */
+    .link-container {
+        margin-top: 0.75rem; 
+        text-align: center;
+        font-size: 0.85rem;
+        padding-top: 10px;
+        border-top: 1px solid #eee; 
+    }
+    .link-container a {
+        color: #700A0A;
+        text-decoration: none;
+        font-weight: 600;
+        transition: text-decoration 0.2s ease;
+    }
+    .link-container a:hover {
+        text-decoration: underline;
     }
 
-    .text-center.mb-4 {
-      text-align: center !important;
-      /* Center the heading */
-      margin-bottom: 2rem !important;
-      /* Add more space below the heading */
+    /* Responsive adjustments */
+    @media screen and (max-width: 767.98px) {
+        /* Allow scrolling on mobile if content is too tall */
+        html, body {
+            overflow-y: auto; 
+        }
+        .image-container {
+            display: none !important; /* Hide image on smaller screens */
+        }
+        .form-container {
+            flex: 0 0 100vw; /* Form takes full width */
+            max-width: 100vw;
+            justify-content: flex-start; /* Revert to top alignment on mobile for better space */
+        }
     }
-
-    .text-center.mb-4 h1 {
-      font-size: 2.5rem;
-      /* Adjust as needed */
-      margin-bottom: 0.5rem;
-      /* Adjust spacing */
-    }
-
-    .btn-primary {
-      background-color: rgb(255, 0, 0);
-      /* Bootstrap primary color */
-      border-color: rgb(83, 1, 1);
-    }
-
-    .btn-primary:hover {
-      background-color: rgb(83, 1, 1);
-      border-color: rgb(83, 1, 1);
-    }
-
-    .mt-5.mb-3.text-muted.text-center {
-      font-size: 0.8rem;
-      color: #6c757d;
-    }
-  </style>
+    </style>
 </head>
-
-
 <body class="login-page">
-  <div class="container-fluid">
-    <div class="row row_container" style="margin: 0;">
-      <div class="col-md-6 image-container" style="padding: 0 !important; margin: 0 !important;">
-        <img src="<?php echo base_url('assets/images/circles.png'); ?>" class="login-image" alt="Circles Background">
-      </div>
-      <div class="col-md-6 form-container">
-        <div class="login-logo-container">
-          <img src="<?php echo base_url('assets/images/logo.png'); ?>" alt="Your Logo" class="login-logo">
+    <div class="container-fluid">
+        <div class="row row_container">
+            <!-- Left Half: Red Circles Background (Image) -->
+            <div class="col-md-6 image-container">
+                <img src="<?php echo base_url('assets/images/circles.png'); ?>" class="login-image" alt="AConnect Platform Visual">
+            </div>
 
+            <!-- Right Half: Admin Login Form -->
+            <div class="col-md-6 form-container">
+                <div class="login-logo-container">
+                    <img src="<?php echo base_url('assets/images/logo.png'); ?>" alt="AC Connect Logo" class="login-logo">
+                </div>
+                
+                <div class="login-form-wrapper">
+                    <h1>Administrator Access</h1>
+                    
+                    <!-- Placeholder for validation/error messages -->
+                    <!-- You should replace this with actual PHP validation error display -->
+                    <?php if (isset($error_message)): ?>
+                        <div class="validation-error mb-3">
+                            <?= $error_message ?>
+                        </div>
+                    <?php endif; ?>
+
+                    <!-- Form Section -->
+                    <form method="post" action="<?php echo site_url('adminlogin/admin'); ?>">
+                        
+                        <div class="form-group">
+                            <!-- Simplified input structure from the original "form-label-group" -->
+                            <input type="text" id="username" name="username" class="form-control" placeholder="Admin Username" required autofocus autocomplete="username">
+                        </div>
+
+                        <div class="form-group">
+                            <input type="password" id="inputPassword" name="password" class="form-control" placeholder="Password" required autocomplete="current-password">
+                        </div>
+
+                        <div class="form-check mb-4">
+                            <input class="form-check-input" type="checkbox" value="remember-me" id="rememberMe">
+                            <label class="form-check-label" for="rememberMe">
+                                Remember me
+                            </label>
+                        </div>
+                        
+                        <div class="form-group">
+                            <!-- Using custom button class for consistent styling -->
+                            <button class="btn-login" type="submit">Sign In</button>
+                        </div>
+                    </form>
+
+                    <div class="link-container">
+                        <a href="<?= base_url('login'); ?>">Go back to Alumni Login</a>
+                    </div>
+                </div>
+            </div>
         </div>
-        <div class="text-center mb-4">
-          <h1 class="h3 mb-3 font-weight-normal"></h1>
-        </div>
-        <P>ADMIN LOGINN</P>
-        <form class="form-signin" method="post" action="<?php echo site_url('adminlogin/admin'); ?>">
-          <div class="form-label-group">
-            <input type="text" id="username" name="username" class="form-control" placeholder="Admin Username" required
-              autofocus>
-            <label for="username"></label>
-          </div>
-
-          <div class="form-label-group">
-            <input type="password" id="inputPassword" name="password" class="form-control" placeholder="Password"
-              required>
-            <label for="inputPassword"></label>
-          </div>
-
-          <div class="checkbox mb-3">
-            <label>
-              <input type="checkbox" value="remember-me"> Remember me
-            </label>
-          </div>
-          <button class="btn btn-lg btn-primary btn-block" style="background: #700A0A" type="submit">Sign in</button>
-
-          <div class="text-center mt-2">
-              <a href="<?= base_url('login'); ?>" class="btn btn-sm btn-outline-dark">
-                  Go to Alumni Login
-              </a>
-          </div>
-        </form>
-      </div>
     </div>
-  </div>
 </body>
-
 </html>
