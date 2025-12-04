@@ -9,14 +9,14 @@ class PostController extends CI_Controller {
         parent::__construct();
 
         if($this->session->userdata('login_status') != "AezakmiHesoyamWhosyourdaddy"){
-			redirect(base_url("Login"));
-		}
+            redirect(base_url("Login"));
+        }
         $this->load->model('user/Post_model');
     }
 
     public function index() {
         $user_batch = $this->session->userdata('graduation_year'); // Example batch (this should come from the logged-in user session)
-        $this->load->view('__header');
+        $this->load->view('__header'); // RETAINED ORIGINAL PATH
 
         if (!$user_batch) {
             show_error("Batch information is missing.", 400);
@@ -32,8 +32,8 @@ class PostController extends CI_Controller {
         }
 
         $this->load->view('user/posts_view', ['grouped_posts' => $grouped_posts]);
-		
-        $this->load->view('__footer');
+        
+        $this->load->view('__footer'); // RETAINED ORIGINAL PATH
     
     }
 }

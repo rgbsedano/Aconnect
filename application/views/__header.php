@@ -1,26 +1,35 @@
 <?php
-// Define the maroon color variables based on the app's visual identity
-$primary_color = '#700A0A'; // Deep Maroon
-// $primary_hover = '#A91B1B'; // REMOVED: We will use a calculated hover effect
-$text_light = '#FFFFFF';    // Stark white for high contrast text
+$primary_color = '#700A0A';
+$secondary_color = '#C90000';
+$accent_color = '#70ADBC';
+$text_light = '#FFFFFF';
 
-// Helper for active link checking, assuming $this is available (CodeIgniter view context)
+$user_profile_pic = base_url('assets/images/default_profile.jpg'); 
+if ($this->session->userdata('profile_picture_path')) {
+    $user_profile_pic = base_url($this->session->userdata('profile_picture_path'));
+}
+
 $current_uri_segment_1 = property_exists($this, 'uri') ? $this->uri->segment(1) : '';
 $current_uri_segment_2 = property_exists($this, 'uri') ? $this->uri->segment(2) : '';
 
-// Function to check if a navigation segment is currently active
 function is_active_segment($segment1, $segment2 = null) {
     global $current_uri_segment_1, $current_uri_segment_2;
 
-    if ($segment2 === null) {
-        return $current_uri_segment_1 === $segment1;
+    if ($segment1 === 'PostController') {
+        return empty($current_uri_segment_1) || $current_uri_segment_1 === 'PostController';
     }
-    return $current_uri_segment_1 === $segment1 && $current_uri_segment_2 === $segment2;
+
+    if ($segment2 !== null) {
+        return $current_uri_segment_1 === $segment1 && $current_uri_segment_2 === $segment2;
+    }
+    return $current_uri_segment_1 === $segment1;
 }
 
-// Check for active parent links (for dropdowns)
 $connect_active = in_array($current_uri_segment_1, ['alumni', 'alumni_request', 'chat']);
 $events_active = in_array($current_uri_segment_1, ['events', 'eventsprevious']);
+
+$admin_management_active = in_array($current_uri_segment_1, ['adminalumni', 'AdminJobPosting', 'AdminEvents', 'AdminPost']);
+$admin_system_active = in_array($current_uri_segment_1, ['AdminManageAccounts', 'AdminActivityLog']);
 
 ?>
 <!DOCTYPE html>
@@ -29,435 +38,383 @@ $events_active = in_array($current_uri_segment_1, ['events', 'eventsprevious']);
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <meta name="description" content="">
-    <meta name="author" content="">
+    <meta name="description" content="Alumni Connect Portal">
+    <meta name="author" content="AConnect Team">
 
-    <title>APP NAME</title>
-    <!-- Keep existing external CSS links -->
+    <title>AConnect</title>
     <link href="<?php echo base_url('assets/fontawesome-free/css/all.min.css'); ?>" rel="stylesheet" type="text/css">
     <link href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i" rel="stylesheet">
     <link href="<?php echo base_url('assets/css/sb-admin-2.min.css'); ?>" rel="stylesheet">
     <link href="<?php echo base_url('assets/css/user/post.css'); ?>" rel="stylesheet">
     <link rel="stylesheet" href="https://cdn.datatables.net/1.13.6/css/jquery.dataTables.min.css">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
-    
-    <!-- Custom Modern Sidebar Styles (Social Media Look) -->
+
     <style>
-        /* 1. Base Sidebar Style - Deep Maroon with Subtle Depth */
-        .sidebar.bg-gradient-primary, 
-        .sidebar.sidebar-dark.accordion {
-            background-color: <?php echo $primary_color; ?> !important;
-            background-image: linear-gradient(180deg, <?php echo $primary_color; ?> 10%, #4D0707 100%) !important; /* Slight gradient for depth */
-            color: <?php echo $text_light; ?>;
-            transition: all 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94); /* Smoother transition */
-            box-shadow: 5px 0 20px rgba(0, 0, 0, 0.4); /* Stronger, modern shadow */
+        body {
+            padding-top: 0 !important; 
         }
 
-        /* 2. Profile Section - Focus on Clarity and Visual Pop */
-        .sidebar .sidebar-brand {
-            height: auto;
-            padding: 30px 10px 20px 10px; 
-            border-bottom: 2px solid rgba(255, 255, 255, 0.2); /* Thicker, defined divider */
-            margin-bottom: 15px;
-            font-family: 'Nunito', sans-serif;
-            letter-spacing: 0.5px;
+        #wrapper {
+            display: block; 
         }
 
-        .sidebar .img-profile {
-            box-shadow: 0 0 0 5px rgba(255, 255, 255, 0.5), 0 0 15px <?php echo $primary_color; ?>; /* White ring + Maroon glow */
-            width: 4rem; 
-            height: 4rem; 
-            transition: transform 0.3s ease-out;
+        #content-wrapper {
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
         }
 
-        .sidebar .img-profile:hover {
-            transform: scale(1.05) rotate(3deg);
+        #content {
+            flex-grow: 1; 
         }
 
-        /* 3. Nav Item Styles - Clean Lines and Animation Ready */
-        .sidebar .nav-item .nav-link {
-            color: <?php echo $text_light; ?>;
-            padding: 14px 20px; 
-            border-radius: 8px; /* Slightly more rounded */
-            margin: 8px 15px;
-            font-weight: 600; 
-            font-size: 1rem;
-            position: relative;
-            overflow: hidden; /* For the slide-in effect */
-            transition: all 0.3s ease-in-out;
-            z-index: 1;
-        }
-
-        /* Pseudo-element for hover effect (Maroon slide) */
-        .sidebar .nav-item .nav-link::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: linear-gradient(90deg, rgba(255, 255, 255, 0.1) 0%, rgba(255, 255, 255, 0.2) 100%);
-            z-index: -1;
-            transform: translateX(-100%);
-            transition: transform 0.3s ease-in-out;
-        }
-
-        /* Nav Item Hover/Active Styles (Parent Links) */
-        .sidebar .nav-item .nav-link:hover {
-            color: white;
-            background-color: transparent; /* Rely on pseudo-element */
-            transform: translateX(3px); /* Small translation for feedback */
-        }
-
-        .sidebar .nav-item .nav-link:hover::before {
-            transform: translateX(0);
+        .sidebar, .topbar {
+            display: none !important;
         }
         
-        /* Active State - Bold and Distinct */
-        .sidebar .nav-item.active .nav-link {
-            color: <?php echo $primary_color; ?>; /* Dark text */
-            background-color: white; /* White background */
-            font-weight: 800;
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3), 0 0 10px rgba(255, 255, 255, 0.7) inset; /* Double shadow for pop */
-            border-left: 5px solid gold; /* Unique active border */
-            transform: scale(1.01); /* Subtle 3D push */
-            transition: all 0.2s ease;
+        #ac-main-header {
+            position: sticky;
+            top: 0;
+            width: 100%;
+            z-index: 1030; 
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+            background: linear-gradient(90deg, <?php echo $primary_color; ?> 0%, <?php echo $secondary_color; ?> 100%);
         }
 
-        .sidebar .nav-item.active .nav-link::before {
-            display: none; /* Hide hover effect on active state */
+        .ac-container {
+            width: 100%; 
+            margin: 0 auto;
+            display: flex;
+            align-items: stretch; 
         }
 
-        /* Active link icon color */
-        .sidebar .nav-item.active .nav-link i {
-            color: <?php echo $primary_color; ?> !important; 
-            filter: drop-shadow(0 0 2px #700A0A);
+        .logo-area {
+            background-color: transparent; 
+            width: 300px; 
+            flex-shrink: 0; 
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 5px 15px;
+            position: relative;
+            border-right: 1px solid rgba(255, 255, 255, 0.1); 
+        }
+        
+        .logo-area a {
+            transition: transform 0.3s ease-out, filter 0.3s ease-out;
+        }
+        
+        .logo-area a:hover {
+            transform: scale(1.05);
+            filter: drop-shadow(0 0 8px rgba(255, 255, 255, 0.7));
         }
 
-        /* 4. Sidebar Heading */
-        .sidebar-heading {
-            color: rgba(255, 255, 255, 0.85); 
-            padding: 15px 20px 8px 20px;
-            font-size: 0.8rem;
+        .ac-logo {
+            height: 80px;
+            width: auto;
+        }
+
+        .main-nav-bar {
+            background-color: transparent; 
+            width: 100%;
+            min-height: 90px;
+            display: flex;
+            align-items: center;
+            padding: 5px 20px; 
+            flex-grow: 1;
+        }
+
+        .primary-nav {
+            flex-grow: 1; 
+        }
+        
+        .primary-nav ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            display: flex;
+            align-items: center;
+        }
+
+        .primary-nav ul li {
+            position: relative;
+            margin: 0 5px;
+        }
+
+        .primary-nav a {
+            color: <?php echo $text_light; ?>;
+            text-decoration: none;
+            font-size: 1.1rem;
             font-weight: 700;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-            border-bottom: 1px dashed rgba(255, 255, 255, 0.1);
+            padding: 30px 15px; 
+            display: block;
+            transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+            border-bottom: 4px solid transparent;
+        }
+        
+        .primary-nav a:hover {
+            background-color: rgba(255, 255, 255, 0.15); 
+            border-bottom-color: <?php echo $text_light; ?>;
+            transform: translateY(-4px);
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+            color: <?php echo $text_light; ?>; 
+        }
+        
+        .primary-nav .active-link {
+            background-color: transparent; 
+            transform: none;
+            border-bottom-color: transparent; 
+            color: <?php echo $text_light; ?>; 
+            font-weight: 900; 
+        }
+        
+        .primary-nav .dropdown-menu {
+            background-color: <?php echo $primary_color; ?>; 
+            border-top: 2px solid <?php echo $text_light; ?>;
+            border-radius: 0 0 5px 5px;
+            padding: 0;
+            margin-top: -1px;
+            box-shadow: 0 5px 10px rgba(0, 0, 0, 0.5);
+            min-width: 150px;
         }
 
-        .sidebar-divider {
-            border-top: 1px solid rgba(255, 255, 255, 0.1);
-            margin: 20px 0;
-            border-style: dotted; /* Unique divider style */
+        .primary-nav .dropdown-item {
+            color: <?php echo $text_light; ?>;
+            padding: 10px 20px;
+            font-weight: 400;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+            transition: background-color 0.2s, color 0.2s; 
         }
 
-        /* 5. Collapsible Menu (Sub-menu) Styles - Contextual and Clear */
-        .sidebar .collapse-inner {
-            background-color: rgba(0, 0, 0, 0.35) !important; /* Darker, more prominent sub-menu background */
-            padding: 10px 0;
-            margin: 5px 15px 15px 15px;
-            border-radius: 10px; /* More pronounced rounding */
-            box-shadow: inset 0 0 10px rgba(0, 0, 0, 0.5); /* Inner shadow for depth */
-            border: 1px solid rgba(255, 255, 255, 0.1);
+        .primary-nav .dropdown-item:hover,
+        .primary-nav .dropdown-item.active {
+            background-color: <?php echo $secondary_color; ?>; 
+            color: <?php echo $text_light; ?>;
         }
 
-        /* Sub-menu link items (Enforced White) */
-        .sidebar .collapse-inner .collapse-item {
-            color: #FFFFFF !important; 
-            padding: 10px 20px 10px 35px; /* Deeper indentation */
-            font-size: 0.9rem;
-            border-left: 3px solid transparent;
-            transition: all 0.2s ease-out;
+        .user-logout-area {
+            display: flex;
+            align-items: center; 
+            flex-shrink: 0; 
+            min-height: 90px;
+            padding-left: 20px; 
+            border-left: 1px solid rgba(255, 255, 255, 0.1); 
+        }
+        
+        .profile-info-container {
+            display: flex;
+            align-items: center;
+            margin-right: 15px; 
+            text-decoration: none; 
+            color: <?php echo $text_light; ?>;
+            transition: all 0.3s ease-out;
         }
 
-        .sidebar .collapse-inner .collapse-item:hover {
-            color: #FFFFFF !important; 
-            background-color: rgba(255, 255, 255, 0.2); /* Brighter hover overlay */
-            border-left: 3px solid #ffcc00; /* Gold highlight on hover */
-            transform: translateX(5px); /* Slide effect */
+        .profile-info-container,
+        .profile-info-container:active,
+        .profile-info-container:visited {
+            color: <?php echo $text_light; ?> !important; 
+        }
+        
+        .profile-info-container:hover {
+            transform: scale(1.03);
+            opacity: 1;
+            text-decoration: none;
+        }
+        
+        .profile-text-stack {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-end; 
         }
 
-        .sidebar .collapse-inner .collapse-item.active {
-            color: #FFFFFF !important; 
-            background-color: rgba(255, 255, 255, 0.3); /* Strong active background */
-            border-left: 5px solid white; /* Stronger active border */
+        #ac-main-header .profile-name {
             font-weight: 700;
+            font-size: 1.1rem;
+            line-height: 1.2;
+            white-space: nowrap; 
+            color: <?php echo $text_light; ?> !important; 
         }
 
-        /* 6. Sidebar Toggle Button */
-        #sidebarToggle {
-            background-color: rgba(255, 255, 255, 0.3) !important;
-            border: 1px solid rgba(255, 255, 255, 0.5) !important;
-            transition: transform 0.3s ease;
+        #ac-main-header .alumni-id-text {
+            color: rgba(255, 255, 255, 0.7) !important; 
+            font-size: 0.85rem;
+            font-weight: 500;
+            line-height: 1.2;
+            white-space: nowrap; 
+        }
+        
+        .logout-icon-simple {
+            color: <?php echo $text_light; ?> !important; 
+            font-size: 1.6rem; 
+            padding: 5px 10px;
+            transition: color 0.2s, transform 0.2s;
+            cursor: pointer;
+        }
+        
+        .logout-icon-simple:hover {
+            color: <?php echo $accent_color; ?> !important; 
+            transform: scale(1.2);
         }
 
-        #sidebarToggle:hover {
-            transform: rotate(90deg) scale(1.1);
-            background-color: white !important;
+        .d-flex.flex-column #content-wrapper {
+            padding-left: 0 !important;
         }
+
+        @media (max-width: 991.98px) {
+            .logo-area {
+                width: 150px;
+            }
+            .ac-logo {
+                height: 50px;
+            }
+            .main-nav-bar {
+                padding: 5px 10px;
+            }
+            .primary-nav {
+                display: none;
+            }
+        }
+
     </style>
 
 </head>
 
 <body id="page-top">
-<?php if($this->session->userdata('role') == 'alumni'){ ?>
+<?php 
+if($this->session->userdata('role') == 'alumni'){ 
+?>
     <div id="wrapper">
-        <ul class="navbar-nav bg-gradient-primary sidebar sidebar-dark accordion" id="accordionSidebar">
-            
-            <!-- Profile/Logo Section (Simplified) -->
-            <a class="sidebar-brand d-flex flex-column align-items-center" href="profile">
-                <div class="sidebar-brand-icon rotate-n-0 text-center">
-                    <?php 
-                    $profile_img_src = $this->session->userdata('profile_image') 
-                        ? base_url('assets/uploads/alumni/' . $this->session->userdata('profile_image'))
-                        : base_url('assets/images/person-male.png');
-                    ?>
-                    <img class="img-profile rounded-circle" src="<?php echo $profile_img_src; ?>" alt="Profile Image" style="object-fit: cover;">
+        
+        <header id="ac-main-header">
+            <div class="ac-container">
+                <div class="logo-area">
+                    <a href="<?php echo base_url('PostController'); ?>">
+                        <img src="<?php echo base_url('assets/images/small_logo.png'); ?>" alt="AConnect Logo" class="ac-logo">
+                    </a>
                 </div>
-                <div class="sidebar-brand-text mx-3 mt-2 text-center" style="font-size: 1rem; font-weight: 600; color: <?php echo $text_light; ?>;">
-                    <?php echo $this->session->userdata('first_name') . ' ' . $this->session->userdata('last_name'); ?>
-                </div>
-                <div class="sidebar-brand-text mx-3 text-center" style="color: rgba(255, 255, 255, 0.7); font-size: 0.8rem;">
-                    Alumni ID: <?php echo $this->session->userdata('alumni_number'); ?>
-                </div>
-            </a>
-            
-            <hr class="sidebar-divider my-0">
 
-            <div class="sidebar-heading">
-                Navigation
-            </div>
+                <div class="main-nav-bar">
+                    <nav class="primary-nav">
+                        <ul class="d-flex">
+                            <li><a href="<?php echo base_url('PostController'); ?>" class="<?php echo is_active_segment('PostController') ? 'active-link' : ''; ?>">Homepage</a></li>
+                            
+                            <li><a href="<?php echo base_url('profile'); ?>" class="<?php echo is_active_segment('profile') ? 'active-link' : ''; ?>">My Profile</a></li>
+                            
+                            <li><a href="<?php echo base_url('jobs'); ?>" class="<?php echo is_active_segment('jobs') ? 'active-link' : ''; ?>">Jobs</a></li>
 
-            <!-- Homepage -->
-            <li class="nav-item <?php echo is_active_segment('PostController') ? 'active' : ''; ?>">
-                <a class="nav-link" href="PostController">
-                    <i class="fas fa-fw fa-home"></i>
-                    <span>Homepage</span>
-                </a>
-            </li>
+                            <li class="nav-item dropdown">
+                                <a class="nav-link dropdown-toggle <?php echo $connect_active ? 'active-link' : ''; ?>" href="#" id="connectDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Connect</a>
+                                <div class="dropdown-menu" aria-labelledby="connectDropdown">
+                                    <a class="dropdown-item <?php echo is_active_segment('alumni') ? 'active' : ''; ?>" href="<?php echo base_url('alumni'); ?>">Search Alumni</a>
+                                    <a class="dropdown-item <?php echo is_active_segment('alumni_request') ? 'active' : ''; ?>" href="<?php echo base_url('alumni_request'); ?>">Connect Requests</a>
+                                    <a class="dropdown-item <?php echo is_active_segment('chat') ? 'active' : ''; ?>" href="<?php echo base_url('chat'); ?>">Inbox/Chat</a>
+                                </div>
+                            </li>
 
-            <!-- My Profile -->
-            <li class="nav-item <?php echo is_active_segment('profile') ? 'active' : ''; ?>">
-                <a class="nav-link" href="profile">
-                    <i class="fas fa-fw fa-user-circle"></i>
-                    <span>My Profile</span>
-                </a>
-            </li>
+                            <li class="nav-item dropdown">
+                                <a class="nav-link dropdown-toggle <?php echo $events_active ? 'active-link' : ''; ?>" href="#" id="eventsDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Events</a>
+                                <div class="dropdown-menu" aria-labelledby="eventsDropdown">
+                                    <a class="dropdown-item <?php echo is_active_segment('events') ? 'active' : ''; ?>" href="<?php echo base_url('events'); ?>">Upcoming Events</a>
+                                    <a class="dropdown-item <?php echo is_active_segment('eventsprevious') ? 'active' : ''; ?>" href="<?php echo base_url('eventsprevious'); ?>">Previous Events</a>
+                                </div>
+                            </li>
 
-            <!-- Jobs -->
-            <li class="nav-item <?php echo is_active_segment('jobs') ? 'active' : ''; ?>">
-                <a class="nav-link" href="jobs">
-                    <i class="fas fa-fw fa-briefcase"></i>
-                    <span>Jobs</span>
-                </a>
-            </li>
+                            <li><a href="<?php echo base_url('dashboard'); ?>" class="<?php echo is_active_segment('dashboard') ? 'active-link' : ''; ?>">About Us</a></li>
+                        </ul>
+                    </nav>
 
-            <!-- Connect (Collapsible) -->
-            <li class="nav-item <?php echo $connect_active ? 'active' : ''; ?>">
-                <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseUtilities" aria-expanded="<?php echo $connect_active ? 'true' : 'false'; ?>" aria-controls="collapseUtilities">
-                    <i class="fas fa-fw fa-users"></i>
-                    <span>Connect</span>
-                </a>
-                <div id="collapseUtilities" class="collapse <?php echo $connect_active ? 'show' : ''; ?>" aria-labelledby="headingUtilities" data-parent="#accordionSidebar">
-                    <div class="collapse-inner rounded">
-                        <a class="collapse-item <?php echo is_active_segment('alumni') ? 'active' : ''; ?>" href="alumni">Search Alumni</a>
-                        <a class="collapse-item <?php echo is_active_segment('alumni_request') ? 'active' : ''; ?>" href="alumni_request">Connect Requests</a>
-                        <a class="collapse-item <?php echo is_active_segment('chat') ? 'active' : ''; ?>" href="chat">Inbox/Chat</a>
+                    <div class="user-logout-area">
+                        
+                        <a href="<?php echo base_url('profile'); ?>" class="profile-info-container" title="View Profile">
+                            <div class="profile-text-stack">
+                                <span class="profile-name">
+                                    <?php echo $this->session->userdata('first_name') . ' ' . $this->session->userdata('last_name'); ?>
+                                </span>
+                                <span class="alumni-id-text">
+                                    ALUMNI ID: <?php echo $this->session->userdata('alumni_number'); ?>
+                                </span>
+                            </div>
+                        </a>
+
+                        <a href="<?php echo base_url('login/logout'); ?>" class="logout-icon-simple" title="Logout">
+                            <i class="fas fa-sign-out-alt"></i>
+                        </a>
                     </div>
                 </div>
-            </li>
-
-            <!-- Events (Collapsible) -->
-            <li class="nav-item <?php echo $events_active ? 'active' : ''; ?>">
-                <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseUtilities2" aria-expanded="<?php echo $events_active ? 'true' : 'false'; ?>" aria-controls="collapseUtilities2">
-                    <i class="fas fa-fw fa-calendar-alt"></i>
-                    <span>Events</span>
-                </a>
-                <div id="collapseUtilities2" class="collapse <?php echo $events_active ? 'show' : ''; ?>" aria-labelledby="headingUtilities" data-parent="#accordionSidebar">
-                    <div class="collapse-inner rounded">
-                        <a class="collapse-item <?php echo is_active_segment('events') ? 'active' : ''; ?>" href="events">Upcoming Events</a>
-                        <a class="collapse-item <?php echo is_active_segment('eventsprevious') ? 'active' : ''; ?>" href="eventsprevious">Previous Events</a>
-                    </div>
-                </div>
-            </li>
-
-            <hr class="sidebar-divider">
-
-            <!-- About Us -->
-            <li class="nav-item <?php echo is_active_segment('dashboard') ? 'active' : ''; ?>">
-                <a class="nav-link" href="dashboard">
-                    <i class="fas fa-fw fa-info-circle"></i>
-                    <span>About Us</span>
-                </a>
-            </li>
-
-            <!-- Chat Support -->
-            <li class="nav-item <?php echo is_active_segment('support') ? 'active' : ''; ?>">
-                <a class="nav-link" href="support">
-                    <i class="fas fa-fw fa-comments"></i>
-                    <span>Chat Support</span>
-                </a>
-            </li>
-
-            <!-- Logout -->
-            <li class="nav-item">
-                <a class="nav-link" href="<?php echo base_url('login/logout'); ?>">
-                    <i class="fas fa-fw fa-sign-out-alt"></i>
-                    <span>Logout</span>
-                </a>
-            </li>
-            
-            <!-- Sidebar Toggle -->
-            <div class="text-center d-none d-md-inline pt-3">
-                <button class="rounded-circle border-0" id="sidebarToggle" style="background-color: rgba(255, 255, 255, 0.2);"></button>
             </div>
+        </header>
 
-        </ul>
         <div id="content-wrapper" class="d-flex flex-column">
             <div id="content">
 
-                <!-- Topbar (Kept light/white as per SB Admin 2 standard) -->
-                <nav class="navbar navbar-expand navbar-light bg-white topbar mb-4 static-top shadow">
-                    <button id="sidebarToggleTop" class="btn btn-link d-md-none rounded-circle mr-3">
-                        <i class="fa fa-bars"></i>
-                    </button>
-                    <ul class="navbar-nav ml-auto">
-                        <div class="topbar-divider d-none d-sm-block"></div>
-                    </ul>
-                </nav>
-<?php }?>
+<?php 
+} 
+?>
 
-
-<?php if($this->session->userdata('role') == 'administrator'){ ?>
+<?php 
+if($this->session->userdata('role') == 'administrator'){ 
+?>
     <div id="wrapper">
-        <ul class="navbar-nav bg-gradient-primary sidebar sidebar-dark accordion" id="accordionSidebar">
-            
-            <!-- Admin Profile Section -->
-            <a class="sidebar-brand d-flex flex-column align-items-center" href="#">
-                <div class="sidebar-brand-icon rotate-n-0 text-center">
-                    <?php 
-                    $profile_img_src_admin = $this->session->userdata('profile_image') 
-                        ? base_url('uploads/alumni/' . $this->session->userdata('profile_image'))
-                        : base_url('assets/images/person-male.png');
-                    ?>
-                    <img class="img-profile rounded-circle" src="<?php echo $profile_img_src_admin; ?>" alt="Profile Image" style="object-fit: cover;">
+        
+        <header id="ac-main-header">
+            <div class="ac-container">
+                <div class="logo-area" style="width: 300px;">
+                    <a href="<?php echo base_url('AdminDashboard'); ?>">
+                        <img src="<?php echo base_url('assets/images/logo.png'); ?>" alt="AConnect Admin Logo" class="ac-logo">
+                    </a>
                 </div>
-                <div class="sidebar-brand-text mx-3 mt-2 text-center" style="font-size: 1rem; font-weight: 600; color: <?php echo $text_light; ?>;">
-                    <?php echo $this->session->userdata('first_name') . ' ' . $this->session->userdata('last_name'); ?>
+
+                <div class="main-nav-bar">
+                    <nav class="primary-nav">
+                        <ul class="d-flex">
+                            <li><a href="<?php echo base_url('AdminDashboard'); ?>" class="<?php echo is_active_segment('AdminDashboard') ? 'active-link' : ''; ?>">Dashboard</a></li>
+
+                            <li class="nav-item dropdown">
+                                <a class="nav-link dropdown-toggle <?php echo $admin_management_active ? 'active-link' : ''; ?>" href="#" id="adminManageDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Management</a>
+                                <div class="dropdown-menu" aria-labelledby="adminManageDropdown">
+                                    <a class="dropdown-item <?php echo is_active_segment('adminalumni') ? 'active' : ''; ?>" href="<?php echo base_url('adminalumni'); ?>">Alumni List</a>
+                                    <a class="dropdown-item <?php echo is_active_segment('AdminJobPosting') ? 'active' : ''; ?>" href="<?php echo base_url('AdminJobPosting'); ?>">Job Posting</a>
+                                    <a class="dropdown-item <?php echo is_active_segment('AdminEvents') ? 'active' : ''; ?>" href="<?php echo base_url('AdminEvents'); ?>">Events</a>
+                                    <a class="dropdown-item <?php echo is_active_segment('AdminPost') ? 'active' : ''; ?>" href="<?php echo base_url('AdminPost'); ?>">Posting</a>
+                                </div>
+                            </li>
+                            
+                            <li class="nav-item dropdown">
+                                <a class="nav-link dropdown-toggle <?php echo $admin_system_active ? 'active-link' : ''; ?>" href="#" id="adminSystemDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">System</a>
+                                <div class="dropdown-menu" aria-labelledby="adminSystemDropdown">
+                                    <a class="dropdown-item <?php echo is_active_segment('AdminManageAccounts') ? 'active' : ''; ?>" href="<?php echo base_url('AdminManageAccounts'); ?>">User Accounts</a>
+                                    <a class="dropdown-item <?php echo is_active_segment('AdminActivityLog') ? 'active' : ''; ?>" href="<?php echo base_url('AdminActivityLog'); ?>">Activity Log</a>
+                                </div>
+                            </li>
+
+                            <li><a href="<?php echo base_url('support/admin_inbox'); ?>" class="<?php echo is_active_segment('support', 'admin_inbox') ? 'active-link' : ''; ?>">Chat Support</a></li>
+                        </ul>
+                    </nav>
+
+                    <div class="user-logout-area">
+                        <a href="#" class="profile-info-container" title="Administrator">
+                            <div class="profile-text-stack">
+                                <span class="profile-name">
+                                    Administrator
+                                </span>
+                                <span class="alumni-id-text">
+                                    User: **<?php echo $this->session->userdata('email'); ?>**
+                                </span>
+                            </div>
+                        </a>
+
+                        <a href="<?php echo base_url('AdminLogin/logout'); ?>" class="logout-icon-simple" title="Logout">
+                            <i class="fas fa-sign-out-alt"></i>
+                        </a>
+                    </div>
                 </div>
-                <div class="sidebar-brand-text mx-3 text-center" style="color: rgba(255, 255, 255, 0.7); font-size: 0.8rem;">
-                    Admin Email: <?php echo $this->session->userdata('email'); ?>
-                </div>
-            </a>
-            
-            <hr class="sidebar-divider my-0">
-            
-            <div class="sidebar-heading">
-                Main
             </div>
+        </header>
 
-            <!-- Dashboard -->
-            <li class="nav-item <?php echo is_active_segment('AdminDashboard') ? 'active' : ''; ?>">
-                <a class="nav-link" href="<?php echo base_url('AdminDashboard'); ?>" >
-                    <i class="fas fa-fw fa-tachometer-alt"></i>
-                    <span>Dashboard</span>
-                </a>
-            </li>
-
-            <hr class="sidebar-divider">
-            <div class="sidebar-heading">
-                Management
-            </div>
-
-            <!-- Alumni List -->
-            <li class="nav-item <?php echo is_active_segment('adminalumni') ? 'active' : ''; ?>">
-                <a class="nav-link" href="<?php echo base_url('adminalumni'); ?>" >
-                    <i class="fas fa-fw fa-database"></i>
-                    <span>Alumni List</span>
-                </a>
-            </li>
-
-            <!-- Job Posting -->
-            <li class="nav-item <?php echo is_active_segment('AdminJobPosting') ? 'active' : ''; ?>">
-                <a class="nav-link" href="<?php echo base_url('AdminJobPosting'); ?>" >
-                    <i class="fas fa-fw fa-briefcase"></i>
-                    <span>Job Posting</span>
-                </a>
-            </li>
-
-            <!-- Events -->
-            <li class="nav-item <?php echo is_active_segment('AdminEvents') ? 'active' : ''; ?>">
-                <a class="nav-link" href="<?php echo base_url('AdminEvents'); ?>" >
-                    <i class="fas fa-fw fa-calendar-alt"></i>
-                    <span>Events</span>
-                </a>
-            </li>
-
-            <!-- Posting -->
-            <li class="nav-item <?php echo is_active_segment('AdminPost') ? 'active' : ''; ?>">
-                <a class="nav-link" href="<?php echo base_url('AdminPost'); ?>">
-                    <i class="fas fa-fw fa-pen-square"></i>
-                    <span>Posting</span>
-                </a>
-            </li>
-            
-            <hr class="sidebar-divider">
-            <div class="sidebar-heading">
-                System
-            </div>
-
-            <!-- User Management -->
-            <li class="nav-item <?php echo is_active_segment('AdminManageAccounts') ? 'active' : ''; ?>">
-                <a class="nav-link" href="<?php echo base_url('AdminManageAccounts'); ?>">
-                    <i class="fas fa-fw fa-user-shield"></i>
-                    <span>User Accounts</span>
-                </a>
-            </li>
-
-            <!-- Activity Log -->
-            <li class="nav-item <?php echo is_active_segment('AdminActivityLog') ? 'active' : ''; ?>">
-                <a class="nav-link" href="<?php echo base_url('AdminActivityLog'); ?>">
-                    <i class="fas fa-fw fa-history"></i>
-                    <span>Activity Log</span>
-                </a>
-            </li>
-
-            <!-- Chat Support -->
-            <li class="nav-item <?php echo is_active_segment('support', 'admin_inbox') ? 'active' : ''; ?>">
-                <a class="nav-link" href="<?php echo base_url('support/admin_inbox'); ?>">
-                    <i class="fas fa-fw fa-comments"></i>
-                    <span>Chat Support</span>
-                </a>
-            </li>
-
-            <!-- Logout -->
-            <hr class="sidebar-divider d-none d-md-block">
-            <li class="nav-item">
-                <a class="nav-link" href="<?php echo base_url('AdminLogin/logout'); ?>">
-                    <i class="fas fa-fw fa-sign-out-alt"></i>
-                    <span>Logout</span>
-                </a>
-            </li>
-    
-            <!-- Sidebar Toggle -->
-            <div class="text-center d-none d-md-inline pt-3">
-                <button class="rounded-circle border-0" id="sidebarToggle" style="background-color: rgba(255, 255, 255, 0.2);"></button>
-            </div>
-
-        </ul>
         <div id="content-wrapper" class="d-flex flex-column">
-
             <div id="content">
 
-                <nav class="navbar navbar-expand navbar-light bg-white topbar mb-4 static-top shadow">
-
-                    <button id="sidebarToggleTop" class="btn btn-link d-md-none rounded-circle mr-3">
-                        <i class="fa fa-bars"></i>
-                    </button>
-
-                    <ul class="navbar-nav ml-auto">
-                        <div class="topbar-divider d-none d-sm-block"></div>
-                    </ul>
-
-                </nav>
-<?php }?>
+<?php 
+}
+?>

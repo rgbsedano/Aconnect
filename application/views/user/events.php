@@ -4,7 +4,6 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Upcoming Events Feed</title>
-    <!-- Load Tailwind CSS CDN -->
     <script src="https://cdn.tailwindcss.com"></script>
     <style>
         /* Custom styles for aesthetic enhancements */
@@ -36,27 +35,21 @@
 </head>
 <body class="antialiased">
 
-    <!-- Main Content Container -->
     <div class="max-w-xl mx-auto py-10 px-4 sm:px-6 lg:px-8">
         <h2 class="text-3xl font-extrabold text-gray-900 mb-8 tracking-tight">
             Upcoming Events
         </h2>
 
-        <!-- Event Cards Container (Simulating Social Feed) -->
         <div id="event-feed-container" class="space-y-6">
-            <!-- Event cards will be injected here by JavaScript -->
-        </div>
+            </div>
 
-        <!-- No Events Found Placeholder -->
         <div id="no-events-message" class="hidden text-center py-12 bg-white rounded-xl shadow-md">
             <p class="text-gray-500 text-lg">No upcoming events found.</p>
         </div>
     </div>
 
-    <!-- Modal Container (Dynamically rendered based on card clicks) -->
     <div id="modal-container">
-        <!-- Modals will be injected here by JavaScript -->
-    </div>
+        </div>
 
     <script>
         // Sample Data (Replacing PHP $events array)
