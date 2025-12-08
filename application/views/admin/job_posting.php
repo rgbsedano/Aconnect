@@ -1,209 +1,496 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Job Posting Admin | Enhanced</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <style>
+        :root {
+            --primary-color: #700A0A; /* Deep Red/Maroon */
+            --primary-light: #A83A3A; /* Lighter shade for hover/focus */
+            --primary-dark: #4A0707; /* Darker shade */
+            --secondary-color: #F0F2F5; /* Light background for body */
+            --light-bg: #FFFFFF;
+            --info-color: #17A2B8;
+            --success-color: #28A745;
+            --danger-color: #DC3545;
+            --text-dark: #212529;
+            --text-muted: #6C757D;
+        }
 
-<div class="container-fluid">
-<div class="container mt-5">
-    <h2 class="mb-4">Posted Jobs</h2>
-        <!-- Create Job Button -->
-        <button class="btn btn-success mb-4" data-toggle="modal" data-target="#createJobModal" style="background: #700A0A">+ Create Job</button>
-    <div class="row">
-        <?php foreach($jobs as $job): ?>
-            <div class="col-md-4 mb-4">
-                <div class="card">
+        body {
+            background-color: var(--secondary-color);
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
 
-                    <div class="card-body">
-                        <h5 class="card-title"><?= $job->job_title ?></h5>
-                        <p class="card-text"><strong>Company:</strong> <?= $job->company ?><br>
-                        <strong>Location:</strong> <?= $job->location ?></p>
-                        <button class="btn btn-primary btn-sm" data-toggle="modal" data-target="#editModal<?= $job->id ?>">Edit</button>
-                        <button class="btn btn-danger btn-sm" data-toggle="modal" data-target="#deleteModal<?= $job->id ?>">Delete</button>
-                        <button class="btn btn-info btn-sm" data-toggle="modal" data-target="#applicantModal<?= $job->id ?>">View Applicants</button>
+        /* Main Container Styling */
+        .job-management-container {
+            padding: 30px;
+            background: var(--light-bg);
+            border-radius: 16px; /* Slightly larger border radius */
+            box-shadow: 0 8px 30px rgba(0, 0, 0, 0.08); /* Stronger, softer shadow */
+            margin-top: 30px;
+            margin-bottom: 30px;
+        }
+        
+        /* Heading */
+        .management-header {
+            color: var(--text-dark);
+            font-weight: 700;
+            border-bottom: 2px solid var(--primary-light);
+            padding-bottom: 15px;
+        }
+
+        /* Job Card Styling */
+        .job-card-custom {
+            border: 1px solid #E9ECEF;
+            border-radius: 12px;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+            border-left: 6px solid var(--primary-color); /* Stronger left border */
+        }
+        .job-card-custom:hover {
+            transform: translateY(-5px); /* More noticeable lift */
+            box-shadow: 0 12px 25px rgba(0, 0, 0, 0.1);
+        }
+        .card-title {
+            color: var(--primary-color);
+            font-weight: 700; /* Bolder title */
+            font-size: 1.3rem;
+        }
+        .card-subtitle {
+            font-size: 0.95rem;
+            color: var(--text-muted);
+            margin-bottom: 15px;
+            font-weight: 500;
+        }
+        .card-text {
+            font-size: 0.9rem;
+        }
+        .card-text strong {
+            color: var(--text-dark);
+            font-weight: 600;
+        }
+        .job-details-icon {
+            width: 20px;
+            text-align: center;
+        }
+        
+        /* Applicants Button */
+        .btn-applicants {
+            background-color: var(--info-color);
+            border-color: var(--info-color);
+            color: white;
+            font-weight: 600;
+            transition: background-color 0.3s;
+        }
+        .btn-applicants:hover {
+            background-color: #117A8B;
+            border-color: #117A8B;
+            color: white;
+        }
+        .applicant-count {
+            color: #FFFFFF; /* White for count inside info button */
+            font-weight: 700;
+            background-color: rgba(0,0,0,0.1);
+            padding: 2px 6px;
+            border-radius: 5px;
+            margin-left: 5px;
+        }
+
+        /* Primary Action Buttons (Edit/Delete) */
+        .btn-card-action {
+            font-weight: 600;
+            transition: opacity 0.3s, transform 0.2s;
+            border-radius: 8px; /* Slightly rounded buttons */
+        }
+        .btn-card-action:hover {
+            transform: translateY(-1px);
+        }
+        
+        /* Main Button Styling */
+        .btn-create-job {
+            background-color: var(--primary-color);
+            border-color: var(--primary-color);
+            font-weight: 600;
+            padding: 10px 20px;
+            border-radius: 8px;
+            transition: background-color 0.3s, box-shadow 0.3s;
+        }
+        .btn-create-job:hover {
+            background-color: var(--primary-dark);
+            border-color: var(--primary-dark);
+            box-shadow: 0 4px 10px rgba(112, 10, 10, 0.3);
+        }
+        
+        /* Search Input */
+        .input-group .form-control {
+            border-right: none;
+            border-radius: 8px 0 0 8px;
+        }
+        .input-group-text {
+            background-color: var(--light-bg);
+            border-left: none;
+            color: var(--primary-color);
+            border-radius: 0 8px 8px 0;
+        }
+
+        /* Modal Enhancements */
+        .modal-header-custom, .modal-header.bg-primary, .modal-header.bg-danger, .modal-header.bg-info {
+            border-top-left-radius: 10px;
+            border-top-right-radius: 10px;
+            border-bottom: none;
+            padding: 15px 25px;
+        }
+        .modal-header-custom {
+            background-color: var(--primary-color) !important;
+        }
+        .modal-header.bg-primary {
+            background-color: var(--primary-color) !important;
+        }
+        .modal-header.bg-danger {
+            background-color: var(--danger-color) !important;
+        }
+        .modal-header.bg-info {
+            background-color: var(--info-color) !important;
+        }
+        .modal-content {
+            border-radius: 10px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+        }
+        .modal-footer button {
+            font-weight: 500;
+            border-radius: 6px;
+        }
+
+        /* Image Preview in Modal */
+        .card-img-top-preview {
+            max-width: 120px; /* Smaller, cleaner logo preview */
+            max-height: 120px;
+            object-fit: contain;
+            border: 1px dashed #CCC;
+            padding: 5px;
+            border-radius: 8px;
+            margin-bottom: 15px;
+        }
+
+        /* Table Styling for Applicants Modal */
+        .table-responsive {
+            border: 1px solid #dee2e6;
+            border-radius: 8px;
+            overflow-x: auto;
+        }
+        .table-striped tbody tr:nth-of-type(odd) {
+            background-color: rgba(0, 0, 0, 0.03);
+        }
+        .table thead th {
+            background-color: #E9ECEF;
+            color: var(--text-dark);
+            font-weight: 600;
+        }
+
+    </style>
+</head>
+<body>
+
+<div class="container-fluid py-4">
+    <div class="container job-management-container">
+        <h2 class="management-header mb-4"><i class="fas fa-briefcase mr-2"></i> Posted Jobs Management</h2>
+        
+        <div class="d-flex justify-content-between align-items-center mb-5 flex-column flex-md-row">
+            <button class="btn btn-primary mb-3 mb-md-0 btn-create-job" data-toggle="modal" data-target="#createJobModal">
+                <i class="fas fa-plus-circle mr-1"></i> Create New Job
+            </button>
+            <div class="input-group" style="max-width: 350px;">
+                <input type="text" class="form-control" placeholder="Search job title or company..." id="jobSearchInput">
+                <div class="input-group-append">
+                    <span class="input-group-text"><i class="fas fa-search"></i></span>
+                </div>
+            </div>
+        </div>
+
+        <div class="row" id="jobListContainer">
+            <?php if (empty($jobs)): ?>
+                <div class="col-12">
+                    <div class="alert alert-info text-center py-4" role="alert" style="border-radius: 10px;">
+                        <i class="fas fa-info-circle mr-1"></i> **No jobs are currently posted.** Click "Create New Job" to get started.
                     </div>
                 </div>
-            </div>
+            <?php else: ?>
+                <?php foreach($jobs as $job): 
+                    // Calculate applicant count for display
+                    // NOTE: This PHP logic is for demonstration only, actual counting should be efficient
+                    $this->db->where('job_id', $job->id);
+                    $applicant_count = $this->db->count_all_results('job_applications');
+                ?>
+                    <div class="col-md-6 col-lg-4 mb-4 job-card-item">
+                        <div class="card job-card-custom h-100">
+                            <div class="card-body d-flex flex-column">
+                                <h5 class="card-title"><?= htmlspecialchars($job->job_title) ?></h5>
+                                <h6 class="card-subtitle mb-3"><i class="far fa-building mr-1"></i> <?= htmlspecialchars($job->company) ?></h6>
+                                
+                                <p class="card-text mb-2"><i class="fas fa-map-marker-alt mr-2 job-details-icon text-muted"></i> Location: **<?= htmlspecialchars($job->location) ?>**</p>
+                                <p class="card-text mb-3"><i class="fas fa-money-bill-wave mr-2 job-details-icon text-muted"></i> Salary: **<?= htmlspecialchars($job->salary_range) ?>**</p>
 
-            <!-- Create Job Modal -->
-            <div class="modal fade" id="createJobModal" tabindex="-1">
-                <div class="modal-dialog modal-xl">
-                    <div class="modal-content">
-                    <form action="<?= base_url('AdminJobPosting/create') ?>" method="post" enctype="multipart/form-data">
-                        <div class="modal-header">
-                        <h5 class="modal-title">Create Job</h5>
-                        <button type="button" class="close" data-dismiss="modal">&times;</button>
+                                <div class="mt-auto pt-3 border-top"> 
+                                    <button class="btn btn-applicants btn-sm mb-3 w-100" data-toggle="modal" data-target="#applicantModal<?= $job->id ?>">
+                                        <i class="fas fa-users mr-1"></i> View Applicants <span class="applicant-count"><?= $applicant_count ?></span>
+                                    </button>
+                                    <div class="d-flex justify-content-between">
+                                        <button class="btn btn-primary btn-sm flex-fill mr-2 btn-card-action" data-toggle="modal" data-target="#editModal<?= $job->id ?>"><i class="fas fa-edit"></i> Edit</button>
+                                        <button class="btn btn-danger btn-sm flex-fill ml-2 btn-card-action" data-toggle="modal" data-target="#deleteModal<?= $job->id ?>"><i class="fas fa-trash-alt"></i> Delete</button>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
-                        <div class="modal-body">
-                        <div class="form-group">
-                            <label>Job Title</label>
-                            <input type="text" name="job_title" class="form-control" required>
-                        </div>
-                        <div class="form-group">
-                            <label>Company</label>
-                            <input type="text" name="company" class="form-control" required>
-                        </div>
-                        
-                        <div class="form-group">
-                            <label>Location</label>
-                            <input type="text" name="location" class="form-control" required>
-                        </div>
-                        <div class="form-group">
-                            <label>Salary Range</label>
-                            <input type="text" name="salary_range" class="form-control" required>
-                        </div>
-                        <div class="form-group">
-                            <label>Qualifications</label>
-                            <input type="text" name="qualifications" class="form-control" required>
-                        </div>
-                        <div class="form-group">
-                            <label>Contact Details</label>
-                            <input type="text" name="contact_details" class="form-control" required>
-                        </div>
-                        <div class="form-group">
-                            <label>Description</label>
-                            <textarea name="description" class="form-control" required></textarea>
-                        </div>
-                        <div class="form-group">
-                            <label>Attach Image</label>
-                            <input type="file" name="image_filename" class="form-control-file" accept="image/*">
-                        </div>
-
-                        </div>
-                        <div class="modal-footer">
-                        <button type="submit" class="btn btn-success">Create</button>
-                        </div>
-                    </form>
                     </div>
-                </div>
-            </div>
 
-            <!-- Edit Modal -->
-            <div class="modal fade" id="editModal<?= $job->id ?>" tabindex="-1">
-              <div class="modal-dialog modal-xl">
-                <div class="modal-content">
-                  <form action="<?= base_url('AdminJobPosting/update/'.$job->id) ?>" method="post" enctype="multipart/form-data">
-                      <div class="modal-header">
-                          <h5 class="modal-title">Edit Job</h5>
-                          <button type="button" class="close" data-dismiss="modal">&times;</button>
-                      </div>
-                      <div class="modal-body">
-                          <div class="form-group">
-                          <?php if ($job->image_filename): ?>
-                                <img src="<?= base_url('./assets/uploads/jobs/' . $job->image_filename) ?>" class="card-img-top" alt="Job Image" style="height: 300px; max-width: 100%;">
-                            <?php endif; ?>
-                          </div>
-
-                          <div class="form-group">
-                              <label>Job Title</label>
-                              <input type="text" name="job_title" class="form-control" value="<?= $job->job_title ?>">
-                          </div>
-                          <div class="form-group">
-                              <label>Company</label>
-                              <input type="text" name="company" class="form-control" value="<?= $job->company ?>">
-                          </div>
-                          <div class="form-group">
-                              <label>Location</label>
-                              <input type="text" name="location" class="form-control" value="<?= $job->location ?>">
-                          </div>
-                          <div class="form-group">
-                                <label>Salary Range</label>
-                                <input type="text" name="salary_range" class="form-control" value="<?= $job->salary_range ?>">
+                    <div class="modal fade" id="deleteModal<?= $job->id ?>" tabindex="-1" role="dialog">
+                        <div class="modal-dialog modal-sm" role="document">
+                            <div class="modal-content">
+                                <form action="<?= base_url('AdminJobPosting/delete/'.$job->id) ?>" method="post">
+                                    <div class="modal-header bg-danger text-white">
+                                        <h5 class="modal-title"><i class="fas fa-exclamation-triangle mr-2"></i> Confirm Deletion</h5>
+                                        <button type="button" class="close text-white" data-dismiss="modal">&times;</button>
+                                    </div>
+                                    <div class="modal-body">
+                                        <p>Are you sure you want to delete the job "**<?= htmlspecialchars($job->job_title) ?>**"?</p>
+                                        <small class="text-danger font-weight-bold">This action cannot be undone.</small>
+                                    </div>
+                                    <div class="modal-footer">
+                                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
+                                        <button type="submit" class="btn btn-danger"><i class="fas fa-trash-alt mr-1"></i> Delete Job</button>
+                                    </div>
+                                </form>
                             </div>
-                            <div class="form-group">
-                                <label>Qualifications</label>
-                                <textarea name="qualifications" class="form-control"><?= $job->qualifications ?><?= $job->description ?></textarea>
-                            </div>
-                            <div class="form-group">
-                                <label>Contact Details</label>
-                                <input type="text" name="contact_details" class="form-control" value="<?= $job->contact_details ?>">
-                            </div>
-                          <div class="form-group">
-                              <label>Description</label>
-                              <textarea name="description" class="form-control"><?= $job->description ?></textarea>
-                          </div>
-                         
-                          <div class="form-group">
-                            <label>Attach Image</label>
-                            <input type="file" name="image_filename" class="form-control">
-                         </div>
-                      </div>
-                      <div class="modal-footer">
-                          <button type="submit" class="btn btn-primary">Save Changes</button>
-                      </div>
-                  </form>
-                </div>
-              </div>
-            </div>
-
-            <!-- Delete Modal -->
-            <div class="modal fade" id="deleteModal<?= $job->id ?>" tabindex="-1">
-              <div class="modal-dialog">
-                <div class="modal-content">
-                  <form action="<?= base_url('AdminJobPosting/delete/'.$job->id) ?>" method="post">
-                      <div class="modal-header">
-                          <h5 class="modal-title">Delete Job</h5>
-                          <button type="button" class="close" data-dismiss="modal">&times;</button>
-                      </div>
-                      <div class="modal-body">
-                          Are you sure you want to delete the job "<strong><?= $job->job_title ?></strong>"?
-                      </div>
-                      <div class="modal-footer">
-                          <button type="submit" class="btn btn-danger">Delete</button>
-                      </div>
-                  </form>
-                </div>
-              </div>
-            </div>
-
-            <!-- View Applicants Modal -->
-            <div class="modal fade" id="applicantModal<?= $job->id ?>" tabindex="-1">
-              <div class="modal-dialog modal-xl custom-modal-width">
-                <div class="modal-content">
-                  <div class="modal-header">
-                      <h5 class="modal-title">Applicants for <?= $job->job_title ?></h5>
-                      <button type="button" class="close" data-dismiss="modal">&times;</button>
-                  </div>
-                  <div class="modal-body">
-                      <?php
-                      $this->db->select('alumni.*');
-                      $this->db->from('job_applications');
-                      $this->db->join('alumni', 'alumni.id = job_applications.alumni_id');
-                      $this->db->where('job_applications.job_id', $job->id);
-                      $applicants = $this->db->get()->result();
-                      ?>
-                      <?php if (count($applicants) > 0): ?>
-                        <div class="table-responsive">
-                          <table class="table table-bordered">
-                              <thead>
-                                  <tr>
-                                      <th>Name</th>
-                                      <th>Alumni Number</th>
-                                      <th>Student Number</th>
-                                      <th>Email</th>
-                                      <th>Graduation Year</th>
-                                  </tr>
-                              </thead>
-                              <tbody>
-                                  <?php foreach($applicants as $applicant): ?>
-                                      <tr>
-                                          <td><?= $applicant->first_name . ' ' . $applicant->last_name ?></td>
-                                          <td><?= $applicant->alumni_number ?></td>
-                                          <td><?= $applicant->student_number ?></td>
-                                          <td><?= $applicant->email ?></td>
-                                          <td><?= $applicant->graduation_year ?></td>
-                                      </tr>
-                                  <?php endforeach; ?>
-                              </tbody>
-                          </table>
                         </div>
-                      <?php else: ?>
-                          <p>No applicants yet.</p>
-                      <?php endif; ?>
-                  </div>
-                </div>
-              </div>
-            </div>
+                    </div>
+                
+                    <div class="modal fade" id="editModal<?= $job->id ?>" tabindex="-1" role="dialog">
+                        <div class="modal-dialog modal-lg" role="document">
+                            <div class="modal-content">
+                                <form action="<?= base_url('AdminJobPosting/update/'.$job->id) ?>" method="post" enctype="multipart/form-data">
+                                    <div class="modal-header bg-primary text-white">
+                                        <h5 class="modal-title"><i class="fas fa-edit mr-2"></i> Edit Job: <?= htmlspecialchars($job->job_title) ?></h5>
+                                        <button type="button" class="close text-white" data-dismiss="modal">&times;</button>
+                                    </div>
+                                    <div class="modal-body">
+                                        <div class="row">
+                                            <div class="col-12 mb-3 text-center">
+                                                <?php if ($job->image_filename): ?>
+                                                    <label class="d-block font-weight-bold">Current Company Logo/Image</label>
+                                                    <img src="<?= base_url('./assets/uploads/jobs/' . $job->image_filename) ?>" class="card-img-top-preview img-fluid" alt="Job Image">
+                                                    <input type="hidden" name="current_image_filename" value="<?= htmlspecialchars($job->image_filename) ?>">
+                                                <?php else: ?>
+                                                    <div class="alert alert-light border text-muted">No Logo Attached</div>
+                                                <?php endif; ?>
+                                            </div>
+                                            <div class="col-md-6">
+                                                <div class="form-group">
+                                                    <label><i class="fas fa-tag mr-1"></i> Job Title</label>
+                                                    <input type="text" name="job_title" class="form-control" value="<?= htmlspecialchars($job->job_title) ?>" required>
+                                                </div>
+                                                <div class="form-group">
+                                                    <label><i class="far fa-building mr-1"></i> Company</label>
+                                                    <input type="text" name="company" class="form-control" value="<?= htmlspecialchars($job->company) ?>" required>
+                                                </div>
+                                                <div class="form-group">
+                                                    <label><i class="fas fa-map-marker-alt mr-1"></i> Location</label>
+                                                    <input type="text" name="location" class="form-control" value="<?= htmlspecialchars($job->location) ?>" required>
+                                                </div>
+                                                <div class="form-group">
+                                                    <label><i class="fas fa-money-bill-wave mr-1"></i> Salary Range</label>
+                                                    <input type="text" name="salary_range" class="form-control" value="<?= htmlspecialchars($job->salary_range) ?>" required>
+                                                </div>
+                                            </div>
+                                            <div class="col-md-6">
+                                                <div class="form-group">
+                                                    <label><i class="fas fa-phone mr-1"></i> Contact Details</label>
+                                                    <input type="text" name="contact_details" class="form-control" value="<?= htmlspecialchars($job->contact_details) ?>" required>
+                                                </div>
+                                                <div class="form-group">
+                                                    <label><i class="fas fa-file-alt mr-1"></i> Qualifications</label>
+                                                    <textarea name="qualifications" class="form-control" rows="3" required><?= htmlspecialchars($job->qualifications) ?></textarea>
+                                                </div>
+                                                <div class="form-group">
+                                                    <label><i class="fas fa-align-left mr-1"></i> Description</label>
+                                                    <textarea name="description" class="form-control" rows="3" required><?= htmlspecialchars($job->description) ?></textarea>
+                                                </div>
+                                                <div class="form-group">
+                                                    <label><i class="far fa-image mr-1"></i> **Replace Image** (Optional)</label>
+                                                    <input type="file" name="image_filename" class="form-control-file" accept="image/*">
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="modal-footer">
+                                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                                        <button type="submit" class="btn btn-primary"><i class="fas fa-save mr-1"></i> Save Changes</button>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                
+                    <div class="modal fade" id="applicantModal<?= $job->id ?>" tabindex="-1" role="dialog">
+                        <div class="modal-dialog modal-xl" role="document">
+                            <div class="modal-content">
+                                <div class="modal-header bg-info text-white">
+                                    <h5 class="modal-title"><i class="fas fa-user-check mr-2"></i> Applicants for "**<?= htmlspecialchars($job->job_title) ?>**"</h5>
+                                    <button type="button" class="close text-white" data-dismiss="modal">&times;</button>
+                                </div>
+                                <div class="modal-body">
+                                    <?php
+                                    // Fetching applicants (using original logic for demonstration)
+                                    $this->db->select('alumni.*, job_applications.applied_at'); // Added applied_at
+                                    $this->db->from('job_applications');
+                                    $this->db->join('alumni', 'alumni.id = job_applications.alumni_id');
+                                    $this->db->where('job_applications.job_id', $job->id);
+                                    $applicants = $this->db->get()->result();
+                                    ?>
+                                    
+                                    <?php if (count($applicants) > 0): ?>
+                                        <div class="d-flex justify-content-end mb-3">
+                                            <a href="<?= base_url('AdminJobPosting/export_applicants/'.$job->id) ?>" class="btn btn-outline-success btn-sm">
+                                                <i class="fas fa-file-excel mr-1"></i> Export All Applicants (<?= count($applicants) ?>)
+                                            </a>
+                                        </div>
+                                        <div class="table-responsive">
+                                            <table class="table table-hover table-striped mb-0">
+                                                <thead>
+                                                    <tr>
+                                                        <th>Name</th>
+                                                        <th>Email</th>
+                                                        <th>Alumni No.</th>
+                                                        <th>Grad Year</th>
+                                                        <th>Applied On</th>
+                                                        <th>Action</th>
+                                                    </tr>
+                                                </thead>
+                                                <tbody>
+                                                    <?php foreach($applicants as $applicant): ?>
+                                                        <tr>
+                                                            <td><i class="fas fa-user-graduate text-primary mr-1"></i> <?= htmlspecialchars($applicant->first_name . ' ' . $applicant->last_name) ?></td>
+                                                            <td><a href="mailto:<?= htmlspecialchars($applicant->email) ?>"><?= htmlspecialchars($applicant->email) ?></a></td>
+                                                            <td><?= htmlspecialchars($applicant->alumni_number) ?></td>
+                                                            <td><?= htmlspecialchars($applicant->graduation_year) ?></td>
+                                                            <td><?= date('M d, Y h:i A', strtotime($applicant->applied_at)) ?></td>
+                                                            <td>
+                                                                <a href="<?= base_url('AdminJobPosting/download_resume/'.$applicant->id) ?>" class="btn btn-sm btn-outline-primary" title="Download Resume">
+                                                                    <i class="fas fa-download"></i> Resume
+                                                                </a>
+                                                            </td>
+                                                        </tr>
+                                                    <?php endforeach; ?>
+                                                </tbody>
+                                            </table>
+                                        </div>
+                                    <?php else: ?>
+                                        <div class="alert alert-warning text-center py-3" role="alert" style="border-radius: 8px;">
+                                            <i class="fas fa-exclamation-circle mr-1"></i> **No alumni have applied for this job yet.**
+                                        </div>
+                                    <?php endif; ?>
+                                </div>
+                                <div class="modal-footer">
+                                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
 
-        <?php endforeach; ?>
+                <?php endforeach; ?>
+            <?php endif; ?>
+        </div>
     </div>
 </div>
-</div> <!-- /.container-fluid -->
-<!-- end of content-->
-<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
-<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.bundle.min.js"></script>
+
+<div class="modal fade" id="createJobModal" tabindex="-1" role="dialog">
+    <div class="modal-dialog modal-lg" role="document">
+        <div class="modal-content">
+            <form action="<?= base_url('AdminJobPosting/create') ?>" method="post" enctype="multipart/form-data">
+                <div class="modal-header modal-header-custom">
+                    <h5 class="modal-title"><i class="fas fa-plus-circle mr-2"></i> Create New Job Posting</h5>
+                    <button type="button" class="close text-white" data-dismiss="modal">&times;</button>
+                </div>
+                <div class="modal-body">
+                    <div class="row">
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <label><i class="fas fa-tag mr-1"></i> Job Title</label>
+                                <input type="text" name="job_title" class="form-control" required>
+                            </div>
+                            <div class="form-group">
+                                <label><i class="far fa-building mr-1"></i> Company</label>
+                                <input type="text" name="company" class="form-control" required>
+                            </div>
+                            <div class="form-group">
+                                <label><i class="fas fa-map-marker-alt mr-1"></i> Location</label>
+                                <input type="text" name="location" class="form-control" required>
+                            </div>
+                            <div class="form-group">
+                                <label><i class="fas fa-money-bill-wave mr-1"></i> Salary Range</label>
+                                <input type="text" name="salary_range" class="form-control" required>
+                            </div>
+                            <div class="form-group">
+                                <label><i class="fas fa-phone mr-1"></i> Contact Details</label>
+                                <input type="text" name="contact_details" class="form-control" required>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                             <div class="form-group">
+                                <label><i class="fas fa-file-alt mr-1"></i> Qualifications</label>
+                                <textarea name="qualifications" class="form-control" rows="3" required></textarea>
+                            </div>
+                            <div class="form-group">
+                                <label><i class="fas fa-align-left mr-1"></i> Description</label>
+                                <textarea name="description" class="form-control" rows="3" required></textarea>
+                            </div>
+                            <div class="form-group">
+                                <label><i class="far fa-image mr-1"></i> Attach Company Logo / Image (Optional)</label>
+                                <input type="file" name="image_filename" class="form-control-file" accept="image/*">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
+                    <button type="submit" class="btn btn-success btn-create-job"><i class="fas fa-upload mr-1"></i> Post Job</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+
+
+<script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+<script>
+$(document).ready(function(){
+    // Live Search Functionality
+    $("#jobSearchInput").on("keyup", function() {
+        var value = $(this).val().toLowerCase();
+        $(".job-card-item").filter(function() {
+            // Search across the entire visible text of the card
+            $(this).toggle($(this).text().toLowerCase().indexOf(value) > -1)
+        });
+        
+        // Show "No jobs" alert if no cards are visible after filter
+        var visibleCards = $('.job-card-item:visible').length;
+        if (visibleCards === 0 && value.length > 0) {
+            if ($('#noResultsAlert').length === 0) {
+                $('#jobListContainer').append('<div class="col-12" id="noResultsAlert"><div class="alert alert-warning text-center py-3" style="border-radius: 10px;"><i class="fas fa-exclamation-circle mr-1"></i> **No results found** for "'+value+'".</div></div>');
+            } else {
+                $('#noResultsAlert').find('div').html('<i class="fas fa-exclamation-circle mr-1"></i> **No results found** for "'+value+'".');
+            }
+        } else {
+             $('#noResultsAlert').remove();
+        }
+    });
+});
+</script>
+</body>
+</html>
