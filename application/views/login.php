@@ -55,7 +55,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
     <div class="container-fluid">
         <div class="row row_container">
             <div class="col-md-6 image-container">
-                <img src="<?php echo base_url('assets/images/circles.png'); ?>" class="login-image" alt="AConnect Platform Visual">
+                <img src="<?php echo base_url('assets/images/welcome.png'); ?>" class="login-image" alt="AConnect Platform Visual">
             </div>
 
             <div class="col-md-6 form-container">
