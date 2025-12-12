@@ -21,6 +21,10 @@
         body {
             background-color: var(--secondary-color);
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+              height: 100%;
+            min-height: 100%;
+            overflow-y: auto !important;
+            -webkit-overflow-scrolling: touch; /* smoother on mobile */
         }
 
         /* Main Container Styling */
@@ -188,6 +192,23 @@
             color: var(--text-dark);
             font-weight: 600;
         }
+        .modal-dialog {
+        max-height: calc(100vh - 3.5rem); /* ensure dialog fits viewport */
+        }
+        .modal-body {
+        overflow-y: auto;
+        max-height: calc(100vh - 12rem); /* tweak to taste */
+        }
+        .modal-lg {
+    max-width: 95% !important;  /* was ~900px, now much wider */
+    margin: 10px !important;
+}
+    .modal-extra-wide {
+    max-width: 95% !important;
+    margin: 10px !important;
+
+}
+
 
     </style>
 </head>
@@ -201,6 +222,9 @@
             <button class="btn btn-primary mb-3 mb-md-0 btn-create-job" data-toggle="modal" data-target="#createJobModal">
                 <i class="fas fa-plus-circle mr-1"></i> Create New Job
             </button>
+            <a href="<?= base_url('AdminJobPosting/run_worker') ?>" class="btn btn-warning">
+                <i class="fas fa-bell"></i> Send Email Notification Now
+            </a>
             <div class="input-group" style="max-width: 350px;">
                 <input type="text" class="form-control" placeholder="Search job title or company..." id="jobSearchInput">
                 <div class="input-group-append">
@@ -405,7 +429,7 @@
 </div>
 
 <div class="modal fade" id="createJobModal" tabindex="-1" role="dialog">
-    <div class="modal-dialog modal-lg" role="document">
+    <div class="modal-dialog modal-lg modal-extra-wide" role="document">
         <div class="modal-content">
             <form action="<?= base_url('AdminJobPosting/create') ?>" method="post" enctype="multipart/form-data">
                 <div class="modal-header modal-header-custom">
@@ -445,11 +469,58 @@
                                 <label><i class="fas fa-align-left mr-1"></i> Description</label>
                                 <textarea name="description" class="form-control" rows="3" required></textarea>
                             </div>
+
+                            
+
                             <div class="form-group">
                                 <label><i class="far fa-image mr-1"></i> Attach Company Logo / Image (Optional)</label>
                                 <input type="file" name="image_filename" class="form-control-file" accept="image/*">
                             </div>
                         </div>
+                        <div class="form-group">
+                            <label for="target_schools">Target Schools / Courses (notify these alumni):</label>
+                            <select id="target_schools" name="target_schools[]" multiple class="form-control">
+                                
+                                <optgroup label="School of Nursing and Allied Health Studies">
+                                    <option value="BS in Nursing">BS in Nursing</option>
+                                    <option value="BS in Radiologic Technology">BS in Radiologic Technology</option>
+                                    <option value="BS in Physical Therapy">BS in Physical Therapy</option>
+                                </optgroup>
+
+                                <optgroup label="School of Medical Laboratory Science">
+                                    <option value="BS in Medical Laboratory Science">BS in Medical Laboratory Science</option>
+                                    <option value="BS in Pharmacy">BS in Pharmacy</option>
+                                    <option value="BS in Biology">BS in Biology</option>
+                                </optgroup>
+
+                                <optgroup label="School of Accountancy, Science, and Education">
+                                    <option value="BS in Accountancy">BS in Accountancy</option>
+                                    <option value="BS in Accounting Technology / AIS">BS in Accounting Technology / AIS</option>
+                                    <option value="BS in Psychology">BS in Psychology</option>
+                                    <option value="BS in Elementary Education">BS in Elementary Education</option>
+                                    <option value="BS in Secondary Education">BS in Secondary Education</option>
+                                </optgroup>
+
+                                <optgroup label="School of International, Hospitality, Tourism & Management">
+                                    <option value="BS in Business Administration - Financial Management">BS in Business Administration - Financial Management</option>
+                                    <option value="BS in Business Administration - Marketing Management">BS in Business Administration - Marketing Management</option>
+                                    <option value="BS in Business Administration - HR Development">BS in Business Administration - HR Development</option>
+                                    <option value="BS in Business Administration - Operations Management">BS in Business Administration - Operations Management</option>
+                                    <option value="BS in Tourism Management">BS in Tourism Management</option>
+                                    <option value="BS in Hospitality Management">BS in Hospitality Management</option>
+                                    <option value="BS in Hospitality Management - Culinary Arts">BS in Hospitality Management - Culinary Arts</option>
+                                    <option value="BS in Hospitality Management - Cruiseline Operations">BS in Hospitality Management - Cruiseline Operations</option>
+                                </optgroup>
+
+                                <optgroup label="School of Communication, Multimedia, and Computer Studies">
+                                    <option value="BA in Communication">BA in Communication</option>
+                                    <option value="Bachelor of Multimedia Arts">Bachelor of Multimedia Arts</option>
+                                    <option value="BS in Information Technology">BS in Information Technology</option>
+                                </optgroup>
+                            </select>
+                            <small class="form-text text-muted">Hold Ctrl (Windows) or Cmd (Mac) to select multiple. If left empty, notification will go to all alumni (or admins based on current implementation).</small>
+                            </div>
+
                     </div>
                 </div>
                 <div class="modal-footer">
@@ -490,5 +561,60 @@ $(document).ready(function(){
     });
 });
 </script>
+
+<!-- Add this just before </body> (after bootstrap/js) -->
+<style>
+/* Highest-priority overrides for modal width */
+#createJobModal .modal-dialog,
+.modal-dialog.modal-extra-wide,
+.modal-dialog.modal-lg,
+div[id^="editModal"] .modal-dialog,
+div[id^="applicantModal"] .modal-dialog {
+  max-width: 95% !important;
+  width: 95% !important;
+  margin: 10px auto !important;
+}
+
+/* ensure modal content is scrollable vertically if it's tall */
+#createJobModal .modal-content,
+div[id^="editModal"] .modal-content,
+div[id^="applicantModal"] .modal-content {
+  max-height: calc(100vh - 60px) !important;
+}
+
+#createJobModal .modal-body,
+div[id^="editModal"] .modal-body,
+div[id^="applicantModal"] .modal-body {
+  overflow-y: auto !important;
+  max-height: calc(100vh - 180px) !important;
+}
+</style>
+
+<script>
+/* On show, force inline style as a fallback (useful if some other CSS injects later) */
+(function($){
+  $(document).on('show.bs.modal', function(e){
+    var dlg = $(e.target).find('.modal-dialog');
+    if (dlg.length) {
+      dlg.css({
+        'max-width': '95%',
+        'width': '95%',
+        'margin': '10px auto'
+      });
+      // ensure modal-body scroll if content too tall
+      $(e.target).find('.modal-body').css({
+        'overflow-y': 'auto',
+        'max-height': 'calc(100vh - 180px)'
+      });
+    }
+  });
+
+  // Also apply immediately for any already-open modals (debug)
+  $(function(){
+    $('#createJobModal').find('.modal-dialog').css({'max-width':'95%','width':'95%','margin':'10px auto'});
+  });
+})(jQuery);
+</script>
+
 </body>
 </html>

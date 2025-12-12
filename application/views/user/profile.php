@@ -570,38 +570,146 @@
         </div>
     </div>
     
-    <!-- Edit Skills Modal -->
-    <div class="modal fade" id="editSkillModal" tabindex="-1" role="dialog" aria-labelledby="editSkillModalLabel" aria-hidden="true">
-        <div class="modal-dialog modal-lg modal-dialog-centered" role="document">
-            <div class="modal-content p-4">
-                <div class="modal-header">
-                    <h5 class="modal-title" id="editSkillModalLabel">Edit Skills Information</h5>
-                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                        <span aria-hidden="true">&times;</span>
-                    </button>
-                </div>
-                
-                <form action="<?= base_url('profile/update_skill_info/' . $alumni->id) ?>" method="post" enctype="multipart/form-data">
-                    <div class="modal-body">
-                        <div class="form-group">
-                            <label>Soft Skills (Comma-separated)</label>
-                            <input type="text" class="form-control" name="soft_skills" value="<?= $alumni->soft_skills ?>">
-                        </div>
-
-                        <div class="form-group">
-                            <label>Technical Skills (Comma-separated)</label>
-                            <input type="text" class="form-control" name="technical_skills" value="<?= $alumni->technical_skills ?>">
-                        </div>
-                    </div>
-
-                    <div class="modal-footer">
-                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
-                        <button type="submit" style="background: var(--primary-maroon); border-color: var(--primary-maroon);" class="btn btn-primary">Save Changes</button>
-                    </div>
-                </form>
+   <!-- Edit Skills Modal -->
+<div class="modal fade" id="editSkillModal" tabindex="-1" role="dialog" aria-labelledby="editSkillModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg modal-dialog-centered" role="document">
+        <div class="modal-content p-4">
+            <div class="modal-header">
+                <h5 class="modal-title" id="editSkillModalLabel">Edit Skills Information</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
             </div>
+
+            <form action="<?= base_url('profile/update_skill_info/' . $alumni->id) ?>" method="post">
+                <div class="modal-body">
+
+                    <!-- SOFT SKILLS -->
+                    <div class="form-group">
+                        <label>Soft Skills</label>
+                        <select class="form-control soft-skills-select" name="soft_skills[]" multiple>
+                            <?php 
+                                $soft_selected = explode(",", $alumni->soft_skills ?? "");
+                                $soft_list = [
+                                    "Communication","Teamwork","Leadership","Problem Solving","Adaptability",
+                                    "Creativity","Time Management","Critical Thinking","Work Ethics",
+                                    "Decision Making","Collaboration","Attention to Detail"
+                                ];
+                                foreach ($soft_list as $skill): 
+                            ?>
+                                <option value="<?= $skill ?>" <?= in_array($skill, $soft_selected) ? 'selected' : '' ?>>
+                                    <?= $skill ?>
+                                </option>
+                            <?php endforeach; ?>
+                        </select>
+                    </div>
+
+                    <!-- TECHNICAL SKILLS -->
+                   <!-- TECHNICAL SKILLS -->
+<div class="form-group">
+    <label>Technical Skills</label>
+    <select class="form-control tech-skills-select" name="technical_skills[]" multiple>
+
+        <?php 
+            $tech_selected = explode(",", $alumni->technical_skills ?? "");
+        ?>
+
+        <!-- Information Technology & Programming -->
+        <optgroup label="Information Technology & Programming">
+            <?php 
+            $it_skills = [
+                "HTML","CSS","JavaScript","React","Angular","Vue.js",
+                "Node.js","PHP","Laravel","CodeIgniter","Python","Java",
+                "C#","C++","SQL","MySQL","PostgreSQL","MongoDB",
+                "REST API","Git","Docker","Linux",
+                "Cloud Computing","AWS","Azure","Google Cloud Platform"
+            ];
+
+            foreach ($it_skills as $skill): ?>
+                <option value="<?= $skill ?>" <?= in_array($skill, $tech_selected) ? 'selected' : '' ?>>
+                    <?= $skill ?>
+                </option>
+            <?php endforeach; ?>
+        </optgroup>
+
+        <!-- Medical & Laboratory Skills -->
+        <optgroup label="Medical & Laboratory Skills">
+            <?php 
+            $med_skills = [
+                "Phlebotomy","Clinical Laboratory Testing","Hematology","Microbiology",
+                "Laboratory Safety","Specimen Processing","Radiographic Imaging",
+                "Patient Care","Medication Administration","ECG Interpretation",
+                "Medical Terminology"
+            ];
+
+            foreach ($med_skills as $skill): ?>
+                <option value="<?= $skill ?>" <?= in_array($skill, $tech_selected) ? 'selected' : '' ?>>
+                    <?= $skill ?>
+                </option>
+            <?php endforeach; ?>
+        </optgroup>
+
+        <!-- Hospitality & Tourism -->
+        <optgroup label="Hospitality & Tourism">
+            <?php 
+            $ht_skills = [
+                "Event Planning","Food & Beverage Management","Culinary Arts","Customer Service",
+                "Front Office Operations","Tour Guiding","Housekeeping Management"
+            ];
+
+            foreach ($ht_skills as $skill): ?>
+                <option value="<?= $skill ?>" <?= in_array($skill, $tech_selected) ? 'selected' : '' ?>>
+                    <?= $skill ?>
+                </option>
+            <?php endforeach; ?>
+        </optgroup>
+
+        <!-- Business & Accounting -->
+        <optgroup label="Business & Accounting">
+            <?php 
+            $business_skills = [
+                "Financial Analysis","Bookkeeping","Payroll Processing","Tax Preparation",
+                "Auditing","MS Excel","Business Analytics","Marketing Strategy",
+                "HR Management"
+            ];
+
+            foreach ($business_skills as $skill): ?>
+                <option value="<?= $skill ?>" <?= in_array($skill, $tech_selected) ? 'selected' : '' ?>>
+                    <?= $skill ?>
+                </option>
+            <?php endforeach; ?>
+        </optgroup>
+
+        <!-- Multimedia & Communication -->
+        <optgroup label="Multimedia & Communication">
+            <?php 
+            $media_skills = [
+                "Graphic Design","Adobe Photoshop","Adobe Illustrator",
+                "Video Editing","Animation","UI/UX Design","Social Media Management",
+                "Content Writing","Photography"
+            ];
+
+            foreach ($media_skills as $skill): ?>
+                <option value="<?= $skill ?>" <?= in_array($skill, $tech_selected) ? 'selected' : '' ?>>
+                    <?= $skill ?>
+                </option>
+            <?php endforeach; ?>
+        </optgroup>
+
+    </select>
+</div>
+
+                </div>
+
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
+                    <button type="submit" class="btn btn-primary" style="background: var(--primary-maroon); border-color: var(--primary-maroon);">Save Changes</button>
+                </div>
+            </form>
         </div>
     </div>
+</div>
+
 
 </div>
 
@@ -642,6 +750,25 @@
     });
     <?php endif; ?>
     */
+</script>
+<!-- Select2 CSS -->
+<link href="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/css/select2.min.css" rel="stylesheet" />
+
+<!-- Select2 JS -->
+<script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/js/select2.min.js"></script>
+
+<script>
+$(document).ready(function() {
+    $('.soft-skills-select').select2({
+        placeholder: "Select soft skills",
+        width: '100%'
+    });
+
+    $('.tech-skills-select').select2({
+        placeholder: "Select technical skills",
+        width: '100%'
+    });
+});
 </script>
 
 </body>

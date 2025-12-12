@@ -1,3 +1,94 @@
+<?php
+function compute_ai_match($alumni, $job) {
+
+    if (!$alumni) return 0;
+
+    // Updated weights
+    $wTech  = 30;
+    $wSoft  = 10;
+    $wKey   = 5;
+    $wTitle = 55; // Job title → degree match (MAIN factor now)
+
+    $score = 0;
+
+    // ---- JOB TITLE MATCH (REPLACES DEGREE MATCH) ----
+    $titleMatch = 0;
+    $jobTitle = strtolower($job->job_title);
+    $deg = strtolower($alumni->degree);
+
+    // IT / CS
+    if (strpos($jobTitle, "it") !== false && strpos($deg, "information technology") !== false) $titleMatch = 1;
+    if (strpos($jobTitle, "developer") !== false && strpos($deg, "information technology") !== false) $titleMatch = 1;
+    if (strpos($jobTitle, "programmer") !== false && strpos($deg, "information technology") !== false) $titleMatch = 1;
+    if (strpos($jobTitle, "software") !== false && strpos($deg, "information technology") !== false) $titleMatch = 1;
+    if (strpos($jobTitle, "technical") !== false && strpos($deg, "information technology") !== false) $titleMatch = 1;
+
+    // Nursing
+    if (strpos($jobTitle, "nurse") !== false && strpos($deg, "nursing") !== false) $titleMatch = 1;
+    if (strpos($jobTitle, "staff nurse") !== false && strpos($deg, "nursing") !== false) $titleMatch = 1;
+
+    // RadTech
+    if (strpos($jobTitle, "radtech") !== false && strpos($deg, "radiologic") !== false) $titleMatch = 1;
+    if (strpos($jobTitle, "radiologic") !== false && strpos($deg, "radiologic") !== false) $titleMatch = 1;
+
+    // Business
+    if (strpos($jobTitle, "marketing") !== false && strpos($deg, "business") !== false) $titleMatch = 1;
+    if (strpos($jobTitle, "hr") !== false && strpos($deg, "business") !== false) $titleMatch = 1;
+    if (strpos($jobTitle, "finance") !== false && strpos($deg, "accountancy") !== false) $titleMatch = 1;
+
+    // Multimedia / Communication
+    if (strpos($jobTitle, "graphic") !== false && strpos($deg, "multimedia") !== false) $titleMatch = 1;
+    if (strpos($jobTitle, "designer") !== false && strpos($deg, "multimedia") !== false) $titleMatch = 1;
+    if (strpos($jobTitle, "editor") !== false && strpos($deg, "communication") !== false) $titleMatch = 1;
+    if (strpos($jobTitle, "writer") !== false && strpos($deg, "communication") !== false) $titleMatch = 1;
+
+    // ---- TECHNICAL SKILLS MATCH ----
+    $alTech = array_filter(array_map('trim', explode(',', strtolower($alumni->technical_skills ?? ""))));
+    $jobTech = array_filter(array_map('trim', explode(',', strtolower($job->qualifications ?? ""))));
+
+    $techMatch = 0;
+    if (count($jobTech) > 0) {
+        $match = array_intersect($alTech, $jobTech);
+        $techMatch = count($match) / count($jobTech);
+    }
+
+    // ---- SOFT SKILLS MATCH ----
+    $alSoft = array_filter(array_map('trim', explode(',', strtolower($alumni->soft_skills ?? ""))));
+    $desc = strtolower($job->description ?? "");
+
+    $softCount = 0;
+    foreach ($alSoft as $soft) {
+        if (strpos($desc, $soft) !== false) {
+            $softCount++;
+        }
+    }
+    $softMatch = (count($alSoft) > 0) ? $softCount / count($alSoft) : 0;
+
+    // ---- KEYWORD MATCH ----
+    $searchSpace = strtolower($job->company . " " . $job->job_title . " " . $job->description);
+    $keyMatch = 0;
+    foreach ($alTech as $skill) {
+        if (strpos($searchSpace, $skill) !== false) {
+            $keyMatch = 1;
+            break;
+        }
+    }
+
+    // Final Score
+    $score =
+          ($techMatch  * $wTech)
+        + ($softMatch  * $wSoft)
+        + ($keyMatch   * $wKey)
+        + ($titleMatch * $wTitle);
+
+    return round($score);
+}
+
+
+?>
+
+
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -351,6 +442,18 @@
                                 <span class="job-location"><i class='fas fa-map-marker-alt'></i> <?= htmlspecialchars($job->location) ?></span>
                                 <span class="job-salary"><i class='fas fa-money-bill-wave'></i> <?= htmlspecialchars($job->salary_range) ?></span>
                             </div>
+                                <?php 
+                                $match = compute_ai_match($alumni, $job);
+
+                                $badgeStyle = ($match >= 70) ? "background:#28a745;color:white;" :
+                                            (($match >= 40) ? "background:#ffc107;color:black;" :
+                                                                "background:#6c757d;color:white;");
+                                ?>
+                                <div style="margin-bottom:10px;">
+                                    <span style="<?= $badgeStyle ?> padding:5px 10px; border-radius:6px; font-size:0.85rem;">
+                                        AI Match: <?= $match ?>%
+                                    </span>
+                                </div>
 
                             <p class="job-qualifications-summary">
                                 <strong>Qualifications:</strong> <?= htmlspecialchars($job->qualifications) ?>
@@ -380,6 +483,19 @@
                             <p><strong>Salary Range:</strong> <?= htmlspecialchars($job->salary_range) ?></p>
                             <p><strong>Contact Details:</strong> <?= htmlspecialchars($job->contact_details) ?></p>
                             <hr>
+                            <?php 
+                                $match = compute_ai_match($alumni, $job);
+
+                                $badgeStyle = ($match >= 70) ? "background:#28a745;color:white;" :
+                                            (($match >= 40) ? "background:#ffc107;color:black;" :
+                                                                "background:#6c757d;color:white;");
+                                ?>
+                                <div style="margin-bottom:10px;">
+                                    <span style="<?= $badgeStyle ?> padding:5px 10px; border-radius:6px; font-size:0.85rem;">
+                                        AI Match: <?= $match ?>%
+                                    </span>
+                                </div>
+
                             <p><strong>Qualifications:</strong><br><?= htmlspecialchars($job->qualifications) ?></p>
                             <p><strong>Description:</strong><br><?= nl2br(htmlspecialchars($job->description)) ?></p>
                             <hr>
