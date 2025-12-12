@@ -297,7 +297,7 @@ if($this->session->userdata('role') == 'alumni'){
                 <div class="main-nav-bar">
                     <nav class="primary-nav">
                         <ul class="d-flex">
-                            <li><a href="<?php echo base_url('postcontroller'); ?>" class="<?php echo is_active_segment('PostController') ? 'active-link' : ''; ?>">Valenzuela</a></li>
+                            <li><a href="<?php echo base_url('postcontroller'); ?>" class="<?php echo is_active_segment('PostController') ? 'active-link' : ''; ?>">Valenzuelaaaaaa</a></li>
                             
                             <li><a href="<?php echo base_url('profile'); ?>" class="<?php echo is_active_segment('profile') ? 'active-link' : ''; ?>">My Profile</a></li>
                             
