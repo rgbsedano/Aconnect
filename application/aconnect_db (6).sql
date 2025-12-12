@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jun 16, 2025 at 09:47 AM
+-- Generation Time: Dec 12, 2025 at 02:17 AM
 -- Server version: 10.4.16-MariaDB
 -- PHP Version: 7.4.12
 
@@ -147,7 +147,92 @@ INSERT INTO `activity_logs` (`id`, `alumni_id`, `activity`, `created_at`) VALUES
 (131, 2, 'Updated his/her Profile', '2025-06-07 19:39:28'),
 (132, 2, 'Updated his/her Profile', '2025-06-07 19:39:54'),
 (133, 2, 'Logged out', '2025-06-07 19:57:04'),
-(134, 2, 'Logged in', '2025-06-07 19:57:12');
+(134, 2, 'Logged in', '2025-06-07 19:57:12'),
+(135, 2, 'Logged in', '2025-06-16 16:14:12'),
+(136, 2, 'Updated his/her Profile', '2025-06-16 16:15:10'),
+(137, 2, 'Logged in', '2025-06-16 18:56:01'),
+(138, 2, 'Logged out', '2025-06-16 18:56:36'),
+(139, 2, 'Logged in', '2025-06-16 18:58:49'),
+(140, 2, 'Logged out', '2025-06-16 18:59:39'),
+(141, 2, 'Logged in', '2025-06-16 18:59:45'),
+(142, 2, 'Logged out', '2025-06-16 19:00:01'),
+(143, 2, 'Logged in', '2025-06-16 19:01:12'),
+(144, 2, 'Updated his/her Profile', '2025-06-16 19:07:38'),
+(145, 2, 'Updated his/her Profile', '2025-06-16 19:07:41'),
+(146, 2, 'Logged out', '2025-06-16 19:15:17'),
+(147, 2, 'Logged in', '2025-06-16 19:15:34'),
+(148, 2, 'Register to an event', '2025-06-16 19:15:43'),
+(149, 2, 'Register to an event', '2025-06-16 19:15:45'),
+(150, 2, 'Register to an event', '2025-06-16 19:16:14'),
+(151, 2, 'Logged in', '2025-06-16 20:37:46'),
+(152, 2, 'Logged out', '2025-06-16 20:37:48'),
+(153, 1, 'Logged in', '2025-06-16 20:37:56'),
+(154, 1, 'Logged out', '2025-06-16 20:38:11'),
+(155, 1, 'Logged in', '2025-06-16 21:55:48'),
+(156, 1, 'Logged in', '2025-06-17 01:27:15'),
+(157, 1, 'Applied for a job', '2025-06-17 01:27:26'),
+(158, 1, 'Logged out', '2025-06-17 01:27:36'),
+(159, 2, 'Logged in', '2025-06-17 01:32:57'),
+(160, 2, 'Applied for a job', '2025-06-17 01:33:06'),
+(161, 2, 'Logged out', '2025-06-17 01:34:41'),
+(162, 2, 'Logged in', '2025-06-17 03:35:18'),
+(163, 2, 'Logged out', '2025-06-17 03:42:10'),
+(164, 33, 'Logged in', '2025-06-17 03:42:33'),
+(165, 33, 'Logged out', '2025-06-17 03:43:19'),
+(169, 2, 'Logged in', '2025-06-17 03:50:23'),
+(170, 1, 'Logged in', '2025-06-17 10:39:40'),
+(171, 1, 'Logged out', '2025-06-17 10:42:10'),
+(172, 1, 'Logged in', '2025-06-17 10:47:29'),
+(173, 1, 'Logged in', '2025-06-17 10:50:24'),
+(174, 1, 'Logged out', '2025-06-17 10:50:33'),
+(175, 1, 'Logged in', '2025-06-17 10:57:13'),
+(176, 1, 'Logged out', '2025-06-17 10:57:18'),
+(177, 35, 'Logged in', '2025-06-17 11:30:21'),
+(178, 35, 'Updated his/her Profile', '2025-06-17 11:39:18'),
+(179, 2, 'Logged in', '2025-06-17 11:49:58'),
+(180, 2, 'Logged out', '2025-06-17 11:54:42'),
+(181, 2, 'Logged in', '2025-07-29 19:18:45'),
+(182, 2, 'Logged out', '2025-07-29 19:21:05'),
+(183, 2, 'Logged in', '2025-07-29 19:26:25'),
+(184, 2, 'Logged out', '2025-07-29 19:27:15'),
+(185, 15, 'Logged in', '2025-11-21 21:46:00'),
+(186, 15, 'Logged out', '2025-11-21 21:46:07'),
+(187, 15, 'Logged in', '2025-11-21 23:38:45'),
+(188, 15, 'Logged out', '2025-11-21 23:39:00'),
+(189, 2, 'Logged in', '2025-11-21 23:39:21'),
+(190, 2, 'Logged out', '2025-11-21 23:39:45'),
+(191, 2, 'Logged in', '2025-11-21 23:40:46'),
+(192, 2, 'Logged out', '2025-11-21 23:41:15'),
+(193, 15, 'Logged in', '2025-11-22 11:50:41'),
+(194, 15, 'Updated his/her Profile', '2025-11-22 11:50:57'),
+(195, 15, 'Logged out', '2025-11-22 11:54:33'),
+(196, 15, 'Logged in', '2025-11-22 11:54:46'),
+(197, 15, 'Logged out', '2025-11-22 11:55:44'),
+(198, 1, 'Logged in', '2025-11-25 22:03:13'),
+(199, 1, 'Logged out', '2025-11-25 22:03:50'),
+(200, 17, 'Logged in', '2025-11-25 22:04:35'),
+(201, 17, 'Logged out', '2025-11-25 22:05:25'),
+(202, 1, 'Logged in', '2025-11-25 22:05:37'),
+(203, 1, 'Logged out', '2025-11-25 22:06:57'),
+(204, 1, 'Logged in', '2025-11-25 22:08:04'),
+(205, 1, 'Logged out', '2025-11-25 22:12:37'),
+(206, 15, 'Logged in', '2025-12-03 22:53:32'),
+(207, 15, 'Logged out', '2025-12-03 22:55:42'),
+(208, 1, 'Logged in', '2025-12-04 00:06:58'),
+(209, 1, 'Logged out', '2025-12-04 00:09:37'),
+(210, 1, 'Logged in', '2025-12-04 00:10:18'),
+(211, 1, 'Logged out', '2025-12-04 00:10:43'),
+(212, 15, 'Logged in', '2025-12-04 00:40:05'),
+(213, 15, 'Logged out', '2025-12-04 00:40:51'),
+(214, 15, 'Logged in', '2025-12-04 01:32:17'),
+(215, 15, 'Updated his/her Profile', '2025-12-04 01:34:43'),
+(216, 15, 'Updated his/her Profile', '2025-12-04 01:34:45'),
+(217, 15, 'Logged out', '2025-12-04 01:38:22'),
+(218, 1, 'Logged in', '2025-12-04 01:42:56'),
+(219, 1, 'Logged out', '2025-12-04 02:10:19'),
+(220, 1, 'Logged in', '2025-12-04 02:23:33'),
+(221, 1, 'Logged out', '2025-12-04 03:09:52'),
+(222, 1, 'Logged out', '2025-12-11 12:50:56');
 
 -- --------------------------------------------------------
 
@@ -161,6 +246,7 @@ CREATE TABLE `admin_users` (
   `email` varchar(100) NOT NULL,
   `password` varchar(255) NOT NULL,
   `created_at` timestamp NOT NULL DEFAULT current_timestamp(),
+  `last_login` datetime DEFAULT NULL,
   `first_name` varchar(100) DEFAULT NULL,
   `last_name` varchar(100) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
@@ -169,8 +255,8 @@ CREATE TABLE `admin_users` (
 -- Dumping data for table `admin_users`
 --
 
-INSERT INTO `admin_users` (`id`, `username`, `email`, `password`, `created_at`, `first_name`, `last_name`) VALUES
-(1, 'user123', 'username123@gmail.com', '$2y$10$B4zULLnxkTflCFw4xNefV.pd9XzSXS4iB/jEqn7bDp4wUqPGo9MAS', '2025-04-21 10:16:04', 'user', 'name');
+INSERT INTO `admin_users` (`id`, `username`, `email`, `password`, `created_at`, `last_login`, `first_name`, `last_name`) VALUES
+(1, 'admin123', 'admin123@gmail.com', '$2y$10$B4zULLnxkTflCFw4xNefV.pd9XzSXS4iB/jEqn7bDp4wUqPGo9MAS', '2025-04-21 10:16:04', '2025-11-21 17:55:02', 'admin', 'name');
 
 -- --------------------------------------------------------
 
@@ -209,11 +295,11 @@ CREATE TABLE `alumni` (
 --
 
 INSERT INTO `alumni` (`id`, `alumni_number`, `first_name`, `last_name`, `gender`, `email`, `alternative_email`, `password`, `phone`, `alternative_phone`, `graduation_year`, `degree`, `profile_image`, `student_number`, `last_login`, `status`, `current_job`, `current_job_organization`, `current_job_length`, `soft_skills`, `technical_skills`, `school`, `created_at`) VALUES
-(1, '202010345', 'Rg', 'sedano', 'male', 'rgsedano@gmail.com', NULL, '$2y$10$q9N0zFSsz5S7F.0akf3VreasmsfnGr29YJXEAbQdiqU79v7wDkfMu', '09952341640', NULL, 2020, 'BSIT', '680b3ba0d34c2_ako.jpg', '201313476', '2025-06-03 20:42:01', 'active', '', '', '', '', '', 'St. Dominic', '2025-04-21 11:33:02'),
-(2, 'A2024-1236', 'argie', 'sedano', 'male', 'argiesedano@gmail.com', NULL, '$2y$10$aBwmkt5wxOOzGrjMzQF3lulFl0.KCjeFpAIG2uSDnv1rHSNryS1Eu', '09952341640', NULL, 2024, 'BS Information Technology', '68116bce22ee0_akodin.jpg', '202402271', '2025-06-07 05:57:12', 'active', 'IT LOKO', 'ORACLEs', '2years', 'magluto', 'ASDASDASD', NULL, '2025-04-21 11:46:03'),
-(6, '3', 'gie', 'sedano', 'male', 'giesedano@gmail.com', NULL, '$2y$10$bW8Uy2CbWxeeSg/c8JGsyexijQLWUjbAEmn7CLQ3.hUH2hxbpfoMy', '09952341640', NULL, 2024, 'BS Information Technology', NULL, '2024131331', '2025-05-03 20:01:13', 'inactive', NULL, NULL, NULL, NULL, NULL, NULL, '2025-04-23 00:52:35'),
-(15, '4', 'pirs', 'estudillo', 'male', 'pirs@gmail.com', NULL, '$2y$10$mc4//91uzF7XWl3pNEMc5e6RioDJD0TJgZ5KXjnhQeCvEsGfIhYQy', '182903812', NULL, 2024, 'BS INFORMATION TECHNOLOGY', NULL, '2024101010', '2025-05-14 01:00:45', 'inactive', NULL, NULL, NULL, NULL, NULL, NULL, '2025-04-23 22:44:35'),
-(17, '123', 'sharmaine', 'arias', 'female', 'sha@gmail.com', NULL, '$2y$10$2RVdI15VCEfVB2DzrkAkQuwGKFNBsaU79Cya.3fubAEDi.uXXQWKK', '09999999', NULL, 2023, 'BS Accountancy', NULL, '201313477', '2025-05-04 03:04:05', 'inactive', NULL, NULL, NULL, NULL, NULL, NULL, '2025-04-25 04:42:57'),
+(1, 'A2020-1034', 'Rg', 'sedano', 'male', 'rgsedano@gmail.com', NULL, '$2y$10$q9N0zFSsz5S7F.0akf3VreasmsfnGr29YJXEAbQdiqU79v7wDkfMu', '09952341640', NULL, 2020, 'BSIT', '680b3ba0d34c2_ako.jpg', '201313476', '2025-12-03 11:23:33', 'active', '', '', '', '', '', 'St. Dominic', '2025-04-21 11:33:02'),
+(2, 'A2024-1236', 'Argie', 'Sedano', 'male', 'argiesedano@gmail.com', NULL, '$2y$10$aBwmkt5wxOOzGrjMzQF3lulFl0.KCjeFpAIG2uSDnv1rHSNryS1Eu', '09952341640', NULL, 2024, 'BS Information Technology', '68116bce22ee0_akodin.jpg', '202402271', '2025-11-21 08:40:46', 'active', '', '', '', '', '', NULL, '2025-04-21 11:46:03'),
+(6, 'A2024-2345', 'gie', 'sedano', 'male', 'giesedano@gmail.com', NULL, '$2y$10$bW8Uy2CbWxeeSg/c8JGsyexijQLWUjbAEmn7CLQ3.hUH2hxbpfoMy', '09952341640', NULL, 2024, 'BS Information Technology', NULL, '2024131331', '2025-06-16 11:09:21', 'inactive', NULL, NULL, NULL, NULL, NULL, NULL, '2025-04-23 00:52:35'),
+(15, 'A2024-1234', 'Pierce', 'estudillo', 'male', 'pirs@gmail.com', NULL, '$2y$10$mc4//91uzF7XWl3pNEMc5e6RioDJD0TJgZ5KXjnhQeCvEsGfIhYQy', '182903812', NULL, 2024, 'BS INFORMATION TECHNOLOGY', '693074b34fc0d_akodin.jpg', '2024101010', '2025-12-03 17:34:43', 'inactive', NULL, NULL, NULL, NULL, NULL, NULL, '2025-04-23 22:44:35'),
+(17, 'A2013-7654', 'sharmaine', 'arias', 'female', 'sha@gmail.com', NULL, '$2y$10$2RVdI15VCEfVB2DzrkAkQuwGKFNBsaU79Cya.3fubAEDi.uXXQWKK', '09999999999', NULL, 2023, 'BS Accountancy', NULL, '201913477', '2025-11-25 07:04:35', 'inactive', NULL, NULL, NULL, NULL, NULL, NULL, '2025-04-25 04:42:57'),
 (18, 'ALU-0001', 'John', 'Doe', 'male', 'john.doe@example.com', 'john.alt@example.com', 'hashed_password_1', '09171234567', '09987654321', 2018, 'BS Computer Science', NULL, '20181234', '2025-05-04 14:27:37', 'active', 'Software Developer', 'Tech Corp', '2 years', 'Teamwork, Communication', 'Java, PHP, SQL', 'ABC University', '2025-05-04 12:02:10'),
 (19, 'ALU-0002', 'Jane', 'Smith', 'female', 'jane.smith@example.com', 'jane.alt@example.com', 'hashed_password_2', '09181234567', '09986543210', 2017, 'BS Information Technology', NULL, '20171234', '2025-05-04 14:28:37', 'active', 'System Analyst', 'Solutions Inc.', '3 years', 'Leadership, Critical Thinking', 'Python, JavaScript, HTML/CSS', 'XYZ University', '2025-05-04 12:02:10'),
 (20, 'ALU-0003', 'Alex', 'Reyes', 'other', 'alex.reyes@example.com', 'alex.alt@example.com', 'hashed_password_3', '09192223333', '09190001122', 2020, 'BS Information Systems', NULL, '20201234', '2025-05-04 14:28:42', 'inactive', 'IT Consultant', 'Consultify', '1 year', 'Adaptability, Creativity', 'React, Node.js, MongoDB', 'DEF College', '2025-05-04 12:02:10'),
@@ -223,12 +309,32 @@ INSERT INTO `alumni` (`id`, `alumni_number`, `first_name`, `last_name`, `gender`
 (24, 'ALU-0007', 'Michael', 'Garcia', 'male', 'michael.garcia@example.com', 'michael.alt@example.com', 'hashed_password_7', '09223334455', '09178889999', 2021, 'BS Marketing', NULL, '20212345', '2025-05-04 14:28:48', 'inactive', 'Marketing Specialist', 'BrandLab', '1 year', 'Creative Thinking, Communication', 'SEO, Social Media Marketing', 'MNO University', '2025-05-04 13:54:04'),
 (25, 'ALU-0008', 'Sophia', 'Martinez', 'female', 'sophia.martinez@example.com', 'sophia.alt@example.com', 'hashed_password_8', '09182223344', '09221122334', 2014, 'BS Architecture', NULL, '20141098', '2025-05-04 14:28:52', 'active', 'Architect', 'UrbanDesigns', '6 years', 'Attention to Detail, Negotiation', 'AutoCAD, Revit', 'PQR University', '2025-05-04 13:54:04'),
 (26, 'ALU-0009', 'David', 'Taylor', 'male', 'david.taylor@example.com', 'david.alt@example.com', 'hashed_password_9', '09224445566', '09335567788', 2018, 'BS Electrical Engineering', NULL, '20187564', '2025-05-04 14:29:07', 'active', 'Electrical Engineer', 'PowerGrid Co.', '2 years', 'Analytical Thinking, Teamwork', 'MATLAB, Circuit Design', 'STU University', '2025-05-04 13:54:04'),
-(27, 'ALU-0010', 'Olivia', 'Davis', 'female', 'olivia.davis@example.com', 'olivia.alt@example.com', 'hashed_password_10', '09167778899', '09228887777', 2020, 'BS Mechanical Engineering', NULL, '20204567', '2025-05-04 14:29:04', 'inactive', 'Mechanical Engineer', 'AutoWorks', '1 year', 'Problem Solving, Critical Thinking', 'SolidWorks, CAD', 'VWX University', '2025-05-04 13:54:04'),
 (28, 'ALU-0011', 'Lucas', 'Miller', 'male', 'lucas.miller@example.com', 'lucas.alt@example.com', 'hashed_password_11', '09172223344', '09223334411', 2017, 'BS Computer Science', NULL, '20176543', '2025-05-04 14:29:02', 'active', 'Full Stack Developer', 'TechWorks', '3 years', 'Collaboration, Adaptability', 'React, Node.js, MongoDB', 'XYZ University', '2025-05-04 13:54:04'),
 (29, 'ALU-0012', 'Charlotte', 'Wilson', 'female', 'charlotte.wilson@example.com', 'charlotte.alt@example.com', 'hashed_password_12', '09221122333', '09332223344', 2019, 'BS Biochemistry', NULL, '20192222', '2025-05-04 14:29:00', 'active', 'Research Scientist', 'BioTech Labs', '2 years', 'Analytical Thinking, Problem Solving', 'Lab Techniques, PCR', 'ABC University', '2025-05-04 13:54:04'),
 (30, 'ALU-0013', 'James', 'Moore', 'male', 'james.moore@example.com', 'james.alt@example.com', 'hashed_password_13', '09172233444', '09223334455', 2021, 'BS Environmental Science', NULL, '20213456', '2025-05-04 14:28:58', 'inactive', 'Environmental Consultant', 'GreenWorks', '1 year', 'Sustainability, Communication', 'GIS, Environmental Impact Analysis', 'LMN University', '2025-05-04 13:54:04'),
 (31, 'ALU-0014', 'Ava', 'Taylor', 'female', 'ava.taylor@example.com', 'ava.alt@example.com', 'hashed_password_14', '09223334466', '09337778888', 2016, 'BS Finance', NULL, '20167890', '2025-05-04 14:28:56', 'active', 'Financial Analyst', 'InvestPro', '4 years', 'Financial Analysis, Negotiation', 'Excel, Financial Modeling', 'OPQ University', '2025-05-04 13:54:04'),
-(32, 'ALU-0015', 'Ethan', 'Anderson', 'male', 'ethan.anderson@example.com', 'ethan.alt@example.com', 'hashed_password_15', '09174445566', '09223334477', 2019, 'BS Physics', NULL, '20191111', '2025-05-04 14:28:54', 'inactive', 'Data Scientist', 'DataSoft', '2 years', 'Critical Thinking, Communication', 'Python, R, SQL', 'XYZ University', '2025-05-04 13:54:04');
+(32, 'ALU-0015', 'Ethan', 'Anderson', 'male', 'ethan.anderson@example.com', 'ethan.alt@example.com', 'hashed_password_15', '09174445566', '09223334477', 2019, 'BS Physics', NULL, '20191111', '2025-05-04 14:28:54', 'inactive', 'Data Scientist', 'DataSoft', '2 years', 'Critical Thinking, Communication', 'Python, R, SQL', 'XYZ University', '2025-05-04 13:54:04'),
+(33, 'A2025-1234', 'Ina', 'De Borja', 'female', 'Ina@gmail.com', NULL, '$2y$10$Lqybqm5GW0IAA9JCa/ZEMO7sHju3RxGiIHO74W8R43DRixchqExGK', '09191234759', NULL, 2025, 'BSIT', NULL, '202130495', '2025-06-16 19:49:26', 'inactive', NULL, NULL, NULL, NULL, NULL, NULL, '2025-06-16 19:27:16'),
+(35, 'A2025-2345', 'JP', 'VALENZUELA', 'male', 'JVALENZUEAL@SDCA.COM', NULL, '$2y$10$FsuIv6B5TL9JR68xx1yQ.OW55SPi.nqdEIi/elRQwfMZIdIPcibu2', '09988994071', NULL, 2026, 'BSIT', '6850e36681169_akodin.jpg', '202000163', '2025-06-17 03:42:22', 'inactive', 'WEB DEVELOPER', 'SDA', '2 YEARS', NULL, NULL, NULL, '2025-06-17 03:30:11'),
+(44, NULL, 'ARGIE', 'SEDANO', 'male', 'rg@sdca.edu.ph', NULL, '$2y$10$t.w4ce/BPWlB1EAqN8NncOBrGoE5zRlFf91ZG4wAMVBWyVcZDNivy', '09952341006', NULL, 2022, 'BS in Psychology', NULL, '2013131010', '2025-12-11 06:28:55', 'inactive', NULL, NULL, NULL, NULL, NULL, NULL, '2025-12-11 06:28:55');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `alumni_employment`
+--
+
+CREATE TABLE `alumni_employment` (
+  `id` int(11) NOT NULL,
+  `alumni_id` int(11) NOT NULL,
+  `employment_status` enum('Employed','Unemployed','Self-employed') NOT NULL,
+  `company_name` varchar(255) DEFAULT NULL,
+  `job_title` varchar(255) DEFAULT NULL,
+  `job_description` text NOT NULL,
+  `year_of_service` int(11) DEFAULT 0,
+  `promotion_count` int(11) DEFAULT 0,
+  `created_at` datetime DEFAULT current_timestamp()
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 -- --------------------------------------------------------
 
@@ -247,9 +353,9 @@ CREATE TABLE `carousel_photos` (
 --
 
 INSERT INTO `carousel_photos` (`id`, `file_name`, `uploaded_at`) VALUES
-(1, '1746154881_search.png', '2025-05-02 03:01:21'),
-(2, '1746154891_undraw_bookmarks_i66k.png', '2025-05-02 03:01:31'),
-(3, '1746155910_news.png', '2025-05-02 03:18:30');
+(4, '1750071488_auntie_anne.jpg', '2025-06-16 10:58:08'),
+(5, '1750071499_ALUMNI_EXTENSION_SERVICE.jpg', '2025-06-16 10:58:19'),
+(6, '1750071509_BALIK_DOMINIC.jpg', '2025-06-16 10:58:29');
 
 -- --------------------------------------------------------
 
@@ -306,9 +412,12 @@ CREATE TABLE `connection_requests` (
 
 INSERT INTO `connection_requests` (`id`, `sender_id`, `receiver_id`, `status`, `created_at`) VALUES
 (1, 1, 2, 'accepted', '2025-04-23 19:43:39'),
-(10, 1, 17, 'pending', '2025-05-02 04:07:11'),
+(10, 1, 17, 'accepted', '2025-05-02 04:07:11'),
 (13, 1, 15, 'accepted', '2025-05-03 20:58:40'),
-(14, 1, 18, 'pending', '2025-05-04 14:26:15');
+(14, 1, 18, 'pending', '2025-05-04 14:26:15'),
+(15, 2, 6, 'pending', '2025-06-16 14:48:02'),
+(16, 35, 1, 'pending', '2025-06-17 03:48:00'),
+(17, 35, 2, 'accepted', '2025-06-17 03:48:03');
 
 -- --------------------------------------------------------
 
@@ -342,8 +451,7 @@ INSERT INTO `events` (`id`, `event_name`, `event_date`, `event_time_duration`, `
 (9, 'Alumni Outreach: Tree Planting Activity', '2025-05-30 07:00:00', NULL, 'Eco Park, City Outskirts', NULL, 'Give back to nature with this community tree planting event organized by the alumni environmental committee.', 'tree_planting_2025.jpg', 1, NULL, '2025-04-24 05:47:56', NULL),
 (15, 'Career Fair 2025', '2025-06-15 09:00:00', '9:00 AM - 4:00 PM', 'Main Hall, Building B', 'Ms. Ana Santos', 'A great opportunity for alumni to meet recruiters and explore job openings.', 'career_fair.jpg', NULL, NULL, '2025-04-25 10:43:37', NULL),
 (17, 'Alumni Homecoming 2025', '2025-05-30 15:00:00', '3:00 PM - 7:00 PM', 'University Auditorium', 'Prof. Juan Dela Cruz', 'Join us for a memorable evening of reunion, fun, and networking with fellow alumni.', 'homecoming2025.jpg', NULL, NULL, '2025-04-25 10:44:08', NULL),
-(19, 'Web Development Workshop', '2025-07-10 13:00:00', '1:00 PM - 5:00 PM', 'Computer Lab 3, IT Building', 'Engr. Mark Villanueva', 'Hands-on workshop on building modern web apps using PHP and React.', 'web_workshop.jpg', NULL, NULL, '2025-04-25 10:44:08', NULL),
-(20, 'Alumni Talk: Pathways to Success', '2025-02-19 00:00:00', '10:00 AM - 12:00 PM', 'Lecture Room 101', 'Dr. Maria Rivera', 'Inspiring stories and practical advice from successful alumni in various fields.', 'alumni_talk.jpg', NULL, 1, '2025-04-25 10:44:08', NULL);
+(19, 'Web Development Workshop', '2025-07-10 13:00:00', '1:00 PM - 5:00 PM', 'Computer Lab 3, IT Building', 'Engr. Mark Villanueva', 'Hands-on workshop on building modern web apps using PHP and React.', 'web_workshop.jpg', NULL, NULL, '2025-04-25 10:44:08', NULL);
 
 -- --------------------------------------------------------
 
@@ -369,7 +477,8 @@ INSERT INTO `event_registrations` (`id`, `event_id`, `alumni_id`, `registered_at
 (5, 7, 1, '2025-04-23 21:54:08'),
 (6, 9, 15, '2025-04-23 22:46:44'),
 (7, 19, 15, '2025-04-26 02:55:51'),
-(8, 6, 15, '2025-05-14 07:02:07');
+(8, 6, 15, '2025-05-14 07:02:07'),
+(9, 8, 2, '2025-06-16 11:15:43');
 
 -- --------------------------------------------------------
 
@@ -398,9 +507,9 @@ CREATE TABLE `jobs` (
 --
 
 INSERT INTO `jobs` (`id`, `job_title`, `company`, `description`, `location`, `salary_range`, `qualifications`, `contact_details`, `image_filename`, `posted_by`, `updated_by`, `created_at`, `updated_at`) VALUES
-(18, 'Software Developer', 'TechCorp Inc.', 'Develop and maintain web applications using modern frameworks.', 'Makati City', 'PHP 30,000 - PHP 50,000', 'Bachelor\'s Degree in Computer Science or related field. Knowledge in PHP, JavaScript, MySQL. Develop and maintain web applications using modern frameworks. ', 'Email: hr@techcorp.com | Phone: 0917-123-4567', NULL, 1, NULL, '2025-04-25 08:10:40', '2025-05-21 03:16:09'),
-(19, 'Marketing Specialist', 'Bright Ideas Co.', 'Plan and execute marketing campaigns across various platforms.', 'Cebu City', 'PHP 25,000 - PHP 40,000', 'Bachelor\'s Degree in Marketing or Business. Strong communication skills.', 'Email: marketing@brightideas.com', NULL, 1, NULL, '2025-04-25 08:10:58', '2025-05-21 02:50:35'),
-(20, 'IT Support Technician', 'Metro IT Solutions', 'Provide tech support to clients and ensure smooth IT operations.', 'Quezon City', 'PHP 20,000 - PHP 30,000', 'Diploma or Degree in IT or Computer Engineering. Basic networking knowledge required.', 'Call: (02) 8123-4567', NULL, 1, NULL, '2025-04-25 08:10:58', NULL),
+(18, 'Software Developer', 'TechCorp Inc.', 'Develop and maintain web applications using modern frameworks.1 ', 'Makati City', 'PHP 30,000 - PHP 50,000', 'Bachelor\'s Degree in Computer Science or related field. Knowledge in PHP, JavaScript, MySQL. Develop and maintain web applications using modern frameworks. Develop and maintain web applications using modern frameworks.', 'Email: hr@techcorp.com | Phone: 0917-123-4567', NULL, 1, NULL, '2025-04-25 08:10:40', '2025-12-03 17:20:29'),
+(19, 'Marketing Specialist', 'Bright Ideas Co.', 'Plan and execute marketing campaigns across various platforms. ', 'Cebu City', 'PHP 25,000 - PHP 40,000', 'Bachelor\'s Degree in Marketing or Business. Strong communication skills.Plan and execute marketing campaigns across various platforms.Plan and execute marketing campaigns across various platforms. 1', 'Email: marketing@brightideas.com', NULL, 1, NULL, '2025-04-25 08:10:58', '2025-12-03 17:16:58'),
+(20, 'IT Support Technician', 'Metro IT Solutions', 'Provide tech support to clients and ensure smooth IT operations. ', 'Quezon City', 'PHP 20,000 - PHP 30,000', 'Diploma or Degree in IT or Computer Engineering. Basic networking knowledge required.Provide tech support to clients and ensure smooth IT operations.Provide tech support to clients and ensure smooth IT operations. 1', 'Call: (02) 8123-4567', NULL, 1, NULL, '2025-04-25 08:10:58', '2025-12-03 17:20:56'),
 (21, 'Graphic Designer', 'Creative Minds Studio', 'Design digital assets for social media and client branding.', 'Davao City', 'PHP 28,000 - PHP 35,000', 'Experience with Adobe Photoshop, Illustrator, and Canva. Creative portfolio required.', 'Submit to: design@creativeminds.ph', NULL, 1, NULL, '2025-04-25 08:10:58', NULL),
 (22, 'Finance Analyst', 'ExcelBank', 'Analyze financial reports and assist in forecasting trends.', 'Makati City', 'PHP 40,000 - PHP 60,000', 'Bachelor\'s in Finance or Accounting. CPA is an advantage.', 'financejobs@excelbank.com', NULL, 1, NULL, '2025-04-25 08:10:58', NULL);
 
@@ -423,11 +532,10 @@ CREATE TABLE `job_applications` (
 
 INSERT INTO `job_applications` (`id`, `job_id`, `alumni_id`, `applied_at`) VALUES
 (1, 7, 1, '2025-04-24 00:44:17'),
-(2, 7, 1, '2025-04-24 12:21:40'),
 (3, 18, 1, '2025-04-26 02:21:11'),
 (4, 19, 1, '2025-05-14 06:23:14'),
 (5, 20, 15, '2025-05-14 07:01:52'),
-(6, 19, 1, '2025-06-04 02:42:59');
+(8, 19, 2, '2025-06-16 17:33:06');
 
 -- --------------------------------------------------------
 
@@ -442,6 +550,19 @@ CREATE TABLE `messages` (
   `message` text NOT NULL,
   `sent_at` timestamp NOT NULL DEFAULT current_timestamp()
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `messages`
+--
+
+INSERT INTO `messages` (`id`, `sender_id`, `receiver_id`, `message`, `sent_at`) VALUES
+(27, 2, 1, 'ey', '2025-06-16 13:41:31'),
+(28, 1, 2, 'hello?', '2025-06-16 13:56:00'),
+(29, 1, 15, 'hey pirs!', '2025-06-16 13:57:24'),
+(30, 1, 15, 'how are you?', '2025-06-16 13:58:46'),
+(33, 1, 15, 'are you ok?', '2025-06-16 13:58:58'),
+(35, 2, 1, 'hi', '2025-06-16 14:07:33'),
+(37, 17, 1, 'hellow po', '2025-11-25 14:05:13');
 
 -- --------------------------------------------------------
 
@@ -467,13 +588,14 @@ CREATE TABLE `post` (
 --
 
 INSERT INTO `post` (`id`, `title`, `content`, `post_type`, `image`, `recipient_batch`, `created_by`, `updated_by`, `created_at`, `updated_at`) VALUES
-(7, 'Welcome to AConnect', 'We are excited to welcome you to the official alumni platform.', 'announcements', '680695c84b810_WELCOME.png', 'All', 1, NULL, '2025-04-21 19:00:24', NULL),
-(10, 'Graduation Ceremony Schedule for Batch 2025', 'The official schedule for the 2025 graduation ceremony has been released. Please check your department bulletin for further details.', 'announcements', NULL, '2025', 1, NULL, '2025-04-23 21:57:52', NULL),
+(7, 'Welcome to AConnect', 'We are excited to welcome you to the official alumni platform.', 'announcements', '69212d4b5e61f_WELCOME.png', 'All', 1, 1, '2025-04-21 19:00:24', '2025-12-03 08:24:32'),
+(10, 'Graduation Ceremony Schedule for Batch 2025', 'The official schedule for the 2025 graduation ceremony has been released. Please check your department bulletin for further details.', 'announcements', '6920874492968_ALUMNI_EXTENSION_SERVICE.jpg', '2011', 1, 1, '2025-04-23 21:57:52', '2025-12-03 12:11:35'),
 (11, 'Alumnus Wins National Startup Award', 'Our very own alumnus, Maria Torres (Batch 2015), has won the National Startup Award for her groundbreaking work in tech-driven healthcare.', 'news', NULL, 'All', 1, NULL, '2025-04-23 21:57:52', NULL),
 (12, 'From Campus to CEO: John Cruz\'s Journey', 'John Cruz, a 2010 graduate, shares his inspiring story of building a successful logistics company from scratch.', 'stories', NULL, 'All', 1, NULL, '2025-04-23 21:57:52', NULL),
 (13, 'Alumni ID Application Now Open', 'The alumni office is now accepting applications for the official Alumni ID. Apply online or visit our office.', 'announcements', NULL, 'All', 1, NULL, '2025-04-23 21:57:52', NULL),
 (14, 'University Named Among Top 10 in Southeast Asia', 'Our university has ranked 7th among Southeast Asian institutions according to the latest regional academic rankings.', 'news', NULL, 'All', 1, NULL, '2025-04-23 21:57:52', NULL),
-(15, 'Alumni Couple Ties the Knot After 10 Years', 'High school sweethearts from Batch 2012 recently tied the knot. Their love story began in the campus library!', 'stories', NULL, '2012', 1, NULL, '2025-04-23 21:57:52', NULL);
+(15, 'Alumni Couple Ties the Knot After 10 Years', 'High school sweethearts from Batch 2012 recently tied the knot. Their love story began in the campus library!', 'stories', NULL, '2012', 1, NULL, '2025-04-23 21:57:52', NULL),
+(21, 'ICT Hiring', 'Look for ms Meg, get 50K sign up bonus', 'announcements', '', 'all', 1, NULL, '2025-06-17 03:35:10', NULL);
 
 -- --------------------------------------------------------
 
@@ -502,7 +624,40 @@ INSERT INTO `support_messages` (`id`, `sender_id`, `receiver_id`, `message`, `is
 (23, 1, 1, 'hi admin\r\n', 0, '2025-06-04 10:46:28'),
 (24, 1, 1, 'Thanks for contacting support. We will get back to you shortly. If you want a faster reply email me instead in admin@gmail.com.', 1, '2025-06-04 10:46:28'),
 (25, 2, 1, 'hi admin can u help me\r\n', 0, '2025-06-04 10:48:20'),
-(26, 1, 2, 'Thanks for contacting support. We will get back to you shortly. If you want a faster reply email me instead in admin@gmail.com.', 1, '2025-06-04 10:48:20');
+(26, 1, 2, 'Thanks for contacting support. We will get back to you shortly. If you want a faster reply email me instead in admin@gmail.com.', 1, '2025-06-04 10:48:20'),
+(27, 1, 1, 'hey', 1, '2025-06-16 18:57:15'),
+(28, 2, 1, 'hello', 0, '2025-06-16 19:13:34'),
+(29, 1, 2, 'Thanks for contacting support. We will get back to you shortly. If you want a faster reply email me instead in admin@gmail.com.', 1, '2025-06-16 19:13:34'),
+(30, 1, 2, 'Hello there, what is your concern?', 1, '2025-06-16 20:38:54'),
+(31, 2, 1, 'hi admin', 0, '2025-07-29 19:21:01'),
+(32, 1, 2, 'Thanks for contacting support. We will get back to you shortly. If you want a faster reply email me instead in admin@gmail.com.', 1, '2025-07-29 19:21:01');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `tracer_responses`
+--
+
+CREATE TABLE `tracer_responses` (
+  `id` int(11) NOT NULL,
+  `alumni_id` int(11) NOT NULL,
+  `year_graduated` int(11) NOT NULL,
+  `employment_status` enum('Employed','Unemployed','Self-employed') NOT NULL,
+  `company_name` varchar(255) DEFAULT NULL,
+  `job_title` varchar(255) DEFAULT NULL,
+  `job_description` text DEFAULT NULL,
+  `year_of_service` int(11) DEFAULT 0,
+  `promotion_count` int(11) DEFAULT 0,
+  `created_at` datetime DEFAULT current_timestamp()
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `tracer_responses`
+--
+
+INSERT INTO `tracer_responses` (`id`, `alumni_id`, `year_graduated`, `employment_status`, `company_name`, `job_title`, `job_description`, `year_of_service`, `promotion_count`, `created_at`) VALUES
+(1, 1, 2025, 'Unemployed', 'Rgbsedano Co.', 'IT', 'IT ngani', 1, 2, '2025-12-04 00:09:28'),
+(2, 15, 2023, 'Employed', 'ORACLE', 'IT', 'DEVELOPER', 2, 2, '2025-12-04 00:40:43');
 
 --
 -- Indexes for dumped tables
@@ -531,6 +686,13 @@ ALTER TABLE `alumni`
   ADD UNIQUE KEY `email` (`email`),
   ADD UNIQUE KEY `student_number` (`student_number`),
   ADD UNIQUE KEY `alumni_number` (`alumni_number`);
+
+--
+-- Indexes for table `alumni_employment`
+--
+ALTER TABLE `alumni_employment`
+  ADD PRIMARY KEY (`id`),
+  ADD KEY `fk_employment_alumni` (`alumni_id`);
 
 --
 -- Indexes for table `carousel_photos`
@@ -605,6 +767,13 @@ ALTER TABLE `support_messages`
   ADD PRIMARY KEY (`id`);
 
 --
+-- Indexes for table `tracer_responses`
+--
+ALTER TABLE `tracer_responses`
+  ADD PRIMARY KEY (`id`),
+  ADD KEY `alumni_id` (`alumni_id`);
+
+--
 -- AUTO_INCREMENT for dumped tables
 --
 
@@ -612,7 +781,7 @@ ALTER TABLE `support_messages`
 -- AUTO_INCREMENT for table `activity_logs`
 --
 ALTER TABLE `activity_logs`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=135;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=225;
 
 --
 -- AUTO_INCREMENT for table `admin_users`
@@ -624,13 +793,19 @@ ALTER TABLE `admin_users`
 -- AUTO_INCREMENT for table `alumni`
 --
 ALTER TABLE `alumni`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=33;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=45;
+
+--
+-- AUTO_INCREMENT for table `alumni_employment`
+--
+ALTER TABLE `alumni_employment`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
 
 --
 -- AUTO_INCREMENT for table `carousel_photos`
 --
 ALTER TABLE `carousel_photos`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 
 --
 -- AUTO_INCREMENT for table `connections`
@@ -642,7 +817,7 @@ ALTER TABLE `connections`
 -- AUTO_INCREMENT for table `connection_requests`
 --
 ALTER TABLE `connection_requests`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=15;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=18;
 
 --
 -- AUTO_INCREMENT for table `events`
@@ -654,7 +829,7 @@ ALTER TABLE `events`
 -- AUTO_INCREMENT for table `event_registrations`
 --
 ALTER TABLE `event_registrations`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
 
 --
 -- AUTO_INCREMENT for table `jobs`
@@ -666,25 +841,31 @@ ALTER TABLE `jobs`
 -- AUTO_INCREMENT for table `job_applications`
 --
 ALTER TABLE `job_applications`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
 
 --
 -- AUTO_INCREMENT for table `messages`
 --
 ALTER TABLE `messages`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=25;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=38;
 
 --
 -- AUTO_INCREMENT for table `post`
 --
 ALTER TABLE `post`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=18;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=32;
 
 --
 -- AUTO_INCREMENT for table `support_messages`
 --
 ALTER TABLE `support_messages`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=27;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=33;
+
+--
+-- AUTO_INCREMENT for table `tracer_responses`
+--
+ALTER TABLE `tracer_responses`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- Constraints for dumped tables
@@ -695,6 +876,12 @@ ALTER TABLE `support_messages`
 --
 ALTER TABLE `activity_logs`
   ADD CONSTRAINT `activity_logs_ibfk_1` FOREIGN KEY (`alumni_id`) REFERENCES `alumni` (`id`) ON DELETE CASCADE;
+
+--
+-- Constraints for table `alumni_employment`
+--
+ALTER TABLE `alumni_employment`
+  ADD CONSTRAINT `fk_employment_alumni` FOREIGN KEY (`alumni_id`) REFERENCES `alumni` (`id`) ON DELETE CASCADE;
 
 --
 -- Constraints for table `connections`
@@ -737,6 +924,12 @@ ALTER TABLE `messages`
 ALTER TABLE `post`
   ADD CONSTRAINT `post_ibfk_1` FOREIGN KEY (`created_by`) REFERENCES `admin_users` (`id`),
   ADD CONSTRAINT `post_ibfk_2` FOREIGN KEY (`updated_by`) REFERENCES `admin_users` (`id`);
+
+--
+-- Constraints for table `tracer_responses`
+--
+ALTER TABLE `tracer_responses`
+  ADD CONSTRAINT `tracer_responses_ibfk_1` FOREIGN KEY (`alumni_id`) REFERENCES `alumni` (`id`) ON DELETE CASCADE;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

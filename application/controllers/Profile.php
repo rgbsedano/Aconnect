@@ -5,6 +5,9 @@ class Profile extends CI_Controller{
 	function __construct(){
 		parent::__construct();
 		$this->load->model('user/Alumni_model');
+        $this->load->model('Employment_model');
+        $this->load->helper('text');   // <-- ADD THIS LINE
+
 		if($this->session->userdata('login_status') != "AezakmiHesoyamWhosyourdaddy"){
 			redirect(base_url("Login"));
 		}
@@ -15,8 +18,15 @@ class Profile extends CI_Controller{
         if (!$alumni_id) {
             redirect('login');
         }
+            $this->load->helper('text');  // <-- ADD THIS LINE
 
-        $data['alumni'] = $this->Alumni_model->get_alumni_by_id($alumni_id);
+        $alumni = $this->Alumni_model->get_alumni_by_id($alumni_id);
+        $employment = $this->Employment_model->get_by_alumni($alumni_id);
+
+          $data = [
+            'alumni'     => $alumni,
+            'employment' => $employment
+        ];
 
         $this->load->view('__header', $data);
 		$this->load->view('user/profile', $data);
@@ -74,6 +84,7 @@ public function update($id) {
         redirect('profile');
     }
 }
+
 
 public function update_job_info($id)
 {

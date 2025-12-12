@@ -201,6 +201,50 @@
             .profile-info-section { padding-top: 90px; } 
             .info-grid { flex-direction: column; }
         }
+
+        .section-card {
+    background: #fff;
+    border-radius: 10px;
+    padding: 16px;
+    margin-bottom: 18px;
+    border: 1px solid #e6e6e6;
+}
+
+.card-header-custom {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.btn-link-icon {
+    color: #8b1b1b;
+    font-size: 1rem;
+    text-decoration: none;
+}
+
+.job-details-container {
+    display: flex;
+    gap: 12px;
+    align-items: flex-start;
+}
+
+.job-icon {
+    font-size: 30px;
+    margin-right: 10px;
+}
+
+.job-title {
+    font-size: 1rem;
+}
+
+.job-org {
+    font-size: 0.92rem;
+}
+
+.job-length {
+    font-size: 0.82rem;
+}
+
     </style>
 </head>
 <body>
@@ -256,31 +300,74 @@
         </div>
     </div>
     
-    <!-- 3. EXPERIENCE CARD (Current Job) -->
-    <div class="section-card">
-        <div class="card-header-custom">
-            <h6>Experience</h6>
-            <!-- Icon Edit Button for cleaner look -->
-            <a href="#" class="btn-link-icon" data-toggle="modal" data-target="#editJobModal">
-                <i class="fas fa-edit"></i>
-            </a>
-        </div>
+    
+
+    <!-- EMPLOYMENT / TRACER INFO CARD -->
+<div class="section-card">
+    
+    <!-- Header -->
+    <div class="card-header-custom d-flex justify-content-between align-items-center">
+        <h6 class="mb-0">Employment / Tracer Info</h6>
+        <a href="#" class="btn-link-icon" data-toggle="modal" data-target="#employmentModal">
+            <i class="fas fa-edit"></i>
+        </a>
+    </div>
+
+    <!-- Body -->
+    <div class="job-details-container mt-2">
         
-        <div class="job-details-container">
-            <i class="fas fa-briefcase job-icon text-muted"></i>
-            <div>
+        <!-- Icon -->
+        <i class="fas fa-briefcase job-icon text-muted"></i>
+
+        <!-- Text Info -->
+        <div>
+            <?php if (!empty($employment)): ?>
+
                 <p class="job-title mb-1 font-weight-bold">
-                    <?= !empty($alumni->current_job) ? $alumni->current_job : 'Job Title/Position: (Not Set)' ?>
+                    <?= htmlspecialchars($employment['job_title'] ?: '(Not Set)') ?>
                 </p>
+
                 <p class="job-org mb-1 text-dark">
-                    <?= !empty($alumni->current_job_organization) ? $alumni->current_job_organization : 'Organization: (Not Set)' ?>
+                    <?= htmlspecialchars($employment['company_name'] ?: '(Not Set)') ?>
                 </p>
-                <p class="job-length mb-0 text-muted small">
-                    <i class="fas fa-clock mr-1"></i><?= !empty($alumni->current_job_length) ? $alumni->current_job_length : 'Example: 2019 - present' ?>
+
+                <p class="job-length mb-1 text-muted small">
+                    <i class="fas fa-clock mr-1"></i>
+                    <?= (int)$employment['year_of_service'] ?> year(s)
+                    • <?= (int)$employment['promotion_count'] ?> promotion(s)
                 </p>
-            </div>
+
+                <?php if (!empty($employment['employment_status'])): ?>
+                    <p class="mb-2">
+                        <span class="badge badge-pill 
+                            <?= $employment['employment_status'] === 'Employed' ? 'badge-success' : 
+                                ($employment['employment_status'] === 'Self-employed' ? 'badge-info' : 'badge-warning') ?>">
+                            <?= htmlspecialchars($employment['employment_status']) ?>
+                        </span>
+                    </p>
+                <?php endif; ?>
+
+                <!-- <p class="text-muted small mb-0" style="max-width: 90%;">
+                    <?= nl2br(htmlspecialchars(word_limiter($employment['job_description'], 25))) ?>
+                </p> -->
+
+                <p class="text-muted small mt-2">
+                    <i>Last updated: <?= $employment['created_at'] ?: '—' ?></i>
+                </p>
+
+            <?php else: ?>
+
+                <p class="text-muted mb-0">
+                    Wala pang employment/tracer info.  
+                    <br>
+                    I-click ang edit button para maglagay.
+                </p>
+
+            <?php endif; ?>
         </div>
     </div>
+</div>
+
 
     <!-- 4. SKILLS CARD -->
     <div class="section-card">
@@ -320,6 +407,72 @@
     </div>
     
     <!-- MODALS (Functionality Unchanged) -->
+
+    
+        <!-- Employment Modal -->
+        <div class="modal fade" id="employmentModal" tabindex="-1" role="dialog">
+        <div class="modal-dialog modal-lg" role="document">
+            <div class="modal-content">
+            <form method="post" action="<?= base_url('EmploymentController/submit') ?>">
+                <div class="modal-header">
+                <h5 class="modal-title">Employment / Tracer Information</h5>
+                <button type="button" class="close" data-dismiss="modal">&times;</button>
+                </div>
+                <div class="modal-body">
+                <?php if ($this->session->flashdata('error')): ?>
+                    <div class="alert alert-danger"><?= $this->session->flashdata('error') ?></div>
+                <?php endif; ?>
+
+                <?php $e = isset($employment) ? $employment : []; ?>
+
+                <div class="form-group">
+                    <label>Employment Status</label>
+                    <select name="employment_status" class="form-control" required>
+                    <option value="">-- Select --</option>
+                    <option value="Employed" <?= (isset($e['employment_status']) && $e['employment_status']=='Employed')? 'selected':'' ?>>Employed</option>
+                    <option value="Unemployed" <?= (isset($e['employment_status']) && $e['employment_status']=='Unemployed')? 'selected':'' ?>>Unemployed</option>
+                    <option value="Self-employed" <?= (isset($e['employment_status']) && $e['employment_status']=='Self-employed')? 'selected':'' ?>>Self-employed</option>
+                    </select>
+                </div>
+
+                <div class="form-row">
+                    <div class="form-group col-md-6">
+                    <label>Company Name</label>
+                    <input name="company_name" class="form-control" value="<?= isset($e['company_name']) ? htmlspecialchars($e['company_name']) : '' ?>">
+                    </div>
+                    <div class="form-group col-md-6">
+                    <label>Job Title</label>
+                    <input name="job_title" class="form-control" value="<?= isset($e['job_title']) ? htmlspecialchars($e['job_title']) : '' ?>">
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label>Job Description</label>
+                    <textarea name="job_description" class="form-control" rows="4" required><?= isset($e['job_description']) ? htmlspecialchars($e['job_description']) : '' ?></textarea>
+                </div>
+
+                <div class="form-row">
+                    <div class="form-group col-md-6">
+                    <label>Years of Service</label>
+                    <input type="number" min="0" name="year_of_service" class="form-control" value="<?= isset($e['year_of_service']) ? (int)$e['year_of_service'] : 0 ?>" required>
+                    </div>
+                    <div class="form-group col-md-6">
+                    <label>Promotion Count</label>
+                    <input type="number" min="0" name="promotion_count" class="form-control" value="<?= isset($e['promotion_count']) ? (int)$e['promotion_count'] : 0 ?>" required>
+                    </div>
+                </div>
+                </div>
+
+                <div class="modal-footer">
+                <button type="submit" class="btn btn-primary" style="background:#700A0A;border:none">Save</button>
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                </div>
+
+            </form>
+            </div>
+        </div>
+        </div>
+
 
     <!-- Edit Profile Modal -->
     <div class="modal fade" id="editProfileModal" tabindex="-1" role="dialog" aria-labelledby="editProfileModalLabel" aria-hidden="true">
@@ -451,6 +604,26 @@
     </div>
 
 </div>
+
+
+<script>
+  $(document).ready(function(){
+    <?php if ($this->session->flashdata('show_employment_modal')): ?>
+      console.log('show_employment_modal flash found — opening modal');
+      $('#employmentModal').modal('show');
+    <?php endif; ?>
+
+    <?php if ($this->session->flashdata('success')): ?>
+      var msg = <?= json_encode($this->session->flashdata('success')) ?>;
+      var alertHtml = '<div class="alert alert-success alert-dismissible fade show" role="alert">'
+                    + msg + '<button type="button" class="close" data-dismiss="alert">&times;</button></div>';
+      $('.container').first().prepend(alertHtml);
+      console.log('success flash displayed:', msg);
+    <?php endif; ?>
+  });
+</script>
+
+
 
 <!-- JavaScript Dependencies (Must be at the end of the body) -->
 <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>

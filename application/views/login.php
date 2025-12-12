@@ -1,3 +1,5 @@
+
+
 <?php
 defined('BASEPATH') OR exit('No direct script access allowed');
 ?><!DOCTYPE html>
@@ -237,6 +239,34 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                     </div>
                 <?php endif; ?>
                 <!-- END ERROR MESSAGE AREA -->
+                 <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
+                    <?php if ($this->session->flashdata('success_message')): ?>
+                    <script>
+                    document.addEventListener('DOMContentLoaded', function() {
+                    Swal.fire({
+                        icon: 'success',
+                        title: 'Registered',
+                        text: <?= json_encode($this->session->flashdata('success_message')) ?>,
+                        confirmButtonText: 'OK'
+                    });
+                    });
+                    </script>
+                    <?php endif; ?>
+
+                    <?php if ($this->session->flashdata('error_message')): ?>
+                    <script>
+                    document.addEventListener('DOMContentLoaded', function() {
+                    Swal.fire({
+                        icon: 'error',
+                        title: 'Error',
+                        text: <?= json_encode($this->session->flashdata('error_message')) ?>,
+                        confirmButtonText: 'OK'
+                    });
+                    });
+                    </script>
+                    <?php endif; ?>
+
 
                 <!-- Form Section -->
                 <form class="form-signin" method="post" action="<?php echo site_url('Login/user'); ?>">

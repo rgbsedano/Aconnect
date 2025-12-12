@@ -1,12 +1,16 @@
 <?php
 defined('BASEPATH') OR exit('No direct script access allowed');
-?><!DOCTYPE html>
+?>
+
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta name="description" content="User Registration Page for AConnect">
     <title>AConnect | Register</title>
+    <!-- SweetAlert2 CDN -->
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 
     <!-- Assuming Bootstrap is loaded from your assets folder -->
     <link href="<?php echo base_url('assets/css/bootstrap.min.css'); ?>" rel="stylesheet">
@@ -83,6 +87,10 @@ defined('BASEPATH') OR exit('No direct script access allowed');
         background-color: #fff; /* White background */
         min-height: 100vh;
         box-sizing: border-box;
+        overflow-y: auto;
+        max-height: 100vh;
+        
+        justify-content: flex-start;
     }
 
     .login-logo-container {
@@ -249,7 +257,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                     <form method="post" action="<?= base_url('register/submit') ?>">
                         <div class="form-group">
                             <!-- Use 'text' type as Alumni IDs can contain letters -->
-                            <input type="text" name="alumni_number" placeholder="Alumni ID (e.g., A12345)" value="<?= set_value('alumni_number') ?>" required autocomplete="off">
+                            <input type="text" name="alumni_number" placeholder="Alumni ID (e.g., SDCA12345)" value="<?= set_value('alumni_number') ?>" required autocomplete="off">
                         </div>
                         <div class="form-group">
                             <!-- Added autocomplete -->
@@ -293,8 +301,71 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                             <input type="text" name="student_number" placeholder="Student Number (e.g., 2017-00001)" value="<?= set_value('student_number') ?>" required autocomplete="off">
                         </div>
                         <div class="form-group">
-                            <input type="text" name="degree" placeholder="Degree (e.g., BS Information Technology)" value="<?= set_value('degree') ?>" required autocomplete="off">
+                            <label for="degree">Degree</label>
+                            <select name="degree" id="degree" class="form-control" required onchange="toggleOtherDegree()">
+                                <option value="">-- Select Degree --</option>
+
+                                <optgroup label="School of Nursing and Allied Health Studies">
+                                    <option>BS in Nursing</option>
+                                    <option>BS in Radiologic Technology</option>
+                                    <option>BS in Physical Therapy</option>
+                                </optgroup>
+
+                                <optgroup label="School of Medical Laboratory Science">
+                                    <option>BS in Medical Laboratory Science</option>
+                                    <option>BS in Pharmacy</option>
+                                    <option>BS in Biology</option>
+                                </optgroup>
+
+                                <optgroup label="School of Accountancy, Science, and Education">
+                                    <option>BS in Accountancy</option>
+                                    <option>BS in Accounting Technology / AIS</option>
+                                    <option>BS in Psychology</option>
+                                    <option>BS in Elementary Education</option>
+                                    <option>BS in Secondary Education</option>
+                                </optgroup>
+
+                                <optgroup label="School of International, Hospitality, Tourism & Management">
+                                    <option>BS in Business Administration - Financial Management</option>
+                                    <option>BS in Business Administration - Marketing Management</option>
+                                    <option>BS in Business Administration - HR Development</option>
+                                    <option>BS in Business Administration - Operations Management</option>
+                                    <option>BS in Tourism Management</option>
+                                    <option>BS in Hospitality Management</option>
+                                    <option>BS in Hospitality Management - Culinary Arts</option>
+                                    <option>BS in Hospitality Management - Cruiseline Operations</option>
+                                </optgroup>
+
+                                <optgroup label="School of Communication, Multimedia, and Computer Studies">
+                                    <option>BA in Communication</option>
+                                    <option>Bachelor of Multimedia Arts</option>
+                                    <option>BS in Information Technology</option>
+                                </optgroup>
+
+                                <!-- OTHER OPTION -->
+                                <option value="Other">Other (Not Listed)</option>
+                            </select>
                         </div>
+
+                        <!-- TEXT FIELD FOR 'OTHER' -->
+                        <div class="form-group" id="degree_other_wrapper" style="display:none;">
+                            <label>Please specify your degree</label>
+                            <input type="text" name="degree_other" class="form-control" placeholder="Enter your degree">
+                        </div>
+
+                        <script>
+                        function toggleOtherDegree() {
+                            var degree = document.getElementById("degree").value;
+                            var otherBox = document.getElementById("degree_other_wrapper");
+
+                            if (degree === "Other") {
+                                otherBox.style.display = "block";
+                            } else {
+                                otherBox.style.display = "none";
+                            }
+                        }
+                        </script>
+
 
                         <!-- OPTIMIZATION: Use Select for Gender -->
                         <div class="form-group">
@@ -324,5 +395,20 @@ defined('BASEPATH') OR exit('No direct script access allowed');
         You should handle success messages by displaying a flash message inside the 
         form-container upon redirect or rendering.
     -->
+
+    <script>
+function toggleOtherDegree() {
+    var degree = document.getElementById("degree").value;
+    var otherBox = document.getElementById("degree_other_wrapper");
+    if (degree === "Other") {
+        otherBox.style.display = "block";
+    } else {
+        otherBox.style.display = "none";
+    }
+}
+
+
+</script>
+
 </body>
 </html>
