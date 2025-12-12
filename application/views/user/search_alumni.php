@@ -1,331 +1,459 @@
-<!--
-    This file has been refactored using Tailwind CSS for a modern, wider layout
-    and larger profile tiles, while strictly preserving the original PHP logic,
-    database access calls, and JavaScript functionality.
--->
-<script src="https://cdn.tailwindcss.com"></script>
-
 <style>
-    /* 🎨 TAILWIND CUSTOM CONFIG FOR BRANDING COLORS */
     :root {
-        --primary-maroon: #700A0A; /* SDCA Primary Color */
-    }
-    .bg-maroon { background-color: var(--primary-maroon); }
-    .text-maroon { color: var(--primary-maroon); }
-    .border-maroon { border-color: var(--primary-maroon); }
-    
-    /* Global Styles & Font */
-    body {
-        font-family: 'Inter', sans-serif;
-        /* Using Tailwind defaults for bg-gray-100 equivalent */
-        background-color: #f3f4f6;
+        --maroon: #700A0A;
+        --maroon-dark: #5a0707;
+        --white: #FFFFFF;
+        --light-gray: #f8f9fa;
+        --card-bg: #fff;
+        --text-dark: #333;
+        --border-gray: #eee;
     }
 
-    /* Modal Styling - necessary override for the look of the existing modal content */
-    .modal-header-custom {
-        background-color: var(--primary-maroon);
-        color: white;
-        border-top-left-radius: 0.75rem; /* rounded-xl */
-        border-top-right-radius: 0.75rem; /* rounded-xl */
-        padding: 1rem 1.5rem;
+    .container-fluid {
+        padding: 40px 20px;
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        background-color: var(--light-gray);
+        max-width: 900px;
+        margin: auto;
+    }
+
+    h2 {
+        color: var(--maroon);
+        font-size: 2rem;
+        font-weight: 600;
+        margin-bottom: 25px;
+        border-bottom: 2px solid var(--maroon);
+        padding-bottom: 10px;
+    }
+
+    .search-input {
+        padding: 12px 15px;
+        border: 1px solid #ccc;
+        border-radius: 25px 0 0 25px;
+        font-size: 1rem;
+        outline: none;
+        box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+    }
+
+    .search-button {
+        background-color: var(--maroon);
+        color: var(--white);
+        border: none;
+        padding: 12px 20px;
+        border-radius: 0 25px 25px 0;
+        cursor: pointer;
+        font-size: 1rem;
+        transition: background-color 0.2s ease-in-out;
+    }
+
+    .search-button:hover {
+        background-color: var(--maroon-dark);
+    }
+    
+    .search-clear-btn {
+        right: 45px !important;
+        color: #999;
+        transition: color 0.2s;
+    }
+    .search-clear-btn:hover {
+        color: var(--maroon);
+    }
+
+    .filter-bar {
+        background-color: var(--white);
+        padding: 15px 20px;
+        border-radius: 12px;
+        box-shadow: 0 1px 6px rgba(0, 0, 0, 0.05);
+        margin-bottom: 30px;
         display: flex;
-        justify-content: space-between;
+        flex-wrap: wrap;
+        gap: 10px;
         align-items: center;
     }
-    .modal-title-custom {
+    .filter-button {
+        padding: 8px 15px;
+        border-radius: 20px;
+        font-weight: 500;
+        cursor: pointer;
+        transition: all 0.2s;
+        border: 1px solid var(--maroon);
+        background-color: var(--white);
+        color: var(--maroon);
+        text-decoration: none;
+    }
+    .filter-button:hover:not(.active) {
+        background-color: #f0f0f0;
+    }
+    .filter-button.active {
+        background-color: var(--maroon);
+        color: var(--white);
+        border-color: var(--maroon);
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    }
+
+    .alumni-card-container {
+        width: 100%;
+        margin-bottom: 20px;
+    }
+
+    .alumni-card {
+        background-color: var(--card-bg);
+        border-radius: 12px;
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+        border: 1px solid var(--border-gray);
+        transition: transform 0.2s;
+    }
+    .alumni-card:hover {
+        transform: translateY(-2px);
+    }
+
+    .profile-image-wrapper {
+        width: 60px;
+        height: 60px;
+        min-width: 60px;
+        margin-right: 15px;
+        border: 3px solid var(--maroon);
+        border-radius: 50%;
+        overflow: hidden;
+    }
+    .profile-image-wrapper img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+
+    .alumni-name h5 {
         font-weight: 700;
-        font-size: 1.25rem;
+        color: var(--text-dark);
+        font-size: 1.15rem;
     }
-    .modal-body-custom {
-        padding: 1.5rem;
+    .alumni-name small {
+        color: #777;
+        font-size: 0.9rem;
     }
+    
+    .alumni-info p {
+        margin-bottom: 5px;
+        font-size: 0.95rem;
+    }
+    .alumni-info strong {
+        color: var(--maroon-dark);
+        font-weight: 600;
+    }
+
+    .btn-view-profile {
+        background-color: var(--maroon) !important;
+        color: var(--white) !important;
+        border: 1px solid var(--maroon);
+        padding: 8px 18px;
+        border-radius: 6px;
+        transition: background-color 0.2s;
+    }
+    .btn-view-profile:hover {
+        background-color: var(--maroon-dark) !important;
+    }
+
+    .btn-outline-primary {
+        color: var(--maroon);
+        border-color: var(--maroon);
+        transition: all 0.2s;
+        padding: 8px 18px;
+        border-radius: 6px;
+    }
+    .btn-outline-primary:hover {
+        background-color: var(--maroon);
+        color: var(--white);
+    }
+
+    .badge-success { background-color: #28a745; }
+    .badge-warning { background-color: #ffc107; }
+
+    .card-footer {
+        background-color: var(--light-gray);
+        border-top: 1px solid #f0f0f0;
+        border-radius: 0 0 12px 12px;
+    }
+
     .modal-content {
-        border-radius: 0.75rem; /* rounded-xl */
+        border-radius: 12px;
+    }
+    .modal-title b {
+        color: var(--maroon);
+    }
+    .modal-body h6 {
+        color: var(--maroon) !important;
+        border-bottom: 1px solid #ccc;
+        padding-bottom: 5px;
+        margin-top: 15px;
+        font-weight: 600;
+    }
+
+    @media (max-width: 767.98px) {
+        .search-input {
+            border-radius: 8px;
+            margin-bottom: 10px;
+        }
+        .search-button {
+            border-radius: 8px;
+            margin-left: 0;
+            width: 100%;
+        }
+        .search-clear-btn {
+            right: 15px !important;
+        }
     }
 </style>
 
-<script>
-    // The original JavaScript is kept intact, relying on the preserved IDs and classes.
-    document.addEventListener('DOMContentLoaded', function () {
-        const searchForm = document.getElementById('searchForm');
-        const searchInput = document.getElementById('searchInput');
-        const clearBtn = document.getElementById('clearSearch');
-        const filterButtons = document.querySelectorAll('.btn-filter');
-        const hiddenFilterInput = document.getElementById('filter_status');
-        
-        // --- Search Functionality ---
-        if (clearBtn) {
-            clearBtn.addEventListener('click', function () {
-                searchInput.value = '';
-                hiddenFilterInput.value = ''; 
-                searchForm.submit();
-            });
-        }
-        
-        // --- Filter Functionality ---
-        filterButtons.forEach(button => {
-            button.addEventListener('click', function(e) {
-                e.preventDefault();
-                
-                const filterValue = this.getAttribute('data-filter');
-                
-                // Toggle logic
-                if (this.classList.contains('bg-maroon')) {
-                    hiddenFilterInput.value = '';
-                } else {
-                    hiddenFilterInput.value = filterValue;
-                }
-                
-                searchInput.value = ''; 
-                searchForm.submit();
-            });
-        });
-        
-        // --- Active Filter Class Persistence (Updated to use Tailwind class `bg-maroon`) ---
-        const currentFilter = hiddenFilterInput.value;
-        if (currentFilter !== null && currentFilter !== '') {
-            filterButtons.forEach(button => {
-                if (button.getAttribute('data-filter') === currentFilter) {
-                    button.classList.add('bg-maroon', 'text-white');
-                    button.classList.remove('bg-white', 'text-gray-700');
-                } else {
-                    button.classList.remove('bg-maroon', 'text-white');
-                    button.classList.add('bg-white', 'text-gray-700');
-                }
-            });
-        } else {
-            // Default: 'All Alumni' is active
-            const allAlumniBtn = document.querySelector('.btn-filter[data-filter=""]');
-            if (allAlumniBtn) {
-                allAlumniBtn.classList.add('bg-maroon', 'text-white');
-                allAlumniBtn.classList.remove('bg-white', 'text-gray-700');
-            }
-        }
-    });
-</script>
+<div class="container-fluid">
+    <h2>Search and Connect Alumni</h2>
 
-<div class="min-h-screen p-4 sm:p-6 bg-gray-100">
-    <div class="header-area max-w-4xl mx-auto mb-6">
-        <!-- Section Header -->
-        <h2 class="text-3xl font-extrabold text-gray-900 mb-1 flex items-center gap-3">
-            <svg class="w-8 h-8 text-maroon" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20v-2m0 2H7m10 0h3m-5.885-2.172a3 3 0 00-4.664 0m0 0H6a2 2 0 00-2 2v2m-2-2a2 2 0 002-2h4a2 2 0 002-2V9a2 2 0 00-2-2H8a2 2 0 00-2 2v3m0 0h12m-6 0h.01M12 7V5a2 2 0 012-2h2a2 2 0 012 2v2M8 7V5a2 2 0 00-2-2H4a2 2 0 00-2 2v2"></path></svg>
-            Alumni Connect Feed
-        </h2>
-        <p class="text-gray-500 text-base border-b pb-4 mb-4">
-            Connect with peers! Find alumni by name, degree, or ID below. Use the filters to view specific connection statuses.
-        </p>
+    <form method="get" class="mb-4" id="searchForm">
+        <div class="row">
+            <div class="col-md-10 position-relative">
+                <input type="text" name="search" id="searchInput" class="form-control" placeholder="Search alumni by name or degree..." value="<?= $this->input->get('search') ?>">
+                <input type="hidden" name="filter" id="currentFilter" value="<?= $this->input->get('filter') ?: 'all' ?>">
 
-        <div class="search-filter-controls">
-            <!-- Filter Buttons (Chips) -->
-            <div class="filter-buttons flex flex-wrap gap-2 mb-4">
-                <button class="btn-filter px-4 py-2 text-sm font-semibold rounded-full bg-white text-gray-700 shadow-sm transition hover:bg-gray-50 flex items-center gap-1" data-filter="">
-                    <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3.055 11H5a2 2 0 012 2v1a2 2 0 002 2h4a2 2 0 002-2v-1a2 2 0 012-2h2.945M8 7H4a2 2 0 00-2 2v10a2 2 0 002 2h16a2 2 0 002-2V9a2 2 0 00-2-2h-4m-7 0a3 3 0 00-6 0h6zM12 7a3 3 0 00-6 0h6z"></path></svg> 
-                    All Alumni
-                </button>
-                <button class="btn-filter px-4 py-2 text-sm font-semibold rounded-full bg-white text-gray-700 shadow-sm transition hover:bg-gray-50 flex items-center gap-1" data-filter="connected">
-                    <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg> 
-                    Connected
-                </button>
-                <button class="btn-filter px-4 py-2 text-sm font-semibold rounded-full bg-white text-gray-700 shadow-sm transition hover:bg-gray-50 flex items-center gap-1" data-filter="pending">
-                    <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
-                    Requests Sent
+                <?php if ($this->input->get('search')): ?>
+                    <button type="button" id="clearSearch" class="btn btn-sm btn-light position-absolute search-clear-btn">
+                        &times;
+                    </button>
+                <?php endif; ?>
+            </div>
+            <div class="col-md-2">
+                <button type="submit" class="btn search-button btn-block">
+                    <i class="fas fa-search"></i> Search
                 </button>
             </div>
-            
-            <!-- Wide Search Form -->
-            <form method="get" class="flex gap-4 items-center" id="searchForm">
-                <input type="hidden" name="filter_status" id="filter_status" value="<?= $this->input->get('filter_status') ?>">
-                
-                <div class="relative flex-grow">
-                    <input type="text" name="search" id="searchInput" class="w-full p-3 pl-12 border border-gray-300 rounded-lg focus:ring-maroon focus:border-maroon shadow-md text-base" placeholder="Search alumni (e.g., Jane Doe, BSIT, 12345)..." value="<?= $this->input->get('search') ?>">
-                    <div class="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
-                        <svg class="w-5 h-5 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path></svg>
-                    </div>
-
-                    <?php if ($this->input->get('search')): ?>
-                        <button type="button" id="clearSearch" class="absolute inset-y-0 right-3 flex items-center text-gray-500 hover:text-gray-700 text-2xl">
-                            &times;
-                        </button>
-                    <?php endif; ?>
-                </div>
-                
-                <button type="submit" class="bg-maroon hover:bg-red-800 text-white font-bold py-3 px-6 rounded-lg shadow-md transition duration-150 flex-shrink-0 flex items-center gap-2">
-                    <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path></svg> 
-                    Find
-                </button>
-            </form>
         </div>
+    </form>
+
+    <div class="filter-bar">
+        <a href="#" class="filter-button" data-filter="all">
+            <i class="fas fa-users mr-1"></i> All Alumni
+        </a>
+        
+        <a href="#" class="filter-button" data-filter="connectable">
+            <i class="fas fa-user-plus mr-1"></i> Connect
+        </a>
+        
+        <a href="#" class="filter-button" data-filter="pending">
+            <i class="fas fa-clock mr-1"></i> Pending
+        </a>
+        
+        <a href="#" class="filter-button" data-filter="connected">
+            <i class="fas fa-check-circle mr-1"></i> Connected
+        </a>
     </div>
 
-    <!-- Alumni Feed Grid - Large Tiles -->
-    <div class="alumni-grid max-w-4xl mx-auto grid grid-cols-1 gap-6">
-        <?php if (!empty($alumni_list)): ?>
+    <div class="container mt-4 p-0">
+        <div class="row" id="alumniListContainer">
             <?php foreach ($alumni_list as $alumnus): ?>
-                <?php 
-                    $current_filter = $this->input->get('filter_status');
-                    $display_alumnus = true;
-                    
-                    if (!empty($current_filter)) {
-                        if ($current_filter === 'connected' && $alumnus->connection_status !== 'accepted') {
-                            $display_alumnus = false;
-                        } elseif ($current_filter === 'pending' && $alumnus->connection_status !== 'pending') {
-                            $display_alumnus = false;
-                        }
-                    }
-
-                    // --- Image Logic (Preserved) ---
-                    $profileImage = base_url('assets/images/placeholder.png'); // Default generic placeholder
-                    if ($alumnus && isset($alumnus->profile_image)) {
-                        $profileImage = base_url('assets/uploads/alumni/' . $alumnus->profile_image);
-                    } elseif (isset($alumnus->gender) && strtolower($alumnus->gender) === 'male') {
-                        $profileImage = base_url('assets/images/person-male.png');
-                    } elseif (isset($alumnus->gender) && strtolower($alumnus->gender) === 'female') {
-                        $profileImage = base_url('assets/images/person-female.png');
-                    }
-                ?>
-                
-                <?php if ($display_alumnus): ?>
-                    <div class="alumni-card bg-white p-6 rounded-xl shadow-lg hover:shadow-xl transition duration-300 ease-in-out">
-                        <div class="flex flex-col sm:flex-row gap-6 items-start sm:items-center">
+                <div class="col-md-12 alumni-card-container" data-status="<?= $alumnus->connection_status ?: 'connectable' ?>" data-name="<?= strtolower($alumnus->first_name . ' ' . $alumnus->last_name) ?>" data-degree="<?= strtolower($alumnus->degree) ?>">
+                    <div class="card alumni-card">
+                        <div class="card-body">
                             
-                            <!-- Profile Picture (Made Bigger) & Status -->
-                            <div class="flex-shrink-0 text-center">
-                                <div class="profile-image-thumb h-24 w-24 sm:h-28 sm:w-28 rounded-full overflow-hidden border-4 border-maroon mx-auto">
-                                    <img src="<?= $profileImage ?>" alt="Profile Image" class="w-full h-full object-cover" onerror="this.onerror=null; this.src='https://placehold.co/112x112/cccccc/333333?text=Profile'">
-                                </div>
-                                <div class="mt-2">
-                                    <?php if (isset($alumnus->connection_status) && $alumnus->connection_status == 'accepted'): ?>
-                                        <span class="px-3 py-1 text-xs font-semibold rounded-full bg-green-500 text-white flex items-center justify-center gap-1">
-                                            <svg class="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>
-                                            Connected
-                                        </span>
-                                    <?php elseif (isset($alumnus->connection_status) && $alumnus->connection_status == 'pending'): ?>
-                                        <span class="px-3 py-1 text-xs font-semibold rounded-full bg-yellow-400 text-gray-800 flex items-center justify-center gap-1">
-                                            <svg class="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
-                                            Pending
-                                        </span>
+                            <div class="d-flex align-items-center mb-3 border-bottom pb-3">
+                                <div class="profile-image-wrapper">
+                                    <?php if ($alumnus && isset($alumnus->profile_image)): ?>
+                                        <img src="<?= base_url('assets/uploads/alumni/' . $alumnus->profile_image) ?>" alt="Profile Image">
+                                    <?php elseif (strtolower($alumnus->gender) === 'male'): ?>
+                                        <img src="<?php echo base_url('assets/images/person-male.png'); ?>" alt="My Photo">
+                                    <?php else: ?>
+                                        <img src="<?php echo base_url('assets/images/person-female.png'); ?>" alt="My Photo">
                                     <?php endif; ?>
+                                </div>
+                                <div class="alumni-name flex-grow-1">
+                                    <h5 class="mb-0"><?= ucwords(strtolower($alumnus->first_name . ' ' . $alumnus->last_name)) ?></h5>
+                                    <small><i class="fas fa-graduation-cap mr-1"></i> <?= $alumnus->degree ?: 'No Degree Listed' ?></small>
                                 </div>
                             </div>
 
-                            <!-- Alumni Details & Summary -->
-                            <div class="flex-grow w-full">
-                                <h5 class="text-2xl font-bold text-gray-900 mb-1">
-                                    <?= ucwords(strtolower($alumnus->first_name . ' ' . $alumnus->last_name)) ?>
-                                </h5>
-                                <p class="text-maroon font-semibold mb-3">
-                                    <?= $alumnus->degree ?: 'No Degree Listed' ?>
+                            <div class="alumni-info mb-3">
+                                <?php if (!empty($alumnus->current_job) || !empty($alumnus->current_job_organization)): ?>
+                                <p class="mb-1">
+                                    <i class="fas fa-briefcase text-muted mr-2"></i> 
+                                    Job: <?= $alumnus->current_job ?: 'N/A' ?>
+                                    <small class="text-secondary ml-2">@ <?= $alumnus->current_job_organization ?: 'N/A' ?></small>
                                 </p>
-                                
-                                <div class="grid grid-cols-2 gap-x-4 gap-y-2 text-sm text-gray-700">
-                                    <p><strong>Job:</strong> <span class="text-gray-900"><?= !empty($alumnus->current_job) ? $alumnus->current_job : 'N/A' ?></span></p>
-                                    <p><strong>Org:</strong> <span class="text-gray-900"><?= !empty($alumnus->current_job_organization) ? $alumnus->current_job_organization : 'N/A' ?></span></p>
-                                    <p><strong>Year:</strong> <span class="text-gray-900"><?= $alumnus->graduation_year ?: 'N/A' ?></span></p>
-                                    <p class="col-span-2"><strong>Skills:</strong> <span class="text-gray-900"><?= !empty($alumnus->technical_skills) ? substr($alumnus->technical_skills, 0, 70) . (strlen($alumnus->technical_skills) > 70 ? '...' : '') : 'N/A' ?></span></p>
-                                </div>
-                                
-                                <div class="mt-4 pt-4 border-t border-gray-100 flex flex-col sm:flex-row gap-3">
-                                    <!-- Action Buttons -->
-                                    <button type="button" class="flex-1 px-4 py-2 text-white font-semibold rounded-lg shadow-md bg-gray-500 hover:bg-gray-600 transition duration-150 flex items-center justify-center gap-2" data-toggle="modal" data-target="#viewProfileModal<?= $alumnus->id ?>">
-                                        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H5a2 2 0 00-2 2v10a2 2 0 002 2h5m0-16h8a2 2 0 012 2v10a2 2 0 01-2 2h-8m-5-8a2 2 0 11-4 0 2 2 0 014 0zM17 6h.01"></path></svg>
-                                        View Profile
-                                    </button>
+                                <?php endif; ?>
 
-                                    <?php if (isset($alumnus->connection_status) && $alumnus->connection_status !== 'accepted' && $alumnus->connection_status !== 'pending'): ?>
-                                        <form method="post" action="<?= site_url('alumni/send_request') ?>" class="flex-1" style="flex-grow: 1;">
+                                <?php if (!empty($alumnus->phone) || !empty($alumnus->email)): ?>
+                                <p class="mb-1">
+                                    <i class="fas fa-phone-alt text-muted mr-2"></i> 
+                                    Contact: <?= $alumnus->phone ?: 'N/A' ?>
+                                    <i class="fas fa-envelope text-muted ml-3 mr-2"></i> 
+                                    Email: <?= $alumnus->email ?: 'N/A' ?>
+                                </p>
+                                <?php endif; ?>
+                                
+                                <?php if (!empty($alumnus->soft_skills) || !empty($alumnus->technical_skills)): ?>
+                                <p class="mb-1">
+                                    <i class="fas fa-code text-muted mr-2"></i> 
+                                    Skills: <?= !empty($alumnus->soft_skills) ? substr($alumnus->soft_skills, 0, 30) . '...' : '' ?>
+                                </p>
+                                <?php endif; ?>
+                            </div>
+
+                            <div class="d-flex justify-content-between align-items-center mt-3 pt-3 border-top">
+                                
+                                <button type="button" class="btn btn-sm btn-view-profile" data-toggle="modal" data-target="#viewProfileModal<?= $alumnus->id ?>">
+                                    <i class="fas fa-eye mr-1"></i> View Profile
+                                </button>
+
+                                <div>
+                                    <?php if ($alumnus->connection_status == 'accepted'): ?>
+                                        <span class="badge badge-success"><i class="fas fa-check-circle mr-1"></i> Connected</span>
+                                    <?php elseif ($alumnus->connection_status == 'pending'): ?>
+                                        <span class="badge badge-warning"><i class="fas fa-clock mr-1"></i> Pending Request</span>
+                                    <?php else: ?>
+                                        <form method="post" action="<?= site_url('alumni/send_request') ?>" class="connect-form d-inline">
                                             <input type="hidden" name="receiver_id" value="<?= $alumnus->id ?>">
-                                            <button type="submit" class="w-full px-4 py-2 text-white font-semibold rounded-lg shadow-md bg-green-600 hover:bg-green-700 transition duration-150 flex items-center justify-center gap-2">
-                                                <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 11.5V14m0-2.5v2.5m0 0h6m6-6v6a2 2 0 01-2 2H6a2 2 0 01-2-2v-6a2 2 0 012-2h10a2 2 0 012 2z"></path></svg>
-                                                Connect
+                                            <button type="submit" class="btn btn-sm btn-outline-primary">
+                                                <i class="fas fa-user-plus mr-1"></i> Connect
                                             </button>
                                         </form>
-                                    <?php elseif (isset($alumnus->connection_status) && $alumnus->connection_status == 'accepted'): ?>
-                                        <button type="button" class="flex-1 px-4 py-2 text-white font-semibold rounded-lg shadow-md bg-blue-600 hover:bg-blue-700 transition duration-150 flex items-center justify-center gap-2">
-                                            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.78A9.957 9.957 0 0112 4c4.97 0 9 3.582 9 8z"></path></svg>
-                                            Message
-                                        </button>
-                                    <?php else: ?>
-                                        <button type="button" class="flex-1 px-4 py-2 text-gray-700 font-semibold rounded-lg shadow-md bg-gray-200 cursor-not-allowed flex items-center justify-center gap-2" disabled>
-                                            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
-                                            Request Sent
-                                        </button>
                                     <?php endif; ?>
                                 </div>
                             </div>
                         </div>
+                        <div class="card-footer text-center">
+                            <small class="text-muted">Graduated: <?= $alumnus->graduation_year ?></small>
+                        </div>
                     </div>
+                </div>
 
-                    <!-- Profile Modal (Kept external structure but styled header) -->
-                    <div class="modal fade" id="viewProfileModal<?= $alumnus->id ?>" tabindex="-1" role="dialog" aria-labelledby="viewProfileModalLabel" aria-hidden="true">
-                        <div class="modal-dialog modal-lg" role="document">
-                            <div class="modal-content">
-                                <!-- Modal Header -->
-                                <div class="modal-header modal-header-custom">
-                                    <h5 class="modal-title modal-title-custom" id="viewProfileModalLabel">
-                                        <?= ucwords(strtolower($alumnus->first_name . ' ' . $alumnus->last_name)) ?>
-                                    </h5>
-                                    <!-- The close button requires Bootstrap's JS handling (data-dismiss="modal") -->
-                                    <button type="button" class="close text-white text-3xl font-light hover:opacity-75 transition" data-dismiss="modal" aria-label="Close">
-                                        <span aria-hidden="true">&times;</span>
-                                    </button>
-                                </div>
-                                
-                                <!-- Modal Body -->
-                                <div class="modal-body modal-body-custom">
-                                    <div class="flex flex-col md:flex-row gap-6">
-                                        <!-- Left Column (Profile Summary) -->
-                                        <div class="md:w-1/3 text-center mb-4 md:mb-0">
-                                            <div class="profile-image-container mb-4">
-                                                <!-- Increased profile picture size inside modal -->
-                                                <img src="<?= $profileImage ?>" alt="Profile Image" class="rounded-full w-32 h-32 object-cover mx-auto border-4 border-gray-300" onerror="this.onerror=null; this.src='https://placehold.co/128x128/cccccc/333333?text=Profile'">
-                                            </div>
-                                            <p class="text-lg font-bold text-gray-800 mb-0">
-                                                <?= $alumnus->degree ?: 'N/A' ?>
-                                            </p>
-                                            <p class="text-gray-500 text-sm">Graduated: <?= $alumnus->graduation_year ?: 'N/A' ?></p>
+                <div class="modal fade" id="viewProfileModal<?= $alumnus->id ?>" tabindex="-1" role="dialog" aria-labelledby="viewProfileModalLabel" aria-hidden="true">
+                    <div class="modal-dialog modal-lg" role="document">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h5 class="modal-title" id="viewProfileModalLabel" style="color: var(--maroon);"><b><i class="fas fa-user-circle mr-2"></i> <?= ucwords(strtolower($alumnus->first_name . ' ' . $alumnus->last_name)) ?></b></h5>
+                                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                    <span aria-hidden="true">&times;</span>
+                                </button>
+                            </div>
+                            <div class="modal-body">
+                                <div class="row">
+                                    <div class="col-md-4 text-center">
+                                        <div class="profile-image-wrapper mx-auto mb-3" style="width: 100px; height: 100px; border-width: 4px;">
+                                            <?php if ($alumnus && isset($alumnus->profile_image)): ?>
+                                                <img src="<?= base_url('assets/uploads/alumni/' . $alumnus->profile_image) ?>" alt="Profile Image">
+                                            <?php elseif (strtolower($alumnus->gender) === 'male'): ?>
+                                                <img src="<?php echo base_url('assets/images/person-male.png'); ?>" alt="My Photo">
+                                            <?php else: ?>
+                                                <img src="<?php echo base_url('assets/images/person-female.png'); ?>" alt="My Photo">
+                                            <?php endif; ?>
                                         </div>
-                                        
-                                        <!-- Right Column (Details) -->
-                                        <div class="md:w-2/3 space-y-4">
-                                            <div class="border-b pb-2">
-                                                <h6 class="text-lg font-bold text-maroon">Contact & ID</h6>
-                                                <p><span class="font-semibold">Alumni ID:</span> <?= !empty($alumnus->alumni_number) ? $alumnus->alumni_number : 'N/A' ?></p>
-                                                <p><span class="font-semibold">Email:</span> <?= !empty($alumnus->email) ? $alumnus->email : 'N/A' ?></p>
-                                                <p><span class="font-semibold">Phone:</span> <?= !empty($alumnus->phone) ? $alumnus->phone : 'N/A' ?></p>
-                                            </div>
+                                        <p class="text-muted"><?= $alumnus->degree ?: 'N/A' ?></p>
+                                    </div>
+                                    <div class="col-md-8">
+                                        <div class="mb-4">
+                                            <h6><i class="fas fa-info-circle mr-2"></i> Profile Details</h6>
+                                            <p><strong>Alumni ID:</strong> <?= !empty($alumnus->alumni_number) ? $alumnus->alumni_number : 'N/A' ?></p>
+                                            <p><strong>Student Number:</strong> <?= !empty($alumnus->student_number) ? $alumnus->student_number : 'N/A' ?></p>
+                                            <p><strong>Email:</strong> <?= !empty($alumnus->email) ? $alumnus->email : 'N/A' ?></p>
+                                            <p><strong>Phone:</strong> <?= !empty($alumnus->phone) ? $alumnus->phone : 'N/A' ?></p>
+                                            <p><strong>Graduation Year:</strong> <?= !empty($alumnus->graduation_year) ? $alumnus->graduation_year : 'N/A' ?></p>
+                                            <p><strong>Degree:</strong> <?= !empty($alumnus->degree) ? $alumnus->degree : 'N/A' ?></p>
+                                        </div>
 
-                                            <div class="border-b pb-2">
-                                                <h6 class="text-lg font-bold text-maroon">Employment</h6>
-                                                <p><span class="font-semibold">Job Title:</span> <?= !empty($alumnus->current_job) ? $alumnus->current_job : 'N/A' ?></p>
-                                                <p><span class="font-semibold">Organization:</span> <?= !empty($alumnus->current_job_organization) ? $alumnus->current_job_organization : 'N/A' ?></p>
-                                                <p><span class="font-semibold">Job Duration:</span> <?= !empty($alumnus->current_job_length) ? $alumnus->current_job_length : 'N/A' ?></p>
-                                            </div>
+                                        <div class="mb-4">
+                                            <h6><i class="fas fa-briefcase mr-2"></i> Current Job</h6>
+                                            <p><strong>Job Title:</strong> <?= !empty($alumnus->current_job) ? $alumnus->current_job : 'N/A' ?></p>
+                                            <p><strong>Organization:</strong> <?= !empty($alumnus->current_job_organization) ? $alumnus->current_job_organization : 'N/A' ?></p>
+                                            <p><strong>Job Duration:</strong> <?= !empty($alumnus->current_job_length) ? $alumnus->current_job_length : 'N/A' ?></p>
+                                        </div>
 
-                                            <div>
-                                                <h6 class="text-lg font-bold text-maroon">Skills & Location</h6>
-                                                <p><span class="font-semibold">Technical Skills:</span> <?= !empty($alumnus->technical_skills) ? $alumnus->technical_skills : 'N/A' ?></p>
-                                                <p><span class="font-semibold">Location:</span> <?= !empty($alumnus->current_address) ? $alumnus->current_address : 'N/A' ?></p>
-                                            </div>
+                                        <div>
+                                            <h6><i class="fas fa-code mr-2"></i> Skills</h6>
+                                            <p><strong>Soft Skills:</strong> <span class="badge badge-secondary"><?= !empty($alumnus->soft_skills) ? str_replace(',', '</span> <span class="badge badge-secondary">', $alumnus->soft_skills) : 'N/A' ?></span></p>
+                                            <p><strong>Technical Skills:</strong> <span class="badge badge-secondary"><?= !empty($alumnus->technical_skills) ? str_replace(',', '</span> <span class="badge badge-secondary">', $alumnus->technical_skills) : 'N/A' ?></span></p>
                                         </div>
                                     </div>
                                 </div>
-                                
-                                <!-- Modal Footer -->
-                                <div class="modal-footer p-4 bg-gray-50 flex justify-end rounded-b-xl">
-                                    <button type="button" class="px-4 py-2 bg-gray-300 text-gray-800 font-semibold rounded-lg hover:bg-gray-400 transition" data-dismiss="modal">Close</button>
-                                </div>
+                            </div>
+                            <div class="modal-footer">
+                                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
                             </div>
                         </div>
                     </div>
-                <?php endif; ?>
-            <?php endforeach; ?>
-        <?php else: ?>
-            <div class="alumni-card bg-white p-8 rounded-xl shadow-lg">
-                <div class="flex items-center justify-center text-center text-gray-500">
-                    <svg class="w-6 h-6 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
-                    <span class="font-medium">No alumni found matching your criteria. Try adjusting your search or filters.</span>
                 </div>
-            </div>
-        <?php endif; ?>
+            <?php endforeach; ?>
+        </div>
     </div>
+
+    <script>
+    document.addEventListener('DOMContentLoaded', function() {
+        const alumniCards = document.querySelectorAll('.alumni-card-container');
+        const filterButtons = document.querySelectorAll('.filter-button');
+        const searchInput = document.getElementById('searchInput');
+        const currentFilterInput = document.getElementById('currentFilter');
+        const clearSearchBtn = document.getElementById('clearSearch');
+        let activeFilter = currentFilterInput.value || 'all';
+
+        function applyFilters() {
+            const searchTerm = searchInput.value.toLowerCase();
+            
+            alumniCards.forEach(card => {
+                const status = card.getAttribute('data-status');
+                const name = card.getAttribute('data-name');
+                const degree = card.getAttribute('data-degree');
+                
+                let statusMatch;
+                if (activeFilter === 'all') {
+                    statusMatch = true;
+                } else if (activeFilter === 'connectable') {
+                    statusMatch = (status === 'connectable');
+                } else {
+                    statusMatch = (status === activeFilter);
+                }
+
+                const searchMatch = name.includes(searchTerm) || degree.includes(searchTerm);
+                
+                if (statusMatch && searchMatch) {
+                    card.style.display = 'block';
+                } else {
+                    card.style.display = 'none';
+                }
+            });
+        }
+
+        function setActiveButton(filter) {
+            filterButtons.forEach(btn => {
+                if (btn.getAttribute('data-filter') === filter) {
+                    btn.classList.add('active');
+                } else {
+                    btn.classList.remove('active');
+                }
+            });
+            activeFilter = filter;
+            currentFilterInput.value = filter;
+        }
+
+        setActiveButton(activeFilter);
+        applyFilters();
+
+        filterButtons.forEach(button => {
+            button.addEventListener('click', function(e) {
+                e.preventDefault();
+                const filter = this.getAttribute('data-filter');
+                setActiveButton(filter);
+                applyFilters();
+            });
+        });
+
+        searchInput.addEventListener('input', applyFilters);
+
+        clearSearchBtn?.addEventListener('click', function () {
+            searchInput.value = '';
+            applyFilters();
+        });
+        
+        document.getElementById('searchForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            applyFilters();
+        });
+    });
+    </script>
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 </div>
