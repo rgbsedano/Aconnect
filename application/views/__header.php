@@ -158,12 +158,12 @@ $admin_system_active = in_array($current_uri_segment_1, ['AdminManageAccounts', 
             padding: 30px 15px; 
             display: block;
             transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
-            border-bottom: 4px solid transparent; /* Retained the border-bottom property for the active link effect */
+            border-bottom: 4px solid transparent; 
         }
         
         .primary-nav a:hover {
             background-color: rgba(255, 255, 255, 0.15); 
-            border-bottom-color: transparent; /* Changed to transparent to remove the white bar on hover */
+            border-bottom-color: transparent; 
             transform: translateY(-4px);
             box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
             color: var(--text-light); 
@@ -172,7 +172,7 @@ $admin_system_active = in_array($current_uri_segment_1, ['AdminManageAccounts', 
         .primary-nav .active-link {
             background-color: rgba(255, 255, 255, 0.1); 
             transform: none;
-            border-bottom-color: var(--text-light); /* Keep the white bar for the active link */
+            border-bottom-color: var(--text-light); 
             color: var(--text-light); 
             font-weight: 900; 
         }
@@ -294,11 +294,18 @@ $admin_system_active = in_array($current_uri_segment_1, ['AdminManageAccounts', 
         }
 
         #ac-main-header .alumni-id-text {
-            color: rgba(255, 255, 255, 0.7) !important; 
-            font-size: 0.85rem;
+            /* Increased brightness and size for better visibility */
+            color: rgba(255, 255, 255, 0.9) !important; 
+            font-size: 0.9rem;
             font-weight: 500;
             line-height: 1.2;
             white-space: nowrap; 
+        }
+
+        /* Styling for the Alumni ID/Email using the strong tag */
+        #ac-main-header .alumni-id-text strong {
+            font-weight: 700; /* Ensure the actual ID/Email is highly visible */
+            color: var(--text-light) !important;
         }
         
         .logout-icon-simple {
@@ -387,11 +394,11 @@ $admin_system_active = in_array($current_uri_segment_1, ['AdminManageAccounts', 
             }
             
             .primary-nav a:hover {
-                 background-color: var(--secondary-color);
+                background-color: var(--secondary-color);
             }
 
             .primary-nav .active-link {
-                border-bottom: none; /* Remove active bar on mobile menu items */
+                border-bottom: none; 
                 background-color: var(--secondary-color);
             }
             
@@ -464,7 +471,6 @@ if($this->session->userdata('role') == 'alumni'){
 
                 <div class="main-nav-bar">
                     <label for="menu-checkbox" class="menu-toggle"><i class="fas fa-bars"></i></label>
-                    
                     <nav class="primary-nav">
                         <ul class="d-flex">
                             <li><a href="<?php echo base_url('postcontroller'); ?>" class="<?php echo is_active_segment('PostController') ? 'active-link' : ''; ?>">Homepage</a></li>
@@ -474,7 +480,7 @@ if($this->session->userdata('role') == 'alumni'){
                             <li><a href="<?php echo base_url('jobs'); ?>" class="<?php echo is_active_segment('jobs') ? 'active-link' : ''; ?>">Jobs</a></li>
 
                             <li class="nav-item dropdown">
-                                <a class="nav-link dropdown-toggle <?php echo $connect_active ? 'active-link' : ''; ?>" href="#" id="connectDropdown" role="button" aria-haspopup="true" aria-expanded="false" tabindex="0">Connect</a> 
+                                <a class="nav-link dropdown-toggle <?php echo $connect_active ? 'active-link' : ''; ?>" href="#" id="connectDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Connect</a> 
                                 <div class="dropdown-menu" aria-labelledby="connectDropdown">
                                     <a class="dropdown-item <?php echo is_active_segment('alumni') ? 'active' : ''; ?>" href="<?php echo base_url('alumni'); ?>">Search Alumni</a>
                                     <a class="dropdown-item <?php echo is_active_segment('alumni_request') ? 'active' : ''; ?>" href="<?php echo base_url('alumni_request'); ?>">Connect Requests</a>
@@ -483,7 +489,7 @@ if($this->session->userdata('role') == 'alumni'){
                             </li>
 
                             <li class="nav-item dropdown">
-                                <a class="nav-link dropdown-toggle <?php echo $events_active ? 'active-link' : ''; ?>" href="#" id="eventsDropdown" role="button" aria-haspopup="true" aria-expanded="false" tabindex="0">Events</a>
+                                <a class="nav-link dropdown-toggle <?php echo $events_active ? 'active-link' : ''; ?>" href="#" id="eventsDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Events</a>
                                 <div class="dropdown-menu" aria-labelledby="eventsDropdown">
                                     <a class="dropdown-item <?php echo is_active_segment('events') ? 'active' : ''; ?>" href="<?php echo base_url('events'); ?>">Upcoming Events</a>
                                     <a class="dropdown-item <?php echo is_active_segment('eventsprevious') ? 'active' : ''; ?>" href="<?php echo base_url('eventsprevious'); ?>">Previous Events</a>
@@ -491,6 +497,9 @@ if($this->session->userdata('role') == 'alumni'){
                             </li>
 
                             <li><a href="<?php echo base_url('dashboard'); ?>" class="<?php echo is_active_segment('dashboard') ? 'active-link' : ''; ?>">About Us</a></li>
+
+                            <li><a href="<?php echo base_url('support'); ?>" class="<?php echo is_active_segment('support') ? 'active-link' : ''; ?>">Chat Support</a></li>
+
                         </ul>
                     </nav>
 
@@ -502,7 +511,7 @@ if($this->session->userdata('role') == 'alumni'){
                                     <?php echo $this->session->userdata('first_name') . ' ' . $this->session->userdata('last_name'); ?>
                                 </span>
                                 <span class="alumni-id-text">
-                                    ALUMNI ID: <?php echo $this->session->userdata('alumni_number'); ?>
+                                    ALUMNI ID: <strong><?php echo $this->session->userdata('alumni_number'); ?></strong>
                                 </span>
                             </div>
                         </a>
@@ -563,7 +572,7 @@ if($this->session->userdata('role') == 'administrator'){
                             </li>
 
                             <li><a href="<?php echo base_url('support/admin_inbox'); ?>" class="<?php echo is_active_segment('support', 'admin_inbox') ? 'active-link' : ''; ?>">Chat Support</a></li>
-                            <li><a href="<?php echo base_url('AdminReports'); ?>" class class="<?php echo is_active_segment('AdminReports') ? 'active-link' : ''; ?>">Reports & Analytics</a></li>
+                            <li><a href="<?php echo base_url('AdminReports'); ?>" class="<?php echo is_active_segment('AdminReports') ? 'active-link' : ''; ?>">Reports & Analytics</a></li>
                             
                         </ul>
                     </nav>
@@ -575,7 +584,7 @@ if($this->session->userdata('role') == 'administrator'){
                                     Administrator
                                 </span>
                                 <span class="alumni-id-text">
-                                    User: **<?php echo $this->session->userdata('email'); ?>**
+                                    User: <strong><?php echo $this->session->userdata('email'); ?></strong>
                                 </span>
                             </div>
                         </a>
