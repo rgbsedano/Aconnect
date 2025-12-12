@@ -13,7 +13,7 @@ function ai_similarity_score($source, $target)
         ]
     ];
 
-    $apiKey = "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"; // Free key from HuggingFace
+    $apiKey = ""; // Free key from HuggingFace
 
     $ch = curl_init($modelUrl);
     curl_setopt($ch, CURLOPT_HTTPHEADER, [
