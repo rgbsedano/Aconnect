@@ -14,26 +14,32 @@ class PostController extends CI_Controller {
         $this->load->model('user/Post_model');
     }
 
-    public function index() {
-        $user_batch = $this->session->userdata('graduation_year'); // Example batch (this should come from the logged-in user session)
-        $this->load->view('__header'); // RETAINED ORIGINAL PATH
+public function index() {
+    // allow viewing posts even if graduation_year not set
+    $user_batch = $this->session->userdata('graduation_year'); 
 
-        if (!$user_batch) {
-            show_error("Batch information is missing.", 400);
-            return;
-        }
+    $this->load->view('__header');
 
-        $this->load->helper('text');
-        $all_posts = $this->Post_model->get_all_posts();
-        $grouped_posts = [];
+    $this->load->helper('text');
+    $all_posts = $this->Post_model->get_all_posts();
 
-        foreach ($all_posts as $post) {
-            $grouped_posts[$post->post_type][] = $post;
-        }
-
-        $this->load->view('user/posts_view', ['grouped_posts' => $grouped_posts]);
-        
-        $this->load->view('__footer'); // RETAINED ORIGINAL PATH
-    
+    // If you want to filter by batch when available, do it here.
+    if ($user_batch) {
+        // Example: only include posts targeted to that batch (if your post has recipient_batch)
+        // $filtered = array_filter($all_posts, function($p) use ($user_batch) {
+        //     return (empty($p->recipient_batch) || in_array($user_batch, explode(',', $p->recipient_batch)));
+        // });
+        // $all_posts = array_values($filtered);
     }
+
+    $grouped_posts = [];
+    foreach ($all_posts as $post) {
+        $pt = isset($post->post_type) && $post->post_type ? $post->post_type : 'general';
+        $grouped_posts[$pt][] = $post;
+    }
+
+    $this->load->view('user/posts_view', ['grouped_posts' => $grouped_posts]);
+    $this->load->view('__footer');
+}
+
 }
