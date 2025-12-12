@@ -35,7 +35,9 @@
  * @since	Version 1.0.0
  * @filesource
  */
-
+require_once __DIR__ . '/vendor/autoload.php';
+$dotenv = Dotenv\Dotenv::createImmutable(__DIR__);
+$dotenv->load();
 /*
  *---------------------------------------------------------------
  * APPLICATION ENVIRONMENT
@@ -53,6 +55,10 @@
  *
  * NOTE: If you change these, also change the error_reporting() code below
  */
+
+// Load .env
+
+
 	define('ENVIRONMENT', isset($_SERVER['CI_ENV']) ? $_SERVER['CI_ENV'] : 'development');
 
 /*
@@ -315,4 +321,6 @@ switch (ENVIRONMENT)
  */
 
 require_once FCPATH . 'vendor/autoload.php';
+
+
 
