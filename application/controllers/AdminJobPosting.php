@@ -82,7 +82,8 @@ class AdminJobPosting extends CI_Controller {
             'qualifications'     => $this->input->post('qualifications'),
             'contact_details'     => $this->input->post('contact_details'),
             'image_filename' => $image_filename,
-            'posted_by'    => $this-> $this->session->userdata('admin_id') // Replace with session admin ID if available
+            'posted_by' => $this->session->userdata('admin_id'), // Replace with session admin ID if available
+ // Replace with session admin ID if available
         ];
     
         $this->db->insert('jobs', $data);

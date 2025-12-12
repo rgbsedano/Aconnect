@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Dec 12, 2025 at 09:08 AM
+-- Generation Time: Dec 12, 2025 at 11:56 AM
 -- Server version: 10.4.16-MariaDB
 -- PHP Version: 7.4.12
 
@@ -246,7 +246,13 @@ INSERT INTO `activity_logs` (`id`, `alumni_id`, `activity`, `created_at`) VALUES
 (235, 15, 'Logged in', '2025-12-12 15:41:32'),
 (236, 15, 'Logged out', '2025-12-12 15:41:50'),
 (237, 15, 'Logged in', '2025-12-12 15:44:36'),
-(238, 15, 'Logged out', '2025-12-12 15:46:30');
+(238, 15, 'Logged out', '2025-12-12 15:46:30'),
+(239, 45, 'Logged out', '2025-12-12 17:16:57'),
+(240, 45, 'Logged out', '2025-12-12 17:19:56'),
+(241, 45, 'Logged out', '2025-12-12 17:51:52'),
+(242, 45, 'Logged out', '2025-12-12 17:52:28'),
+(243, 45, 'Logged out', '2025-12-12 18:46:08'),
+(244, 44, 'Logged out', '2025-12-12 18:51:18');
 
 -- --------------------------------------------------------
 
@@ -333,7 +339,8 @@ INSERT INTO `alumni` (`id`, `alumni_number`, `first_name`, `last_name`, `gender`
 (32, 'ALU-0015', 'Ethan', 'Anderson', 'male', 'ethan.anderson@example.com', 'ethan.alt@example.com', 'hashed_password_15', '09174445566', '09223334477', 2019, 'BS Physics', NULL, '20191111', '2025-05-04 14:28:54', 'inactive', 'Data Scientist', 'DataSoft', '2 years', 'Critical Thinking, Communication', 'Python, R, SQL', 'XYZ University', '2025-05-04 13:54:04', 0, NULL, NULL),
 (33, 'A2025-1234', 'Ina', 'De Borja', 'female', 'Ina@gmail.com', NULL, '$2y$10$Lqybqm5GW0IAA9JCa/ZEMO7sHju3RxGiIHO74W8R43DRixchqExGK', '09191234759', NULL, 2025, 'BSIT', NULL, '202130495', '2025-06-16 19:49:26', 'inactive', NULL, NULL, NULL, NULL, NULL, NULL, '2025-06-16 19:27:16', 0, NULL, NULL),
 (35, 'A2025-2345', 'JP', 'VALENZUELA', 'male', 'JVALENZUEAL@SDCA.COM', NULL, '$2y$10$FsuIv6B5TL9JR68xx1yQ.OW55SPi.nqdEIi/elRQwfMZIdIPcibu2', '09988994071', NULL, 2026, 'BSIT', '6850e36681169_akodin.jpg', '202000163', '2025-06-17 03:42:22', 'inactive', 'WEB DEVELOPER', 'SDA', '2 YEARS', NULL, NULL, NULL, '2025-06-17 03:30:11', 0, NULL, NULL),
-(44, NULL, 'ARGIE', 'SEDANO', 'male', 'rg@sdca.edu.ph', NULL, '$2y$10$t.w4ce/BPWlB1EAqN8NncOBrGoE5zRlFf91ZG4wAMVBWyVcZDNivy', '09952341006', NULL, 2022, 'BS in Psychology', NULL, '2013131010', '2025-12-11 06:28:55', 'inactive', NULL, NULL, NULL, NULL, NULL, NULL, '2025-12-11 06:28:55', 0, NULL, NULL);
+(44, NULL, 'ARGIE', 'SEDANO', 'male', 'argie.sedano@sdca.edu.ph', NULL, '$2y$10$t.w4ce/BPWlB1EAqN8NncOBrGoE5zRlFf91ZG4wAMVBWyVcZDNivy', '09952341006', NULL, 2022, 'BS in Psychology', NULL, '2013131010', '2025-12-12 10:47:55', 'active', NULL, NULL, NULL, NULL, NULL, NULL, '2025-12-11 06:28:55', 1, NULL, NULL),
+(45, 'SDCA12345678', 'argie', 'sedano', 'male', 'rgbsedano@gmail.com', NULL, '$2y$10$Pn.KVvKcd/d4cKI3QFQrUuT.iszuIF0wrgo6iGE2svSghQFoReR56', '09952341006', NULL, 2025, 'BS in Information Technology', NULL, '202202271', '2025-12-12 09:13:53', 'active', NULL, NULL, NULL, NULL, NULL, NULL, '2025-12-12 08:58:27', 1, NULL, NULL);
 
 -- --------------------------------------------------------
 
@@ -806,7 +813,7 @@ ALTER TABLE `tracer_responses`
 -- AUTO_INCREMENT for table `activity_logs`
 --
 ALTER TABLE `activity_logs`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=239;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=245;
 
 --
 -- AUTO_INCREMENT for table `admin_users`
@@ -818,7 +825,7 @@ ALTER TABLE `admin_users`
 -- AUTO_INCREMENT for table `alumni`
 --
 ALTER TABLE `alumni`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=45;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=46;
 
 --
 -- AUTO_INCREMENT for table `carousel_photos`
