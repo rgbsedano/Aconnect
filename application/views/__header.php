@@ -297,7 +297,7 @@ if($this->session->userdata('role') == 'alumni'){
                 <div class="main-nav-bar">
                     <nav class="primary-nav">
                         <ul class="d-flex">
-                            <li><a href="<?php echo base_url('PostController'); ?>" class="<?php echo is_active_segment('PostController') ? 'active-link' : ''; ?>">Homepage</a></li>
+                            <li><a href="<?php echo base_url('postcontroller'); ?>" class="<?php echo is_active_segment('PostController') ? 'active-link' : ''; ?>">Homepage</a></li>
                             
                             <li><a href="<?php echo base_url('profile'); ?>" class="<?php echo is_active_segment('profile') ? 'active-link' : ''; ?>">My Profile</a></li>
                             
@@ -380,6 +380,8 @@ if($this->session->userdata('role') == 'administrator'){
                                 </div>
                             </li>
                             
+
+                            
                             <li class="nav-item dropdown">
                                 <a class="nav-link dropdown-toggle <?php echo $admin_system_active ? 'active-link' : ''; ?>" href="#" id="adminSystemDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">System</a>
                                 <div class="dropdown-menu" aria-labelledby="adminSystemDropdown">
@@ -389,6 +391,9 @@ if($this->session->userdata('role') == 'administrator'){
                             </li>
 
                             <li><a href="<?php echo base_url('support/admin_inbox'); ?>" class="<?php echo is_active_segment('support', 'admin_inbox') ? 'active-link' : ''; ?>">Chat Support</a></li>
+                            <li><a href="<?php echo base_url('AdminReports'); ?>" class="<?php echo is_active_segment('AdminReports') ? 'active-link' : ''; ?>">Reports & Analytics</a></li>
+
+                            
                         </ul>
                     </nav>
 

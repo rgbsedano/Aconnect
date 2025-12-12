@@ -521,3 +521,14 @@ $config['rewrite_short_tags'] = FALSE;
 | Array:		array('10.0.1.200', '192.168.5.0/24')
 */
 $config['proxy_ips'] = '';
+$config['sess_save_path'] = sys_get_temp_dir();
+
+$config['composer_autoload'] = TRUE;
+// Admin Reports
+$route['admin/reports'] = 'AdminReports/index';
+$route['admin/reports/login_activity_data'] = 'AdminReports/login_activity_data';
+$route['admin/reports/event_participation_data'] = 'AdminReports/event_participation_data';
+$route['admin/reports/job_applications_data'] = 'AdminReports/job_applications_data';
+$route['admin/reports/tracer_summary_data'] = 'AdminReports/tracer_summary_data';
+$route['admin/reports/export/tracer'] = 'AdminReports/export_tracer';
+$route['admin/reports/export/events'] = 'AdminReports/export_events';
