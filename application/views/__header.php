@@ -50,7 +50,6 @@ $admin_system_active = in_array($current_uri_segment_1, ['AdminManageAccounts', 
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
 
     <style>
-        /* All existing CSS styles are kept here for continuity, ensuring responsiveness */
         body {
             padding-top: 0 !important; 
         }
@@ -162,10 +161,9 @@ $admin_system_active = in_array($current_uri_segment_1, ['AdminManageAccounts', 
         }
         
         .primary-nav .active-link {
-            /* Changed for a clearer active state */
             background-color: transparent; 
             transform: none;
-            border-bottom-color: <?php echo $text_light; ?>; /* Use white bottom border for active link */
+            border-bottom-color: transparent; 
             color: <?php echo $text_light; ?>; 
             font-weight: 900; 
         }
@@ -263,121 +261,18 @@ $admin_system_active = in_array($current_uri_segment_1, ['AdminManageAccounts', 
             padding-left: 0 !important;
         }
 
-        /* --- Custom Mobile/Responsiveness Fixes --- */
-
-        /* Added a mobile toggler/hamburger button for responsiveness */
-        .navbar-toggler {
-            padding: .25rem .75rem;
-            font-size: 1.25rem;
-            line-height: 1;
-            background-color: transparent;
-            border: 1px solid rgba(255, 255, 255, 0.5);
-            border-radius: .25rem;
-        }
-        .navbar-toggler-icon {
-            display: inline-block;
-            width: 1.5em;
-            height: 1.5em;
-            vertical-align: middle;
-            background-repeat: no-repeat;
-            background-position: center;
-            background-size: 100%;
-        }
-
-        /* Use flexbox properties to arrange items correctly in the header */
-        #ac-main-header .navbar {
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            width: 100%;
-            padding: 0 15px; /* Add some padding to the sides */
-        }
-        
-        /* The main navigation block needs to collapse */
-        .navbar-collapse {
-            align-items: center; /* Vertically align items */
-            flex-grow: 1;
-        }
-
-        /* Set the mobile menu appearance when collapsed is open */
         @media (max-width: 991.98px) {
             .logo-area {
-                width: auto; /* Allow logo to take natural space on mobile */
-                border-right: none;
+                width: 150px;
             }
             .ac-logo {
                 height: 50px;
             }
             .main-nav-bar {
-                padding: 0;
+                padding: 5px 10px;
             }
-            
-            /* Collapse content */
-            #ac-main-header .collapse:not(.show) {
+            .primary-nav {
                 display: none;
-            }
-            
-            /* Styles when the menu is open */
-            #ac-main-header .collapse.show {
-                background: <?php echo $primary_color; ?>;
-                position: absolute;
-                top: 90px; /* Below the main header */
-                left: 0;
-                right: 0;
-                width: 100%;
-                z-index: 1020;
-                box-shadow: 0 5px 10px rgba(0, 0, 0, 0.5);
-                display: flex;
-                flex-direction: column;
-            }
-            
-            /* Stack links vertically in mobile menu */
-            .primary-nav ul {
-                flex-direction: column;
-                align-items: flex-start;
-                width: 100%;
-            }
-            
-            .primary-nav ul li {
-                width: 100%;
-                margin: 0;
-                border-bottom: 1px solid rgba(255, 255, 255, 0.1);
-            }
-            
-            /* Adjust link padding and reset desktop styles for mobile */
-            .primary-nav a {
-                padding: 10px 20px !important; 
-                border-bottom: none;
-                transform: none;
-            }
-            
-            .primary-nav a:hover,
-            .primary-nav .active-link {
-                background-color: <?php echo $secondary_color; ?>;
-                border-bottom: none;
-            }
-            
-            /* Hide profile text and move to the right */
-            .profile-info-container {
-                display: none;
-            }
-            .user-logout-area {
-                margin-left: auto;
-                min-height: auto;
-                border-left: none;
-            }
-            
-            /* Ensure dropdowns look like part of the stacked menu */
-            .primary-nav .dropdown-menu {
-                position: static !important;
-                float: none;
-                border-top: none;
-                border-radius: 0;
-                box-shadow: none;
-            }
-            
-            .primary-nav .dropdown-item {
-                padding-left: 40px;
             }
         }
 
@@ -388,72 +283,66 @@ $admin_system_active = in_array($current_uri_segment_1, ['AdminManageAccounts', 
 <body id="page-top">
 <?php 
 if($this->session->userdata('role') == 'alumni'){ 
-$collapse_id = 'navbar-alumni-collapse'; // Unique ID for collapse target
 ?>
     <div id="wrapper">
         
         <header id="ac-main-header">
-            <nav class="navbar navbar-expand-lg p-0">
-                
+            <div class="ac-container">
                 <div class="logo-area">
-                    <a class="navbar-brand p-0" href="<?php echo base_url('PostController'); ?>">
+                    <a href="<?php echo base_url('PostController'); ?>">
                         <img src="<?php echo base_url('assets/images/small_logo.png'); ?>" alt="AConnect Logo" class="ac-logo">
                     </a>
                 </div>
 
-                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#<?php echo $collapse_id; ?>" aria-controls="<?php echo $collapse_id; ?>" aria-expanded="false" aria-label="Toggle navigation">
-                    <span class="fas fa-bars" style="color:<?php echo $text_light; ?>;"></span>
-                </button>
-
-                <div class="collapse navbar-collapse" id="<?php echo $collapse_id; ?>">
-                    <div class="main-nav-bar p-0"> <nav class="primary-nav">
-                            <ul class="navbar-nav d-flex"> <li class="nav-item"><a class="nav-link <?php echo is_active_segment('PostController') ? 'active-link' : ''; ?>" href="<?php echo base_url('postcontroller'); ?>">Homepage</a></li>
-                                
-                                <li class="nav-item"><a class="nav-link <?php echo is_active_segment('profile') ? 'active-link' : ''; ?>" href="<?php echo base_url('profile'); ?>">My Profile</a></li>
-                                
-                                <li class="nav-item"><a class="nav-link <?php echo is_active_segment('jobs') ? 'active-link' : ''; ?>" href="<?php echo base_url('jobs'); ?>">Jobs</a></li>
-
-                                <li class="nav-item dropdown">
-                                    <a class="nav-link dropdown-toggle <?php echo $connect_active ? 'active-link' : ''; ?>" href="#" id="connectDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Connect</a>
-                                    <div class="dropdown-menu" aria-labelledby="connectDropdown">
-                                        <a class="dropdown-item <?php echo is_active_segment('alumni') ? 'active' : ''; ?>" href="<?php echo base_url('alumni'); ?>">Search Alumni</a>
-                                        <a class="dropdown-item <?php echo is_active_segment('alumni_request') ? 'active' : ''; ?>" href="<?php echo base_url('alumni_request'); ?>">Connect Requests</a>
-                                        <a class="dropdown-item <?php echo is_active_segment('chat') ? 'active' : ''; ?>" href="<?php echo base_url('chat'); ?>">Inbox/Chat</a>
-                                    </div>
-                                </li>
-
-                                <li class="nav-item dropdown">
-                                    <a class="nav-link dropdown-toggle <?php echo $events_active ? 'active-link' : ''; ?>" href="#" id="eventsDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Events</a>
-                                    <div class="dropdown-menu" aria-labelledby="eventsDropdown">
-                                        <a class="dropdown-item <?php echo is_active_segment('events') ? 'active' : ''; ?>" href="<?php echo base_url('events'); ?>">Upcoming Events</a>
-                                        <a class="dropdown-item <?php echo is_active_segment('eventsprevious') ? 'active' : ''; ?>" href="<?php echo base_url('eventsprevious'); ?>">Previous Events</a>
-                                    </div>
-                                </li>
-
-                                <li class="nav-item"><a class="nav-link <?php echo is_active_segment('dashboard') ? 'active-link' : ''; ?>" href="<?php echo base_url('dashboard'); ?>">About Us</a></li>
-                            </ul>
-                        </nav>
-
-                        <div class="user-logout-area ml-auto">
+                <div class="main-nav-bar">
+                    <nav class="primary-nav">
+                        <ul class="d-flex">
+                            <li><a href="<?php echo base_url('postcontroller'); ?>" class="<?php echo is_active_segment('PostController') ? 'active-link' : ''; ?>">Homepage</a></li>
                             
-                            <a href="<?php echo base_url('profile'); ?>" class="profile-info-container" title="View Profile">
-                                <div class="profile-text-stack">
-                                    <span class="profile-name">
-                                        <?php echo $this->session->userdata('first_name') . ' ' . $this->session->userdata('last_name'); ?>
-                                    </span>
-                                    <span class="alumni-id-text">
-                                        ALUMNI ID: <?php echo $this->session->userdata('alumni_number'); ?>
-                                    </span>
-                                </div>
-                            </a>
+                            <li><a href="<?php echo base_url('profile'); ?>" class="<?php echo is_active_segment('profile') ? 'active-link' : ''; ?>">My Profile</a></li>
+                            
+                            <li><a href="<?php echo base_url('jobs'); ?>" class="<?php echo is_active_segment('jobs') ? 'active-link' : ''; ?>">Jobs</a></li>
 
-                            <a href="<?php echo base_url('login/logout'); ?>" class="logout-icon-simple" title="Logout">
-                                <i class="fas fa-sign-out-alt"></i>
-                            </a>
-                        </div>
+                            <li class="nav-item dropdown">
+                                <a class="nav-link dropdown-toggle <?php echo $connect_active ? 'active-link' : ''; ?>" href="#" id="connectDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Connect</a>
+                                <div class="dropdown-menu" aria-labelledby="connectDropdown">
+                                    <a class="dropdown-item <?php echo is_active_segment('alumni') ? 'active' : ''; ?>" href="<?php echo base_url('alumni'); ?>">Search Alumni</a>
+                                    <a class="dropdown-item <?php echo is_active_segment('alumni_request') ? 'active' : ''; ?>" href="<?php echo base_url('alumni_request'); ?>">Connect Requests</a>
+                                    <a class="dropdown-item <?php echo is_active_segment('chat') ? 'active' : ''; ?>" href="<?php echo base_url('chat'); ?>">Inbox/Chat</a>
+                                </div>
+                            </li>
+
+                            <li class="nav-item dropdown">
+                                <a class="nav-link dropdown-toggle <?php echo $events_active ? 'active-link' : ''; ?>" href="#" id="eventsDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Events</a>
+                                <div class="dropdown-menu" aria-labelledby="eventsDropdown">
+                                    <a class="dropdown-item <?php echo is_active_segment('events') ? 'active' : ''; ?>" href="<?php echo base_url('events'); ?>">Upcoming Events</a>
+                                    <a class="dropdown-item <?php echo is_active_segment('eventsprevious') ? 'active' : ''; ?>" href="<?php echo base_url('eventsprevious'); ?>">Previous Events</a>
+                                </div>
+                            </li>
+
+                            <li><a href="<?php echo base_url('dashboard'); ?>" class="<?php echo is_active_segment('dashboard') ? 'active-link' : ''; ?>">About Us</a></li>
+                        </ul>
+                    </nav>
+
+                    <div class="user-logout-area">
+                        
+                        <a href="<?php echo base_url('profile'); ?>" class="profile-info-container" title="View Profile">
+                            <div class="profile-text-stack">
+                                <span class="profile-name">
+                                    <?php echo $this->session->userdata('first_name') . ' ' . $this->session->userdata('last_name'); ?>
+                                </span>
+                                <span class="alumni-id-text">
+                                    ALUMNI ID: <?php echo $this->session->userdata('alumni_number'); ?>
+                                </span>
+                            </div>
+                        </a>
+
+                        <a href="<?php echo base_url('login/logout'); ?>" class="logout-icon-simple" title="Logout">
+                            <i class="fas fa-sign-out-alt"></i>
+                        </a>
                     </div>
                 </div>
-            </nav>
+            </div>
         </header>
 
         <div id="content-wrapper" class="d-flex flex-column">
@@ -465,71 +354,67 @@ $collapse_id = 'navbar-alumni-collapse'; // Unique ID for collapse target
 
 <?php 
 if($this->session->userdata('role') == 'administrator'){ 
-$collapse_id = 'navbar-admin-collapse'; // Unique ID for collapse target
 ?>
     <div id="wrapper">
         
         <header id="ac-main-header">
-            <nav class="navbar navbar-expand-lg p-0">
-                
+            <div class="ac-container">
                 <div class="logo-area" style="width: 300px;">
-                    <a class="navbar-brand p-0" href="<?php echo base_url('AdminDashboard'); ?>">
+                    <a href="<?php echo base_url('AdminDashboard'); ?>">
                         <img src="<?php echo base_url('assets/images/logo.png'); ?>" alt="AConnect Admin Logo" class="ac-logo">
                     </a>
                 </div>
-                
-                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#<?php echo $collapse_id; ?>" aria-controls="<?php echo $collapse_id; ?>" aria-expanded="false" aria-label="Toggle navigation">
-                    <span class="fas fa-bars" style="color:<?php echo $text_light; ?>;"></span>
-                </button>
 
-                <div class="collapse navbar-collapse" id="<?php echo $collapse_id; ?>">
-                    <div class="main-nav-bar p-0">
-                        <nav class="primary-nav">
-                            <ul class="navbar-nav d-flex">
-                                <li class="nav-item"><a class="nav-link <?php echo is_active_segment('AdminDashboard') ? 'active-link' : ''; ?>" href="<?php echo base_url('AdminDashboard'); ?>">Dashboard</a></li>
+                <div class="main-nav-bar">
+                    <nav class="primary-nav">
+                        <ul class="d-flex">
+                            <li><a href="<?php echo base_url('AdminDashboard'); ?>" class="<?php echo is_active_segment('AdminDashboard') ? 'active-link' : ''; ?>">Dashboard</a></li>
 
-                                <li class="nav-item dropdown">
-                                    <a class="nav-link dropdown-toggle <?php echo $admin_management_active ? 'active-link' : ''; ?>" href="#" id="adminManageDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Management</a>
-                                    <div class="dropdown-menu" aria-labelledby="adminManageDropdown">
-                                        <a class="dropdown-item <?php echo is_active_segment('adminalumni') ? 'active' : ''; ?>" href="<?php echo base_url('adminalumni'); ?>">Alumni List</a>
-                                        <a class="dropdown-item <?php echo is_active_segment('AdminJobPosting') ? 'active' : ''; ?>" href="<?php echo base_url('AdminJobPosting'); ?>">Job Posting</a>
-                                        <a class="dropdown-item <?php echo is_active_segment('AdminEvents') ? 'active' : ''; ?>" href="<?php echo base_url('AdminEvents'); ?>">Events</a>
-                                        <a class="dropdown-item <?php echo is_active_segment('AdminPost') ? 'active' : ''; ?>" href="<?php echo base_url('AdminPost'); ?>">Posting</a>
-                                    </div>
-                                </li>
-                                
-                                <li class="nav-item dropdown">
-                                    <a class="nav-link dropdown-toggle <?php echo $admin_system_active ? 'active-link' : ''; ?>" href="#" id="adminSystemDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">System</a>
-                                    <div class="dropdown-menu" aria-labelledby="adminSystemDropdown">
-                                        <a class="dropdown-item <?php echo is_active_segment('AdminManageAccounts') ? 'active' : ''; ?>" href="<?php echo base_url('AdminManageAccounts'); ?>">User Accounts</a>
-                                        <a class="dropdown-item <?php echo is_active_segment('AdminActivityLog') ? 'active' : ''; ?>" href="<?php echo base_url('AdminActivityLog'); ?>">Activity Log</a>
-                                    </div>
-                                </li>
-
-                                <li class="nav-item"><a class="nav-link <?php echo is_active_segment('support', 'admin_inbox') ? 'active-link' : ''; ?>" href="<?php echo base_url('support/admin_inbox'); ?>">Chat Support</a></li>
-                                <li class="nav-item"><a class="nav-link <?php echo is_active_segment('AdminReports') ? 'active-link' : ''; ?>" href="<?php echo base_url('AdminReports'); ?>">Reports & Analytics</a></li>
-                            </ul>
-                        </nav>
-
-                        <div class="user-logout-area ml-auto">
-                            <a href="#" class="profile-info-container" title="Administrator">
-                                <div class="profile-text-stack">
-                                    <span class="profile-name">
-                                        Administrator
-                                    </span>
-                                    <span class="alumni-id-text">
-                                        User: **<?php echo $this->session->userdata('email'); ?>**
-                                    </span>
+                            <li class="nav-item dropdown">
+                                <a class="nav-link dropdown-toggle <?php echo $admin_management_active ? 'active-link' : ''; ?>" href="#" id="adminManageDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Management</a>
+                                <div class="dropdown-menu" aria-labelledby="adminManageDropdown">
+                                    <a class="dropdown-item <?php echo is_active_segment('adminalumni') ? 'active' : ''; ?>" href="<?php echo base_url('adminalumni'); ?>">Alumni List</a>
+                                    <a class="dropdown-item <?php echo is_active_segment('AdminJobPosting') ? 'active' : ''; ?>" href="<?php echo base_url('AdminJobPosting'); ?>">Job Posting</a>
+                                    <a class="dropdown-item <?php echo is_active_segment('AdminEvents') ? 'active' : ''; ?>" href="<?php echo base_url('AdminEvents'); ?>">Events</a>
+                                    <a class="dropdown-item <?php echo is_active_segment('AdminPost') ? 'active' : ''; ?>" href="<?php echo base_url('AdminPost'); ?>">Posting</a>
                                 </div>
-                            </a>
+                            </li>
+                            
 
-                            <a href="<?php echo base_url('AdminLogin/logout'); ?>" class="logout-icon-simple" title="Logout">
-                                <i class="fas fa-sign-out-alt"></i>
-                            </a>
-                        </div>
+                            
+                            <li class="nav-item dropdown">
+                                <a class="nav-link dropdown-toggle <?php echo $admin_system_active ? 'active-link' : ''; ?>" href="#" id="adminSystemDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">System</a>
+                                <div class="dropdown-menu" aria-labelledby="adminSystemDropdown">
+                                    <a class="dropdown-item <?php echo is_active_segment('AdminManageAccounts') ? 'active' : ''; ?>" href="<?php echo base_url('AdminManageAccounts'); ?>">User Accounts</a>
+                                    <a class="dropdown-item <?php echo is_active_segment('AdminActivityLog') ? 'active' : ''; ?>" href="<?php echo base_url('AdminActivityLog'); ?>">Activity Log</a>
+                                </div>
+                            </li>
+
+                            <li><a href="<?php echo base_url('support/admin_inbox'); ?>" class="<?php echo is_active_segment('support', 'admin_inbox') ? 'active-link' : ''; ?>">Chat Support</a></li>
+                            <li><a href="<?php echo base_url('AdminReports'); ?>" class="<?php echo is_active_segment('AdminReports') ? 'active-link' : ''; ?>">Reports & Analytics</a></li>
+
+                            
+                        </ul>
+                    </nav>
+
+                    <div class="user-logout-area">
+                        <a href="#" class="profile-info-container" title="Administrator">
+                            <div class="profile-text-stack">
+                                <span class="profile-name">
+                                    Administrator
+                                </span>
+                                <span class="alumni-id-text">
+                                    User: **<?php echo $this->session->userdata('email'); ?>**
+                                </span>
+                            </div>
+                        </a>
+
+                        <a href="<?php echo base_url('AdminLogin/logout'); ?>" class="logout-icon-simple" title="Logout">
+                            <i class="fas fa-sign-out-alt"></i>
+                        </a>
                     </div>
                 </div>
-            </nav>
+            </div>
         </header>
 
         <div id="content-wrapper" class="d-flex flex-column">
@@ -538,14 +423,3 @@ $collapse_id = 'navbar-admin-collapse'; // Unique ID for collapse target
 <?php 
 }
 ?>
-
-</div></div></div><script src="<?php echo base_url('assets/jquery/jquery.min.js'); ?>"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
-<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
-
-<script src="<?php echo base_url('assets/jquery-easing/jquery.easing.min.js'); ?>"></script>
-<script src="<?php echo base_url('assets/js/sb-admin-2.min.js'); ?>"></script>
-<script src="https://cdn.datatables.net/1.13.6/js/jquery.dataTables.min.js"></script>
-
-</body>
-</html>
