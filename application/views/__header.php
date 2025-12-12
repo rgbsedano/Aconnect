@@ -299,7 +299,7 @@ if($this->session->userdata('role') == 'alumni'){
                         <ul class="d-flex">
                             <li><a href="<?php echo base_url('postcontroller'); ?>" class="<?php echo is_active_segment('PostController') ? 'active-link' : ''; ?>">Homepage</a></li>
                             
-                            <li><a href="<?php echo base_url('profile'); ?>" class="<?php echo is_active_segment('profile') ? 'active-link' : ''; ?>">SEDANO</a></li>
+                            <li><a href="<?php echo base_url('profile'); ?>" class="<?php echo is_active_segment('profile') ? 'active-link' : ''; ?>">My Profile</a></li>
                             
                             <li><a href="<?php echo base_url('jobs'); ?>" class="<?php echo is_active_segment('jobs') ? 'active-link' : ''; ?>">Jobs</a></li>
 
