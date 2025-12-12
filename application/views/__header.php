@@ -47,9 +47,17 @@ $admin_system_active = in_array($current_uri_segment_1, ['AdminManageAccounts', 
     <link href="<?php echo base_url('assets/css/sb-admin-2.min.css'); ?>" rel="stylesheet">
     <link href="<?php echo base_url('assets/css/user/post.css'); ?>" rel="stylesheet">
     <link rel="stylesheet" href="https://cdn.datatables.net/1.13.6/css/jquery.dataTables.min.css">
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"> 
 
     <style>
+        /* CSS Variables for easier maintenance */
+        :root {
+            --primary-color: <?php echo $primary_color; ?>;
+            --secondary-color: <?php echo $secondary_color; ?>;
+            --accent-color: <?php echo $accent_color; ?>;
+            --text-light: <?php echo $text_light; ?>;
+        }
+        
         body {
             padding-top: 0 !important; 
         }
@@ -72,13 +80,14 @@ $admin_system_active = in_array($current_uri_segment_1, ['AdminManageAccounts', 
             display: none !important;
         }
         
+        /* Main Header/Navbar */
         #ac-main-header {
             position: sticky;
             top: 0;
             width: 100%;
             z-index: 1030; 
             box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
-            background: linear-gradient(90deg, <?php echo $primary_color; ?> 0%, <?php echo $secondary_color; ?> 100%);
+            background: linear-gradient(90deg, var(--primary-color) 0%, var(--secondary-color) 100%);
         }
 
         .ac-container {
@@ -142,54 +151,102 @@ $admin_system_active = in_array($current_uri_segment_1, ['AdminManageAccounts', 
         }
 
         .primary-nav a {
-            color: <?php echo $text_light; ?>;
+            color: var(--text-light);
             text-decoration: none;
             font-size: 1.1rem;
             font-weight: 700;
             padding: 30px 15px; 
             display: block;
             transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
-            border-bottom: 4px solid transparent;
+            border-bottom: 4px solid transparent; /* Retained the border-bottom property for the active link effect */
         }
         
         .primary-nav a:hover {
             background-color: rgba(255, 255, 255, 0.15); 
-            border-bottom-color: <?php echo $text_light; ?>;
+            border-bottom-color: transparent; /* Changed to transparent to remove the white bar on hover */
             transform: translateY(-4px);
             box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
-            color: <?php echo $text_light; ?>; 
+            color: var(--text-light); 
         }
         
         .primary-nav .active-link {
-            background-color: transparent; 
+            background-color: rgba(255, 255, 255, 0.1); 
             transform: none;
-            border-bottom-color: transparent; 
-            color: <?php echo $text_light; ?>; 
+            border-bottom-color: var(--text-light); /* Keep the white bar for the active link */
+            color: var(--text-light); 
             font-weight: 900; 
         }
+
+        /* Pure CSS Dropdown Styling */
         
-        .primary-nav .dropdown-menu {
-            background-color: <?php echo $primary_color; ?>; 
-            border-top: 2px solid <?php echo $text_light; ?>;
+        /* 1. Hide the dropdown by default */
+        .primary-nav .nav-item .dropdown-menu {
+            display: none;
+            position: absolute;
+            top: 100%; 
+            left: 0;
+            z-index: 1000;
+            background-color: var(--primary-color); 
+            border-top: 2px solid var(--text-light);
             border-radius: 0 0 5px 5px;
             padding: 0;
             margin-top: -1px;
             box-shadow: 0 5px 10px rgba(0, 0, 0, 0.5);
-            min-width: 150px;
+            min-width: 180px; 
         }
 
+        /* 2. Show dropdown on hover of the parent list item (nav-item) */
+        .primary-nav .nav-item:hover .dropdown-menu {
+            display: block;
+        }
+        
+        /* Dropdown toggle link adjustments */
+        .primary-nav .nav-link.dropdown-toggle {
+            padding-right: 35px; 
+            position: relative;
+        }
+        /* Dropdown Caret Styling (CSS only) */
+        .primary-nav .nav-link.dropdown-toggle::after {
+            display: inline-block;
+            margin-left: .255em;
+            vertical-align: .255em;
+            content: "";
+            border-top: .3em solid;
+            border-right: .3em solid transparent;
+            border-bottom: 0;
+            border-left: .3em solid transparent;
+            position: absolute;
+            right: 10px; 
+            top: 50%;
+            transform: translateY(-50%);
+        }
+        
+        /* Dropdown Item Styling */
         .primary-nav .dropdown-item {
-            color: <?php echo $text_light; ?>;
+            color: var(--text-light);
             padding: 10px 20px;
             font-weight: 400;
+            display: block; 
+            width: 100%;
+            clear: both;
+            text-align: inherit;
+            white-space: nowrap;
+            background-color: transparent;
+            border: 0;
             border-bottom: 1px solid rgba(255, 255, 255, 0.1);
             transition: background-color 0.2s, color 0.2s; 
         }
 
+        /* Dropdown item hover/active */
         .primary-nav .dropdown-item:hover,
         .primary-nav .dropdown-item.active {
-            background-color: <?php echo $secondary_color; ?>; 
-            color: <?php echo $text_light; ?>;
+            background-color: var(--secondary-color); 
+            color: var(--text-light);
+            text-decoration: none;
+        }
+        
+        .primary-nav .dropdown-item:last-child {
+            border-bottom: none;
         }
 
         .user-logout-area {
@@ -206,14 +263,14 @@ $admin_system_active = in_array($current_uri_segment_1, ['AdminManageAccounts', 
             align-items: center;
             margin-right: 15px; 
             text-decoration: none; 
-            color: <?php echo $text_light; ?>;
+            color: var(--text-light);
             transition: all 0.3s ease-out;
         }
 
         .profile-info-container,
         .profile-info-container:active,
         .profile-info-container:visited {
-            color: <?php echo $text_light; ?> !important; 
+            color: var(--text-light) !important; 
         }
         
         .profile-info-container:hover {
@@ -233,7 +290,7 @@ $admin_system_active = in_array($current_uri_segment_1, ['AdminManageAccounts', 
             font-size: 1.1rem;
             line-height: 1.2;
             white-space: nowrap; 
-            color: <?php echo $text_light; ?> !important; 
+            color: var(--text-light) !important; 
         }
 
         #ac-main-header .alumni-id-text {
@@ -245,7 +302,7 @@ $admin_system_active = in_array($current_uri_segment_1, ['AdminManageAccounts', 
         }
         
         .logout-icon-simple {
-            color: <?php echo $text_light; ?> !important; 
+            color: var(--text-light) !important; 
             font-size: 1.6rem; 
             padding: 5px 10px;
             transition: color 0.2s, transform 0.2s;
@@ -253,7 +310,7 @@ $admin_system_active = in_array($current_uri_segment_1, ['AdminManageAccounts', 
         }
         
         .logout-icon-simple:hover {
-            color: <?php echo $accent_color; ?> !important; 
+            color: var(--accent-color) !important; 
             transform: scale(1.2);
         }
 
@@ -261,21 +318,130 @@ $admin_system_active = in_array($current_uri_segment_1, ['AdminManageAccounts', 
             padding-left: 0 !important;
         }
 
+        /* Mobile Menu */
+        
+        .menu-toggle {
+            display: none; 
+            font-size: 2rem;
+            color: var(--text-light);
+            cursor: pointer;
+            padding: 0 15px;
+            order: 1; 
+        }
+        
+        #menu-checkbox,
+        #menu-checkbox-admin {
+            display: none; 
+        }
+
         @media (max-width: 991.98px) {
             .logo-area {
                 width: 150px;
+                order: 2; 
+                border-right: none;
+            }
+            .main-nav-bar {
+                padding: 5px 10px;
+                justify-content: space-between;
+            }
+            .ac-container {
+                flex-wrap: wrap; 
             }
             .ac-logo {
                 height: 50px;
             }
-            .main-nav-bar {
-                padding: 5px 10px;
+            
+            .menu-toggle {
+                display: block; 
             }
+
             .primary-nav {
-                display: none;
+                flex-basis: 100%; 
+                order: 4; 
+                max-height: 0;
+                overflow: hidden;
+                transition: max-height 0.4s ease-out;
+                background-color: rgba(0, 0, 0, 0.2); 
+            }
+            
+            .primary-nav ul {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+
+            .primary-nav ul li {
+                width: 100%;
+                margin: 0;
+                border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+            }
+            
+            .primary-nav ul li:last-child {
+                border-bottom: none;
+            }
+
+            .primary-nav a {
+                padding: 15px 20px;
+                border-bottom: none;
+                transform: none;
+                width: 100%;
+            }
+            
+            .primary-nav a:hover {
+                 background-color: var(--secondary-color);
+            }
+
+            .primary-nav .active-link {
+                border-bottom: none; /* Remove active bar on mobile menu items */
+                background-color: var(--secondary-color);
+            }
+            
+            /* Pure CSS Mobile Dropdown */
+            .primary-nav .nav-item .dropdown-menu {
+                position: static; 
+                display: block; 
+                opacity: 1;
+                visibility: visible;
+                background-color: rgba(0, 0, 0, 0.2);
+                border-top: none;
+                border-radius: 0;
+                min-width: 100%;
+                max-height: 0;
+                overflow: hidden;
+                transition: max-height 0.3s ease-in-out;
+            }
+
+            .primary-nav .nav-item.dropdown .dropdown-toggle:focus + .dropdown-menu,
+            .primary-nav .nav-item.dropdown:hover .dropdown-menu {
+                max-height: 300px; 
+            }
+
+            .primary-nav .dropdown-item {
+                padding-left: 40px; 
+                border-top: 1px solid rgba(255, 255, 255, 0.05);
+            }
+            
+            .primary-nav .nav-link.dropdown-toggle::after {
+                right: 20px;
+            }
+
+            /* Toggle the menu based on the hidden checkbox state */
+            #menu-checkbox:checked ~ .main-nav-bar .primary-nav,
+            #menu-checkbox-admin:checked ~ .main-nav-bar .primary-nav {
+                max-height: 400px; 
+            }
+
+            .user-logout-area {
+                order: 3; 
+                min-height: auto;
+                padding-left: 10px;
+                border-left: none;
+            }
+            
+            .profile-info-container {
+                display: none; 
             }
         }
-
+        
     </style>
 
 </head>
@@ -294,7 +460,11 @@ if($this->session->userdata('role') == 'alumni'){
                     </a>
                 </div>
 
+                <input type="checkbox" id="menu-checkbox">
+
                 <div class="main-nav-bar">
+                    <label for="menu-checkbox" class="menu-toggle"><i class="fas fa-bars"></i></label>
+                    
                     <nav class="primary-nav">
                         <ul class="d-flex">
                             <li><a href="<?php echo base_url('postcontroller'); ?>" class="<?php echo is_active_segment('PostController') ? 'active-link' : ''; ?>">Homepage</a></li>
@@ -304,7 +474,7 @@ if($this->session->userdata('role') == 'alumni'){
                             <li><a href="<?php echo base_url('jobs'); ?>" class="<?php echo is_active_segment('jobs') ? 'active-link' : ''; ?>">Jobs</a></li>
 
                             <li class="nav-item dropdown">
-                                <a class="nav-link dropdown-toggle <?php echo $connect_active ? 'active-link' : ''; ?>" href="#" id="connectDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Connect</a>
+                                <a class="nav-link dropdown-toggle <?php echo $connect_active ? 'active-link' : ''; ?>" href="#" id="connectDropdown" role="button" aria-haspopup="true" aria-expanded="false" tabindex="0">Connect</a> 
                                 <div class="dropdown-menu" aria-labelledby="connectDropdown">
                                     <a class="dropdown-item <?php echo is_active_segment('alumni') ? 'active' : ''; ?>" href="<?php echo base_url('alumni'); ?>">Search Alumni</a>
                                     <a class="dropdown-item <?php echo is_active_segment('alumni_request') ? 'active' : ''; ?>" href="<?php echo base_url('alumni_request'); ?>">Connect Requests</a>
@@ -313,7 +483,7 @@ if($this->session->userdata('role') == 'alumni'){
                             </li>
 
                             <li class="nav-item dropdown">
-                                <a class="nav-link dropdown-toggle <?php echo $events_active ? 'active-link' : ''; ?>" href="#" id="eventsDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Events</a>
+                                <a class="nav-link dropdown-toggle <?php echo $events_active ? 'active-link' : ''; ?>" href="#" id="eventsDropdown" role="button" aria-haspopup="true" aria-expanded="false" tabindex="0">Events</a>
                                 <div class="dropdown-menu" aria-labelledby="eventsDropdown">
                                     <a class="dropdown-item <?php echo is_active_segment('events') ? 'active' : ''; ?>" href="<?php echo base_url('events'); ?>">Upcoming Events</a>
                                     <a class="dropdown-item <?php echo is_active_segment('eventsprevious') ? 'active' : ''; ?>" href="<?php echo base_url('eventsprevious'); ?>">Previous Events</a>
@@ -365,13 +535,17 @@ if($this->session->userdata('role') == 'administrator'){
                     </a>
                 </div>
 
+                <input type="checkbox" id="menu-checkbox-admin">
+
                 <div class="main-nav-bar">
+                    <label for="menu-checkbox-admin" class="menu-toggle"><i class="fas fa-bars"></i></label>
+                    
                     <nav class="primary-nav">
                         <ul class="d-flex">
                             <li><a href="<?php echo base_url('AdminDashboard'); ?>" class="<?php echo is_active_segment('AdminDashboard') ? 'active-link' : ''; ?>">Dashboard</a></li>
 
                             <li class="nav-item dropdown">
-                                <a class="nav-link dropdown-toggle <?php echo $admin_management_active ? 'active-link' : ''; ?>" href="#" id="adminManageDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Management</a>
+                                <a class="nav-link dropdown-toggle <?php echo $admin_management_active ? 'active-link' : ''; ?>" href="#" id="adminManageDropdown" role="button" aria-haspopup="true" aria-expanded="false" tabindex="0">Management</a>
                                 <div class="dropdown-menu" aria-labelledby="adminManageDropdown">
                                     <a class="dropdown-item <?php echo is_active_segment('adminalumni') ? 'active' : ''; ?>" href="<?php echo base_url('adminalumni'); ?>">Alumni List</a>
                                     <a class="dropdown-item <?php echo is_active_segment('AdminJobPosting') ? 'active' : ''; ?>" href="<?php echo base_url('AdminJobPosting'); ?>">Job Posting</a>
@@ -380,10 +554,8 @@ if($this->session->userdata('role') == 'administrator'){
                                 </div>
                             </li>
                             
-
-                            
                             <li class="nav-item dropdown">
-                                <a class="nav-link dropdown-toggle <?php echo $admin_system_active ? 'active-link' : ''; ?>" href="#" id="adminSystemDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">System</a>
+                                <a class="nav-link dropdown-toggle <?php echo $admin_system_active ? 'active-link' : ''; ?>" href="#" id="adminSystemDropdown" role="button" aria-haspopup="true" aria-expanded="false" tabindex="0">System</a>
                                 <div class="dropdown-menu" aria-labelledby="adminSystemDropdown">
                                     <a class="dropdown-item <?php echo is_active_segment('AdminManageAccounts') ? 'active' : ''; ?>" href="<?php echo base_url('AdminManageAccounts'); ?>">User Accounts</a>
                                     <a class="dropdown-item <?php echo is_active_segment('AdminActivityLog') ? 'active' : ''; ?>" href="<?php echo base_url('AdminActivityLog'); ?>">Activity Log</a>
@@ -391,8 +563,7 @@ if($this->session->userdata('role') == 'administrator'){
                             </li>
 
                             <li><a href="<?php echo base_url('support/admin_inbox'); ?>" class="<?php echo is_active_segment('support', 'admin_inbox') ? 'active-link' : ''; ?>">Chat Support</a></li>
-                            <li><a href="<?php echo base_url('AdminReports'); ?>" class="<?php echo is_active_segment('AdminReports') ? 'active-link' : ''; ?>">Reports & Analytics</a></li>
-
+                            <li><a href="<?php echo base_url('AdminReports'); ?>" class class="<?php echo is_active_segment('AdminReports') ? 'active-link' : ''; ?>">Reports & Analytics</a></li>
                             
                         </ul>
                     </nav>

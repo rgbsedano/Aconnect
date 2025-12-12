@@ -239,11 +239,7 @@
         <a href="#" class="filter-button" data-filter="pending">
             <i class="fas fa-clock mr-1"></i> Pending
         </a>
-        
-        <a href="#" class="filter-button" data-filter="connected">
-            <i class="fas fa-check-circle mr-1"></i> Connected
-        </a>
-    </div>
+    
 
     <div class="container mt-4 p-0">
         <div class="row" id="alumniListContainer">
