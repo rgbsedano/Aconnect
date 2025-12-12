@@ -11,8 +11,6 @@
             --primary-color: #700A0A; /* Deep Red/Maroon */
             --primary-light: #A83A3A; /* Lighter shade for hover/focus */
             --primary-dark: #4A0707; /* Darker shade */
-            --secondary-color: #F0F2F5; /* Light background for body */
-            --light-bg: #FFFFFF;
             --info-color: #17A2B8;
             --success-color: #28A745;
             --danger-color: #DC3545;

@@ -8,8 +8,6 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
     <style>
         :root {
-            --primary-color: #5A6A8C; /* Muted Blue/Gray for a professional look */
-            --secondary-color: #E9ECEF; /* Light gray */
             --success-color: #28A745;
             --danger-color: #DC3545;
             --info-color: #17A2B8;
@@ -25,11 +23,6 @@
             border-color: var(--primary-color);
             color: white;
             transition: all 0.2s ease-in-out;
-        }
-        .btn-custom-primary:hover {
-            background-color: #4A576E; /* Darker shade on hover */
-            border-color: #4A576E;
-            color: white;
         }
 
         /* Card-like effect for the main container */
