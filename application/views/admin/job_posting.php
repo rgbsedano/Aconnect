@@ -189,7 +189,7 @@
         }
         .table thead th {
             background-color: #E9ECEF;
-            color: var(--text-dark);
+            color: var(--text-light);
             font-weight: 600;
         }
         .modal-dialog {
@@ -237,7 +237,7 @@
             <?php if (empty($jobs)): ?>
                 <div class="col-12">
                     <div class="alert alert-info text-center py-4" role="alert" style="border-radius: 10px;">
-                        <i class="fas fa-info-circle mr-1"></i> **No jobs are currently posted.** Click "Create New Job" to get started.
+                        <i class="fas fa-info-circle mr-1"></i> No jobs are currently posted. Click "Create New Job" to get started.
                     </div>
                 </div>
             <?php else: ?>
@@ -253,8 +253,8 @@
                                 <h5 class="card-title"><?= htmlspecialchars($job->job_title) ?></h5>
                                 <h6 class="card-subtitle mb-3"><i class="far fa-building mr-1"></i> <?= htmlspecialchars($job->company) ?></h6>
                                 
-                                <p class="card-text mb-2"><i class="fas fa-map-marker-alt mr-2 job-details-icon text-muted"></i> Location: **<?= htmlspecialchars($job->location) ?>**</p>
-                                <p class="card-text mb-3"><i class="fas fa-money-bill-wave mr-2 job-details-icon text-muted"></i> Salary: **<?= htmlspecialchars($job->salary_range) ?>**</p>
+                                <p class="card-text mb-2"><i class="fas fa-map-marker-alt mr-2 job-details-icon text-muted"></i> Location: <?= htmlspecialchars($job->location) ?></p>
+                                <p class="card-text mb-3"><i class="fas fa-money-bill-wave mr-2 job-details-icon text-muted"></i> Salary: <?= htmlspecialchars($job->salary_range) ?></p>
 
                                 <div class="mt-auto pt-3 border-top"> 
                                     <button class="btn btn-applicants btn-sm mb-3 w-100" data-toggle="modal" data-target="#applicantModal<?= $job->id ?>">
@@ -278,7 +278,7 @@
                                         <button type="button" class="close text-white" data-dismiss="modal">&times;</button>
                                     </div>
                                     <div class="modal-body">
-                                        <p>Are you sure you want to delete the job "**<?= htmlspecialchars($job->job_title) ?>**"?</p>
+                                        <p>Are you sure you want to delete the job "<?= htmlspecialchars($job->job_title) ?>"?</p>
                                         <small class="text-danger font-weight-bold">This action cannot be undone.</small>
                                     </div>
                                     <div class="modal-footer">
@@ -341,7 +341,7 @@
                                                     <textarea name="description" class="form-control" rows="3" required><?= htmlspecialchars($job->description) ?></textarea>
                                                 </div>
                                                 <div class="form-group">
-                                                    <label><i class="far fa-image mr-1"></i> **Replace Image** (Optional)</label>
+                                                    <label><i class="far fa-image mr-1"></i> Replace Image (Optional)</label>
                                                     <input type="file" name="image_filename" class="form-control-file" accept="image/*">
                                                 </div>
                                             </div>
@@ -360,7 +360,7 @@
                         <div class="modal-dialog modal-xl" role="document">
                             <div class="modal-content">
                                 <div class="modal-header bg-info text-white">
-                                    <h5 class="modal-title"><i class="fas fa-user-check mr-2"></i> Applicants for "**<?= htmlspecialchars($job->job_title) ?>**"</h5>
+                                    <h5 class="modal-title"><i class="fas fa-user-check mr-2"></i> Applicants for "<?= htmlspecialchars($job->job_title) ?>"</h5>
                                     <button type="button" class="close text-white" data-dismiss="modal">&times;</button>
                                 </div>
                                 <div class="modal-body">
@@ -411,7 +411,7 @@
                                         </div>
                                     <?php else: ?>
                                         <div class="alert alert-warning text-center py-3" role="alert" style="border-radius: 8px;">
-                                            <i class="fas fa-exclamation-circle mr-1"></i> **No alumni have applied for this job yet.**
+                                            <i class="fas fa-exclamation-circle mr-1"></i> No alumni have applied for this job yet.
                                         </div>
                                     <?php endif; ?>
                                 </div>
@@ -551,9 +551,9 @@ $(document).ready(function(){
         var visibleCards = $('.job-card-item:visible').length;
         if (visibleCards === 0 && value.length > 0) {
             if ($('#noResultsAlert').length === 0) {
-                $('#jobListContainer').append('<div class="col-12" id="noResultsAlert"><div class="alert alert-warning text-center py-3" style="border-radius: 10px;"><i class="fas fa-exclamation-circle mr-1"></i> **No results found** for "'+value+'".</div></div>');
+                $('#jobListContainer').append('<div class="col-12" id="noResultsAlert"><div class="alert alert-warning text-center py-3" style="border-radius: 10px;"><i class="fas fa-exclamation-circle mr-1"></i> No results found for "'+value+'".</div></div>');
             } else {
-                $('#noResultsAlert').find('div').html('<i class="fas fa-exclamation-circle mr-1"></i> **No results found** for "'+value+'".');
+                $('#noResultsAlert').find('div').html('<i class="fas fa-exclamation-circle mr-1"></i> No results found for "'+value+'".');
             }
         } else {
              $('#noResultsAlert').remove();

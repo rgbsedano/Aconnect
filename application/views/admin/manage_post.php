@@ -1,18 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
 <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Manage Alumni Content</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
-    <script src="https://cdn.tiny.cloud/1/no-api-key/tinymce/6/tinymce.min.js" referrerpolicy="origin"></script> 
     
     <style>
-        /* --- Custom Styles for Modern Look (Final Merged & Corrected Spacing) --- */
+        /* --- Custom Styles for Modern Look --- */
 
         /* General Layout & Colors */
         .btn-custom-primary {
-            background-color: #17a2b8 !important; 
+            /* Primary Button Color: Red */
+            background-color: #dc3545 !important; 
             border: none;
             transition: background-color 0.2s;
         }
         .btn-custom-primary:hover {
-            background-color: #117a8b !important;
+            /* Darker Red on hover */
+            background-color: #c82333 !important;
         }
 
         /* Added for top header separation */
@@ -28,12 +34,12 @@
             height: 380px; 
             display: flex; 
             flex-direction: column; 
-            transition: transform 0.3s ease, box-shadow 0.3s ease; /* Smooth transition */
-            border: 1px solid #f0f0f0; /* Subtle border */
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            border: 1px solid #f0f0f0; 
         }
         .card-fixed:hover {
-            transform: translateY(-3px); /* Lift card slightly */
-            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15) !important; /* Enhanced shadow on hover */
+            transform: translateY(-3px); 
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15) !important;
         }
         .card-body-flex { 
             display: flex; 
@@ -52,7 +58,7 @@
             flex-grow: 1; 
             color: #6c757d;
             margin-bottom: 1rem;
-            font-size: 0.9rem; /* Slightly smaller text for better fit */
+            font-size: 0.9rem;
         }
         .card-footer-btns { 
             margin-top: auto; 
@@ -62,18 +68,16 @@
             border-top: 1px solid #e9ecef; 
         }
         
-        /* IMPROVED: Increased vertical space between sections (Announcements, News, Stories) */
+        /* Section Spacing */
         .section-wrap { 
             margin-bottom: 6rem; 
         }
-
-        /* IMPROVED: Increased margin between Section Title (e.g., News) and the cards */
         .section-title h4 {
             font-weight: 300;
             font-size: 1.75rem;
             border-bottom: 2px solid #e9ecef;
-            padding-bottom: 10px; /* Increased from 5px */
-            margin-bottom: 2.5rem; /* Significantly increased from 0.5rem */
+            padding-bottom: 10px;
+            margin-bottom: 2.5rem;
             width: 100%;
         }
 
@@ -106,17 +110,13 @@
             box-shadow: 0 1px 3px rgba(0,0,0,0.05);
         }
 
-        /* IMPROVED: Adjusted scroll controls margin-top to align with new h4 margin-bottom */
+        /* Scroll Controls Alignment */
         .scroll-controls {
             display: flex;
             justify-content: flex-end; 
-            margin-top: -5rem; /* Adjusted based on new 2.5rem h4 margin-bottom */
+            margin-top: -5rem;
             position: relative;
             z-index: 10;
-        }
-        /* TinyMCE fix for modals */
-        .tox-tinymce-aux {
-            z-index: 10500 !important; 
         }
 
         @media (max-width: 576px) {
@@ -129,7 +129,8 @@
 <body>
 
 <div class="container mt-5">
-    <div class="d-flex align-items-center justify-content-between mb-xl"> <h2 class="m-0 text-dark"><i class="fas fa-bullhorn mr-2 text-custom-primary"></i> Manage Alumni Content</h2>
+    <div class="d-flex align-items-center justify-content-between mb-xl"> 
+        <h2 class="m-0 text-dark"><i class="fas fa-bullhorn mr-2 text-custom-primary"></i> Manage Alumni Content</h2>
         <div class="d-flex" style="gap: .5rem;">
             <button class="btn btn-custom-primary" data-toggle="modal" data-target="#createPostModal">
                 <i class="fas fa-plus-circle mr-1"></i> Create Post
@@ -141,7 +142,8 @@
     </div>
 
     <div class="modal fade" id="createPostModal" tabindex="-1" role="dialog" aria-labelledby="createPostModalLabel" aria-hidden="true">
-        <div class="modal-dialog modal-xl" role="document"> <div class="modal-content">
+        <div class="modal-dialog modal-xl" role="document"> 
+            <div class="modal-content">
                 <form action="<?= base_url('AdminPost/create') ?>" method="post" enctype="multipart/form-data">
                     <div class="modal-header modal-header-custom">
                         <h5 class="modal-title" id="createPostModalLabel"><i class="fas fa-pencil-alt mr-2 text-primary"></i> Create New Post</h5>
@@ -156,7 +158,7 @@
                                 <input type="text" name="title" class="form-control" required placeholder="Enter post title">
                             </div>
                             <div class="form-group col-12">
-                                <label>Content / Body (Rich Text Editor)</label>
+                                <label>Content / Body</label>
                                 <textarea name="content" id="create_content" class="form-control" rows="8" required placeholder="Write the main content of your post here"></textarea>
                             </div>
                             <div class="form-group col-md-6">
@@ -235,7 +237,7 @@
     <?php function render_section($title, $items, $type) { ?>
         <div class="section-wrap">
             <div class="section-title mb-3">
-                <h4><i class="<?= $type === 'announcements' ? 'fas fa-bullhorn' : ($type === 'news' ? 'fas fa-newspaper' : 'fas fa-lightbulb') ?> mr-2 text-custom-primary"></i> <?= $title ?></h4>
+                <h4 class="text-capitalize"><i class="<?= $type === 'announcements' ? 'fas fa-bullhorn' : ($type === 'news' ? 'fas fa-newspaper' : 'fas fa-lightbulb') ?> mr-2 text-custom-primary"></i> <?= $title ?></h4>
             </div>
 
             <div class="scroll-controls">
@@ -251,8 +253,6 @@
                 <?php foreach($items as $post): ?>
                     <?php 
                     $safe_title = htmlspecialchars($post['title']); 
-                    // Content is HTML escaped in the loop, but rendered unescaped in TinyMCE for editing
-                    $safe_content = htmlspecialchars($post['content']); 
                     ?>
 
                     <div class="card card-fixed shadow card-fixed d-flex flex-column">
@@ -285,7 +285,7 @@
                                     <?php if (!empty($post['image'])): ?>
                                         <img src="<?= base_url('assets/uploads/post/' . htmlspecialchars($post['image'])) ?>" class="img-fluid mb-4 rounded shadow-sm" alt="post-image">
                                     <?php endif; ?>
-                                    <p class="lead"><?= nl2br($safe_content) ?></p> 
+                                    <p class="lead"><?= nl2br($post['content']) ?></p> 
                                     <hr>
                                     <p class="text-muted small">
                                         Posted: <?= date('F d, Y', strtotime($post['created_at'] ?? 'now')) ?> | 
@@ -301,7 +301,8 @@
                     </div>
 
                     <div class="modal fade" id="editPostModal_<?= $post['id'] ?>" tabindex="-1">
-                        <div class="modal-dialog modal-xl"> <div class="modal-content">
+                        <div class="modal-dialog modal-xl"> 
+                            <div class="modal-content">
                                 <form action="<?= base_url('AdminPost/update/' . $post['id']) ?>" method="post" enctype="multipart/form-data">
                                     <div class="modal-header bg-warning text-dark">
                                         <h5 class="modal-title"><i class="fas fa-edit mr-2"></i> Edit Post: <?= $safe_title ?></h5>
@@ -313,8 +314,8 @@
                                             <input type="text" name="title" class="form-control" value="<?= htmlspecialchars($post['title']) ?>" required>
                                         </div>
                                         <div class="form-group">
-                                            <label>Content (Rich Text Editor)</label>
-                                            <textarea name="content" id="edit_content_<?= $post['id'] ?>" class="form-control tinymce-editor" rows="8" required><?= $post['content'] ?></textarea>
+                                            <label>Content</label>
+                                            <textarea name="content" id="edit_content_<?= $post['id'] ?>" class="form-control" rows="8" required><?= $post['content'] ?></textarea>
                                         </div>
                                         <div class="form-row">
                                             <div class="form-group col-md-6">
@@ -375,15 +376,13 @@
             </div>
         </div>
     <?php } ?>
-
+    
     <?php 
-    // WARNING: Since I don't have access to your live PHP data ($announcements, $news, $stories), 
-    // I cannot perfectly simulate images or ensure the "word_limiter" function exists.
-    // If the images are still placeholders, ensure the 'image' key in your PHP data arrays 
-    // has a valid filename in your 'assets/uploads/post/' folder.
+    // PHP variables assumed to be populated in your environment
+    // $announcements, $news, $stories 
+    // The conditional rendering remains based on these variables
     ?>
     
-    <?php // Assuming $announcements, $news, and $stories are populated arrays in your environment ?>
     <?php render_section('Announcements', $announcements ?? [], 'announcements'); ?>
     <?php render_section('News', $news ?? [], 'news'); ?>
     <?php render_section('Stories', $stories ?? [], 'stories'); ?>
@@ -402,57 +401,7 @@
         wrapper.scrollBy({ left: direction * cardWidth, behavior: 'smooth' });
     }
 
-    // 2. TinyMCE Initialization Logic
-    document.addEventListener('DOMContentLoaded', () => {
-        // Initialize TinyMCE for the Create modal content field
-        tinymce.init({
-            selector: '#create_content',
-            plugins: 'link lists advlist code table',
-            toolbar: 'bold italic underline | bullist numlist | link table | code',
-            height: 300,
-            menubar: false,
-        });
-
-        // Event listener to re-initialize or load content for the Edit modals when they open
-        // TinyMCE needs to be re-initialized on dynamic content/modals for proper function
-        $('div[id^="editPostModal_"]').on('shown.bs.modal', function () {
-            const modalId = $(this).attr('id');
-            const postId = modalId.split('_')[1];
-            const selector = `#edit_content_${postId}`;
-
-            // Destroy any existing TinyMCE instance for cleanup
-            if (tinymce.get(selector)) {
-                tinymce.get(selector).destroy();
-            }
-
-            // Initialize TinyMCE for the specific edit modal
-            tinymce.init({
-                selector: selector,
-                plugins: 'link lists advlist code table',
-                toolbar: 'bold italic underline | bullist numlist | link table | code',
-                height: 300,
-                menubar: false,
-                // Crucial for modals: keeps editor in focus
-                setup: function (editor) {
-                    editor.on('OpenWindow', function (e) {
-                        // Fix for dialogs/popups within the editor not being above the Bootstrap modal
-                        $('.tox-tinymce-aux').css('z-index', 10500); 
-                    });
-                }
-            });
-        });
-
-        // Destroy TinyMCE instances when modals close to prevent focus/display issues
-        $('div[id^="editPostModal_"], #createPostModal').on('hidden.bs.modal', function () {
-            // Find all TinyMCE instances within this modal and remove them
-            $(this).find('textarea').each(function() {
-                const id = $(this).attr('id');
-                const editor = tinymce.get(id);
-                if (editor) {
-                    editor.destroy();
-                }
-            });
-        });
-    });
+    // Removed: All TinyMCE JavaScript initialization.
 </script>
 </body>
+</html>

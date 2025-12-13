@@ -510,9 +510,7 @@ if($this->session->userdata('role') == 'alumni'){
                                 <span class="profile-name">
                                     <?php echo $this->session->userdata('first_name') . ' ' . $this->session->userdata('last_name'); ?>
                                 </span>
-                                <span class="alumni-id-text">
-                                    ALUMNI ID: <strong><?php echo $this->session->userdata('alumni_number'); ?></strong>
-                                </span>
+                                
                             </div>
                         </a>
 
