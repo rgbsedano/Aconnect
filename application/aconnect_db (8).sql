@@ -360,7 +360,6 @@ CREATE TABLE `carousel_photos` (
 
 INSERT INTO `carousel_photos` (`id`, `file_name`, `uploaded_at`) VALUES
 (4, '1750071488_auntie_anne.jpg', '2025-06-16 10:58:08'),
-(5, '1750071499_ALUMNI_EXTENSION_SERVICE.jpg', '2025-06-16 10:58:19'),
 (6, '1750071509_BALIK_DOMINIC.jpg', '2025-06-16 10:58:29');
 
 -- --------------------------------------------------------

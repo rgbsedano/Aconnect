@@ -3,282 +3,336 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Alumni List | Enhanced</title>
+    <title>Admin Panel | Alumni Management</title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
     <style>
         :root {
-            --primary-color: #700A0A; /* Deep Red/Maroon */
-            --primary-light: #A83A3A; 
-            --secondary-bg: #F8F9FA; /* Light background */
-            --light-bg: #FFFFFF;
-            --text-dark: #212529;
-            --text-muted: #6C757D;
+            --primary-color: #700A0A;
+            --accent-gold: #D4AF37;
+            --sidebar-width: 260px;
+            --glass-bg: rgba(255, 255, 255, 0.95);
+            --shadow-sm: 0 2px 4px rgba(0,0,0,0.05);
+            --shadow-md: 0 8px 30px rgba(0,0,0,0.08);
         }
 
         body {
-            background-color: var(--secondary-bg);
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #f0f2f5;
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+            color: #334155;
+            overflow-x: hidden;
         }
 
-        /* Main Container Styling */
-        .alumni-container {
-            padding: 30px;
-            background: var(--light-bg);
-            border-radius: 12px;
-            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
-            margin-top: 30px;
-            margin-bottom: 30px;
+        .modal-backdrop {
+            z-index: 1040 !important;
         }
+        .modal {
+            z-index: 1050 !important;
+        }
+
+        .admin-wrapper {
+            padding: 40px 20px;
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        .alumni-card {
+            background: var(--glass-bg);
+            border-radius: 16px;
+            border: 1px solid rgba(255, 255, 255, 0.3);
+            box-shadow: var(--shadow-md);
+            padding: 30px;
+        }
+
+        .page-guide {
+            background: #fff9f9;
+            border-left: 4px solid var(--primary-color);
+            padding: 15px 20px;
+            margin-bottom: 25px;
+            border-radius: 4px 12px 12px 4px;
+            font-size: 0.9rem;
+        }
+
         .main-header {
             color: var(--primary-color);
-            font-weight: 700;
-            border-bottom: 2px solid #E9ECEF;
-            padding-bottom: 15px;
-            margin-bottom: 25px !important;
+            font-weight: 800;
+            letter-spacing: -0.5px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
         }
 
-        /* Search Form Styling */
-        #searchInput {
-            border-radius: 8px 0 0 8px;
-            height: 45px;
+        .search-box-wrapper {
+            background: #fff;
+            border-radius: 12px;
+            padding: 10px;
+            box-shadow: var(--shadow-sm);
+            border: 1px solid #e2e8f0;
         }
-        .btn-search {
-            background-color: var(--primary-color) !important;
-            border-color: var(--primary-color);
-            transition: background-color 0.3s;
-            border-radius: 0 8px 8px 0;
-            height: 45px;
+
+        .search-input-clean {
+            border: none !important;
+            box-shadow: none !important;
+            font-size: 0.95rem;
+        }
+
+        .btn-modern-search {
+            background: var(--primary-color);
+            color: white;
+            border-radius: 10px;
+            padding: 10px 25px;
             font-weight: 600;
         }
-        .btn-search:hover {
-            background-color: #5A0808 !important;
-            border-color: #5A0808;
-        }
-        #clearSearch {
-            color: var(--text-dark);
-            border: none;
-            background: transparent !important;
-            opacity: 0.7;
-            font-size: 1.2rem;
-        }
 
-        /* Table Styling */
-        .table-bordered, .table-bordered th, .table-bordered td {
-            border: 1px solid #dee2e6;
-        }
-        .table thead {
-            background-color: var(--primary-color) !important;
+        .btn-modern-search:hover {
+            background: #5A0808;
             color: #fff;
         }
-        .table thead th {
-            border-color: #5A0808; /* Darker border for header */
-            padding: 12px 15px;
-            font-weight: 600;
-            vertical-align: middle;
+
+        .table-responsive {
+            border-radius: 12px;
+            overflow: visible;
         }
-        .table tbody tr {
-            transition: background-color 0.2s;
+
+        .table-modern {
+            border-collapse: separate;
+            border-spacing: 0 8px;
+            background: transparent;
         }
-        .table tbody tr:nth-of-type(even) {
-            background-color: #FDFDFD; /* Slightly off-white for striping */
+
+        .table-modern thead th {
+            background: transparent !important;
+            color: #64748b;
+            text-transform: uppercase;
+            font-size: 0.75rem;
+            font-weight: 700;
+            border: none;
+            padding: 15px;
         }
-        .table tbody tr:hover {
-            background-color: #E9ECEF; /* Light hover background */
-            cursor: pointer;
+
+        .table-modern tbody tr {
+            background: #fff;
+            box-shadow: var(--shadow-sm);
         }
-        .table td {
+
+        .table-modern td {
+            padding: 18px 15px;
+            border: none;
             vertical-align: middle;
         }
 
-        /* Action Button */
-        .btn-view-custom {
-            background: var(--primary-color) !important;
-            border-color: var(--primary-color);
-            color: white;
-            font-weight: 500;
-            border-radius: 6px;
-        }
-        .btn-view-custom:hover {
-            background: #5A0808 !important;
-            border-color: #5A0808;
+        .table-modern td:first-child { border-radius: 12px 0 0 12px; }
+        .table-modern td:last-child { border-radius: 0 12px 12px 0; }
+
+        .badge-status {
+            padding: 6px 12px;
+            border-radius: 20px;
+            font-weight: 600;
+            font-size: 0.75rem;
+            background: #ecfdf5;
+            color: #059669;
         }
 
-        /* Modal Styling */
-        .modal-header-custom {
-            background-color: var(--primary-color) !important;
-            color: white;
-            border-top-left-radius: 10px;
-            border-top-right-radius: 10px;
-        }
-        .modal-content {
-            border-radius: 10px;
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
-        }
-        .modal-title-icon {
-            margin-right: 10px;
-        }
-        .modal-body strong {
-            color: var(--text-dark);
-            font-weight: 600;
-        }
-        .modal-section-header {
+        .pagination .page-link {
             color: var(--primary-color);
-            font-weight: 600;
-            border-bottom: 1px dashed #E9ECEF;
-            padding-bottom: 5px;
-            margin-top: 15px;
-            margin-bottom: 15px !important;
-            font-size: 1.15rem;
+            border: 1px solid #dee2e6;
         }
-        .data-icon {
-            color: var(--primary-light);
-            width: 20px;
-            text-align: center;
+
+        .pagination .page-item.active .page-link {
+            background-color: var(--primary-color);
+            border-color: var(--primary-color);
+            color: #fff;
+        }
+
+        .modal-modern .modal-content {
+            border: none;
+            border-radius: 24px;
+            overflow: hidden;
+        }
+
+        .modal-modern .modal-header {
+            background: var(--primary-color);
+            color: #fff;
+            padding: 25px;
+            border: none;
+        }
+
+        .info-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 20px;
+            padding: 10px;
+        }
+
+        .info-item {
+            padding: 12px;
+            background: #f8fafc;
+            border-radius: 12px;
+        }
+
+        .info-label {
+            display: block;
+            font-size: 0.75rem;
+            text-transform: uppercase;
+            color: #94a3b8;
+            margin-bottom: 4px;
+            font-weight: 700;
+        }
+
+        .info-value {
+            font-weight: 600;
+            color: #1e293b;
         }
     </style>
 </head>
 <body>
 
-<div class="container alumni-container">
-    <h2 class="main-header"><i class="fas fa-users-cog mr-2"></i> Alumni list</h2>
-    
-    <form method="get" class="mb-5" id="searchForm">
-        <div class="row align-items-center">
-            <div class="col-md-10 position-relative">
-                <input type="text" name="search" id="searchInput" class="form-control pr-5" placeholder="Search by name, alumni number, email, or degree..." value="<?= $this->input->get('search') ?>">
+<div class="admin-wrapper">
+    <div class="alumni-card">
+        <div class="main-header mb-4">
+            <div>
+                <h2 class="mb-0"><i class="fas fa-id-card-alt mr-3"></i>Alumni Directory</h2>
+                <p class="text-muted mt-2 mb-0">Manage and oversee all registered alumni records</p>
+            </div>
+            <button class="btn btn-outline-danger btn-sm" onclick="location.reload()">
+                <i class="fas fa-sync-alt"></i> Refresh Data
+            </button>
+        </div>
+
+        <div class="page-guide">
+            <i class="fas fa-info-circle mr-2 text-danger"></i>
+            <strong>Admin Guide:</strong> Click on any row to view full profile details. Use the universal search bar to filter by degree, year, or student ID.
+        </div>
+
+        <form method="get" id="searchForm" class="mb-5">
+            <div class="search-box-wrapper d-flex align-items-center">
+                <i class="fas fa-search ml-3 text-muted"></i>
+                <input type="text" name="search" id="searchInput" 
+                       class="form-control search-input-clean flex-grow-1" 
+                       placeholder="Global search: Enter name, ID, or Batch..." 
+                       value="<?= $this->input->get('search') ?>">
+                
                 <?php if ($this->input->get('search')): ?>
-                    <button type="button" id="clearSearch" class="btn btn-sm btn-light position-absolute" style="right: 50px; top: 50%; transform: translateY(-50%); ">
-                        &times;
+                    <button type="button" id="clearSearch" class="btn text-muted mx-2">
+                        <i class="fas fa-times-circle"></i>
                     </button>
                 <?php endif; ?>
+                
+                <button type="submit" class="btn btn-modern-search ml-2">
+                    Generate List
+                </button>
             </div>
-            <div class="col-md-2">
-                <button type="submit" class="btn text-white btn-block btn-search"><i class="fas fa-search mr-1"></i> Search</button>
-            </div>
-        </div>
-    </form>
+        </form>
 
-    <div class="table-responsive">
-        <table class="table table-bordered table-hover">
-            <thead>
-                <tr>
-                    <th>Alumni No.</th>
-                    <th>Student No.</th>
-                    <th>Name</th>
-                    <th>Email</th>
-                    <th>Phone</th>
-                    <th>Grad Year</th>
-                    <th>Degree</th>
-                    <th>Action</th>
-                </tr>
-            </thead> 
-            <tbody>
-                <?php if (empty($alumni_list)): ?>
+        <div class="table-responsive">
+            <table class="table table-modern">
+                <thead>
                     <tr>
-                        <td colspan="8" class="text-center py-4">
-                            <i class="fas fa-info-circle mr-1 text-muted"></i> No alumni records found.
-                        </td>
+                        <th><i class="fas fa-hashtag mr-1"></i> ID</th>
+                        <th>Name & Contact</th>
+                        <th>Degree Info</th>
+                        <th>Batch</th>
+                        <th>Status</th>
+                        <th class="text-right">Actions</th>
                     </tr>
-                <?php else: ?>
-                    <?php foreach ($alumni_list as $alumni): ?>
+                </thead>
+                <tbody>
+                    <?php if (empty($alumni_list)): ?>
                         <tr>
-                            <td><?= htmlspecialchars($alumni['alumni_number']) ?></td>
-                            <td><?= htmlspecialchars($alumni['student_number']) ?></td>
-                            <td><?= ucwords(htmlspecialchars($alumni['first_name'] . ' ' . $alumni['last_name'])) ?></td>
-                            <td><?= htmlspecialchars($alumni['email']) ?></td>
-                            <td><?= htmlspecialchars($alumni['phone']) ?></td>
-                            <td><?= htmlspecialchars($alumni['graduation_year']) ?></td>
-                            <td><?= ucwords(htmlspecialchars($alumni['degree'])) ?></td>
-                            <td>
-                                <button class="btn btn-sm btn-view-custom" data-toggle="modal" data-target="#viewModal<?= $alumni['id'] ?>">
-                                    <i class="fas fa-eye"></i> View
-                                </button>
+                            <td colspan="6" class="text-center py-5">
+                                <img src="https://cdn-icons-png.flaticon.com/512/7486/7486744.png" style="width: 80px; opacity: 0.3;">
+                                <p class="text-muted mt-3">No matching records found in database.</p>
                             </td>
                         </tr>
+                    <?php else: ?>
+                        <?php foreach ($alumni_list as $alumni): ?>
+                            <tr>
+                                <td class="font-weight-bold text-danger"><?= $alumni['student_number'] ?></td>
+                                <td>
+                                    <div class="font-weight-bold"><?= ucwords(htmlspecialchars($alumni['first_name'] . ' ' . $alumni['last_name'])) ?></div>
+                                    <div class="small text-muted"><?= htmlspecialchars($alumni['email']) ?></div>
+                                </td>
+                                <td>
+                                    <div class="small font-weight-bold"><?= ucwords(htmlspecialchars($alumni['degree'])) ?></div>
+                                    <div class="small text-muted"><?= htmlspecialchars($alumni['school']) ?></div>
+                                </td>
+                                <td><span class="badge badge-light p-2"><?= $alumni['graduation_year'] ?></span></td>
+                                <td><span class="badge-status">Active</span></td>
+                                <td class="text-right">
+                                    <button class="btn btn-sm btn-light btn-view-custom" data-toggle="modal" data-target="#viewModal<?= $alumni['id'] ?>">
+                                        <i class="fas fa-external-link-alt text-danger"></i> Profile
+                                    </button>
+                                </td>
+                            </tr>
+                        <?php endforeach; ?>
+                    <?php endif; ?>
+                </tbody>
+            </table>
+        </div>
 
-                        <div class="modal fade" id="viewModal<?= $alumni['id'] ?>" tabindex="-1" role="dialog" aria-labelledby="viewModalLabel<?= $alumni['id'] ?>" aria-hidden="true">
-                            <div class="modal-dialog modal-lg" role="document">
-                                <div class="modal-content">
-                                    <div class="modal-header modal-header-custom">
-                                        <h5 class="modal-title" id="viewModalLabel<?= $alumni['id'] ?>">
-                                            <i class="fas fa-id-badge modal-title-icon"></i> Alumni Profile: <?= ucwords(htmlspecialchars($alumni['first_name'] . ' ' . $alumni['last_name'])) ?>
-                                        </h5>
-                                        <button type="button" class="close text-white" data-dismiss="modal" aria-label="Close">&times;</button>
-                                    </div>
-
-                                    <div class="modal-body">
-                                        <div class="container-fluid">
-                                            
-                                            <h5 class="modal-section-header"><i class="fas fa-user-circle mr-2"></i> Personal & Registration</h5>
-                                            <div class="row">
-                                                <div class="col-md-6 mb-2"><i class="fas fa-hashtag data-icon"></i> <strong>Alumni No.:</strong> <?= htmlspecialchars($alumni['alumni_number']) ?></div>
-                                                <div class="col-md-6 mb-2"><i class="fas fa-id-card data-icon"></i> <strong>Student No.:</strong> <?= htmlspecialchars($alumni['student_number']) ?></div>
-                                                <div class="col-md-6 mb-2"><i class="fas fa-user-tag data-icon"></i> <strong>Full Name:</strong> <?= ucwords(htmlspecialchars($alumni['first_name'] . ' ' . $alumni['last_name'])) ?></div>
-                                                <div class="col-md-6 mb-2"><i class="fas fa-check-circle data-icon"></i> <strong>Status:</strong> <?= htmlspecialchars($alumni['status']) ?></div>
-                                            </div>
-
-                                            <h5 class="modal-section-header"><i class="fas fa-phone-alt mr-2"></i> Contact Information</h5>
-                                            <div class="row">
-                                                <div class="col-md-6 mb-2"><i class="fas fa-envelope data-icon"></i> <strong>Primary Email:</strong> <a href="mailto:<?= htmlspecialchars($alumni['email']) ?>"><?= htmlspecialchars($alumni['email']) ?></a></div>
-                                                <div class="col-md-6 mb-2"><i class="far fa-envelope data-icon"></i> <strong>Alternative Email:</strong> <?= htmlspecialchars($alumni['alternative_email']) ?: 'N/A' ?></div>
-                                                <div class="col-md-6 mb-2"><i class="fas fa-mobile-alt data-icon"></i> <strong>Primary Phone:</strong> <?= htmlspecialchars($alumni['phone']) ?></div>
-                                                <div class="col-md-6 mb-2"><i class="fas fa-phone-square-alt data-icon"></i> <strong>Alternative Phone:</strong> <?= htmlspecialchars($alumni['alternative_phone']) ?: 'N/A' ?></div>
-                                            </div>
-
-                                            <h5 class="modal-section-header"><i class="fas fa-graduation-cap mr-2"></i> Educational Background</h5>
-                                            <div class="row">
-                                                <div class="col-md-6 mb-2"><i class="far fa-calendar-alt data-icon"></i> <strong>Graduation Year:</strong> <?= htmlspecialchars($alumni['graduation_year']) ?></div>
-                                                <div class="col-md-6 mb-2"><i class="fas fa-book data-icon"></i> <strong>Degree:</strong> <?= ucwords(htmlspecialchars($alumni['degree'])) ?></div>
-                                                <div class="col-md-12 mb-2"><i class="fas fa-university data-icon"></i> <strong>School/College:</strong> <?= htmlspecialchars($alumni['school']) ?></div>
-                                            </div>
-
-                                            <h5 class="modal-section-header"><i class="fas fa-briefcase mr-2"></i> Current Employment</h5>
-                                            <div class="row">
-                                                <div class="col-md-6 mb-2"><i class="fas fa-user-tie data-icon"></i> <strong>Job Title:</strong> <?= ucwords(htmlspecialchars($alumni['current_job']) ?: 'N/A') ?></div>
-                                                <div class="col-md-6 mb-2"><i class="fas fa-building data-icon"></i> <strong>Organization:</strong> <?= ucwords(htmlspecialchars($alumni['current_job_organization']) ?: 'N/A') ?></div>
-                                                <div class="col-md-6 mb-2"><i class="far fa-clock data-icon"></i> <strong>Length:</strong> <?= htmlspecialchars($alumni['current_job_length']) ?: 'N/A' ?></div>
-                                            </div>
-
-                                            <h5 class="modal-section-header"><i class="fas fa-lightbulb mr-2"></i> Skills & Capabilities</h5>
-                                            <div class="row">
-                                                <div class="col-md-12 mb-2"><i class="fas fa-comments data-icon"></i> <strong>Soft Skills:</strong> <?= ucwords(htmlspecialchars($alumni['soft_skills']) ?: 'N/A') ?></div>
-                                                <div class="col-md-12 mb-2"><i class="fas fa-code data-icon"></i> <strong>Technical Skills:</strong> <?= ucwords(htmlspecialchars($alumni['technical_skills']) ?: 'N/A') ?></div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="modal-footer">
-                                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-
-                    <?php endforeach; ?>
-                <?php endif; ?>
-            </tbody>
-        </table>
-    </div>
-    
-    <div class="d-flex justify-content-center mt-4">
-        <?= $pagination ?>
+        <div class="d-flex justify-content-center mt-4">
+            <nav aria-label="Page navigation">
+                <?= $pagination ?>
+            </nav>
+        </div>
     </div>
 </div>
 
+<?php if (!empty($alumni_list)): ?>
+    <?php foreach ($alumni_list as $alumni): ?>
+        <div class="modal fade modal-modern" id="viewModal<?= $alumni['id'] ?>" tabindex="-1" role="dialog" aria-hidden="true">
+            <div class="modal-dialog modal-lg modal-dialog-centered" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <div class="d-flex align-items-center">
+                            <div class="rounded-circle bg-white p-3 mr-3">
+                                <i class="fas fa-user-tie text-danger fa-2x"></i>
+                            </div>
+                            <div>
+                                <h4 class="modal-title mb-0"><?= ucwords(htmlspecialchars($alumni['first_name'] . ' ' . $alumni['last_name'])) ?></h4>
+                                <small class="text-white-50">Alumni Member since <?= date('Y') ?></small>
+                            </div>
+                        </div>
+                        <button type="button" class="close text-white" data-dismiss="modal">&times;</button>
+                    </div>
+                    <div class="modal-body p-4">
+                        <h6 class="text-uppercase font-weight-bold text-danger mb-3" style="font-size: 0.7rem; letter-spacing: 1px;">Academic History</h6>
+                        <div class="info-grid mb-4">
+                            <div class="info-item"><span class="info-label">Degree</span><span class="info-value"><?= $alumni['degree'] ?></span></div>
+                            <div class="info-item"><span class="info-label">Student ID</span><span class="info-value"><?= $alumni['student_number'] ?></span></div>
+                            <div class="info-item"><span class="info-label">Grad Year</span><span class="info-value"><?= $alumni['graduation_year'] ?></span></div>
+                            <div class="info-item"><span class="info-label">School</span><span class="info-value"><?= $alumni['school'] ?></span></div>
+                        </div>
+
+                        <h6 class="text-uppercase font-weight-bold text-danger mb-3" style="font-size: 0.7rem; letter-spacing: 1px;">Professional Background</h6>
+                        <div class="info-grid">
+                            <div class="info-item"><span class="info-label">Current Role</span><span class="info-value"><?= $alumni['current_job'] ?: 'Unspecified' ?></span></div>
+                            <div class="info-item"><span class="info-label">Company</span><span class="info-value"><?= $alumni['current_job_organization'] ?: 'N/A' ?></span></div>
+                            <div class="info-item"><span class="info-label">Phone</span><span class="info-value"><?= $alumni['phone'] ?></span></div>
+                        </div>
+                    </div>
+                    <div class="modal-footer bg-light">
+                        <button type="button" class="btn btn-secondary rounded-pill px-4" data-dismiss="modal">Close Overlay</button>
+                        <button type="button" class="btn btn-danger rounded-pill px-4">Generate Report</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    <?php endforeach; ?>
+<?php endif; ?>
+
 <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
-<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.2/dist/js/bootstrap.bundle.min.js"></script>
 
 <script>
-    document.getElementById('clearSearch')?.addEventListener('click', function () {
-        document.getElementById('searchInput').value = '';
-        // Redirect to the base URL to clear search results completely
-        window.location.href = window.location.pathname; 
-    });
-
-    // Functionality to open the modal by clicking anywhere on the table row
     $(document).ready(function() {
-        $('.table tbody tr').on('click', function() {
-            // Find the view button within the clicked row and trigger its click event
+        $('#clearSearch').on('click', function() {
+            $('#searchInput').val('');
+            window.location.href = window.location.pathname;
+        });
+
+        $(document).on('click', '.table-modern tbody tr', function(e) {
+            if ($(e.target).closest('.btn-view-custom').length) return;
             $(this).find('.btn-view-custom').click();
         });
     });
