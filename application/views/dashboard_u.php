@@ -46,9 +46,9 @@
         }
 
         .container {
-            max-width: 1200px;
+            max-width: 1400px;
             width: 100%;
-            margin: -40px auto 40px 430px;
+            margin: -40px auto 40px 280px;
             display: grid;
             grid-template-columns: 1fr;
             gap: 32px;
@@ -57,8 +57,8 @@
 
         @media (min-width: 1024px) {
             .container {
-                grid-template-columns: 1fr 360px;
-                margin: -40px auto 40px 430px;
+                grid-template-columns: 1fr 320px;
+                margin: -40px auto 40px 280px;
             }
         }
 
@@ -84,7 +84,7 @@
 
         .hero-banner img {
             width: 100%;
-            height: 400px;
+            height: 600px;
             display: block;
             object-fit: cover;
             transition: transform 0.6s ease;
@@ -138,10 +138,89 @@
             margin-top: 4px;
         }
 
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 20px;
+            margin: 32px 0;
+        }
+
+        .stat-card {
+            background: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%);
+            color: white;
+            padding: 24px;
+            border-radius: var(--radius-lg);
+            text-align: center;
+            transition: transform 0.3s ease;
+        }
+
+        .stat-card:hover {
+            transform: translateY(-4px);
+        }
+
+        .stat-number {
+            font-size: 2.5rem;
+            font-weight: 900;
+            margin-bottom: 8px;
+        }
+
+        .stat-label {
+            font-size: 0.9rem;
+            opacity: 0.9;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .programs-showcase {
+            background: var(--bg-page);
+            padding: 32px;
+            border-radius: var(--radius-lg);
+            margin: 32px 0;
+        }
+
+        .programs-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 24px;
+            margin-top: 24px;
+        }
+
+        .program-card {
+            background: var(--white);
+            padding: 20px;
+            border-radius: var(--radius-md);
+            border-left: 4px solid var(--primary);
+            transition: all 0.3s ease;
+        }
+
+        .program-card:hover {
+            box-shadow: var(--shadow-md);
+            transform: translateX(4px);
+        }
+
+        .program-icon {
+            color: var(--primary);
+            font-size: 1.5rem;
+            margin-bottom: 12px;
+        }
+
+        .program-title {
+            font-weight: 700;
+            color: var(--text-main);
+            margin-bottom: 8px;
+        }
+
+        .program-list {
+            font-size: 0.85rem;
+            color: var(--text-muted);
+            line-height: 1.5;
+        }
+
         .sidebar {
             display: flex;
             flex-direction: column;
             gap: 20px;
+            height: 100%;
         }
 
         .sidebar-card {
@@ -241,7 +320,8 @@
             font-size: 0.8rem;
             line-height: 1.6;
             border-top: 1px solid var(--border);
-            margin-top: 8px;
+            margin-top: auto;
+            margin-bottom: 0;
         }
 
         @media (max-width: 1023px) {
@@ -299,23 +379,76 @@
 
         <div class="story-content">
             <p class="drop-cap">
-                St. Dominic College of Asia represents more than three decades of educational excellence and unwavering commitment to community development. Our institution stands as a beacon of transformative learning in Southeast Asia, rooted in values of integrity, compassion, and innovation.
+                <strong>St. Dominic College of Asia (SDCA)</strong> traces its roots to the establishment of St. Dominic Medical Center in 1991 by founders Don Gregorio and Doña Dominga Andaman. In 2003, what began as a healthcare vision evolved into a comprehensive educational institution that has been transforming lives for over two decades in Bacoor, Cavite.
+            </p>
+
+            <div class="stats-grid">
+                <div class="stat-card">
+                    <div class="stat-number">30+</div>
+                    <div class="stat-label">Years of Excellence</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-number">5</div>
+                    <div class="stat-label">Specialized Schools</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-number">50+</div>
+                    <div class="stat-label">Academic Programs</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-number">100%</div>
+                    <div class="stat-label">Commitment to Quality</div>
+                </div>
+            </div>
+
+            <p>
+                Under the visionary leadership of <strong>Dr. Gregorio A. Andaman, Jr.</strong>, SDCA has embraced the battlecry "<span style="color: var(--primary); font-weight: 700;">Revolutionizing Education</span>" since 2011. This philosophy drives our innovative approach to learner-centered education, cutting-edge research, and meaningful community engagement.
+            </p>
+
+            <div class="programs-showcase">
+                <h3 style="color: var(--primary); font-size: 1.5rem; font-weight: 700; margin-bottom: 8px;">Our Academic Excellence</h3>
+                <p style="color: var(--text-muted); margin-bottom: 24px;">Five specialized schools offering comprehensive programs from basic education to graduate studies:</p>
+                
+                <div class="programs-grid">
+                    <div class="program-card">
+                        <div class="program-icon"><i class="fas fa-heartbeat"></i></div>
+                        <div class="program-title">School of Nursing & Allied Health Studies</div>
+                        <div class="program-list">• BS Nursing<br>• BS Radiologic Technology<br>• BS Physical Therapy</div>
+                    </div>
+                    <div class="program-card">
+                        <div class="program-icon"><i class="fas fa-flask"></i></div>
+                        <div class="program-title">School of Medical Laboratory Science</div>
+                        <div class="program-list">• BS Biology<br>• BS Pharmacy<br>• BS Medical Laboratory Science</div>
+                    </div>
+                    <div class="program-card">
+                        <div class="program-icon"><i class="fas fa-calculator"></i></div>
+                        <div class="program-title">School of Accountancy, Sciences & Education</div>
+                        <div class="program-list">• BS Accountancy<br>• BS Psychology<br>• BS Education</div>
+                    </div>
+                    <div class="program-card">
+                        <div class="program-icon"><i class="fas fa-utensils"></i></div>
+                        <div class="program-title">School of International Hospitality & Tourism</div>
+                        <div class="program-list">• BS Tourism Management<br>• BS Hospitality Management<br>• Culinary Arts</div>
+                    </div>
+                    <div class="program-card">
+                        <div class="program-icon"><i class="fas fa-laptop"></i></div>
+                        <div class="program-title">School of Business & Computer Studies</div>
+                        <div class="program-list">• BS Business Administration<br>• BS Information Technology<br>• BA Communication</div>
+                    </div>
+                    <div class="program-card">
+                        <div class="program-icon"><i class="fas fa-graduation-cap"></i></div>
+                        <div class="program-title">Graduate Studies & Medicine</div>
+                        <div class="program-list">• MBA<br>• MA in Psychology<br>• Doctor of Medicine</div>
+                    </div>
+                </div>
+            </div>
+
+            <p>
+                Our commitment to excellence is reflected in our <strong>PACUCOA accreditation</strong> for multiple programs and our consistent achievement of high passing rates in licensure examinations. From our <strong>Basic Education Unit</strong> (Preschool to Senior High School) to our <strong>Graduate Studies</strong>, we prepare students not just for careers, but for meaningful contributions to society through holistic development and community service.
             </p>
 
             <p>
-                Founded in 2003 by the visionary Andaman family, SDCA emerged from a legacy that began with the establishment of St. Dominic Medical Center in 1992. What started as a dream to provide quality healthcare evolved into a comprehensive educational institution dedicated to nurturing leaders of tomorrow.
-            </p>
-
-            <p>
-                Today, our four specialized schools—<strong>Health Science Professions, Arts & Education, International Hospitality Management, and Business & Computer Studies</strong>—serve thousands of students annually. We maintain the highest standards of academic rigor while fostering an inclusive environment where every student can thrive.
-            </p>
-
-            <p>
-                Under the visionary leadership of <strong>Dr. Gregorio A. Andaman, Jr.</strong>, our institutional motto "<span style="color: var(--primary); font-weight: 700;">Revolutionizing Education</span>" has become more than words—it defines our approach to student-centered learning, cutting-edge research, and meaningful community engagement.
-            </p>
-
-            <p>
-                We believe that education should transcend classroom walls. Our graduates are prepared not just for careers, but for meaningful contributions to society. Through partnerships with industry leaders, community initiatives, and international collaborations, we ensure our students develop the knowledge, skills, and character needed for global success.
+                Located in the heart of <strong>Bacoor, Cavite</strong>, SDCA continues to revolutionize education by linking training and research with community service, pursuing the holistic development of individuals through innovative programs that meet global standards while serving local needs.
             </p>
         </div>
     </main>
