@@ -376,7 +376,7 @@
                 </p>
                 <p class="profile-meta">
                     <span><i class="fas fa-graduation-cap"></i> Graduated <?= isset($alumni->graduation_year) ? $alumni->graduation_year : 'N/A' ?></span>
-                    <span><i class="fas fa-id-badge"></i> ID: <?= isset($alumni->alumni_number) ? $alumni->alumni_number : 'N/A' ?></span>
+                    <span><i class="fas fa-id-badge"></i> ID: <?= isset($alumni->student_number) ? $alumni->student_number : 'N/A' ?></span>
                 </p>
 
                 <div class="info-grid">
@@ -385,13 +385,14 @@
                         <span class="info-value"><?= isset($alumni->email) ? $alumni->email : 'Not Set' ?></span>
                     </div>
                     <div class="info-item">
+                        <span class="info-label"><i class="fas fa-envelope-open"></i> Alternate Email</span>
+                        <span class="info-value"><?= isset($alumni->alternative_email) ? $alumni->alternative_email : 'Not Set' ?></span>
+                    </div>
+                    <div class="info-item">
                         <span class="info-label"><i class="fas fa-phone"></i> Phone</span>
                         <span class="info-value"><?= isset($alumni->phone) ? $alumni->phone : 'Not Set' ?></span>
                     </div>
-                    <div class="info-item">
-                        <span class="info-label"><i class="fas fa-id-card"></i> Student ID</span>
-                        <span class="info-value"><?= isset($alumni->student_number) ? $alumni->student_number : 'Not Set' ?></span>
-                    </div>
+
                 </div>
             </div>
 
@@ -513,35 +514,48 @@
                         </div>
 
                         <div class="form-row">
-                            <div class="form-group col-md-6">
-                                <label>Alumni ID</label>
-                                <input type="text" name="alumni_number" class="form-control" value="<?= $alumni->alumni_number ?>">
-                            </div>
+
                             <div class="form-group col-md-6">
                                 <label>Student Number</label>
-                                <input type="text" name="student_number" class="form-control" value="<?= isset($alumni->student_number) ? $alumni->student_number : '' ?>">
+                                <input type="text" name="student_number" class="form-control" value="<?= isset($alumni->student_number) ? $alumni->student_number : '' ?>" readonly>
                             </div>
-                        </div>
-
-                        <div class="form-row">
                             <div class="form-group col-md-6">
                                 <label>Degree</label>
                                 <input type="text" name="degree" class="form-control" value="<?= $alumni->degree ?>">
                             </div>
+                        </div>
+
+                        <div class="form-row">
+                                <div class="form-group col-md-6">
+                                    <label>Year Admitted</label>
+                                    <input type="number" name="year_admitted" class="form-control" value="<?= $alumni->year_admitted ?>" min="1990" max="2100">
+                                </div>
                             <div class="form-group col-md-6">
                                 <label>Graduation Year</label>
                                 <input type="number" name="graduation_year" class="form-control" value="<?= $alumni->graduation_year ?>" min="1990" max="2100">
                             </div>
                         </div>
-
                         <div class="form-row">
                             <div class="form-group col-md-6">
-                                <label>Phone</label>
+                                <label>Phone Number</label>
                                 <input type="tel" name="phone" class="form-control" value="<?= $alumni->phone ?>">
                             </div>
                             <div class="form-group col-md-6">
+                                <label>Alternate Phone Number</label>
+                                <input type="tel" name="alternative_phone" class="form-control" value="<?= $alumni->alternative_phone ?>">
+                            </div>
+                        </div>
+
+                        <div class="form-row">
+                            
+                            <div class="form-group col-md-6">
                                 <label>Email</label>
-                                <input type="email" name="email" class="form-control" value="<?= $alumni->email ?>" readonly>
+                                <input type="email" name="email" class="form-control" value="<?= $alumni->email ?>" required>
+                            </div>
+                                <div class="form-group col-md-4">
+                                <label>Alternate Email</label>
+                                <input type="email" name="alternative_email" class="form-control" 
+                                    value="<?= isset($alumni->alternative_email) ? $alumni->alternative_email : '' ?>" required>
                             </div>
                         </div>
 

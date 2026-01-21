@@ -22,9 +22,12 @@ class Register extends CI_Controller {
         $this->form_validation->set_rules('password', 'Password', 'required|min_length[6]');
         $this->form_validation->set_rules('student_number', 'Student Number', 'required|is_unique[alumni.student_number]|trim');
         $this->form_validation->set_rules('degree', 'Degree', 'required');
-        $this->form_validation->set_rules('alumni_number', 'Alumni Number', 'required|trim');
+        $this->form_validation->set_rules('alternative_email', 'Alternate Email', 'required|valid_email|trim');
+        $this->form_validation->set_rules('year_admitted', 'Year Admitted', 'required|numeric|trim');
         $this->form_validation->set_rules('gender', 'Gender', 'required');
         $this->form_validation->set_rules('degree_other', 'Other Degree', 'callback_check_degree_other');
+        $this->form_validation->set_rules('telephone', 'Telephone', 'trim');
+
 
         if ($this->form_validation->run() == FALSE) {
             $this->load->view('user/register');
@@ -44,11 +47,13 @@ class Register extends CI_Controller {
             'email'            => $this->input->post('email'),
             'password'         => password_hash($this->input->post('password'), PASSWORD_BCRYPT),
             'phone'            => $this->input->post('phone'),
+            'telephone'       => $this->input->post('telephone'),
+            'alternative_email' => $this->input->post('alternative_email'),
+            'year_admitted'     => $this->input->post('year_admitted'),
             'graduation_year'  => $this->input->post('graduation_year'),
             'student_number'   => $this->input->post('student_number'),
             'degree'           => $degree_value,
             'gender'           => $this->input->post('gender'),
-            'alumni_number'    => $this->input->post('alumni_number'),
             'status'           => 'inactive',
             'email_verified'   => 0,
             'verification_token' => $token
@@ -56,6 +61,20 @@ class Register extends CI_Controller {
 
         // INSERT NEW USER
         $alumni_id = $this->Alumni_model->insert($data);
+
+        // HANDLE PROFILE IMAGE UPLOAD
+        if (!empty($_FILES['profile_image']['name'])) {
+            $config['upload_path']   = './assets/uploads/alumni/';
+            $config['allowed_types'] = 'jpg|jpeg|png|gif';
+            $config['file_name']     = uniqid() . '_' . $_FILES['profile_image']['name'];
+
+            $this->load->library('upload', $config);
+
+            if ($this->upload->do_upload('profile_image')) {
+                $uploadData = $this->upload->data();
+                $data['profile_image'] = $uploadData['file_name'];
+            }
+        }
 
         // SEND VERIFICATION EMAIL
         $verify_link = base_url("register/verify_email?token=" . $token);

@@ -78,9 +78,15 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                         </div>
                     <?php endif; ?>
 
-                    <form method="post" action="<?= base_url('register/submit') ?>">
+                    <form method="post" action="<?= base_url('register/submit') ?>" enctype="multipart/form-data">
+
+
+
                         <div class="form-group">
-                            <input type="text" name="alumni_number" placeholder="Alumni ID (e.g., SDCA12345)" value="<?= set_value('alumni_number') ?>" required autocomplete="off">
+                            <input type="text" name="student_number" placeholder="Student Number (e.g., 2017-00001)" value="<?= set_value('student_number') ?>" required autocomplete="off">
+                        </div>
+                        <div class="form-group">
+                            <input type="password" name="password" placeholder="Password" required autocomplete="new-password">
                         </div>
                         <div class="form-group">
                             <input type="text" name="first_name" placeholder="First Name" value="<?= set_value('first_name') ?>" required autocomplete="given-name">
@@ -88,16 +94,37 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                         <div class="form-group">
                             <input type="text" name="last_name" placeholder="Last Name" value="<?= set_value('last_name') ?>" required autocomplete="family-name">
                         </div>
+                        
                         <div class="form-group">
-                            <input type="email" name="email" placeholder="Email" value="<?= set_value('email') ?>" required autocomplete="email">
+                            <input type="email" name="email" placeholder="Email - (Do not use the SDCA Email)" value="<?= set_value('email') ?>" required autocomplete="email">
                         </div>
                         <div class="form-group">
-                            <input type="password" name="password" placeholder="Password" required autocomplete="new-password">
+                            <input type="email" name="alternative_email" placeholder="Alternate Email" 
+                                value="<?= set_value('alternative_email') ?>" required autocomplete="email">
                         </div>
+                        
                         <div class="form-group">
                             <input type="tel" name="phone" placeholder="Phone Number (e.g., 09xxxxxxxxx)" value="<?= set_value('phone') ?>" required autocomplete="tel">
                         </div>
+                        <div class="form-group">
+                            <input type="text" name="telephone" placeholder="Telephone Number ( e.g., 02-8123-4567)" 
+                                value="<?= set_value('telephone') ?>" autocomplete="off">
+                        </div>
 
+                        
+                        <div class="form-group">
+                            <select name="year_admitted" required>
+                                <option value="" disabled <?= (set_value('year_admitted')=='')?'selected':'' ?> >Year Admitted</option>
+                                <?php 
+                                $current_year = date('Y');
+                                $start_year = $current_year - 20;
+                                for ($year = $current_year; $year >= $start_year; $year--): ?>
+                                    <option value="<?= $year ?>" <?= (set_value('year_admitted') == $year) ? 'selected' : '' ?>>
+                                        <?= $year ?>
+                                    </option>
+                                <?php endfor; ?>
+                            </select>
+                        </div>
                         <div class="form-group">
                             <select name="graduation_year" required>
                                 <option value="" disabled <?= (set_value('graduation_year')=='')?'selected':'' ?> >Graduation Year</option>
@@ -113,9 +140,6 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                             </select>
                         </div>
 
-                        <div class="form-group">
-                            <input type="text" name="student_number" placeholder="Student Number (e.g., 2017-00001)" value="<?= set_value('student_number') ?>" required autocomplete="off">
-                        </div>
 
                         <div class="form-group">
                             <label for="degree">Degree</label>
@@ -183,6 +207,11 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                                 <option value="Female" <?= set_select('gender','Female') ?>>Female</option>
                                 <option value="Other" <?= set_select('gender','Other') ?>>Other</option>
                             </select>
+                        </div>
+                        <div class="form-group">
+                            <label>Profile Picture</label>
+                            <input type="file" name="profile_image" class="form-control" accept="image/*">
+                            <small class="text-muted">Optional. JPG, PNG, or GIF only.</small>
                         </div>
 
                         <div class="form-group mt-4">

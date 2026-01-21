@@ -36,54 +36,78 @@ class Profile extends CI_Controller{
 public function update($id) {
     $this->load->model('user/Alumni_model');
 
-    $alumni_number = $this->input->post('alumni_number');
+    // Basic validation (optional but recommended)
+    $year_admitted   = $this->input->post('year_admitted');
+    $graduation_year = $this->input->post('graduation_year');
+    $email           = $this->input->post('email');
+    $alt_email       = $this->input->post('alternative_email');
+    $phone           = $this->input->post('phone');
+    $alt_phone       = $this->input->post('alternative_phone');
 
-    // Check for duplicate alumni_number (excluding current user)
-    $this->db->where('alumni_number', $alumni_number);
-    $this->db->where('id !=', $id);
-    $query = $this->db->get('alumni');
 
-    if ($query->num_rows() > 0) {
-        // ERROR: duplicate alumni number
-        $this->session->set_flashdata('edit_error', 'The Alumni Number you entered is already in use.');
+    // Check: Year admitted must be earlier than graduation year
+    if ($year_admitted >= $graduation_year) {
+        $this->session->set_flashdata('edit_error', 'Year admitted must be earlier than graduation year.');
         $this->session->set_flashdata('show_edit_modal', true);
         redirect('profile');
         return;
-    } else {
-        // Continue with update
-        $data = array(
-            'alumni_number' => $alumni_number,
-            'first_name' => $this->input->post('first_name'),
-            'last_name' => $this->input->post('last_name'),
-            'phone' => $this->input->post('phone'),
-            'graduation_year' => $this->input->post('graduation_year'),
-            'degree' => $this->input->post('degree'),
-        );
+    }
 
-        // Handle file upload
-        if (!empty($_FILES['profile_image']['name'])) {
-            $config['upload_path'] = './assets/uploads/alumni/';
-            $config['allowed_types'] = 'jpg|jpeg|png|gif';
-            $config['file_name'] = uniqid() . '_' . $_FILES['profile_image']['name'];
-
-            $this->load->library('upload', $config);
-            if ($this->upload->do_upload('profile_image')) {
-                $uploadData = $this->upload->data();
-                $data['profile_image'] = $uploadData['file_name'];
-            }
-        }
-
-        // Perform update
-        $this->Alumni_model->update_alumni($id, $data);
-        $this->load->model('Activity_log_model');
-        $this->Activity_log_model->log_activity($id, 'Updated his/her Profile');
-
-        // SUCCESS: set flash message and show modal
-        $this->session->set_flashdata('edit_success', 'Profile updated successfully.');
+    // Check: Primary email and alternate email should not be the same
+    if ($email === $alt_email) {
+        $this->session->set_flashdata('edit_error', 'Alternate email must be different from your primary email.');
         $this->session->set_flashdata('show_edit_modal', true);
         redirect('profile');
+        return;
     }
+
+     if ($phone === $alt_phone) {
+        $this->session->set_flashdata('edit_error', 'Alternate phone must be different from your primary phone.');
+        $this->session->set_flashdata('show_edit_modal', true);
+        redirect('profile');
+        return;
+    }
+
+    // Prepare update data (NO alumni_number, NO student_number)
+    $data = array(
+        'first_name'        => $this->input->post('first_name'),
+        'last_name'         => $this->input->post('last_name'),
+        'phone'             => $phone,
+        'alternative_phone' => $alt_phone,
+        'email'             => $email,
+        'alternative_email' => $alt_email,
+        'year_admitted'     => $year_admitted,
+        'graduation_year'   => $graduation_year,
+        'degree'            => $this->input->post('degree'),
+    );
+
+    // Handle profile image upload
+    if (!empty($_FILES['profile_image']['name'])) {
+        $config['upload_path']   = './assets/uploads/alumni/';
+        $config['allowed_types'] = 'jpg|jpeg|png|gif';
+        $config['file_name']     = uniqid() . '_' . $_FILES['profile_image']['name'];
+
+        $this->load->library('upload', $config);
+
+        if ($this->upload->do_upload('profile_image')) {
+            $uploadData = $this->upload->data();
+            $data['profile_image'] = $uploadData['file_name'];
+        }
+    }
+
+    // Perform update
+    $this->Alumni_model->update_alumni($id, $data);
+
+    // Log activity
+    $this->load->model('Activity_log_model');
+    $this->Activity_log_model->log_activity($id, 'Updated his/her Profile');
+
+    // Success message
+    $this->session->set_flashdata('edit_success', 'Profile updated successfully.');
+    $this->session->set_flashdata('show_edit_modal', true);
+    redirect('profile');
 }
+
 
 
 public function update_job_info($id)
