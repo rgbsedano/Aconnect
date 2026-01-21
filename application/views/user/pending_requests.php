@@ -1,288 +1,421 @@
 <?php
-// pending_requests_modern.php
-
-// Note: This updated design maintains the original PHP logic and CodeIgniter functions 
-// (site_url, $pending_requests, $request->id, etc.) exactly as requested.
-
-// Placeholder for $pending_requests structure (Assuming it contains combined request and sender details)
-/*
-$pending_requests = [
-    (object)[
-        'id' => 1, // Connection ID
-        'sender_id' => 5, 
-        'first_name' => 'Jane',
-        'last_name' => 'Smith',
-        'degree' => 'BS in Business Management',
-        'request_date' => '2025-12-01 09:00:00',
-        'profile_image' => 'jane_smith.jpg',
-        'gender' => 'female'
-    ],
-    // ... more objects
-];
-*/
+$display_full_name = $this->session->userdata('first_name') . ' ' . $this->session->userdata('last_name');
+$student_number = $this->session->userdata('student_number') ? $this->session->userdata('student_number') : 'N/A';
 ?>
-
-<style>
-    /* Color Variables from previous Alumni Search page for consistency */
-    :root {
-        --maroon: #700A0A;
-        --maroon-dark: #5a0707;
-        --white: #FFFFFF;
-        --light-gray: #f8f9fa;
-        --card-bg: #fff;
-        --text-dark: #333;
-        --border-gray: #eee;
-        --accent-blue: #007bff; /* Modern accent color for hover/focus */
-        --success: #28a745;
-        --danger: #dc3545;
-    }
-
-    /* Layout and Typography */
-    .container-fluid {
-        padding: 40px 20px;
-        font-family: 'Poppins', sans-serif; /* Using a modern font */
-        background-color: var(--light-gray);
-        max-width: 800px;
-        margin: auto;
-    }
-
-    h2 {
-        color: var(--maroon);
-        font-size: 1.8rem;
-        font-weight: 700;
-        margin-bottom: 30px;
-        border-bottom: 3px solid var(--maroon);
-        padding-bottom: 10px;
-        display: flex;
-        align-items: center;
-    }
-
-    /* List and Item Styling (Card Look) */
-    .pending-requests-list {
-        list-style: none;
-        padding: 0;
-    }
-
-    .pending-request-item {
-        background-color: var(--card-bg);
-        padding: 20px;
-        margin-bottom: 15px;
-        border-radius: 12px;
-        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08); /* Stronger, modern shadow */
-        transition: transform 0.2s, box-shadow 0.2s;
-        display: flex;
-        align-items: center;
-        justify-content: space-between;
-        border-left: 5px solid var(--maroon); /* Accent border */
-    }
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pending Requests - AConnect</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
     
-    .pending-request-item:hover {
-        transform: translateY(-2px);
-        box-shadow: 0 6px 16px rgba(0, 0, 0, 0.1);
-    }
-
-    /* Profile Info Styling */
-    .requester-info {
-        display: flex;
-        align-items: center;
-        flex-grow: 1;
-    }
-
-    .profile-avatar-wrapper {
-        width: 50px;
-        height: 50px;
-        min-width: 50px;
-        margin-right: 15px;
-        border: 2px solid var(--maroon);
-        border-radius: 50%;
-        overflow: hidden;
-    }
-
-    .profile-avatar-wrapper img {
-        width: 100%;
-        height: 100%;
-        object-fit: cover;
-    }
-
-    .requester-details {
-        line-height: 1.4;
-    }
-
-    .requester-name {
-        font-weight: 600;
-        color: var(--text-dark);
-        font-size: 1.1rem;
-        margin: 0;
-    }
-    
-    .request-meta {
-        font-size: 0.85rem;
-        color: #777;
-    }
-    .request-meta i {
-        margin-right: 5px;
-    }
-
-    /* Actions Styling */
-    .request-actions {
-        display: flex;
-        gap: 10px;
-        min-width: 220px; /* Give buttons space */
-    }
-
-    .action-button {
-        color: var(--white);
-        padding: 10px 15px;
-        border-radius: 8px;
-        text-decoration: none;
-        font-size: 0.9rem;
-        font-weight: 500;
-        transition: all 0.2s ease-in-out;
-        border: none;
-        cursor: pointer;
-        text-align: center;
-        flex-grow: 1;
-    }
-
-    .accept-button {
-        background-color: var(--success);
-    }
-
-    .accept-button:hover {
-        background-color: #1e7e34;
-        box-shadow: 0 2px 8px rgba(40, 167, 69, 0.4);
-    }
-
-    .decline-button {
-        background-color: var(--danger);
-    }
-
-    .decline-button:hover {
-        background-color: #bd2130;
-        box-shadow: 0 2px 8px rgba(220, 53, 69, 0.4);
-    }
-    
-    .view-button {
-        background-color: var(--maroon);
-        color: var(--white);
-        padding: 10px 15px;
-        border-radius: 8px;
-        text-decoration: none;
-        font-size: 0.9rem;
-        font-weight: 500;
-        transition: background-color 0.2s;
-    }
-    .view-button:hover {
-        background-color: var(--maroon-dark);
-    }
-
-    /* No Requests Message */
-    .no-requests-container {
-        text-align: center;
-        padding: 50px;
-        border: 1px dashed #ccc;
-        border-radius: 12px;
-        background-color: var(--card-bg);
-        color: #777;
-        margin-top: 20px;
-    }
-
-    /* Responsive adjustments */
-    @media (max-width: 768px) {
-        .pending-request-item {
-            flex-direction: column;
-            align-items: flex-start;
-            padding: 15px;
+    <style>
+        :root {
+            --primary: #8B1538;
+            --primary-dark: #6B0F2A;
+            --accent: #D4A574;
+            --bg-page: #FAFAF8;
+            --white: #FFFFFF;
+            --text-main: #1F2937;
+            --text-muted: #6B7280;
+            --border: #E5E7EB;
+            --shadow-sm: 0 1px 2px rgba(0,0,0,0.05);
+            --shadow-md: 0 4px 6px rgba(0,0,0,0.07);
+            --shadow-lg: 0 10px 15px rgba(0,0,0,0.1);
+            --success: #10B981;
+            --danger: #EF4444;
         }
 
-        .requester-info {
-            margin-bottom: 15px;
+        * {
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            background-color: var(--bg-page);
+            font-family: 'Inter', sans-serif;
+            margin: 0;
+            padding: 0;
+            color: var(--text-main);
+            line-height: 1.6;
+        }
+
+        .header-spacing {
+            height: 70px;
+        }
+
+        .container {
+            max-width: 900px;
             width: 100%;
+            margin: 40px auto;
+            padding: 0 20px;
+        }
+
+        .page-header {
+            margin-bottom: 32px;
+            padding-bottom: 24px;
+            border-bottom: 2px solid var(--border);
+        }
+
+        .page-header h1 {
+            font-size: 2rem;
+            font-weight: 800;
+            color: var(--text-main);
+            margin: 0 0 8px 0;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            letter-spacing: -0.5px;
+        }
+
+        .page-header h1 i {
+            color: var(--primary);
+            font-size: 2.2rem;
+        }
+
+        .page-header p {
+            margin: 0;
+            color: var(--text-muted);
+            font-size: 1rem;
+        }
+
+        .requests-list {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+
+        .request-card {
+            background: var(--white);
+            border-radius: 12px;
+            border: 1px solid var(--border);
+            border-left: 5px solid var(--primary);
+            padding: 24px;
+            box-shadow: var(--shadow-md);
+            transition: all 0.3s ease;
+            display: flex;
+            align-items: center;
+            gap: 20px;
+        }
+
+        .request-card:hover {
+            box-shadow: var(--shadow-lg);
+            transform: translateY(-2px);
+            border-left-color: var(--accent);
+        }
+
+        .profile-section {
+            display: flex;
+            align-items: center;
+            gap: 16px;
+            flex: 1;
+            min-width: 0;
+        }
+
+        .profile-avatar {
+            width: 70px;
+            height: 70px;
+            min-width: 70px;
+            border-radius: 50%;
+            border: 3px solid var(--accent);
+            overflow: hidden;
+            background: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: var(--shadow-md);
+        }
+
+        .profile-avatar img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .profile-info {
+            flex: 1;
+            min-width: 0;
+        }
+
+        .profile-name {
+            font-size: 1.15rem;
+            font-weight: 700;
+            color: var(--text-main);
+            margin: 0 0 6px 0;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .profile-degree {
+            font-size: 0.9rem;
+            color: var(--text-muted);
+            margin: 0 0 4px 0;
+            display: flex;
+            align-items: center;
+            gap: 6px;
+        }
+
+        .profile-date {
+            font-size: 0.85rem;
+            color: var(--text-muted);
+            margin: 0;
+            display: flex;
+            align-items: center;
+            gap: 6px;
         }
 
         .request-actions {
-            flex-direction: row; /* Keep actions in a row */
-            width: 100%;
-            min-width: auto;
+            display: flex;
+            gap: 10px;
+            flex-wrap: wrap;
+            justify-content: flex-end;
         }
-        
-        .action-button, .view-button {
-            padding: 8px 12px;
-            font-size: 0.85rem;
-        }
-    }
-</style>
 
-<div class="container-fluid">
-    <h2><i class="fas fa-inbox mr-2"></i> Pending Connection Requests</h2>
+        .btn {
+            padding: 10px 20px;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 0.9rem;
+            border: none;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            white-space: nowrap;
+            text-align: center;
+        }
+
+        .btn-view {
+            background: var(--white);
+            color: var(--primary);
+            border: 2px solid var(--primary);
+        }
+
+        .btn-view:hover {
+            background: var(--primary);
+            color: var(--white);
+        }
+
+        .btn-accept {
+            background: linear-gradient(135deg, var(--success) 0%, #059669 100%);
+            color: var(--white);
+            box-shadow: var(--shadow-md);
+        }
+
+        .btn-accept:hover {
+            transform: translateY(-2px);
+            box-shadow: var(--shadow-lg);
+        }
+
+        .btn-decline {
+            background: linear-gradient(135deg, var(--danger) 0%, #DC2626 100%);
+            color: var(--white);
+            box-shadow: var(--shadow-md);
+        }
+
+        .btn-decline:hover {
+            transform: translateY(-2px);
+            box-shadow: var(--shadow-lg);
+        }
+
+        .empty-state {
+            text-align: center;
+            padding: 60px 20px;
+            background: var(--white);
+            border-radius: 12px;
+            border: 2px dashed var(--border);
+            box-shadow: var(--shadow-sm);
+        }
+
+        .empty-state i {
+            font-size: 3.5rem;
+            color: var(--primary);
+            margin-bottom: 16px;
+            opacity: 0.3;
+        }
+
+        .empty-state h3 {
+            font-size: 1.3rem;
+            font-weight: 700;
+            color: var(--text-main);
+            margin: 0 0 8px 0;
+        }
+
+        .empty-state p {
+            color: var(--text-muted);
+            margin: 0;
+            font-size: 1rem;
+        }
+
+        .modal-header {
+            background: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%);
+            color: var(--white);
+            border: none;
+            border-radius: 12px 12px 0 0;
+        }
+
+        .modal-header h5 {
+            color: var(--white);
+            font-weight: 700;
+        }
+
+        .modal-body {
+            padding: 24px;
+        }
+
+        .modal-body p {
+            margin-bottom: 12px;
+            font-size: 1rem;
+        }
+
+        .modal-body strong {
+            color: var(--primary);
+        }
+
+        @media (max-width: 768px) {
+            .request-card {
+                flex-direction: column;
+                text-align: center;
+            }
+
+            .profile-section {
+                width: 100%;
+                justify-content: center;
+            }
+
+            .profile-info {
+                width: 100%;
+            }
+
+            .request-actions {
+                width: 100%;
+                justify-content: center;
+            }
+
+            .btn {
+                flex: 1;
+                min-width: 120px;
+            }
+
+            .page-header h1 {
+                font-size: 1.5rem;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<div class="header-spacing"></div>
+
+<div class="container">
+    <div class="page-header">
+        <h1>
+            <i class="fas fa-handshake"></i>
+            Connection Requests
+        </h1>
+        <p>Manage your pending alumni network connection requests</p>
+    </div>
 
     <?php if (empty($pending_requests)): ?>
-        <div class="no-requests-container">
-            <i class="far fa-smile-beam fa-3x mb-3"></i>
-            <p class="lead">No pending connection requests at this time.</p>
+        <div class="empty-state">
+            <i class="fas fa-inbox"></i>
+            <h3>No Pending Requests</h3>
+            <p>You have no pending connection requests at this time.</p>
         </div>
     <?php else: ?>
-        <ul class="pending-requests-list">
+        <ul class="requests-list">
             <?php foreach ($pending_requests as $request): ?>
-                <li class="pending-request-item">
-                    
-                    <div class="requester-info">
-                        <div class="profile-avatar-wrapper">
+                <li class="request-card">
+                    <div class="profile-section">
+                        <div class="profile-avatar">
                             <?php 
-                                // Assuming profile_image and gender are available in the $request object
                                 $image_path = $request->profile_image ?? null;
                                 $gender = strtolower($request->gender ?? 'male');
                                 $default_img = ($gender === 'female') ? base_url('assets/images/person-female.png') : base_url('assets/images/person-male.png');
                                 
-                                if ($image_path): ?>
-                                    <img src="<?= base_url('assets/uploads/alumni/' . $image_path) ?>" alt="Profile Image">
+                                if ($image_path && file_exists(FCPATH . 'assets/uploads/alumni/' . $image_path)): ?>
+                                    <img src="<?= base_url('assets/uploads/alumni/' . $image_path) ?>" alt="<?= $request->first_name ?>">
                                 <?php else: ?>
-                                    <img src="<?= $default_img ?>" alt="Default Photo">
-                                <?php endif; 
-                            ?>
-                        </div>
-                        <div class="requester-details">
-                            <p class="requester-name"><?= $request->first_name . ' ' . $request->last_name ?></p>
-                            <p class="request-meta mb-0">
-                                <i class="fas fa-graduation-cap"></i> <?= $request->degree ?? 'N/A' ?> 
-                                | <i class="far fa-clock"></i> Requested: <?= date('M j, Y', strtotime($request->request_date ?? 'now')) ?>
+                                    <img src="<?= $default_img ?>" alt="Default Profile">
+                                <?php endif; ?>
+                            </div>
+                        <div class="profile-info">
+                            <h3 class="profile-name">
+                                <?= htmlspecialchars($request->first_name . ' ' . $request->last_name) ?>
+                            </h3>
+                            <p class="profile-degree">
+                                <i class="fas fa-graduation-cap"></i>
+                                <?= htmlspecialchars($request->degree ?? 'N/A') ?>
+                            </p>
+                            <p class="profile-date">
+                                <i class="fas fa-calendar-alt"></i>
+                                Requested: <?= date('M j, Y', strtotime($request->request_date ?? 'now')) ?>
                             </p>
                         </div>
                     </div>
-                    
+
                     <div class="request-actions">
-                        <button type="button" class="view-button" data-toggle="modal" data-target="#viewProfileModal<?= $request->sender_id ?? '0' ?>">
+                        <button type="button" class="btn btn-view" data-toggle="modal" data-target="#viewProfileModal<?= $request->sender_id ?? '0' ?>">
                             <i class="fas fa-eye"></i> View
                         </button>
-                        <a href="<?= site_url('alumni_request/accept_request/' . $request->id) ?>" class="action-button accept-button">
+                        <a href="<?= site_url('alumni_request/accept_request/' . ($request->id ?? 0)) ?>" class="btn btn-accept">
                             <i class="fas fa-check"></i> Accept
                         </a>
-                        <a href="<?= site_url('alumni_request/decline_request/' . $request->id) ?>" class="action-button decline-button">
+                        <a href="<?= site_url('alumni_request/decline_request/' . ($request->id ?? 0)) ?>" class="btn btn-decline">
                             <i class="fas fa-times"></i> Decline
                         </a>
                     </div>
                 </li>
 
                 <div class="modal fade" id="viewProfileModal<?= $request->sender_id ?? '0' ?>" tabindex="-1" role="dialog" aria-labelledby="viewProfileModalLabel" aria-hidden="true">
-                    <div class="modal-dialog" role="document">
-                        <div class="modal-content">
+                    <div class="modal-dialog modal-dialog-centered" role="document">
+                        <div class="modal-content" style="border-radius: 12px; border: none; box-shadow: var(--shadow-lg);">
                             <div class="modal-header">
-                                <h5 class="modal-title" id="viewProfileModalLabel">Profile of <?= $request->first_name . ' ' . $request->last_name ?></h5>
-                                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                <h5 class="modal-title" id="viewProfileModalLabel">
+                                    <i class="fas fa-user-circle mr-2"></i> 
+                                    <?= htmlspecialchars($request->first_name . ' ' . $request->last_name) ?>
+                                </h5>
+                                <button type="button" class="close" data-dismiss="modal" aria-label="Close" style="color: white;">
                                     <span aria-hidden="true">&times;</span>
                                 </button>
                             </div>
                             <div class="modal-body">
-                                <p>Degree: <?= $request->degree ?? 'N/A' ?></p>
-                                <p>Full profile details loaded here...</p>
+                                <div style="text-align: center; margin-bottom: 20px;">
+                                    <div class="profile-avatar" style="width: 100px; height: 100px; margin: 0 auto;">
+                                        <?php 
+                                            $image_path = $request->profile_image ?? null;
+                                            $gender = strtolower($request->gender ?? 'male');
+                                            $default_img = ($gender === 'female') ? base_url('assets/images/person-female.png') : base_url('assets/images/person-male.png');
+                                            
+                                            if ($image_path && file_exists(FCPATH . 'assets/uploads/alumni/' . $image_path)): ?>
+                                                <img src="<?= base_url('assets/uploads/alumni/' . $image_path) ?>" alt="<?= $request->first_name ?>">
+                                            <?php else: ?>
+                                                <img src="<?= $default_img ?>" alt="Default Profile">
+                                            <?php endif; ?>
+                                    </div>
+                                </div>
+                                <p><strong>Name:</strong> <?= htmlspecialchars($request->first_name . ' ' . $request->last_name) ?></p>
+                                <p><strong>Degree:</strong> <?= htmlspecialchars($request->degree ?? 'N/A') ?></p>
+                                <p><strong>Request Date:</strong> <?= date('M j, Y \a\t g:i A', strtotime($request->request_date ?? 'now')) ?></p>
+                                <p><strong>Status:</strong> <span style="color: var(--primary); font-weight: 700;">Pending</span></p>
                             </div>
-                            <div class="modal-footer">
+                            <div class="modal-footer" style="background: var(--bg-page); border-top: 1px solid var(--border);">
                                 <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
                             </div>
                         </div>
                     </div>
                 </div>
-
             <?php endforeach; ?>
         </ul>
     <?php endif; ?>
@@ -290,3 +423,6 @@ $pending_requests = [
 
 <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+</body>
+</html>

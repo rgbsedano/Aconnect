@@ -109,12 +109,49 @@ $admin_system_active = in_array($current_uri_segment_1, ['AdminManageAccounts', 
 
         .nav-link-item i {
             font-size: 20px;
-            margin-bottom: 1px;
+            margin-bottom: 4px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 20px;
+            height: 20px;
+            min-width: 20px;
+            min-height: 20px;
+            transition: all 0.2s ease-in-out;
         }
 
-        .nav-link-item:hover, .nav-link-item.active-link {
+        .nav-link-item span {
+            font-weight: 500;
+            letter-spacing: 0.3px;
+            display: flex;
+            align-items: center;
+            gap: 4px;
+        }
+
+        .nav-link-item:hover {
+            color: #000000;
+        }
+
+        .nav-link-item.active-link {
             color: #000000;
             border-bottom: 2px solid #000000;
+        }
+
+        .nav-item.dropdown .nav-link-item span::after {
+            content: '';
+            margin-left: 6px;
+            display: inline-block;
+            width: 0;
+            height: 0;
+            border-left: 4px solid transparent;
+            border-right: 4px solid transparent;
+            border-top: 4px solid currentColor;
+            transition: transform 0.2s ease-in-out;
+        }
+
+        .nav-item.dropdown .nav-link-item:hover span::after,
+        .nav-item.dropdown .nav-link-item.active-link span::after {
+            transform: rotate(-180deg);
         }
 
         .dropdown-toggle::after {
@@ -128,6 +165,20 @@ $admin_system_active = in_array($current_uri_segment_1, ['AdminManageAccounts', 
             border-radius: 0 0 4px 4px;
             z-index: 2100;
             font-size: 0.95rem;
+        }
+
+        .dropdown-menu .dropdown-item {
+            padding: 10px 18px;
+            color: #333;
+            transition: all 0.2s ease-in-out;
+            border-left: 3px solid transparent;
+        }
+
+        .dropdown-menu .dropdown-item:hover {
+            background-color: #f8f9fa;
+            border-left-color: var(--primary-color);
+            color: var(--primary-color);
+            font-weight: 600;
         }
 
         .user-logout-area {
@@ -148,6 +199,12 @@ $admin_system_active = in_array($current_uri_segment_1, ['AdminManageAccounts', 
             padding: 0 11px;
             color: var(--nav-text);
             text-decoration: none !important;
+            transition: all 0.2s ease-in-out;
+            cursor: pointer;
+        }
+
+        .account-info-display:hover {
+            color: var(--primary-color);
         }
 
         .student-id-label {
@@ -155,14 +212,28 @@ $admin_system_active = in_array($current_uri_segment_1, ['AdminManageAccounts', 
             font-weight: 700;
             color: var(--primary-color);
             line-height: 1;
-            margin-bottom: 2px;
+            margin-bottom: 3px;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
         }
 
         .account-name-label {
-            font-size: 13px;
+            font-size: 15px;
             font-weight: 600;
             color: #333;
             line-height: 1;
+            display: flex;
+            align-items: center;
+            gap: 6px;
+        }
+
+        .account-name-label i {
+            font-size: 10px;
+            transition: transform 0.2s ease-in-out;
+        }
+
+        .account-info-display:hover .account-name-label i {
+            transform: rotate(-180deg);
         }
 
         .logout-link {
@@ -172,10 +243,20 @@ $admin_system_active = in_array($current_uri_segment_1, ['AdminManageAccounts', 
             display: flex;
             align-items: center;
             text-decoration: none !important;
+            transition: all 0.2s ease-in-out;
+            position: relative;
+        }
+
+        .logout-link i {
+            transition: all 0.2s ease-in-out;
         }
 
         .logout-link:hover {
             color: var(--secondary-color);
+        }
+
+        .logout-link:hover i {
+            transform: scale(1.2);
         }
 
         @media (max-width: 768px) {
@@ -192,11 +273,11 @@ $admin_system_active = in_array($current_uri_segment_1, ['AdminManageAccounts', 
         <div class="logo-area">
             <?php if($this->session->userdata('role') == 'administrator'): ?>
                 <a href="<?php echo base_url('AdminDashboard'); ?>">
-                    <img src="<?php echo base_url('assets/images/logo.png'); ?>" alt="Admin Logo" style="height:36px;">
+                    <img src="<?php echo base_url('assets/images/logo.png'); ?>" alt="Admin Logo" style="height:52px;">
                 </a>
             <?php else: ?>
                 <a href="<?php echo base_url('PostController'); ?>">
-                    <img src="<?php echo base_url('assets/images/small_logo.png'); ?>" alt="Logo" style="height:36px;">
+                    <img src="<?php echo base_url('assets/images/small_logo.png'); ?>" alt="Logo" style="height:52px;">
                 </a>
             <?php endif; ?>
         </div>
@@ -206,12 +287,12 @@ $admin_system_active = in_array($current_uri_segment_1, ['AdminManageAccounts', 
                 <?php if($this->session->userdata('role') == 'alumni'): ?>
                     <li class="nav-item">
                         <a href="<?php echo base_url('postcontroller'); ?>" class="nav-link-item <?php echo $is_home ? 'active-link' : ''; ?>">
-                            <i class="fas fa-home"></i><span>Home</span>
+                            <i class="fas fa-house-user"></i><span>Home</span>
                         </a>
                     </li>
                     <li class="nav-item">
                         <a href="<?php echo base_url('alumni'); ?>" class="nav-link-item <?php echo $is_network ? 'active-link' : ''; ?>">
-                            <i class="fas fa-users"></i><span>Network</span>
+                            <i class="fas fa-user-friends"></i><span>Network</span>
                         </a>
                     </li>
                     <li class="nav-item">
@@ -226,7 +307,7 @@ $admin_system_active = in_array($current_uri_segment_1, ['AdminManageAccounts', 
                     </li>
                     <li class="nav-item dropdown">
                         <a class="nav-link-item dropdown-toggle <?php echo $is_events ? 'active-link' : ''; ?>" href="#" id="eventsDropdown" data-toggle="dropdown">
-                            <i class="fas fa-calendar-alt"></i><span>Events <i class="fas fa-caret-down" style="font-size: 11px;"></i></span>
+                            <i class="fas fa-calendar-alt"></i><span>Events</span>
                         </a>
                         <div class="dropdown-menu dropdown-menu-right" aria-labelledby="eventsDropdown">
                             <a class="dropdown-item" href="<?php echo base_url('events'); ?>">Upcoming</a>
@@ -242,7 +323,7 @@ $admin_system_active = in_array($current_uri_segment_1, ['AdminManageAccounts', 
                     </li>
                     <li class="nav-item dropdown">
                         <a class="nav-link-item dropdown-toggle <?php echo $admin_management_active ? 'active-link' : ''; ?>" href="#" id="mgmtDropdown" data-toggle="dropdown">
-                            <i class="fas fa-tasks"></i><span>Management <i class="fas fa-caret-down" style="font-size: 11px;"></i></span>
+                            <i class="fas fa-tasks"></i><span>Management</span>
                         </a>
                         <div class="dropdown-menu dropdown-menu-right" aria-labelledby="mgmtDropdown">
                             <a class="dropdown-item" href="<?php echo base_url('adminalumni'); ?>">Alumni List</a>
@@ -253,7 +334,7 @@ $admin_system_active = in_array($current_uri_segment_1, ['AdminManageAccounts', 
                     </li>
                     <li class="nav-item dropdown">
                         <a class="nav-link-item dropdown-toggle <?php echo $admin_system_active ? 'active-link' : ''; ?>" href="#" id="sysDropdown" data-toggle="dropdown">
-                            <i class="fas fa-cogs"></i><span>System <i class="fas fa-caret-down" style="font-size: 11px;"></i></span>
+                            <i class="fas fa-cogs"></i><span>System</span>
                         </a>
                         <div class="dropdown-menu dropdown-menu-right" aria-labelledby="sysDropdown">
                             <a class="dropdown-item" href="<?php echo base_url('AdminManageAccounts'); ?>">User Accounts</a>

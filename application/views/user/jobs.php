@@ -48,37 +48,41 @@ function compute_ai_match($alumni, $job) {
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Job Board | Premium Portal</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <title>Job Board | AConnect Alumni</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
     <style>
         :root {
-            --maroon: #700A0A;
-            --maroon-light: #fbeaea;
-            --blue: #0a66c2;
-            --bg: #f8f9fb;
+            --maroon: #8B1538;
+            --maroon-dark: #6B0F2A;
+            --gold: #D4A574;
+            --bg: #FAFAF8;
             --card: #ffffff;
-            --text: #1a1a1a;
-            --muted: #666666;
-            --shadow: 0 8px 30px rgba(0,0,0,0.05);
+            --text: #1F2937;
+            --muted: #6B7280;
+            --border: #E5E7EB;
+            --shadow-sm: 0 1px 2px rgba(0,0,0,0.05);
+            --shadow-md: 0 4px 12px rgba(0,0,0,0.1);
+            --shadow-lg: 0 10px 30px rgba(0,0,0,0.15);
         }
 
-        body { background: var(--bg); font-family: 'Inter', system-ui, sans-serif; color: var(--text); margin: 0; line-height: 1.5; }
-        .container { max-width: 1000px; margin: 40px auto; padding: 0 20px; }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { background: var(--bg); font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; color: var(--text); line-height: 1.6; }
+        .container { max-width: 1100px; margin: 20px auto 40px; padding: 0 20px; }
 
-        /* Modern Search Header */
+        /* Header Section */
         .header-section {
-            background: white;
-            padding: 30px;
-            border-radius: 20px;
-            box-shadow: var(--shadow);
-            margin-bottom: 30px;
+            background: var(--card);
+            padding: 32px;
+            border-radius: 16px;
+            box-shadow: var(--shadow-md);
+            margin-bottom: 32px;
         }
 
         .search-grid {
             display: grid;
             grid-template-columns: 1fr 1fr auto;
-            gap: 15px;
-            margin-bottom: 20px;
+            gap: 16px;
+            margin-bottom: 24px;
         }
 
         .input-group {
@@ -87,144 +91,220 @@ function compute_ai_match($alumni, $job) {
             align-items: center;
         }
 
-        .input-group i { position: absolute; left: 15px; color: var(--muted); }
-
+        .input-group i { position: absolute; left: 14px; color: var(--muted); font-size: 14px; }
         .input-group input {
             width: 100%;
-            padding: 14px 15px 14px 45px;
-            border: 1px solid #e1e4e8;
-            border-radius: 12px;
-            font-size: 15px;
-            transition: all 0.3s ease;
-            background: #fdfdfd;
+            padding: 12px 14px 12px 44px;
+            border: 1px solid var(--border);
+            border-radius: 10px;
+            font-size: 14px;
+            transition: all 0.3s;
+            background: #f9f9f9;
         }
-
         .input-group input:focus {
-            border-color: var(--maroon);
-            box-shadow: 0 0 0 4px var(--maroon-light);
             outline: none;
+            border-color: var(--maroon);
+            box-shadow: 0 0 0 3px rgba(139, 21, 56, 0.1);
+            background: var(--card);
         }
 
         .btn-search {
-            background: var(--maroon);
+            background: linear-gradient(135deg, var(--maroon), var(--maroon-dark));
             color: white;
             border: none;
-            padding: 0 30px;
-            border-radius: 12px;
+            padding: 12px 32px;
+            border-radius: 10px;
             font-weight: 600;
+            font-size: 14px;
             cursor: pointer;
-            transition: 0.3s;
+            transition: all 0.3s;
+            box-shadow: var(--shadow-sm);
         }
-
-        .btn-search:hover { transform: translateY(-2px); box-shadow: 0 5px 15px rgba(112, 10, 10, 0.3); }
+        .btn-search:hover { transform: translateY(-2px); box-shadow: var(--shadow-lg); }
 
         /* Filter Pills */
-        .filters { display: flex; gap: 10px; flex-wrap: wrap; }
+        .filters { display: flex; gap: 12px; flex-wrap: wrap; margin-top: 20px; }
         .f-pill {
-            padding: 8px 20px;
-            border-radius: 50px;
-            border: 1px solid #e1e4e8;
-            background: white;
+            padding: 8px 18px;
+            border-radius: 24px;
+            border: 1.5px solid var(--border);
+            background: var(--card);
             font-size: 13px;
             font-weight: 600;
             color: var(--muted);
             cursor: pointer;
-            transition: 0.3s;
+            transition: all 0.3s;
         }
-        .f-pill.active { background: var(--maroon); color: white; border-color: var(--maroon); }
-        .f-pill:hover:not(.active) { background: #f0f2f5; }
+        .f-pill.active { background: linear-gradient(135deg, var(--maroon), var(--maroon-dark)); color: white; border-color: var(--maroon); }
+        .f-pill:hover:not(.active) { border-color: var(--maroon); color: var(--maroon); }
 
         /* Job Cards */
         .job-card {
             background: var(--card);
-            border-radius: 16px;
+            border-radius: 12px;
             padding: 20px;
-            margin-bottom: 15px;
+            margin-bottom: 16px;
             display: flex;
             align-items: center;
-            gap: 20px;
+            gap: 18px;
             cursor: pointer;
-            transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
-            border: 1px solid transparent;
-            box-shadow: 0 2px 10px rgba(0,0,0,0.02);
+            transition: all 0.3s;
+            border: 1px solid var(--border);
+            box-shadow: var(--shadow-sm);
         }
-
         .job-card:hover {
-            transform: scale(1.01) translateY(-5px);
-            box-shadow: var(--shadow);
-            border-color: var(--maroon-light);
+            border-color: var(--gold);
+            box-shadow: var(--shadow-md);
+            transform: translateY(-2px);
         }
 
         .logo-box {
-            width: 65px; height: 65px;
-            background: var(--maroon-light);
-            color: var(--maroon);
-            display: flex; align-items: center; justify-content: center;
-            border-radius: 14px; font-size: 24px;
+            width: 60px; height: 60px;
+            background: linear-gradient(135deg, var(--maroon), var(--maroon-dark));
+            color: var(--gold);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 12px;
+            font-size: 24px;
+            flex-shrink: 0;
         }
 
-        .job-info h3 { margin: 0; font-size: 18px; color: var(--maroon); }
-        .job-info p { margin: 5px 0; color: var(--muted); font-size: 14px; }
+        .job-info { flex: 1; }
+        .job-info h3 { margin: 0 0 4px 0; font-size: 16px; color: var(--text); font-weight: 700; }
+        .job-info p { margin: 4px 0; color: var(--muted); font-size: 13px; display: flex; align-items: center; gap: 6px; }
 
         .badge-ai {
-            margin-left: auto;
             text-align: right;
+            flex-shrink: 0;
         }
 
         .percent {
-            display: inline-block;
-            padding: 6px 15px;
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            padding: 8px 14px;
             border-radius: 8px;
-            font-weight: 800;
-            font-size: 14px;
+            font-weight: 700;
+            font-size: 13px;
+            background: linear-gradient(135deg, var(--maroon), var(--maroon-dark));
+            color: white;
         }
 
-        /* Animated Modal */
+        /* Modal */
         .modal-overlay {
             position: fixed;
             inset: 0;
-            background: rgba(0,0,0,0.4);
-            backdrop-filter: blur(5px);
+            background: rgba(0,0,0,0.5);
+            backdrop-filter: blur(4px);
             display: flex;
             align-items: center;
             justify-content: center;
             z-index: 1000;
-            opacity: 0; visibility: hidden;
-            transition: 0.3s;
+            opacity: 0;
+            visibility: hidden;
+            transition: all 0.3s;
         }
-
         .modal-overlay.open { opacity: 1; visibility: visible; }
 
         .modal-box {
-            background: white;
-            width: 90%; max-width: 600px;
-            border-radius: 24px;
-            padding: 40px;
+            background: var(--card);
+            width: 90%;
+            max-width: 580px;
+            border-radius: 16px;
+            padding: 0;
             position: relative;
-            transform: translateY(50px) scale(0.9);
-            transition: 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
+            transform: scale(0.95) translateY(20px);
+            transition: all 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
+            box-shadow: var(--shadow-lg);
+            overflow: hidden;
+        }
+        .modal-overlay.open .modal-box { transform: scale(1) translateY(0); }
+
+        .modal-header-custom {
+            background: linear-gradient(135deg, var(--maroon), var(--maroon-dark));
+            color: white;
+            padding: 24px;
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
         }
 
-        .modal-overlay.open .modal-box { transform: translateY(0) scale(1); }
+        .modal-header-custom h2 { margin: 0 0 4px 0; font-size: 20px; }
+        .modal-header-custom p { margin: 0; font-size: 13px; color: var(--gold); font-weight: 600; }
 
         .close-modal {
-            position: absolute; top: 20px; right: 25px;
-            font-size: 28px; cursor: pointer; color: var(--muted);
+            position: absolute;
+            top: 16px;
+            right: 16px;
+            background: none;
+            border: none;
+            font-size: 28px;
+            cursor: pointer;
+            color: white;
+            width: 32px;
+            height: 32px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .modal-content {
+            padding: 24px;
+        }
+
+        .modal-content hr { border: none; border-top: 1px solid var(--border); margin: 16px 0; }
+        .modal-content strong { color: var(--text); }
+        .modal-content p { margin: 12px 0; font-size: 14px; color: var(--muted); }
+
+        .job-details { max-height: 280px; overflow-y: auto; padding-right: 12px; margin-bottom: 16px; }
+
+        .modal-form {
+            background: #f9f9f9;
+            padding: 16px;
+            border-radius: 10px;
+            margin-top: 16px;
+        }
+
+        .file-input-wrapper {
+            border: 2px dashed var(--border);
+            border-radius: 10px;
+            padding: 20px;
+            text-align: center;
+            margin-bottom: 16px;
+            transition: all 0.3s;
+        }
+
+        .file-input-wrapper input[type="file"] {
+            display: none;
+        }
+
+        .file-input-wrapper:hover {
+            border-color: var(--maroon);
+            background: rgba(139, 21, 56, 0.02);
         }
 
         .btn-submit {
-            background: var(--blue);
-            color: white; border: none; width: 100%;
-            padding: 15px; border-radius: 12px;
-            font-weight: 700; cursor: pointer; margin-top: 20px;
-            transition: 0.3s;
+            background: linear-gradient(135deg, var(--maroon), var(--maroon-dark));
+            color: white;
+            border: none;
+            width: 100%;
+            padding: 12px;
+            border-radius: 10px;
+            font-weight: 700;
+            font-size: 14px;
+            cursor: pointer;
+            transition: all 0.3s;
         }
-        .btn-submit:hover { background: #084d91; transform: translateY(-2px); }
+        .btn-submit:hover { transform: translateY(-2px); box-shadow: var(--shadow-lg); }
 
         @media (max-width: 768px) {
+            .container { margin-top: 20px; }
             .search-grid { grid-template-columns: 1fr; }
             .job-card { flex-direction: column; text-align: center; }
-            .badge-ai { margin: 10px auto 0; }
+            .job-info p { justify-content: center; }
+            .badge-ai { margin-top: 12px; }
+            .logo-box { width: 50px; height: 50px; }
         }
     </style>
 </head>
@@ -239,60 +319,90 @@ function compute_ai_match($alumni, $job) {
                     <input type="text" name="search" placeholder="Job title or company..." value="<?= $this->input->get('search') ?>">
                 </div>
                 <div class="input-group">
-                    <i class="fas fa-location-dot"></i>
+                    <i class="fas fa-map-marker-alt"></i>
                     <input type="text" name="location" placeholder="City or Remote" value="<?= $this->input->get('location') ?>">
                 </div>
-                <button type="submit" class="btn-search">Find Jobs</button>
+                <button type="submit" class="btn-search"><i class="fas fa-search"></i> Search</button>
             </div>
         </form>
 
         <div class="filters">
-            <button class="f-pill active" id="btn-all" onclick="updateFilter('all', 0)">All Opportunities</button>
-            <button class="f-pill" id="btn-70" onclick="updateFilter(70)">✨ Best Matches</button>
-            <button class="f-pill" id="btn-40" onclick="updateFilter(40)">Good Fits</button>
+            <button class="f-pill active" id="btn-all" onclick="updateFilter('all')">All Opportunities</button>
+            <button class="f-pill" id="btn-70" onclick="updateFilter(70)"><i class="fas fa-star"></i> Best Matches (70%+)</button>
+            <button class="f-pill" id="btn-40" onclick="updateFilter(40)"><i class="fas fa-check"></i> Good Fits (40%+)</button>
         </div>
     </div>
 
     <div id="job-container">
         <?php if (!empty($jobs)): foreach ($jobs as $job): 
             $match = compute_ai_match($alumni, $job);
-            $theme = ($match >= 70) ? ['#057642', '#e7f4ed'] : (($match >= 40) ? ['#915907', '#fdf3e1'] : ['#666', '#f3f2ef']);
         ?>
         <div class="job-card" data-score="<?= $match ?>" onclick="toggleModal(<?= $job->id ?>, true)">
             <div class="logo-box"><i class="fas fa-briefcase"></i></div>
             <div class="job-info">
                 <h3><?= htmlspecialchars($job->job_title) ?></h3>
-                <p><i class="fas fa-building"></i> <?= htmlspecialchars($job->company) ?> • <?= htmlspecialchars($job->location) ?></p>
-                <p><i class="fas fa-coins"></i> <?= htmlspecialchars($job->salary_range) ?></p>
+                <p><i class="fas fa-building"></i> <?= htmlspecialchars($job->company) ?></p>
+                <p><i class="fas fa-map-marker-alt"></i> <?= htmlspecialchars($job->location) ?> <span style="color: var(--maroon); font-weight: 600;">•</span> <i class="fas fa-coins"></i> <?= htmlspecialchars($job->salary_range) ?></p>
             </div>
             <div class="badge-ai">
-                <div class="percent" style="color:<?= $theme[0] ?>; background:<?= $theme[1] ?>;">
-                    <i class="fas fa-robot"></i> <?= $match ?>% Match
+                <div class="percent">
+                    <i class="fas fa-robot"></i> <?= $match ?>% AI Match
                 </div>
             </div>
         </div>
 
         <div id="modal-<?= $job->id ?>" class="modal-overlay">
             <div class="modal-box">
-                <span class="close-modal" onclick="toggleModal(<?= $job->id ?>, false)">&times;</span>
-                <h2 style="color:var(--maroon); margin-bottom:5px;"><?= htmlspecialchars($job->job_title) ?></h2>
-                <p style="font-weight:700; color:var(--blue);"><?= htmlspecialchars($job->company) ?></p>
-                <hr style="border:0; border-top:1px solid #eee; margin:20px 0;">
-                
-                <div style="height:250px; overflow-y:auto; padding-right:10px; font-size:15px; color:#444;">
-                    <p><strong>Requirements:</strong><br><?= htmlspecialchars($job->qualifications) ?></p>
-                    <p><strong>About the Role:</strong><br><?= nl2br(htmlspecialchars($job->description)) ?></p>
-                </div>
-
-                <form method="post" enctype="multipart/form-data" action="<?= base_url('jobs/apply/' . $job->id) ?>">
-                    <div style="background:#f8f9fb; padding:15px; border-radius:12px; border:2px dashed #e1e4e8; margin-top:20px;">
-                        <input type="file" name="attachment" required>
+                <div class="modal-header-custom">
+                    <div>
+                        <h2><?= htmlspecialchars($job->job_title) ?></h2>
+                        <p><?= htmlspecialchars($job->company) ?></p>
                     </div>
-                    <button type="submit" class="btn-submit">Submit My Application</button>
-                </form>
+                    <button type="button" class="close-modal" onclick="toggleModal(<?= $job->id ?>, false)"><i class="fas fa-times"></i></button>
+                </div>
+                <div class="modal-content">
+                    <div style="display: flex; gap: 16px; margin-bottom: 16px;">
+                        <div style="flex: 1;">
+                            <p><strong><i class="fas fa-map-marker-alt" style="color: var(--maroon); margin-right: 6px;"></i>Location:</strong> <?= htmlspecialchars($job->location) ?></p>
+                            <p><strong><i class="fas fa-coins" style="color: var(--gold); margin-right: 6px;"></i>Salary:</strong> <?= htmlspecialchars($job->salary_range) ?></p>
+                        </div>
+                        <div style="text-align: right;">
+                            <div style="background: linear-gradient(135deg, var(--maroon), var(--maroon-dark)); color: white; padding: 12px 20px; border-radius: 10px; font-weight: 700; display: inline-block;">
+                                <i class="fas fa-robot"></i> <?= $match ?>% AI Match
+                            </div>
+                        </div>
+                    </div>
+                    <hr>
+                    
+                    <div class="job-details">
+                        <p><strong><i class="fas fa-list-check" style="color: var(--maroon); margin-right: 6px;"></i>Requirements:</strong></p>
+                        <p><?= htmlspecialchars($job->qualifications) ?></p>
+                        <p style="margin-top: 16px;"><strong><i class="fas fa-briefcase" style="color: var(--gold); margin-right: 6px;"></i>About the Role:</strong></p>
+                        <p><?= nl2br(htmlspecialchars($job->description)) ?></p>
+                    </div>
+
+                    <div class="modal-form">
+                        <form method="post" enctype="multipart/form-data" action="<?= base_url('jobs/apply/' . $job->id) ?>">
+                            <p style="font-weight: 600; color: var(--text); margin-bottom: 12px;"><i class="fas fa-file-upload" style="color: var(--maroon); margin-right: 6px;"></i>Upload Your Resume</p>
+                            <div class="file-input-wrapper" onclick="document.querySelector('input[data-job=\"<?= $job->id ?>\"]').click();">
+                                <i class="fas fa-cloud-arrow-up" style="font-size: 28px; color: var(--gold); margin-bottom: 8px; display: block;"></i>
+                                <p style="margin: 0; font-weight: 600; color: var(--text);">Click to upload or drag & drop</p>
+                                <p style="margin: 4px 0 0 0; font-size: 12px; color: var(--muted);">PDF, DOC, or DOCX</p>
+                                <input type="file" name="attachment" data-job="<?= $job->id ?>" required>
+                            </div>
+                            <button type="submit" class="btn-submit"><i class="fas fa-paper-plane"></i> Submit Application</button>
+                        </form>
+                    </div>
+                </div>
             </div>
         </div>
-        <?php endforeach; endif; ?>
+        <?php endforeach; else: ?>
+        <div style="text-align: center; padding: 48px 20px; background: var(--card); border-radius: 12px; color: var(--muted);">
+            <i class="fas fa-briefcase" style="font-size: 48px; margin-bottom: 16px; display: block; color: var(--border);"></i>
+            <p style="font-size: 16px; font-weight: 600; color: var(--text);">No Jobs Found</p>
+            <p style="margin-top: 8px;">Try adjusting your filters or search criteria</p>
+        </div>
+        <?php endif; ?>
     </div>
 </div>
 
@@ -304,18 +414,21 @@ function compute_ai_match($alumni, $job) {
         document.body.style.overflow = show ? 'hidden' : 'auto';
     }
 
-    function updateFilter(min) {
+    function updateFilter(minScore) {
         document.querySelectorAll('.job-card').forEach(card => {
             const score = parseInt(card.dataset.score);
-            card.style.display = (min === 'all' || score >= min) ? 'flex' : 'none';
+            if (minScore === 'all') {
+                card.style.display = 'flex';
+            } else {
+                card.style.display = score >= minScore ? 'flex' : 'none';
+            }
         });
 
         document.querySelectorAll('.f-pill').forEach(p => p.classList.remove('active'));
-        const activeBtn = (min === 'all') ? 'btn-all' : 'btn-' + min;
+        const activeBtn = minScore === 'all' ? 'btn-all' : 'btn-' + minScore;
         document.getElementById(activeBtn).classList.add('active');
     }
 
-    // Backdrop click close
     window.onclick = (e) => {
         if (e.target.classList.contains('modal-overlay')) {
             e.target.classList.remove('open');

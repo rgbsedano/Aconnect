@@ -13,38 +13,49 @@ $student_number = $this->session->userdata('student_number') ? $this->session->u
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css">
     
     <style>
-        /* Force screen to fit viewport exactly with no scroll */
+        :root {
+            --primary: #8B1538;
+            --primary-dark: #6B0F2A;
+            --accent: #D4A574;
+            --bg-page: #FAFAF8;
+            --white: #FFFFFF;
+            --text-main: #1F2937;
+            --text-muted: #6B7280;
+            --border: #E5E7EB;
+            --shadow-sm: 0 1px 2px rgba(0,0,0,0.05);
+            --shadow-md: 0 4px 6px rgba(0,0,0,0.07);
+            --shadow-lg: 0 10px 15px rgba(0,0,0,0.1);
+        }
+
         html, body {
             height: 100vh;
             width: 100vw;
             margin: 0;
             padding: 0;
             overflow: hidden !important; 
-            background-color: #f3f2ef;
+            background-color: var(--bg-page);
             display: flex;
             flex-direction: column;
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
         }
 
-        /* Center the entire dashboard content area */
         .dashboard-wrapper {
             flex: 1;
             display: flex;
             align-items: center;
             justify-content: center;
-            padding: 20px;
+            padding: 30px;
         }
 
-        /* Centered Grid with "Medium" professional width */
         .dashboard-container {
             width: 100%;
-            max-width: 1100px; /* Professional medium width */
-            height: 85vh; /* Prevents vertical overflow */
+            max-width: 1300px;
+            height: 85vh;
             display: grid;
-            grid-template-columns: 1.2fr 1fr; /* Balanced proportions */
-            gap: 25px;
+            grid-template-columns: 1.3fr 1fr;
+            gap: 32px;
         }
 
-        /* Left Section: Carousel */
         .carousel-section {
             height: 100%;
             min-height: 0;
@@ -52,10 +63,11 @@ $student_number = $this->session->userdata('student_number') ? $this->session->u
 
         #carouselExample {
             height: 100%;
-            border-radius: 12px;
+            border-radius: 16px;
             overflow: hidden;
-            box-shadow: 0 10px 25px rgba(0,0,0,0.1);
-            background: #fff;
+            box-shadow: var(--shadow-lg);
+            background: var(--white);
+            border: 1px solid var(--border);
         }
 
         .carousel-inner, .carousel-item {
@@ -65,84 +77,126 @@ $student_number = $this->session->userdata('student_number') ? $this->session->u
         .carousel-item img {
             width: 100%;
             height: 100%;
-            object-fit: contain; /* Shows full flyer without cropping */
-            background-color: #ffffff;
+            object-fit: cover;
+            background-color: var(--white);
         }
 
-        /* Right Section: Cards */
+        .carousel-control-prev, .carousel-control-next {
+            width: 50px;
+            opacity: 0.7;
+            transition: opacity 0.3s ease;
+        }
+
+        .carousel-control-prev:hover, .carousel-control-next:hover {
+            opacity: 1;
+        }
+
+        .carousel-control-prev-icon, .carousel-control-next-icon {
+            filter: drop-shadow(0 0 2px rgba(0,0,0,0.3));
+        }
+
         .posts-section {
             display: flex;
             flex-direction: column;
-            gap: 15px;
+            gap: 18px;
             height: 100%;
             min-height: 0;
         }
 
         .post-card {
             flex: 1;
-            background: white;
+            background: var(--white);
             border-radius: 12px;
-            padding: 18px;
+            padding: 24px;
             display: flex;
             flex-direction: column;
             justify-content: space-between;
-            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
-            border-left: 5px solid #700A0A;
-            min-height: 0; /* Ensures flex shrinkage works */
+            box-shadow: var(--shadow-md);
+            border-left: 6px solid var(--primary);
+            min-height: 0;
+            transition: all 0.3s ease;
         }
 
-        /* Medium Typography Scale */
+        .post-card:hover {
+            box-shadow: var(--shadow-lg);
+        }
+
         .post-category {
-            font-size: 0.65rem;
+            font-size: 0.75rem;
             text-transform: uppercase;
-            letter-spacing: 1px;
+            letter-spacing: 1.2px;
             font-weight: 800;
-            color: #700A0A;
-            background: #fdf2f2;
-            padding: 2px 8px;
-            border-radius: 4px;
+            color: var(--white);
+            background: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%);
+            padding: 6px 12px;
+            border-radius: 6px;
             width: fit-content;
+            display: inline-block;
         }
 
         .post-title {
-            font-size: 1.1rem;
+            font-size: 1.35rem;
             font-weight: 700;
-            color: #2d3748;
-            line-height: 1.3;
-            margin-top: 8px;
+            color: var(--text-main);
+            line-height: 1.4;
+            margin-top: 12px;
             overflow: hidden;
             display: -webkit-box;
             -webkit-line-clamp: 2;
             -webkit-box-orient: vertical;
+            letter-spacing: -0.3px;
         }
 
-        /* Action Buttons */
+        .post-date {
+            font-size: 0.8rem;
+            color: var(--text-muted);
+            font-weight: 600;
+        }
+
         .btn-details {
-            font-size: 0.7rem;
+            font-size: 0.85rem;
             font-weight: 700;
-            color: #718096;
+            color: var(--text-muted);
             text-transform: uppercase;
+            letter-spacing: 0.8px;
+            background: none;
+            border: none;
+            cursor: pointer;
+            transition: color 0.3s ease;
+        }
+
+        .btn-details:hover {
+            color: var(--primary);
         }
 
         .btn-next {
-            background: #700A0A;
+            background: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%);
             color: white;
-            padding: 5px 15px;
-            border-radius: 6px;
-            font-size: 0.7rem;
+            padding: 10px 24px;
+            border-radius: 8px;
+            font-size: 0.9rem;
             font-weight: 700;
+            letter-spacing: 0.5px;
             border: none;
-            transition: 0.2s;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            box-shadow: var(--shadow-md);
         }
 
         .btn-next:hover {
-            background: #4a0606;
+            transform: translateY(-2px);
+            box-shadow: var(--shadow-lg);
         }
 
-        /* Animations */
-        .post-content-container { transition: opacity 0.3s ease; }
-        .animate-out { opacity: 0; }
-        .animate-in { opacity: 1; }
+        .post-content-container { 
+            transition: opacity 0.3s ease; 
+        }
+        .animate-out { 
+            opacity: 0; 
+        }
+        .animate-in { 
+            opacity: 1; 
+        }
     </style>
 </head>
 <body>
