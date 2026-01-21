@@ -1,118 +1,178 @@
 <style>
-    /* 🎨 SOCIAL MEDIA STYLE CHAT INBOX */
     :root {
-        --primary-maroon: #700A0A; 
-        --light-bg: #f0f2f5; /* Light grey background */
-        --card-bg: #ffffff;
-        --text-dark: #1c1e21;
-        --text-muted: #606770;
-        --border-color: #dddfe2;
-        --border-radius-lg: 12px;
-        --border-radius-sm: 8px;
-        --shadow-subtle: 0 1px 2px rgba(0, 0, 0, 0.1);
+        --maroon: #8B1538;
+        --maroon-dark: #6B0F2A;
+        --gold: #D4A574;
+        --bg: #FAFAF8;
+        --card: #ffffff;
+        --text: #1F2937;
+        --muted: #6B7280;
+        --border: #E5E7EB;
+        --shadow-sm: 0 1px 2px rgba(0,0,0,0.05);
+        --shadow-md: 0 4px 12px rgba(0,0,0,0.1);
+        --light-bg: #f9f9f9;
     }
 
     .container-fluid {
         padding: 20px;
-        font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
-        background-color: var(--light-bg);
+        background-color: var(--bg);
         min-height: 100vh;
+        font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
     }
 
     /* --- Chat List (Inbox) Styles --- */
     .inbox-list-container {
-        max-width: 600px; /* Constrain list width for desktop view */
-        margin: 0 auto;
-        background-color: var(--card-bg);
-        border-radius: var(--border-radius-lg);
-        box-shadow: var(--shadow-subtle);
-        padding: 15px;
+        max-width: 600px;
+        margin: 80px auto 20px;
+        background-color: var(--card);
+        border-radius: 12px;
+        box-shadow: var(--shadow-md);
+        padding: 20px;
     }
 
     .inbox-heading {
-        color: var(--text-dark);
-        font-size: 1.5rem;
+        color: var(--text);
+        font-size: 24px;
         font-weight: 700;
-        margin-bottom: 10px;
-        padding-bottom: 5px;
-        border-bottom: 1px solid var(--border-color);
+        margin: 0 0 20px 0;
+        padding-bottom: 16px;
+        border-bottom: 2px solid var(--gold);
+        display: flex;
+        align-items: center;
+        gap: 10px;
+    }
+
+    .inbox-heading i {
+        color: var(--maroon);
     }
 
     .inbox-list {
         list-style: none;
         padding: 0;
-        margin-top: 10px;
+        margin: 0;
     }
 
-    /* Individual Contact Item - Highly Compact */
+    /* Individual Contact Item */
     .inbox-item {
-        padding: 10px;
-        margin-bottom: 5px;
-        border-radius: var(--border-radius-sm);
+        padding: 16px;
+        margin-bottom: 8px;
+        border-radius: 10px;
         display: flex;
         align-items: center;
         justify-content: space-between;
         cursor: pointer;
-        transition: background-color 0.2s;
+        transition: all 0.3s;
+        border: 1px solid var(--border);
+        background: var(--card);
     }
 
     .inbox-item:hover {
-        background-color: #f7f7f7; /* Subtle hover effect */
+        background-color: var(--light-bg);
+        border-color: var(--maroon);
+        box-shadow: var(--shadow-md);
+        transform: translateX(4px);
     }
 
     .friend-info {
         display: flex;
         align-items: center;
+        gap: 12px;
+        flex: 1;
+        min-width: 0;
     }
 
     .profile-image-inbox {
-        width: 48px; /* Standard contact list size */
-        height: 48px;
+        width: 56px;
+        height: 56px;
         border-radius: 50%;
-        margin-right: 12px;
         object-fit: cover;
-        border: 2px solid var(--border-color); /* Neutral border */
+        border: 3px solid var(--maroon);
+        flex-shrink: 0;
+        background: var(--light-bg);
+    }
+
+    .friend-name-info {
+        flex: 1;
+        min-width: 0;
     }
 
     .friend-name {
-        font-weight: 600;
-        color: var(--text-dark);
-        font-size: 1.05rem;
+        font-weight: 700;
+        color: var(--text);
+        font-size: 15px;
+        margin: 0;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+    }
+
+    .friend-status {
+        font-size: 12px;
+        color: var(--muted);
+        margin: 4px 0 0 0;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
     }
 
     .btn-message-chat {
-        background-color: var(--primary-maroon);
+        background: linear-gradient(135deg, var(--maroon), var(--maroon-dark));
         color: white;
         border: none;
-        padding: 6px 12px;
-        border-radius: 50px; /* Pill shape for button */
-        font-size: 0.85rem;
-        font-weight: 500;
+        padding: 8px 18px;
+        border-radius: 20px;
+        font-size: 12px;
+        font-weight: 600;
         display: inline-flex;
         align-items: center;
-        gap: 5px;
-    }
-    
-    .no-connections {
-        color: var(--text-muted);
-        font-size: 1rem;
-        text-align: center;
-        padding: 30px;
-        border: 1px dashed var(--border-color);
-        border-radius: var(--border-radius-sm);
-        margin-top: 15px;
+        gap: 6px;
+        cursor: pointer;
+        transition: all 0.3s;
+        white-space: nowrap;
+        flex-shrink: 0;
     }
 
-    /* --- Chat Modal Styles (Standalone Floating Window) --- */
+    .btn-message-chat:hover {
+        transform: translateY(-2px);
+        box-shadow: var(--shadow-md);
+    }
+
+    .no-connections {
+        color: var(--muted);
+        font-size: 14px;
+        text-align: center;
+        padding: 40px 20px;
+        border: 2px dashed var(--border);
+        border-radius: 10px;
+        margin-top: 20px;
+    }
+
+    .no-connections i {
+        font-size: 48px;
+        color: var(--border);
+        display: block;
+        margin-bottom: 12px;
+    }
+
+    .no-connections p {
+        margin: 8px 0;
+    }
+
+    .no-connections .title {
+        font-weight: 600;
+        color: var(--text);
+    }
+
+    /* --- Chat Modal Styles --- */
     .chat-modal {
         position: fixed;
         bottom: 20px;
         right: 20px;
-        width: 350px; /* Standard desktop chat window size */
-        height: 450px;
-        background: var(--card-bg);
-        box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
-        border-radius: var(--border-radius-lg);
+        width: 400px;
+        height: 500px;
+        background: var(--card);
+        box-shadow: 0 8px 32px rgba(0, 0, 0, 0.15);
+        border-radius: 12px;
         display: none;
         flex-direction: column;
         z-index: 1000;
@@ -120,136 +180,201 @@
     }
 
     .chat-modal-header {
-        background-color: var(--primary-maroon);
+        background: linear-gradient(135deg, var(--maroon), var(--maroon-dark));
         color: white;
-        padding: 10px 15px;
+        padding: 16px;
         display: flex;
         align-items: center;
         justify-content: space-between;
-        box-shadow: var(--shadow-subtle); /* Separator shadow */
+        box-shadow: var(--shadow-sm);
+    }
+
+    .chat-modal-header-info {
+        display: flex;
+        align-items: center;
+        gap: 10px;
     }
 
     .chat-modal-header .profile-image-inbox {
-        border: none;
+        width: 40px;
+        height: 40px;
+        border: 2px solid white;
+    }
+
+    .chat-modal-header span {
+        font-weight: 700;
+        font-size: 14px;
     }
 
     .chat-modal-header .close {
         background: none;
         border: none;
         color: white;
-        font-size: 1.8rem;
-        line-height: 1;
+        font-size: 24px;
+        cursor: pointer;
+        padding: 0;
+        width: 32px;
+        height: 32px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border-radius: 6px;
+        transition: all 0.3s;
+    }
+
+    .chat-modal-header .close:hover {
+        background: rgba(255,255,255,0.2);
     }
 
     .chat-modal-body {
         flex: 1;
         overflow-y: auto;
-        padding: 10px;
-        background-color: var(--light-bg); /* Chat background */
+        padding: 16px;
+        background-color: var(--light-bg);
         display: flex;
         flex-direction: column;
-        gap: 5px;
+        gap: 12px;
     }
 
-    /* Message Bubbles */
-    #chatContent > div {
+    .chat-modal-body::-webkit-scrollbar {
+        width: 6px;
+    }
+
+    .chat-modal-body::-webkit-scrollbar-track {
+        background: transparent;
+    }
+
+    .chat-modal-body::-webkit-scrollbar-thumb {
+        background: var(--border);
+        border-radius: 3px;
+    }
+
+    .message-bubble {
         display: flex;
         margin: 4px 0;
+        animation: slideIn 0.2s ease-out;
     }
 
-    #chatContent > div > div {
-        max-width: 80%;
-        padding: 8px 12px;
-        border-radius: 18px;
+    @keyframes slideIn {
+        from { opacity: 0; transform: translateY(8px); }
+        to { opacity: 1; transform: translateY(0); }
+    }
+
+    .message-bubble > div {
+        max-width: 75%;
+        padding: 10px 14px;
+        border-radius: 14px;
         word-wrap: break-word;
-        font-size: 0.9rem;
-        line-height: 1.3;
-        box-shadow: 0 1px 0 rgba(0, 0, 0, 0.05); /* Very subtle bubble shadow */
+        font-size: 13px;
+        line-height: 1.4;
+        box-shadow: var(--shadow-sm);
     }
 
-    /* My messages (Maroon) */
-    #chatContent > div[style*="flex-end"] {
+    .message-bubble.own {
         justify-content: flex-end;
     }
-    #chatContent > div[style*="flex-end"] > div {
-        background-color: var(--primary-maroon) !important;
-        color: white !important;
-        /* Social Media Style Tweak: Triangle tip via border radius */
-        border-bottom-right-radius: 5px; 
+
+    .message-bubble.own > div {
+        background: linear-gradient(135deg, var(--maroon), var(--maroon-dark));
+        color: white;
+        border-radius: 14px 4px 14px 14px;
     }
 
-    /* Partner's messages (Light Grey) */
-    #chatContent > div[style*="flex-start"] {
+    .message-bubble.other {
         justify-content: flex-start;
     }
-    #chatContent > div[style*="flex-start"] > div {
-        background-color: #e4e6eb !important; /* Standard chat grey */
-        color: var(--text-dark) !important;
-        border-bottom-left-radius: 5px;
+
+    .message-bubble.other > div {
+        background: var(--card);
+        color: var(--text);
+        border: 1px solid var(--border);
+        border-radius: 4px 14px 14px 14px;
     }
 
     .message-time {
-        font-size: 0.6rem;
-        margin-top: 3px !important;
+        font-size: 10px;
+        margin-top: 4px;
         text-align: right;
         opacity: 0.7;
     }
 
+    .message-bubble.own .message-time {
+        color: rgba(255,255,255,0.8);
+    }
+
+    .message-bubble.other .message-time {
+        color: var(--muted);
+    }
+
     /* Chat Footer */
     .chat-modal-footer {
-        padding: 8px 10px;
-        border-top: 1px solid var(--border-color);
-        background-color: var(--card-bg);
+        padding: 12px;
+        border-top: 1px solid var(--border);
+        background-color: var(--card);
     }
 
     .chat-form {
         display: flex;
-        gap: 5px;
-        align-items: center;
+        gap: 8px;
+        align-items: flex-end;
     }
 
     .chat-form textarea {
         flex-grow: 1;
         resize: none;
-        height: 38px; 
-        padding: 8px 10px;
-        border-radius: 20px; /* Pill shape for input */
-        border: 1px solid var(--border-color);
-        font-size: 0.9rem;
-        line-height: 1.3;
+        max-height: 80px;
+        padding: 10px 14px;
+        border-radius: 20px;
+        border: 1.5px solid var(--border);
+        font-size: 13px;
+        line-height: 1.4;
+        font-family: inherit;
+        transition: all 0.3s;
+    }
+
+    .chat-form textarea:focus {
+        outline: none;
+        border-color: var(--maroon);
+        box-shadow: 0 0 0 2px rgba(139, 21, 56, 0.1);
     }
 
     .chat-form button {
-        background-color: var(--primary-maroon);
+        background: linear-gradient(135deg, var(--maroon), var(--maroon-dark));
         color: white;
         border: none;
-        width: 38px; /* Square button for icon */
-        height: 38px;
-        border-radius: 50%; /* Circle send button */
+        width: 40px;
+        height: 40px;
+        border-radius: 50%;
         cursor: pointer;
-        font-size: 1rem;
+        font-size: 16px;
         display: flex;
         align-items: center;
         justify-content: center;
+        transition: all 0.3s;
+        flex-shrink: 0;
     }
-    
+
+    .chat-form button:hover {
+        transform: scale(1.05);
+        box-shadow: var(--shadow-md);
+    }
+
     /* Responsive adjustments */
     @media (max-width: 768px) {
         .inbox-list-container {
             max-width: 100%;
-            padding: 10px;
+            margin: 70px 0 0 0;
         }
         .inbox-item {
-            padding: 8px;
+            padding: 12px;
         }
         .profile-image-inbox {
-            width: 40px;
-            height: 40px;
+            width: 48px;
+            height: 48px;
         }
         .friend-name {
-            font-size: 0.95rem;
+            font-size: 14px;
         }
-        
         .chat-modal {
             width: 100%;
             height: 100%;
@@ -257,133 +382,125 @@
             bottom: 0;
             top: 0;
             left: 0;
-            border-radius: 0; /* Full screen on mobile */
+            border-radius: 0;
         }
     }
 </style>
 
 <div class="container-fluid">
     <div class="inbox-list-container">
-        <h2 class="inbox-heading"><i class="fas fa-comment-dots mr-2"></i> Messages</h2>
+        <h2 class="inbox-heading"><i class="fas fa-comments"></i> Messages</h2>
 
         <?php if (empty($connections)): ?>
-            <p class="no-connections">No connections found. Find friends and start chatting!</p>
+            <div class="no-connections">
+                <i class="fas fa-inbox"></i>
+                <p class="title">No Conversations Yet</p>
+                <p>Find alumni and start chatting to build your network</p>
+            </div>
         <?php else: ?>
             <ul class="inbox-list">
                 <?php foreach ($connections as $friend): ?>
                     <?php
-                        // --- Profile Image Logic ---
                         if (!empty($friend->profile_image)) {
                             $profileImage = base_url('assets/uploads/alumni/' . $friend->profile_image);
                         } else {
-                            $gender = strtolower($friend->gender);
+                            $gender = strtolower($friend->gender ?? '');
                             $defaultImage = ($gender === 'female') ? 'person-female.png' : 'person-male.png';
                             $profileImage = base_url('assets/images/' . $defaultImage);
                         }
                     ?>
                     <li class="inbox-item" onclick="openChatModal(
                         <?= $friend->id ?>,
-                        '<?= ucwords($friend->first_name . ' ' . $friend->last_name) ?>',
-                        '<?= $profileImage ?>'
+                        '<?= htmlspecialchars(ucwords($friend->first_name . ' ' . $friend->last_name)) ?>',
+                        '<?= htmlspecialchars($profileImage) ?>'
                     )">
                         <div class="friend-info">
                             <img src="<?= $profileImage ?>" alt="<?= htmlspecialchars(ucwords($friend->first_name . ' ' . $friend->last_name)) ?>" class="profile-image-inbox">
-                            <span class="friend-name"><?= ucwords($friend->first_name . ' ' . $friend->last_name) ?></span>
+                            <div class="friend-name-info">
+                                <p class="friend-name"><?= ucwords($friend->first_name . ' ' . $friend->last_name) ?></p>
+                                <p class="friend-status"><i class="fas fa-circle" style="font-size: 6px; margin-right: 4px;"></i> Active</p>
+                            </div>
                         </div>
-                        
-                        <div class="btn-message-chat">
-                            <i class="fas fa-paper-plane"></i> Chat
-                        </div>
+                        <button type="button" class="btn-message-chat" onclick="event.stopPropagation();">
+                            <i class="fas fa-paper-plane"></i> Message
+                        </button>
                     </li>
                 <?php endforeach; ?>
             </ul>
         <?php endif; ?>
     </div>
-    
-<div id="chatModal" class="chat-modal">
-    <div class="chat-modal-header">
-        <div style="display: flex; align-items: center;">
-            <img id="chatProfileImage" src="" alt="Profile" class="profile-image-inbox" style="width: 35px; height: 35px; margin-right: 8px;">
-            <span id="chatFullName" style="font-weight: bold; font-size: 1.1rem;">Alumni Name</span>
-        </div>
-        <button class="close" onclick="closeChatModal()" title="Close Chat"><i class="fas fa-times"></i></button>
-    </div>
-    <div class="chat-modal-body">
-        <div id="chatContent" style="flex: 1; overflow-y: scroll;">
-            <p style="text-align:center; color: var(--text-muted);">Loading conversation...</p>
-        </div>
-    </div>
 
-    <div id="chatFooter" class="chat-modal-footer">
-        <form id="chatForm" class="chat-form">
-            <input type="hidden" name="receiver_id" id="receiverId">
-            <textarea name="message" placeholder="Aa" required></textarea>
-            <button type="submit" title="Send Message"><i class="fas fa-paper-plane"></i></button>
-        </form>
+    <!-- Chat Modal -->
+    <div id="chatModal" class="chat-modal">
+        <div class="chat-modal-header">
+            <div class="chat-modal-header-info">
+                <img id="chatProfileImage" src="" alt="Profile" class="profile-image-inbox">
+                <span id="chatFullName">Alumni Name</span>
+            </div>
+            <button type="button" class="close" onclick="closeChatModal();" title="Close">
+                <i class="fas fa-times"></i>
+            </button>
+        </div>
+        <div class="chat-modal-body">
+            <div id="chatContent" style="flex: 1; overflow-y: auto;">
+                <p style="text-align:center; color: var(--muted); font-size: 13px;">Loading conversation...</p>
+            </div>
+        </div>
+
+        <div class="chat-modal-footer">
+            <form id="chatForm" class="chat-form">
+                <input type="hidden" name="receiver_id" id="receiverId">
+                <textarea name="message" placeholder="Aa" required></textarea>
+                <button type="submit" title="Send"><i class="fas fa-paper-plane"></i></button>
+            </form>
+        </div>
     </div>
 </div>
-</div>
-
 
 <script>
-let currentFriendId = null; 
+let currentFriendId = null;
 
-// Helper function to render messages (keeps scrolling logic centralized)
 function renderMessages(messagesHtml) {
     const chatContent = document.getElementById('chatContent');
     chatContent.innerHTML = messagesHtml;
-    // Scroll to bottom after new content is loaded/rendered
     chatContent.scrollTop = chatContent.scrollHeight;
 }
 
 function loadMessages(friendId) {
-    renderMessages('<p style="text-align:center; color: var(--text-muted);">Loading conversation...</p>');
-    
+    renderMessages('<p style="text-align:center; color: var(--muted); font-size: 13px;">Loading conversation...</p>');
+
     const url = "<?= site_url('chat/get_messages_ajax/') ?>" + friendId;
-    
+
     fetch(url)
         .then(response => response.text())
         .then(html => {
-            // Processing the raw message content from the AJAX endpoint to fit the new bubble style
             const tempDiv = document.createElement('div');
             tempDiv.innerHTML = html;
-            
+
             let modernHtml = '';
-            const messages = tempDiv.querySelectorAll('#chatContent > div'); 
-            
+            const messages = tempDiv.querySelectorAll('#chatContent > div');
+
             messages.forEach(msgDiv => {
-                // Determine if the message is from the current user based on the inline style generated by the backend
                 const isOwn = msgDiv.querySelector('div').style.justifyContent === 'flex-end';
-                
-                // Extract and format message content and time
                 const messageBubble = msgDiv.querySelector('div > div');
                 const messageText = messageBubble ? messageBubble.childNodes[0].nodeValue.trim() : '';
                 const timeElement = messageBubble ? messageBubble.querySelector('div') : null;
                 const timeText = timeElement ? timeElement.innerHTML : '';
 
-                const timeStyle = isOwn ? 'color: rgba(255, 255, 255, 0.8);' : 'color: var(--text-muted);';
-
-                // Re-create the bubble
                 modernHtml += `
-                <div style="display: flex; justify-content: ${isOwn ? 'flex-end' : 'flex-start'};">
-                    <div style="
-                        background-color: ${isOwn ? 'var(--primary-maroon)' : '#e4e6eb'} !important;
-                        color: ${isOwn ? 'white' : 'var(--text-dark)'} !important;
-                        ${isOwn ? 'border-bottom-right-radius: 5px;' : 'border-bottom-left-radius: 5px;'}
-                    ">
+                <div class="message-bubble ${isOwn ? 'own' : 'other'}">
+                    <div>
                         ${messageText}
-                        <div class="message-time" style="${timeStyle}">
-                            ${timeText}
-                        </div>
+                        <div class="message-time">${timeText}</div>
                     </div>
                 </div>`;
             });
 
-            renderMessages(modernHtml || '<p style="text-align:center; color: var(--text-muted);">Say hello!</p>');
+            renderMessages(modernHtml || '<p style="text-align:center; color: var(--muted); font-size: 13px;">Say hello!</p>');
         })
         .catch(err => {
             console.error('Error loading messages:', err);
-            renderMessages('<p style="text-align:center; color: red;">Failed to load messages.</p>');
+            renderMessages('<p style="text-align:center; color: #e74c3c; font-size: 13px;">Failed to load messages.</p>');
         });
 }
 
@@ -398,7 +515,6 @@ function openChatModal(friendId, fullName, imageUrl) {
 
     loadMessages(friendId);
 
-    // Bind the chat form submission handler
     const chatForm = document.getElementById('chatForm');
     chatForm.onsubmit = function (e) {
         e.preventDefault();
@@ -411,8 +527,7 @@ function openChatModal(friendId, fullName, imageUrl) {
         const formData = new FormData();
         formData.append('receiver_id', friendId);
         formData.append('message', messageText);
-        
-        // Clear input immediately for better UX
+
         messageInput.value = '';
 
         fetch("<?= site_url('chat/send') ?>", {
@@ -422,8 +537,7 @@ function openChatModal(friendId, fullName, imageUrl) {
         .then(res => res.json())
         .then(data => {
             if (data.status === 'success') {
-                // Reload messages to show the sent message with accurate timestamp
-                loadMessages(friendId); 
+                loadMessages(friendId);
             } else {
                 alert('Failed to send message.');
             }
