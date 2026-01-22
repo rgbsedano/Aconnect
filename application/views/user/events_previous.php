@@ -147,7 +147,7 @@
                              onclick="openModal(${event.id})">
                             
                             <div class="w-16 h-16 rounded-2xl overflow-hidden flex-shrink-0 bg-slate-100 border border-slate-200">
-                                ${event.image_url ? `<img src="${event.image_url}" class="w-full h-full object-cover">` : `<div class="w-full h-full flex items-center justify-center text-rose-700 font-bold">${event.event_name.charAt(0)}</div>`}
+                                ${event.image ? `<img src="<?= base_url('assets/uploads/events/') ?>${event.image}" class="w-full h-full object-cover">` : `<div class="w-full h-full flex items-center justify-center text-rose-700 font-bold">${event.event_name.charAt(0)}</div>`}
                             </div>
 
                             <div class="flex-grow">
@@ -184,14 +184,17 @@
             const html = `
                 <div id="modal-${event.id}" class="modal-overlay fixed inset-0 z-50 p-4 items-center justify-center" onclick="closeModal(${event.id})">
                     <div class="bg-white w-full max-w-2xl rounded-3xl overflow-hidden shadow-2xl transition-all scale-100" onclick="event.stopPropagation()">
-                        <div class="h-32 bg-rose-700 relative">
-                            <div class="absolute -bottom-8 left-8 w-20 h-20 rounded-2xl bg-white p-1 shadow-xl">
-                                <div class="w-full h-full rounded-xl bg-slate-100 overflow-hidden flex items-center justify-center font-bold text-rose-700 text-2xl">
-                                    ${event.image_url ? `<img src="${event.image_url}" class="w-full h-full object-cover">` : event.event_name.charAt(0)}
+                        ${event.image ? 
+                            `<div class="w-full h-48 overflow-hidden"><img src="<?= base_url('assets/uploads/events/') ?>${event.image}" class="w-full h-full object-cover"></div>` :
+                            `<div class="h-32 bg-rose-700 relative">
+                                <div class="absolute -bottom-8 left-8 w-20 h-20 rounded-2xl bg-white p-1 shadow-xl">
+                                    <div class="w-full h-full rounded-xl bg-slate-100 overflow-hidden flex items-center justify-center font-bold text-rose-700 text-2xl">
+                                        ${event.event_name.charAt(0)}
+                                    </div>
                                 </div>
-                            </div>
-                        </div>
-                        <div class="p-8 pt-12">
+                            </div>`
+                        }
+                        <div class="p-8 ${event.image ? 'pt-6' : 'pt-12'}">
                             <div class="flex justify-between items-start">
                                 <div>
                                     <h2 class="text-2xl font-extrabold text-slate-900">${event.event_name}</h2>

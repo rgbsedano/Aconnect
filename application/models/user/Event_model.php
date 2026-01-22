@@ -3,7 +3,12 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 
 class Event_model extends CI_Model {
 
-    public function get_all_events() {
+    public function get_all_events($alumni_id = null) {
+        $this->db->select('events.*');
+        if ($alumni_id) {
+            $this->db->select('IF(event_registrations.id IS NOT NULL, 1, 0) as is_registered');
+            $this->db->join('event_registrations', 'event_registrations.event_id = events.id AND event_registrations.alumni_id = ' . $alumni_id, 'left');
+        }
         $this->db->order_by('event_date', 'DESC');
         return $this->db->get('events')->result();
     }

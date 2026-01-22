@@ -526,10 +526,6 @@
                         </div>
 
                         <div class="form-row">
-                                <div class="form-group col-md-6">
-                                    <label>Year Admitted</label>
-                                    <input type="number" name="year_admitted" class="form-control" value="<?= $alumni->year_admitted ?>" min="1990" max="2100">
-                                </div>
                             <div class="form-group col-md-6">
                                 <label>Graduation Year</label>
                                 <input type="number" name="graduation_year" class="form-control" value="<?= $alumni->graduation_year ?>" min="1990" max="2100">

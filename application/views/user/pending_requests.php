@@ -451,10 +451,38 @@ $student_number = $this->session->userdata('student_number') ? $this->session->u
     }
 
     $(document).ready(function() {
-        // Add notifications to action buttons
-        $('.btn-approve, .btn-reject, .btn-action').on('click', function() {
-            const action = $(this).text().trim();
-            showToast(action + ' submitted!', 'success');
+        // Handle accept/decline with toast and remove card on success
+        $('.btn-accept, .btn-decline').on('click', function(e) {
+            e.preventDefault();
+            const $btn = $(this);
+            const href = $btn.attr('href');
+            const $card = $btn.closest('.request-card');
+
+            if (!href) return;
+
+            fetch(href, { method: 'GET', credentials: 'same-origin' })
+                .then(resp => {
+                    if (!resp.ok) throw new Error('Request failed');
+                    return resp.text();
+                })
+                .then(() => {
+                    if ($btn.hasClass('btn-accept')) {
+                        showToast('Request accepted', 'success');
+                    } else {
+                        showToast('Request declined', 'info');
+                    }
+                    // remove the card from the list
+                    $card.slideUp(250, function() { $(this).remove();
+                        // if no more request-cards exist, show empty state
+                        if ($('.request-card').length === 0) {
+                            $('.requests-list').remove();
+                            $('.container').append(`\n                                <div class="empty-state">\n                                    <i class="fas fa-inbox"></i>\n                                    <h3>No Pending Requests</h3>\n                                    <p>You have no pending connection requests at this time.</p>\n                                </div>`);
+                        }
+                    });
+                })
+                .catch(() => {
+                    showToast('Action failed, please try again', 'error');
+                });
         });
     });
 </script>

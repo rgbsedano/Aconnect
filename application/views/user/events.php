@@ -59,6 +59,17 @@
 <body class="bg-pattern text-slate-900 antialiased">
 
     <nav class="bg-white/80 backdrop-blur-md border-b border-slate-200 sticky top-0 z-40">
+        <!-- Toast Container -->
+        <div id="toast-container" class="fixed top-4 left-4 z-[60] space-y-2 pointer-events-none"></div>
+        
+        <?php if($this->session->flashdata('success')): ?>
+            <script>
+                document.addEventListener('DOMContentLoaded', () => {
+                    showNotification('<?= $this->session->flashdata('success') ?>', 'success');
+                });
+            </script>
+        <?php endif; ?>
+
         <div class="max-w-6xl mx-auto px-6 py-4 flex items-center justify-between">
             <div class="flex items-center gap-3">
                 <div class="w-10 h-10 bg-rose-700 rounded-xl flex items-center justify-center shadow-lg shadow-rose-200">
@@ -163,7 +174,7 @@
                              onclick="openModal(${event.id})">
                             
                             <div class="w-16 h-16 rounded-2xl overflow-hidden flex-shrink-0 bg-slate-100 border border-slate-200">
-                                ${event.image_url ? `<img src="${event.image_url}" class="w-full h-full object-cover">` : `<div class="w-full h-full flex items-center justify-center text-rose-700 font-bold text-xl">${event.event_name.charAt(0)}</div>`}
+                                ${event.image ? `<img src="<?= base_url('assets/uploads/events/') ?>${event.image}" class="w-full h-full object-cover">` : `<div class="w-full h-full flex items-center justify-center text-rose-700 font-bold text-xl">${event.event_name.charAt(0)}</div>`}
                             </div>
 
                             <div class="flex-grow">
@@ -186,9 +197,15 @@
                             </div>
 
                             <div class="flex items-center gap-3 w-full md:w-auto border-t md:border-t-0 pt-4 md:pt-0 border-slate-50">
-                                <form action="<?= base_url('events/register/') ?>${event.id}" method="post" class="w-full md:w-auto" onclick="event.stopPropagation()">
-                                    <button type="submit" class="w-full bg-rose-700 text-white text-xs font-bold px-6 py-2.5 rounded-xl hover:bg-rose-800 transition shadow-md shadow-rose-100">Register Now</button>
-                                </form>
+                                ${event.is_registered == 1 ? 
+                                    `<button disabled class="w-full bg-emerald-600 text-white text-xs font-bold px-6 py-2.5 rounded-xl flex items-center justify-center gap-2 cursor-default">
+                                        <svg class="w-3.5 h-3.5" fill="currentColor" viewBox="0 0 20 20"><path d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"/></svg>
+                                        Registered
+                                    </button>` : 
+                                    `<form action="<?= base_url('events/register/') ?>${event.id}" method="post" class="w-full md:w-auto" onclick="event.stopPropagation()">
+                                        <button type="submit" class="w-full bg-rose-700 text-white text-xs font-bold px-6 py-2.5 rounded-xl hover:bg-rose-800 transition shadow-md shadow-rose-100">Register Now</button>
+                                    </form>`
+                                }
                             </div>
                         </div>
                     `;
@@ -200,17 +217,17 @@
 
         function generateModal(event) {
             const formattedDate = new Date(event.event_date).toLocaleString('en-US', { dateStyle: 'full', timeStyle: 'short' });
-            const html = `
-                <div id="modal-${event.id}" class="modal-overlay fixed inset-0 items-center justify-center p-4" onclick="closeModal(${event.id})">
-                    <div class="bg-white w-full max-w-2xl rounded-3xl overflow-hidden shadow-2xl" onclick="event.stopPropagation()">
-                        <div class="h-32 bg-rose-700 relative">
-                            <div class="absolute -bottom-8 left-8 w-20 h-20 rounded-2xl bg-white p-1 shadow-xl">
-                                <div class="w-full h-full rounded-xl bg-slate-100 overflow-hidden flex items-center justify-center font-bold text-rose-700 text-2xl">
-                                    ${event.image_url ? `<img src="${event.image_url}" class="w-full h-full object-cover">` : event.event_name.charAt(0)}
+                const html = `
+                    <div id="modal-${event.id}" class="modal-overlay fixed inset-0 items-center justify-center p-4" onclick="closeModal(${event.id})">
+                        <div class="bg-white w-full max-w-2xl rounded-3xl overflow-hidden shadow-2xl" onclick="event.stopPropagation()">
+                            ${event.image ? `<div class="w-full h-56 overflow-hidden"><img src="<?= base_url('assets/uploads/events/') ?>${event.image}" class="w-full h-full object-cover"></div>` : `<div class="h-32 bg-rose-700 relative">
+                                <div class="absolute -bottom-8 left-8 w-20 h-20 rounded-2xl bg-white p-1 shadow-xl">
+                                    <div class="w-full h-full rounded-xl bg-slate-100 overflow-hidden flex items-center justify-center font-bold text-rose-700 text-2xl">
+                                        ${event.event_name.charAt(0)}
+                                    </div>
                                 </div>
-                            </div>
-                        </div>
-                        <div class="p-8 pt-12">
+                            </div>`}
+                            <div class="p-8 pt-6">
                             <div class="flex justify-between items-start">
                                 <div>
                                     <h2 class="text-2xl font-extrabold text-slate-900 leading-tight">${event.event_name}</h2>
@@ -249,9 +266,15 @@
                                 </div>
                                 <div class="flex gap-3">
                                     <button onclick="closeModal(${event.id})" class="px-6 py-3 text-xs font-bold text-slate-600 bg-slate-50 rounded-xl hover:bg-slate-100 transition">Close</button>
-                                    <form action="<?= base_url('events/register/') ?>${event.id}" method="post">
-                                        <button type="submit" class="bg-rose-700 text-white text-xs font-bold px-8 py-3 rounded-xl hover:bg-rose-800 transition shadow-lg shadow-rose-100">Confirm Registration</button>
-                                    </form>
+                                    ${event.is_registered == 1 ? 
+                                        `<button disabled class="bg-emerald-600 text-white text-xs font-bold px-8 py-3 rounded-xl flex items-center gap-2 cursor-default">
+                                            <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 20 20"><path d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"/></svg>
+                                            Registered
+                                        </button>` : 
+                                        `<form action="<?= base_url('events/register/') ?>${event.id}" method="post">
+                                            <button type="submit" class="bg-rose-700 text-white text-xs font-bold px-8 py-3 rounded-xl hover:bg-rose-800 transition shadow-lg shadow-rose-100">Confirm Registration</button>
+                                        </form>`
+                                    }
                                 </div>
                             </div>
                         </div>
@@ -276,6 +299,32 @@
             document.getElementById('filter-type').value = 'all';
             document.getElementById('sort-order').value = 'closest';
             renderEvents();
+        }
+
+        function showNotification(message, type = 'success') {
+            const container = document.getElementById('toast-container');
+            const toast = document.createElement('div');
+            toast.className = `flex items-center gap-3 bg-white border-l-4 ${type === 'success' ? 'border-emerald-500' : 'border-rose-500'} p-4 rounded-xl shadow-xl transition-all duration-300 transform -translate-x-full opacity-0 pointer-events-auto min-w-[300px] border border-slate-100`;
+            
+            toast.innerHTML = `
+                <div class="flex-shrink-0 w-8 h-8 ${type === 'success' ? 'bg-emerald-100 text-emerald-600' : 'bg-rose-100 text-rose-600'} rounded-full flex items-center justify-center">
+                    <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20"><path d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"/></svg>
+                </div>
+                <p class="text-sm font-bold text-slate-700">${message}</p>
+            `;
+            
+            container.appendChild(toast);
+            
+            // Animation In
+            setTimeout(() => {
+                toast.classList.remove('-translate-x-full', 'opacity-0');
+            }, 100);
+            
+            // Auto Remove
+            setTimeout(() => {
+                toast.classList.add('-translate-x-full', 'opacity-0');
+                setTimeout(() => toast.remove(), 300);
+            }, 5000);
         }
 
         document.addEventListener('DOMContentLoaded', renderEvents);

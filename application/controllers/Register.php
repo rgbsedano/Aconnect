@@ -23,7 +23,6 @@ class Register extends CI_Controller {
         $this->form_validation->set_rules('student_number', 'Student Number', 'required|is_unique[alumni.student_number]|trim');
         $this->form_validation->set_rules('degree', 'Degree', 'required');
         $this->form_validation->set_rules('alternative_email', 'Alternate Email', 'required|valid_email|trim');
-        $this->form_validation->set_rules('year_admitted', 'Year Admitted', 'required|numeric|trim');
         $this->form_validation->set_rules('gender', 'Gender', 'required');
         $this->form_validation->set_rules('degree_other', 'Other Degree', 'callback_check_degree_other');
         $this->form_validation->set_rules('telephone', 'Telephone', 'trim');
@@ -49,7 +48,6 @@ class Register extends CI_Controller {
             'phone'            => $this->input->post('phone'),
             'telephone'       => $this->input->post('telephone'),
             'alternative_email' => $this->input->post('alternative_email'),
-            'year_admitted'     => $this->input->post('year_admitted'),
             'graduation_year'  => $this->input->post('graduation_year'),
             'student_number'   => $this->input->post('student_number'),
             'degree'           => $degree_value,

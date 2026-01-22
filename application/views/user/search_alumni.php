@@ -196,6 +196,12 @@ $student_number = $this->session->userdata('student_number') ? $this->session->u
             display: block;
             color: var(--text-main);
         }
+        /* Top-right notification for Connect action */
+        #centered-notif { position: fixed; right: 20px; top: 20px; z-index: 99999; pointer-events: none; transition: all .22s ease; opacity: 1; display: flex; flex-direction: column; gap: 10px; align-items: flex-end; }
+        .noti-box { background: #fff; padding: 12px 16px; border-radius: 10px; box-shadow: 0 12px 30px rgba(0,0,0,0.12); font-weight: 800; display: inline-flex; align-items: center; gap: 10px; pointer-events: auto; }
+        .noti-box.success { border-left: 6px solid #10B981; color: #065F46; }
+        .noti-box.error { border-left: 6px solid #EF4444; color: #7F1D1D; }
+        .noti-box.info { border-left: 6px solid #3B82F6; color: #1E40AF; }
     </style>
 </head>
 <body class="bg-pattern text-slate-900 antialiased">
@@ -228,6 +234,7 @@ $student_number = $this->session->userdata('student_number') ? $this->session->u
                 <div class="flex gap-2">
                     <button class="filter-btn active bg-rose-700 text-white text-xs font-bold px-4 py-2 rounded-xl transition shadow-md shadow-rose-100" data-filter="all">All</button>
                     <button class="filter-btn bg-slate-50 border-none text-slate-600 text-xs font-bold py-2 px-4 rounded-xl outline-none hover:bg-slate-100" data-filter="connectable">Discover</button>
+                    <button class="filter-btn bg-slate-50 border-none text-slate-600 text-xs font-bold py-2 px-4 rounded-xl outline-none hover:bg-slate-100" data-filter="pending">Pending</button>
                     <button class="filter-btn bg-slate-50 border-none text-slate-600 text-xs font-bold py-2 px-4 rounded-xl outline-none hover:bg-slate-100" data-filter="accepted">Linked</button>
                 </div>
             </div>
@@ -266,7 +273,7 @@ $student_number = $this->session->userdata('student_number') ? $this->session->u
                                 <?php elseif ($alumnus->connection_status == 'pending'): ?>
                                     <div class="status-badge"><i class="fas fa-clock"></i> Pending</div>
                                 <?php else: ?>
-                                    <form method="post" action="<?= site_url('alumni/send_request') ?>" style="flex:1; display:flex;">
+                                    <form method="post" action="<?= site_url('alumni/send_request') ?>" class="connect-form" style="flex:1; display:flex;">
                                         <input type="hidden" name="receiver_id" value="<?= $alumnus->id ?>">
                                         <button type="submit" class="btn-tile btn-connect"><i class="fas fa-user-plus mr-1"></i> Connect</button>
                                     </form>
@@ -330,6 +337,8 @@ $student_number = $this->session->userdata('student_number') ? $this->session->u
 
 <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.2/dist/js/bootstrap.bundle.min.js"></script>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.css">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js"></script>
 
 <script>
 document.addEventListener('DOMContentLoaded', function() {
@@ -375,6 +384,66 @@ document.addEventListener('DOMContentLoaded', function() {
     });
 
     searchInput.addEventListener('input', filterList);
+});
+</script>
+
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+    function showCenteredNotification(message, type = 'info') {
+        if (window.toastr) {
+            toastr.options = toastr.options || {};
+            toastr.options.positionClass = 'toast-top-right';
+            toastr[type](message);
+            return;
+        }
+        let container = document.getElementById('centered-notif');
+        if (!container) {
+            container = document.createElement('div');
+            container.id = 'centered-notif';
+            document.body.appendChild(container);
+        }
+        container.innerHTML = `<div class="noti-box ${type}">${message}</div>`;
+        container.classList.add('show');
+        setTimeout(() => container.classList.remove('show'), 3000);
+    }
+
+    // Attach to connect forms and submit via fetch to show centered notification
+    document.querySelectorAll('.connect-form').forEach(form => {
+        form.addEventListener('submit', async function(e) {
+            e.preventDefault();
+            const submitBtn = this.querySelector('button[type="submit"]');
+            const originalHtml = submitBtn ? submitBtn.innerHTML : '';
+            if (submitBtn) { submitBtn.disabled = true; submitBtn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Sending...'; }
+
+            const fd = new FormData(this);
+            try {
+                const resp = await fetch(this.action, { method: 'POST', body: fd, credentials: 'same-origin' });
+                if (resp.ok) {
+                    // server may redirect; show success and update UI
+                    showCenteredNotification('Connection request sent', 'success');
+                    // mark the card status to pending (best-effort UI update)
+                    const card = this.closest('.alumni-card-container');
+                    if (card) {
+                        card.setAttribute('data-status', 'pending');
+                        const footer = card.querySelector('.card-footer');
+                        if (footer) {
+                            footer.querySelectorAll('*').forEach(n => n.remove());
+                            const badge = document.createElement('div');
+                            badge.className = 'status-badge';
+                            badge.innerHTML = '<i class="fas fa-clock"></i> Pending';
+                            footer.appendChild(badge);
+                        }
+                    }
+                } else {
+                    showCenteredNotification('Failed to send request', 'error');
+                }
+            } catch (err) {
+                showCenteredNotification('Error sending request', 'error');
+            } finally {
+                if (submitBtn) { submitBtn.disabled = false; submitBtn.innerHTML = originalHtml; }
+            }
+        });
+    });
 });
 </script>
 

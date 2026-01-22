@@ -113,19 +113,6 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 
                         
                         <div class="form-group">
-                            <select name="year_admitted" required>
-                                <option value="" disabled <?= (set_value('year_admitted')=='')?'selected':'' ?> >Year Admitted</option>
-                                <?php 
-                                $current_year = date('Y');
-                                $start_year = $current_year - 20;
-                                for ($year = $current_year; $year >= $start_year; $year--): ?>
-                                    <option value="<?= $year ?>" <?= (set_value('year_admitted') == $year) ? 'selected' : '' ?>>
-                                        <?= $year ?>
-                                    </option>
-                                <?php endfor; ?>
-                            </select>
-                        </div>
-                        <div class="form-group">
                             <select name="graduation_year" required>
                                 <option value="" disabled <?= (set_value('graduation_year')=='')?'selected':'' ?> >Graduation Year</option>
                                 <?php 

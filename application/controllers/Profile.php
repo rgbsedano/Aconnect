@@ -37,7 +37,6 @@ public function update($id) {
     $this->load->model('user/Alumni_model');
 
     // Basic validation (optional but recommended)
-    $year_admitted   = $this->input->post('year_admitted');
     $graduation_year = $this->input->post('graduation_year');
     $email           = $this->input->post('email');
     $alt_email       = $this->input->post('alternative_email');
@@ -45,13 +44,13 @@ public function update($id) {
     $alt_phone       = $this->input->post('alternative_phone');
 
 
-    // Check: Year admitted must be earlier than graduation year
+    /* // Check: Year admitted must be earlier than graduation year
     if ($year_admitted >= $graduation_year) {
         $this->session->set_flashdata('edit_error', 'Year admitted must be earlier than graduation year.');
         $this->session->set_flashdata('show_edit_modal', true);
         redirect('profile');
         return;
-    }
+    } */
 
     // Check: Primary email and alternate email should not be the same
     if ($email === $alt_email) {
@@ -76,7 +75,6 @@ public function update($id) {
         'alternative_phone' => $alt_phone,
         'email'             => $email,
         'alternative_email' => $alt_email,
-        'year_admitted'     => $year_admitted,
         'graduation_year'   => $graduation_year,
         'degree'            => $this->input->post('degree'),
     );
