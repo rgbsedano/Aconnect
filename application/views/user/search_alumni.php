@@ -494,48 +494,7 @@ document.addEventListener('DOMContentLoaded', function() {
         setTimeout(() => container.classList.remove('show'), 3000);
     }
 
-    // Attach to connect forms and submit via fetch to show centered notification
-    document.querySelectorAll('.connect-form').forEach(form => {
-        form.addEventListener('submit', async function(e) {
-            e.preventDefault();
-            const submitBtn = this.querySelector('button[type="submit"]');
-            const originalHtml = submitBtn ? submitBtn.innerHTML : '';
-            if (submitBtn) { submitBtn.disabled = true; submitBtn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Sending...'; }
 
-            const fd = new FormData(this);
-            try {
-                const resp = await fetch(this.action, { method: 'POST', body: fd, credentials: 'same-origin' });
-                if (resp.ok) {
-                    showCenteredNotification('Connection request sent', 'success');
-                    const card = this.closest('.alumni-card-container');
-                    if (card) {
-                        card.setAttribute('data-status', 'pending');
-                        const footer = card.querySelector('.card-footer');
-                        if (footer) {
-                            // Replace form with Pending (cancelable) form
-                            // For simplicity in JS-only update, valid enough to show visual feedback
-                            // Ideal: reload or partial replace. Here: just swap to static badge visual or cancel form structure
-                            this.remove(); 
-                            const formRaw = `
-                                <form method="post" action="<?= site_url('alumni/cancel_request') ?>" class="cancel-form" style="flex:1; display:flex;">
-                                    <input type="hidden" name="receiver_id" value="${fd.get('receiver_id')}">
-                                    <button type="submit" class="status-badge" style="border:none; cursor:pointer; width:100%;" title="Click to cancel request"><i class="fas fa-clock"></i> Pending</button>
-                                </form>`;
-                            footer.insertAdjacentHTML('beforeend', formRaw);
-                            // Note: newly added forms need event listeners attached if we want them to work without reload
-                            // For this iteration, simple visual update is key.
-                        }
-                    }
-                } else {
-                    showCenteredNotification('Failed to send request', 'error');
-                }
-            } catch (err) {
-                showCenteredNotification('Error sending request', 'error');
-            } finally {
-                if (submitBtn) { submitBtn.disabled = false; submitBtn.innerHTML = originalHtml; }
-            }
-        });
-    });
 
     // Handle Cancel Forms via Event Delegation (since they might be dynamic or existing)
     document.addEventListener('submit', async function(e) {
