@@ -12,7 +12,6 @@ $student_number = $this->session->userdata('student_number') ? $this->session->u
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.css">
     
     <style>
         :root {
@@ -96,18 +95,20 @@ $student_number = $this->session->userdata('student_number') ? $this->session->u
 
         .post-image-container {
             width: 100%;
-            height: 120px;
+            height: 140px;
             overflow: hidden;
             background: #f5f5f5;
             display: flex;
             align-items: center;
             justify-content: center;
+            border-bottom: 1px solid var(--border);
         }
 
         .post-image-container img {
             width: 100%;
             height: 100%;
             object-fit: cover;
+            display: block;
         }
 
         .post-image-placeholder {
@@ -126,7 +127,7 @@ $student_number = $this->session->userdata('student_number') ? $this->session->u
         }
 
         .post-content {
-            padding: 20px;
+            padding: 15px 20px;
             display: flex;
             flex-direction: column;
             justify-content: space-between;
@@ -140,16 +141,16 @@ $student_number = $this->session->userdata('student_number') ? $this->session->u
             font-weight: 800;
             color: var(--white);
             background: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%);
-            padding: 6px 12px;
+            padding: 4px 10px;
             border-radius: 6px;
         }
 
         .post-title {
-            font-size: 1.35rem;
+            font-size: 1.15rem;
             font-weight: 700;
             color: var(--text-main);
-            line-height: 1.4;
-            margin-top: 12px;
+            line-height: 1.3;
+            margin-top: 8px;
             overflow: hidden;
             display: -webkit-box;
             -webkit-line-clamp: 2;
@@ -157,7 +158,7 @@ $student_number = $this->session->userdata('student_number') ? $this->session->u
         }
 
         .btn-details {
-            font-size: 0.85rem;
+            font-size: 0.8rem;
             font-weight: 700;
             color: var(--text-muted);
             text-transform: uppercase;
@@ -172,20 +173,32 @@ $student_number = $this->session->userdata('student_number') ? $this->session->u
         .btn-next {
             background: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%);
             color: white;
-            padding: 10px 24px;
+            padding: 6px 16px;
             border-radius: 8px;
-            font-size: 0.9rem;
+            font-size: 0.8rem;
             font-weight: 700;
             border: none;
             cursor: pointer;
             transition: all 0.3s ease;
         }
-        .btn-next:hover { transform: translateY(-2px); box-shadow: var(--shadow-lg); }
+        .btn-next:hover { transform: translateY(-1px); box-shadow: var(--shadow-md); }
 
-        /* Modal Custom Styling */
         .modal-content { border-radius: 16px; border: none; overflow: hidden; }
         .modal-header { background: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%); color: white; }
-        .modal-body { padding: 32px; color: var(--text-main); line-height: 1.8; }
+        .modal-body { padding: 0; color: var(--text-main); line-height: 1.8; }
+        
+        #m-image-container {
+            width: 100%;
+            height: 350px;
+            background: #eee;
+        }
+        #m-image-container img {
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+            background: #000;
+        }
+        .modal-body-text { padding: 32px; }
 
         .post-content-container { transition: opacity 0.3s ease; }
         .animate-out { opacity: 0; }
@@ -286,13 +299,14 @@ $student_number = $this->session->userdata('student_number') ? $this->session->u
                 <button type="button" class="close text-white" data-dismiss="modal">&times;</button>
             </div>
             <div class="modal-body">
-                <div class="flex justify-between items-center mb-6">
-                    <span id="m-category" class="post-category">Category</span>
-                    <span id="m-date" class="font-semibold text-gray-500 italic">Date</span>
-                </div>
-                <div id="m-image-container" class="post-image-container mb-6"></div>
-                <div id="m-content" class="text-gray-700">
+                <div id="m-image-container"></div>
+                <div class="modal-body-text">
+                    <div class="flex justify-between items-center mb-4">
+                        <span id="m-category" class="post-category">Category</span>
+                        <span id="m-date" class="font-semibold text-gray-500 italic">Date</span>
                     </div>
+                    <div id="m-content" class="text-gray-700"></div>
+                </div>
             </div>
             <div class="modal-footer bg-gray-50">
                 <button type="button" class="btn btn-secondary px-4 py-2 rounded-lg font-bold" data-dismiss="modal">Close</button>
@@ -303,33 +317,9 @@ $student_number = $this->session->userdata('student_number') ? $this->session->u
 
 <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js"></script>
 
 <script>
-    // Configure toastr
-    toastr.options = {
-        "closeButton": true,
-        "debug": false,
-        "newestOnTop": true,
-        "progressBar": true,
-        "positionClass": "toast-top-right",
-        "preventDuplicates": false,
-        "onclick": null,
-        "showDuration": "300",
-        "hideDuration": "1000",
-        "timeOut": "4000",
-        "extendedTimeOut": "1000",
-        "showEasing": "swing",
-        "hideEasing": "linear",
-        "showMethod": "slideDown",
-        "hideMethod": "slideUp"
-    };
-
-    function showToast(message, type = 'success') {
-        toastr[type](message);
-    }
 $(document).ready(function() {
-    // 1. Next Button Logic
     $('.next-post-btn').on('click', function() {
         const $card = $(this).closest('.post-card');
         const $content = $card.find('.post-content-container');
@@ -347,10 +337,10 @@ $(document).ready(function() {
             $title.text(next.title);
             $date.text(next.date);
             
-            // Update image
-            $imageContainer.html('');
+            $imageContainer.empty();
             if (next.image && next.image.trim() !== '') {
-                $imageContainer.html(`<img src="${next.image}" alt="${next.title}" style="width: 100%; height: 100%; object-fit: cover;">`);
+                const img = $('<img>').attr('src', next.image).attr('alt', next.title);
+                $imageContainer.append(img);
             } else {
                 $imageContainer.html('<div class="post-image-placeholder"><i class="fas fa-image"></i></div>');
             }
@@ -360,30 +350,26 @@ $(document).ready(function() {
         }, 300);
     });
 
-    // 2. Details Button Logic (Populates Modal)
     $('.open-details-btn').on('click', function() {
         const $card = $(this).closest('.post-card');
         const posts = $card.data('posts');
         const idx = $card.data('idx');
         const currentPost = posts[idx];
 
-        // Fill modal fields
         $('#m-title').text(currentPost.title);
         $('#m-category').text(currentPost.category);
         $('#m-date').text(currentPost.date);
         
-        // Fill image
-        const $imageContainer = $('#m-image-container');
-        $imageContainer.html('');
+        const $mImageContainer = $('#m-image-container');
+        $mImageContainer.empty();
         if (currentPost.image && currentPost.image.trim() !== '') {
-            $imageContainer.html(`<img src="${currentPost.image}" alt="${currentPost.title}" style="width: 100%; height: 100%; object-fit: cover;">`);
+            const img = $('<img>').attr('src', currentPost.image).attr('alt', currentPost.title);
+            $mImageContainer.append(img);
         } else {
-            $imageContainer.html('<div class="post-image-placeholder"><i class="fas fa-image"></i></div>');
+            $mImageContainer.html('<div class="post-image-placeholder"><i class="fas fa-image" style="font-size: 64px;"></i></div>');
         }
         
         $('#m-content').html(currentPost.content);
-
-        // Show the modal
         $('#postDetailModal').modal('show');
     });
 });
