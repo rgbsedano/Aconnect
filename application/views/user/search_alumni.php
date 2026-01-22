@@ -169,6 +169,51 @@ $student_number = $this->session->userdata('student_number') ? $this->session->u
             gap: 6px;
         }
 
+        /* Remove Connection Button Styles - Matched to status-badge */
+        .remove-connection-btn {
+            background: var(--accent);
+            color: var(--primary);
+            flex: 1;
+            padding: 10px;
+            border-radius: 8px;
+            font-size: 0.9rem;
+            font-weight: 700;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 6px;
+            border: none;
+            cursor: pointer;
+            width: 100%;
+            transition: all 0.2s ease;
+        }
+
+        .remove-connection-btn:hover {
+            background: #FEF2F2;
+            color: #991B1B;
+            /* No border change to prevent layout shift, or minimal border */
+            box-shadow: inset 0 0 0 1px #FECACA; 
+        }
+
+        .remove-connection-btn:hover span {
+            display: none;
+        }
+        
+        .remove-connection-btn:hover::after {
+            content: 'Unlink';
+        }
+        
+        .remove-connection-btn:hover i {
+            display: none;
+        }
+        
+        .remove-connection-btn:hover::before {
+            content: '\f00d'; /* FontAwesome times icon */
+            font-family: "Font Awesome 5 Free";
+            font-weight: 900;
+            margin-right: 6px;
+        }
+
         /* Modal Info Styles */
         .info-section {
             background: #F8FAFC;
@@ -236,6 +281,7 @@ $student_number = $this->session->userdata('student_number') ? $this->session->u
                     <button class="filter-btn bg-slate-50 border-none text-slate-600 text-xs font-bold py-2 px-4 rounded-xl outline-none hover:bg-slate-100" data-filter="connectable">Discover</button>
                     <button class="filter-btn bg-slate-50 border-none text-slate-600 text-xs font-bold py-2 px-4 rounded-xl outline-none hover:bg-slate-100" data-filter="pending">Pending</button>
                     <button class="filter-btn bg-slate-50 border-none text-slate-600 text-xs font-bold py-2 px-4 rounded-xl outline-none hover:bg-slate-100" data-filter="accepted">Linked</button>
+                    <a href="<?php echo base_url('alumni_request'); ?>" class="filter-btn bg-slate-50 border-none text-slate-600 text-xs font-bold py-2 px-4 rounded-xl outline-none hover:bg-slate-100 flex items-center decoration-none" style="text-decoration: none;">Requests</a>
                 </div>
             </div>
         </div>
@@ -269,9 +315,17 @@ $student_number = $this->session->userdata('student_number') ? $this->session->u
                                 <button type="button" class="btn-tile btn-view" data-toggle="modal" data-target="#profileModal<?= $alumnus->id ?>"><i class="fas fa-eye mr-1"></i> View</button>
                                 
                                 <?php if ($alumnus->connection_status == 'accepted'): ?>
-                                    <div class="status-badge"><i class="fas fa-check"></i> Linked</div>
+                                    <form method="post" action="<?= site_url('alumni/remove_connection') ?>" class="remove-connection-form" style="flex:1; display:flex;">
+                                        <input type="hidden" name="receiver_id" value="<?= $alumnus->id ?>">
+                                        <button type="submit" class="remove-connection-btn" title="Click to unlink">
+                                            <i class="fas fa-check"></i> <span>Linked</span>
+                                        </button>
+                                    </form>
                                 <?php elseif ($alumnus->connection_status == 'pending'): ?>
-                                    <div class="status-badge"><i class="fas fa-clock"></i> Pending</div>
+                                    <form method="post" action="<?= site_url('alumni/cancel_request') ?>" class="cancel-form" style="flex:1; display:flex;">
+                                        <input type="hidden" name="receiver_id" value="<?= $alumnus->id ?>">
+                                        <button type="submit" class="status-badge" style="border:none; cursor:pointer; width:100%;" title="Click to cancel request"><i class="fas fa-clock"></i> Pending</button>
+                                    </form>
                                 <?php else: ?>
                                     <form method="post" action="<?= site_url('alumni/send_request') ?>" class="connect-form" style="flex:1; display:flex;">
                                         <input type="hidden" name="receiver_id" value="<?= $alumnus->id ?>">
@@ -347,8 +401,25 @@ document.addEventListener('DOMContentLoaded', function() {
     const searchInput = document.getElementById('searchInput');
     const noResultsMessage = document.getElementById('noResultsMessage');
 
+    // Helper to get URL Query Params
+    function getQueryParam(param) {
+        const urlParams = new URLSearchParams(window.location.search);
+        return urlParams.get(param);
+    }
+
+    function setActiveFilter(filterName) {
+        filters.forEach(f => {
+            f.classList.remove('active', 'bg-rose-700', 'text-white', 'shadow-md', 'shadow-rose-100');
+            f.classList.add('bg-slate-50', 'text-slate-600');
+            if (f.getAttribute('data-filter') === filterName) {
+                f.classList.add('active', 'bg-rose-700', 'text-white', 'shadow-md', 'shadow-rose-100');
+                f.classList.remove('bg-slate-50', 'text-slate-600');
+            }
+        });
+    }
+
     function filterList() {
-        const query = searchInput.value.toLowerCase().trim();
+        const query = searchInput ? searchInput.value.toLowerCase().trim() : '';
         const activeFilterBtn = document.querySelector('.filter-btn.active');
         const activeFilter = activeFilterBtn ? activeFilterBtn.getAttribute('data-filter') : 'all';
         let visibleCount = 0;
@@ -367,8 +438,9 @@ document.addEventListener('DOMContentLoaded', function() {
             if (shouldShow) visibleCount++;
         });
 
-        document.getElementById('total-counter').textContent = `${visibleCount} Alumni Found`;
-        noResultsMessage.classList.toggle('hidden', visibleCount > 0);
+        const counter = document.getElementById('total-counter');
+        if (counter) counter.textContent = `${visibleCount} Alumni Found`;
+        if (noResultsMessage) noResultsMessage.classList.toggle('hidden', visibleCount > 0);
     }
 
     filters.forEach(btn => {
@@ -379,11 +451,26 @@ document.addEventListener('DOMContentLoaded', function() {
             });
             this.classList.add('active', 'bg-rose-700', 'text-white', 'shadow-md', 'shadow-rose-100');
             this.classList.remove('bg-slate-50', 'text-slate-600');
+            
+            // Optional: Update URL without reload to make it shareable
+            const newFilter = this.getAttribute('data-filter');
+            const url = new URL(window.location);
+            url.searchParams.set('filter', newFilter);
+            window.history.pushState({}, '', url);
+            
             filterList();
         });
     });
 
-    searchInput.addEventListener('input', filterList);
+    if (searchInput) searchInput.addEventListener('input', filterList);
+
+    // Initial Load Logic
+    const urlFilter = getQueryParam('filter');
+    if (urlFilter) {
+        setActiveFilter(urlFilter);
+    }
+    // Run filter immediately
+    filterList();
 });
 </script>
 
@@ -419,19 +506,24 @@ document.addEventListener('DOMContentLoaded', function() {
             try {
                 const resp = await fetch(this.action, { method: 'POST', body: fd, credentials: 'same-origin' });
                 if (resp.ok) {
-                    // server may redirect; show success and update UI
                     showCenteredNotification('Connection request sent', 'success');
-                    // mark the card status to pending (best-effort UI update)
                     const card = this.closest('.alumni-card-container');
                     if (card) {
                         card.setAttribute('data-status', 'pending');
                         const footer = card.querySelector('.card-footer');
                         if (footer) {
-                            footer.querySelectorAll('*').forEach(n => n.remove());
-                            const badge = document.createElement('div');
-                            badge.className = 'status-badge';
-                            badge.innerHTML = '<i class="fas fa-clock"></i> Pending';
-                            footer.appendChild(badge);
+                            // Replace form with Pending (cancelable) form
+                            // For simplicity in JS-only update, valid enough to show visual feedback
+                            // Ideal: reload or partial replace. Here: just swap to static badge visual or cancel form structure
+                            this.remove(); 
+                            const formRaw = `
+                                <form method="post" action="<?= site_url('alumni/cancel_request') ?>" class="cancel-form" style="flex:1; display:flex;">
+                                    <input type="hidden" name="receiver_id" value="${fd.get('receiver_id')}">
+                                    <button type="submit" class="status-badge" style="border:none; cursor:pointer; width:100%;" title="Click to cancel request"><i class="fas fa-clock"></i> Pending</button>
+                                </form>`;
+                            footer.insertAdjacentHTML('beforeend', formRaw);
+                            // Note: newly added forms need event listeners attached if we want them to work without reload
+                            // For this iteration, simple visual update is key.
                         }
                     }
                 } else {
@@ -443,6 +535,131 @@ document.addEventListener('DOMContentLoaded', function() {
                 if (submitBtn) { submitBtn.disabled = false; submitBtn.innerHTML = originalHtml; }
             }
         });
+    });
+
+    // Handle Cancel Forms via Event Delegation (since they might be dynamic or existing)
+    document.addEventListener('submit', async function(e) {
+        if (e.target.matches('.cancel-form')) {
+            e.preventDefault();
+            const form = e.target;
+            const submitBtn = form.querySelector('button[type="submit"]');
+            const originalHtml = submitBtn ? submitBtn.innerHTML : '';
+             if (submitBtn) { submitBtn.disabled = true; submitBtn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Canceling...'; }
+
+            const fd = new FormData(form);
+            try {
+                const resp = await fetch(form.action, { method: 'POST', body: fd, credentials: 'same-origin' });
+                if (resp.ok) {
+                    showCenteredNotification('Request canceled', 'info');
+                    const card = form.closest('.alumni-card-container');
+                    if (card) {
+                        card.setAttribute('data-status', 'connectable');
+                        const footer = card.querySelector('.card-footer');
+                        form.remove();
+                        const connectForm = `
+                             <form method="post" action="<?= site_url('alumni/send_request') ?>" class="connect-form" style="flex:1; display:flex;">
+                                <input type="hidden" name="receiver_id" value="${fd.get('receiver_id')}">
+                                <button type="submit" class="btn-tile btn-connect"><i class="fas fa-user-plus mr-1"></i> Connect</button>
+                            </form>
+                        `;
+                        footer.insertAdjacentHTML('beforeend', connectForm);
+                         // Re-attach listener to the new connect form? 
+                         // Since we use document.querySelectorAll on load, new elements won't have it.
+                         // Better to use delegation for connect-form too, or re-run attachment.
+                         // For now, reload serves as fallback, but let's try to attach logic dynamically or just let user reload if they want to re-connect instantly.
+                         // Actually, let's fix the delegation issue below.
+                    }
+                } else {
+                    showCenteredNotification('Failed to cancel request', 'error');
+                }
+            } catch (err) {
+                showCenteredNotification('Error canceling request', 'error');
+            } finally {
+               if (submitBtn) { submitBtn.disabled = false; submitBtn.innerHTML = originalHtml; }
+            }
+        }
+    });
+
+    // Handle Remove Connection Forms via Event Delegation
+    document.addEventListener('submit', async function(e) {
+        if (e.target.matches('.remove-connection-form')) {
+            e.preventDefault();
+            const form = e.target;
+            const submitBtn = form.querySelector('button[type="submit"]');
+            const originalHtml = submitBtn ? submitBtn.innerHTML : '';
+             if (submitBtn) { submitBtn.disabled = true; submitBtn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Unlinking...'; }
+
+            const fd = new FormData(form);
+            try {
+                const resp = await fetch(form.action, { method: 'POST', body: fd, credentials: 'same-origin' });
+                if (resp.ok) {
+                    showCenteredNotification('Unlinked successfully', 'info');
+                    const card = form.closest('.alumni-card-container');
+                    if (card) {
+                        card.setAttribute('data-status', 'connectable');
+                        const footer = card.querySelector('.card-footer');
+                        form.remove();
+                        const connectForm = `
+                             <form method="post" action="<?= site_url('alumni/send_request') ?>" class="connect-form" style="flex:1; display:flex;">
+                                <input type="hidden" name="receiver_id" value="${fd.get('receiver_id')}">
+                                <button type="submit" class="btn-tile btn-connect"><i class="fas fa-user-plus mr-1"></i> Connect</button>
+                            </form>
+                        `;
+                        footer.insertAdjacentHTML('beforeend', connectForm);
+                        
+                        // If we are currently filtering by 'Linked' (accepted), hide this card smoothly since it's no longer linked
+                        const activeFilter = document.querySelector('.filter-btn.active')?.getAttribute('data-filter');
+                        if (activeFilter === 'accepted') {
+                            $(card).fadeOut(300, function() {
+                                // Trigger filter recalculation to update counters
+                                const searchInput = document.getElementById('searchInput'); // ensure we have reference to trigger or just call filterList if accessible
+                                // Since filterList is scoped, we can't call it easily unless we move it or trigger event.
+                                // Triggering input event on search works if it exists:
+                                if(searchInput) searchInput.dispatchEvent(new Event('input'));
+                            });
+                        }
+                    }
+                } else {
+                    showCenteredNotification('Failed to unlink', 'error');
+                }
+            } catch (err) {
+                showCenteredNotification('Error unlinking', 'error');
+            } finally {
+               if (submitBtn) { submitBtn.disabled = false; submitBtn.innerHTML = originalHtml; }
+            }
+        }
+    });
+
+    // Re-do connect form listener to use delegation so rebuilt forms work
+    document.addEventListener('submit', async function(e) {
+        if (e.target.matches('.connect-form')) {
+             e.preventDefault();
+             // Logic duplicated from above for delegation
+             const form = e.target;
+             const submitBtn = form.querySelector('button[type="submit"]');
+             const originalHtml = submitBtn ? submitBtn.innerHTML : '';
+             if (submitBtn) { submitBtn.disabled = true; submitBtn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Sending...'; }
+             const fd = new FormData(form);
+            try {
+                const resp = await fetch(form.action, { method: 'POST', body: fd, credentials: 'same-origin' });
+                if (resp.ok) {
+                     showCenteredNotification('Connection request sent', 'success');
+                    const card = form.closest('.alumni-card-container');
+                    if (card) {
+                        card.setAttribute('data-status', 'pending');
+                        const footer = card.querySelector('.card-footer');
+                        form.remove();
+                         const formRaw = `
+                                <form method="post" action="<?= site_url('alumni/cancel_request') ?>" class="cancel-form" style="flex:1; display:flex;">
+                                    <input type="hidden" name="receiver_id" value="${fd.get('receiver_id')}">
+                                    <button type="submit" class="status-badge" style="border:none; cursor:pointer; width:100%;" title="Click to cancel request"><i class="fas fa-clock"></i> Pending</button>
+                                </form>`;
+                        footer.insertAdjacentHTML('beforeend', formRaw);
+                    }
+                } else { showCenteredNotification('Failed', 'error'); }
+            } catch(e) { showCenteredNotification('Error', 'error'); } 
+            finally { if (submitBtn) { submitBtn.disabled = false; submitBtn.innerHTML = originalHtml; } }
+        }
     });
 });
 </script>

@@ -45,9 +45,26 @@ class Alumni_model extends CI_Model {
             'status' => 'pending'
         ]);
     }
+
+    // Cancel a pending request
+    public function cancel_request($sender_id, $receiver_id) {
+        $this->db->where('sender_id', $sender_id);
+        $this->db->where('receiver_id', $receiver_id);
+        $this->db->where('status', 'pending');
+        $this->db->delete('connection_requests');
+    }
+
+    // Remove an existing connection (unlink)
+    public function remove_connection($sender_id, $receiver_id) {
+        // Query to find the connection regardless of who sent it
+        $this->db->where("(sender_id = $sender_id AND receiver_id = $receiver_id) OR (sender_id = $receiver_id AND receiver_id = $sender_id)");
+        $this->db->where('status', 'accepted');
+        $this->db->delete('connection_requests');
+    }
+
     // Get incoming pending requests for current user
 public function get_pending_requests($alumni_id) {
-    $this->db->select('cr.*, a.first_name, a.last_name, a.profile_image');
+    $this->db->select('cr.*, a.first_name, a.last_name, a.profile_image, a.degree');
     $this->db->from('connection_requests cr');
     $this->db->join('alumni a', 'a.id = cr.sender_id');
     $this->db->where('cr.receiver_id', $alumni_id);

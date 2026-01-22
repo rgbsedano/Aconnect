@@ -37,6 +37,23 @@ class Alumni extends CI_Controller {
 
         redirect('alumni');
     }
+
+    public function cancel_request() {
+        $sender_id = $this->session->userdata('alumni_id');
+        $receiver_id = $this->input->post('receiver_id'); // Or get from URL if you prefer GET
+
+        $this->Alumni_model->cancel_request($sender_id, $receiver_id);
+        redirect('alumni');
+    }
+
+    public function remove_connection() {
+        $current_user_id = $this->session->userdata('alumni_id');
+        $target_user_id = $this->input->post('receiver_id');
+
+        $this->Alumni_model->remove_connection($current_user_id, $target_user_id);
+        redirect('alumni');
+    }
+
     // View pending connection requests
     public function admin_alumni() {
         $data['alumni'] = $this->Alumni_model->get_all_alumni();
