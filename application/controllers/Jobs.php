@@ -16,14 +16,11 @@ class Jobs extends CI_Controller {
     }
  
     function index() {
-
         $this->load->view('__header');
 
-        // Logged in alumni details (AI Match uses this)
         $alumni_id = $this->session->userdata('alumni_id');
         $alumni = $this->db->where('id', $alumni_id)->get('alumni')->row();
 
-        // If null, create dummy object to avoid "undefined" errors
         if (!$alumni) {
             $alumni = (object)[
                 'degree' => '',
@@ -32,11 +29,8 @@ class Jobs extends CI_Controller {
             ];
         }
 
-        // SEARCH FILTERS
         $search   = $this->input->get('search');
         $location = $this->input->get('location');
-
-        // FETCH JOBS
         $jobs = $this->Job_model->get_all_jobs($search, $location);
 
         $data = [
@@ -49,7 +43,6 @@ class Jobs extends CI_Controller {
     }
 
     public function apply($job_id) {
-
         $alumni_id = $this->session->userdata('alumni_id');
 
         if (!$alumni_id) {
@@ -68,9 +61,14 @@ class Jobs extends CI_Controller {
         $this->upload->initialize($config);
 
         if (!$this->upload->do_upload('attachment')) {
-            echo "Error: " . $this->upload->display_errors();
+            // Error: Set flashdata and redirect back
+            $error = $this->upload->display_errors('', '');
+            $this->session->set_flashdata('error', 'Upload failed: ' . $error);
+            redirect('jobs');
         } else {
             $this->Job_model->apply_to_job($job_id, $alumni_id);
+            // Success: Set success trigger and redirect back
+            $this->session->set_flashdata('upload_success', true);
             redirect('jobs');
         }
     }

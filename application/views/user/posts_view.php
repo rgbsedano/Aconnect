@@ -11,6 +11,7 @@ $student_number = $this->session->userdata('student_number') ? $this->session->u
     <title>AConnect | Dashboard</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
     
     <style>
         :root {
@@ -56,11 +57,7 @@ $student_number = $this->session->userdata('student_number') ? $this->session->u
             gap: 32px;
         }
 
-        .carousel-section {
-            height: 100%;
-            min-height: 0;
-        }
-
+        .carousel-section { height: 100%; min-height: 0; }
         #carouselExample {
             height: 100%;
             border-radius: 16px;
@@ -69,31 +66,8 @@ $student_number = $this->session->userdata('student_number') ? $this->session->u
             background: var(--white);
             border: 1px solid var(--border);
         }
-
-        .carousel-inner, .carousel-item {
-            height: 100%;
-        }
-
-        .carousel-item img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            background-color: var(--white);
-        }
-
-        .carousel-control-prev, .carousel-control-next {
-            width: 50px;
-            opacity: 0.7;
-            transition: opacity 0.3s ease;
-        }
-
-        .carousel-control-prev:hover, .carousel-control-next:hover {
-            opacity: 1;
-        }
-
-        .carousel-control-prev-icon, .carousel-control-next-icon {
-            filter: drop-shadow(0 0 2px rgba(0,0,0,0.3));
-        }
+        .carousel-inner, .carousel-item { height: 100%; }
+        .carousel-item img { width: 100%; height: 100%; object-fit: cover; }
 
         .posts-section {
             display: flex;
@@ -116,10 +90,7 @@ $student_number = $this->session->userdata('student_number') ? $this->session->u
             min-height: 0;
             transition: all 0.3s ease;
         }
-
-        .post-card:hover {
-            box-shadow: var(--shadow-lg);
-        }
+        .post-card:hover { box-shadow: var(--shadow-lg); }
 
         .post-category {
             font-size: 0.75rem;
@@ -130,8 +101,6 @@ $student_number = $this->session->userdata('student_number') ? $this->session->u
             background: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%);
             padding: 6px 12px;
             border-radius: 6px;
-            width: fit-content;
-            display: inline-block;
         }
 
         .post-title {
@@ -144,13 +113,6 @@ $student_number = $this->session->userdata('student_number') ? $this->session->u
             display: -webkit-box;
             -webkit-line-clamp: 2;
             -webkit-box-orient: vertical;
-            letter-spacing: -0.3px;
-        }
-
-        .post-date {
-            font-size: 0.8rem;
-            color: var(--text-muted);
-            font-weight: 600;
         }
 
         .btn-details {
@@ -164,10 +126,7 @@ $student_number = $this->session->userdata('student_number') ? $this->session->u
             cursor: pointer;
             transition: color 0.3s ease;
         }
-
-        .btn-details:hover {
-            color: var(--primary);
-        }
+        .btn-details:hover { color: var(--primary); }
 
         .btn-next {
             background: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%);
@@ -176,27 +135,20 @@ $student_number = $this->session->userdata('student_number') ? $this->session->u
             border-radius: 8px;
             font-size: 0.9rem;
             font-weight: 700;
-            letter-spacing: 0.5px;
             border: none;
             cursor: pointer;
             transition: all 0.3s ease;
-            box-shadow: var(--shadow-md);
         }
+        .btn-next:hover { transform: translateY(-2px); box-shadow: var(--shadow-lg); }
 
-        .btn-next:hover {
-            transform: translateY(-2px);
-            box-shadow: var(--shadow-lg);
-        }
+        /* Modal Custom Styling */
+        .modal-content { border-radius: 16px; border: none; overflow: hidden; }
+        .modal-header { background: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%); color: white; }
+        .modal-body { padding: 32px; color: var(--text-main); line-height: 1.8; }
 
-        .post-content-container { 
-            transition: opacity 0.3s ease; 
-        }
-        .animate-out { 
-            opacity: 0; 
-        }
-        .animate-in { 
-            opacity: 1; 
-        }
+        .post-content-container { transition: opacity 0.3s ease; }
+        .animate-out { opacity: 0; }
+        .animate-in { opacity: 1; }
     </style>
 </head>
 <body>
@@ -216,10 +168,10 @@ $student_number = $this->session->userdata('student_number') ? $this->session->u
                         <?php endforeach; ?>
                     </div>
                     <a class="carousel-control-prev" href="#carouselExample" role="button" data-slide="prev">
-                        <span class="carousel-control-prev-icon" style="filter: invert(1);"></span>
+                        <span class="carousel-control-prev-icon"></span>
                     </a>
                     <a class="carousel-control-next" href="#carouselExample" role="button" data-slide="next">
-                        <span class="carousel-control-next-icon" style="filter: invert(1);"></span>
+                        <span class="carousel-control-next-icon"></span>
                     </a>
                 </div>
             <?php endif; ?>
@@ -232,8 +184,10 @@ $student_number = $this->session->userdata('student_number') ? $this->session->u
                 foreach ($posts as $p) {
                     $post_list[] = [
                         'id' => $p->id,
-                        'title' => $p->title,
-                        'date' => date('M d, Y', strtotime($p->created_at))
+                        'title' => htmlspecialchars($p->title),
+                        'content' => nl2br(htmlspecialchars($p->content ?? 'No description available.')),
+                        'date' => date('M d, Y', strtotime($p->created_at)),
+                        'category' => $type
                     ];
                 }
                 $json_data = htmlspecialchars(json_encode($post_list), ENT_QUOTES, 'UTF-8');
@@ -243,7 +197,7 @@ $student_number = $this->session->userdata('student_number') ? $this->session->u
                     <div>
                         <div class="flex justify-between items-center">
                             <span class="post-category"><?= $type ?></span>
-                            <span class="post-date text-gray-400 text-[9px] font-bold"><?= !empty($posts) ? date('M d, Y', strtotime($posts[0]->created_at)) : '' ?></span>
+                            <span class="post-date text-gray-400 text-[10px] font-bold"><?= !empty($posts) ? date('M d, Y', strtotime($posts[0]->created_at)) : '' ?></span>
                         </div>
 
                         <div class="post-content-container animate-in">
@@ -253,7 +207,7 @@ $student_number = $this->session->userdata('student_number') ? $this->session->u
 
                     <div class="flex justify-between items-center mt-2">
                         <?php if (!empty($posts)): ?>
-                            <button class="btn-details" data-toggle="modal" data-target="#postModal<?= $posts[0]->id ?>">
+                            <button class="btn-details open-details-btn">
                                 DETAILS <i class="fas fa-external-link-alt ml-1"></i>
                             </button>
                             
@@ -267,7 +221,28 @@ $student_number = $this->session->userdata('student_number') ? $this->session->u
                 </section>
             <?php endforeach; ?>
         </div>
+    </div>
+</div>
 
+<div class="modal fade" id="postDetailModal" tabindex="-1" role="dialog" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered modal-lg" role="document">
+        <div class="modal-content shadow-2xl">
+            <div class="modal-header">
+                <h5 class="modal-title font-bold" id="m-title">Post Title</h5>
+                <button type="button" class="close text-white" data-dismiss="modal">&times;</button>
+            </div>
+            <div class="modal-body">
+                <div class="flex justify-between items-center mb-6">
+                    <span id="m-category" class="post-category">Category</span>
+                    <span id="m-date" class="font-semibold text-gray-500 italic">Date</span>
+                </div>
+                <div id="m-content" class="text-gray-700">
+                    </div>
+            </div>
+            <div class="modal-footer bg-gray-50">
+                <button type="button" class="btn btn-secondary px-4 py-2 rounded-lg font-bold" data-dismiss="modal">Close</button>
+            </div>
+        </div>
     </div>
 </div>
 
@@ -276,6 +251,7 @@ $student_number = $this->session->userdata('student_number') ? $this->session->u
 
 <script>
 $(document).ready(function() {
+    // 1. Next Button Logic
     $('.next-post-btn').on('click', function() {
         const $card = $(this).closest('.post-card');
         const $content = $card.find('.post-content-container');
@@ -294,6 +270,23 @@ $(document).ready(function() {
             $card.data('idx', idx);
             $content.removeClass('animate-out').addClass('animate-in');
         }, 300);
+    });
+
+    // 2. Details Button Logic (Populates Modal)
+    $('.open-details-btn').on('click', function() {
+        const $card = $(this).closest('.post-card');
+        const posts = $card.data('posts');
+        const idx = $card.data('idx');
+        const currentPost = posts[idx];
+
+        // Fill modal fields
+        $('#m-title').text(currentPost.title);
+        $('#m-category').text(currentPost.category);
+        $('#m-date').text(currentPost.date);
+        $('#m-content').html(currentPost.content);
+
+        // Show the modal
+        $('#postDetailModal').modal('show');
     });
 });
 </script>

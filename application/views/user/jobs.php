@@ -60,6 +60,8 @@ function compute_ai_match($alumni, $job) {
             --text: #1F2937;
             --muted: #6B7280;
             --border: #E5E7EB;
+            --success: #059669;
+            --error: #DC2626;
             --shadow-sm: 0 1px 2px rgba(0,0,0,0.05);
             --shadow-md: 0 4px 12px rgba(0,0,0,0.1);
             --shadow-lg: 0 10px 30px rgba(0,0,0,0.15);
@@ -69,7 +71,42 @@ function compute_ai_match($alumni, $job) {
         body { background: var(--bg); font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; color: var(--text); line-height: 1.6; }
         .container { max-width: 1100px; margin: 20px auto 40px; padding: 0 20px; }
 
-        /* Header Section */
+        /* Success Popup Notification (Tiles/Toasts) */
+        .popup-toast {
+            position: fixed;
+            top: 25px;
+            right: 25px;
+            padding: 16px 24px;
+            border-radius: 12px;
+            background: white;
+            color: var(--text);
+            box-shadow: var(--shadow-lg);
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            z-index: 9999;
+            transform: translateX(120%);
+            transition: transform 0.4s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+            border-left: 6px solid var(--success);
+        }
+        .popup-toast.show { transform: translateX(0); }
+        .popup-toast i { color: var(--success); font-size: 20px; }
+
+        /* Error Banner */
+        .error-banner {
+            background: #FEE2E2;
+            color: var(--error);
+            padding: 12px 20px;
+            border-radius: 10px;
+            margin-bottom: 20px;
+            font-size: 14px;
+            font-weight: 600;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            border: 1px solid #FECACA;
+        }
+
         .header-section {
             background: var(--card);
             padding: 32px;
@@ -122,7 +159,6 @@ function compute_ai_match($alumni, $job) {
         }
         .btn-search:hover { transform: translateY(-2px); box-shadow: var(--shadow-lg); }
 
-        /* Filter Pills */
         .filters { display: flex; gap: 12px; flex-wrap: wrap; margin-top: 20px; }
         .f-pill {
             padding: 8px 18px;
@@ -138,7 +174,6 @@ function compute_ai_match($alumni, $job) {
         .f-pill.active { background: linear-gradient(135deg, var(--maroon), var(--maroon-dark)); color: white; border-color: var(--maroon); }
         .f-pill:hover:not(.active) { border-color: var(--maroon); color: var(--maroon); }
 
-        /* Job Cards */
         .job-card {
             background: var(--card);
             border-radius: 12px;
@@ -174,11 +209,7 @@ function compute_ai_match($alumni, $job) {
         .job-info h3 { margin: 0 0 4px 0; font-size: 16px; color: var(--text); font-weight: 700; }
         .job-info p { margin: 4px 0; color: var(--muted); font-size: 13px; display: flex; align-items: center; gap: 6px; }
 
-        .badge-ai {
-            text-align: right;
-            flex-shrink: 0;
-        }
-
+        .badge-ai { text-align: right; flex-shrink: 0; }
         .percent {
             display: inline-flex;
             align-items: center;
@@ -234,12 +265,9 @@ function compute_ai_match($alumni, $job) {
         .modal-header-custom p { margin: 0; font-size: 13px; color: var(--gold); font-weight: 600; }
 
         .close-modal {
-            position: absolute;
-            top: 16px;
-            right: 16px;
             background: none;
             border: none;
-            font-size: 28px;
+            font-size: 24px;
             cursor: pointer;
             color: white;
             width: 32px;
@@ -249,15 +277,12 @@ function compute_ai_match($alumni, $job) {
             justify-content: center;
         }
 
-        .modal-content {
-            padding: 24px;
-        }
-
+        .modal-content { padding: 24px; }
         .modal-content hr { border: none; border-top: 1px solid var(--border); margin: 16px 0; }
         .modal-content strong { color: var(--text); }
         .modal-content p { margin: 12px 0; font-size: 14px; color: var(--muted); }
 
-        .job-details { max-height: 280px; overflow-y: auto; padding-right: 12px; margin-bottom: 16px; }
+        .job-details { max-height: 250px; overflow-y: auto; padding-right: 12px; }
 
         .modal-form {
             background: #f9f9f9;
@@ -267,22 +292,17 @@ function compute_ai_match($alumni, $job) {
         }
 
         .file-input-wrapper {
+            display: block;
             border: 2px dashed var(--border);
             border-radius: 10px;
             padding: 20px;
             text-align: center;
             margin-bottom: 16px;
             transition: all 0.3s;
+            cursor: pointer;
         }
-
-        .file-input-wrapper input[type="file"] {
-            display: none;
-        }
-
-        .file-input-wrapper:hover {
-            border-color: var(--maroon);
-            background: rgba(139, 21, 56, 0.02);
-        }
+        .file-input-wrapper input[type="file"] { display: none; }
+        .file-input-wrapper:hover { border-color: var(--maroon); background: rgba(139, 21, 56, 0.02); }
 
         .btn-submit {
             background: linear-gradient(135deg, var(--maroon), var(--maroon-dark));
@@ -299,18 +319,31 @@ function compute_ai_match($alumni, $job) {
         .btn-submit:hover { transform: translateY(-2px); box-shadow: var(--shadow-lg); }
 
         @media (max-width: 768px) {
-            .container { margin-top: 20px; }
             .search-grid { grid-template-columns: 1fr; }
             .job-card { flex-direction: column; text-align: center; }
             .job-info p { justify-content: center; }
             .badge-ai { margin-top: 12px; }
-            .logo-box { width: 50px; height: 50px; }
         }
     </style>
 </head>
 <body>
 
+<div id="success-popup" class="popup-toast">
+    <i class="fas fa-check-circle"></i>
+    <div>
+        <p style="font-weight: 700;">Success!</p>
+        <p style="font-size: 13px; color: var(--muted);">Uploaded successfully</p>
+    </div>
+</div>
+
 <div class="container">
+    <?php if ($this->session->flashdata('error')): ?>
+        <div class="error-banner">
+            <i class="fas fa-times-circle"></i>
+            <?= $this->session->flashdata('error') ?>
+        </div>
+    <?php endif; ?>
+
     <div class="header-section">
         <form method="get" action="<?= base_url('jobs') ?>">
             <div class="search-grid">
@@ -346,13 +379,13 @@ function compute_ai_match($alumni, $job) {
             </div>
             <div class="badge-ai">
                 <div class="percent">
-                    <i class="fas fa-robot"></i> <?= $match ?>% AI Match
+                    <i class="fas fa-robot"></i> <?= $match ?>% Match
                 </div>
             </div>
         </div>
 
-        <div id="modal-<?= $job->id ?>" class="modal-overlay">
-            <div class="modal-box">
+        <div id="modal-<?= $job->id ?>" class="modal-overlay" onclick="closeOverlay(event, <?= $job->id ?>)">
+            <div class="modal-box" onclick="event.stopPropagation()">
                 <div class="modal-header-custom">
                     <div>
                         <h2><?= htmlspecialchars($job->job_title) ?></h2>
@@ -361,15 +394,13 @@ function compute_ai_match($alumni, $job) {
                     <button type="button" class="close-modal" onclick="toggleModal(<?= $job->id ?>, false)"><i class="fas fa-times"></i></button>
                 </div>
                 <div class="modal-content">
-                    <div style="display: flex; gap: 16px; margin-bottom: 16px;">
+                    <div style="display: flex; gap: 16px; margin-bottom: 16px; align-items: center;">
                         <div style="flex: 1;">
                             <p><strong><i class="fas fa-map-marker-alt" style="color: var(--maroon); margin-right: 6px;"></i>Location:</strong> <?= htmlspecialchars($job->location) ?></p>
                             <p><strong><i class="fas fa-coins" style="color: var(--gold); margin-right: 6px;"></i>Salary:</strong> <?= htmlspecialchars($job->salary_range) ?></p>
                         </div>
-                        <div style="text-align: right;">
-                            <div style="background: linear-gradient(135deg, var(--maroon), var(--maroon-dark)); color: white; padding: 12px 20px; border-radius: 10px; font-weight: 700; display: inline-block;">
-                                <i class="fas fa-robot"></i> <?= $match ?>% AI Match
-                            </div>
+                        <div style="background: linear-gradient(135deg, var(--maroon), var(--maroon-dark)); color: white; padding: 10px 18px; border-radius: 8px; font-weight: 700;">
+                            <i class="fas fa-robot"></i> <?= $match ?>% AI Match
                         </div>
                     </div>
                     <hr>
@@ -384,12 +415,14 @@ function compute_ai_match($alumni, $job) {
                     <div class="modal-form">
                         <form method="post" enctype="multipart/form-data" action="<?= base_url('jobs/apply/' . $job->id) ?>">
                             <p style="font-weight: 600; color: var(--text); margin-bottom: 12px;"><i class="fas fa-file-upload" style="color: var(--maroon); margin-right: 6px;"></i>Upload Your Resume</p>
-                            <div class="file-input-wrapper" onclick="document.querySelector('input[data-job=\"<?= $job->id ?>\"]').click();">
+                            
+                            <label class="file-input-wrapper" for="file-<?= $job->id ?>">
                                 <i class="fas fa-cloud-arrow-up" style="font-size: 28px; color: var(--gold); margin-bottom: 8px; display: block;"></i>
-                                <p style="margin: 0; font-weight: 600; color: var(--text);">Click to upload or drag & drop</p>
-                                <p style="margin: 4px 0 0 0; font-size: 12px; color: var(--muted);">PDF, DOC, or DOCX</p>
-                                <input type="file" name="attachment" data-job="<?= $job->id ?>" required>
-                            </div>
+                                <p style="margin: 0; font-weight: 600; color: var(--text);" id="lbl-<?= $job->id ?>">Click to upload or drag & drop</p>
+                                <p style="margin: 4px 0 0 0; font-size: 12px; color: var(--muted);">PDF ONLY</p>
+                                <input type="file" name="attachment" id="file-<?= $job->id ?>" accept="application/pdf" required onchange="updateLabel(this, <?= $job->id ?>)">
+                            </label>
+
                             <button type="submit" class="btn-submit"><i class="fas fa-paper-plane"></i> Submit Application</button>
                         </form>
                     </div>
@@ -397,43 +430,51 @@ function compute_ai_match($alumni, $job) {
             </div>
         </div>
         <?php endforeach; else: ?>
-        <div style="text-align: center; padding: 48px 20px; background: var(--card); border-radius: 12px; color: var(--muted);">
-            <i class="fas fa-briefcase" style="font-size: 48px; margin-bottom: 16px; display: block; color: var(--border);"></i>
-            <p style="font-size: 16px; font-weight: 600; color: var(--text);">No Jobs Found</p>
-            <p style="margin-top: 8px;">Try adjusting your filters or search criteria</p>
+        <div style="text-align: center; padding: 48px 20px; color: var(--muted);">
+            <p>No Jobs Found</p>
         </div>
         <?php endif; ?>
     </div>
 </div>
 
 <script>
+    // Trigger Success Popup Tile specifically for upload success
+    <?php if ($this->session->flashdata('upload_success')): ?>
+        window.addEventListener('load', () => {
+            const popup = document.getElementById('success-popup');
+            popup.classList.add('show');
+            setTimeout(() => popup.classList.remove('show'), 5000);
+        });
+    <?php endif; ?>
+
     function toggleModal(id, show) {
         const modal = document.getElementById('modal-' + id);
+        if (!modal) return;
         if (show) modal.classList.add('open');
         else modal.classList.remove('open');
         document.body.style.overflow = show ? 'hidden' : 'auto';
     }
 
+    function closeOverlay(e, id) {
+        if (e.target.classList.contains('modal-overlay')) toggleModal(id, false);
+    }
+
+    function updateLabel(input, id) {
+        const lbl = document.getElementById('lbl-' + id);
+        if (input.files && input.files[0]) {
+            lbl.innerText = input.files[0].name;
+            lbl.style.color = "var(--maroon)";
+        }
+    }
+
     function updateFilter(minScore) {
         document.querySelectorAll('.job-card').forEach(card => {
             const score = parseInt(card.dataset.score);
-            if (minScore === 'all') {
-                card.style.display = 'flex';
-            } else {
-                card.style.display = score >= minScore ? 'flex' : 'none';
-            }
+            card.style.display = (minScore === 'all' || score >= minScore) ? 'flex' : 'none';
         });
-
         document.querySelectorAll('.f-pill').forEach(p => p.classList.remove('active'));
-        const activeBtn = minScore === 'all' ? 'btn-all' : 'btn-' + minScore;
-        document.getElementById(activeBtn).classList.add('active');
-    }
-
-    window.onclick = (e) => {
-        if (e.target.classList.contains('modal-overlay')) {
-            e.target.classList.remove('open');
-            document.body.style.overflow = 'auto';
-        }
+        const btnId = minScore === 'all' ? 'btn-all' : 'btn-' + minScore;
+        document.getElementById(btnId).classList.add('active');
     }
 </script>
 </body>

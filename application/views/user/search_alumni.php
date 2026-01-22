@@ -8,156 +8,40 @@ $student_number = $this->session->userdata('student_number') ? $this->session->u
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Alumni Network - AConnect</title>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
     
     <style>
         :root {
+            --brand-red: #BE123C;
+            --brand-gold: #D97706;
             --primary: #8B1538;
             --primary-dark: #6B0F2A;
             --accent: #D4A574;
-            --bg-page: #FAFAF8;
+            --bg-page: #F8FAFC;
             --white: #FFFFFF;
             --text-main: #1F2937;
             --text-muted: #6B7280;
             --border: #E5E7EB;
-            --shadow-sm: 0 1px 2px rgba(0,0,0,0.05);
             --shadow-md: 0 4px 6px rgba(0,0,0,0.07);
             --shadow-lg: 0 10px 15px rgba(0,0,0,0.1);
         }
 
-        * {
-            box-sizing: border-box;
-        }
-
-        html {
-            scroll-behavior: smooth;
-        }
-
-        body {
+        body { 
             background-color: var(--bg-page);
-            font-family: 'Inter', sans-serif;
-            margin: 0;
-            padding: 0;
-            color: var(--text-main);
-            line-height: 1.6;
-        }
-
-        .header-spacing {
-            height: 70px;
-        }
-
-        .network-container {
-            max-width: 1200px;
-            margin: -40px auto 0 auto;
-            padding: 0 20px;
-        }
-
-        .page-title {
-            font-size: 2rem;
-            font-weight: 800;
-            margin-bottom: 32px;
-            display: flex;
-            align-items: center;
-            gap: 12px;
-            color: var(--text-main);
-            letter-spacing: -0.5px;
-        }
-
-        .page-title i {
-            color: var(--primary);
-            font-size: 2.2rem;
-        }
-
-        .header-card {
-            background: var(--white);
-            padding: 28px;
-            border-radius: 12px;
-            box-shadow: var(--shadow-md);
-            margin-bottom: 32px;
-            border: 1px solid var(--border);
-        }
-
-        .search-group {
-            display: flex;
-            background: var(--bg-page);
-            border-radius: 30px;
-            padding: 8px;
-            border: 2px solid var(--border);
-            transition: all 0.3s ease;
-        }
-
-        .search-group:focus-within {
-            border-color: var(--primary);
-            box-shadow: 0 0 0 3px rgba(139, 21, 56, 0.1);
-        }
-
-        .search-input {
-            background: transparent;
-            border: none;
-            padding: 12px 20px;
-            flex: 1;
-            outline: none;
-            font-size: 1rem;
+            font-family: 'Plus Jakarta Sans', sans-serif;
             color: var(--text-main);
         }
-
-        .search-input::placeholder {
-            color: var(--text-muted);
+        
+        .bg-pattern {
+            background-color: #f8fafc;
+            background-image: radial-gradient(#e2e8f0 0.5px, transparent 0.5px);
+            background-size: 24px 24px;
         }
 
-        .btn-search {
-            background: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%);
-            color: white;
-            border: none;
-            padding: 10px 28px;
-            border-radius: 25px;
-            font-weight: 700;
-            cursor: pointer;
-            transition: all 0.3s ease;
-            box-shadow: var(--shadow-md);
-            font-size: 0.95rem;
-        }
-
-        .btn-search:hover {
-            transform: translateY(-2px);
-            box-shadow: var(--shadow-lg);
-        }
-
-        .filter-bar {
-            display: flex;
-            gap: 12px;
-            margin-top: 20px;
-            border-top: 1px solid var(--border);
-            padding-top: 20px;
-            flex-wrap: wrap;
-        }
-
-        .filter-btn {
-            padding: 8px 20px;
-            border-radius: 25px;
-            font-size: 0.9rem;
-            font-weight: 600;
-            cursor: pointer;
-            border: 2px solid var(--border);
-            background: var(--white);
-            color: var(--text-main);
-            text-decoration: none !important;
-            transition: all 0.3s ease;
-        }
-
-        .filter-btn:hover {
-            border-color: var(--primary);
-            color: var(--primary);
-        }
-
-        .filter-btn.active {
-            background: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%);
-            color: var(--white);
-            border-color: var(--primary);
-        }
-
+        /* Profile Tiles Styles */
         .alumni-grid {
             display: grid;
             grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
@@ -229,7 +113,7 @@ $student_number = $this->session->userdata('student_number') ? $this->session->u
         .batch-label {
             font-size: 0.8rem;
             color: var(--text-muted);
-            background: var(--bg-page);
+            background: #F1F5F9;
             padding: 4px 12px;
             border-radius: 6px;
             display: inline-block;
@@ -269,12 +153,6 @@ $student_number = $this->session->userdata('student_number') ? $this->session->u
         .btn-connect {
             background: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%);
             color: var(--white);
-            box-shadow: var(--shadow-md);
-        }
-
-        .btn-connect:hover {
-            transform: translateY(-2px);
-            box-shadow: var(--shadow-lg);
         }
 
         .status-badge {
@@ -291,37 +169,10 @@ $student_number = $this->session->userdata('student_number') ? $this->session->u
             gap: 6px;
         }
 
-        .modal-content {
-            border-radius: 12px;
-            border: 1px solid var(--border);
-            box-shadow: var(--shadow-lg);
-        }
-
-        .modal-header {
-            background: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%);
-            color: var(--white);
-            border: none;
-            border-radius: 12px 12px 0 0;
-        }
-
-        .modal-header .close {
-            color: var(--white);
-        }
-
-        .modal-profile-img {
-            width: 120px;
-            height: 120px;
-            border-radius: 50%;
-            border: 5px solid var(--white);
-            margin-top: -60px;
-            background: var(--white);
-            object-fit: cover;
-            box-shadow: var(--shadow-lg);
-        }
-
+        /* Modal Info Styles */
         .info-section {
-            background: var(--bg-page);
-            border-radius: 10px;
+            background: #F8FAFC;
+            border-radius: 12px;
             padding: 16px;
             margin-top: 16px;
             text-align: left;
@@ -329,196 +180,153 @@ $student_number = $this->session->userdata('student_number') ? $this->session->u
         }
 
         .info-label {
-            font-size: 0.75rem;
+            font-size: 0.7rem;
             text-transform: uppercase;
             color: var(--text-muted);
-            font-weight: 700;
-            letter-spacing: 0.5px;
-            margin-bottom: 4px;
+            font-weight: 800;
+            letter-spacing: 1px;
+            margin-bottom: 2px;
             display: block;
         }
 
         .info-text {
             font-size: 0.95rem;
-            font-weight: 500;
+            font-weight: 600;
             margin-bottom: 12px;
             display: block;
             color: var(--text-main);
         }
-
-        .no-results {
-            background: var(--white);
-            border-radius: 12px;
-            padding: 60px 20px;
-            text-align: center;
-            box-shadow: var(--shadow-md);
-            border: 2px dashed var(--border);
-        }
-
-        .no-results i {
-            font-size: 4rem;
-            color: var(--primary);
-            opacity: 0.2;
-            margin-bottom: 16px;
-        }
-
-        .no-results h3 {
-            font-size: 1.5rem;
-            font-weight: 700;
-            color: var(--text-main);
-            margin: 0 0 8px 0;
-        }
-
-        .no-results p {
-            font-size: 1rem;
-            color: var(--text-muted);
-            margin: 0;
-        }
-
-        @media (max-width: 768px) {
-            .page-title {
-                font-size: 1.5rem;
-            }
-
-            .alumni-grid {
-                grid-template-columns: 1fr;
-            }
-
-            .filter-bar {
-                gap: 8px;
-            }
-
-            .filter-btn {
-                padding: 6px 16px;
-                font-size: 0.85rem;
-            }
-        }
     </style>
 </head>
-<body>
+<body class="bg-pattern text-slate-900 antialiased">
 
-<div class="header-spacing"></div>
-
-<div class="network-container">
-    <h2 class="page-title"><i class="fas fa-network-wired"></i> Alumni Network</h2>
-
-    <div class="header-card">
-        <form method="get" id="searchForm">
-            <div class="search-group">
-                <input type="text" id="searchInput" class="search-input" placeholder="Search by name, degree, or skills...">
-                <button type="button" class="btn-search"><i class="fas fa-search mr-2"></i> Search</button>
+    <nav class="bg-white/80 backdrop-blur-md border-b border-slate-200 sticky top-0 z-40">
+        <div class="max-w-6xl mx-auto px-6 py-4 flex items-center justify-between">
+            <div class="flex items-center gap-3">
+                <div class="w-10 h-10 bg-rose-700 rounded-xl flex items-center justify-center shadow-lg shadow-rose-200">
+                    <svg class="w-6 h-6 text-amber-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z"/></svg>
+                </div>
+                <div>
+                    <h1 class="text-xl font-bold tracking-tight text-slate-900">Alumni <span class="text-rose-700">Network</span></h1>
+                    <p class="text-[11px] font-semibold text-slate-500 uppercase tracking-widest">AConnect Community Hub</p>
+                </div>
             </div>
-        </form>
-
-        <div class="filter-bar">
-            <div class="filter-btn active" data-filter="all"><i class="fas fa-users mr-2"></i> All Alumni</div>
-            <div class="filter-btn" data-filter="connectable"><i class="fas fa-user-plus mr-2"></i> Connect</div>
-            <div class="filter-btn" data-filter="pending"><i class="fas fa-hourglass-half mr-2"></i> Pending</div>
-            <div class="filter-btn" data-filter="accepted"><i class="fas fa-check-circle mr-2"></i> Connections</div>
+            <div id="total-counter" class="bg-amber-50 text-amber-700 px-3 py-1 rounded-full text-xs font-bold border border-amber-200">
+                <?= count($alumni_list) ?> Alumni
+            </div>
         </div>
-    </div>
+    </nav>
 
-    <div class="alumni-grid" id="alumniListContainer">
-        <?php if (!empty($alumni_list)): ?>
-            <?php foreach ($alumni_list as $alumnus): ?>
-                <?php 
-                    $img_path = (isset($alumnus->profile_image) && !empty($alumnus->profile_image)) 
-                                ? base_url('assets/uploads/alumni/' . $alumnus->profile_image) 
-                                : base_url('assets/images/person-' . (strtolower($alumnus->gender ?? 'male') == 'female' ? 'female' : 'male') . '.png');
-                ?>
-                <div class="alumni-card-container" 
-                     data-status="<?= htmlspecialchars($alumnus->connection_status ?: 'connectable') ?>" 
-                     data-name="<?= htmlspecialchars(strtolower($alumnus->first_name . ' ' . $alumnus->last_name)) ?>" 
-                     data-degree="<?= htmlspecialchars(strtolower($alumnus->degree)) ?>">
-                    
-                    <div class="alumni-card">
-                        <div class="card-banner"></div>
-                        <div class="profile-img-container">
-                            <img src="<?= $img_path ?>" alt="<?= htmlspecialchars($alumnus->first_name) ?>">
-                        </div>
-                        
-                        <div class="card-body">
-                            <div class="alumni-degree"><?= htmlspecialchars($alumnus->degree ?: 'SDCA Alumni') ?></div>
-                            <h5 class="alumni-name"><?= ucwords(htmlspecialchars(strtolower($alumnus->first_name . ' ' . $alumnus->last_name))) ?></h5>
-                            <span class="batch-label">Class of <?= htmlspecialchars($alumnus->graduation_year) ?></span>
-                        </div>
-
-                        <div class="card-footer">
-                            <button type="button" class="btn-tile btn-view" data-toggle="modal" data-target="#profileModal<?= $alumnus->id ?>"><i class="fas fa-eye mr-1"></i> View</button>
-                            
-                            <?php if ($alumnus->connection_status == 'accepted'): ?>
-                                <div class="status-badge"><i class="fas fa-check"></i> Linked</div>
-                            <?php elseif ($alumnus->connection_status == 'pending'): ?>
-                                <div class="status-badge"><i class="fas fa-clock"></i> Pending</div>
-                            <?php else: ?>
-                                <form method="post" action="<?= site_url('alumni/send_request') ?>" style="flex:1; display:flex;">
-                                    <input type="hidden" name="receiver_id" value="<?= $alumnus->id ?>">
-                                    <button type="submit" class="btn-tile btn-connect"><i class="fas fa-user-plus mr-1"></i> Connect</button>
-                                </form>
-                            <?php endif; ?>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="modal fade" id="profileModal<?= $alumnus->id ?>" tabindex="-1" role="dialog" aria-hidden="true">
-                    <div class="modal-dialog modal-dialog-centered" role="document">
-                        <div class="modal-content">
-                            <div class="modal-header">
-                                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                                    <span aria-hidden="true">&times;</span>
-                                </button>
-                            </div>
-                            <div class="modal-body text-center" style="padding: 0 25px 25px 25px;">
-                                <img src="<?= $img_path ?>" class="modal-profile-img" alt="<?= htmlspecialchars($alumnus->first_name) ?>">
-                                <h4 class="mt-3 mb-0" style="font-weight: 700; color: var(--text-main);"><?= ucwords(htmlspecialchars(strtolower($alumnus->first_name . ' ' . $alumnus->last_name))) ?></h4>
-                                <p class="text-primary font-weight-bold" style="color: var(--primary) !important; margin-top: 6px;"><?= htmlspecialchars($alumnus->degree) ?></p>
-
-                                <div class="info-section">
-                                    <span class="info-label">Current Role</span>
-                                    <span class="info-text"><?= htmlspecialchars($alumnus->current_job ?: 'Not Provided') ?></span>
-                                    
-                                    <span class="info-label">Contact Email</span>
-                                    <span class="info-text"><?= htmlspecialchars($alumnus->email ?: 'Private') ?></span>
-
-                                    <span class="info-label">Skills</span>
-                                    <div style="margin-top: 8px;">
-                                        <?php 
-                                            $skills = explode(',', $alumnus->technical_skills ?? ''); 
-                                            if (!empty($skills) && $skills[0] !== ''): 
-                                                foreach($skills as $s): 
-                                                    if(!empty(trim($s))): 
-                                        ?>
-                                            <span class="badge badge-light border mr-1 mb-1" style="background: var(--accent); color: var(--primary); border: 1px solid var(--accent) !important;"><?= htmlspecialchars(trim($s)) ?></span>
-                                        <?php 
-                                                    endif; 
-                                                endforeach; 
-                                            else: 
-                                        ?>
-                                            <p style="color: var(--text-muted); font-size: 0.9rem;">No skills added</p>
-                                        <?php endif; ?>
-                                    </div>
-                                </div>
-                                <button class="btn btn-block mt-3" style="background: var(--primary); color: white; font-weight: 600;" data-dismiss="modal">Close</button>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            <?php endforeach; ?>
-        <?php else: ?>
-            <div class="no-results" style="grid-column: 1 / -1;">
-                <i class="fas fa-user-slash"></i>
-                <h3>No Alumni Found</h3>
-                <p>No alumni members match your search criteria. Try adjusting your filters or search terms.</p>
+    <main class="max-w-6xl mx-auto px-6 py-12">
+        
+        <div class="bg-white p-2 rounded-2xl shadow-sm border border-slate-200 mb-12 flex flex-col md:flex-row gap-2">
+            <div class="flex-grow flex items-center px-4 gap-3 border-r border-slate-100">
+                <svg class="w-5 h-5 text-slate-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"/></svg>
+                <input type="text" id="searchInput" placeholder="Search by name, degree, or skills..." class="w-full py-3 bg-transparent outline-none text-sm font-medium">
             </div>
-        <?php endif; ?>
-    </div>
+            <div class="flex flex-wrap md:flex-nowrap gap-2 p-1">
+                <div class="flex gap-2">
+                    <button class="filter-btn active bg-rose-700 text-white text-xs font-bold px-4 py-2 rounded-xl transition shadow-md shadow-rose-100" data-filter="all">All</button>
+                    <button class="filter-btn bg-slate-50 border-none text-slate-600 text-xs font-bold py-2 px-4 rounded-xl outline-none hover:bg-slate-100" data-filter="connectable">Discover</button>
+                    <button class="filter-btn bg-slate-50 border-none text-slate-600 text-xs font-bold py-2 px-4 rounded-xl outline-none hover:bg-slate-100" data-filter="accepted">Linked</button>
+                </div>
+            </div>
+        </div>
 
-    <div id="noResultsMessage" class="no-results" style="display: none; grid-column: 1 / -1;">
-        <i class="fas fa-search"></i>
-        <h3>No Results Found</h3>
-        <p>No alumni match your current search filters. Try adjusting your criteria.</p>
-    </div>
-</div>
+        <div class="alumni-grid" id="alumniListContainer">
+            <?php if (!empty($alumni_list)): ?>
+                <?php foreach ($alumni_list as $alumnus): ?>
+                    <?php 
+                        $img_path = (isset($alumnus->profile_image) && !empty($alumnus->profile_image)) 
+                                    ? base_url('assets/uploads/alumni/' . $alumnus->profile_image) 
+                                    : base_url('assets/images/person-' . (strtolower($alumnus->gender ?? 'male') == 'female' ? 'female' : 'male') . '.png');
+                    ?>
+                    <div class="alumni-card-container" 
+                         data-status="<?= htmlspecialchars($alumnus->connection_status ?: 'connectable') ?>" 
+                         data-name="<?= htmlspecialchars(strtolower($alumnus->first_name . ' ' . $alumnus->last_name)) ?>" 
+                         data-degree="<?= htmlspecialchars(strtolower($alumnus->degree)) ?>">
+                        
+                        <div class="alumni-card">
+                            <div class="card-banner"></div>
+                            <div class="profile-img-container">
+                                <img src="<?= $img_path ?>" alt="<?= htmlspecialchars($alumnus->first_name) ?>">
+                            </div>
+                            
+                            <div class="card-body">
+                                <div class="alumni-degree"><?= htmlspecialchars($alumnus->degree ?: 'SDCA Alumni') ?></div>
+                                <h5 class="alumni-name"><?= ucwords(htmlspecialchars(strtolower($alumnus->first_name . ' ' . $alumnus->last_name))) ?></h5>
+                                <span class="batch-label">Class of <?= htmlspecialchars($alumnus->graduation_year) ?></span>
+                            </div>
+
+                            <div class="card-footer">
+                                <button type="button" class="btn-tile btn-view" data-toggle="modal" data-target="#profileModal<?= $alumnus->id ?>"><i class="fas fa-eye mr-1"></i> View</button>
+                                
+                                <?php if ($alumnus->connection_status == 'accepted'): ?>
+                                    <div class="status-badge"><i class="fas fa-check"></i> Linked</div>
+                                <?php elseif ($alumnus->connection_status == 'pending'): ?>
+                                    <div class="status-badge"><i class="fas fa-clock"></i> Pending</div>
+                                <?php else: ?>
+                                    <form method="post" action="<?= site_url('alumni/send_request') ?>" style="flex:1; display:flex;">
+                                        <input type="hidden" name="receiver_id" value="<?= $alumnus->id ?>">
+                                        <button type="submit" class="btn-tile btn-connect"><i class="fas fa-user-plus mr-1"></i> Connect</button>
+                                    </form>
+                                <?php endif; ?>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="modal fade" id="profileModal<?= $alumnus->id ?>" tabindex="-1" role="dialog" aria-hidden="true">
+                        <div class="modal-dialog modal-dialog-centered" role="document">
+                            <div class="modal-content" style="border-radius: 24px; border: none; box-shadow: 0 25px 50px -12px rgba(0,0,0,0.25);">
+                                <div class="modal-header" style="background: var(--primary); border: none; height: 80px;">
+                                    <button type="button" class="close text-white" data-dismiss="modal" style="opacity: 1;">&times;</button>
+                                </div>
+                                <div class="modal-body text-center px-4 pb-5">
+                                    <img src="<?= $img_path ?>" style="width:130px; height:130px; border-radius:50%; border:6px solid white; margin: -65px auto 0; box-shadow: 0 10px 15px rgba(0,0,0,0.1); object-fit: cover; background: white;">
+                                    
+                                    <h4 class="mt-3 font-extrabold text-slate-900"><?= ucwords(htmlspecialchars(strtolower($alumnus->first_name . ' ' . $alumnus->last_name))) ?></h4>
+                                    <p class="text-rose-700 font-bold text-sm mb-4"><?= htmlspecialchars($alumnus->degree) ?></p>
+
+                                    <div class="info-section">
+                                        <span class="info-label">Current Occupation</span>
+                                        <span class="info-text"><?= htmlspecialchars($alumnus->current_job ?: 'No record provided') ?></span>
+                                        
+                                        <span class="info-label">Contact Detail</span>
+                                        <span class="info-text"><?= htmlspecialchars($alumnus->email ?: 'Information Restricted') ?></span>
+
+                                        <span class="info-label">Professional Expertise</span>
+                                        <div class="flex flex-wrap gap-1 mt-2">
+                                            <?php 
+                                                $skills = explode(',', $alumnus->technical_skills ?? ''); 
+                                                if (!empty($skills) && $skills[0] !== ''): 
+                                                    foreach($skills as $s): 
+                                                        if(!empty(trim($s))): 
+                                            ?>
+                                                <span class="px-3 py-1 bg-amber-100 text-amber-800 rounded-lg text-[11px] font-bold border border-amber-200"><?= htmlspecialchars(trim($s)) ?></span>
+                                            <?php 
+                                                        endif; 
+                                                    endforeach; 
+                                                else: 
+                                            ?>
+                                                <p class="text-slate-400 text-xs italic">No skills listed yet</p>
+                                            <?php endif; ?>
+                                        </div>
+                                    </div>
+
+                                    <button class="btn btn-block mt-4 rounded-xl font-bold py-3 text-sm transition hover:brightness-110 shadow-lg" style="background: var(--primary); color: white;" data-dismiss="modal">Close Profile</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                <?php endforeach; ?>
+            <?php endif; ?>
+        </div>
+
+        <div id="noResultsMessage" class="hidden text-center py-20 bg-white rounded-3xl border border-dashed border-slate-300">
+            <h3 class="text-lg font-bold text-slate-900">No matching alumni found</h3>
+            <p class="text-slate-500 text-sm mt-1">Try adjusting your filters or search terms.</p>
+        </div>
+    </main>
 
 <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.2/dist/js/bootstrap.bundle.min.js"></script>
@@ -527,12 +335,13 @@ $student_number = $this->session->userdata('student_number') ? $this->session->u
 document.addEventListener('DOMContentLoaded', function() {
     const cards = document.querySelectorAll('.alumni-card-container');
     const filters = document.querySelectorAll('.filter-btn');
-    const search = document.getElementById('searchInput');
+    const searchInput = document.getElementById('searchInput');
     const noResultsMessage = document.getElementById('noResultsMessage');
 
     function filterList() {
-        const query = search.value.toLowerCase().trim();
-        const activeFilter = document.querySelector('.filter-btn.active').getAttribute('data-filter');
+        const query = searchInput.value.toLowerCase().trim();
+        const activeFilterBtn = document.querySelector('.filter-btn.active');
+        const activeFilter = activeFilterBtn ? activeFilterBtn.getAttribute('data-filter') : 'all';
         let visibleCount = 0;
 
         cards.forEach(card => {
@@ -549,22 +358,23 @@ document.addEventListener('DOMContentLoaded', function() {
             if (shouldShow) visibleCount++;
         });
 
-        if (visibleCount === 0) {
-            noResultsMessage.style.display = 'grid';
-        } else {
-            noResultsMessage.style.display = 'none';
-        }
+        document.getElementById('total-counter').textContent = `${visibleCount} Alumni Found`;
+        noResultsMessage.classList.toggle('hidden', visibleCount > 0);
     }
 
     filters.forEach(btn => {
         btn.addEventListener('click', function() {
-            filters.forEach(f => f.classList.remove('active'));
-            this.classList.add('active');
+            filters.forEach(f => {
+                f.classList.remove('active', 'bg-rose-700', 'text-white', 'shadow-md', 'shadow-rose-100');
+                f.classList.add('bg-slate-50', 'text-slate-600');
+            });
+            this.classList.add('active', 'bg-rose-700', 'text-white', 'shadow-md', 'shadow-rose-100');
+            this.classList.remove('bg-slate-50', 'text-slate-600');
             filterList();
         });
     });
 
-    search.addEventListener('input', filterList);
+    searchInput.addEventListener('input', filterList);
 });
 </script>
 
