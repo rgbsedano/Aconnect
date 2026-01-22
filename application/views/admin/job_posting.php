@@ -250,6 +250,59 @@
                         </div>
                     </div>
 
+                    <div class="modal fade modal-modern" id="editModal<?= $job->id ?>" tabindex="-1" role="dialog" aria-hidden="true">
+                        <div class="modal-dialog modal-lg modal-dialog-centered">
+                            <div class="modal-content">
+                                <form action="<?= base_url('AdminJobPosting/update/'.$job->id) ?>" method="post">
+                                    <div class="modal-header">
+                                        <h5 class="modal-title font-weight-bold text-white"><i class="fas fa-pen-to-square mr-2"></i> Update Posting</h5>
+                                        <button type="button" class="close text-white" data-dismiss="modal">&times;</button>
+                                    </div>
+                                    <div class="modal-body p-4">
+                                        <div class="row">
+                                            <div class="col-md-6">
+                                                <div class="form-group">
+                                                    <label>Position Title</label>
+                                                    <input type="text" name="job_title" class="form-control" value="<?= htmlspecialchars($job->job_title) ?>" required>
+                                                </div>
+                                                <div class="form-group">
+                                                    <label>Organization</label>
+                                                    <input type="text" name="company" class="form-control" value="<?= htmlspecialchars($job->company) ?>" required>
+                                                </div>
+                                                <div class="form-group">
+                                                    <label>Telephone Number</label>
+                                                    <input type="text" name="telephone" class="form-control" value="<?= htmlspecialchars($job->telephone ?? '') ?>" placeholder="02-8000-0000">
+                                                </div>
+                                                <div class="form-group">
+                                                    <label>Phone Number</label>
+                                                    <input type="text" name="phone" class="form-control" value="<?= htmlspecialchars($job->phone ?? '') ?>" placeholder="0917-000-0000">
+                                                </div>
+                                            </div>
+                                            <div class="col-md-6">
+                                                <div class="form-group">
+                                                    <label>Work Location</label>
+                                                    <input type="text" name="location" class="form-control" value="<?= htmlspecialchars($job->location) ?>" required>
+                                                </div>
+                                                <div class="form-group">
+                                                    <label>Compensation Range</label>
+                                                    <input type="text" name="salary_range" class="form-control" value="<?= htmlspecialchars($job->salary_range) ?>" required>
+                                                </div>
+                                                <div class="form-group">
+                                                    <label>Description</label>
+                                                    <textarea name="description" class="form-control" rows="4" required><?= htmlspecialchars($job->description) ?></textarea>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="modal-footer" style="background: #f8fafc;">
+                                        <button type="button" class="btn btn-light px-4" data-dismiss="modal">Cancel</button>
+                                        <button type="submit" class="btn btn-modern-search px-5">Save Changes</button>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+
                     <div class="modal fade modal-modern" id="applicantModal<?= $job->id ?>" tabindex="-1" role="dialog" aria-hidden="true">
                         <div class="modal-dialog modal-xl modal-dialog-centered">
                             <div class="modal-content">
@@ -353,6 +406,16 @@
                                 <input type="text" name="company" class="form-control" placeholder="Company Name" required>
                             </div>
                             <div class="form-group">
+                                <label><i class="fas fa-phone mr-2"></i> Telephone Number</label>
+                                <input type="text" name="telephone" class="form-control" placeholder="e.g. 02-8000-0000">
+                            </div>
+                            <div class="form-group">
+                                <label><i class="fas fa-mobile-screen mr-2"></i> Phone Number</label>
+                                <input type="text" name="phone" class="form-control" placeholder="e.g. 0917-000-0000">
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="form-group">
                                 <label><i class="fas fa-map-location-dot mr-2"></i> Work Location</label>
                                 <input type="text" name="location" class="form-control" placeholder="City, Country" required>
                             </div>
@@ -360,15 +423,9 @@
                                 <label><i class="fas fa-hand-holding-dollar mr-2"></i> Compensation Range</label>
                                 <input type="text" name="salary_range" class="form-control" placeholder="e.g. ₱40,000 - ₱60,000" required>
                             </div>
-                        </div>
-                        <div class="col-md-6">
                             <div class="form-group">
                                 <label><i class="fas fa-file-signature mr-2"></i> Detailed Description</label>
                                 <textarea name="description" class="form-control" rows="4" placeholder="Briefly describe the role..." required></textarea>
-                            </div>
-                            <div class="form-group">
-                                <label><i class="fas fa-clipboard-check mr-2"></i> Key Qualifications</label>
-                                <textarea name="qualifications" class="form-control" rows="4" placeholder="List essential skills/degrees..." required></textarea>
                             </div>
                         </div>
                         <div class="col-12 mt-3">

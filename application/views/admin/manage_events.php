@@ -17,6 +17,8 @@
             --border: #E5E7EB;
             --success: #10B981;
             --danger: #EF4444;
+            /* Matches the specific red in your image */
+            --delete-red: #D32F2F; 
         }
 
         body { 
@@ -75,21 +77,25 @@
             box-shadow: none !important;
         }
 
-        .action-btn {
-            width: 35px;
-            height: 35px;
+        /* UPDATED ACTION LINKS */
+        .action-link {
+            background: none;
+            border: none;
+            color: var(--muted);
+            font-size: 0.85rem; /* Smaller size */
             display: inline-flex;
             align-items: center;
-            justify-content: center;
-            border-radius: 8px;
-            border: 1px solid var(--border);
-            background: white;
-            color: var(--muted);
-            cursor: pointer;
+            padding: 5px 10px;
+            transition: opacity 0.2s;
+            font-weight: 500;
         }
 
-        .action-btn:hover { background: var(--maroon); color: white; }
-        .action-btn.delete:hover { background: var(--danger); color: white; }
+        .action-link i { margin-right: 5px; font-size: 0.9rem; }
+        .action-link:hover { opacity: 0.7; text-decoration: none; color: var(--muted); }
+        
+        /* Specific Delete Color from Image */
+        .action-link.delete-link { color: var(--delete-red); }
+        .action-link.delete-link:hover { opacity: 0.8; color: var(--delete-red); }
 
         /* Centered Modal Styles */
         .modal-dialog-centered { display: flex; align-items: center; min-height: calc(100% - 1rem); }
@@ -155,7 +161,7 @@
                 <thead>
                     <tr class="text-muted small">
                         <th>Event Name</th>
-                        <th>Date & Time</th>
+                        <th>Schedule</th>
                         <th>Location</th>
                         <th class="text-right">Actions</th>
                     </tr>
@@ -164,11 +170,17 @@
                     <?php if(!empty($events)): foreach($events as $event): ?>
                     <tr id="row-<?= $event->id ?>">
                         <td class="font-weight-bold"><?= htmlspecialchars($event->event_name) ?></td>
-                        <td class="text-muted"><?= date('M d, Y • h:i A', strtotime($event->event_date)) ?></td>
-                        <td><i class="fas fa-map-marker-alt text-maroon mr-1"></i> <?= htmlspecialchars($event->location) ?></td>
+                        <td class="text-muted small"><?= date('M d, Y • h:i A', strtotime($event->event_date)) ?></td>
+                        <td>
+                            <div class="small text-muted"><i class="fas fa-map-marker-alt text-maroon mr-1"></i> <?= htmlspecialchars($event->location) ?></div>
+                        </td>
                         <td class="text-right">
-                            <button class="action-btn" onclick='editEvent(<?= json_encode($event) ?>)'><i class="fas fa-edit"></i></button>
-                            <button class="action-btn delete" onclick="deleteEvent(<?= $event->id ?>)"><i class="fas fa-trash"></i></button>
+                            <button class="action-link" onclick='editEvent(<?= json_encode($event) ?>)'>
+                                <i class="far fa-edit"></i> Edit
+                            </button>
+                            <button class="action-link delete-link" onclick="deleteEvent(<?= $event->id ?>)">
+                                <i class="fas fa-trash-alt"></i> Delete
+                            </button>
                         </td>
                     </tr>
                     <?php endforeach; endif; ?>
