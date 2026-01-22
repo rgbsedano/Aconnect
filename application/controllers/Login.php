@@ -58,20 +58,32 @@ public function user() {
 
 
 
-    public function logout() {
+public function logout() {
 
+    // get alumni_id BEFORE destroying session
+    $alumni_id = $this->session->userdata('alumni_id');
+    $role      = $this->session->userdata('role');
+
+    // Log activity ONLY if alumni_id exists
+    if ($alumni_id) {
         $this->load->model('Activity_log_model');
-        $this->Activity_log_model->log_activity($this->session->userdata('alumni_id'), 'Logged out');
-        if($this->session->userdata('role') == "alumni" OR "Alumni"){
-
-			$this->session->sess_destroy();
-             redirect(base_url('login'));
-        }
-		
-        if ($this->session->userdata('role') == "administrator" OR "Administrator"){
-
-			$this->session->sess_destroy();
-             redirect(base_url('adminlogin'));
-        }
+        $this->Activity_log_model->log_activity($alumni_id, 'Logged out');
     }
+
+    // Destroy session
+    $this->session->sess_destroy();
+
+    // Redirect based on role
+    if ($role == "alumni" || $role == "Alumni") {
+        redirect(base_url('login'));
+    } 
+    else if ($role == "administrator" || $role == "Administrator") {
+        redirect(base_url('adminlogin'));
+    } 
+    else {
+        // fallback (just in case)
+        redirect(base_url('login'));
+    }
+}
+
 }
