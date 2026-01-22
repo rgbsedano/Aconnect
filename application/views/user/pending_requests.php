@@ -10,6 +10,7 @@ $student_number = $this->session->userdata('student_number') ? $this->session->u
     <title>Pending Requests - AConnect</title>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.css">
     
     <style>
         :root {
@@ -423,6 +424,40 @@ $student_number = $this->session->userdata('student_number') ? $this->session->u
 
 <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js"></script>
+
+<script>
+    // Configure toastr
+    toastr.options = {
+        "closeButton": true,
+        "debug": false,
+        "newestOnTop": true,
+        "progressBar": true,
+        "positionClass": "toast-top-right",
+        "preventDuplicates": false,
+        "onclick": null,
+        "showDuration": "300",
+        "hideDuration": "1000",
+        "timeOut": "4000",
+        "extendedTimeOut": "1000",
+        "showEasing": "swing",
+        "hideEasing": "linear",
+        "showMethod": "slideDown",
+        "hideMethod": "slideUp"
+    };
+
+    function showToast(message, type = 'success') {
+        toastr[type](message);
+    }
+
+    $(document).ready(function() {
+        // Add notifications to action buttons
+        $('.btn-approve, .btn-reject, .btn-action').on('click', function() {
+            const action = $(this).text().trim();
+            showToast(action + ' submitted!', 'success');
+        });
+    });
+</script>
 
 </body>
 </html>

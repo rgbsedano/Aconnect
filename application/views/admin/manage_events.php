@@ -3,258 +3,301 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Event Management Dashboard</title>
+    <title>Event Management Dashboard | Admin</title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
     <style>
         :root {
-            /* Exact Maroon Palette from Alumni Screenshot */
-            --primary-maroon: #7D0A0A; 
-            --dark-text: #2D3436;
-            --muted-text: #636e72;
-            --body-bg: #FDFCFB; /* Soft off-white */
-            --white: #FFFFFF;
+            --maroon: #8B1538;
+            --maroon-dark: #6B0F2A;
+            --bg: #FAFAF8;
+            --card: #ffffff;
+            --text: #1F2937;
+            --muted: #6B7280;
+            --border: #E5E7EB;
+            --success: #10B981;
+            --danger: #EF4444;
         }
 
-        body {
-            background-color: var(--body-bg);
-            font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
-            color: var(--dark-text);
+        body { 
+            background: var(--bg); 
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; 
+            color: var(--text); 
         }
 
-        /* 1. Dashboard Header Styling */
-        .dashboard-header {
-            font-weight: 700;
-            font-size: 1.8rem;
-            color: var(--dark-text);
-            margin-bottom: 0;
-        }
-        
-        .header-icon {
-            color: var(--primary-maroon);
-            font-size: 1.5rem;
-            margin-right: 12px;
+        .admin-wrapper { 
+            max-width: 1400px; 
+            margin: 40px auto; 
+            padding: 0 20px; 
         }
 
-        /* 2. Button Styling (Matching 'Create Event' & 'Connect' buttons) */
-        .btn-maroon-pill {
-            background-color: var(--primary-maroon) !important;
-            border: none !important;
-            color: var(--white) !important;
-            border-radius: 8px; /* Matching the 'Create Event' button shape */
+        .alumni-card {
+            background: var(--card);
+            padding: 32px;
+            border-radius: 16px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+            border: 1px solid var(--border);
+        }
+
+        .btn-modern-primary {
+            background: linear-gradient(135deg, var(--maroon), var(--maroon-dark));
+            color: white !important;
+            border: none;
             padding: 10px 24px;
+            border-radius: 10px;
             font-weight: 600;
-            transition: all 0.2s ease;
+            cursor: pointer;
         }
 
-        .btn-maroon-pill:hover {
-            background-color: #5a0707 !important;
-            transform: translateY(-1px);
-        }
-
-        /* 3. Stat Cards Design */
         .stat-card {
-            background: var(--white);
-            border-radius: 12px;
-            padding: 25px;
-            border: 1px solid #EAEAEA;
-            box-shadow: 0 2px 10px rgba(0,0,0,0.03);
-            text-align: left;
-        }
-
-        .stat-label {
-            color: var(--muted-text);
-            text-transform: uppercase;
-            font-size: 0.75rem;
-            font-weight: 700;
-            letter-spacing: 0.8px;
-            margin-bottom: 8px;
+            background: #F9FAFB;
+            border: 1px solid var(--border);
+            border-radius: 16px;
+            padding: 24px;
         }
 
         .stat-value {
-            color: var(--primary-maroon);
-            font-size: 2.2rem;
+            color: var(--maroon);
+            font-size: 2rem;
             font-weight: 800;
-            margin: 0;
         }
 
-        /* 4. Search Bar (Pill Shape from Screenshot) */
-        .pill-search-wrapper {
-            background: var(--white);
-            border: 1px solid #DDD;
-            border-radius: 50px; /* Full pill shape */
-            padding: 6px 20px;
+        .search-box-wrapper {
+            background: #f9f9f9;
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            padding: 8px 20px;
+        }
+
+        .search-input-clean {
+            border: none !important;
+            background: transparent !important;
+            box-shadow: none !important;
+        }
+
+        .action-btn {
+            width: 35px;
+            height: 35px;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 8px;
+            border: 1px solid var(--border);
+            background: white;
+            color: var(--muted);
+            cursor: pointer;
+        }
+
+        .action-btn:hover { background: var(--maroon); color: white; }
+        .action-btn.delete:hover { background: var(--danger); color: white; }
+
+        /* Centered Modal Styles */
+        .modal-dialog-centered { display: flex; align-items: center; min-height: calc(100% - 1rem); }
+        .modal-content { border-radius: 16px; border: none; box-shadow: 0 20px 50px rgba(0,0,0,0.2); }
+        .modal-header { border-bottom: 1px solid var(--border); background: #F9FAFB; border-radius: 16px 16px 0 0; }
+        .form-control { border-radius: 8px; padding: 12px; }
+
+        /* Toast Styles */
+        #toastContainer {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            z-index: 9999;
+        }
+
+        .custom-toast {
+            min-width: 280px;
+            padding: 16px 20px;
+            border-radius: 12px;
+            color: white;
+            margin-bottom: 10px;
             display: flex;
             align-items: center;
-            box-shadow: 0 2px 5px rgba(0,0,0,0.02);
+            box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+            animation: slideIn 0.3s ease-out;
         }
 
-        .pill-search-wrapper i {
-            color: var(--muted-text);
-            margin-right: 15px;
-        }
+        .toast-success { background: var(--success); }
+        .toast-error { background: var(--danger); }
 
-        .pill-search-wrapper input {
-            border: none !important;
-            box-shadow: none !important;
-            width: 100%;
-            font-size: 0.95rem;
-        }
-
-        /* 5. Event Table / List Area */
-        .event-list-container {
-            background: var(--white);
-            border-radius: 15px;
-            padding: 30px;
-            border: 1px solid #efefef;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.04);
-        }
-
-        .table-header-text {
-            color: #b2bec3;
-            font-size: 0.75rem;
-            font-weight: 700;
-            text-transform: uppercase;
-            border-bottom: 2px solid #f8f9fa;
-            padding-bottom: 15px;
-        }
-
-        .event-row td {
-            padding: 20px 10px;
-            vertical-align: middle;
-            border-bottom: 1px solid #f8f9fa;
-        }
-
-        .event-name {
-            font-weight: 700;
-            font-size: 1rem;
-            color: var(--dark-text);
-            margin-bottom: 2px;
-        }
-
-        .event-subtext {
-            color: var(--muted-text);
-            font-size: 0.85rem;
-        }
-
-        .badge-upcoming {
-            background-color: rgba(125, 10, 10, 0.1);
-            color: var(--primary-maroon);
-            font-weight: 700;
-            font-size: 0.7rem;
-            padding: 5px 12px;
-            border-radius: 4px;
-        }
-
-        .action-icon-btn {
-            color: var(--muted-text);
-            background: transparent;
-            border: none;
-            padding: 5px 10px;
-            transition: color 0.2s;
-        }
-
-        .action-icon-btn:hover {
-            color: var(--primary-maroon);
-        }
-
-        .btn-delete:hover {
-            color: #dc3545;
+        @keyframes slideIn {
+            from { transform: translateX(100%); opacity: 0; }
+            to { transform: translateX(0); opacity: 1; }
         }
     </style>
 </head>
 <body>
 
-<div class="container py-5">
-    <div class="d-flex justify-content-between align-items-center mb-5">
-        <h2 class="dashboard-header">
-            <i class="fas fa-university header-icon"></i> Alumni Events
-        </h2>
-        <button class="btn btn-maroon-pill" data-toggle="modal" data-target="#createModal">
-            <i class="fas fa-plus mr-2"></i> Create Event
-        </button>
-    </div>
+<div id="toastContainer"></div>
 
-    <div class="row mb-5">
-        <div class="col-md-4 mb-3 mb-md-0">
-            <div class="stat-card">
-                <p class="stat-label">Global Events</p>
-                <p class="stat-value"><?= count($events) ?></p>
-            </div>
+<div class="admin-wrapper">
+    <div class="alumni-card">
+        <div class="d-flex justify-content-between align-items-center mb-5">
+            <h2 style="color: var(--maroon); font-weight: 800;"><i class="fas fa-calendar-check mr-3"></i>Event Management</h2>
+            <button type="button" class="btn btn-modern-primary" onclick="prepareCreate()">
+                <i class="fas fa-plus mr-2"></i> Create Event
+            </button>
         </div>
-        <div class="col-md-4 mb-3 mb-md-0">
-            <div class="stat-card">
-                <p class="stat-label">Live / Upcoming</p>
-                <p class="stat-value"><?= $upcoming_count ?? 0 ?></p>
-            </div>
-        </div>
-        <div class="col-md-4">
-            <div class="stat-card">
-                <p class="stat-label">Total Reach</p>
-                <p class="stat-value"><?= $total_participants_all ?? 0 ?></p>
-            </div>
-        </div>
-    </div>
 
-    <div class="event-list-container">
-        <div class="row mb-4">
-            <div class="col-12">
-                <div class="pill-search-wrapper">
-                    <i class="fas fa-search"></i>
-                    <input type="text" class="form-control" id="eventSearchInput" placeholder="Search events by name, location, or date...">
-                </div>
-            </div>
+        <div class="row mb-5">
+            <div class="col-md-4 mb-3"><div class="stat-card text-center"><p class="small font-weight-bold text-muted">Total Events</p><p class="stat-value"><?= count($events) ?></p></div></div>
+            <div class="col-md-4 mb-3"><div class="stat-card text-center"><p class="small font-weight-bold text-muted">Upcoming</p><p class="stat-value"><?= $upcoming_count ?? 0 ?></p></div></div>
+            <div class="col-md-4 mb-3"><div class="stat-card text-center"><p class="small font-weight-bold text-muted">Total Reach</p><p class="stat-value"><?= $total_participants_all ?? 0 ?></p></div></div>
+        </div>
+
+        <div class="search-box-wrapper mb-4 d-flex align-items-center">
+            <i class="fas fa-search text-muted mr-2"></i>
+            <input type="text" class="form-control search-input-clean" id="eventSearchInput" placeholder="Search events...">
         </div>
 
         <div class="table-responsive">
             <table class="table" id="eventTable">
                 <thead>
-                    <tr>
-                        <th class="table-header-text border-0">Event Details</th>
-                        <th class="table-header-text border-0">Venue</th>
-                        <th class="table-header-text border-0">Status</th>
-                        <th class="table-header-text border-0 text-right">Manage</th>
+                    <tr class="text-muted small">
+                        <th>Event Name</th>
+                        <th>Date & Time</th>
+                        <th>Location</th>
+                        <th class="text-right">Actions</th>
                     </tr>
                 </thead>
                 <tbody>
-                    <?php foreach($events as $event): ?>
-                    <tr class="event-row">
-                        <td>
-                            <div class="event-name"><?= htmlspecialchars($event->event_name) ?></div>
-                            <div class="event-subtext"><?= date('M d, Y • h:i A', strtotime($event->event_date)) ?></div>
-                        </td>
-                        <td>
-                            <div class="event-subtext">
-                                <i class="fas fa-map-marker-alt mr-1"></i> <?= htmlspecialchars($event->location) ?>
-                            </div>
-                        </td>
-                        <td>
-                            <?php if(strtotime($event->event_date) > time()): ?>
-                                <span class="badge-upcoming">UPCOMING</span>
-                            <?php else: ?>
-                                <span class="badge badge-light text-muted small font-weight-bold">PAST</span>
-                            <?php endif; ?>
-                        </td>
+                    <?php if(!empty($events)): foreach($events as $event): ?>
+                    <tr id="row-<?= $event->id ?>">
+                        <td class="font-weight-bold"><?= htmlspecialchars($event->event_name) ?></td>
+                        <td class="text-muted"><?= date('M d, Y • h:i A', strtotime($event->event_date)) ?></td>
+                        <td><i class="fas fa-map-marker-alt text-maroon mr-1"></i> <?= htmlspecialchars($event->location) ?></td>
                         <td class="text-right">
-                            <button class="action-icon-btn" title="Edit">
-                                <i class="fas fa-edit"></i>
-                            </button>
-                            <button class="action-icon-btn btn-delete" title="Delete">
-                                <i class="fas fa-trash"></i>
-                            </button>
+                            <button class="action-btn" onclick='editEvent(<?= json_encode($event) ?>)'><i class="fas fa-edit"></i></button>
+                            <button class="action-btn delete" onclick="deleteEvent(<?= $event->id ?>)"><i class="fas fa-trash"></i></button>
                         </td>
                     </tr>
-                    <?php endforeach; ?>
+                    <?php endforeach; endif; ?>
                 </tbody>
             </table>
         </div>
     </div>
 </div>
 
+<div class="modal fade" id="eventModal" tabindex="-1" role="dialog">
+    <div class="modal-dialog modal-dialog-centered modal-lg" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title font-weight-bold" id="modalTitle">Create Event</h5>
+                <button type="button" class="close" data-dismiss="modal">&times;</button>
+            </div>
+            <form id="eventForm">
+                <div class="modal-body">
+                    <input type="hidden" name="event_id" id="event_id">
+                    <div class="form-group mb-4">
+                        <label class="small font-weight-bold text-muted text-uppercase">Event Title</label>
+                        <input type="text" name="event_name" id="event_name" class="form-control" required>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-6 form-group">
+                            <label class="small font-weight-bold text-muted text-uppercase">Date & Time</label>
+                            <input type="datetime-local" name="event_date" id="event_date" class="form-control" required>
+                        </div>
+                        <div class="col-md-6 form-group">
+                            <label class="small font-weight-bold text-muted text-uppercase">Location</label>
+                            <input type="text" name="location" id="location" class="form-control" required>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-6 form-group">
+                            <label class="small font-weight-bold text-muted text-uppercase">Duration (hours)</label>
+                            <input type="number" name="event_time_duration" id="event_time_duration" class="form-control" placeholder="e.g. 2">
+                        </div>
+                        <div class="col-md-6 form-group">
+                            <label class="small font-weight-bold text-muted text-uppercase">Contact Person</label>
+                            <input type="text" name="contact_person" id="contact_person" class="form-control" placeholder="Name">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="small font-weight-bold text-muted text-uppercase">Description</label>
+                        <textarea name="description" id="description" class="form-control" rows="4" placeholder="Event details..."></textarea>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-light" data-dismiss="modal">Cancel</button>
+                    <button type="submit" id="saveBtn" class="btn btn-modern-primary">Save Event</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+
 <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
 <script>
-    $(document).ready(function(){
+    function showToast(message, type = 'success') {
+        const icon = type === 'success' ? 'fa-check-circle' : 'fa-exclamation-circle';
+        const toastClass = type === 'success' ? 'toast-success' : 'toast-error';
+        const html = `
+            <div class="custom-toast ${toastClass}">
+                <i class="fas ${icon} mr-3"></i>
+                <span class="font-weight-bold">${message}</span>
+            </div>
+        `;
+        const $toast = $(html);
+        $('#toastContainer').append($toast);
+        setTimeout(() => { $toast.fadeOut(400, function() { $(this).remove(); }); }, 3000);
+    }
+
+    function prepareCreate() {
+        $('#modalTitle').text('Create New Event');
+        $('#eventForm')[0].reset();
+        $('#event_id').val('');
+        $('#eventModal').modal('show');
+    }
+
+    function editEvent(data) {
+        $('#modalTitle').text('Edit Event');
+        $('#event_id').val(data.id);
+        $('#event_name').val(data.event_name);
+        if (data.event_date) {
+            let date = new Date(data.event_date);
+            $('#event_date').val(date.toISOString().slice(0, 16));
+        }
+        $('#location').val(data.location);
+        $('#event_time_duration').val(data.event_time_duration ?? '');
+        $('#contact_person').val(data.contact_person ?? '');
+        $('#description').val(data.description ?? '');
+        $('#eventModal').modal('show');
+    }
+
+    function deleteEvent(id) {
+        if(confirm('Delete this event?')) {
+            window.location.href = '<?= base_url('AdminEvents/delete/') ?>' + id;
+        }
+    }
+
+    $(document).ready(function() {
+        $('#eventForm').on('submit', function(e) {
+            e.preventDefault();
+            const btn = $('#saveBtn');
+            btn.prop('disabled', true).text('Processing...');
+
+            const eventId = $('#event_id').val();
+            const action = eventId ? '<?= base_url('AdminEvents/update/') ?>' + eventId : '<?= base_url('AdminEvents/create') ?>';
+
+            $.ajax({
+                url: action,
+                type: 'POST',
+                data: $(this).serialize(),
+                success: function(response) {
+                    $('#eventModal').modal('hide');
+                    showToast('Event saved successfully!');
+                    setTimeout(() => location.reload(), 1500);
+                },
+                error: function() {
+                    showToast('Failed to save event. Check your connection.', 'error');
+                    btn.prop('disabled', false).text('Save Event');
+                }
+            });
+        });
+
         $("#eventSearchInput").on("keyup", function() {
             var value = $(this).val().toLowerCase();
             $("#eventTable tbody tr").filter(function() {

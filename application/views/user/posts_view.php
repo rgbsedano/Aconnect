@@ -12,6 +12,7 @@ $student_number = $this->session->userdata('student_number') ? $this->session->u
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.css">
     
     <style>
         :root {
@@ -81,7 +82,7 @@ $student_number = $this->session->userdata('student_number') ? $this->session->u
             flex: 1;
             background: var(--white);
             border-radius: 12px;
-            padding: 24px;
+            padding: 0;
             display: flex;
             flex-direction: column;
             justify-content: space-between;
@@ -89,8 +90,48 @@ $student_number = $this->session->userdata('student_number') ? $this->session->u
             border-left: 6px solid var(--primary);
             min-height: 0;
             transition: all 0.3s ease;
+            overflow: hidden;
         }
         .post-card:hover { box-shadow: var(--shadow-lg); }
+
+        .post-image-container {
+            width: 100%;
+            height: 120px;
+            overflow: hidden;
+            background: #f5f5f5;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .post-image-container img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .post-image-placeholder {
+            width: 100%;
+            height: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: linear-gradient(135deg, #f0f0f0, #e8e8e8);
+            color: var(--text-muted);
+        }
+
+        .post-image-placeholder i {
+            font-size: 32px;
+            color: var(--border);
+        }
+
+        .post-content {
+            padding: 20px;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            flex: 1;
+        }
 
         .post-category {
             font-size: 0.75rem;
@@ -187,36 +228,49 @@ $student_number = $this->session->userdata('student_number') ? $this->session->u
                         'title' => htmlspecialchars($p->title),
                         'content' => nl2br(htmlspecialchars($p->content ?? 'No description available.')),
                         'date' => date('M d, Y', strtotime($p->created_at)),
-                        'category' => $type
+                        'category' => $type,
+                        'image' => !empty($p->image) ? base_url('assets/uploads/post/' . htmlspecialchars($p->image)) : ''
                     ];
                 }
                 $json_data = htmlspecialchars(json_encode($post_list), ENT_QUOTES, 'UTF-8');
                 ?>
 
                 <section class="post-card" data-posts="<?= $json_data ?>" data-idx="0">
-                    <div>
-                        <div class="flex justify-between items-center">
-                            <span class="post-category"><?= $type ?></span>
-                            <span class="post-date text-gray-400 text-[10px] font-bold"><?= !empty($posts) ? date('M d, Y', strtotime($posts[0]->created_at)) : '' ?></span>
-                        </div>
-
-                        <div class="post-content-container animate-in">
-                            <h4 class="post-title"><?= !empty($posts) ? $posts[0]->title : 'No Recent Updates' ?></h4>
-                        </div>
+                    <div class="post-image-container">
+                        <?php if (!empty($posts) && !empty($posts[0]->image)): ?>
+                            <img src="<?= base_url('assets/uploads/post/' . htmlspecialchars($posts[0]->image)) ?>" alt="<?= htmlspecialchars($posts[0]->title) ?>">
+                        <?php else: ?>
+                            <div class="post-image-placeholder">
+                                <i class="fas fa-image"></i>
+                            </div>
+                        <?php endif; ?>
                     </div>
 
-                    <div class="flex justify-between items-center mt-2">
-                        <?php if (!empty($posts)): ?>
-                            <button class="btn-details open-details-btn">
-                                DETAILS <i class="fas fa-external-link-alt ml-1"></i>
-                            </button>
-                            
-                            <?php if (count($posts) > 1): ?>
-                                <button class="btn-next next-post-btn">
-                                    NEXT <i class="fas fa-chevron-right ml-1"></i>
+                    <div class="post-content">
+                        <div>
+                            <div class="flex justify-between items-center">
+                                <span class="post-category"><?= $type ?></span>
+                                <span class="post-date text-gray-400 text-[10px] font-bold"><?= !empty($posts) ? date('M d, Y', strtotime($posts[0]->created_at)) : '' ?></span>
+                            </div>
+
+                            <div class="post-content-container animate-in">
+                                <h4 class="post-title"><?= !empty($posts) ? $posts[0]->title : 'No Recent Updates' ?></h4>
+                            </div>
+                        </div>
+
+                        <div class="flex justify-between items-center mt-2">
+                            <?php if (!empty($posts)): ?>
+                                <button class="btn-details open-details-btn">
+                                    DETAILS <i class="fas fa-external-link-alt ml-1"></i>
                                 </button>
+                                
+                                <?php if (count($posts) > 1): ?>
+                                    <button class="btn-next next-post-btn">
+                                        NEXT <i class="fas fa-chevron-right ml-1"></i>
+                                    </button>
+                                <?php endif; ?>
                             <?php endif; ?>
-                        <?php endif; ?>
+                        </div>
                     </div>
                 </section>
             <?php endforeach; ?>
@@ -236,6 +290,7 @@ $student_number = $this->session->userdata('student_number') ? $this->session->u
                     <span id="m-category" class="post-category">Category</span>
                     <span id="m-date" class="font-semibold text-gray-500 italic">Date</span>
                 </div>
+                <div id="m-image-container" class="post-image-container mb-6"></div>
                 <div id="m-content" class="text-gray-700">
                     </div>
             </div>
@@ -248,8 +303,31 @@ $student_number = $this->session->userdata('student_number') ? $this->session->u
 
 <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js"></script>
 
 <script>
+    // Configure toastr
+    toastr.options = {
+        "closeButton": true,
+        "debug": false,
+        "newestOnTop": true,
+        "progressBar": true,
+        "positionClass": "toast-top-right",
+        "preventDuplicates": false,
+        "onclick": null,
+        "showDuration": "300",
+        "hideDuration": "1000",
+        "timeOut": "4000",
+        "extendedTimeOut": "1000",
+        "showEasing": "swing",
+        "hideEasing": "linear",
+        "showMethod": "slideDown",
+        "hideMethod": "slideUp"
+    };
+
+    function showToast(message, type = 'success') {
+        toastr[type](message);
+    }
 $(document).ready(function() {
     // 1. Next Button Logic
     $('.next-post-btn').on('click', function() {
@@ -257,6 +335,7 @@ $(document).ready(function() {
         const $content = $card.find('.post-content-container');
         const $title = $card.find('.post-title');
         const $date = $card.find('.post-date');
+        const $imageContainer = $card.find('.post-image-container');
         
         const posts = $card.data('posts');
         let idx = ($card.data('idx') + 1) % posts.length;
@@ -267,6 +346,15 @@ $(document).ready(function() {
         setTimeout(() => {
             $title.text(next.title);
             $date.text(next.date);
+            
+            // Update image
+            $imageContainer.html('');
+            if (next.image && next.image.trim() !== '') {
+                $imageContainer.html(`<img src="${next.image}" alt="${next.title}" style="width: 100%; height: 100%; object-fit: cover;">`);
+            } else {
+                $imageContainer.html('<div class="post-image-placeholder"><i class="fas fa-image"></i></div>');
+            }
+            
             $card.data('idx', idx);
             $content.removeClass('animate-out').addClass('animate-in');
         }, 300);
@@ -283,6 +371,16 @@ $(document).ready(function() {
         $('#m-title').text(currentPost.title);
         $('#m-category').text(currentPost.category);
         $('#m-date').text(currentPost.date);
+        
+        // Fill image
+        const $imageContainer = $('#m-image-container');
+        $imageContainer.html('');
+        if (currentPost.image && currentPost.image.trim() !== '') {
+            $imageContainer.html(`<img src="${currentPost.image}" alt="${currentPost.title}" style="width: 100%; height: 100%; object-fit: cover;">`);
+        } else {
+            $imageContainer.html('<div class="post-image-placeholder"><i class="fas fa-image"></i></div>');
+        }
+        
         $('#m-content').html(currentPost.content);
 
         // Show the modal

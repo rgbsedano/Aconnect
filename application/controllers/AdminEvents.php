@@ -19,6 +19,17 @@ public function index() {
 
 public function update($id) {
 
+    $data = [
+        'event_name' => $this->input->post('event_name'),
+        'event_date' => $this->input->post('event_date'),
+        'location' => $this->input->post('location'),
+        'event_time_duration'  => $this->input->post('event_time_duration'),
+        'contact_person'  => $this->input->post('contact_person'),
+        'description' => $this->input->post('description'),
+        'updated_at' => date('Y-m-d H:i:s'),
+        'updated_by' => $this->session->userdata('admin_id')
+    ];
+
     if (!empty($_FILES['image']['name'])) {
         $config['upload_path'] = './assets/uploads/events/';
         $config['allowed_types'] = 'jpg|jpeg|png|gif';
@@ -30,18 +41,6 @@ public function update($id) {
             $data['image'] = $uploadData['file_name'];
         }
     }
-
-    $data = [
-        'event_name' => $this->input->post('event_name'),
-        'event_date' => $this->input->post('event_date'),
-        'location' => $this->input->post('location'),
-        'event_time_duration'  => $this->input->post('event_time_duration'),
-        'contact_person'  => $this->input->post('contact_person'),
-        'description' => $this->input->post('description'),
-        'updated_at' => date('Y-m-d H:i:s'),
-        'image'        => $data['image'],
-        'updated_by' => $this->session->set_userdata('admin_id')
-    ];
 
     $this->db->where('id', $id)->update('events', $data);
     redirect('AdminEvents');
@@ -53,6 +52,17 @@ public function delete($id) {
 }
 
 public function create() {
+    $data = [
+        'event_name'   => $this->input->post('event_name'),
+        'event_date'   => $this->input->post('event_date'),
+        'location'     => $this->input->post('location'),
+        'event_time_duration'  => $this->input->post('event_time_duration'),
+        'contact_person'  => $this->input->post('contact_person'),
+        'description'  => $this->input->post('description'),
+        'created_by'   => $this->session->userdata('admin_id'),
+        'created_at'   => date('Y-m-d H:i:s')
+    ];
+
     if (!empty($_FILES['image']['name'])) {
         $config['upload_path'] = './assets/uploads/events/';
         $config['allowed_types'] = 'jpg|jpeg|png|gif';
@@ -64,17 +74,6 @@ public function create() {
             $data['image'] = $uploadData['file_name'];
         }
     }
-
-    $data = [
-        'event_name'   => $this->input->post('event_name'),
-        'event_date'   => $this->input->post('event_date'),
-        'location'     => $this->input->post('location'),
-        'event_time_duration'  => $this->input->post('event_time_duration'),
-        'contact_person'  => $this->input->post('contact_person'),
-        'description'  => $this->input->post('description'),
-        'image'        => $data['image'],
-        'created_by'   => $this->session->set_userdata('admin_id'),
-    ];
 
     $this->db->insert('events', $data);
     redirect('AdminEvents');

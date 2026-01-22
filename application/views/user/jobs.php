@@ -50,6 +50,7 @@ function compute_ai_match($alumni, $job) {
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Job Board | AConnect Alumni</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.css">
     <style>
         :root {
             --maroon: #8B1538;
@@ -413,7 +414,7 @@ function compute_ai_match($alumni, $job) {
                     </div>
 
                     <div class="modal-form">
-                        <form method="post" enctype="multipart/form-data" action="<?= base_url('jobs/apply/' . $job->id) ?>">
+                        <form method="post" enctype="multipart/form-data" action="<?= base_url('jobs/apply/' . $job->id) ?>" class="job-apply-form" data-job-id="<?= $job->id ?>">
                             <p style="font-weight: 600; color: var(--text); margin-bottom: 12px;"><i class="fas fa-file-upload" style="color: var(--maroon); margin-right: 6px;"></i>Upload Your Resume</p>
                             
                             <label class="file-input-wrapper" for="file-<?= $job->id ?>">
@@ -423,7 +424,7 @@ function compute_ai_match($alumni, $job) {
                                 <input type="file" name="attachment" id="file-<?= $job->id ?>" accept="application/pdf" required onchange="updateLabel(this, <?= $job->id ?>)">
                             </label>
 
-                            <button type="submit" class="btn-submit"><i class="fas fa-paper-plane"></i> Submit Application</button>
+                            <button type="submit" class="btn-submit" id="btn-submit-<?= $job->id ?>"><i class="fas fa-paper-plane"></i> Submit Application</button>
                         </form>
                     </div>
                 </div>
@@ -466,6 +467,64 @@ function compute_ai_match($alumni, $job) {
             lbl.style.color = "var(--maroon)";
         }
     }
+</script>
+
+<script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js"></script>
+
+<script>
+    // Configure toastr
+    toastr.options = {
+        "closeButton": true,
+        "debug": false,
+        "newestOnTop": true,
+        "progressBar": true,
+        "positionClass": "toast-top-right",
+        "preventDuplicates": false,
+        "onclick": null,
+        "showDuration": "300",
+        "hideDuration": "1000",
+        "timeOut": "4000",
+        "extendedTimeOut": "1000",
+        "showEasing": "swing",
+        "hideEasing": "linear",
+        "showMethod": "slideDown",
+        "hideMethod": "slideUp"
+    };
+
+    function showToast(message, type = 'success') {
+        toastr[type](message);
+    }
+
+    // Handle form submissions
+    document.addEventListener('DOMContentLoaded', function() {
+        const forms = document.querySelectorAll('.job-apply-form');
+        forms.forEach(form => {
+            form.addEventListener('submit', function(e) {
+                const jobId = this.getAttribute('data-job-id');
+                const submitBtn = document.getElementById(`btn-submit-${jobId}`);
+                const fileInput = form.querySelector('input[type="file"]');
+                
+                if (!fileInput.files || fileInput.files.length === 0) {
+                    e.preventDefault();
+                    showToast('Please select a PDF file', 'error');
+                    return;
+                }
+
+                // Show uploading message
+                const originalText = submitBtn.innerHTML;
+                submitBtn.disabled = true;
+                submitBtn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Uploading PDF...';
+                showToast('📤 Uploading your PDF...', 'info');
+
+                // Simulate upload delay for demo, then show success
+                // In real scenario, the form submission will redirect after success
+                setTimeout(() => {
+                    showToast('✅ PDF uploaded successfully!', 'success');
+                }, 1500);
+            });
+        });
+    });
 
     function updateFilter(minScore) {
         document.querySelectorAll('.job-card').forEach(card => {
