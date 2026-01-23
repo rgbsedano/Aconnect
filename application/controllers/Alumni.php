@@ -58,6 +58,30 @@ class Alumni extends CI_Controller {
     echo json_encode(['status' => 'success']);
 }
 
+    public function accept_request() {
+        $request_id = $this->input->post('request_id');
+        if ($request_id) {
+            $this->Alumni_model->accept_request($request_id);
+            header('Content-Type: application/json');
+            echo json_encode(['status' => 'success']);
+        } else {
+            header('Content-Type: application/json');
+            echo json_encode(['status' => 'error', 'message' => 'Missing ID']);
+        }
+    }
+
+    public function decline_request() {
+        $request_id = $this->input->post('request_id');
+        if ($request_id) {
+            $this->Alumni_model->decline_request($request_id);
+            header('Content-Type: application/json');
+            echo json_encode(['status' => 'success']);
+        } else {
+            header('Content-Type: application/json');
+            echo json_encode(['status' => 'error', 'message' => 'Missing ID']);
+        }
+    }
+
 
 
     public function remove_connection() {

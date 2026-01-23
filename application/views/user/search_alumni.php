@@ -281,7 +281,7 @@ $student_number = $this->session->userdata('student_number') ? $this->session->u
                     <button class="filter-btn bg-slate-50 border-none text-slate-600 text-xs font-bold py-2 px-4 rounded-xl outline-none hover:bg-slate-100" data-filter="connectable">Discover</button>
                     <button class="filter-btn bg-slate-50 border-none text-slate-600 text-xs font-bold py-2 px-4 rounded-xl outline-none hover:bg-slate-100" data-filter="pending">Pending</button>
                     <button class="filter-btn bg-slate-50 border-none text-slate-600 text-xs font-bold py-2 px-4 rounded-xl outline-none hover:bg-slate-100" data-filter="accepted">Linked</button>
-                    <a href="<?php echo base_url('alumni_request'); ?>" class="filter-btn bg-slate-50 border-none text-slate-600 text-xs font-bold py-2 px-4 rounded-xl outline-none hover:bg-slate-100 flex items-center decoration-none" style="text-decoration: none;">Requests</a>
+
                 </div>
             </div>
         </div>
@@ -338,22 +338,29 @@ $student_number = $this->session->userdata('student_number') ? $this->session->u
                                         <form method="post" action="<?= site_url('alumni/cancel_request') ?>" class="cancel-form" style="flex:1; display:flex;">
                                             <input type="hidden" name="receiver_id" value="<?= $alumnus->id ?>">
                                             <button type="submit" class="status-badge" style="border:none; cursor:pointer; width:100%;">
-                                                <i class="fas fa-clock"></i> Pending (Cancel)
+                                                <i class="fas fa-clock"></i> Pending
                                             </button>
                                         </form>
 
                                     <?php else: ?>
 
                                         <!-- THEY SENT ME THE REQUEST → SHOW ACCEPT + DECLINE -->
-                                        <a href="<?= site_url('alumni_request/accept_request/' . $alumnus->request_id) ?>" 
-                                        class="btn-tile btn-connect" style="background:#10B981;">
-                                        <i class="fas fa-check"></i> Accept
-                                        </a>
+                                        <!-- THEY SENT ME THE REQUEST → SHOW ACCEPT + DECLINE -->
+                                        <form method="post" action="<?= site_url('alumni/accept_request') ?>" class="accept-form" style="flex:1; display:flex;">
+                                            <input type="hidden" name="request_id" value="<?= $alumnus->request_id ?>">
+                                            <input type="hidden" name="sender_id" value="<?= $alumnus->id ?>">
+                                            <button type="submit" class="btn-tile btn-connect" style="background:#10B981;">
+                                                <i class="fas fa-check"></i> Accept
+                                            </button>
+                                        </form>
 
-                                        <a href="<?= site_url('alumni_request/decline_request/' . $alumnus->request_id) ?>" 
-                                        class="btn-tile btn-connect" style="background:#EF4444;">
-                                        <i class="fas fa-times"></i> Decline
-                                        </a>
+                                        <form method="post" action="<?= site_url('alumni/decline_request') ?>" class="decline-form" style="flex:1; display:flex;">
+                                            <input type="hidden" name="request_id" value="<?= $alumnus->request_id ?>">
+                                            <input type="hidden" name="sender_id" value="<?= $alumnus->id ?>">
+                                            <button type="submit" class="btn-tile btn-connect" style="background:#EF4444;">
+                                                <i class="fas fa-times"></i> Decline
+                                            </button>
+                                        </form>
 
                                     <?php endif; ?>
 
@@ -654,6 +661,100 @@ document.addEventListener('DOMContentLoaded', function() {
                     }
                 } else { showCenteredNotification('Failed', 'error'); }
             } catch(e) { showCenteredNotification('Error', 'error'); } 
+            finally { if (submitBtn) { submitBtn.disabled = false; submitBtn.innerHTML = originalHtml; } }
+        }
+    });
+
+    // Handle Accept Request Form
+    document.addEventListener('submit', async function(e) {
+        if (e.target.matches('.accept-form')) {
+            e.preventDefault();
+            const form = e.target;
+            const submitBtn = form.querySelector('button[type="submit"]');
+            const originalHtml = submitBtn ? submitBtn.innerHTML : '';
+            if (submitBtn) { submitBtn.disabled = true; submitBtn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Accepting...'; }
+            
+            const fd = new FormData(form);
+            try {
+                const resp = await fetch(form.action, { method: 'POST', body: fd, credentials: 'same-origin' });
+                if (resp.ok) {
+                    showCenteredNotification('Connection accepted', 'success');
+                    const card = form.closest('.alumni-card-container');
+                    if (card) {
+                        card.setAttribute('data-status', 'accepted');
+                        const footer = card.querySelector('.card-footer');
+                        
+                        // Remove both accept and decline forms (siblings)
+                        const siblingDecline = footer.querySelector('.decline-form');
+                        if(siblingDecline) siblingDecline.remove();
+                        form.remove();
+
+                        const formRaw = `
+                             <form method="post" action="<?= site_url('alumni/remove_connection') ?>" class="remove-connection-form" style="flex:1; display:flex;">
+                                <input type="hidden" name="receiver_id" value="${fd.get('sender_id')}">
+                                <button type="submit" class="remove-connection-btn">
+                                    <i class="fas fa-check"></i> <span>Linked</span>
+                                </button>
+                            </form>`;
+                        footer.insertAdjacentHTML('beforeend', formRaw);
+                        
+                        // If we are currently filtering by 'Pending', hide this card
+                        const activeFilter = document.querySelector('.filter-btn.active')?.getAttribute('data-filter');
+                        if (activeFilter === 'pending') {
+                            $(card).fadeOut(300, function() {
+                                const searchInput = document.getElementById('searchInput');
+                                if(searchInput) searchInput.dispatchEvent(new Event('input'));
+                            });
+                        }
+                    }
+                } else { showCenteredNotification('Failed to accept', 'error'); }
+            } catch(e) { showCenteredNotification('Error accepting', 'error'); }
+            finally { if (submitBtn) { submitBtn.disabled = false; submitBtn.innerHTML = originalHtml; } }
+        }
+    });
+
+    // Handle Decline Request Form
+    document.addEventListener('submit', async function(e) {
+        if (e.target.matches('.decline-form')) {
+            e.preventDefault();
+            const form = e.target;
+            const submitBtn = form.querySelector('button[type="submit"]');
+            const originalHtml = submitBtn ? submitBtn.innerHTML : '';
+            if (submitBtn) { submitBtn.disabled = true; submitBtn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Declining...'; }
+            
+            const fd = new FormData(form);
+            try {
+                const resp = await fetch(form.action, { method: 'POST', body: fd, credentials: 'same-origin' });
+                if (resp.ok) {
+                    showCenteredNotification('Request declined', 'info');
+                    const card = form.closest('.alumni-card-container');
+                    if (card) {
+                        card.setAttribute('data-status', 'connectable');
+                        const footer = card.querySelector('.card-footer');
+                        
+                        // Remove both accept and decline forms
+                        const siblingAccept = footer.querySelector('.accept-form');
+                        if(siblingAccept) siblingAccept.remove();
+                        form.remove();
+
+                        const formRaw = `
+                             <form method="post" action="<?= site_url('alumni/send_request') ?>" class="connect-form" style="flex:1; display:flex;">
+                                <input type="hidden" name="receiver_id" value="${fd.get('sender_id')}">
+                                <button type="submit" class="btn-tile btn-connect"><i class="fas fa-user-plus mr-1"></i> Connect</button>
+                            </form>`;
+                        footer.insertAdjacentHTML('beforeend', formRaw);
+
+                         // If 'Pending', hide this card
+                        const activeFilter = document.querySelector('.filter-btn.active')?.getAttribute('data-filter');
+                        if (activeFilter === 'pending') {
+                            $(card).fadeOut(300, function() {
+                                const searchInput = document.getElementById('searchInput');
+                                if(searchInput) searchInput.dispatchEvent(new Event('input'));
+                            });
+                        }
+                    }
+                } else { showCenteredNotification('Failed to decline', 'error'); }
+            } catch(e) { showCenteredNotification('Error declining', 'error'); }
             finally { if (submitBtn) { submitBtn.disabled = false; submitBtn.innerHTML = originalHtml; } }
         }
     });
