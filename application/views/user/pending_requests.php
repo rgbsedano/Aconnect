@@ -223,6 +223,11 @@ $student_number = $this->session->userdata('student_number') ? $this->session->u
         <div class="requests-grid" id="requestsListContainer">
             <?php if (!empty($pending_requests)): ?>
                 <?php foreach ($pending_requests as $request): ?>
+                    <?php
+                        $current_id = $alumni_id;   // logged in user
+                        $is_sender   = ($request->sender_id == $current_id);
+                        $is_receiver = ($request->receiver_id == $current_id);
+                    ?>
                     <?php 
                         $img_path = (isset($request->profile_image) && !empty($request->profile_image) && file_exists(FCPATH . 'assets/uploads/alumni/' . $request->profile_image)) 
                                     ? base_url('assets/uploads/alumni/' . $request->profile_image) 
@@ -248,10 +253,33 @@ $student_number = $this->session->userdata('student_number') ? $this->session->u
                             </div>
 
                             <div class="card-actions">
-                                <button type="button" class="btn-action btn-view" data-toggle="modal" data-target="#viewProfileModal<?= $request->sender_id ?>"><i class="fas fa-eye"></i> View</button>
-                                <a href="<?= site_url('alumni_request/accept_request/' . ($request->id ?? 0)) ?>" class="btn-action btn-accept req-action-btn"><i class="fas fa-check"></i> Accept</a>
-                                <a href="<?= site_url('alumni_request/decline_request/' . ($request->id ?? 0)) ?>" class="btn-action btn-decline req-action-btn"><i class="fas fa-times"></i> Decline</a>
+                                <!-- View always visible -->
+                                <button type="button" class="btn-action btn-view" 
+                                    data-toggle="modal" data-target="#viewProfileModal<?= $request->id ?>">
+                                    <i class="fas fa-eye"></i> View
+                                </button>
+
+                                <?php if ($is_receiver): ?>
+                                    <!-- SOMEONE sent YOU a request -->
+                                    <a href="<?= site_url('alumni_request/accept_request/' . $request->id) ?>" 
+                                    class="btn-action btn-accept req-action-btn">
+                                    <i class="fas fa-check"></i> Accept
+                                    </a>
+
+                                    <a href="<?= site_url('alumni_request/decline_request/' . $request->id) ?>" 
+                                    class="btn-action btn-decline req-action-btn">
+                                    <i class="fas fa-times"></i> Decline
+                                    </a>
+
+                                <?php elseif ($is_sender): ?>
+                                    <!-- YOU sent the request -->
+                                    <a href="<?= site_url('alumni_request/cancel_request/' . $request->id) ?>" 
+                                    class="btn-action btn-decline req-action-btn">
+                                    <i class="fas fa-ban"></i> Cancel
+                                    </a>
+                                <?php endif; ?>
                             </div>
+
                         </div>
                     </div>
 

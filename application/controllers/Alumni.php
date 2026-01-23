@@ -28,31 +28,49 @@ class Alumni extends CI_Controller {
     }
 
     public function send_request() {
-        $sender_id = $this->session->userdata('alumni_id');
-        $receiver_id = $this->input->post('receiver_id');
+    $sender_id = $this->session->userdata('alumni_id');
+    $receiver_id = $this->input->post('receiver_id');
 
-        if (!$this->Alumni_model->connection_exists($sender_id, $receiver_id)) {
-            $this->Alumni_model->send_connection_request($sender_id, $receiver_id);
-        }
-
-        redirect('alumni');
+    if (!$sender_id || !$receiver_id) {
+        echo json_encode(['status' => 'error', 'message' => 'Missing data']);
+        return;
     }
 
-    public function cancel_request() {
-        $sender_id = $this->session->userdata('alumni_id');
-        $receiver_id = $this->input->post('receiver_id'); // Or get from URL if you prefer GET
-
-        $this->Alumni_model->cancel_request($sender_id, $receiver_id);
-        redirect('alumni');
+    if (!$this->Alumni_model->connection_exists($sender_id, $receiver_id)) {
+        $this->Alumni_model->send_connection_request($sender_id, $receiver_id);
     }
+
+    // ALWAYS RETURN JSON (NO REDIRECT)
+    header('Content-Type: application/json');
+    echo json_encode(['status' => 'success']);
+}
+
+
+
+
+   public function cancel_request() {
+    $sender_id = $this->session->userdata('alumni_id');
+    $receiver_id = $this->input->post('receiver_id');
+
+    $this->Alumni_model->cancel_request($sender_id, $receiver_id);
+
+    header('Content-Type: application/json');
+    echo json_encode(['status' => 'success']);
+}
+
+
 
     public function remove_connection() {
-        $current_user_id = $this->session->userdata('alumni_id');
-        $target_user_id = $this->input->post('receiver_id');
+    $current_user_id = $this->session->userdata('alumni_id');
+    $target_user_id = $this->input->post('receiver_id');
 
-        $this->Alumni_model->remove_connection($current_user_id, $target_user_id);
-        redirect('alumni');
-    }
+    $this->Alumni_model->remove_connection($current_user_id, $target_user_id);
+
+    header('Content-Type: application/json');
+    echo json_encode(['status' => 'success']);
+}
+
+
 
     // View pending connection requests
     public function admin_alumni() {

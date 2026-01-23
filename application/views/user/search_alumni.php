@@ -312,27 +312,64 @@ $student_number = $this->session->userdata('student_number') ? $this->session->u
                             </div>
 
                             <div class="card-footer">
-                                <button type="button" class="btn-tile btn-view" data-toggle="modal" data-target="#profileModal<?= $alumnus->id ?>"><i class="fas fa-eye mr-1"></i> View</button>
-                                
+                                <button type="button" class="btn-tile btn-view" data-toggle="modal" data-target="#profileModal<?= $alumnus->id ?>">
+                                    <i class="fas fa-eye mr-1"></i> View
+                                </button>
+
+                                <?php 
+                                    $my_id = $this->session->userdata('alumni_id');
+                                ?>
+
                                 <?php if ($alumnus->connection_status == 'accepted'): ?>
+
+                                    <!-- CONNECTED -->
                                     <form method="post" action="<?= site_url('alumni/remove_connection') ?>" class="remove-connection-form" style="flex:1; display:flex;">
                                         <input type="hidden" name="receiver_id" value="<?= $alumnus->id ?>">
-                                        <button type="submit" class="remove-connection-btn" title="Click to unlink">
+                                        <button type="submit" class="remove-connection-btn">
                                             <i class="fas fa-check"></i> <span>Linked</span>
                                         </button>
                                     </form>
+
                                 <?php elseif ($alumnus->connection_status == 'pending'): ?>
-                                    <form method="post" action="<?= site_url('alumni/cancel_request') ?>" class="cancel-form" style="flex:1; display:flex;">
-                                        <input type="hidden" name="receiver_id" value="<?= $alumnus->id ?>">
-                                        <button type="submit" class="status-badge" style="border:none; cursor:pointer; width:100%;" title="Click to cancel request"><i class="fas fa-clock"></i> Pending</button>
-                                    </form>
+
+                                    <?php if ($alumnus->sender_id == $my_id): ?>
+
+                                        <!-- I SENT THE REQUEST → SHOW CANCEL -->
+                                        <form method="post" action="<?= site_url('alumni/cancel_request') ?>" class="cancel-form" style="flex:1; display:flex;">
+                                            <input type="hidden" name="receiver_id" value="<?= $alumnus->id ?>">
+                                            <button type="submit" class="status-badge" style="border:none; cursor:pointer; width:100%;">
+                                                <i class="fas fa-clock"></i> Pending (Cancel)
+                                            </button>
+                                        </form>
+
+                                    <?php else: ?>
+
+                                        <!-- THEY SENT ME THE REQUEST → SHOW ACCEPT + DECLINE -->
+                                        <a href="<?= site_url('alumni_request/accept_request/' . $alumnus->request_id) ?>" 
+                                        class="btn-tile btn-connect" style="background:#10B981;">
+                                        <i class="fas fa-check"></i> Accept
+                                        </a>
+
+                                        <a href="<?= site_url('alumni_request/decline_request/' . $alumnus->request_id) ?>" 
+                                        class="btn-tile btn-connect" style="background:#EF4444;">
+                                        <i class="fas fa-times"></i> Decline
+                                        </a>
+
+                                    <?php endif; ?>
+
                                 <?php else: ?>
+
+                                    <!-- NO CONNECTION YET -->
                                     <form method="post" action="<?= site_url('alumni/send_request') ?>" class="connect-form" style="flex:1; display:flex;">
                                         <input type="hidden" name="receiver_id" value="<?= $alumnus->id ?>">
-                                        <button type="submit" class="btn-tile btn-connect"><i class="fas fa-user-plus mr-1"></i> Connect</button>
+                                        <button type="submit" class="btn-tile btn-connect">
+                                            <i class="fas fa-user-plus mr-1"></i> Connect
+                                        </button>
                                     </form>
+
                                 <?php endif; ?>
                             </div>
+
                         </div>
                     </div>
 
