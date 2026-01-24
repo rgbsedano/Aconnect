@@ -17,7 +17,6 @@
             --border: #E5E7EB;
             --success: #10B981;
             --danger: #EF4444;
-            /* Matches the specific red in your image */
             --delete-red: #D32F2F; 
         }
 
@@ -77,12 +76,11 @@
             box-shadow: none !important;
         }
 
-        /* UPDATED ACTION LINKS */
         .action-link {
             background: none;
             border: none;
             color: var(--muted);
-            font-size: 0.85rem; /* Smaller size */
+            font-size: 0.85rem;
             display: inline-flex;
             align-items: center;
             padding: 5px 10px;
@@ -93,17 +91,43 @@
         .action-link i { margin-right: 5px; font-size: 0.9rem; }
         .action-link:hover { opacity: 0.7; text-decoration: none; color: var(--muted); }
         
-        /* Specific Delete Color from Image */
         .action-link.delete-link { color: var(--delete-red); }
         .action-link.delete-link:hover { opacity: 0.8; color: var(--delete-red); }
 
-        /* Centered Modal Styles */
+        /* --- STATUS STYLES --- */
+        .badge-status { 
+            padding: 4px 10px; 
+            border-radius: 6px; 
+            font-size: 0.75rem; 
+            font-weight: 700; 
+            display: inline-flex;
+            align-items: center;
+        }
+        .status-active { background: #DCFCE7; color: #15803D; }
+        .status-ended { background: #FEE2E2; color: #B91C1C; }
+        
+        .filter-btn {
+            border: 1px solid var(--border);
+            background: white;
+            padding: 5px 15px;
+            border-radius: 8px;
+            font-size: 0.85rem;
+            color: var(--muted);
+            transition: all 0.2s;
+            cursor: pointer;
+            outline: none !important;
+        }
+        .filter-btn.active {
+            background: var(--maroon);
+            color: white;
+            border-color: var(--maroon);
+        }
+
         .modal-dialog-centered { display: flex; align-items: center; min-height: calc(100% - 1rem); }
         .modal-content { border-radius: 16px; border: none; box-shadow: 0 20px 50px rgba(0,0,0,0.2); }
         .modal-header { border-bottom: 1px solid var(--border); background: #F9FAFB; border-radius: 16px 16px 0 0; }
         .form-control { border-radius: 8px; padding: 12px; }
 
-        /* Toast Styles */
         #toastContainer {
             position: fixed;
             top: 20px;
@@ -151,6 +175,12 @@
             <div class="col-md-4 mb-3"><div class="stat-card text-center"><p class="small font-weight-bold text-muted">Total Reach</p><p class="stat-value"><?= $total_participants_all ?? 0 ?></p></div></div>
         </div>
 
+        <div class="d-flex justify-content-start mb-3" id="statusFilters">
+            <button class="filter-btn active mr-2" data-filter="all">All</button>
+            <button class="filter-btn mr-2" data-filter="active">Active</button>
+            <button class="filter-btn" data-filter="ended">Ended</button>
+        </div>
+
         <div class="search-box-wrapper mb-4 d-flex align-items-center">
             <i class="fas fa-search text-muted mr-2"></i>
             <input type="text" class="form-control search-input-clean" id="eventSearchInput" placeholder="Search events...">
@@ -167,9 +197,21 @@
                     </tr>
                 </thead>
                 <tbody>
-                    <?php if(!empty($events)): foreach($events as $event): ?>
-                    <tr id="row-<?= $event->id ?>">
-                        <td class="font-weight-bold"><?= htmlspecialchars($event->event_name) ?></td>
+                    <?php if(!empty($events)): foreach($events as $event): 
+                        $is_ended = strtotime($event->event_date) < time();
+                        $status_class = $is_ended ? 'ended' : 'active';
+                    ?>
+                    <tr id="row-<?= $event->id ?>" data-status="<?= $status_class ?>">
+                        <td class="font-weight-bold">
+                            <?= htmlspecialchars($event->event_name) ?>
+                            <div class="mt-1">
+                                <?php if($is_ended): ?>
+                                    <span class="badge-status status-ended"><i class="fas fa-history mr-1"></i> Ended</span>
+                                <?php else: ?>
+                                    <span class="badge-status status-active"><i class="fas fa-check-circle mr-1"></i> Active</span>
+                                <?php endif; ?>
+                            </div>
+                        </td>
                         <td class="text-muted small"><?= date('M d, Y • h:i A', strtotime($event->event_date)) ?></td>
                         <td>
                             <div class="small text-muted"><i class="fas fa-map-marker-alt text-maroon mr-1"></i> <?= htmlspecialchars($event->location) ?></div>
@@ -314,6 +356,22 @@
             var value = $(this).val().toLowerCase();
             $("#eventTable tbody tr").filter(function() {
                 $(this).toggle($(this).text().toLowerCase().indexOf(value) > -1)
+            });
+        });
+
+        $('.filter-btn').on('click', function() {
+            $('.filter-btn').removeClass('active');
+            $(this).addClass('active');
+            
+            const filter = $(this).data('filter');
+            
+            $("#eventTable tbody tr").each(function() {
+                const status = $(this).data('status');
+                if (filter === 'all' || status === filter) {
+                    $(this).show();
+                } else {
+                    $(this).hide();
+                }
             });
         });
     });
