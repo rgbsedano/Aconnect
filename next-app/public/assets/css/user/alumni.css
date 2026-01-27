@@ -1,0 +1,59 @@
+/* Styles for the Alumni List Page */
+.content-area .list-controls {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    margin-bottom: 20px;
+    margin-left: 5px;
+}
+
+.filter-name{
+    padding: 10px 7px;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    width: 100%;
+    max-width: 300px;
+    box-sizing: border-box;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+  /* Styles for the Manage Accounts Table */
+  .table-responsive table {
+    width: 100%;
+    border-collapse: collapse; /* Use separate borders for spacing */
+    border-spacing: 0; /* Remove default spacing between borders */
+    margin-top: 0;
+    overflow: auto; /* Clip content for rounded corners on rows */
+    table-layout: fixed;
+  
+  }
+  .h1{
+
+  }
+  
+  .table-responsive th,
+  .table-responsive td {
+      padding: 0.75rem 1rem; /* Add padding inside table cells */
+      text-align: left; /* Align text to the left */
+      border-bottom: 1px solid #eee; /* Add a subtle bottom border for rows */
+      word-wrap: break-word;
+      overflow-wrap: break-word;
+  }
+  
+  .table-responsive th {
+      font-weight: bold; /* Make table headers bold */
+      color: #232d42; /* Darker color for headers */
+  }
+  
+  .table-responsive tbody tr:last-child td {
+      border-bottom: none; /* Remove border from the last row */
+  }
+  
+  /* Optional: Add some spacing around the table */
+   .table-responsive {
+      padding: 1rem;
+      background-color: white; /* Add a white background to the table area */
+      border-radius: 0.5rem; /* Optional: Rounded corners */
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05); /* Optional: Subtle shadow */
+  }

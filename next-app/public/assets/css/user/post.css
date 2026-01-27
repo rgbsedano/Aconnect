@@ -1,0 +1,125 @@
+/* POST CSS STYLE */
+.post-section {
+    margin-bottom: 30px;
+}
+.post-title {
+    font-size: 24px;
+    margin: 10px 0;
+    color: #700A0A;
+}
+.post-list {
+    display: flex;
+    overflow-x: auto;
+    gap: 20px;
+    padding: 10px;
+}
+.post-card {
+    min-width: 300px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    padding: 16px;
+    background-color: #fff;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+.post-card img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 5px;
+}
+.post-content {
+    margin-top: 10px;
+}
+.post-date {
+    font-size: 12px;
+    color: #888;
+    margin-top: 5px;
+}
+
+
+/* PROFILE CSS STYLE */
+.profile-container {
+    max-width: 600px;
+    margin: auto;
+    background: #f9f9f9;
+    padding: 20px;
+    border-radius: 8px;
+}
+.profile-image {
+    width: 150px;
+    height: 150px;
+    object-fit: cover;
+    border-radius: 50%;
+    margin-bottom: 20px;
+}
+.profile-info h3 {
+    margin: 5px 0;
+}
+
+
+/* ABOUT US CSS STYLE */
+.about-us-card, .mission-card, .vision-card, .facebook-card {
+    background: #fff; border: 1px solid #ccc; padding: 20px; margin-bottom: 20px; border-radius: 8px;
+}
+.story-image {
+    width: 100%; max-width: 400px; display: block; margin: 20px auto;
+}
+.quote-container {
+    text-align: center; margin: 40px 0; font-size: 24px; font-style: italic;
+}
+.mission-vision-grid {
+    display: flex; flex-wrap: wrap; gap: 20px;
+}
+.mission-vision-grid > div {
+    flex: 1 1 48%;
+}
+.section-title {
+    font-size: 22px; margin-bottom: 10px;
+}
+
+
+/* JOB CSS STYLE */
+.job-section {
+    margin: 30px;
+}
+.job-heading {
+    font-size: 26px;
+    margin-bottom: 20px;
+    color: #2c3e50;
+}
+.job-cards {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+.job-card {
+    width: 280px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    padding: 16px;
+    background-color: #fefefe;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+    cursor: pointer;
+    transition: 0.3s;
+}
+.job-card:hover {
+    background-color: #f9f9f9;
+}
+.job-timestamp {
+    font-size: 12px;
+    color: #666;
+}
+
+.modal-content {
+    background: #fff;
+    margin: 5% auto;
+    padding: 20px;
+    width: 90%;
+    max-width: 600px;
+    border-radius: 10px;
+}
+.close {
+    float: right;
+    font-size: 24px;
+    font-weight: bold;
+    cursor: pointer;
+}
