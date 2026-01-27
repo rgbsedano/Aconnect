@@ -247,7 +247,7 @@ $student_number = $this->session->userdata('student_number') ? $this->session->u
                                     <div class="request-degree"><?= htmlspecialchars($request->degree ?: 'N/A') ?></div>
                                     <div class="request-date">
                                         <i class="fas fa-clock text-xs"></i>
-                                        <span><?= date('M j, Y', strtotime($request->request_date ?? 'now')) ?></span>
+                                        <span><?= date('M j, Y', strtotime($request->created_at ?? 'now')) ?></span>
                                     </div>
                                 </div>
                             </div>
@@ -298,7 +298,7 @@ $student_number = $this->session->userdata('student_number') ? $this->session->u
 
                                     <div style="background: #F8FAFC; border-radius: 12px; padding: 16px; margin-top: 16px; text-align: left; border: 1px solid var(--border);">
                                         <span style="font-size: 0.7rem; text-transform: uppercase; color: var(--text-muted); font-weight: 800; letter-spacing: 1px; display: block; margin-bottom: 2px;">Request Date</span>
-                                        <span style="font-size: 0.95rem; font-weight: 600; margin-bottom: 12px; display: block; color: var(--text-main);"><?= date('F j, Y \a\t g:i A', strtotime($request->request_date)) ?></span>
+                                        <span style="font-size: 0.95rem; font-weight: 600; margin-bottom: 12px; display: block; color: var(--text-main);"><?= date('F j, Y \a\t g:i A', strtotime($request->created_at)) ?></span>
                                     </div>
 
                                     <button class="btn btn-block mt-4 rounded-xl font-bold py-3 text-sm transition hover:brightness-110 shadow-lg" style="background: var(--primary); color: white;" data-dismiss="modal">Close Profile</button>
@@ -319,8 +319,6 @@ $student_number = $this->session->userdata('student_number') ? $this->session->u
         </div>
     </main>
 
-<script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.2/dist/js/bootstrap.bundle.min.js"></script>
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.css">
 <script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js"></script>
 
@@ -368,8 +366,13 @@ document.addEventListener('DOMContentLoaded', function() {
     // Handle standard toast notifications for actions
     function showCenteredNotification(message, type = 'success') {
         if (window.toastr) {
-            toastr.options = { positionClass: 'toast-top-right', timeOut: 3000 };
+            toastr.options = { 
+                "positionClass": "toast-top-right",
+                "timeOut": 3000,
+                "closeButton": true 
+            };
             toastr[type](message);
+            return;
         }
     }
 
