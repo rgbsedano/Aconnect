@@ -93,4 +93,24 @@ public function get_chat_details($user_id)
     ]);
 }
 
+    public function get_chat_json_alumni()
+    {
+        $user_id = $this->session->userdata('alumni_id');
+        $messages = $this->Support_model->get_messages($user_id);
+        echo json_encode($messages);
+    }
+
+    public function send_message_ajax() {
+        $sender_id = $this->session->userdata('alumni_id');
+        $message = $this->input->post('message');
+
+        $this->Support_model->send_message([
+            'sender_id' => $sender_id,
+            'receiver_id' => 1, // admin
+            'message' => $message,
+            'is_admin' => 0
+        ]);
+
+        echo json_encode(['status' => 'success']);
+    }
 }

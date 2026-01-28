@@ -1,0 +1,11918 @@
+<?php defined('BASEPATH') OR exit('No direct script access allowed'); ?>
+
+ERROR - 2026-01-28 04:30:28 --> $config['composer_autoload'] is set to TRUE but C:\xampp\htdocs\Aconnect_ci3\application\vendor/autoload.php was not found.
+INFO - 2026-01-28 04:30:28 --> Config Class Initialized
+INFO - 2026-01-28 04:30:28 --> Hooks Class Initialized
+DEBUG - 2026-01-28 04:30:28 --> UTF-8 Support Enabled
+INFO - 2026-01-28 04:30:28 --> Utf8 Class Initialized
+INFO - 2026-01-28 04:30:28 --> URI Class Initialized
+INFO - 2026-01-28 04:30:28 --> Router Class Initialized
+INFO - 2026-01-28 04:30:28 --> Output Class Initialized
+INFO - 2026-01-28 04:30:28 --> Security Class Initialized
+DEBUG - 2026-01-28 04:30:28 --> Global POST, GET and COOKIE data sanitized
+INFO - 2026-01-28 04:30:28 --> Input Class Initialized
+INFO - 2026-01-28 04:30:28 --> Language Class Initialized
+INFO - 2026-01-28 04:30:28 --> Loader Class Initialized
+INFO - 2026-01-28 04:30:28 --> Helper loaded: url_helper
+INFO - 2026-01-28 04:30:28 --> Helper loaded: file_helper
+INFO - 2026-01-28 04:30:28 --> Helper loaded: html_helper
+INFO - 2026-01-28 04:30:29 --> Database Driver Class Initialized
+INFO - 2026-01-28 04:30:29 --> Session: Class initialized using 'files' driver.
+INFO - 2026-01-28 04:30:29 --> Helper loaded: form_helper
+INFO - 2026-01-28 04:30:29 --> Form Validation Class Initialized
+INFO - 2026-01-28 04:30:29 --> User Agent Class Initialized
+INFO - 2026-01-28 04:30:29 --> Language file loaded: language/english/pagination_lang.php
+INFO - 2026-01-28 04:30:29 --> Pagination Class Initialized
+INFO - 2026-01-28 04:30:29 --> Controller Class Initialized
+ERROR - 2026-01-28 04:30:29 --> $config['composer_autoload'] is set to TRUE but C:\xampp\htdocs\Aconnect_ci3\application\vendor/autoload.php was not found.
+INFO - 2026-01-28 04:30:29 --> Config Class Initialized
+INFO - 2026-01-28 04:30:29 --> Hooks Class Initialized
+DEBUG - 2026-01-28 04:30:29 --> UTF-8 Support Enabled
+INFO - 2026-01-28 04:30:29 --> Utf8 Class Initialized
+INFO - 2026-01-28 04:30:29 --> URI Class Initialized
+INFO - 2026-01-28 04:30:29 --> Router Class Initialized
+INFO - 2026-01-28 04:30:29 --> Output Class Initialized
+INFO - 2026-01-28 04:30:29 --> Security Class Initialized
+DEBUG - 2026-01-28 04:30:29 --> Global POST, GET and COOKIE data sanitized
+INFO - 2026-01-28 04:30:29 --> Input Class Initialized
+INFO - 2026-01-28 04:30:29 --> Language Class Initialized
+INFO - 2026-01-28 04:30:29 --> Loader Class Initialized
+INFO - 2026-01-28 04:30:29 --> Helper loaded: url_helper
+INFO - 2026-01-28 04:30:29 --> Helper loaded: file_helper
+INFO - 2026-01-28 04:30:29 --> Helper loaded: html_helper
+INFO - 2026-01-28 04:30:29 --> Database Driver Class Initialized
+INFO - 2026-01-28 04:30:29 --> Session: Class initialized using 'files' driver.
+INFO - 2026-01-28 04:30:29 --> Helper loaded: form_helper
+INFO - 2026-01-28 04:30:29 --> Form Validation Class Initialized
+INFO - 2026-01-28 04:30:29 --> User Agent Class Initialized
+INFO - 2026-01-28 04:30:29 --> Language file loaded: language/english/pagination_lang.php
+INFO - 2026-01-28 04:30:29 --> Pagination Class Initialized
+INFO - 2026-01-28 04:30:29 --> Controller Class Initialized
+INFO - 2026-01-28 04:30:29 --> Model "M_login" initialized
+INFO - 2026-01-28 04:30:29 --> File loaded: C:\xampp\htdocs\Aconnect_ci3\application\views\login.php
+INFO - 2026-01-28 04:30:29 --> Final output sent to browser
+DEBUG - 2026-01-28 04:30:29 --> Total execution time: 0.2095
+ERROR - 2026-01-28 04:30:31 --> $config['composer_autoload'] is set to TRUE but C:\xampp\htdocs\Aconnect_ci3\application\vendor/autoload.php was not found.
+INFO - 2026-01-28 04:30:31 --> Config Class Initialized
+INFO - 2026-01-28 04:30:31 --> Hooks Class Initialized
+DEBUG - 2026-01-28 04:30:31 --> UTF-8 Support Enabled
+INFO - 2026-01-28 04:30:31 --> Utf8 Class Initialized
+INFO - 2026-01-28 04:30:31 --> URI Class Initialized
+INFO - 2026-01-28 04:30:31 --> Router Class Initialized
+INFO - 2026-01-28 04:30:31 --> Output Class Initialized
+INFO - 2026-01-28 04:30:31 --> Security Class Initialized
+DEBUG - 2026-01-28 04:30:31 --> Global POST, GET and COOKIE data sanitized
+INFO - 2026-01-28 04:30:31 --> Input Class Initialized
+INFO - 2026-01-28 04:30:31 --> Language Class Initialized
+INFO - 2026-01-28 04:30:31 --> Loader Class Initialized
+INFO - 2026-01-28 04:30:31 --> Helper loaded: url_helper
+INFO - 2026-01-28 04:30:31 --> Helper loaded: file_helper
+INFO - 2026-01-28 04:30:31 --> Helper loaded: html_helper
+INFO - 2026-01-28 04:30:31 --> Database Driver Class Initialized
+INFO - 2026-01-28 04:30:31 --> Session: Class initialized using 'files' driver.
+INFO - 2026-01-28 04:30:31 --> Helper loaded: form_helper
+INFO - 2026-01-28 04:30:31 --> Form Validation Class Initialized
+INFO - 2026-01-28 04:30:31 --> User Agent Class Initialized
+INFO - 2026-01-28 04:30:31 --> Language file loaded: language/english/pagination_lang.php
+INFO - 2026-01-28 04:30:31 --> Pagination Class Initialized
+INFO - 2026-01-28 04:30:31 --> Controller Class Initialized
+INFO - 2026-01-28 04:30:31 --> Model "M_login" initialized
+ERROR - 2026-01-28 04:30:31 --> $config['composer_autoload'] is set to TRUE but C:\xampp\htdocs\Aconnect_ci3\application\vendor/autoload.php was not found.
+INFO - 2026-01-28 04:30:31 --> Config Class Initialized
+INFO - 2026-01-28 04:30:31 --> Hooks Class Initialized
+DEBUG - 2026-01-28 04:30:31 --> UTF-8 Support Enabled
+INFO - 2026-01-28 04:30:31 --> Utf8 Class Initialized
+INFO - 2026-01-28 04:30:31 --> URI Class Initialized
+INFO - 2026-01-28 04:30:31 --> Router Class Initialized
+INFO - 2026-01-28 04:30:31 --> Output Class Initialized
+INFO - 2026-01-28 04:30:31 --> Security Class Initialized
+DEBUG - 2026-01-28 04:30:31 --> Global POST, GET and COOKIE data sanitized
+INFO - 2026-01-28 04:30:31 --> Input Class Initialized
+INFO - 2026-01-28 04:30:31 --> Language Class Initialized
+INFO - 2026-01-28 04:30:31 --> Loader Class Initialized
+INFO - 2026-01-28 04:30:31 --> Helper loaded: url_helper
+INFO - 2026-01-28 04:30:31 --> Helper loaded: file_helper
+INFO - 2026-01-28 04:30:31 --> Helper loaded: html_helper
+INFO - 2026-01-28 04:30:31 --> Database Driver Class Initialized
+INFO - 2026-01-28 04:30:31 --> Session: Class initialized using 'files' driver.
+INFO - 2026-01-28 04:30:31 --> Helper loaded: form_helper
+INFO - 2026-01-28 04:30:31 --> Form Validation Class Initialized
+INFO - 2026-01-28 04:30:31 --> User Agent Class Initialized
+INFO - 2026-01-28 04:30:31 --> Language file loaded: language/english/pagination_lang.php
+INFO - 2026-01-28 04:30:31 --> Pagination Class Initialized
+INFO - 2026-01-28 04:30:31 --> Controller Class Initialized
+INFO - 2026-01-28 04:30:31 --> File loaded: C:\xampp\htdocs\Aconnect_ci3\application\views\__header.php
+INFO - 2026-01-28 04:30:31 --> File loaded: C:\xampp\htdocs\Aconnect_ci3\application\views\dashboard_u.php
+INFO - 2026-01-28 04:30:31 --> File loaded: C:\xampp\htdocs\Aconnect_ci3\application\views\__footer.php
+INFO - 2026-01-28 04:30:31 --> Final output sent to browser
+DEBUG - 2026-01-28 04:30:31 --> Total execution time: 0.2452
+ERROR - 2026-01-28 04:30:35 --> $config['composer_autoload'] is set to TRUE but C:\xampp\htdocs\Aconnect_ci3\application\vendor/autoload.php was not found.
+INFO - 2026-01-28 04:30:35 --> Config Class Initialized
+INFO - 2026-01-28 04:30:35 --> Hooks Class Initialized
+DEBUG - 2026-01-28 04:30:35 --> UTF-8 Support Enabled
+INFO - 2026-01-28 04:30:35 --> Utf8 Class Initialized
+INFO - 2026-01-28 04:30:35 --> URI Class Initialized
+INFO - 2026-01-28 04:30:35 --> Router Class Initialized
+INFO - 2026-01-28 04:30:35 --> Output Class Initialized
+INFO - 2026-01-28 04:30:35 --> Security Class Initialized
+DEBUG - 2026-01-28 04:30:35 --> Global POST, GET and COOKIE data sanitized
+INFO - 2026-01-28 04:30:35 --> Input Class Initialized
+INFO - 2026-01-28 04:30:35 --> Language Class Initialized
+INFO - 2026-01-28 04:30:35 --> Loader Class Initialized
+INFO - 2026-01-28 04:30:35 --> Helper loaded: url_helper
+INFO - 2026-01-28 04:30:35 --> Helper loaded: file_helper
+INFO - 2026-01-28 04:30:35 --> Helper loaded: html_helper
+INFO - 2026-01-28 04:30:35 --> Database Driver Class Initialized
+INFO - 2026-01-28 04:30:35 --> Session: Class initialized using 'files' driver.
+INFO - 2026-01-28 04:30:35 --> Helper loaded: form_helper
+INFO - 2026-01-28 04:30:35 --> Form Validation Class Initialized
+INFO - 2026-01-28 04:30:35 --> User Agent Class Initialized
+INFO - 2026-01-28 04:30:35 --> Language file loaded: language/english/pagination_lang.php
+INFO - 2026-01-28 04:30:35 --> Pagination Class Initialized
+INFO - 2026-01-28 04:30:35 --> Controller Class Initialized
+INFO - 2026-01-28 04:30:35 --> Model "Alumni_model" initialized
+INFO - 2026-01-28 04:30:35 --> File loaded: C:\xampp\htdocs\Aconnect_ci3\application\views\__header.php
+INFO - 2026-01-28 04:30:35 --> File loaded: C:\xampp\htdocs\Aconnect_ci3\application\views\user/search_alumni.php
+INFO - 2026-01-28 04:30:35 --> File loaded: C:\xampp\htdocs\Aconnect_ci3\application\views\__footer.php
+INFO - 2026-01-28 04:30:35 --> Final output sent to browser
+DEBUG - 2026-01-28 04:30:35 --> Total execution time: 0.1457
+ERROR - 2026-01-28 04:30:37 --> $config['composer_autoload'] is set to TRUE but C:\xampp\htdocs\Aconnect_ci3\application\vendor/autoload.php was not found.
+INFO - 2026-01-28 04:30:37 --> Config Class Initialized
+INFO - 2026-01-28 04:30:37 --> Hooks Class Initialized
+DEBUG - 2026-01-28 04:30:37 --> UTF-8 Support Enabled
+INFO - 2026-01-28 04:30:37 --> Utf8 Class Initialized
+INFO - 2026-01-28 04:30:37 --> URI Class Initialized
+INFO - 2026-01-28 04:30:37 --> Router Class Initialized
+INFO - 2026-01-28 04:30:37 --> Output Class Initialized
+INFO - 2026-01-28 04:30:37 --> Security Class Initialized
+DEBUG - 2026-01-28 04:30:37 --> Global POST, GET and COOKIE data sanitized
+INFO - 2026-01-28 04:30:37 --> Input Class Initialized
+INFO - 2026-01-28 04:30:37 --> Language Class Initialized
+INFO - 2026-01-28 04:30:37 --> Loader Class Initialized
+INFO - 2026-01-28 04:30:37 --> Helper loaded: url_helper
+INFO - 2026-01-28 04:30:37 --> Helper loaded: file_helper
+INFO - 2026-01-28 04:30:37 --> Helper loaded: html_helper
+INFO - 2026-01-28 04:30:37 --> Database Driver Class Initialized
+INFO - 2026-01-28 04:30:37 --> Session: Class initialized using 'files' driver.
+INFO - 2026-01-28 04:30:37 --> Helper loaded: form_helper
+INFO - 2026-01-28 04:30:37 --> Form Validation Class Initialized
+INFO - 2026-01-28 04:30:37 --> User Agent Class Initialized
+INFO - 2026-01-28 04:30:37 --> Language file loaded: language/english/pagination_lang.php
+INFO - 2026-01-28 04:30:37 --> Pagination Class Initialized
+INFO - 2026-01-28 04:30:37 --> Controller Class Initialized
+INFO - 2026-01-28 04:30:37 --> Helper loaded: date_helper
+DEBUG - 2026-01-28 04:30:37 --> Session class already loaded. Second attempt ignored.
+INFO - 2026-01-28 04:30:37 --> Upload Class Initialized
+INFO - 2026-01-28 04:30:37 --> Model "Job_model" initialized
+INFO - 2026-01-28 04:30:37 --> File loaded: C:\xampp\htdocs\Aconnect_ci3\application\views\__header.php
+INFO - 2026-01-28 04:30:37 --> File loaded: C:\xampp\htdocs\Aconnect_ci3\application\views\user/jobs.php
+INFO - 2026-01-28 04:30:37 --> File loaded: C:\xampp\htdocs\Aconnect_ci3\application\views\__footer.php
+INFO - 2026-01-28 04:30:37 --> Final output sent to browser
+DEBUG - 2026-01-28 04:30:37 --> Total execution time: 0.1774
+ERROR - 2026-01-28 04:30:38 --> $config['composer_autoload'] is set to TRUE but C:\xampp\htdocs\Aconnect_ci3\application\vendor/autoload.php was not found.
+INFO - 2026-01-28 04:30:38 --> Config Class Initialized
+INFO - 2026-01-28 04:30:38 --> Hooks Class Initialized
+DEBUG - 2026-01-28 04:30:38 --> UTF-8 Support Enabled
+INFO - 2026-01-28 04:30:38 --> Utf8 Class Initialized
+INFO - 2026-01-28 04:30:38 --> URI Class Initialized
+INFO - 2026-01-28 04:30:38 --> Router Class Initialized
+INFO - 2026-01-28 04:30:38 --> Output Class Initialized
+INFO - 2026-01-28 04:30:38 --> Security Class Initialized
+DEBUG - 2026-01-28 04:30:38 --> Global POST, GET and COOKIE data sanitized
+INFO - 2026-01-28 04:30:38 --> Input Class Initialized
+INFO - 2026-01-28 04:30:38 --> Language Class Initialized
+INFO - 2026-01-28 04:30:38 --> Loader Class Initialized
+INFO - 2026-01-28 04:30:38 --> Helper loaded: url_helper
+INFO - 2026-01-28 04:30:38 --> Helper loaded: file_helper
+INFO - 2026-01-28 04:30:38 --> Helper loaded: html_helper
+INFO - 2026-01-28 04:30:38 --> Database Driver Class Initialized
+INFO - 2026-01-28 04:30:38 --> Session: Class initialized using 'files' driver.
+INFO - 2026-01-28 04:30:38 --> Helper loaded: form_helper
+INFO - 2026-01-28 04:30:38 --> Form Validation Class Initialized
+INFO - 2026-01-28 04:30:38 --> User Agent Class Initialized
+INFO - 2026-01-28 04:30:38 --> Language file loaded: language/english/pagination_lang.php
+INFO - 2026-01-28 04:30:38 --> Pagination Class Initialized
+INFO - 2026-01-28 04:30:38 --> Controller Class Initialized
+INFO - 2026-01-28 04:30:38 --> Model "Alumni_model" initialized
+INFO - 2026-01-28 04:30:38 --> File loaded: C:\xampp\htdocs\Aconnect_ci3\application\views\__header.php
+INFO - 2026-01-28 04:30:38 --> File loaded: C:\xampp\htdocs\Aconnect_ci3\application\views\user/chat_list.php
+INFO - 2026-01-28 04:30:38 --> File loaded: C:\xampp\htdocs\Aconnect_ci3\application\views\__footer.php
+INFO - 2026-01-28 04:30:38 --> Final output sent to browser
+DEBUG - 2026-01-28 04:30:38 --> Total execution time: 0.0914
+ERROR - 2026-01-28 04:30:39 --> $config['composer_autoload'] is set to TRUE but C:\xampp\htdocs\Aconnect_ci3\application\vendor/autoload.php was not found.
+INFO - 2026-01-28 04:30:39 --> Config Class Initialized
+INFO - 2026-01-28 04:30:39 --> Hooks Class Initialized
+DEBUG - 2026-01-28 04:30:39 --> UTF-8 Support Enabled
+INFO - 2026-01-28 04:30:39 --> Utf8 Class Initialized
+INFO - 2026-01-28 04:30:39 --> URI Class Initialized
+INFO - 2026-01-28 04:30:39 --> Router Class Initialized
+INFO - 2026-01-28 04:30:39 --> Output Class Initialized
+INFO - 2026-01-28 04:30:39 --> Security Class Initialized
+DEBUG - 2026-01-28 04:30:39 --> Global POST, GET and COOKIE data sanitized
+INFO - 2026-01-28 04:30:39 --> Input Class Initialized
+INFO - 2026-01-28 04:30:39 --> Language Class Initialized
+INFO - 2026-01-28 04:30:39 --> Loader Class Initialized
+INFO - 2026-01-28 04:30:39 --> Helper loaded: url_helper
+INFO - 2026-01-28 04:30:39 --> Helper loaded: file_helper
+INFO - 2026-01-28 04:30:39 --> Helper loaded: html_helper
+INFO - 2026-01-28 04:30:39 --> Database Driver Class Initialized
+INFO - 2026-01-28 04:30:39 --> Session: Class initialized using 'files' driver.
+INFO - 2026-01-28 04:30:39 --> Helper loaded: form_helper
+INFO - 2026-01-28 04:30:39 --> Form Validation Class Initialized
+INFO - 2026-01-28 04:30:39 --> User Agent Class Initialized
+INFO - 2026-01-28 04:30:39 --> Language file loaded: language/english/pagination_lang.php
+INFO - 2026-01-28 04:30:39 --> Pagination Class Initialized
+INFO - 2026-01-28 04:30:39 --> Controller Class Initialized
+INFO - 2026-01-28 04:30:39 --> Model "Event_model" initialized
+DEBUG - 2026-01-28 04:30:39 --> Session class already loaded. Second attempt ignored.
+INFO - 2026-01-28 04:30:39 --> Helper loaded: date_helper
+INFO - 2026-01-28 04:30:39 --> File loaded: C:\xampp\htdocs\Aconnect_ci3\application\views\__header.php
+INFO - 2026-01-28 04:30:39 --> File loaded: C:\xampp\htdocs\Aconnect_ci3\application\views\user/events.php
+INFO - 2026-01-28 04:30:39 --> File loaded: C:\xampp\htdocs\Aconnect_ci3\application\views\__footer.php
+INFO - 2026-01-28 04:30:39 --> Final output sent to browser
+DEBUG - 2026-01-28 04:30:39 --> Total execution time: 0.1753
+ERROR - 2026-01-28 04:30:40 --> $config['composer_autoload'] is set to TRUE but C:\xampp\htdocs\Aconnect_ci3\application\vendor/autoload.php was not found.
+INFO - 2026-01-28 04:30:40 --> Config Class Initialized
+INFO - 2026-01-28 04:30:40 --> Hooks Class Initialized
+DEBUG - 2026-01-28 04:30:40 --> UTF-8 Support Enabled
+INFO - 2026-01-28 04:30:40 --> Utf8 Class Initialized
+INFO - 2026-01-28 04:30:40 --> URI Class Initialized
+INFO - 2026-01-28 04:30:40 --> Router Class Initialized
+INFO - 2026-01-28 04:30:40 --> Output Class Initialized
+INFO - 2026-01-28 04:30:40 --> Security Class Initialized
+DEBUG - 2026-01-28 04:30:40 --> Global POST, GET and COOKIE data sanitized
+INFO - 2026-01-28 04:30:40 --> Input Class Initialized
+INFO - 2026-01-28 04:30:40 --> Language Class Initialized
+INFO - 2026-01-28 04:30:40 --> Loader Class Initialized
+INFO - 2026-01-28 04:30:40 --> Helper loaded: url_helper
+INFO - 2026-01-28 04:30:40 --> Helper loaded: file_helper
+INFO - 2026-01-28 04:30:40 --> Helper loaded: html_helper
+INFO - 2026-01-28 04:30:40 --> Database Driver Class Initialized
+INFO - 2026-01-28 04:30:40 --> Session: Class initialized using 'files' driver.
+INFO - 2026-01-28 04:30:40 --> Helper loaded: form_helper
+INFO - 2026-01-28 04:30:40 --> Form Validation Class Initialized
+INFO - 2026-01-28 04:30:40 --> User Agent Class Initialized
+INFO - 2026-01-28 04:30:40 --> Language file loaded: language/english/pagination_lang.php
+INFO - 2026-01-28 04:30:40 --> Pagination Class Initialized
+INFO - 2026-01-28 04:30:40 --> Controller Class Initialized
+INFO - 2026-01-28 04:30:40 --> Model "Event_model" initialized
+DEBUG - 2026-01-28 04:30:40 --> Session class already loaded. Second attempt ignored.
+INFO - 2026-01-28 04:30:40 --> Helper loaded: date_helper
+INFO - 2026-01-28 04:30:40 --> File loaded: C:\xampp\htdocs\Aconnect_ci3\application\views\__header.php
+INFO - 2026-01-28 04:30:40 --> File loaded: C:\xampp\htdocs\Aconnect_ci3\application\views\user/events_previous.php
+INFO - 2026-01-28 04:30:40 --> File loaded: C:\xampp\htdocs\Aconnect_ci3\application\views\__footer.php
+INFO - 2026-01-28 04:30:40 --> Final output sent to browser
+DEBUG - 2026-01-28 04:30:40 --> Total execution time: 0.0877
+ERROR - 2026-01-28 04:30:41 --> $config['composer_autoload'] is set to TRUE but C:\xampp\htdocs\Aconnect_ci3\application\vendor/autoload.php was not found.
+INFO - 2026-01-28 04:30:41 --> Config Class Initialized
+INFO - 2026-01-28 04:30:41 --> Hooks Class Initialized
+DEBUG - 2026-01-28 04:30:41 --> UTF-8 Support Enabled
+INFO - 2026-01-28 04:30:41 --> Utf8 Class Initialized
+ERROR - 2026-01-28 04:30:41 --> $config['composer_autoload'] is set to TRUE but C:\xampp\htdocs\Aconnect_ci3\application\vendor/autoload.php was not found.
+INFO - 2026-01-28 04:30:41 --> URI Class Initialized
+ERROR - 2026-01-28 04:30:41 --> $config['composer_autoload'] is set to TRUE but C:\xampp\htdocs\Aconnect_ci3\application\vendor/autoload.php was not found.
+ERROR - 2026-01-28 04:30:41 --> $config['composer_autoload'] is set to TRUE but C:\xampp\htdocs\Aconnect_ci3\application\vendor/autoload.php was not found.
+INFO - 2026-01-28 04:30:41 --> Config Class Initialized
+INFO - 2026-01-28 04:30:41 --> Hooks Class Initialized
+INFO - 2026-01-28 04:30:41 --> Router Class Initialized
+INFO - 2026-01-28 04:30:41 --> Config Class Initialized
+INFO - 2026-01-28 04:30:41 --> Hooks Class Initialized
+ERROR - 2026-01-28 04:30:41 --> $config['composer_autoload'] is set to TRUE but C:\xampp\htdocs\Aconnect_ci3\application\vendor/autoload.php was not found.
+INFO - 2026-01-28 04:30:41 --> Config Class Initialized
+INFO - 2026-01-28 04:30:41 --> Output Class Initialized
+INFO - 2026-01-28 04:30:41 --> Hooks Class Initialized
+DEBUG - 2026-01-28 04:30:41 --> UTF-8 Support Enabled
+INFO - 2026-01-28 04:30:41 --> Utf8 Class Initialized
+INFO - 2026-01-28 04:30:41 --> Security Class Initialized
+INFO - 2026-01-28 04:30:41 --> Config Class Initialized
+INFO - 2026-01-28 04:30:41 --> URI Class Initialized
+INFO - 2026-01-28 04:30:41 --> Hooks Class Initialized
+DEBUG - 2026-01-28 04:30:41 --> Global POST, GET and COOKIE data sanitized
+DEBUG - 2026-01-28 04:30:41 --> UTF-8 Support Enabled
+DEBUG - 2026-01-28 04:30:41 --> UTF-8 Support Enabled
+INFO - 2026-01-28 04:30:41 --> Input Class Initialized
+INFO - 2026-01-28 04:30:41 --> Utf8 Class Initialized
+INFO - 2026-01-28 04:30:41 --> Utf8 Class Initialized
+INFO - 2026-01-28 04:30:41 --> Language Class Initialized
+INFO - 2026-01-28 04:30:41 --> Router Class Initialized
+INFO - 2026-01-28 04:30:41 --> URI Class Initialized
+INFO - 2026-01-28 04:30:41 --> URI Class Initialized
+DEBUG - 2026-01-28 04:30:41 --> UTF-8 Support Enabled
+INFO - 2026-01-28 04:30:41 --> Utf8 Class Initialized
+INFO - 2026-01-28 04:30:41 --> Output Class Initialized
+INFO - 2026-01-28 04:30:41 --> Router Class Initialized
+INFO - 2026-01-28 04:30:41 --> Router Class Initialized
+INFO - 2026-01-28 04:30:41 --> URI Class Initialized
+INFO - 2026-01-28 04:30:41 --> Security Class Initialized
+INFO - 2026-01-28 04:30:41 --> Output Class Initialized
+INFO - 2026-01-28 04:30:41 --> Output Class Initialized
+INFO - 2026-01-28 04:30:41 --> Router Class Initialized
+DEBUG - 2026-01-28 04:30:41 --> Global POST, GET and COOKIE data sanitized
+INFO - 2026-01-28 04:30:41 --> Input Class Initialized
+INFO - 2026-01-28 04:30:41 --> Security Class Initialized
+INFO - 2026-01-28 04:30:41 --> Security Class Initialized
+INFO - 2026-01-28 04:30:41 --> Language Class Initialized
+INFO - 2026-01-28 04:30:41 --> Output Class Initialized
+DEBUG - 2026-01-28 04:30:41 --> Global POST, GET and COOKIE data sanitized
+INFO - 2026-01-28 04:30:41 --> Input Class Initialized
+DEBUG - 2026-01-28 04:30:41 --> Global POST, GET and COOKIE data sanitized
+INFO - 2026-01-28 04:30:41 --> Security Class Initialized
+INFO - 2026-01-28 04:30:41 --> Input Class Initialized
+INFO - 2026-01-28 04:30:41 --> Language Class Initialized
+INFO - 2026-01-28 04:30:41 --> Language Class Initialized
+DEBUG - 2026-01-28 04:30:41 --> Global POST, GET and COOKIE data sanitized
+INFO - 2026-01-28 04:30:41 --> Input Class Initialized
+INFO - 2026-01-28 04:30:41 --> Language Class Initialized
+ERROR - 2026-01-28 04:30:41 --> 404 Page Not Found: Assets/uploads
+ERROR - 2026-01-28 04:30:41 --> 404 Page Not Found: Assets/uploads
+ERROR - 2026-01-28 04:30:41 --> 404 Page Not Found: Assets/uploads
+ERROR - 2026-01-28 04:30:41 --> 404 Page Not Found: Assets/uploads
+ERROR - 2026-01-28 04:30:41 --> 404 Page Not Found: Assets/uploads
+ERROR - 2026-01-28 04:30:42 --> $config['composer_autoload'] is set to TRUE but C:\xampp\htdocs\Aconnect_ci3\application\vendor/autoload.php was not found.
+INFO - 2026-01-28 04:30:42 --> Config Class Initialized
+INFO - 2026-01-28 04:30:42 --> Hooks Class Initialized
+DEBUG - 2026-01-28 04:30:42 --> UTF-8 Support Enabled
+INFO - 2026-01-28 04:30:42 --> Utf8 Class Initialized
+INFO - 2026-01-28 04:30:42 --> URI Class Initialized
+INFO - 2026-01-28 04:30:42 --> Router Class Initialized
+INFO - 2026-01-28 04:30:42 --> Output Class Initialized
+INFO - 2026-01-28 04:30:42 --> Security Class Initialized
+DEBUG - 2026-01-28 04:30:42 --> Global POST, GET and COOKIE data sanitized
+INFO - 2026-01-28 04:30:42 --> Input Class Initialized
+INFO - 2026-01-28 04:30:42 --> Language Class Initialized
+INFO - 2026-01-28 04:30:42 --> Loader Class Initialized
+INFO - 2026-01-28 04:30:42 --> Helper loaded: url_helper
+INFO - 2026-01-28 04:30:42 --> Helper loaded: file_helper
+INFO - 2026-01-28 04:30:42 --> Helper loaded: html_helper
+INFO - 2026-01-28 04:30:42 --> Database Driver Class Initialized
+INFO - 2026-01-28 04:30:42 --> Session: Class initialized using 'files' driver.
+INFO - 2026-01-28 04:30:42 --> Helper loaded: form_helper
+INFO - 2026-01-28 04:30:42 --> Form Validation Class Initialized
+INFO - 2026-01-28 04:30:42 --> User Agent Class Initialized
+INFO - 2026-01-28 04:30:42 --> Language file loaded: language/english/pagination_lang.php
+INFO - 2026-01-28 04:30:42 --> Pagination Class Initialized
+INFO - 2026-01-28 04:30:42 --> Controller Class Initialized
+INFO - 2026-01-28 04:30:42 --> Model "Event_model" initialized
+DEBUG - 2026-01-28 04:30:42 --> Session class already loaded. Second attempt ignored.
+INFO - 2026-01-28 04:30:42 --> Helper loaded: date_helper
+INFO - 2026-01-28 04:30:42 --> File loaded: C:\xampp\htdocs\Aconnect_ci3\application\views\__header.php
+INFO - 2026-01-28 04:30:42 --> File loaded: C:\xampp\htdocs\Aconnect_ci3\application\views\user/events.php
+INFO - 2026-01-28 04:30:42 --> File loaded: C:\xampp\htdocs\Aconnect_ci3\application\views\__footer.php
+INFO - 2026-01-28 04:30:42 --> Final output sent to browser
+DEBUG - 2026-01-28 04:30:42 --> Total execution time: 0.0341
+ERROR - 2026-01-28 04:30:43 --> $config['composer_autoload'] is set to TRUE but C:\xampp\htdocs\Aconnect_ci3\application\vendor/autoload.php was not found.
+INFO - 2026-01-28 04:30:43 --> Config Class Initialized
+INFO - 2026-01-28 04:30:43 --> Hooks Class Initialized
+DEBUG - 2026-01-28 04:30:43 --> UTF-8 Support Enabled
+INFO - 2026-01-28 04:30:43 --> Utf8 Class Initialized
+INFO - 2026-01-28 04:30:43 --> URI Class Initialized
+INFO - 2026-01-28 04:30:43 --> Router Class Initialized
+INFO - 2026-01-28 04:30:43 --> Output Class Initialized
+INFO - 2026-01-28 04:30:43 --> Security Class Initialized
+DEBUG - 2026-01-28 04:30:43 --> Global POST, GET and COOKIE data sanitized
+INFO - 2026-01-28 04:30:43 --> Input Class Initialized
+INFO - 2026-01-28 04:30:43 --> Language Class Initialized
+INFO - 2026-01-28 04:30:43 --> Loader Class Initialized
+INFO - 2026-01-28 04:30:43 --> Helper loaded: url_helper
+INFO - 2026-01-28 04:30:43 --> Helper loaded: file_helper
+INFO - 2026-01-28 04:30:43 --> Helper loaded: html_helper
+INFO - 2026-01-28 04:30:43 --> Database Driver Class Initialized
+INFO - 2026-01-28 04:30:43 --> Session: Class initialized using 'files' driver.
+INFO - 2026-01-28 04:30:43 --> Helper loaded: form_helper
+INFO - 2026-01-28 04:30:43 --> Form Validation Class Initialized
+INFO - 2026-01-28 04:30:43 --> User Agent Class Initialized
+INFO - 2026-01-28 04:30:43 --> Language file loaded: language/english/pagination_lang.php
+INFO - 2026-01-28 04:30:43 --> Pagination Class Initialized
+INFO - 2026-01-28 04:30:43 --> Controller Class Initialized
+INFO - 2026-01-28 04:30:43 --> Model "Event_model" initialized
+DEBUG - 2026-01-28 04:30:43 --> Session class already loaded. Second attempt ignored.
+INFO - 2026-01-28 04:30:43 --> Helper loaded: date_helper
+INFO - 2026-01-28 04:30:43 --> File loaded: C:\xampp\htdocs\Aconnect_ci3\application\views\__header.php
+INFO - 2026-01-28 04:30:43 --> File loaded: C:\xampp\htdocs\Aconnect_ci3\application\views\user/events_previous.php
+INFO - 2026-01-28 04:30:43 --> File loaded: C:\xampp\htdocs\Aconnect_ci3\application\views\__footer.php
+INFO - 2026-01-28 04:30:43 --> Final output sent to browser
+DEBUG - 2026-01-28 04:30:43 --> Total execution time: 0.0338
+ERROR - 2026-01-28 04:30:43 --> $config['composer_autoload'] is set to TRUE but C:\xampp\htdocs\Aconnect_ci3\application\vendor/autoload.php was not found.
+INFO - 2026-01-28 04:30:43 --> Config Class Initialized
+ERROR - 2026-01-28 04:30:43 --> $config['composer_autoload'] is set to TRUE but C:\xampp\htdocs\Aconnect_ci3\application\vendor/autoload.php was not found.
+INFO - 2026-01-28 04:30:43 --> Hooks Class Initialized
+ERROR - 2026-01-28 04:30:43 --> $config['composer_autoload'] is set to TRUE but C:\xampp\htdocs\Aconnect_ci3\application\vendor/autoload.php was not found.
+ERROR - 2026-01-28 04:30:43 --> $config['composer_autoload'] is set to TRUE but C:\xampp\htdocs\Aconnect_ci3\application\vendor/autoload.php was not found.
+ERROR - 2026-01-28 04:30:43 --> $config['composer_autoload'] is set to TRUE but C:\xampp\htdocs\Aconnect_ci3\application\vendor/autoload.php was not found.
+INFO - 2026-01-28 04:30:43 --> Config Class Initialized
+INFO - 2026-01-28 04:30:43 --> Hooks Class Initialized
+DEBUG - 2026-01-28 04:30:43 --> UTF-8 Support Enabled
+INFO - 2026-01-28 04:30:43 --> Utf8 Class Initialized
+INFO - 2026-01-28 04:30:43 --> Config Class Initialized
+INFO - 2026-01-28 04:30:43 --> Config Class Initialized
+INFO - 2026-01-28 04:30:43 --> Config Class Initialized
+INFO - 2026-01-28 04:30:43 --> Hooks Class Initialized
+INFO - 2026-01-28 04:30:43 --> Hooks Class Initialized
+INFO - 2026-01-28 04:30:43 --> Hooks Class Initialized
+DEBUG - 2026-01-28 04:30:43 --> UTF-8 Support Enabled
+INFO - 2026-01-28 04:30:43 --> URI Class Initialized
+INFO - 2026-01-28 04:30:43 --> Utf8 Class Initialized
+INFO - 2026-01-28 04:30:43 --> URI Class Initialized
+INFO - 2026-01-28 04:30:43 --> Router Class Initialized
+DEBUG - 2026-01-28 04:30:43 --> UTF-8 Support Enabled
+DEBUG - 2026-01-28 04:30:43 --> UTF-8 Support Enabled
+DEBUG - 2026-01-28 04:30:43 --> UTF-8 Support Enabled
+INFO - 2026-01-28 04:30:43 --> Utf8 Class Initialized
+INFO - 2026-01-28 04:30:43 --> Utf8 Class Initialized
+INFO - 2026-01-28 04:30:43 --> Utf8 Class Initialized
+INFO - 2026-01-28 04:30:43 --> Router Class Initialized
+INFO - 2026-01-28 04:30:43 --> Output Class Initialized
+INFO - 2026-01-28 04:30:43 --> URI Class Initialized
+INFO - 2026-01-28 04:30:43 --> URI Class Initialized
+INFO - 2026-01-28 04:30:43 --> URI Class Initialized
+INFO - 2026-01-28 04:30:43 --> Output Class Initialized
+INFO - 2026-01-28 04:30:43 --> Security Class Initialized
+INFO - 2026-01-28 04:30:43 --> Router Class Initialized
+INFO - 2026-01-28 04:30:43 --> Router Class Initialized
+INFO - 2026-01-28 04:30:43 --> Router Class Initialized
+INFO - 2026-01-28 04:30:43 --> Security Class Initialized
+DEBUG - 2026-01-28 04:30:43 --> Global POST, GET and COOKIE data sanitized
+INFO - 2026-01-28 04:30:43 --> Input Class Initialized
+INFO - 2026-01-28 04:30:43 --> Output Class Initialized
+INFO - 2026-01-28 04:30:43 --> Output Class Initialized
+DEBUG - 2026-01-28 04:30:43 --> Global POST, GET and COOKIE data sanitized
+INFO - 2026-01-28 04:30:43 --> Output Class Initialized
+INFO - 2026-01-28 04:30:43 --> Language Class Initialized
+INFO - 2026-01-28 04:30:43 --> Input Class Initialized
+INFO - 2026-01-28 04:30:43 --> Security Class Initialized
+INFO - 2026-01-28 04:30:43 --> Language Class Initialized
+INFO - 2026-01-28 04:30:43 --> Security Class Initialized
+INFO - 2026-01-28 04:30:43 --> Security Class Initialized
+ERROR - 2026-01-28 04:30:43 --> 404 Page Not Found: Assets/uploads
+DEBUG - 2026-01-28 04:30:43 --> Global POST, GET and COOKIE data sanitized
+INFO - 2026-01-28 04:30:43 --> Input Class Initialized
+ERROR - 2026-01-28 04:30:43 --> 404 Page Not Found: Assets/uploads
+DEBUG - 2026-01-28 04:30:43 --> Global POST, GET and COOKIE data sanitized
+DEBUG - 2026-01-28 04:30:43 --> Global POST, GET and COOKIE data sanitized
+INFO - 2026-01-28 04:30:43 --> Language Class Initialized
+INFO - 2026-01-28 04:30:43 --> Input Class Initialized
+INFO - 2026-01-28 04:30:43 --> Input Class Initialized
+INFO - 2026-01-28 04:30:43 --> Language Class Initialized
+ERROR - 2026-01-28 04:30:43 --> 404 Page Not Found: Assets/uploads
+INFO - 2026-01-28 04:30:43 --> Language Class Initialized
+ERROR - 2026-01-28 04:30:43 --> 404 Page Not Found: Assets/uploads
+ERROR - 2026-01-28 04:30:43 --> 404 Page Not Found: Assets/uploads
+ERROR - 2026-01-28 04:30:44 --> $config['composer_autoload'] is set to TRUE but C:\xampp\htdocs\Aconnect_ci3\application\vendor/autoload.php was not found.
+INFO - 2026-01-28 04:30:44 --> Config Class Initialized
+INFO - 2026-01-28 04:30:44 --> Hooks Class Initialized
+DEBUG - 2026-01-28 04:30:44 --> UTF-8 Support Enabled
+INFO - 2026-01-28 04:30:44 --> Utf8 Class Initialized
+INFO - 2026-01-28 04:30:44 --> URI Class Initialized
+INFO - 2026-01-28 04:30:44 --> Router Class Initialized
+INFO - 2026-01-28 04:30:44 --> Output Class Initialized
+INFO - 2026-01-28 04:30:44 --> Security Class Initialized
+DEBUG - 2026-01-28 04:30:44 --> Global POST, GET and COOKIE data sanitized
+INFO - 2026-01-28 04:30:44 --> Input Class Initialized
+INFO - 2026-01-28 04:30:44 --> Language Class Initialized
+INFO - 2026-01-28 04:30:44 --> Loader Class Initialized
+INFO - 2026-01-28 04:30:44 --> Helper loaded: url_helper
+INFO - 2026-01-28 04:30:44 --> Helper loaded: file_helper
+INFO - 2026-01-28 04:30:44 --> Helper loaded: html_helper
+INFO - 2026-01-28 04:30:44 --> Database Driver Class Initialized
+INFO - 2026-01-28 04:30:44 --> Session: Class initialized using 'files' driver.
+INFO - 2026-01-28 04:30:44 --> Helper loaded: form_helper
+INFO - 2026-01-28 04:30:44 --> Form Validation Class Initialized
+INFO - 2026-01-28 04:30:44 --> User Agent Class Initialized
+INFO - 2026-01-28 04:30:44 --> Language file loaded: language/english/pagination_lang.php
+INFO - 2026-01-28 04:30:44 --> Pagination Class Initialized
+INFO - 2026-01-28 04:30:44 --> Controller Class Initialized
+INFO - 2026-01-28 04:30:44 --> Model "Alumni_model" initialized
+INFO - 2026-01-28 04:30:44 --> Model "Employment_model" initialized
+INFO - 2026-01-28 04:30:44 --> Helper loaded: text_helper
+INFO - 2026-01-28 04:30:44 --> File loaded: C:\xampp\htdocs\Aconnect_ci3\application\views\__header.php
+INFO - 2026-01-28 04:30:44 --> File loaded: C:\xampp\htdocs\Aconnect_ci3\application\views\user/profile.php
+INFO - 2026-01-28 04:30:44 --> File loaded: C:\xampp\htdocs\Aconnect_ci3\application\views\__footer.php
+INFO - 2026-01-28 04:30:44 --> Final output sent to browser
+DEBUG - 2026-01-28 04:30:44 --> Total execution time: 0.2240
+ERROR - 2026-01-28 04:30:49 --> $config['composer_autoload'] is set to TRUE but C:\xampp\htdocs\Aconnect_ci3\application\vendor/autoload.php was not found.
+INFO - 2026-01-28 04:30:49 --> Config Class Initialized
+INFO - 2026-01-28 04:30:49 --> Hooks Class Initialized
+DEBUG - 2026-01-28 04:30:49 --> UTF-8 Support Enabled
+INFO - 2026-01-28 04:30:49 --> Utf8 Class Initialized
+INFO - 2026-01-28 04:30:49 --> URI Class Initialized
+INFO - 2026-01-28 04:30:49 --> Router Class Initialized
+INFO - 2026-01-28 04:30:49 --> Output Class Initialized
+INFO - 2026-01-28 04:30:49 --> Security Class Initialized
+DEBUG - 2026-01-28 04:30:49 --> Global POST, GET and COOKIE data sanitized
+INFO - 2026-01-28 04:30:49 --> Input Class Initialized
+INFO - 2026-01-28 04:30:49 --> Language Class Initialized
+INFO - 2026-01-28 04:30:49 --> Loader Class Initialized
+INFO - 2026-01-28 04:30:49 --> Helper loaded: url_helper
+INFO - 2026-01-28 04:30:49 --> Helper loaded: file_helper
+INFO - 2026-01-28 04:30:49 --> Helper loaded: html_helper
+INFO - 2026-01-28 04:30:49 --> Database Driver Class Initialized
+INFO - 2026-01-28 04:30:49 --> Session: Class initialized using 'files' driver.
+INFO - 2026-01-28 04:30:49 --> Helper loaded: form_helper
+INFO - 2026-01-28 04:30:49 --> Form Validation Class Initialized
+INFO - 2026-01-28 04:30:49 --> User Agent Class Initialized
+INFO - 2026-01-28 04:30:49 --> Language file loaded: language/english/pagination_lang.php
+INFO - 2026-01-28 04:30:49 --> Pagination Class Initialized
+INFO - 2026-01-28 04:30:49 --> Controller Class Initialized
+INFO - 2026-01-28 04:30:49 --> Model "M_login" initialized
+INFO - 2026-01-28 04:30:49 --> Model "Activity_log_model" initialized
+ERROR - 2026-01-28 04:30:49 --> $config['composer_autoload'] is set to TRUE but C:\xampp\htdocs\Aconnect_ci3\application\vendor/autoload.php was not found.
+INFO - 2026-01-28 04:30:49 --> Config Class Initialized
+INFO - 2026-01-28 04:30:49 --> Hooks Class Initialized
+DEBUG - 2026-01-28 04:30:49 --> UTF-8 Support Enabled
+INFO - 2026-01-28 04:30:49 --> Utf8 Class Initialized
+INFO - 2026-01-28 04:30:49 --> URI Class Initialized
+INFO - 2026-01-28 04:30:49 --> Router Class Initialized
+INFO - 2026-01-28 04:30:49 --> Output Class Initialized
+INFO - 2026-01-28 04:30:49 --> Security Class Initialized
+DEBUG - 2026-01-28 04:30:49 --> Global POST, GET and COOKIE data sanitized
+INFO - 2026-01-28 04:30:49 --> Input Class Initialized
+INFO - 2026-01-28 04:30:49 --> Language Class Initialized
+INFO - 2026-01-28 04:30:49 --> Loader Class Initialized
+INFO - 2026-01-28 04:30:49 --> Helper loaded: url_helper
+INFO - 2026-01-28 04:30:49 --> Helper loaded: file_helper
+INFO - 2026-01-28 04:30:49 --> Helper loaded: html_helper
+INFO - 2026-01-28 04:30:49 --> Database Driver Class Initialized
+INFO - 2026-01-28 04:30:49 --> Session: Class initialized using 'files' driver.
+INFO - 2026-01-28 04:30:49 --> Helper loaded: form_helper
+INFO - 2026-01-28 04:30:49 --> Form Validation Class Initialized
+INFO - 2026-01-28 04:30:49 --> User Agent Class Initialized
+INFO - 2026-01-28 04:30:49 --> Language file loaded: language/english/pagination_lang.php
+INFO - 2026-01-28 04:30:49 --> Pagination Class Initialized
+INFO - 2026-01-28 04:30:49 --> Controller Class Initialized
+INFO - 2026-01-28 04:30:49 --> Model "M_login" initialized
+INFO - 2026-01-28 04:30:49 --> File loaded: C:\xampp\htdocs\Aconnect_ci3\application\views\login.php
+INFO - 2026-01-28 04:30:49 --> Final output sent to browser
+DEBUG - 2026-01-28 04:30:49 --> Total execution time: 0.0424
+ERROR - 2026-01-28 04:30:51 --> $config['composer_autoload'] is set to TRUE but C:\xampp\htdocs\Aconnect_ci3\application\vendor/autoload.php was not found.
+INFO - 2026-01-28 04:30:51 --> Config Class Initialized
+INFO - 2026-01-28 04:30:51 --> Hooks Class Initialized
+DEBUG - 2026-01-28 04:30:51 --> UTF-8 Support Enabled
+INFO - 2026-01-28 04:30:51 --> Utf8 Class Initialized
+INFO - 2026-01-28 04:30:51 --> URI Class Initialized
+INFO - 2026-01-28 04:30:51 --> Router Class Initialized
+INFO - 2026-01-28 04:30:51 --> Output Class Initialized
+INFO - 2026-01-28 04:30:51 --> Security Class Initialized
+DEBUG - 2026-01-28 04:30:51 --> Global POST, GET and COOKIE data sanitized
+INFO - 2026-01-28 04:30:51 --> Input Class Initialized
+INFO - 2026-01-28 04:30:51 --> Language Class Initialized
+INFO - 2026-01-28 04:30:51 --> Loader Class Initialized
+INFO - 2026-01-28 04:30:51 --> Helper loaded: url_helper
+INFO - 2026-01-28 04:30:51 --> Helper loaded: file_helper
+INFO - 2026-01-28 04:30:51 --> Helper loaded: html_helper
+INFO - 2026-01-28 04:30:51 --> Database Driver Class Initialized
+INFO - 2026-01-28 04:30:51 --> Session: Class initialized using 'files' driver.
+INFO - 2026-01-28 04:30:51 --> Helper loaded: form_helper
+INFO - 2026-01-28 04:30:51 --> Form Validation Class Initialized
+INFO - 2026-01-28 04:30:51 --> User Agent Class Initialized
+INFO - 2026-01-28 04:30:51 --> Language file loaded: language/english/pagination_lang.php
+INFO - 2026-01-28 04:30:51 --> Pagination Class Initialized
+INFO - 2026-01-28 04:30:51 --> Controller Class Initialized
+INFO - 2026-01-28 04:30:51 --> Model "M_login" initialized
+INFO - 2026-01-28 04:30:51 --> File loaded: C:\xampp\htdocs\Aconnect_ci3\application\views\admin/login.php
+INFO - 2026-01-28 04:30:51 --> Final output sent to browser
+DEBUG - 2026-01-28 04:30:51 --> Total execution time: 0.0543
+ERROR - 2026-01-28 04:30:52 --> $config['composer_autoload'] is set to TRUE but C:\xampp\htdocs\Aconnect_ci3\application\vendor/autoload.php was not found.
+INFO - 2026-01-28 04:30:52 --> Config Class Initialized
+INFO - 2026-01-28 04:30:52 --> Hooks Class Initialized
+DEBUG - 2026-01-28 04:30:52 --> UTF-8 Support Enabled
+INFO - 2026-01-28 04:30:52 --> Utf8 Class Initialized
+INFO - 2026-01-28 04:30:52 --> URI Class Initialized
+INFO - 2026-01-28 04:30:52 --> Router Class Initialized
+INFO - 2026-01-28 04:30:52 --> Output Class Initialized
+INFO - 2026-01-28 04:30:52 --> Security Class Initialized
+DEBUG - 2026-01-28 04:30:52 --> Global POST, GET and COOKIE data sanitized
+INFO - 2026-01-28 04:30:52 --> Input Class Initialized
+INFO - 2026-01-28 04:30:52 --> Language Class Initialized
+INFO - 2026-01-28 04:30:52 --> Loader Class Initialized
+INFO - 2026-01-28 04:30:52 --> Helper loaded: url_helper
+INFO - 2026-01-28 04:30:52 --> Helper loaded: file_helper
+INFO - 2026-01-28 04:30:52 --> Helper loaded: html_helper
+INFO - 2026-01-28 04:30:52 --> Database Driver Class Initialized
+INFO - 2026-01-28 04:30:52 --> Session: Class initialized using 'files' driver.
+INFO - 2026-01-28 04:30:52 --> Helper loaded: form_helper
+INFO - 2026-01-28 04:30:52 --> Form Validation Class Initialized
+INFO - 2026-01-28 04:30:52 --> User Agent Class Initialized
+INFO - 2026-01-28 04:30:52 --> Language file loaded: language/english/pagination_lang.php
+INFO - 2026-01-28 04:30:52 --> Pagination Class Initialized
+INFO - 2026-01-28 04:30:52 --> Controller Class Initialized
+INFO - 2026-01-28 04:30:52 --> Model "M_login" initialized
+INFO - 2026-01-28 04:30:52 --> File loaded: C:\xampp\htdocs\Aconnect_ci3\application\views\admin/login.php
+ERROR - 2026-01-28 04:30:52 --> $config['composer_autoload'] is set to TRUE but C:\xampp\htdocs\Aconnect_ci3\application\vendor/autoload.php was not found.
+INFO - 2026-01-28 04:30:52 --> Config Class Initialized
+INFO - 2026-01-28 04:30:52 --> Hooks Class Initialized
+DEBUG - 2026-01-28 04:30:52 --> UTF-8 Support Enabled
+INFO - 2026-01-28 04:30:52 --> Utf8 Class Initialized
+INFO - 2026-01-28 04:30:52 --> URI Class Initialized
+INFO - 2026-01-28 04:30:52 --> Router Class Initialized
+INFO - 2026-01-28 04:30:52 --> Output Class Initialized
+INFO - 2026-01-28 04:30:52 --> Security Class Initialized
+DEBUG - 2026-01-28 04:30:52 --> Global POST, GET and COOKIE data sanitized
+INFO - 2026-01-28 04:30:52 --> Input Class Initialized
+INFO - 2026-01-28 04:30:52 --> Language Class Initialized
+INFO - 2026-01-28 04:30:52 --> Loader Class Initialized
+INFO - 2026-01-28 04:30:52 --> Helper loaded: url_helper
+INFO - 2026-01-28 04:30:52 --> Helper loaded: file_helper
+INFO - 2026-01-28 04:30:52 --> Helper loaded: html_helper
+INFO - 2026-01-28 04:30:52 --> Database Driver Class Initialized
+INFO - 2026-01-28 04:30:52 --> Session: Class initialized using 'files' driver.
+INFO - 2026-01-28 04:30:52 --> Helper loaded: form_helper
+INFO - 2026-01-28 04:30:52 --> Form Validation Class Initialized
+INFO - 2026-01-28 04:30:52 --> User Agent Class Initialized
+INFO - 2026-01-28 04:30:52 --> Language file loaded: language/english/pagination_lang.php
+INFO - 2026-01-28 04:30:52 --> Pagination Class Initialized
+INFO - 2026-01-28 04:30:52 --> Controller Class Initialized
+INFO - 2026-01-28 04:30:52 --> File loaded: C:\xampp\htdocs\Aconnect_ci3\application\views\__header.php
+INFO - 2026-01-28 04:30:52 --> File loaded: C:\xampp\htdocs\Aconnect_ci3\application\views\dashboard_a.php
+INFO - 2026-01-28 04:30:52 --> File loaded: C:\xampp\htdocs\Aconnect_ci3\application\views\__footer.php
+INFO - 2026-01-28 04:30:52 --> Final output sent to browser
+DEBUG - 2026-01-28 04:30:52 --> Total execution time: 0.1131
+ERROR - 2026-01-28 04:30:55 --> $config['composer_autoload'] is set to TRUE but C:\xampp\htdocs\Aconnect_ci3\application\vendor/autoload.php was not found.
+INFO - 2026-01-28 04:30:55 --> Config Class Initialized
+INFO - 2026-01-28 04:30:55 --> Hooks Class Initialized
+DEBUG - 2026-01-28 04:30:55 --> UTF-8 Support Enabled
+INFO - 2026-01-28 04:30:55 --> Utf8 Class Initialized
+INFO - 2026-01-28 04:30:55 --> URI Class Initialized
+INFO - 2026-01-28 04:30:55 --> Router Class Initialized
+INFO - 2026-01-28 04:30:55 --> Output Class Initialized
+INFO - 2026-01-28 04:30:55 --> Security Class Initialized
+DEBUG - 2026-01-28 04:30:55 --> Global POST, GET and COOKIE data sanitized
+INFO - 2026-01-28 04:30:55 --> Input Class Initialized
+INFO - 2026-01-28 04:30:55 --> Language Class Initialized
+INFO - 2026-01-28 04:30:55 --> Loader Class Initialized
+INFO - 2026-01-28 04:30:55 --> Helper loaded: url_helper
+INFO - 2026-01-28 04:30:55 --> Helper loaded: file_helper
+INFO - 2026-01-28 04:30:55 --> Helper loaded: html_helper
+INFO - 2026-01-28 04:30:55 --> Database Driver Class Initialized
+INFO - 2026-01-28 04:30:55 --> Session: Class initialized using 'files' driver.
+INFO - 2026-01-28 04:30:55 --> Helper loaded: form_helper
+INFO - 2026-01-28 04:30:55 --> Form Validation Class Initialized
+INFO - 2026-01-28 04:30:55 --> User Agent Class Initialized
+INFO - 2026-01-28 04:30:55 --> Language file loaded: language/english/pagination_lang.php
+INFO - 2026-01-28 04:30:55 --> Pagination Class Initialized
+INFO - 2026-01-28 04:30:55 --> Controller Class Initialized
+INFO - 2026-01-28 04:30:55 --> Helper loaded: text_helper
+DEBUG - 2026-01-28 04:30:55 --> Session class already loaded. Second attempt ignored.
+INFO - 2026-01-28 04:30:55 --> File loaded: C:\xampp\htdocs\Aconnect_ci3\application\views\__header.php
+INFO - 2026-01-28 04:30:56 --> File loaded: C:\xampp\htdocs\Aconnect_ci3\application\views\admin/manage_post.php
+INFO - 2026-01-28 04:30:56 --> File loaded: C:\xampp\htdocs\Aconnect_ci3\application\views\__footer.php
+INFO - 2026-01-28 04:30:56 --> Final output sent to browser
+DEBUG - 2026-01-28 04:30:56 --> Total execution time: 0.0863
+ERROR - 2026-01-28 04:30:59 --> $config['composer_autoload'] is set to TRUE but C:\xampp\htdocs\Aconnect_ci3\application\vendor/autoload.php was not found.
+INFO - 2026-01-28 04:30:59 --> Config Class Initialized
+INFO - 2026-01-28 04:30:59 --> Hooks Class Initialized
+DEBUG - 2026-01-28 04:30:59 --> UTF-8 Support Enabled
+INFO - 2026-01-28 04:30:59 --> Utf8 Class Initialized
+INFO - 2026-01-28 04:30:59 --> URI Class Initialized
+INFO - 2026-01-28 04:30:59 --> Router Class Initialized
+INFO - 2026-01-28 04:30:59 --> Output Class Initialized
+INFO - 2026-01-28 04:30:59 --> Security Class Initialized
+DEBUG - 2026-01-28 04:30:59 --> Global POST, GET and COOKIE data sanitized
+INFO - 2026-01-28 04:30:59 --> Input Class Initialized
+INFO - 2026-01-28 04:30:59 --> Language Class Initialized
+INFO - 2026-01-28 04:30:59 --> Loader Class Initialized
+INFO - 2026-01-28 04:30:59 --> Helper loaded: url_helper
+INFO - 2026-01-28 04:30:59 --> Helper loaded: file_helper
+INFO - 2026-01-28 04:30:59 --> Helper loaded: html_helper
+INFO - 2026-01-28 04:30:59 --> Database Driver Class Initialized
+INFO - 2026-01-28 04:30:59 --> Session: Class initialized using 'files' driver.
+INFO - 2026-01-28 04:30:59 --> Helper loaded: form_helper
+INFO - 2026-01-28 04:30:59 --> Form Validation Class Initialized
+INFO - 2026-01-28 04:30:59 --> User Agent Class Initialized
+INFO - 2026-01-28 04:30:59 --> Language file loaded: language/english/pagination_lang.php
+INFO - 2026-01-28 04:30:59 --> Pagination Class Initialized
+INFO - 2026-01-28 04:30:59 --> Controller Class Initialized
+INFO - 2026-01-28 04:30:59 --> File loaded: C:\xampp\htdocs\Aconnect_ci3\application\views\__header.php
+DEBUG - 2026-01-28 04:30:59 --> Pagination class already loaded. Second attempt ignored.
+INFO - 2026-01-28 04:30:59 --> Model "Alumni_model" initialized
+INFO - 2026-01-28 04:30:59 --> File loaded: C:\xampp\htdocs\Aconnect_ci3\application\views\admin/alumni.php
+INFO - 2026-01-28 04:30:59 --> File loaded: C:\xampp\htdocs\Aconnect_ci3\application\views\__footer.php
+INFO - 2026-01-28 04:30:59 --> Final output sent to browser
+DEBUG - 2026-01-28 04:30:59 --> Total execution time: 0.1029
+ERROR - 2026-01-28 04:31:00 --> $config['composer_autoload'] is set to TRUE but C:\xampp\htdocs\Aconnect_ci3\application\vendor/autoload.php was not found.
+INFO - 2026-01-28 04:31:00 --> Config Class Initialized
+INFO - 2026-01-28 04:31:00 --> Hooks Class Initialized
+DEBUG - 2026-01-28 04:31:00 --> UTF-8 Support Enabled
+INFO - 2026-01-28 04:31:00 --> Utf8 Class Initialized
+INFO - 2026-01-28 04:31:00 --> URI Class Initialized
+INFO - 2026-01-28 04:31:00 --> Router Class Initialized
+INFO - 2026-01-28 04:31:00 --> Output Class Initialized
+INFO - 2026-01-28 04:31:00 --> Security Class Initialized
+DEBUG - 2026-01-28 04:31:00 --> Global POST, GET and COOKIE data sanitized
+INFO - 2026-01-28 04:31:00 --> Input Class Initialized
+INFO - 2026-01-28 04:31:00 --> Language Class Initialized
+INFO - 2026-01-28 04:31:00 --> Loader Class Initialized
+INFO - 2026-01-28 04:31:00 --> Helper loaded: url_helper
+INFO - 2026-01-28 04:31:00 --> Helper loaded: file_helper
+INFO - 2026-01-28 04:31:00 --> Helper loaded: html_helper
+INFO - 2026-01-28 04:31:00 --> Database Driver Class Initialized
+INFO - 2026-01-28 04:31:00 --> Session: Class initialized using 'files' driver.
+INFO - 2026-01-28 04:31:00 --> Helper loaded: form_helper
+INFO - 2026-01-28 04:31:00 --> Form Validation Class Initialized
+INFO - 2026-01-28 04:31:00 --> User Agent Class Initialized
+INFO - 2026-01-28 04:31:00 --> Language file loaded: language/english/pagination_lang.php
+INFO - 2026-01-28 04:31:00 --> Pagination Class Initialized
+INFO - 2026-01-28 04:31:00 --> Controller Class Initialized
+DEBUG - 2026-01-28 04:31:00 --> Pagination class already loaded. Second attempt ignored.
+INFO - 2026-01-28 04:31:00 --> File loaded: C:\xampp\htdocs\Aconnect_ci3\application\views\__header.php
+INFO - 2026-01-28 04:31:00 --> File loaded: C:\xampp\htdocs\Aconnect_ci3\application\views\admin/manage_accounts.php
+INFO - 2026-01-28 04:31:00 --> File loaded: C:\xampp\htdocs\Aconnect_ci3\application\views\__footer.php
+INFO - 2026-01-28 04:31:00 --> Final output sent to browser
+DEBUG - 2026-01-28 04:31:00 --> Total execution time: 0.0510
+ERROR - 2026-01-28 04:31:01 --> $config['composer_autoload'] is set to TRUE but C:\xampp\htdocs\Aconnect_ci3\application\vendor/autoload.php was not found.
+INFO - 2026-01-28 04:31:01 --> Config Class Initialized
+INFO - 2026-01-28 04:31:01 --> Hooks Class Initialized
+DEBUG - 2026-01-28 04:31:01 --> UTF-8 Support Enabled
+INFO - 2026-01-28 04:31:01 --> Utf8 Class Initialized
+INFO - 2026-01-28 04:31:01 --> URI Class Initialized
+INFO - 2026-01-28 04:31:01 --> Router Class Initialized
+INFO - 2026-01-28 04:31:01 --> Output Class Initialized
+INFO - 2026-01-28 04:31:01 --> Security Class Initialized
+DEBUG - 2026-01-28 04:31:01 --> Global POST, GET and COOKIE data sanitized
+INFO - 2026-01-28 04:31:01 --> Input Class Initialized
+INFO - 2026-01-28 04:31:01 --> Language Class Initialized
+INFO - 2026-01-28 04:31:01 --> Loader Class Initialized
+INFO - 2026-01-28 04:31:01 --> Helper loaded: url_helper
+INFO - 2026-01-28 04:31:01 --> Helper loaded: file_helper
+INFO - 2026-01-28 04:31:01 --> Helper loaded: html_helper
+INFO - 2026-01-28 04:31:01 --> Database Driver Class Initialized
+INFO - 2026-01-28 04:31:01 --> Session: Class initialized using 'files' driver.
+INFO - 2026-01-28 04:31:01 --> Helper loaded: form_helper
+INFO - 2026-01-28 04:31:01 --> Form Validation Class Initialized
+INFO - 2026-01-28 04:31:01 --> User Agent Class Initialized
+INFO - 2026-01-28 04:31:01 --> Language file loaded: language/english/pagination_lang.php
+INFO - 2026-01-28 04:31:01 --> Pagination Class Initialized
+INFO - 2026-01-28 04:31:01 --> Controller Class Initialized
+INFO - 2026-01-28 04:31:01 --> Model "Activity_log_model" initialized
+INFO - 2026-01-28 04:31:01 --> Model "Alumni_model" initialized
+DEBUG - 2026-01-28 04:31:01 --> Pagination class already loaded. Second attempt ignored.
+DEBUG - 2026-01-28 11:31:01 --> Pagination class already loaded. Second attempt ignored.
+INFO - 2026-01-28 11:31:01 --> File loaded: C:\xampp\htdocs\Aconnect_ci3\application\views\__header.php
+INFO - 2026-01-28 11:31:01 --> File loaded: C:\xampp\htdocs\Aconnect_ci3\application\views\admin/activity_log.php
+INFO - 2026-01-28 11:31:01 --> File loaded: C:\xampp\htdocs\Aconnect_ci3\application\views\__footer.php
+INFO - 2026-01-28 11:31:01 --> Final output sent to browser
+DEBUG - 2026-01-28 11:31:01 --> Total execution time: 0.0673
+ERROR - 2026-01-28 04:31:02 --> $config['composer_autoload'] is set to TRUE but C:\xampp\htdocs\Aconnect_ci3\application\vendor/autoload.php was not found.
+INFO - 2026-01-28 04:31:02 --> Config Class Initialized
+INFO - 2026-01-28 04:31:02 --> Hooks Class Initialized
+DEBUG - 2026-01-28 04:31:02 --> UTF-8 Support Enabled
+INFO - 2026-01-28 04:31:02 --> Utf8 Class Initialized
+INFO - 2026-01-28 04:31:02 --> URI Class Initialized
+INFO - 2026-01-28 04:31:02 --> Router Class Initialized
+INFO - 2026-01-28 04:31:02 --> Output Class Initialized
+INFO - 2026-01-28 04:31:02 --> Security Class Initialized
+DEBUG - 2026-01-28 04:31:02 --> Global POST, GET and COOKIE data sanitized
+INFO - 2026-01-28 04:31:02 --> Input Class Initialized
+INFO - 2026-01-28 04:31:02 --> Language Class Initialized
+INFO - 2026-01-28 04:31:02 --> Loader Class Initialized
+INFO - 2026-01-28 04:31:02 --> Helper loaded: url_helper
+INFO - 2026-01-28 04:31:02 --> Helper loaded: file_helper
+INFO - 2026-01-28 04:31:02 --> Helper loaded: html_helper
+INFO - 2026-01-28 04:31:02 --> Database Driver Class Initialized
+INFO - 2026-01-28 04:31:02 --> Session: Class initialized using 'files' driver.
+INFO - 2026-01-28 04:31:02 --> Helper loaded: form_helper
+INFO - 2026-01-28 04:31:02 --> Form Validation Class Initialized
+INFO - 2026-01-28 04:31:02 --> User Agent Class Initialized
+INFO - 2026-01-28 04:31:02 --> Language file loaded: language/english/pagination_lang.php
+INFO - 2026-01-28 04:31:02 --> Pagination Class Initialized
+INFO - 2026-01-28 04:31:02 --> Controller Class Initialized
+INFO - 2026-01-28 04:31:02 --> Model "Support_model" initialized
+DEBUG - 2026-01-28 04:31:02 --> Session class already loaded. Second attempt ignored.
+INFO - 2026-01-28 04:31:02 --> File loaded: C:\xampp\htdocs\Aconnect_ci3\application\views\__header.php
+INFO - 2026-01-28 04:31:02 --> File loaded: C:\xampp\htdocs\Aconnect_ci3\application\views\admin/support_inbox.php
+INFO - 2026-01-28 04:31:02 --> File loaded: C:\xampp\htdocs\Aconnect_ci3\application\views\__footer.php
+INFO - 2026-01-28 04:31:02 --> Final output sent to browser
+DEBUG - 2026-01-28 04:31:02 --> Total execution time: 0.1217
+ERROR - 2026-01-28 04:31:03 --> $config['composer_autoload'] is set to TRUE but C:\xampp\htdocs\Aconnect_ci3\application\vendor/autoload.php was not found.
+INFO - 2026-01-28 04:31:03 --> Config Class Initialized
+INFO - 2026-01-28 04:31:03 --> Hooks Class Initialized
+DEBUG - 2026-01-28 04:31:03 --> UTF-8 Support Enabled
+INFO - 2026-01-28 04:31:03 --> Utf8 Class Initialized
+INFO - 2026-01-28 04:31:03 --> URI Class Initialized
+INFO - 2026-01-28 04:31:03 --> Router Class Initialized
+INFO - 2026-01-28 04:31:03 --> Output Class Initialized
+INFO - 2026-01-28 04:31:03 --> Security Class Initialized
+DEBUG - 2026-01-28 04:31:03 --> Global POST, GET and COOKIE data sanitized
+INFO - 2026-01-28 04:31:03 --> Input Class Initialized
+INFO - 2026-01-28 04:31:03 --> Language Class Initialized
+INFO - 2026-01-28 04:31:03 --> Loader Class Initialized
+INFO - 2026-01-28 04:31:03 --> Helper loaded: url_helper
+INFO - 2026-01-28 04:31:03 --> Helper loaded: file_helper
+INFO - 2026-01-28 04:31:03 --> Helper loaded: html_helper
+INFO - 2026-01-28 04:31:03 --> Database Driver Class Initialized
+INFO - 2026-01-28 04:31:03 --> Session: Class initialized using 'files' driver.
+INFO - 2026-01-28 04:31:03 --> Helper loaded: form_helper
+INFO - 2026-01-28 04:31:03 --> Form Validation Class Initialized
+INFO - 2026-01-28 04:31:03 --> User Agent Class Initialized
+INFO - 2026-01-28 04:31:03 --> Language file loaded: language/english/pagination_lang.php
+INFO - 2026-01-28 04:31:03 --> Pagination Class Initialized
+INFO - 2026-01-28 04:31:03 --> Controller Class Initialized
+INFO - 2026-01-28 04:31:03 --> File loaded: C:\xampp\htdocs\Aconnect_ci3\application\views\__header.php
+INFO - 2026-01-28 04:31:03 --> File loaded: C:\xampp\htdocs\Aconnect_ci3\application\views\dashboard_a.php
+INFO - 2026-01-28 04:31:03 --> File loaded: C:\xampp\htdocs\Aconnect_ci3\application\views\__footer.php
+INFO - 2026-01-28 04:31:03 --> Final output sent to browser
+DEBUG - 2026-01-28 04:31:03 --> Total execution time: 0.0244
+ERROR - 2026-01-28 05:50:02 --> $config['composer_autoload'] is set to TRUE but C:\xampp\htdocs\Aconnect_ci3\application\vendor/autoload.php was not found.
+INFO - 2026-01-28 05:50:02 --> Config Class Initialized
+INFO - 2026-01-28 05:50:02 --> Hooks Class Initialized
+DEBUG - 2026-01-28 05:50:02 --> UTF-8 Support Enabled
+INFO - 2026-01-28 05:50:02 --> Utf8 Class Initialized
+INFO - 2026-01-28 05:50:02 --> URI Class Initialized
+INFO - 2026-01-28 05:50:02 --> Router Class Initialized
+INFO - 2026-01-28 05:50:02 --> Output Class Initialized
+INFO - 2026-01-28 05:50:02 --> Security Class Initialized
+DEBUG - 2026-01-28 05:50:02 --> Global POST, GET and COOKIE data sanitized
+INFO - 2026-01-28 05:50:02 --> Input Class Initialized
+INFO - 2026-01-28 05:50:02 --> Language Class Initialized
+INFO - 2026-01-28 05:50:02 --> Loader Class Initialized
+INFO - 2026-01-28 05:50:02 --> Helper loaded: url_helper
+INFO - 2026-01-28 05:50:02 --> Helper loaded: file_helper
+INFO - 2026-01-28 05:50:02 --> Helper loaded: html_helper
+INFO - 2026-01-28 05:50:02 --> Database Driver Class Initialized
+INFO - 2026-01-28 05:50:02 --> Session: Class initialized using 'files' driver.
+INFO - 2026-01-28 05:50:02 --> Helper loaded: form_helper
+INFO - 2026-01-28 05:50:02 --> Form Validation Class Initialized
+INFO - 2026-01-28 05:50:02 --> User Agent Class Initialized
+INFO - 2026-01-28 05:50:02 --> Language file loaded: language/english/pagination_lang.php
+INFO - 2026-01-28 05:50:02 --> Pagination Class Initialized
+INFO - 2026-01-28 05:50:02 --> Controller Class Initialized
+INFO - 2026-01-28 05:50:02 --> Model "M_login" initialized
+ERROR - 2026-01-28 05:50:03 --> $config['composer_autoload'] is set to TRUE but C:\xampp\htdocs\Aconnect_ci3\application\vendor/autoload.php was not found.
+INFO - 2026-01-28 05:50:03 --> Config Class Initialized
+INFO - 2026-01-28 05:50:03 --> Hooks Class Initialized
+DEBUG - 2026-01-28 05:50:03 --> UTF-8 Support Enabled
+INFO - 2026-01-28 05:50:03 --> Utf8 Class Initialized
+INFO - 2026-01-28 05:50:03 --> URI Class Initialized
+INFO - 2026-01-28 05:50:03 --> Router Class Initialized
+INFO - 2026-01-28 05:50:03 --> Output Class Initialized
+INFO - 2026-01-28 05:50:03 --> Security Class Initialized
+DEBUG - 2026-01-28 05:50:03 --> Global POST, GET and COOKIE data sanitized
+INFO - 2026-01-28 05:50:03 --> Input Class Initialized
+INFO - 2026-01-28 05:50:03 --> Language Class Initialized
+INFO - 2026-01-28 05:50:03 --> Loader Class Initialized
+INFO - 2026-01-28 05:50:03 --> Helper loaded: url_helper
+INFO - 2026-01-28 05:50:03 --> Helper loaded: file_helper
+INFO - 2026-01-28 05:50:03 --> Helper loaded: html_helper
+INFO - 2026-01-28 05:50:03 --> Database Driver Class Initialized
+INFO - 2026-01-28 05:50:03 --> Session: Class initialized using 'files' driver.
+INFO - 2026-01-28 05:50:03 --> Helper loaded: form_helper
+INFO - 2026-01-28 05:50:03 --> Form Validation Class Initialized
+INFO - 2026-01-28 05:50:03 --> User Agent Class Initialized
+INFO - 2026-01-28 05:50:03 --> Language file loaded: language/english/pagination_lang.php
+INFO - 2026-01-28 05:50:03 --> Pagination Class Initialized
+INFO - 2026-01-28 05:50:03 --> Controller Class Initialized
+INFO - 2026-01-28 05:50:03 --> Model "M_login" initialized
+INFO - 2026-01-28 05:50:03 --> File loaded: C:\xampp\htdocs\Aconnect_ci3\application\views\admin/login.php
+INFO - 2026-01-28 05:50:03 --> Final output sent to browser
+DEBUG - 2026-01-28 05:50:03 --> Total execution time: 0.0429
+ERROR - 2026-01-28 05:50:04 --> $config['composer_autoload'] is set to TRUE but C:\xampp\htdocs\Aconnect_ci3\application\vendor/autoload.php was not found.
+INFO - 2026-01-28 05:50:04 --> Config Class Initialized
+INFO - 2026-01-28 05:50:04 --> Hooks Class Initialized
+DEBUG - 2026-01-28 05:50:04 --> UTF-8 Support Enabled
+INFO - 2026-01-28 05:50:04 --> Utf8 Class Initialized
+INFO - 2026-01-28 05:50:04 --> URI Class Initialized
+INFO - 2026-01-28 05:50:04 --> Router Class Initialized
+INFO - 2026-01-28 05:50:04 --> Output Class Initialized
+INFO - 2026-01-28 05:50:04 --> Security Class Initialized
+DEBUG - 2026-01-28 05:50:04 --> Global POST, GET and COOKIE data sanitized
+INFO - 2026-01-28 05:50:04 --> Input Class Initialized
+INFO - 2026-01-28 05:50:04 --> Language Class Initialized
+INFO - 2026-01-28 05:50:04 --> Loader Class Initialized
+INFO - 2026-01-28 05:50:04 --> Helper loaded: url_helper
+INFO - 2026-01-28 05:50:04 --> Helper loaded: file_helper
+INFO - 2026-01-28 05:50:04 --> Helper loaded: html_helper
+INFO - 2026-01-28 05:50:04 --> Database Driver Class Initialized
+INFO - 2026-01-28 05:50:04 --> Session: Class initialized using 'files' driver.
+INFO - 2026-01-28 05:50:04 --> Helper loaded: form_helper
+INFO - 2026-01-28 05:50:04 --> Form Validation Class Initialized
+INFO - 2026-01-28 05:50:04 --> User Agent Class Initialized
+INFO - 2026-01-28 05:50:04 --> Language file loaded: language/english/pagination_lang.php
+INFO - 2026-01-28 05:50:04 --> Pagination Class Initialized
+INFO - 2026-01-28 05:50:04 --> Controller Class Initialized
+INFO - 2026-01-28 05:50:04 --> Model "M_login" initialized
+INFO - 2026-01-28 05:50:04 --> File loaded: C:\xampp\htdocs\Aconnect_ci3\application\views\login.php
+INFO - 2026-01-28 05:50:04 --> Final output sent to browser
+DEBUG - 2026-01-28 05:50:04 --> Total execution time: 0.0272
+ERROR - 2026-01-28 05:50:23 --> $config['composer_autoload'] is set to TRUE but C:\xampp\htdocs\Aconnect_ci3\application\vendor/autoload.php was not found.
+INFO - 2026-01-28 05:50:23 --> Config Class Initialized
+INFO - 2026-01-28 05:50:23 --> Hooks Class Initialized
+DEBUG - 2026-01-28 05:50:23 --> UTF-8 Support Enabled
+INFO - 2026-01-28 05:50:23 --> Utf8 Class Initialized
+INFO - 2026-01-28 05:50:23 --> URI Class Initialized
+INFO - 2026-01-28 05:50:23 --> Router Class Initialized
+INFO - 2026-01-28 05:50:23 --> Output Class Initialized
+INFO - 2026-01-28 05:50:23 --> Security Class Initialized
+DEBUG - 2026-01-28 05:50:23 --> Global POST, GET and COOKIE data sanitized
+INFO - 2026-01-28 05:50:23 --> Input Class Initialized
+INFO - 2026-01-28 05:50:23 --> Language Class Initialized
+INFO - 2026-01-28 05:50:23 --> Loader Class Initialized
+INFO - 2026-01-28 05:50:23 --> Helper loaded: url_helper
+INFO - 2026-01-28 05:50:23 --> Helper loaded: file_helper
+INFO - 2026-01-28 05:50:23 --> Helper loaded: html_helper
+INFO - 2026-01-28 05:50:23 --> Database Driver Class Initialized
+INFO - 2026-01-28 05:50:23 --> Session: Class initialized using 'files' driver.
+INFO - 2026-01-28 05:50:23 --> Helper loaded: form_helper
+INFO - 2026-01-28 05:50:23 --> Form Validation Class Initialized
+INFO - 2026-01-28 05:50:23 --> User Agent Class Initialized
+INFO - 2026-01-28 05:50:23 --> Language file loaded: language/english/pagination_lang.php
+INFO - 2026-01-28 05:50:23 --> Pagination Class Initialized
+INFO - 2026-01-28 05:50:23 --> Controller Class Initialized
+INFO - 2026-01-28 05:50:23 --> Model "M_login" initialized
+INFO - 2026-01-28 05:50:23 --> File loaded: C:\xampp\htdocs\Aconnect_ci3\application\views\admin/login.php
+INFO - 2026-01-28 05:50:23 --> Final output sent to browser
+DEBUG - 2026-01-28 05:50:23 --> Total execution time: 0.0378
+ERROR - 2026-01-28 05:50:25 --> $config['composer_autoload'] is set to TRUE but C:\xampp\htdocs\Aconnect_ci3\application\vendor/autoload.php was not found.
+INFO - 2026-01-28 05:50:25 --> Config Class Initialized
+INFO - 2026-01-28 05:50:25 --> Hooks Class Initialized
+DEBUG - 2026-01-28 05:50:25 --> UTF-8 Support Enabled
+INFO - 2026-01-28 05:50:25 --> Utf8 Class Initialized
+INFO - 2026-01-28 05:50:25 --> URI Class Initialized
+INFO - 2026-01-28 05:50:25 --> Router Class Initialized
+INFO - 2026-01-28 05:50:25 --> Output Class Initialized
+INFO - 2026-01-28 05:50:25 --> Security Class Initialized
+DEBUG - 2026-01-28 05:50:25 --> Global POST, GET and COOKIE data sanitized
+INFO - 2026-01-28 05:50:25 --> Input Class Initialized
+INFO - 2026-01-28 05:50:25 --> Language Class Initialized
+INFO - 2026-01-28 05:50:25 --> Loader Class Initialized
+INFO - 2026-01-28 05:50:25 --> Helper loaded: url_helper
+INFO - 2026-01-28 05:50:25 --> Helper loaded: file_helper
+INFO - 2026-01-28 05:50:25 --> Helper loaded: html_helper
+INFO - 2026-01-28 05:50:25 --> Database Driver Class Initialized
+INFO - 2026-01-28 05:50:25 --> Session: Class initialized using 'files' driver.
+INFO - 2026-01-28 05:50:25 --> Helper loaded: form_helper
+INFO - 2026-01-28 05:50:25 --> Form Validation Class Initialized
+INFO - 2026-01-28 05:50:25 --> User Agent Class Initialized
+INFO - 2026-01-28 05:50:25 --> Language file loaded: language/english/pagination_lang.php
+INFO - 2026-01-28 05:50:25 --> Pagination Class Initialized
+INFO - 2026-01-28 05:50:25 --> Controller Class Initialized
+INFO - 2026-01-28 05:50:25 --> Model "M_login" initialized
+INFO - 2026-01-28 05:50:25 --> File loaded: C:\xampp\htdocs\Aconnect_ci3\application\views\login.php
+INFO - 2026-01-28 05:50:25 --> Final output sent to browser
+DEBUG - 2026-01-28 05:50:25 --> Total execution time: 0.0216
+ERROR - 2026-01-28 05:50:25 --> $config['composer_autoload'] is set to TRUE but C:\xampp\htdocs\Aconnect_ci3\application\vendor/autoload.php was not found.
+INFO - 2026-01-28 05:50:25 --> Config Class Initialized
+INFO - 2026-01-28 05:50:25 --> Hooks Class Initialized
+DEBUG - 2026-01-28 05:50:25 --> UTF-8 Support Enabled
+INFO - 2026-01-28 05:50:25 --> Utf8 Class Initialized
+INFO - 2026-01-28 05:50:25 --> URI Class Initialized
+INFO - 2026-01-28 05:50:25 --> Router Class Initialized
+INFO - 2026-01-28 05:50:25 --> Output Class Initialized
+INFO - 2026-01-28 05:50:25 --> Security Class Initialized
+DEBUG - 2026-01-28 05:50:25 --> Global POST, GET and COOKIE data sanitized
+INFO - 2026-01-28 05:50:25 --> Input Class Initialized
+INFO - 2026-01-28 05:50:25 --> Language Class Initialized
+INFO - 2026-01-28 05:50:25 --> Loader Class Initialized
+INFO - 2026-01-28 05:50:25 --> Helper loaded: url_helper
+INFO - 2026-01-28 05:50:25 --> Helper loaded: file_helper
+INFO - 2026-01-28 05:50:25 --> Helper loaded: html_helper
+INFO - 2026-01-28 05:50:25 --> Database Driver Class Initialized
+INFO - 2026-01-28 05:50:25 --> Session: Class initialized using 'files' driver.
+INFO - 2026-01-28 05:50:25 --> Helper loaded: form_helper
+INFO - 2026-01-28 05:50:25 --> Form Validation Class Initialized
+INFO - 2026-01-28 05:50:25 --> User Agent Class Initialized
+INFO - 2026-01-28 05:50:25 --> Language file loaded: language/english/pagination_lang.php
+INFO - 2026-01-28 05:50:25 --> Pagination Class Initialized
+INFO - 2026-01-28 05:50:25 --> Controller Class Initialized
+INFO - 2026-01-28 05:50:25 --> Model "M_login" initialized
+INFO - 2026-01-28 05:50:25 --> File loaded: C:\xampp\htdocs\Aconnect_ci3\application\views\admin/login.php
+INFO - 2026-01-28 05:50:25 --> Final output sent to browser
+DEBUG - 2026-01-28 05:50:25 --> Total execution time: 0.0300
+ERROR - 2026-01-28 05:50:27 --> $config['composer_autoload'] is set to TRUE but C:\xampp\htdocs\Aconnect_ci3\application\vendor/autoload.php was not found.
+INFO - 2026-01-28 05:50:27 --> Config Class Initialized
+INFO - 2026-01-28 05:50:27 --> Hooks Class Initialized
+DEBUG - 2026-01-28 05:50:27 --> UTF-8 Support Enabled
+INFO - 2026-01-28 05:50:27 --> Utf8 Class Initialized
+INFO - 2026-01-28 05:50:27 --> URI Class Initialized
+INFO - 2026-01-28 05:50:27 --> Router Class Initialized
+INFO - 2026-01-28 05:50:27 --> Output Class Initialized
+INFO - 2026-01-28 05:50:27 --> Security Class Initialized
+DEBUG - 2026-01-28 05:50:27 --> Global POST, GET and COOKIE data sanitized
+INFO - 2026-01-28 05:50:27 --> Input Class Initialized
+INFO - 2026-01-28 05:50:27 --> Language Class Initialized
+INFO - 2026-01-28 05:50:27 --> Loader Class Initialized
+INFO - 2026-01-28 05:50:27 --> Helper loaded: url_helper
+INFO - 2026-01-28 05:50:27 --> Helper loaded: file_helper
+INFO - 2026-01-28 05:50:27 --> Helper loaded: html_helper
+INFO - 2026-01-28 05:50:27 --> Database Driver Class Initialized
+INFO - 2026-01-28 05:50:27 --> Session: Class initialized using 'files' driver.
+INFO - 2026-01-28 05:50:27 --> Helper loaded: form_helper
+INFO - 2026-01-28 05:50:27 --> Form Validation Class Initialized
+INFO - 2026-01-28 05:50:27 --> User Agent Class Initialized
+INFO - 2026-01-28 05:50:27 --> Language file loaded: language/english/pagination_lang.php
+INFO - 2026-01-28 05:50:27 --> Pagination Class Initialized
+INFO - 2026-01-28 05:50:27 --> Controller Class Initialized
+INFO - 2026-01-28 05:50:27 --> Model "M_login" initialized
+INFO - 2026-01-28 05:50:27 --> File loaded: C:\xampp\htdocs\Aconnect_ci3\application\views\login.php
+INFO - 2026-01-28 05:50:27 --> Final output sent to browser
+DEBUG - 2026-01-28 05:50:27 --> Total execution time: 0.0221
+ERROR - 2026-01-28 06:07:16 --> $config['composer_autoload'] is set to TRUE but C:\xampp\htdocs\Aconnect_ci3\application\vendor/autoload.php was not found.
+INFO - 2026-01-28 06:07:16 --> Config Class Initialized
+INFO - 2026-01-28 06:07:16 --> Hooks Class Initialized
+DEBUG - 2026-01-28 06:07:16 --> UTF-8 Support Enabled
+INFO - 2026-01-28 06:07:16 --> Utf8 Class Initialized
+INFO - 2026-01-28 06:07:16 --> URI Class Initialized
+INFO - 2026-01-28 06:07:16 --> Router Class Initialized
+INFO - 2026-01-28 06:07:16 --> Output Class Initialized
+INFO - 2026-01-28 06:07:16 --> Security Class Initialized
+DEBUG - 2026-01-28 06:07:16 --> Global POST, GET and COOKIE data sanitized
+INFO - 2026-01-28 06:07:16 --> Input Class Initialized
+INFO - 2026-01-28 06:07:16 --> Language Class Initialized
+INFO - 2026-01-28 06:07:16 --> Loader Class Initialized
+INFO - 2026-01-28 06:07:16 --> Helper loaded: url_helper
+INFO - 2026-01-28 06:07:16 --> Helper loaded: file_helper
+INFO - 2026-01-28 06:07:16 --> Helper loaded: html_helper
+INFO - 2026-01-28 06:07:16 --> Database Driver Class Initialized
+INFO - 2026-01-28 06:07:16 --> Session: Class initialized using 'files' driver.
+INFO - 2026-01-28 06:07:16 --> Helper loaded: form_helper
+INFO - 2026-01-28 06:07:16 --> Form Validation Class Initialized
+INFO - 2026-01-28 06:07:16 --> User Agent Class Initialized
+INFO - 2026-01-28 06:07:16 --> Language file loaded: language/english/pagination_lang.php
+INFO - 2026-01-28 06:07:16 --> Pagination Class Initialized
+INFO - 2026-01-28 06:07:16 --> Controller Class Initialized
+ERROR - 2026-01-28 06:07:16 --> $config['composer_autoload'] is set to TRUE but C:\xampp\htdocs\Aconnect_ci3\application\vendor/autoload.php was not found.
+INFO - 2026-01-28 06:07:16 --> Config Class Initialized
+INFO - 2026-01-28 06:07:16 --> Hooks Class Initialized
+DEBUG - 2026-01-28 06:07:16 --> UTF-8 Support Enabled
+INFO - 2026-01-28 06:07:16 --> Utf8 Class Initialized
+INFO - 2026-01-28 06:07:16 --> URI Class Initialized
+INFO - 2026-01-28 06:07:16 --> Router Class Initialized
+INFO - 2026-01-28 06:07:16 --> Output Class Initialized
+INFO - 2026-01-28 06:07:16 --> Security Class Initialized
+DEBUG - 2026-01-28 06:07:16 --> Global POST, GET and COOKIE data sanitized
+INFO - 2026-01-28 06:07:16 --> Input Class Initialized
+INFO - 2026-01-28 06:07:16 --> Language Class Initialized
+INFO - 2026-01-28 06:07:16 --> Loader Class Initialized
+INFO - 2026-01-28 06:07:16 --> Helper loaded: url_helper
+INFO - 2026-01-28 06:07:16 --> Helper loaded: file_helper
+INFO - 2026-01-28 06:07:16 --> Helper loaded: html_helper
+INFO - 2026-01-28 06:07:16 --> Database Driver Class Initialized
+INFO - 2026-01-28 06:07:16 --> Session: Class initialized using 'files' driver.
+INFO - 2026-01-28 06:07:16 --> Helper loaded: form_helper
+INFO - 2026-01-28 06:07:16 --> Form Validation Class Initialized
+INFO - 2026-01-28 06:07:16 --> User Agent Class Initialized
+INFO - 2026-01-28 06:07:16 --> Language file loaded: language/english/pagination_lang.php
+INFO - 2026-01-28 06:07:16 --> Pagination Class Initialized
+INFO - 2026-01-28 06:07:16 --> Controller Class Initialized
+INFO - 2026-01-28 06:07:16 --> Model "M_login" initialized
+INFO - 2026-01-28 06:07:16 --> File loaded: C:\xampp\htdocs\Aconnect_ci3\application\views\login.php
+INFO - 2026-01-28 06:07:16 --> Final output sent to browser
+DEBUG - 2026-01-28 06:07:16 --> Total execution time: 0.0295
+ERROR - 2026-01-28 06:07:17 --> $config['composer_autoload'] is set to TRUE but C:\xampp\htdocs\Aconnect_ci3\application\vendor/autoload.php was not found.
+INFO - 2026-01-28 06:07:17 --> Config Class Initialized
+INFO - 2026-01-28 06:07:17 --> Hooks Class Initialized
+DEBUG - 2026-01-28 06:07:17 --> UTF-8 Support Enabled
+INFO - 2026-01-28 06:07:17 --> Utf8 Class Initialized
+INFO - 2026-01-28 06:07:17 --> URI Class Initialized
+INFO - 2026-01-28 06:07:17 --> Router Class Initialized
+INFO - 2026-01-28 06:07:17 --> Output Class Initialized
+INFO - 2026-01-28 06:07:17 --> Security Class Initialized
+DEBUG - 2026-01-28 06:07:17 --> Global POST, GET and COOKIE data sanitized
+INFO - 2026-01-28 06:07:17 --> Input Class Initialized
+INFO - 2026-01-28 06:07:17 --> Language Class Initialized
+INFO - 2026-01-28 06:07:17 --> Loader Class Initialized
+INFO - 2026-01-28 06:07:17 --> Helper loaded: url_helper
+INFO - 2026-01-28 06:07:17 --> Helper loaded: file_helper
+INFO - 2026-01-28 06:07:17 --> Helper loaded: html_helper
+INFO - 2026-01-28 06:07:17 --> Database Driver Class Initialized
+INFO - 2026-01-28 06:07:17 --> Session: Class initialized using 'files' driver.
+INFO - 2026-01-28 06:07:17 --> Helper loaded: form_helper
+INFO - 2026-01-28 06:07:17 --> Form Validation Class Initialized
+INFO - 2026-01-28 06:07:17 --> User Agent Class Initialized
+INFO - 2026-01-28 06:07:17 --> Language file loaded: language/english/pagination_lang.php
+INFO - 2026-01-28 06:07:17 --> Pagination Class Initialized
+INFO - 2026-01-28 06:07:17 --> Controller Class Initialized
+INFO - 2026-01-28 06:07:17 --> Model "M_login" initialized
+INFO - 2026-01-28 06:07:17 --> File loaded: C:\xampp\htdocs\Aconnect_ci3\application\views\admin/login.php
+INFO - 2026-01-28 06:07:17 --> Final output sent to browser
+DEBUG - 2026-01-28 06:07:17 --> Total execution time: 0.0246
+ERROR - 2026-01-28 06:07:18 --> $config['composer_autoload'] is set to TRUE but C:\xampp\htdocs\Aconnect_ci3\application\vendor/autoload.php was not found.
+INFO - 2026-01-28 06:07:18 --> Config Class Initialized
+INFO - 2026-01-28 06:07:18 --> Hooks Class Initialized
+DEBUG - 2026-01-28 06:07:18 --> UTF-8 Support Enabled
+INFO - 2026-01-28 06:07:18 --> Utf8 Class Initialized
+INFO - 2026-01-28 06:07:18 --> URI Class Initialized
+INFO - 2026-01-28 06:07:18 --> Router Class Initialized
+INFO - 2026-01-28 06:07:18 --> Output Class Initialized
+INFO - 2026-01-28 06:07:18 --> Security Class Initialized
+DEBUG - 2026-01-28 06:07:18 --> Global POST, GET and COOKIE data sanitized
+INFO - 2026-01-28 06:07:18 --> Input Class Initialized
+INFO - 2026-01-28 06:07:18 --> Language Class Initialized
+INFO - 2026-01-28 06:07:18 --> Loader Class Initialized
+INFO - 2026-01-28 06:07:18 --> Helper loaded: url_helper
+INFO - 2026-01-28 06:07:18 --> Helper loaded: file_helper
+INFO - 2026-01-28 06:07:18 --> Helper loaded: html_helper
+INFO - 2026-01-28 06:07:18 --> Database Driver Class Initialized
+INFO - 2026-01-28 06:07:18 --> Session: Class initialized using 'files' driver.
+INFO - 2026-01-28 06:07:18 --> Helper loaded: form_helper
+INFO - 2026-01-28 06:07:18 --> Form Validation Class Initialized
+INFO - 2026-01-28 06:07:18 --> User Agent Class Initialized
+INFO - 2026-01-28 06:07:18 --> Language file loaded: language/english/pagination_lang.php
+INFO - 2026-01-28 06:07:18 --> Pagination Class Initialized
+INFO - 2026-01-28 06:07:18 --> Controller Class Initialized
+INFO - 2026-01-28 06:07:18 --> Model "M_login" initialized
+INFO - 2026-01-28 06:07:18 --> File loaded: C:\xampp\htdocs\Aconnect_ci3\application\views\admin/login.php
+INFO - 2026-01-28 06:07:18 --> Final output sent to browser
+DEBUG - 2026-01-28 06:07:18 --> Total execution time: 0.1060
+ERROR - 2026-01-28 06:07:21 --> $config['composer_autoload'] is set to TRUE but C:\xampp\htdocs\Aconnect_ci3\application\vendor/autoload.php was not found.
+INFO - 2026-01-28 06:07:21 --> Config Class Initialized
+INFO - 2026-01-28 06:07:21 --> Hooks Class Initialized
+DEBUG - 2026-01-28 06:07:21 --> UTF-8 Support Enabled
+INFO - 2026-01-28 06:07:21 --> Utf8 Class Initialized
+INFO - 2026-01-28 06:07:21 --> URI Class Initialized
+INFO - 2026-01-28 06:07:21 --> Router Class Initialized
+INFO - 2026-01-28 06:07:21 --> Output Class Initialized
+INFO - 2026-01-28 06:07:21 --> Security Class Initialized
+DEBUG - 2026-01-28 06:07:21 --> Global POST, GET and COOKIE data sanitized
+INFO - 2026-01-28 06:07:21 --> Input Class Initialized
+INFO - 2026-01-28 06:07:21 --> Language Class Initialized
+INFO - 2026-01-28 06:07:21 --> Loader Class Initialized
+INFO - 2026-01-28 06:07:21 --> Helper loaded: url_helper
+INFO - 2026-01-28 06:07:21 --> Helper loaded: file_helper
+INFO - 2026-01-28 06:07:21 --> Helper loaded: html_helper
+INFO - 2026-01-28 06:07:21 --> Database Driver Class Initialized
+INFO - 2026-01-28 06:07:21 --> Session: Class initialized using 'files' driver.
+INFO - 2026-01-28 06:07:21 --> Helper loaded: form_helper
+INFO - 2026-01-28 06:07:21 --> Form Validation Class Initialized
+INFO - 2026-01-28 06:07:21 --> User Agent Class Initialized
+INFO - 2026-01-28 06:07:21 --> Language file loaded: language/english/pagination_lang.php
+INFO - 2026-01-28 06:07:21 --> Pagination Class Initialized
+INFO - 2026-01-28 06:07:21 --> Controller Class Initialized
+INFO - 2026-01-28 06:07:21 --> Model "M_login" initialized
+INFO - 2026-01-28 06:07:21 --> File loaded: C:\xampp\htdocs\Aconnect_ci3\application\views\admin/login.php
+INFO - 2026-01-28 06:07:21 --> Final output sent to browser
+DEBUG - 2026-01-28 06:07:21 --> Total execution time: 0.0236
+ERROR - 2026-01-28 06:07:22 --> $config['composer_autoload'] is set to TRUE but C:\xampp\htdocs\Aconnect_ci3\application\vendor/autoload.php was not found.
+INFO - 2026-01-28 06:07:22 --> Config Class Initialized
+INFO - 2026-01-28 06:07:22 --> Hooks Class Initialized
+DEBUG - 2026-01-28 06:07:22 --> UTF-8 Support Enabled
+INFO - 2026-01-28 06:07:22 --> Utf8 Class Initialized
+INFO - 2026-01-28 06:07:22 --> URI Class Initialized
+INFO - 2026-01-28 06:07:22 --> Router Class Initialized
+INFO - 2026-01-28 06:07:22 --> Output Class Initialized
+INFO - 2026-01-28 06:07:22 --> Security Class Initialized
+DEBUG - 2026-01-28 06:07:22 --> Global POST, GET and COOKIE data sanitized
+INFO - 2026-01-28 06:07:22 --> Input Class Initialized
+INFO - 2026-01-28 06:07:22 --> Language Class Initialized
+INFO - 2026-01-28 06:07:22 --> Loader Class Initialized
+INFO - 2026-01-28 06:07:22 --> Helper loaded: url_helper
+INFO - 2026-01-28 06:07:22 --> Helper loaded: file_helper
+INFO - 2026-01-28 06:07:22 --> Helper loaded: html_helper
+INFO - 2026-01-28 06:07:22 --> Database Driver Class Initialized
+INFO - 2026-01-28 06:07:22 --> Session: Class initialized using 'files' driver.
+INFO - 2026-01-28 06:07:22 --> Helper loaded: form_helper
+INFO - 2026-01-28 06:07:22 --> Form Validation Class Initialized
+INFO - 2026-01-28 06:07:22 --> User Agent Class Initialized
+INFO - 2026-01-28 06:07:22 --> Language file loaded: language/english/pagination_lang.php
+INFO - 2026-01-28 06:07:22 --> Pagination Class Initialized
+INFO - 2026-01-28 06:07:22 --> Controller Class Initialized
+INFO - 2026-01-28 06:07:22 --> Model "M_login" initialized
+INFO - 2026-01-28 06:07:22 --> File loaded: C:\xampp\htdocs\Aconnect_ci3\application\views\admin/login.php
+INFO - 2026-01-28 06:07:22 --> Final output sent to browser
+DEBUG - 2026-01-28 06:07:22 --> Total execution time: 0.0431
+ERROR - 2026-01-28 06:07:24 --> $config['composer_autoload'] is set to TRUE but C:\xampp\htdocs\Aconnect_ci3\application\vendor/autoload.php was not found.
+INFO - 2026-01-28 06:07:24 --> Config Class Initialized
+INFO - 2026-01-28 06:07:24 --> Hooks Class Initialized
+DEBUG - 2026-01-28 06:07:24 --> UTF-8 Support Enabled
+INFO - 2026-01-28 06:07:24 --> Utf8 Class Initialized
+INFO - 2026-01-28 06:07:24 --> URI Class Initialized
+INFO - 2026-01-28 06:07:24 --> Router Class Initialized
+INFO - 2026-01-28 06:07:24 --> Output Class Initialized
+INFO - 2026-01-28 06:07:24 --> Security Class Initialized
+DEBUG - 2026-01-28 06:07:24 --> Global POST, GET and COOKIE data sanitized
+INFO - 2026-01-28 06:07:24 --> Input Class Initialized
+INFO - 2026-01-28 06:07:24 --> Language Class Initialized
+INFO - 2026-01-28 06:07:24 --> Loader Class Initialized
+INFO - 2026-01-28 06:07:24 --> Helper loaded: url_helper
+INFO - 2026-01-28 06:07:24 --> Helper loaded: file_helper
+INFO - 2026-01-28 06:07:24 --> Helper loaded: html_helper
+INFO - 2026-01-28 06:07:24 --> Database Driver Class Initialized
+INFO - 2026-01-28 06:07:24 --> Session: Class initialized using 'files' driver.
+INFO - 2026-01-28 06:07:24 --> Helper loaded: form_helper
+INFO - 2026-01-28 06:07:24 --> Form Validation Class Initialized
+INFO - 2026-01-28 06:07:24 --> User Agent Class Initialized
+INFO - 2026-01-28 06:07:24 --> Language file loaded: language/english/pagination_lang.php
+INFO - 2026-01-28 06:07:24 --> Pagination Class Initialized
+INFO - 2026-01-28 06:07:24 --> Controller Class Initialized
+INFO - 2026-01-28 06:07:24 --> Model "M_login" initialized
+INFO - 2026-01-28 06:07:24 --> File loaded: C:\xampp\htdocs\Aconnect_ci3\application\views\admin/login.php
+INFO - 2026-01-28 06:07:24 --> Final output sent to browser
+DEBUG - 2026-01-28 06:07:24 --> Total execution time: 0.0306
+ERROR - 2026-01-28 06:07:31 --> $config['composer_autoload'] is set to TRUE but C:\xampp\htdocs\Aconnect_ci3\application\vendor/autoload.php was not found.
+INFO - 2026-01-28 06:07:31 --> Config Class Initialized
+INFO - 2026-01-28 06:07:31 --> Hooks Class Initialized
+DEBUG - 2026-01-28 06:07:31 --> UTF-8 Support Enabled
+INFO - 2026-01-28 06:07:31 --> Utf8 Class Initialized
+INFO - 2026-01-28 06:07:31 --> URI Class Initialized
+INFO - 2026-01-28 06:07:31 --> Router Class Initialized
+INFO - 2026-01-28 06:07:31 --> Output Class Initialized
+INFO - 2026-01-28 06:07:31 --> Security Class Initialized
+DEBUG - 2026-01-28 06:07:31 --> Global POST, GET and COOKIE data sanitized
+INFO - 2026-01-28 06:07:31 --> Input Class Initialized
+INFO - 2026-01-28 06:07:31 --> Language Class Initialized
+INFO - 2026-01-28 06:07:31 --> Loader Class Initialized
+INFO - 2026-01-28 06:07:31 --> Helper loaded: url_helper
+INFO - 2026-01-28 06:07:31 --> Helper loaded: file_helper
+INFO - 2026-01-28 06:07:31 --> Helper loaded: html_helper
+INFO - 2026-01-28 06:07:31 --> Database Driver Class Initialized
+INFO - 2026-01-28 06:07:31 --> Session: Class initialized using 'files' driver.
+INFO - 2026-01-28 06:07:31 --> Helper loaded: form_helper
+INFO - 2026-01-28 06:07:31 --> Form Validation Class Initialized
+INFO - 2026-01-28 06:07:31 --> User Agent Class Initialized
+INFO - 2026-01-28 06:07:31 --> Language file loaded: language/english/pagination_lang.php
+INFO - 2026-01-28 06:07:31 --> Pagination Class Initialized
+INFO - 2026-01-28 06:07:31 --> Controller Class Initialized
+INFO - 2026-01-28 06:07:31 --> Model "M_login" initialized
+INFO - 2026-01-28 06:07:31 --> File loaded: C:\xampp\htdocs\Aconnect_ci3\application\views\admin/login.php
+INFO - 2026-01-28 06:07:31 --> Final output sent to browser
+DEBUG - 2026-01-28 06:07:31 --> Total execution time: 0.0452
+ERROR - 2026-01-28 06:07:32 --> $config['composer_autoload'] is set to TRUE but C:\xampp\htdocs\Aconnect_ci3\application\vendor/autoload.php was not found.
+INFO - 2026-01-28 06:07:32 --> Config Class Initialized
+INFO - 2026-01-28 06:07:32 --> Hooks Class Initialized
+DEBUG - 2026-01-28 06:07:32 --> UTF-8 Support Enabled
+INFO - 2026-01-28 06:07:32 --> Utf8 Class Initialized
+INFO - 2026-01-28 06:07:32 --> URI Class Initialized
+INFO - 2026-01-28 06:07:32 --> Router Class Initialized
+INFO - 2026-01-28 06:07:32 --> Output Class Initialized
+INFO - 2026-01-28 06:07:32 --> Security Class Initialized
+DEBUG - 2026-01-28 06:07:32 --> Global POST, GET and COOKIE data sanitized
+INFO - 2026-01-28 06:07:32 --> Input Class Initialized
+INFO - 2026-01-28 06:07:32 --> Language Class Initialized
+INFO - 2026-01-28 06:07:32 --> Loader Class Initialized
+INFO - 2026-01-28 06:07:32 --> Helper loaded: url_helper
+INFO - 2026-01-28 06:07:32 --> Helper loaded: file_helper
+INFO - 2026-01-28 06:07:32 --> Helper loaded: html_helper
+INFO - 2026-01-28 06:07:32 --> Database Driver Class Initialized
+INFO - 2026-01-28 06:07:32 --> Session: Class initialized using 'files' driver.
+INFO - 2026-01-28 06:07:32 --> Helper loaded: form_helper
+INFO - 2026-01-28 06:07:32 --> Form Validation Class Initialized
+INFO - 2026-01-28 06:07:32 --> User Agent Class Initialized
+INFO - 2026-01-28 06:07:32 --> Language file loaded: language/english/pagination_lang.php
+INFO - 2026-01-28 06:07:32 --> Pagination Class Initialized
+INFO - 2026-01-28 06:07:32 --> Controller Class Initialized
+INFO - 2026-01-28 06:07:32 --> Model "M_login" initialized
+INFO - 2026-01-28 06:07:32 --> File loaded: C:\xampp\htdocs\Aconnect_ci3\application\views\admin/login.php
+INFO - 2026-01-28 06:07:32 --> Final output sent to browser
+DEBUG - 2026-01-28 06:07:32 --> Total execution time: 0.0410
+ERROR - 2026-01-28 06:07:34 --> $config['composer_autoload'] is set to TRUE but C:\xampp\htdocs\Aconnect_ci3\application\vendor/autoload.php was not found.
+INFO - 2026-01-28 06:07:34 --> Config Class Initialized
+INFO - 2026-01-28 06:07:34 --> Hooks Class Initialized
+DEBUG - 2026-01-28 06:07:34 --> UTF-8 Support Enabled
+INFO - 2026-01-28 06:07:34 --> Utf8 Class Initialized
+INFO - 2026-01-28 06:07:34 --> URI Class Initialized
+INFO - 2026-01-28 06:07:34 --> Router Class Initialized
+INFO - 2026-01-28 06:07:34 --> Output Class Initialized
+INFO - 2026-01-28 06:07:34 --> Security Class Initialized
+DEBUG - 2026-01-28 06:07:34 --> Global POST, GET and COOKIE data sanitized
+INFO - 2026-01-28 06:07:34 --> Input Class Initialized
+INFO - 2026-01-28 06:07:34 --> Language Class Initialized
+INFO - 2026-01-28 06:07:34 --> Loader Class Initialized
+INFO - 2026-01-28 06:07:34 --> Helper loaded: url_helper
+INFO - 2026-01-28 06:07:34 --> Helper loaded: file_helper
+INFO - 2026-01-28 06:07:34 --> Helper loaded: html_helper
+INFO - 2026-01-28 06:07:34 --> Database Driver Class Initialized
+INFO - 2026-01-28 06:07:34 --> Session: Class initialized using 'files' driver.
+INFO - 2026-01-28 06:07:34 --> Helper loaded: form_helper
+INFO - 2026-01-28 06:07:34 --> Form Validation Class Initialized
+INFO - 2026-01-28 06:07:34 --> User Agent Class Initialized
+INFO - 2026-01-28 06:07:34 --> Language file loaded: language/english/pagination_lang.php
+INFO - 2026-01-28 06:07:34 --> Pagination Class Initialized
+INFO - 2026-01-28 06:07:34 --> Controller Class Initialized
+INFO - 2026-01-28 06:07:34 --> Model "M_login" initialized
+INFO - 2026-01-28 06:07:34 --> File loaded: C:\xampp\htdocs\Aconnect_ci3\application\views\login.php
+INFO - 2026-01-28 06:07:34 --> Final output sent to browser
+DEBUG - 2026-01-28 06:07:34 --> Total execution time: 0.0252
+ERROR - 2026-01-28 06:07:35 --> $config['composer_autoload'] is set to TRUE but C:\xampp\htdocs\Aconnect_ci3\application\vendor/autoload.php was not found.
+INFO - 2026-01-28 06:07:35 --> Config Class Initialized
+INFO - 2026-01-28 06:07:35 --> Hooks Class Initialized
+DEBUG - 2026-01-28 06:07:35 --> UTF-8 Support Enabled
+INFO - 2026-01-28 06:07:35 --> Utf8 Class Initialized
+INFO - 2026-01-28 06:07:35 --> URI Class Initialized
+INFO - 2026-01-28 06:07:35 --> Router Class Initialized
+INFO - 2026-01-28 06:07:35 --> Output Class Initialized
+INFO - 2026-01-28 06:07:35 --> Security Class Initialized
+DEBUG - 2026-01-28 06:07:35 --> Global POST, GET and COOKIE data sanitized
+INFO - 2026-01-28 06:07:35 --> Input Class Initialized
+INFO - 2026-01-28 06:07:35 --> Language Class Initialized
+INFO - 2026-01-28 06:07:35 --> Loader Class Initialized
+INFO - 2026-01-28 06:07:35 --> Helper loaded: url_helper
+INFO - 2026-01-28 06:07:35 --> Helper loaded: file_helper
+INFO - 2026-01-28 06:07:35 --> Helper loaded: html_helper
+INFO - 2026-01-28 06:07:35 --> Database Driver Class Initialized
+INFO - 2026-01-28 06:07:35 --> Session: Class initialized using 'files' driver.
+INFO - 2026-01-28 06:07:35 --> Helper loaded: form_helper
+INFO - 2026-01-28 06:07:35 --> Form Validation Class Initialized
+INFO - 2026-01-28 06:07:35 --> User Agent Class Initialized
+INFO - 2026-01-28 06:07:35 --> Language file loaded: language/english/pagination_lang.php
+INFO - 2026-01-28 06:07:35 --> Pagination Class Initialized
+INFO - 2026-01-28 06:07:35 --> Controller Class Initialized
+INFO - 2026-01-28 06:07:35 --> Model "M_login" initialized
+INFO - 2026-01-28 06:07:35 --> File loaded: C:\xampp\htdocs\Aconnect_ci3\application\views\admin/login.php
+INFO - 2026-01-28 06:07:35 --> Final output sent to browser
+DEBUG - 2026-01-28 06:07:35 --> Total execution time: 0.0225
+ERROR - 2026-01-28 06:07:39 --> $config['composer_autoload'] is set to TRUE but C:\xampp\htdocs\Aconnect_ci3\application\vendor/autoload.php was not found.
+INFO - 2026-01-28 06:07:39 --> Config Class Initialized
+INFO - 2026-01-28 06:07:39 --> Hooks Class Initialized
+DEBUG - 2026-01-28 06:07:39 --> UTF-8 Support Enabled
+INFO - 2026-01-28 06:07:39 --> Utf8 Class Initialized
+INFO - 2026-01-28 06:07:39 --> URI Class Initialized
+INFO - 2026-01-28 06:07:39 --> Router Class Initialized
+INFO - 2026-01-28 06:07:39 --> Output Class Initialized
+INFO - 2026-01-28 06:07:39 --> Security Class Initialized
+DEBUG - 2026-01-28 06:07:39 --> Global POST, GET and COOKIE data sanitized
+INFO - 2026-01-28 06:07:39 --> Input Class Initialized
+INFO - 2026-01-28 06:07:39 --> Language Class Initialized
+INFO - 2026-01-28 06:07:39 --> Loader Class Initialized
+INFO - 2026-01-28 06:07:39 --> Helper loaded: url_helper
+INFO - 2026-01-28 06:07:39 --> Helper loaded: file_helper
+INFO - 2026-01-28 06:07:39 --> Helper loaded: html_helper
+INFO - 2026-01-28 06:07:39 --> Database Driver Class Initialized
+INFO - 2026-01-28 06:07:39 --> Session: Class initialized using 'files' driver.
+INFO - 2026-01-28 06:07:39 --> Helper loaded: form_helper
+INFO - 2026-01-28 06:07:39 --> Form Validation Class Initialized
+INFO - 2026-01-28 06:07:39 --> User Agent Class Initialized
+INFO - 2026-01-28 06:07:39 --> Language file loaded: language/english/pagination_lang.php
+INFO - 2026-01-28 06:07:39 --> Pagination Class Initialized
+INFO - 2026-01-28 06:07:39 --> Controller Class Initialized
+INFO - 2026-01-28 06:07:39 --> Model "M_login" initialized
+INFO - 2026-01-28 06:07:39 --> File loaded: C:\xampp\htdocs\Aconnect_ci3\application\views\admin/login.php
+INFO - 2026-01-28 06:07:39 --> Final output sent to browser
+DEBUG - 2026-01-28 06:07:39 --> Total execution time: 0.0348
+ERROR - 2026-01-28 06:07:40 --> $config['composer_autoload'] is set to TRUE but C:\xampp\htdocs\Aconnect_ci3\application\vendor/autoload.php was not found.
+INFO - 2026-01-28 06:07:40 --> Config Class Initialized
+INFO - 2026-01-28 06:07:40 --> Hooks Class Initialized
+DEBUG - 2026-01-28 06:07:40 --> UTF-8 Support Enabled
+INFO - 2026-01-28 06:07:40 --> Utf8 Class Initialized
+INFO - 2026-01-28 06:07:40 --> URI Class Initialized
+INFO - 2026-01-28 06:07:40 --> Router Class Initialized
+INFO - 2026-01-28 06:07:40 --> Output Class Initialized
+INFO - 2026-01-28 06:07:40 --> Security Class Initialized
+DEBUG - 2026-01-28 06:07:40 --> Global POST, GET and COOKIE data sanitized
+INFO - 2026-01-28 06:07:40 --> Input Class Initialized
+INFO - 2026-01-28 06:07:40 --> Language Class Initialized
+INFO - 2026-01-28 06:07:40 --> Loader Class Initialized
+INFO - 2026-01-28 06:07:40 --> Helper loaded: url_helper
+INFO - 2026-01-28 06:07:40 --> Helper loaded: file_helper
+INFO - 2026-01-28 06:07:40 --> Helper loaded: html_helper
+INFO - 2026-01-28 06:07:40 --> Database Driver Class Initialized
+INFO - 2026-01-28 06:07:40 --> Session: Class initialized using 'files' driver.
+INFO - 2026-01-28 06:07:40 --> Helper loaded: form_helper
+INFO - 2026-01-28 06:07:40 --> Form Validation Class Initialized
+INFO - 2026-01-28 06:07:40 --> User Agent Class Initialized
+INFO - 2026-01-28 06:07:40 --> Language file loaded: language/english/pagination_lang.php
+INFO - 2026-01-28 06:07:40 --> Pagination Class Initialized
+INFO - 2026-01-28 06:07:40 --> Controller Class Initialized
+INFO - 2026-01-28 06:07:40 --> Model "M_login" initialized
+INFO - 2026-01-28 06:07:40 --> File loaded: C:\xampp\htdocs\Aconnect_ci3\application\views\admin/login.php
+INFO - 2026-01-28 06:07:40 --> Final output sent to browser
+DEBUG - 2026-01-28 06:07:40 --> Total execution time: 0.0267
+ERROR - 2026-01-28 06:07:53 --> $config['composer_autoload'] is set to TRUE but C:\xampp\htdocs\Aconnect_ci3\application\vendor/autoload.php was not found.
+INFO - 2026-01-28 06:07:53 --> Config Class Initialized
+INFO - 2026-01-28 06:07:53 --> Hooks Class Initialized
+DEBUG - 2026-01-28 06:07:53 --> UTF-8 Support Enabled
+INFO - 2026-01-28 06:07:53 --> Utf8 Class Initialized
+INFO - 2026-01-28 06:07:53 --> URI Class Initialized
+INFO - 2026-01-28 06:07:53 --> Router Class Initialized
+INFO - 2026-01-28 06:07:53 --> Output Class Initialized
+INFO - 2026-01-28 06:07:53 --> Security Class Initialized
+DEBUG - 2026-01-28 06:07:53 --> Global POST, GET and COOKIE data sanitized
+INFO - 2026-01-28 06:07:53 --> Input Class Initialized
+INFO - 2026-01-28 06:07:53 --> Language Class Initialized
+INFO - 2026-01-28 06:07:53 --> Loader Class Initialized
+INFO - 2026-01-28 06:07:53 --> Helper loaded: url_helper
+INFO - 2026-01-28 06:07:53 --> Helper loaded: file_helper
+INFO - 2026-01-28 06:07:53 --> Helper loaded: html_helper
+INFO - 2026-01-28 06:07:53 --> Database Driver Class Initialized
+INFO - 2026-01-28 06:07:53 --> Session: Class initialized using 'files' driver.
+INFO - 2026-01-28 06:07:53 --> Helper loaded: form_helper
+INFO - 2026-01-28 06:07:53 --> Form Validation Class Initialized
+INFO - 2026-01-28 06:07:53 --> User Agent Class Initialized
+INFO - 2026-01-28 06:07:53 --> Language file loaded: language/english/pagination_lang.php
+INFO - 2026-01-28 06:07:53 --> Pagination Class Initialized
+INFO - 2026-01-28 06:07:53 --> Controller Class Initialized
+ERROR - 2026-01-28 06:07:53 --> $config['composer_autoload'] is set to TRUE but C:\xampp\htdocs\Aconnect_ci3\application\vendor/autoload.php was not found.
+INFO - 2026-01-28 06:07:53 --> Config Class Initialized
+INFO - 2026-01-28 06:07:53 --> Hooks Class Initialized
+DEBUG - 2026-01-28 06:07:53 --> UTF-8 Support Enabled
+INFO - 2026-01-28 06:07:53 --> Utf8 Class Initialized
+INFO - 2026-01-28 06:07:53 --> URI Class Initialized
+INFO - 2026-01-28 06:07:53 --> Router Class Initialized
+INFO - 2026-01-28 06:07:53 --> Output Class Initialized
+INFO - 2026-01-28 06:07:53 --> Security Class Initialized
+DEBUG - 2026-01-28 06:07:53 --> Global POST, GET and COOKIE data sanitized
+INFO - 2026-01-28 06:07:53 --> Input Class Initialized
+INFO - 2026-01-28 06:07:53 --> Language Class Initialized
+INFO - 2026-01-28 06:07:53 --> Loader Class Initialized
+INFO - 2026-01-28 06:07:53 --> Helper loaded: url_helper
+INFO - 2026-01-28 06:07:53 --> Helper loaded: file_helper
+INFO - 2026-01-28 06:07:53 --> Helper loaded: html_helper
+INFO - 2026-01-28 06:07:53 --> Database Driver Class Initialized
+INFO - 2026-01-28 06:07:53 --> Session: Class initialized using 'files' driver.
+INFO - 2026-01-28 06:07:53 --> Helper loaded: form_helper
+INFO - 2026-01-28 06:07:53 --> Form Validation Class Initialized
+INFO - 2026-01-28 06:07:53 --> User Agent Class Initialized
+INFO - 2026-01-28 06:07:53 --> Language file loaded: language/english/pagination_lang.php
+INFO - 2026-01-28 06:07:53 --> Pagination Class Initialized
+INFO - 2026-01-28 06:07:53 --> Controller Class Initialized
+INFO - 2026-01-28 06:07:53 --> Model "M_login" initialized
+INFO - 2026-01-28 06:07:53 --> File loaded: C:\xampp\htdocs\Aconnect_ci3\application\views\login.php
+INFO - 2026-01-28 06:07:53 --> Final output sent to browser
+DEBUG - 2026-01-28 06:07:53 --> Total execution time: 0.0294
+ERROR - 2026-01-28 06:07:55 --> $config['composer_autoload'] is set to TRUE but C:\xampp\htdocs\Aconnect_ci3\application\vendor/autoload.php was not found.
+INFO - 2026-01-28 06:07:55 --> Config Class Initialized
+INFO - 2026-01-28 06:07:55 --> Hooks Class Initialized
+DEBUG - 2026-01-28 06:07:55 --> UTF-8 Support Enabled
+INFO - 2026-01-28 06:07:55 --> Utf8 Class Initialized
+INFO - 2026-01-28 06:07:55 --> URI Class Initialized
+INFO - 2026-01-28 06:07:55 --> Router Class Initialized
+INFO - 2026-01-28 06:07:55 --> Output Class Initialized
+INFO - 2026-01-28 06:07:55 --> Security Class Initialized
+DEBUG - 2026-01-28 06:07:55 --> Global POST, GET and COOKIE data sanitized
+INFO - 2026-01-28 06:07:55 --> Input Class Initialized
+INFO - 2026-01-28 06:07:55 --> Language Class Initialized
+INFO - 2026-01-28 06:07:55 --> Loader Class Initialized
+INFO - 2026-01-28 06:07:55 --> Helper loaded: url_helper
+INFO - 2026-01-28 06:07:55 --> Helper loaded: file_helper
+INFO - 2026-01-28 06:07:55 --> Helper loaded: html_helper
+INFO - 2026-01-28 06:07:55 --> Database Driver Class Initialized
+INFO - 2026-01-28 06:07:55 --> Session: Class initialized using 'files' driver.
+INFO - 2026-01-28 06:07:55 --> Helper loaded: form_helper
+INFO - 2026-01-28 06:07:55 --> Form Validation Class Initialized
+INFO - 2026-01-28 06:07:55 --> User Agent Class Initialized
+INFO - 2026-01-28 06:07:55 --> Language file loaded: language/english/pagination_lang.php
+INFO - 2026-01-28 06:07:55 --> Pagination Class Initialized
+INFO - 2026-01-28 06:07:55 --> Controller Class Initialized
+INFO - 2026-01-28 06:07:55 --> Model "M_login" initialized
+INFO - 2026-01-28 06:07:55 --> File loaded: C:\xampp\htdocs\Aconnect_ci3\application\views\admin/login.php
+INFO - 2026-01-28 06:07:55 --> Final output sent to browser
+DEBUG - 2026-01-28 06:07:55 --> Total execution time: 0.0261
+ERROR - 2026-01-28 06:08:03 --> $config['composer_autoload'] is set to TRUE but C:\xampp\htdocs\Aconnect_ci3\application\vendor/autoload.php was not found.
+INFO - 2026-01-28 06:08:03 --> Config Class Initialized
+INFO - 2026-01-28 06:08:03 --> Hooks Class Initialized
+DEBUG - 2026-01-28 06:08:03 --> UTF-8 Support Enabled
+INFO - 2026-01-28 06:08:03 --> Utf8 Class Initialized
+INFO - 2026-01-28 06:08:03 --> URI Class Initialized
+INFO - 2026-01-28 06:08:03 --> Router Class Initialized
+INFO - 2026-01-28 06:08:03 --> Output Class Initialized
+INFO - 2026-01-28 06:08:03 --> Security Class Initialized
+DEBUG - 2026-01-28 06:08:03 --> Global POST, GET and COOKIE data sanitized
+INFO - 2026-01-28 06:08:03 --> Input Class Initialized
+INFO - 2026-01-28 06:08:03 --> Language Class Initialized
+INFO - 2026-01-28 06:08:03 --> Loader Class Initialized
+INFO - 2026-01-28 06:08:03 --> Helper loaded: url_helper
+INFO - 2026-01-28 06:08:03 --> Helper loaded: file_helper
+INFO - 2026-01-28 06:08:03 --> Helper loaded: html_helper
+INFO - 2026-01-28 06:08:03 --> Database Driver Class Initialized
+INFO - 2026-01-28 06:08:03 --> Session: Class initialized using 'files' driver.
+INFO - 2026-01-28 06:08:03 --> Helper loaded: form_helper
+INFO - 2026-01-28 06:08:03 --> Form Validation Class Initialized
+INFO - 2026-01-28 06:08:03 --> User Agent Class Initialized
+INFO - 2026-01-28 06:08:03 --> Language file loaded: language/english/pagination_lang.php
+INFO - 2026-01-28 06:08:03 --> Pagination Class Initialized
+INFO - 2026-01-28 06:08:03 --> Controller Class Initialized
+INFO - 2026-01-28 06:08:03 --> Model "M_login" initialized
+INFO - 2026-01-28 06:08:03 --> File loaded: C:\xampp\htdocs\Aconnect_ci3\application\views\admin/login.php
+INFO - 2026-01-28 06:08:03 --> Final output sent to browser
+DEBUG - 2026-01-28 06:08:03 --> Total execution time: 0.0576
+ERROR - 2026-01-28 06:08:04 --> $config['composer_autoload'] is set to TRUE but C:\xampp\htdocs\Aconnect_ci3\application\vendor/autoload.php was not found.
+INFO - 2026-01-28 06:08:04 --> Config Class Initialized
+INFO - 2026-01-28 06:08:04 --> Hooks Class Initialized
+DEBUG - 2026-01-28 06:08:04 --> UTF-8 Support Enabled
+INFO - 2026-01-28 06:08:04 --> Utf8 Class Initialized
+INFO - 2026-01-28 06:08:04 --> URI Class Initialized
+INFO - 2026-01-28 06:08:04 --> Router Class Initialized
+INFO - 2026-01-28 06:08:04 --> Output Class Initialized
+INFO - 2026-01-28 06:08:04 --> Security Class Initialized
+DEBUG - 2026-01-28 06:08:04 --> Global POST, GET and COOKIE data sanitized
+INFO - 2026-01-28 06:08:04 --> Input Class Initialized
+INFO - 2026-01-28 06:08:04 --> Language Class Initialized
+INFO - 2026-01-28 06:08:04 --> Loader Class Initialized
+INFO - 2026-01-28 06:08:04 --> Helper loaded: url_helper
+INFO - 2026-01-28 06:08:04 --> Helper loaded: file_helper
+INFO - 2026-01-28 06:08:04 --> Helper loaded: html_helper
+INFO - 2026-01-28 06:08:04 --> Database Driver Class Initialized
+INFO - 2026-01-28 06:08:04 --> Session: Class initialized using 'files' driver.
+INFO - 2026-01-28 06:08:04 --> Helper loaded: form_helper
+INFO - 2026-01-28 06:08:04 --> Form Validation Class Initialized
+INFO - 2026-01-28 06:08:04 --> User Agent Class Initialized
+INFO - 2026-01-28 06:08:04 --> Language file loaded: language/english/pagination_lang.php
+INFO - 2026-01-28 06:08:04 --> Pagination Class Initialized
+INFO - 2026-01-28 06:08:04 --> Controller Class Initialized
+INFO - 2026-01-28 06:08:04 --> Model "M_login" initialized
+INFO - 2026-01-28 06:08:04 --> File loaded: C:\xampp\htdocs\Aconnect_ci3\application\views\admin/login.php
+INFO - 2026-01-28 06:08:04 --> Final output sent to browser
+DEBUG - 2026-01-28 06:08:04 --> Total execution time: 0.0360
+ERROR - 2026-01-28 06:08:08 --> $config['composer_autoload'] is set to TRUE but C:\xampp\htdocs\Aconnect_ci3\application\vendor/autoload.php was not found.
+INFO - 2026-01-28 06:08:08 --> Config Class Initialized
+INFO - 2026-01-28 06:08:08 --> Hooks Class Initialized
+DEBUG - 2026-01-28 06:08:08 --> UTF-8 Support Enabled
+INFO - 2026-01-28 06:08:08 --> Utf8 Class Initialized
+INFO - 2026-01-28 06:08:08 --> URI Class Initialized
+INFO - 2026-01-28 06:08:08 --> Router Class Initialized
+INFO - 2026-01-28 06:08:08 --> Output Class Initialized
+INFO - 2026-01-28 06:08:08 --> Security Class Initialized
+DEBUG - 2026-01-28 06:08:08 --> Global POST, GET and COOKIE data sanitized
+INFO - 2026-01-28 06:08:08 --> Input Class Initialized
+INFO - 2026-01-28 06:08:08 --> Language Class Initialized
+INFO - 2026-01-28 06:08:08 --> Loader Class Initialized
+INFO - 2026-01-28 06:08:08 --> Helper loaded: url_helper
+INFO - 2026-01-28 06:08:08 --> Helper loaded: file_helper
+INFO - 2026-01-28 06:08:08 --> Helper loaded: html_helper
+INFO - 2026-01-28 06:08:08 --> Database Driver Class Initialized
+INFO - 2026-01-28 06:08:08 --> Session: Class initialized using 'files' driver.
+INFO - 2026-01-28 06:08:08 --> Helper loaded: form_helper
+INFO - 2026-01-28 06:08:08 --> Form Validation Class Initialized
+INFO - 2026-01-28 06:08:08 --> User Agent Class Initialized
+INFO - 2026-01-28 06:08:08 --> Language file loaded: language/english/pagination_lang.php
+INFO - 2026-01-28 06:08:08 --> Pagination Class Initialized
+INFO - 2026-01-28 06:08:08 --> Controller Class Initialized
+INFO - 2026-01-28 06:08:08 --> Model "M_login" initialized
+INFO - 2026-01-28 06:08:08 --> File loaded: C:\xampp\htdocs\Aconnect_ci3\application\views\admin/login.php
+INFO - 2026-01-28 06:08:08 --> Final output sent to browser
+DEBUG - 2026-01-28 06:08:08 --> Total execution time: 0.0255
+ERROR - 2026-01-28 06:08:09 --> $config['composer_autoload'] is set to TRUE but C:\xampp\htdocs\Aconnect_ci3\application\vendor/autoload.php was not found.
+INFO - 2026-01-28 06:08:09 --> Config Class Initialized
+INFO - 2026-01-28 06:08:09 --> Hooks Class Initialized
+DEBUG - 2026-01-28 06:08:09 --> UTF-8 Support Enabled
+INFO - 2026-01-28 06:08:09 --> Utf8 Class Initialized
+INFO - 2026-01-28 06:08:09 --> URI Class Initialized
+INFO - 2026-01-28 06:08:09 --> Router Class Initialized
+INFO - 2026-01-28 06:08:09 --> Output Class Initialized
+INFO - 2026-01-28 06:08:09 --> Security Class Initialized
+DEBUG - 2026-01-28 06:08:09 --> Global POST, GET and COOKIE data sanitized
+INFO - 2026-01-28 06:08:09 --> Input Class Initialized
+INFO - 2026-01-28 06:08:09 --> Language Class Initialized
+INFO - 2026-01-28 06:08:09 --> Loader Class Initialized
+INFO - 2026-01-28 06:08:09 --> Helper loaded: url_helper
+INFO - 2026-01-28 06:08:09 --> Helper loaded: file_helper
+INFO - 2026-01-28 06:08:09 --> Helper loaded: html_helper
+INFO - 2026-01-28 06:08:09 --> Database Driver Class Initialized
+INFO - 2026-01-28 06:08:09 --> Session: Class initialized using 'files' driver.
+INFO - 2026-01-28 06:08:09 --> Helper loaded: form_helper
+INFO - 2026-01-28 06:08:09 --> Form Validation Class Initialized
+INFO - 2026-01-28 06:08:09 --> User Agent Class Initialized
+INFO - 2026-01-28 06:08:09 --> Language file loaded: language/english/pagination_lang.php
+INFO - 2026-01-28 06:08:09 --> Pagination Class Initialized
+INFO - 2026-01-28 06:08:09 --> Controller Class Initialized
+INFO - 2026-01-28 06:08:09 --> Model "M_login" initialized
+INFO - 2026-01-28 06:08:09 --> File loaded: C:\xampp\htdocs\Aconnect_ci3\application\views\admin/login.php
+INFO - 2026-01-28 06:08:09 --> Final output sent to browser
+DEBUG - 2026-01-28 06:08:09 --> Total execution time: 0.0245
+ERROR - 2026-01-28 06:08:11 --> $config['composer_autoload'] is set to TRUE but C:\xampp\htdocs\Aconnect_ci3\application\vendor/autoload.php was not found.
+INFO - 2026-01-28 06:08:11 --> Config Class Initialized
+INFO - 2026-01-28 06:08:11 --> Hooks Class Initialized
+DEBUG - 2026-01-28 06:08:11 --> UTF-8 Support Enabled
+INFO - 2026-01-28 06:08:11 --> Utf8 Class Initialized
+INFO - 2026-01-28 06:08:11 --> URI Class Initialized
+INFO - 2026-01-28 06:08:11 --> Router Class Initialized
+INFO - 2026-01-28 06:08:11 --> Output Class Initialized
+INFO - 2026-01-28 06:08:11 --> Security Class Initialized
+DEBUG - 2026-01-28 06:08:11 --> Global POST, GET and COOKIE data sanitized
+INFO - 2026-01-28 06:08:11 --> Input Class Initialized
+INFO - 2026-01-28 06:08:11 --> Language Class Initialized
+INFO - 2026-01-28 06:08:11 --> Loader Class Initialized
+INFO - 2026-01-28 06:08:11 --> Helper loaded: url_helper
+INFO - 2026-01-28 06:08:11 --> Helper loaded: file_helper
+INFO - 2026-01-28 06:08:11 --> Helper loaded: html_helper
+INFO - 2026-01-28 06:08:11 --> Database Driver Class Initialized
+INFO - 2026-01-28 06:08:11 --> Session: Class initialized using 'files' driver.
+INFO - 2026-01-28 06:08:11 --> Helper loaded: form_helper
+INFO - 2026-01-28 06:08:11 --> Form Validation Class Initialized
+INFO - 2026-01-28 06:08:11 --> User Agent Class Initialized
+INFO - 2026-01-28 06:08:11 --> Language file loaded: language/english/pagination_lang.php
+INFO - 2026-01-28 06:08:11 --> Pagination Class Initialized
+INFO - 2026-01-28 06:08:11 --> Controller Class Initialized
+INFO - 2026-01-28 06:08:11 --> Model "M_login" initialized
+INFO - 2026-01-28 06:08:11 --> File loaded: C:\xampp\htdocs\Aconnect_ci3\application\views\admin/login.php
+INFO - 2026-01-28 06:08:11 --> Final output sent to browser
+DEBUG - 2026-01-28 06:08:11 --> Total execution time: 0.0247
+ERROR - 2026-01-28 06:08:12 --> $config['composer_autoload'] is set to TRUE but C:\xampp\htdocs\Aconnect_ci3\application\vendor/autoload.php was not found.
+INFO - 2026-01-28 06:08:12 --> Config Class Initialized
+INFO - 2026-01-28 06:08:12 --> Hooks Class Initialized
+DEBUG - 2026-01-28 06:08:12 --> UTF-8 Support Enabled
+INFO - 2026-01-28 06:08:12 --> Utf8 Class Initialized
+INFO - 2026-01-28 06:08:12 --> URI Class Initialized
+INFO - 2026-01-28 06:08:12 --> Router Class Initialized
+INFO - 2026-01-28 06:08:12 --> Output Class Initialized
+INFO - 2026-01-28 06:08:12 --> Security Class Initialized
+DEBUG - 2026-01-28 06:08:12 --> Global POST, GET and COOKIE data sanitized
+INFO - 2026-01-28 06:08:12 --> Input Class Initialized
+INFO - 2026-01-28 06:08:12 --> Language Class Initialized
+INFO - 2026-01-28 06:08:12 --> Loader Class Initialized
+INFO - 2026-01-28 06:08:12 --> Helper loaded: url_helper
+INFO - 2026-01-28 06:08:12 --> Helper loaded: file_helper
+INFO - 2026-01-28 06:08:12 --> Helper loaded: html_helper
+INFO - 2026-01-28 06:08:12 --> Database Driver Class Initialized
+INFO - 2026-01-28 06:08:12 --> Session: Class initialized using 'files' driver.
+INFO - 2026-01-28 06:08:12 --> Helper loaded: form_helper
+INFO - 2026-01-28 06:08:12 --> Form Validation Class Initialized
+INFO - 2026-01-28 06:08:12 --> User Agent Class Initialized
+INFO - 2026-01-28 06:08:12 --> Language file loaded: language/english/pagination_lang.php
+INFO - 2026-01-28 06:08:12 --> Pagination Class Initialized
+INFO - 2026-01-28 06:08:12 --> Controller Class Initialized
+INFO - 2026-01-28 06:08:12 --> Model "M_login" initialized
+INFO - 2026-01-28 06:08:12 --> File loaded: C:\xampp\htdocs\Aconnect_ci3\application\views\admin/login.php
+INFO - 2026-01-28 06:08:12 --> Final output sent to browser
+DEBUG - 2026-01-28 06:08:12 --> Total execution time: 0.0236
+ERROR - 2026-01-28 06:08:13 --> $config['composer_autoload'] is set to TRUE but C:\xampp\htdocs\Aconnect_ci3\application\vendor/autoload.php was not found.
+INFO - 2026-01-28 06:08:13 --> Config Class Initialized
+INFO - 2026-01-28 06:08:13 --> Hooks Class Initialized
+DEBUG - 2026-01-28 06:08:13 --> UTF-8 Support Enabled
+INFO - 2026-01-28 06:08:13 --> Utf8 Class Initialized
+INFO - 2026-01-28 06:08:13 --> URI Class Initialized
+INFO - 2026-01-28 06:08:13 --> Router Class Initialized
+INFO - 2026-01-28 06:08:13 --> Output Class Initialized
+INFO - 2026-01-28 06:08:13 --> Security Class Initialized
+DEBUG - 2026-01-28 06:08:13 --> Global POST, GET and COOKIE data sanitized
+INFO - 2026-01-28 06:08:13 --> Input Class Initialized
+INFO - 2026-01-28 06:08:13 --> Language Class Initialized
+INFO - 2026-01-28 06:08:13 --> Loader Class Initialized
+INFO - 2026-01-28 06:08:13 --> Helper loaded: url_helper
+INFO - 2026-01-28 06:08:13 --> Helper loaded: file_helper
+INFO - 2026-01-28 06:08:13 --> Helper loaded: html_helper
+INFO - 2026-01-28 06:08:13 --> Database Driver Class Initialized
+INFO - 2026-01-28 06:08:13 --> Session: Class initialized using 'files' driver.
+INFO - 2026-01-28 06:08:13 --> Helper loaded: form_helper
+INFO - 2026-01-28 06:08:13 --> Form Validation Class Initialized
+INFO - 2026-01-28 06:08:13 --> User Agent Class Initialized
+INFO - 2026-01-28 06:08:13 --> Language file loaded: language/english/pagination_lang.php
+INFO - 2026-01-28 06:08:13 --> Pagination Class Initialized
+INFO - 2026-01-28 06:08:13 --> Controller Class Initialized
+INFO - 2026-01-28 06:08:13 --> Model "M_login" initialized
+INFO - 2026-01-28 06:08:13 --> File loaded: C:\xampp\htdocs\Aconnect_ci3\application\views\login.php
+INFO - 2026-01-28 06:08:13 --> Final output sent to browser
+DEBUG - 2026-01-28 06:08:13 --> Total execution time: 0.0218
+ERROR - 2026-01-28 06:08:16 --> $config['composer_autoload'] is set to TRUE but C:\xampp\htdocs\Aconnect_ci3\application\vendor/autoload.php was not found.
+INFO - 2026-01-28 06:08:16 --> Config Class Initialized
+INFO - 2026-01-28 06:08:16 --> Hooks Class Initialized
+DEBUG - 2026-01-28 06:08:16 --> UTF-8 Support Enabled
+INFO - 2026-01-28 06:08:16 --> Utf8 Class Initialized
+INFO - 2026-01-28 06:08:16 --> URI Class Initialized
+INFO - 2026-01-28 06:08:16 --> Router Class Initialized
+INFO - 2026-01-28 06:08:16 --> Output Class Initialized
+INFO - 2026-01-28 06:08:16 --> Security Class Initialized
+DEBUG - 2026-01-28 06:08:16 --> Global POST, GET and COOKIE data sanitized
+INFO - 2026-01-28 06:08:16 --> Input Class Initialized
+INFO - 2026-01-28 06:08:16 --> Language Class Initialized
+INFO - 2026-01-28 06:08:16 --> Loader Class Initialized
+INFO - 2026-01-28 06:08:16 --> Helper loaded: url_helper
+INFO - 2026-01-28 06:08:16 --> Helper loaded: file_helper
+INFO - 2026-01-28 06:08:16 --> Helper loaded: html_helper
+INFO - 2026-01-28 06:08:16 --> Database Driver Class Initialized
+INFO - 2026-01-28 06:08:16 --> Session: Class initialized using 'files' driver.
+INFO - 2026-01-28 06:08:16 --> Helper loaded: form_helper
+INFO - 2026-01-28 06:08:16 --> Form Validation Class Initialized
+INFO - 2026-01-28 06:08:16 --> User Agent Class Initialized
+INFO - 2026-01-28 06:08:16 --> Language file loaded: language/english/pagination_lang.php
+INFO - 2026-01-28 06:08:16 --> Pagination Class Initialized
+INFO - 2026-01-28 06:08:16 --> Controller Class Initialized
+INFO - 2026-01-28 06:08:16 --> Model "M_login" initialized
+ERROR - 2026-01-28 06:08:16 --> $config['composer_autoload'] is set to TRUE but C:\xampp\htdocs\Aconnect_ci3\application\vendor/autoload.php was not found.
+INFO - 2026-01-28 06:08:16 --> Config Class Initialized
+INFO - 2026-01-28 06:08:16 --> Hooks Class Initialized
+DEBUG - 2026-01-28 06:08:16 --> UTF-8 Support Enabled
+INFO - 2026-01-28 06:08:16 --> Utf8 Class Initialized
+INFO - 2026-01-28 06:08:16 --> URI Class Initialized
+INFO - 2026-01-28 06:08:16 --> Router Class Initialized
+INFO - 2026-01-28 06:08:16 --> Output Class Initialized
+INFO - 2026-01-28 06:08:16 --> Security Class Initialized
+DEBUG - 2026-01-28 06:08:16 --> Global POST, GET and COOKIE data sanitized
+INFO - 2026-01-28 06:08:16 --> Input Class Initialized
+INFO - 2026-01-28 06:08:16 --> Language Class Initialized
+INFO - 2026-01-28 06:08:16 --> Loader Class Initialized
+INFO - 2026-01-28 06:08:16 --> Helper loaded: url_helper
+INFO - 2026-01-28 06:08:16 --> Helper loaded: file_helper
+INFO - 2026-01-28 06:08:16 --> Helper loaded: html_helper
+INFO - 2026-01-28 06:08:16 --> Database Driver Class Initialized
+INFO - 2026-01-28 06:08:16 --> Session: Class initialized using 'files' driver.
+INFO - 2026-01-28 06:08:16 --> Helper loaded: form_helper
+INFO - 2026-01-28 06:08:16 --> Form Validation Class Initialized
+INFO - 2026-01-28 06:08:16 --> User Agent Class Initialized
+INFO - 2026-01-28 06:08:16 --> Language file loaded: language/english/pagination_lang.php
+INFO - 2026-01-28 06:08:16 --> Pagination Class Initialized
+INFO - 2026-01-28 06:08:16 --> Controller Class Initialized
+INFO - 2026-01-28 06:08:16 --> Model "M_login" initialized
+INFO - 2026-01-28 06:08:16 --> File loaded: C:\xampp\htdocs\Aconnect_ci3\application\views\login.php
+INFO - 2026-01-28 06:08:16 --> Final output sent to browser
+DEBUG - 2026-01-28 06:08:16 --> Total execution time: 0.0542
+ERROR - 2026-01-28 06:08:19 --> $config['composer_autoload'] is set to TRUE but C:\xampp\htdocs\Aconnect_ci3\application\vendor/autoload.php was not found.
+INFO - 2026-01-28 06:08:19 --> Config Class Initialized
+INFO - 2026-01-28 06:08:19 --> Hooks Class Initialized
+DEBUG - 2026-01-28 06:08:19 --> UTF-8 Support Enabled
+INFO - 2026-01-28 06:08:19 --> Utf8 Class Initialized
+INFO - 2026-01-28 06:08:19 --> URI Class Initialized
+INFO - 2026-01-28 06:08:19 --> Router Class Initialized
+INFO - 2026-01-28 06:08:19 --> Output Class Initialized
+INFO - 2026-01-28 06:08:19 --> Security Class Initialized
+DEBUG - 2026-01-28 06:08:19 --> Global POST, GET and COOKIE data sanitized
+INFO - 2026-01-28 06:08:19 --> Input Class Initialized
+INFO - 2026-01-28 06:08:19 --> Language Class Initialized
+INFO - 2026-01-28 06:08:19 --> Loader Class Initialized
+INFO - 2026-01-28 06:08:19 --> Helper loaded: url_helper
+INFO - 2026-01-28 06:08:19 --> Helper loaded: file_helper
+INFO - 2026-01-28 06:08:19 --> Helper loaded: html_helper
+INFO - 2026-01-28 06:08:19 --> Database Driver Class Initialized
+INFO - 2026-01-28 06:08:19 --> Session: Class initialized using 'files' driver.
+INFO - 2026-01-28 06:08:19 --> Helper loaded: form_helper
+INFO - 2026-01-28 06:08:19 --> Form Validation Class Initialized
+INFO - 2026-01-28 06:08:19 --> User Agent Class Initialized
+INFO - 2026-01-28 06:08:19 --> Language file loaded: language/english/pagination_lang.php
+INFO - 2026-01-28 06:08:19 --> Pagination Class Initialized
+INFO - 2026-01-28 06:08:19 --> Controller Class Initialized
+INFO - 2026-01-28 06:08:19 --> Model "M_login" initialized
+ERROR - 2026-01-28 06:08:19 --> $config['composer_autoload'] is set to TRUE but C:\xampp\htdocs\Aconnect_ci3\application\vendor/autoload.php was not found.
+INFO - 2026-01-28 06:08:19 --> Config Class Initialized
+INFO - 2026-01-28 06:08:19 --> Hooks Class Initialized
+DEBUG - 2026-01-28 06:08:19 --> UTF-8 Support Enabled
+INFO - 2026-01-28 06:08:19 --> Utf8 Class Initialized
+INFO - 2026-01-28 06:08:19 --> URI Class Initialized
+INFO - 2026-01-28 06:08:19 --> Router Class Initialized
+INFO - 2026-01-28 06:08:19 --> Output Class Initialized
+INFO - 2026-01-28 06:08:19 --> Security Class Initialized
+DEBUG - 2026-01-28 06:08:19 --> Global POST, GET and COOKIE data sanitized
+INFO - 2026-01-28 06:08:19 --> Input Class Initialized
+INFO - 2026-01-28 06:08:19 --> Language Class Initialized
+INFO - 2026-01-28 06:08:19 --> Loader Class Initialized
+INFO - 2026-01-28 06:08:19 --> Helper loaded: url_helper
+INFO - 2026-01-28 06:08:19 --> Helper loaded: file_helper
+INFO - 2026-01-28 06:08:19 --> Helper loaded: html_helper
+INFO - 2026-01-28 06:08:19 --> Database Driver Class Initialized
+INFO - 2026-01-28 06:08:19 --> Session: Class initialized using 'files' driver.
+INFO - 2026-01-28 06:08:19 --> Helper loaded: form_helper
+INFO - 2026-01-28 06:08:19 --> Form Validation Class Initialized
+INFO - 2026-01-28 06:08:19 --> User Agent Class Initialized
+INFO - 2026-01-28 06:08:19 --> Language file loaded: language/english/pagination_lang.php
+INFO - 2026-01-28 06:08:19 --> Pagination Class Initialized
+INFO - 2026-01-28 06:08:19 --> Controller Class Initialized
+INFO - 2026-01-28 06:08:19 --> Model "M_login" initialized
+INFO - 2026-01-28 06:08:19 --> File loaded: C:\xampp\htdocs\Aconnect_ci3\application\views\login.php
+INFO - 2026-01-28 06:08:19 --> Final output sent to browser
+DEBUG - 2026-01-28 06:08:19 --> Total execution time: 0.0322
+ERROR - 2026-01-28 06:12:17 --> $config['composer_autoload'] is set to TRUE but C:\xampp\htdocs\Aconnect_ci3\application\vendor/autoload.php was not found.
+INFO - 2026-01-28 06:12:17 --> Config Class Initialized
+INFO - 2026-01-28 06:12:17 --> Hooks Class Initialized
+DEBUG - 2026-01-28 06:12:17 --> UTF-8 Support Enabled
+INFO - 2026-01-28 06:12:17 --> Utf8 Class Initialized
+INFO - 2026-01-28 06:12:17 --> URI Class Initialized
+INFO - 2026-01-28 06:12:17 --> Router Class Initialized
+INFO - 2026-01-28 06:12:17 --> Output Class Initialized
+INFO - 2026-01-28 06:12:17 --> Security Class Initialized
+DEBUG - 2026-01-28 06:12:17 --> Global POST, GET and COOKIE data sanitized
+INFO - 2026-01-28 06:12:17 --> Input Class Initialized
+INFO - 2026-01-28 06:12:17 --> Language Class Initialized
+INFO - 2026-01-28 06:12:17 --> Loader Class Initialized
+INFO - 2026-01-28 06:12:17 --> Helper loaded: url_helper
+INFO - 2026-01-28 06:12:17 --> Helper loaded: file_helper
+INFO - 2026-01-28 06:12:17 --> Helper loaded: html_helper
+INFO - 2026-01-28 06:12:17 --> Database Driver Class Initialized
+INFO - 2026-01-28 06:12:17 --> Session: Class initialized using 'files' driver.
+INFO - 2026-01-28 06:12:17 --> Helper loaded: form_helper
+INFO - 2026-01-28 06:12:17 --> Form Validation Class Initialized
+INFO - 2026-01-28 06:12:17 --> User Agent Class Initialized
+INFO - 2026-01-28 06:12:17 --> Language file loaded: language/english/pagination_lang.php
+INFO - 2026-01-28 06:12:17 --> Pagination Class Initialized
+INFO - 2026-01-28 06:12:17 --> Controller Class Initialized
+INFO - 2026-01-28 06:12:17 --> Model "M_login" initialized
+INFO - 2026-01-28 06:12:17 --> File loaded: C:\xampp\htdocs\Aconnect_ci3\application\views\admin/login.php
+INFO - 2026-01-28 06:12:17 --> Final output sent to browser
+DEBUG - 2026-01-28 06:12:17 --> Total execution time: 0.0310
+ERROR - 2026-01-28 06:12:19 --> $config['composer_autoload'] is set to TRUE but C:\xampp\htdocs\Aconnect_ci3\application\vendor/autoload.php was not found.
+INFO - 2026-01-28 06:12:19 --> Config Class Initialized
+INFO - 2026-01-28 06:12:19 --> Hooks Class Initialized
+DEBUG - 2026-01-28 06:12:19 --> UTF-8 Support Enabled
+INFO - 2026-01-28 06:12:19 --> Utf8 Class Initialized
+INFO - 2026-01-28 06:12:19 --> URI Class Initialized
+INFO - 2026-01-28 06:12:19 --> Router Class Initialized
+INFO - 2026-01-28 06:12:19 --> Output Class Initialized
+INFO - 2026-01-28 06:12:19 --> Security Class Initialized
+DEBUG - 2026-01-28 06:12:19 --> Global POST, GET and COOKIE data sanitized
+INFO - 2026-01-28 06:12:19 --> Input Class Initialized
+INFO - 2026-01-28 06:12:19 --> Language Class Initialized
+INFO - 2026-01-28 06:12:19 --> Loader Class Initialized
+INFO - 2026-01-28 06:12:19 --> Helper loaded: url_helper
+INFO - 2026-01-28 06:12:19 --> Helper loaded: file_helper
+INFO - 2026-01-28 06:12:19 --> Helper loaded: html_helper
+INFO - 2026-01-28 06:12:19 --> Database Driver Class Initialized
+INFO - 2026-01-28 06:12:19 --> Session: Class initialized using 'files' driver.
+INFO - 2026-01-28 06:12:19 --> Helper loaded: form_helper
+INFO - 2026-01-28 06:12:19 --> Form Validation Class Initialized
+INFO - 2026-01-28 06:12:19 --> User Agent Class Initialized
+INFO - 2026-01-28 06:12:19 --> Language file loaded: language/english/pagination_lang.php
+INFO - 2026-01-28 06:12:19 --> Pagination Class Initialized
+INFO - 2026-01-28 06:12:19 --> Controller Class Initialized
+INFO - 2026-01-28 06:12:19 --> Model "M_login" initialized
+INFO - 2026-01-28 06:12:19 --> File loaded: C:\xampp\htdocs\Aconnect_ci3\application\views\login.php
+INFO - 2026-01-28 06:12:19 --> Final output sent to browser
+DEBUG - 2026-01-28 06:12:19 --> Total execution time: 0.0240
+ERROR - 2026-01-28 06:28:40 --> $config['composer_autoload'] is set to TRUE but C:\xampp\htdocs\Aconnect_ci3\application\vendor/autoload.php was not found.
+ERROR - 2026-01-28 06:28:40 --> $config['composer_autoload'] is set to TRUE but C:\xampp\htdocs\Aconnect_ci3\application\vendor/autoload.php was not found.
+INFO - 2026-01-28 06:28:40 --> Config Class Initialized
+INFO - 2026-01-28 06:28:40 --> Config Class Initialized
+INFO - 2026-01-28 06:28:40 --> Hooks Class Initialized
+INFO - 2026-01-28 06:28:40 --> Hooks Class Initialized
+DEBUG - 2026-01-28 06:28:41 --> UTF-8 Support Enabled
+DEBUG - 2026-01-28 06:28:41 --> UTF-8 Support Enabled
+INFO - 2026-01-28 06:28:41 --> Utf8 Class Initialized
+INFO - 2026-01-28 06:28:41 --> Utf8 Class Initialized
+INFO - 2026-01-28 06:28:41 --> URI Class Initialized
+INFO - 2026-01-28 06:28:41 --> URI Class Initialized
+ERROR - 2026-01-28 06:28:41 --> $config['composer_autoload'] is set to TRUE but C:\xampp\htdocs\Aconnect_ci3\application\vendor/autoload.php was not found.
+INFO - 2026-01-28 06:28:41 --> Config Class Initialized
+INFO - 2026-01-28 06:28:41 --> Hooks Class Initialized
+DEBUG - 2026-01-28 06:28:41 --> UTF-8 Support Enabled
+INFO - 2026-01-28 06:28:41 --> Utf8 Class Initialized
+INFO - 2026-01-28 06:28:41 --> URI Class Initialized
+INFO - 2026-01-28 06:28:41 --> Router Class Initialized
+INFO - 2026-01-28 06:28:41 --> Router Class Initialized
+INFO - 2026-01-28 06:28:41 --> Router Class Initialized
+INFO - 2026-01-28 06:28:41 --> Output Class Initialized
+INFO - 2026-01-28 06:28:41 --> Output Class Initialized
+INFO - 2026-01-28 06:28:41 --> Output Class Initialized
+ERROR - 2026-01-28 06:28:41 --> $config['composer_autoload'] is set to TRUE but C:\xampp\htdocs\Aconnect_ci3\application\vendor/autoload.php was not found.
+INFO - 2026-01-28 06:28:41 --> Config Class Initialized
+INFO - 2026-01-28 06:28:41 --> Hooks Class Initialized
+DEBUG - 2026-01-28 06:28:41 --> UTF-8 Support Enabled
+INFO - 2026-01-28 06:28:41 --> Utf8 Class Initialized
+INFO - 2026-01-28 06:28:41 --> Security Class Initialized
+INFO - 2026-01-28 06:28:41 --> URI Class Initialized
+INFO - 2026-01-28 06:28:41 --> Security Class Initialized
+INFO - 2026-01-28 06:28:41 --> Security Class Initialized
+INFO - 2026-01-28 06:28:41 --> Router Class Initialized
+INFO - 2026-01-28 06:28:41 --> Output Class Initialized
+INFO - 2026-01-28 06:28:41 --> Security Class Initialized
+DEBUG - 2026-01-28 06:28:41 --> Global POST, GET and COOKIE data sanitized
+INFO - 2026-01-28 06:28:41 --> Input Class Initialized
+DEBUG - 2026-01-28 06:28:41 --> Global POST, GET and COOKIE data sanitized
+DEBUG - 2026-01-28 06:28:41 --> Global POST, GET and COOKIE data sanitized
+DEBUG - 2026-01-28 06:28:41 --> Global POST, GET and COOKIE data sanitized
+INFO - 2026-01-28 06:28:41 --> Input Class Initialized
+INFO - 2026-01-28 06:28:41 --> Input Class Initialized
+INFO - 2026-01-28 06:28:41 --> Input Class Initialized
+INFO - 2026-01-28 06:28:41 --> Language Class Initialized
+INFO - 2026-01-28 06:28:41 --> Language Class Initialized
+INFO - 2026-01-28 06:28:41 --> Language Class Initialized
+INFO - 2026-01-28 06:28:41 --> Language Class Initialized
+INFO - 2026-01-28 06:28:41 --> Loader Class Initialized
+INFO - 2026-01-28 06:28:41 --> Loader Class Initialized
+INFO - 2026-01-28 06:28:41 --> Loader Class Initialized
+INFO - 2026-01-28 06:28:41 --> Loader Class Initialized
+ERROR - 2026-01-28 06:28:41 --> $config['composer_autoload'] is set to TRUE but C:\xampp\htdocs\Aconnect_ci3\application\vendor/autoload.php was not found.
+INFO - 2026-01-28 06:28:41 --> Config Class Initialized
+INFO - 2026-01-28 06:28:41 --> Hooks Class Initialized
+DEBUG - 2026-01-28 06:28:41 --> UTF-8 Support Enabled
+INFO - 2026-01-28 06:28:41 --> Utf8 Class Initialized
+INFO - 2026-01-28 06:28:41 --> URI Class Initialized
+INFO - 2026-01-28 06:28:41 --> Router Class Initialized
+INFO - 2026-01-28 06:28:41 --> Output Class Initialized
+INFO - 2026-01-28 06:28:41 --> Security Class Initialized
+DEBUG - 2026-01-28 06:28:41 --> Global POST, GET and COOKIE data sanitized
+INFO - 2026-01-28 06:28:41 --> Input Class Initialized
+INFO - 2026-01-28 06:28:41 --> Language Class Initialized
+INFO - 2026-01-28 06:28:41 --> Loader Class Initialized
+INFO - 2026-01-28 06:28:41 --> Helper loaded: url_helper
+INFO - 2026-01-28 06:28:41 --> Helper loaded: url_helper
+INFO - 2026-01-28 06:28:41 --> Helper loaded: url_helper
+INFO - 2026-01-28 06:28:41 --> Helper loaded: url_helper
+INFO - 2026-01-28 06:28:41 --> Helper loaded: url_helper
+INFO - 2026-01-28 06:28:41 --> Helper loaded: file_helper
+INFO - 2026-01-28 06:28:41 --> Helper loaded: file_helper
+INFO - 2026-01-28 06:28:41 --> Helper loaded: file_helper
+INFO - 2026-01-28 06:28:41 --> Helper loaded: file_helper
+INFO - 2026-01-28 06:28:41 --> Helper loaded: file_helper
+INFO - 2026-01-28 06:28:41 --> Helper loaded: html_helper
+INFO - 2026-01-28 06:28:41 --> Helper loaded: html_helper
+INFO - 2026-01-28 06:28:41 --> Helper loaded: html_helper
+INFO - 2026-01-28 06:28:41 --> Helper loaded: html_helper
+INFO - 2026-01-28 06:28:41 --> Helper loaded: html_helper
+ERROR - 2026-01-28 06:28:41 --> $config['composer_autoload'] is set to TRUE but C:\xampp\htdocs\Aconnect_ci3\application\vendor/autoload.php was not found.
+INFO - 2026-01-28 06:28:41 --> Config Class Initialized
+INFO - 2026-01-28 06:28:41 --> Hooks Class Initialized
+DEBUG - 2026-01-28 06:28:41 --> UTF-8 Support Enabled
+INFO - 2026-01-28 06:28:41 --> Utf8 Class Initialized
+INFO - 2026-01-28 06:28:41 --> URI Class Initialized
+INFO - 2026-01-28 06:28:41 --> Router Class Initialized
+INFO - 2026-01-28 06:28:41 --> Output Class Initialized
+INFO - 2026-01-28 06:28:41 --> Security Class Initialized
+DEBUG - 2026-01-28 06:28:41 --> Global POST, GET and COOKIE data sanitized
+INFO - 2026-01-28 06:28:41 --> Input Class Initialized
+INFO - 2026-01-28 06:28:41 --> Language Class Initialized
+INFO - 2026-01-28 06:28:41 --> Loader Class Initialized
+INFO - 2026-01-28 06:28:41 --> Helper loaded: url_helper
+INFO - 2026-01-28 06:28:41 --> Helper loaded: file_helper
+INFO - 2026-01-28 06:28:41 --> Helper loaded: html_helper
+INFO - 2026-01-28 06:28:41 --> Database Driver Class Initialized
+INFO - 2026-01-28 06:28:41 --> Database Driver Class Initialized
+INFO - 2026-01-28 06:28:41 --> Database Driver Class Initialized
+INFO - 2026-01-28 06:28:41 --> Database Driver Class Initialized
+INFO - 2026-01-28 06:28:41 --> Database Driver Class Initialized
+INFO - 2026-01-28 06:28:41 --> Database Driver Class Initialized
+INFO - 2026-01-28 06:28:41 --> Session: Class initialized using 'files' driver.
+INFO - 2026-01-28 06:28:41 --> Session: Class initialized using 'files' driver.
+ERROR - 2026-01-28 06:28:41 --> $config['composer_autoload'] is set to TRUE but C:\xampp\htdocs\Aconnect_ci3\application\vendor/autoload.php was not found.
+INFO - 2026-01-28 06:28:41 --> Config Class Initialized
+INFO - 2026-01-28 06:28:41 --> Hooks Class Initialized
+DEBUG - 2026-01-28 06:28:41 --> UTF-8 Support Enabled
+INFO - 2026-01-28 06:28:41 --> Utf8 Class Initialized
+INFO - 2026-01-28 06:28:41 --> URI Class Initialized
+INFO - 2026-01-28 06:28:41 --> Router Class Initialized
+INFO - 2026-01-28 06:28:41 --> Output Class Initialized
+INFO - 2026-01-28 06:28:41 --> Security Class Initialized
+DEBUG - 2026-01-28 06:28:41 --> Global POST, GET and COOKIE data sanitized
+INFO - 2026-01-28 06:28:41 --> Input Class Initialized
+INFO - 2026-01-28 06:28:41 --> Language Class Initialized
+INFO - 2026-01-28 06:28:41 --> Loader Class Initialized
+INFO - 2026-01-28 06:28:41 --> Helper loaded: url_helper
+INFO - 2026-01-28 06:28:41 --> Helper loaded: file_helper
+INFO - 2026-01-28 06:28:41 --> Helper loaded: html_helper
+INFO - 2026-01-28 06:28:41 --> Database Driver Class Initialized
+INFO - 2026-01-28 06:28:41 --> Helper loaded: form_helper
+INFO - 2026-01-28 06:28:41 --> Helper loaded: form_helper
+INFO - 2026-01-28 06:28:41 --> Form Validation Class Initialized
+INFO - 2026-01-28 06:28:41 --> Form Validation Class Initialized
+INFO - 2026-01-28 06:28:41 --> User Agent Class Initialized
+INFO - 2026-01-28 06:28:41 --> User Agent Class Initialized
+ERROR - 2026-01-28 06:28:41 --> $config['composer_autoload'] is set to TRUE but C:\xampp\htdocs\Aconnect_ci3\application\vendor/autoload.php was not found.
+INFO - 2026-01-28 06:28:41 --> Config Class Initialized
+INFO - 2026-01-28 06:28:41 --> Hooks Class Initialized
+DEBUG - 2026-01-28 06:28:41 --> UTF-8 Support Enabled
+INFO - 2026-01-28 06:28:41 --> Utf8 Class Initialized
+INFO - 2026-01-28 06:28:41 --> URI Class Initialized
+INFO - 2026-01-28 06:28:41 --> Language file loaded: language/english/pagination_lang.php
+INFO - 2026-01-28 06:28:41 --> Language file loaded: language/english/pagination_lang.php
+INFO - 2026-01-28 06:28:41 --> Pagination Class Initialized
+INFO - 2026-01-28 06:28:41 --> Pagination Class Initialized
+INFO - 2026-01-28 06:28:41 --> Router Class Initialized
+INFO - 2026-01-28 06:28:41 --> Controller Class Initialized
+INFO - 2026-01-28 06:28:41 --> Controller Class Initialized
+INFO - 2026-01-28 06:28:41 --> Output Class Initialized
+INFO - 2026-01-28 06:28:41 --> Security Class Initialized
+DEBUG - 2026-01-28 06:28:42 --> Global POST, GET and COOKIE data sanitized
+INFO - 2026-01-28 06:28:42 --> Input Class Initialized
+INFO - 2026-01-28 06:28:42 --> Language Class Initialized
+INFO - 2026-01-28 06:28:42 --> Loader Class Initialized
+INFO - 2026-01-28 06:28:42 --> Helper loaded: url_helper
+INFO - 2026-01-28 06:28:42 --> Helper loaded: file_helper
+INFO - 2026-01-28 06:28:42 --> Helper loaded: html_helper
+INFO - 2026-01-28 06:28:42 --> Database Driver Class Initialized
+INFO - 2026-01-28 06:28:42 --> Model "M_login" initialized
+INFO - 2026-01-28 06:28:42 --> Model "M_login" initialized
+INFO - 2026-01-28 06:28:42 --> File loaded: C:\xampp\htdocs\Aconnect_ci3\application\views\admin/login.php
+INFO - 2026-01-28 06:28:42 --> File loaded: C:\xampp\htdocs\Aconnect_ci3\application\views\admin/login.php
+INFO - 2026-01-28 06:28:42 --> Final output sent to browser
+INFO - 2026-01-28 06:28:42 --> Final output sent to browser
+DEBUG - 2026-01-28 06:28:42 --> Total execution time: 0.5942
+DEBUG - 2026-01-28 06:28:42 --> Total execution time: 1.2289
+INFO - 2026-01-28 06:28:42 --> Session: Class initialized using 'files' driver.
+INFO - 2026-01-28 06:28:42 --> Helper loaded: form_helper
+INFO - 2026-01-28 06:28:42 --> Form Validation Class Initialized
+INFO - 2026-01-28 06:28:42 --> User Agent Class Initialized
+INFO - 2026-01-28 06:28:42 --> Language file loaded: language/english/pagination_lang.php
+INFO - 2026-01-28 06:28:42 --> Pagination Class Initialized
+INFO - 2026-01-28 06:28:42 --> Controller Class Initialized
+INFO - 2026-01-28 06:28:42 --> Model "M_login" initialized
+INFO - 2026-01-28 06:28:42 --> File loaded: C:\xampp\htdocs\Aconnect_ci3\application\views\admin/login.php
+INFO - 2026-01-28 06:28:42 --> Final output sent to browser
+DEBUG - 2026-01-28 06:28:42 --> Total execution time: 0.7759
+INFO - 2026-01-28 06:28:42 --> Session: Class initialized using 'files' driver.
+INFO - 2026-01-28 06:28:42 --> Helper loaded: form_helper
+INFO - 2026-01-28 06:28:42 --> Form Validation Class Initialized
+INFO - 2026-01-28 06:28:42 --> User Agent Class Initialized
+INFO - 2026-01-28 06:28:42 --> Language file loaded: language/english/pagination_lang.php
+INFO - 2026-01-28 06:28:42 --> Pagination Class Initialized
+INFO - 2026-01-28 06:28:42 --> Controller Class Initialized
+INFO - 2026-01-28 06:28:42 --> Model "M_login" initialized
+INFO - 2026-01-28 06:28:42 --> File loaded: C:\xampp\htdocs\Aconnect_ci3\application\views\admin/login.php
+INFO - 2026-01-28 06:28:42 --> Final output sent to browser
+DEBUG - 2026-01-28 06:28:42 --> Total execution time: 0.9526
+INFO - 2026-01-28 06:28:42 --> Session: Class initialized using 'files' driver.
+INFO - 2026-01-28 06:28:42 --> Helper loaded: form_helper
+INFO - 2026-01-28 06:28:42 --> Form Validation Class Initialized
+INFO - 2026-01-28 06:28:42 --> User Agent Class Initialized
+INFO - 2026-01-28 06:28:42 --> Language file loaded: language/english/pagination_lang.php
+INFO - 2026-01-28 06:28:42 --> Pagination Class Initialized
+INFO - 2026-01-28 06:28:42 --> Controller Class Initialized
+INFO - 2026-01-28 06:28:42 --> Model "M_login" initialized
+INFO - 2026-01-28 06:28:42 --> File loaded: C:\xampp\htdocs\Aconnect_ci3\application\views\admin/login.php
+INFO - 2026-01-28 06:28:42 --> Final output sent to browser
+DEBUG - 2026-01-28 06:28:42 --> Total execution time: 1.2585
+INFO - 2026-01-28 06:28:42 --> Session: Class initialized using 'files' driver.
+INFO - 2026-01-28 06:28:42 --> Helper loaded: form_helper
+INFO - 2026-01-28 06:28:42 --> Form Validation Class Initialized
+INFO - 2026-01-28 06:28:42 --> User Agent Class Initialized
+INFO - 2026-01-28 06:28:42 --> Language file loaded: language/english/pagination_lang.php
+INFO - 2026-01-28 06:28:42 --> Pagination Class Initialized
+INFO - 2026-01-28 06:28:42 --> Controller Class Initialized
+INFO - 2026-01-28 06:28:42 --> Model "M_login" initialized
+INFO - 2026-01-28 06:28:42 --> File loaded: C:\xampp\htdocs\Aconnect_ci3\application\views\admin/login.php
+INFO - 2026-01-28 06:28:42 --> Final output sent to browser
+DEBUG - 2026-01-28 06:28:42 --> Total execution time: 0.4726
+INFO - 2026-01-28 06:28:42 --> Session: Class initialized using 'files' driver.
+INFO - 2026-01-28 06:28:42 --> Helper loaded: form_helper
+INFO - 2026-01-28 06:28:42 --> Form Validation Class Initialized
+INFO - 2026-01-28 06:28:42 --> User Agent Class Initialized
+INFO - 2026-01-28 06:28:42 --> Language file loaded: language/english/pagination_lang.php
+INFO - 2026-01-28 06:28:42 --> Pagination Class Initialized
+INFO - 2026-01-28 06:28:42 --> Controller Class Initialized
+INFO - 2026-01-28 06:28:42 --> Model "M_login" initialized
+INFO - 2026-01-28 06:28:42 --> File loaded: C:\xampp\htdocs\Aconnect_ci3\application\views\admin/login.php
+INFO - 2026-01-28 06:28:42 --> Final output sent to browser
+DEBUG - 2026-01-28 06:28:42 --> Total execution time: 0.3120
+INFO - 2026-01-28 06:28:42 --> Session: Class initialized using 'files' driver.
+INFO - 2026-01-28 06:28:42 --> Helper loaded: form_helper
+INFO - 2026-01-28 06:28:42 --> Form Validation Class Initialized
+INFO - 2026-01-28 06:28:42 --> User Agent Class Initialized
+INFO - 2026-01-28 06:28:42 --> Language file loaded: language/english/pagination_lang.php
+INFO - 2026-01-28 06:28:42 --> Pagination Class Initialized
+INFO - 2026-01-28 06:28:42 --> Controller Class Initialized
+INFO - 2026-01-28 06:28:42 --> Model "M_login" initialized
+INFO - 2026-01-28 06:28:42 --> File loaded: C:\xampp\htdocs\Aconnect_ci3\application\views\admin/login.php
+INFO - 2026-01-28 06:28:42 --> Final output sent to browser
+DEBUG - 2026-01-28 06:28:42 --> Total execution time: 0.1473
+ERROR - 2026-01-28 06:28:42 --> $config['composer_autoload'] is set to TRUE but C:\xampp\htdocs\Aconnect_ci3\application\vendor/autoload.php was not found.
+INFO - 2026-01-28 06:28:42 --> Config Class Initialized
+INFO - 2026-01-28 06:28:42 --> Hooks Class Initialized
+DEBUG - 2026-01-28 06:28:42 --> UTF-8 Support Enabled
+INFO - 2026-01-28 06:28:42 --> Utf8 Class Initialized
+INFO - 2026-01-28 06:28:42 --> URI Class Initialized
+INFO - 2026-01-28 06:28:42 --> Router Class Initialized
+INFO - 2026-01-28 06:28:42 --> Output Class Initialized
+INFO - 2026-01-28 06:28:42 --> Security Class Initialized
+DEBUG - 2026-01-28 06:28:42 --> Global POST, GET and COOKIE data sanitized
+INFO - 2026-01-28 06:28:42 --> Input Class Initialized
+INFO - 2026-01-28 06:28:42 --> Language Class Initialized
+INFO - 2026-01-28 06:28:42 --> Loader Class Initialized
+INFO - 2026-01-28 06:28:42 --> Helper loaded: url_helper
+INFO - 2026-01-28 06:28:42 --> Helper loaded: file_helper
+INFO - 2026-01-28 06:28:42 --> Helper loaded: html_helper
+INFO - 2026-01-28 06:28:42 --> Database Driver Class Initialized
+INFO - 2026-01-28 06:28:42 --> Session: Class initialized using 'files' driver.
+INFO - 2026-01-28 06:28:42 --> Helper loaded: form_helper
+INFO - 2026-01-28 06:28:42 --> Form Validation Class Initialized
+INFO - 2026-01-28 06:28:42 --> User Agent Class Initialized
+INFO - 2026-01-28 06:28:42 --> Language file loaded: language/english/pagination_lang.php
+INFO - 2026-01-28 06:28:42 --> Pagination Class Initialized
+INFO - 2026-01-28 06:28:42 --> Controller Class Initialized
+INFO - 2026-01-28 06:28:42 --> Model "M_login" initialized
+INFO - 2026-01-28 06:28:42 --> File loaded: C:\xampp\htdocs\Aconnect_ci3\application\views\admin/login.php
+INFO - 2026-01-28 06:28:42 --> Final output sent to browser
+DEBUG - 2026-01-28 06:28:42 --> Total execution time: 0.0518
+ERROR - 2026-01-28 06:28:44 --> $config['composer_autoload'] is set to TRUE but C:\xampp\htdocs\Aconnect_ci3\application\vendor/autoload.php was not found.
+INFO - 2026-01-28 06:28:44 --> Config Class Initialized
+INFO - 2026-01-28 06:28:44 --> Hooks Class Initialized
+DEBUG - 2026-01-28 06:28:44 --> UTF-8 Support Enabled
+INFO - 2026-01-28 06:28:44 --> Utf8 Class Initialized
+INFO - 2026-01-28 06:28:44 --> URI Class Initialized
+INFO - 2026-01-28 06:28:44 --> Router Class Initialized
+INFO - 2026-01-28 06:28:44 --> Output Class Initialized
+INFO - 2026-01-28 06:28:44 --> Security Class Initialized
+DEBUG - 2026-01-28 06:28:44 --> Global POST, GET and COOKIE data sanitized
+INFO - 2026-01-28 06:28:44 --> Input Class Initialized
+INFO - 2026-01-28 06:28:44 --> Language Class Initialized
+INFO - 2026-01-28 06:28:44 --> Loader Class Initialized
+INFO - 2026-01-28 06:28:44 --> Helper loaded: url_helper
+INFO - 2026-01-28 06:28:44 --> Helper loaded: file_helper
+INFO - 2026-01-28 06:28:44 --> Helper loaded: html_helper
+INFO - 2026-01-28 06:28:44 --> Database Driver Class Initialized
+INFO - 2026-01-28 06:28:44 --> Session: Class initialized using 'files' driver.
+INFO - 2026-01-28 06:28:44 --> Helper loaded: form_helper
+INFO - 2026-01-28 06:28:44 --> Form Validation Class Initialized
+INFO - 2026-01-28 06:28:44 --> User Agent Class Initialized
+INFO - 2026-01-28 06:28:44 --> Language file loaded: language/english/pagination_lang.php
+INFO - 2026-01-28 06:28:44 --> Pagination Class Initialized
+INFO - 2026-01-28 06:28:44 --> Controller Class Initialized
+INFO - 2026-01-28 06:28:44 --> Model "M_login" initialized
+INFO - 2026-01-28 06:28:44 --> File loaded: C:\xampp\htdocs\Aconnect_ci3\application\views\admin/login.php
+INFO - 2026-01-28 06:28:44 --> Final output sent to browser
+DEBUG - 2026-01-28 06:28:44 --> Total execution time: 0.1250
+ERROR - 2026-01-28 06:28:45 --> $config['composer_autoload'] is set to TRUE but C:\xampp\htdocs\Aconnect_ci3\application\vendor/autoload.php was not found.
+INFO - 2026-01-28 06:28:45 --> Config Class Initialized
+INFO - 2026-01-28 06:28:45 --> Hooks Class Initialized
+DEBUG - 2026-01-28 06:28:45 --> UTF-8 Support Enabled
+INFO - 2026-01-28 06:28:45 --> Utf8 Class Initialized
+INFO - 2026-01-28 06:28:45 --> URI Class Initialized
+INFO - 2026-01-28 06:28:45 --> Router Class Initialized
+INFO - 2026-01-28 06:28:45 --> Output Class Initialized
+INFO - 2026-01-28 06:28:45 --> Security Class Initialized
+DEBUG - 2026-01-28 06:28:45 --> Global POST, GET and COOKIE data sanitized
+INFO - 2026-01-28 06:28:45 --> Input Class Initialized
+INFO - 2026-01-28 06:28:45 --> Language Class Initialized
+INFO - 2026-01-28 06:28:45 --> Loader Class Initialized
+INFO - 2026-01-28 06:28:45 --> Helper loaded: url_helper
+INFO - 2026-01-28 06:28:45 --> Helper loaded: file_helper
+INFO - 2026-01-28 06:28:45 --> Helper loaded: html_helper
+INFO - 2026-01-28 06:28:45 --> Database Driver Class Initialized
+INFO - 2026-01-28 06:28:45 --> Session: Class initialized using 'files' driver.
+INFO - 2026-01-28 06:28:45 --> Helper loaded: form_helper
+INFO - 2026-01-28 06:28:45 --> Form Validation Class Initialized
+INFO - 2026-01-28 06:28:45 --> User Agent Class Initialized
+INFO - 2026-01-28 06:28:45 --> Language file loaded: language/english/pagination_lang.php
+INFO - 2026-01-28 06:28:45 --> Pagination Class Initialized
+INFO - 2026-01-28 06:28:45 --> Controller Class Initialized
+INFO - 2026-01-28 06:28:45 --> Model "M_login" initialized
+INFO - 2026-01-28 06:28:45 --> File loaded: C:\xampp\htdocs\Aconnect_ci3\application\views\admin/login.php
+INFO - 2026-01-28 06:28:45 --> Final output sent to browser
+DEBUG - 2026-01-28 06:28:45 --> Total execution time: 0.0229
+ERROR - 2026-01-28 06:28:48 --> $config['composer_autoload'] is set to TRUE but C:\xampp\htdocs\Aconnect_ci3\application\vendor/autoload.php was not found.
+INFO - 2026-01-28 06:28:48 --> Config Class Initialized
+INFO - 2026-01-28 06:28:48 --> Hooks Class Initialized
+DEBUG - 2026-01-28 06:28:48 --> UTF-8 Support Enabled
+INFO - 2026-01-28 06:28:48 --> Utf8 Class Initialized
+INFO - 2026-01-28 06:28:48 --> URI Class Initialized
+INFO - 2026-01-28 06:28:48 --> Router Class Initialized
+INFO - 2026-01-28 06:28:48 --> Output Class Initialized
+INFO - 2026-01-28 06:28:48 --> Security Class Initialized
+DEBUG - 2026-01-28 06:28:48 --> Global POST, GET and COOKIE data sanitized
+INFO - 2026-01-28 06:28:48 --> Input Class Initialized
+INFO - 2026-01-28 06:28:48 --> Language Class Initialized
+INFO - 2026-01-28 06:28:48 --> Loader Class Initialized
+INFO - 2026-01-28 06:28:48 --> Helper loaded: url_helper
+INFO - 2026-01-28 06:28:48 --> Helper loaded: file_helper
+INFO - 2026-01-28 06:28:48 --> Helper loaded: html_helper
+INFO - 2026-01-28 06:28:48 --> Database Driver Class Initialized
+INFO - 2026-01-28 06:28:48 --> Session: Class initialized using 'files' driver.
+INFO - 2026-01-28 06:28:48 --> Helper loaded: form_helper
+INFO - 2026-01-28 06:28:48 --> Form Validation Class Initialized
+INFO - 2026-01-28 06:28:48 --> User Agent Class Initialized
+INFO - 2026-01-28 06:28:48 --> Language file loaded: language/english/pagination_lang.php
+INFO - 2026-01-28 06:28:48 --> Pagination Class Initialized
+INFO - 2026-01-28 06:28:48 --> Controller Class Initialized
+INFO - 2026-01-28 06:28:48 --> Model "M_login" initialized
+INFO - 2026-01-28 06:28:48 --> File loaded: C:\xampp\htdocs\Aconnect_ci3\application\views\login.php
+INFO - 2026-01-28 06:28:48 --> Final output sent to browser
+DEBUG - 2026-01-28 06:28:48 --> Total execution time: 0.1463
+ERROR - 2026-01-28 06:28:50 --> $config['composer_autoload'] is set to TRUE but C:\xampp\htdocs\Aconnect_ci3\application\vendor/autoload.php was not found.
+INFO - 2026-01-28 06:28:50 --> Config Class Initialized
+INFO - 2026-01-28 06:28:50 --> Hooks Class Initialized
+DEBUG - 2026-01-28 06:28:50 --> UTF-8 Support Enabled
+INFO - 2026-01-28 06:28:50 --> Utf8 Class Initialized
+INFO - 2026-01-28 06:28:50 --> URI Class Initialized
+INFO - 2026-01-28 06:28:50 --> Router Class Initialized
+INFO - 2026-01-28 06:28:50 --> Output Class Initialized
+INFO - 2026-01-28 06:28:50 --> Security Class Initialized
+DEBUG - 2026-01-28 06:28:50 --> Global POST, GET and COOKIE data sanitized
+INFO - 2026-01-28 06:28:50 --> Input Class Initialized
+INFO - 2026-01-28 06:28:50 --> Language Class Initialized
+INFO - 2026-01-28 06:28:50 --> Loader Class Initialized
+INFO - 2026-01-28 06:28:50 --> Helper loaded: url_helper
+INFO - 2026-01-28 06:28:50 --> Helper loaded: file_helper
+INFO - 2026-01-28 06:28:50 --> Helper loaded: html_helper
+INFO - 2026-01-28 06:28:50 --> Database Driver Class Initialized
+INFO - 2026-01-28 06:28:50 --> Session: Class initialized using 'files' driver.
+INFO - 2026-01-28 06:28:50 --> Helper loaded: form_helper
+INFO - 2026-01-28 06:28:50 --> Form Validation Class Initialized
+INFO - 2026-01-28 06:28:50 --> User Agent Class Initialized
+INFO - 2026-01-28 06:28:50 --> Language file loaded: language/english/pagination_lang.php
+INFO - 2026-01-28 06:28:50 --> Pagination Class Initialized
+INFO - 2026-01-28 06:28:50 --> Controller Class Initialized
+INFO - 2026-01-28 06:28:50 --> Model "M_login" initialized
+ERROR - 2026-01-28 06:28:50 --> $config['composer_autoload'] is set to TRUE but C:\xampp\htdocs\Aconnect_ci3\application\vendor/autoload.php was not found.
+INFO - 2026-01-28 06:28:50 --> Config Class Initialized
+INFO - 2026-01-28 06:28:50 --> Hooks Class Initialized
+DEBUG - 2026-01-28 06:28:50 --> UTF-8 Support Enabled
+INFO - 2026-01-28 06:28:50 --> Utf8 Class Initialized
+INFO - 2026-01-28 06:28:50 --> URI Class Initialized
+INFO - 2026-01-28 06:28:50 --> Router Class Initialized
+INFO - 2026-01-28 06:28:50 --> Output Class Initialized
+INFO - 2026-01-28 06:28:50 --> Security Class Initialized
+DEBUG - 2026-01-28 06:28:50 --> Global POST, GET and COOKIE data sanitized
+INFO - 2026-01-28 06:28:50 --> Input Class Initialized
+INFO - 2026-01-28 06:28:50 --> Language Class Initialized
+INFO - 2026-01-28 06:28:50 --> Loader Class Initialized
+INFO - 2026-01-28 06:28:50 --> Helper loaded: url_helper
+INFO - 2026-01-28 06:28:50 --> Helper loaded: file_helper
+INFO - 2026-01-28 06:28:50 --> Helper loaded: html_helper
+INFO - 2026-01-28 06:28:50 --> Database Driver Class Initialized
+INFO - 2026-01-28 06:28:50 --> Session: Class initialized using 'files' driver.
+INFO - 2026-01-28 06:28:50 --> Helper loaded: form_helper
+INFO - 2026-01-28 06:28:50 --> Form Validation Class Initialized
+INFO - 2026-01-28 06:28:50 --> User Agent Class Initialized
+INFO - 2026-01-28 06:28:50 --> Language file loaded: language/english/pagination_lang.php
+INFO - 2026-01-28 06:28:50 --> Pagination Class Initialized
+INFO - 2026-01-28 06:28:50 --> Controller Class Initialized
+INFO - 2026-01-28 06:28:50 --> Model "M_login" initialized
+INFO - 2026-01-28 06:28:50 --> File loaded: C:\xampp\htdocs\Aconnect_ci3\application\views\login.php
+INFO - 2026-01-28 06:28:50 --> Final output sent to browser
+DEBUG - 2026-01-28 06:28:50 --> Total execution time: 0.0237
+ERROR - 2026-01-28 06:31:48 --> $config['composer_autoload'] is set to TRUE but C:\xampp\htdocs\Aconnect_ci3\application\vendor/autoload.php was not found.
+INFO - 2026-01-28 06:31:48 --> Config Class Initialized
+INFO - 2026-01-28 06:31:48 --> Hooks Class Initialized
+DEBUG - 2026-01-28 06:31:48 --> UTF-8 Support Enabled
+INFO - 2026-01-28 06:31:48 --> Utf8 Class Initialized
+INFO - 2026-01-28 06:31:48 --> URI Class Initialized
+INFO - 2026-01-28 06:31:48 --> Router Class Initialized
+INFO - 2026-01-28 06:31:48 --> Output Class Initialized
+INFO - 2026-01-28 06:31:48 --> Security Class Initialized
+DEBUG - 2026-01-28 06:31:48 --> Global POST, GET and COOKIE data sanitized
+INFO - 2026-01-28 06:31:48 --> Input Class Initialized
+INFO - 2026-01-28 06:31:48 --> Language Class Initialized
+INFO - 2026-01-28 06:31:48 --> Loader Class Initialized
+INFO - 2026-01-28 06:31:48 --> Helper loaded: url_helper
+INFO - 2026-01-28 06:31:48 --> Helper loaded: file_helper
+INFO - 2026-01-28 06:31:48 --> Helper loaded: html_helper
+INFO - 2026-01-28 06:31:48 --> Database Driver Class Initialized
+INFO - 2026-01-28 06:31:48 --> Session: Class initialized using 'files' driver.
+INFO - 2026-01-28 06:31:48 --> Helper loaded: form_helper
+INFO - 2026-01-28 06:31:48 --> Form Validation Class Initialized
+INFO - 2026-01-28 06:31:48 --> User Agent Class Initialized
+INFO - 2026-01-28 06:31:48 --> Language file loaded: language/english/pagination_lang.php
+INFO - 2026-01-28 06:31:48 --> Pagination Class Initialized
+INFO - 2026-01-28 06:31:48 --> Controller Class Initialized
+INFO - 2026-01-28 06:31:48 --> Model "M_login" initialized
+INFO - 2026-01-28 06:31:48 --> File loaded: C:\xampp\htdocs\Aconnect_ci3\application\views\admin/login.php
+INFO - 2026-01-28 06:31:48 --> Final output sent to browser
+DEBUG - 2026-01-28 06:31:48 --> Total execution time: 0.0240
+ERROR - 2026-01-28 06:31:56 --> $config['composer_autoload'] is set to TRUE but C:\xampp\htdocs\Aconnect_ci3\application\vendor/autoload.php was not found.
+INFO - 2026-01-28 06:31:56 --> Config Class Initialized
+INFO - 2026-01-28 06:31:56 --> Hooks Class Initialized
+DEBUG - 2026-01-28 06:31:56 --> UTF-8 Support Enabled
+INFO - 2026-01-28 06:31:56 --> Utf8 Class Initialized
+INFO - 2026-01-28 06:31:56 --> URI Class Initialized
+INFO - 2026-01-28 06:31:56 --> Router Class Initialized
+INFO - 2026-01-28 06:31:56 --> Output Class Initialized
+INFO - 2026-01-28 06:31:56 --> Security Class Initialized
+DEBUG - 2026-01-28 06:31:56 --> Global POST, GET and COOKIE data sanitized
+INFO - 2026-01-28 06:31:56 --> Input Class Initialized
+INFO - 2026-01-28 06:31:56 --> Language Class Initialized
+INFO - 2026-01-28 06:31:56 --> Loader Class Initialized
+INFO - 2026-01-28 06:31:56 --> Helper loaded: url_helper
+INFO - 2026-01-28 06:31:56 --> Helper loaded: file_helper
+INFO - 2026-01-28 06:31:56 --> Helper loaded: html_helper
+INFO - 2026-01-28 06:31:56 --> Database Driver Class Initialized
+INFO - 2026-01-28 06:31:56 --> Session: Class initialized using 'files' driver.
+INFO - 2026-01-28 06:31:56 --> Helper loaded: form_helper
+INFO - 2026-01-28 06:31:56 --> Form Validation Class Initialized
+INFO - 2026-01-28 06:31:56 --> User Agent Class Initialized
+INFO - 2026-01-28 06:31:56 --> Language file loaded: language/english/pagination_lang.php
+INFO - 2026-01-28 06:31:56 --> Pagination Class Initialized
+INFO - 2026-01-28 06:31:56 --> Controller Class Initialized
+INFO - 2026-01-28 06:31:56 --> Model "M_login" initialized
+INFO - 2026-01-28 06:31:56 --> File loaded: C:\xampp\htdocs\Aconnect_ci3\application\views\admin/login.php
+INFO - 2026-01-28 06:31:56 --> Final output sent to browser
+DEBUG - 2026-01-28 06:31:56 --> Total execution time: 0.0343
+ERROR - 2026-01-28 06:31:57 --> $config['composer_autoload'] is set to TRUE but C:\xampp\htdocs\Aconnect_ci3\application\vendor/autoload.php was not found.
+INFO - 2026-01-28 06:31:57 --> Config Class Initialized
+INFO - 2026-01-28 06:31:57 --> Hooks Class Initialized
+DEBUG - 2026-01-28 06:31:57 --> UTF-8 Support Enabled
+INFO - 2026-01-28 06:31:57 --> Utf8 Class Initialized
+INFO - 2026-01-28 06:31:57 --> URI Class Initialized
+INFO - 2026-01-28 06:31:57 --> Router Class Initialized
+INFO - 2026-01-28 06:31:57 --> Output Class Initialized
+INFO - 2026-01-28 06:31:57 --> Security Class Initialized
+DEBUG - 2026-01-28 06:31:57 --> Global POST, GET and COOKIE data sanitized
+INFO - 2026-01-28 06:31:57 --> Input Class Initialized
+INFO - 2026-01-28 06:31:57 --> Language Class Initialized
+INFO - 2026-01-28 06:31:57 --> Loader Class Initialized
+INFO - 2026-01-28 06:31:57 --> Helper loaded: url_helper
+INFO - 2026-01-28 06:31:57 --> Helper loaded: file_helper
+INFO - 2026-01-28 06:31:57 --> Helper loaded: html_helper
+INFO - 2026-01-28 06:31:57 --> Database Driver Class Initialized
+INFO - 2026-01-28 06:31:57 --> Session: Class initialized using 'files' driver.
+INFO - 2026-01-28 06:31:57 --> Helper loaded: form_helper
+INFO - 2026-01-28 06:31:57 --> Form Validation Class Initialized
+INFO - 2026-01-28 06:31:57 --> User Agent Class Initialized
+INFO - 2026-01-28 06:31:57 --> Language file loaded: language/english/pagination_lang.php
+INFO - 2026-01-28 06:31:57 --> Pagination Class Initialized
+INFO - 2026-01-28 06:31:57 --> Controller Class Initialized
+INFO - 2026-01-28 06:31:57 --> Model "M_login" initialized
+INFO - 2026-01-28 06:31:57 --> File loaded: C:\xampp\htdocs\Aconnect_ci3\application\views\admin/login.php
+INFO - 2026-01-28 06:31:57 --> Final output sent to browser
+DEBUG - 2026-01-28 06:31:57 --> Total execution time: 0.0232
+ERROR - 2026-01-28 06:32:06 --> $config['composer_autoload'] is set to TRUE but C:\xampp\htdocs\Aconnect_ci3\application\vendor/autoload.php was not found.
+INFO - 2026-01-28 06:32:06 --> Config Class Initialized
+INFO - 2026-01-28 06:32:06 --> Hooks Class Initialized
+DEBUG - 2026-01-28 06:32:06 --> UTF-8 Support Enabled
+INFO - 2026-01-28 06:32:06 --> Utf8 Class Initialized
+INFO - 2026-01-28 06:32:06 --> URI Class Initialized
+INFO - 2026-01-28 06:32:06 --> Router Class Initialized
+INFO - 2026-01-28 06:32:06 --> Output Class Initialized
+INFO - 2026-01-28 06:32:06 --> Security Class Initialized
+DEBUG - 2026-01-28 06:32:06 --> Global POST, GET and COOKIE data sanitized
+INFO - 2026-01-28 06:32:06 --> Input Class Initialized
+INFO - 2026-01-28 06:32:06 --> Language Class Initialized
+INFO - 2026-01-28 06:32:06 --> Loader Class Initialized
+INFO - 2026-01-28 06:32:06 --> Helper loaded: url_helper
+INFO - 2026-01-28 06:32:06 --> Helper loaded: file_helper
+INFO - 2026-01-28 06:32:06 --> Helper loaded: html_helper
+INFO - 2026-01-28 06:32:06 --> Database Driver Class Initialized
+INFO - 2026-01-28 06:32:06 --> Session: Class initialized using 'files' driver.
+INFO - 2026-01-28 06:32:06 --> Helper loaded: form_helper
+INFO - 2026-01-28 06:32:06 --> Form Validation Class Initialized
+INFO - 2026-01-28 06:32:06 --> User Agent Class Initialized
+INFO - 2026-01-28 06:32:06 --> Language file loaded: language/english/pagination_lang.php
+INFO - 2026-01-28 06:32:06 --> Pagination Class Initialized
+INFO - 2026-01-28 06:32:06 --> Controller Class Initialized
+INFO - 2026-01-28 06:32:06 --> Model "M_login" initialized
+INFO - 2026-01-28 06:32:06 --> File loaded: C:\xampp\htdocs\Aconnect_ci3\application\views\admin/login.php
+INFO - 2026-01-28 06:32:06 --> Final output sent to browser
+DEBUG - 2026-01-28 06:32:06 --> Total execution time: 0.0478
+ERROR - 2026-01-28 06:32:07 --> $config['composer_autoload'] is set to TRUE but C:\xampp\htdocs\Aconnect_ci3\application\vendor/autoload.php was not found.
+INFO - 2026-01-28 06:32:07 --> Config Class Initialized
+INFO - 2026-01-28 06:32:07 --> Hooks Class Initialized
+DEBUG - 2026-01-28 06:32:07 --> UTF-8 Support Enabled
+INFO - 2026-01-28 06:32:07 --> Utf8 Class Initialized
+INFO - 2026-01-28 06:32:07 --> URI Class Initialized
+INFO - 2026-01-28 06:32:07 --> Router Class Initialized
+INFO - 2026-01-28 06:32:07 --> Output Class Initialized
+INFO - 2026-01-28 06:32:07 --> Security Class Initialized
+DEBUG - 2026-01-28 06:32:07 --> Global POST, GET and COOKIE data sanitized
+INFO - 2026-01-28 06:32:07 --> Input Class Initialized
+INFO - 2026-01-28 06:32:07 --> Language Class Initialized
+INFO - 2026-01-28 06:32:07 --> Loader Class Initialized
+INFO - 2026-01-28 06:32:07 --> Helper loaded: url_helper
+INFO - 2026-01-28 06:32:07 --> Helper loaded: file_helper
+INFO - 2026-01-28 06:32:07 --> Helper loaded: html_helper
+INFO - 2026-01-28 06:32:07 --> Database Driver Class Initialized
+INFO - 2026-01-28 06:32:07 --> Session: Class initialized using 'files' driver.
+INFO - 2026-01-28 06:32:07 --> Helper loaded: form_helper
+INFO - 2026-01-28 06:32:07 --> Form Validation Class Initialized
+INFO - 2026-01-28 06:32:07 --> User Agent Class Initialized
+INFO - 2026-01-28 06:32:07 --> Language file loaded: language/english/pagination_lang.php
+INFO - 2026-01-28 06:32:07 --> Pagination Class Initialized
+INFO - 2026-01-28 06:32:07 --> Controller Class Initialized
+INFO - 2026-01-28 06:32:07 --> Model "M_login" initialized
+INFO - 2026-01-28 06:32:07 --> File loaded: C:\xampp\htdocs\Aconnect_ci3\application\views\admin/login.php
+INFO - 2026-01-28 06:32:07 --> Final output sent to browser
+DEBUG - 2026-01-28 06:32:07 --> Total execution time: 0.0225
+ERROR - 2026-01-28 06:32:17 --> $config['composer_autoload'] is set to TRUE but C:\xampp\htdocs\Aconnect_ci3\application\vendor/autoload.php was not found.
+INFO - 2026-01-28 06:32:17 --> Config Class Initialized
+INFO - 2026-01-28 06:32:17 --> Hooks Class Initialized
+DEBUG - 2026-01-28 06:32:17 --> UTF-8 Support Enabled
+INFO - 2026-01-28 06:32:17 --> Utf8 Class Initialized
+INFO - 2026-01-28 06:32:17 --> URI Class Initialized
+INFO - 2026-01-28 06:32:17 --> Router Class Initialized
+INFO - 2026-01-28 06:32:17 --> Output Class Initialized
+INFO - 2026-01-28 06:32:17 --> Security Class Initialized
+DEBUG - 2026-01-28 06:32:17 --> Global POST, GET and COOKIE data sanitized
+INFO - 2026-01-28 06:32:17 --> Input Class Initialized
+INFO - 2026-01-28 06:32:17 --> Language Class Initialized
+INFO - 2026-01-28 06:32:17 --> Loader Class Initialized
+INFO - 2026-01-28 06:32:17 --> Helper loaded: url_helper
+INFO - 2026-01-28 06:32:17 --> Helper loaded: file_helper
+INFO - 2026-01-28 06:32:17 --> Helper loaded: html_helper
+INFO - 2026-01-28 06:32:17 --> Database Driver Class Initialized
+INFO - 2026-01-28 06:32:17 --> Session: Class initialized using 'files' driver.
+INFO - 2026-01-28 06:32:17 --> Helper loaded: form_helper
+INFO - 2026-01-28 06:32:17 --> Form Validation Class Initialized
+INFO - 2026-01-28 06:32:17 --> User Agent Class Initialized
+INFO - 2026-01-28 06:32:17 --> Language file loaded: language/english/pagination_lang.php
+INFO - 2026-01-28 06:32:17 --> Pagination Class Initialized
+INFO - 2026-01-28 06:32:17 --> Controller Class Initialized
+INFO - 2026-01-28 06:32:17 --> Model "M_login" initialized
+INFO - 2026-01-28 06:32:17 --> File loaded: C:\xampp\htdocs\Aconnect_ci3\application\views\admin/login.php
+INFO - 2026-01-28 06:32:17 --> Final output sent to browser
+DEBUG - 2026-01-28 06:32:17 --> Total execution time: 0.0419
+ERROR - 2026-01-28 06:32:18 --> $config['composer_autoload'] is set to TRUE but C:\xampp\htdocs\Aconnect_ci3\application\vendor/autoload.php was not found.
+INFO - 2026-01-28 06:32:18 --> Config Class Initialized
+INFO - 2026-01-28 06:32:18 --> Hooks Class Initialized
+DEBUG - 2026-01-28 06:32:18 --> UTF-8 Support Enabled
+INFO - 2026-01-28 06:32:18 --> Utf8 Class Initialized
+INFO - 2026-01-28 06:32:18 --> URI Class Initialized
+INFO - 2026-01-28 06:32:18 --> Router Class Initialized
+INFO - 2026-01-28 06:32:18 --> Output Class Initialized
+INFO - 2026-01-28 06:32:18 --> Security Class Initialized
+DEBUG - 2026-01-28 06:32:18 --> Global POST, GET and COOKIE data sanitized
+INFO - 2026-01-28 06:32:18 --> Input Class Initialized
+INFO - 2026-01-28 06:32:18 --> Language Class Initialized
+INFO - 2026-01-28 06:32:18 --> Loader Class Initialized
+INFO - 2026-01-28 06:32:18 --> Helper loaded: url_helper
+INFO - 2026-01-28 06:32:18 --> Helper loaded: file_helper
+INFO - 2026-01-28 06:32:18 --> Helper loaded: html_helper
+INFO - 2026-01-28 06:32:18 --> Database Driver Class Initialized
+INFO - 2026-01-28 06:32:18 --> Session: Class initialized using 'files' driver.
+INFO - 2026-01-28 06:32:18 --> Helper loaded: form_helper
+INFO - 2026-01-28 06:32:18 --> Form Validation Class Initialized
+INFO - 2026-01-28 06:32:18 --> User Agent Class Initialized
+INFO - 2026-01-28 06:32:18 --> Language file loaded: language/english/pagination_lang.php
+INFO - 2026-01-28 06:32:18 --> Pagination Class Initialized
+INFO - 2026-01-28 06:32:18 --> Controller Class Initialized
+INFO - 2026-01-28 06:32:18 --> Model "M_login" initialized
+INFO - 2026-01-28 06:32:18 --> File loaded: C:\xampp\htdocs\Aconnect_ci3\application\views\admin/login.php
+INFO - 2026-01-28 06:32:18 --> Final output sent to browser
+DEBUG - 2026-01-28 06:32:18 --> Total execution time: 0.0463
+ERROR - 2026-01-28 06:45:02 --> $config['composer_autoload'] is set to TRUE but C:\xampp\htdocs\Aconnect_ci3\application\vendor/autoload.php was not found.
+INFO - 2026-01-28 06:45:02 --> Config Class Initialized
+INFO - 2026-01-28 06:45:02 --> Hooks Class Initialized
+DEBUG - 2026-01-28 06:45:02 --> UTF-8 Support Enabled
+INFO - 2026-01-28 06:45:02 --> Utf8 Class Initialized
+INFO - 2026-01-28 06:45:02 --> URI Class Initialized
+INFO - 2026-01-28 06:45:02 --> Router Class Initialized
+INFO - 2026-01-28 06:45:02 --> Output Class Initialized
+INFO - 2026-01-28 06:45:02 --> Security Class Initialized
+DEBUG - 2026-01-28 06:45:02 --> Global POST, GET and COOKIE data sanitized
+INFO - 2026-01-28 06:45:02 --> Input Class Initialized
+INFO - 2026-01-28 06:45:02 --> Language Class Initialized
+INFO - 2026-01-28 06:45:02 --> Loader Class Initialized
+INFO - 2026-01-28 06:45:02 --> Helper loaded: url_helper
+INFO - 2026-01-28 06:45:02 --> Helper loaded: file_helper
+INFO - 2026-01-28 06:45:02 --> Helper loaded: html_helper
+INFO - 2026-01-28 06:45:02 --> Database Driver Class Initialized
+INFO - 2026-01-28 06:45:02 --> Session: Class initialized using 'files' driver.
+INFO - 2026-01-28 06:45:02 --> Helper loaded: form_helper
+INFO - 2026-01-28 06:45:02 --> Form Validation Class Initialized
+INFO - 2026-01-28 06:45:02 --> User Agent Class Initialized
+INFO - 2026-01-28 06:45:02 --> Language file loaded: language/english/pagination_lang.php
+INFO - 2026-01-28 06:45:02 --> Pagination Class Initialized
+INFO - 2026-01-28 06:45:02 --> Controller Class Initialized
+INFO - 2026-01-28 06:45:02 --> Model "M_login" initialized
+INFO - 2026-01-28 06:45:02 --> File loaded: C:\xampp\htdocs\Aconnect_ci3\application\views\admin/login.php
+ERROR - 2026-01-28 06:45:02 --> $config['composer_autoload'] is set to TRUE but C:\xampp\htdocs\Aconnect_ci3\application\vendor/autoload.php was not found.
+INFO - 2026-01-28 06:45:02 --> Config Class Initialized
+INFO - 2026-01-28 06:45:02 --> Hooks Class Initialized
+DEBUG - 2026-01-28 06:45:02 --> UTF-8 Support Enabled
+INFO - 2026-01-28 06:45:02 --> Utf8 Class Initialized
+INFO - 2026-01-28 06:45:02 --> URI Class Initialized
+INFO - 2026-01-28 06:45:02 --> Router Class Initialized
+INFO - 2026-01-28 06:45:02 --> Output Class Initialized
+INFO - 2026-01-28 06:45:02 --> Security Class Initialized
+DEBUG - 2026-01-28 06:45:02 --> Global POST, GET and COOKIE data sanitized
+INFO - 2026-01-28 06:45:02 --> Input Class Initialized
+INFO - 2026-01-28 06:45:02 --> Language Class Initialized
+INFO - 2026-01-28 06:45:02 --> Loader Class Initialized
+INFO - 2026-01-28 06:45:02 --> Helper loaded: url_helper
+INFO - 2026-01-28 06:45:02 --> Helper loaded: file_helper
+INFO - 2026-01-28 06:45:02 --> Helper loaded: html_helper
+INFO - 2026-01-28 06:45:02 --> Database Driver Class Initialized
+INFO - 2026-01-28 06:45:02 --> Session: Class initialized using 'files' driver.
+INFO - 2026-01-28 06:45:02 --> Helper loaded: form_helper
+INFO - 2026-01-28 06:45:02 --> Form Validation Class Initialized
+INFO - 2026-01-28 06:45:02 --> User Agent Class Initialized
+INFO - 2026-01-28 06:45:02 --> Language file loaded: language/english/pagination_lang.php
+INFO - 2026-01-28 06:45:02 --> Pagination Class Initialized
+INFO - 2026-01-28 06:45:02 --> Controller Class Initialized
+INFO - 2026-01-28 06:45:02 --> File loaded: C:\xampp\htdocs\Aconnect_ci3\application\views\__header.php
+INFO - 2026-01-28 06:45:02 --> File loaded: C:\xampp\htdocs\Aconnect_ci3\application\views\dashboard_a.php
+INFO - 2026-01-28 06:45:02 --> File loaded: C:\xampp\htdocs\Aconnect_ci3\application\views\__footer.php
+INFO - 2026-01-28 06:45:02 --> Final output sent to browser
+DEBUG - 2026-01-28 06:45:02 --> Total execution time: 0.3217
+ERROR - 2026-01-28 06:51:00 --> $config['composer_autoload'] is set to TRUE but C:\xampp\htdocs\Aconnect_ci3\application\vendor/autoload.php was not found.
+INFO - 2026-01-28 06:51:00 --> Config Class Initialized
+INFO - 2026-01-28 06:51:00 --> Hooks Class Initialized
+DEBUG - 2026-01-28 06:51:00 --> UTF-8 Support Enabled
+INFO - 2026-01-28 06:51:00 --> Utf8 Class Initialized
+INFO - 2026-01-28 06:51:00 --> URI Class Initialized
+INFO - 2026-01-28 06:51:00 --> Router Class Initialized
+INFO - 2026-01-28 06:51:00 --> Output Class Initialized
+INFO - 2026-01-28 06:51:00 --> Security Class Initialized
+DEBUG - 2026-01-28 06:51:00 --> Global POST, GET and COOKIE data sanitized
+INFO - 2026-01-28 06:51:00 --> Input Class Initialized
+INFO - 2026-01-28 06:51:00 --> Language Class Initialized
+INFO - 2026-01-28 06:51:00 --> Loader Class Initialized
+INFO - 2026-01-28 06:51:00 --> Helper loaded: url_helper
+INFO - 2026-01-28 06:51:00 --> Helper loaded: file_helper
+INFO - 2026-01-28 06:51:00 --> Helper loaded: html_helper
+INFO - 2026-01-28 06:51:00 --> Database Driver Class Initialized
+INFO - 2026-01-28 06:51:00 --> Session: Class initialized using 'files' driver.
+INFO - 2026-01-28 06:51:00 --> Helper loaded: form_helper
+INFO - 2026-01-28 06:51:00 --> Form Validation Class Initialized
+INFO - 2026-01-28 06:51:00 --> User Agent Class Initialized
+INFO - 2026-01-28 06:51:00 --> Language file loaded: language/english/pagination_lang.php
+INFO - 2026-01-28 06:51:00 --> Pagination Class Initialized
+INFO - 2026-01-28 06:51:00 --> Controller Class Initialized
+INFO - 2026-01-28 06:51:00 --> Model "M_login" initialized
+ERROR - 2026-01-28 06:51:00 --> $config['composer_autoload'] is set to TRUE but C:\xampp\htdocs\Aconnect_ci3\application\vendor/autoload.php was not found.
+INFO - 2026-01-28 06:51:00 --> Config Class Initialized
+INFO - 2026-01-28 06:51:00 --> Hooks Class Initialized
+DEBUG - 2026-01-28 06:51:00 --> UTF-8 Support Enabled
+INFO - 2026-01-28 06:51:00 --> Utf8 Class Initialized
+INFO - 2026-01-28 06:51:00 --> URI Class Initialized
+INFO - 2026-01-28 06:51:00 --> Router Class Initialized
+INFO - 2026-01-28 06:51:00 --> Output Class Initialized
+INFO - 2026-01-28 06:51:00 --> Security Class Initialized
+DEBUG - 2026-01-28 06:51:00 --> Global POST, GET and COOKIE data sanitized
+INFO - 2026-01-28 06:51:00 --> Input Class Initialized
+INFO - 2026-01-28 06:51:00 --> Language Class Initialized
+INFO - 2026-01-28 06:51:00 --> Loader Class Initialized
+INFO - 2026-01-28 06:51:00 --> Helper loaded: url_helper
+INFO - 2026-01-28 06:51:00 --> Helper loaded: file_helper
+INFO - 2026-01-28 06:51:00 --> Helper loaded: html_helper
+INFO - 2026-01-28 06:51:00 --> Database Driver Class Initialized
+INFO - 2026-01-28 06:51:00 --> Session: Class initialized using 'files' driver.
+INFO - 2026-01-28 06:51:00 --> Helper loaded: form_helper
+INFO - 2026-01-28 06:51:00 --> Form Validation Class Initialized
+INFO - 2026-01-28 06:51:00 --> User Agent Class Initialized
+INFO - 2026-01-28 06:51:00 --> Language file loaded: language/english/pagination_lang.php
+INFO - 2026-01-28 06:51:00 --> Pagination Class Initialized
+INFO - 2026-01-28 06:51:00 --> Controller Class Initialized
+INFO - 2026-01-28 06:51:00 --> Model "M_login" initialized
+INFO - 2026-01-28 06:51:00 --> File loaded: C:\xampp\htdocs\Aconnect_ci3\application\views\admin/login.php
+INFO - 2026-01-28 06:51:00 --> Final output sent to browser
+DEBUG - 2026-01-28 06:51:00 --> Total execution time: 0.0542
+ERROR - 2026-01-28 06:59:06 --> $config['composer_autoload'] is set to TRUE but C:\xampp\htdocs\Aconnect_ci3\application\vendor/autoload.php was not found.
+INFO - 2026-01-28 06:59:06 --> Config Class Initialized
+INFO - 2026-01-28 06:59:06 --> Hooks Class Initialized
+DEBUG - 2026-01-28 06:59:06 --> UTF-8 Support Enabled
+INFO - 2026-01-28 06:59:06 --> Utf8 Class Initialized
+INFO - 2026-01-28 06:59:06 --> URI Class Initialized
+INFO - 2026-01-28 06:59:06 --> Router Class Initialized
+INFO - 2026-01-28 06:59:06 --> Output Class Initialized
+INFO - 2026-01-28 06:59:06 --> Security Class Initialized
+DEBUG - 2026-01-28 06:59:06 --> Global POST, GET and COOKIE data sanitized
+INFO - 2026-01-28 06:59:06 --> Input Class Initialized
+INFO - 2026-01-28 06:59:06 --> Language Class Initialized
+INFO - 2026-01-28 06:59:06 --> Loader Class Initialized
+INFO - 2026-01-28 06:59:06 --> Helper loaded: url_helper
+INFO - 2026-01-28 06:59:06 --> Helper loaded: file_helper
+INFO - 2026-01-28 06:59:06 --> Helper loaded: html_helper
+INFO - 2026-01-28 06:59:06 --> Database Driver Class Initialized
+INFO - 2026-01-28 06:59:06 --> Session: Class initialized using 'files' driver.
+INFO - 2026-01-28 06:59:06 --> Helper loaded: form_helper
+INFO - 2026-01-28 06:59:06 --> Form Validation Class Initialized
+INFO - 2026-01-28 06:59:06 --> User Agent Class Initialized
+INFO - 2026-01-28 06:59:06 --> Language file loaded: language/english/pagination_lang.php
+INFO - 2026-01-28 06:59:06 --> Pagination Class Initialized
+INFO - 2026-01-28 06:59:06 --> Controller Class Initialized
+INFO - 2026-01-28 06:59:06 --> Model "M_login" initialized
+INFO - 2026-01-28 06:59:06 --> File loaded: C:\xampp\htdocs\Aconnect_ci3\application\views\admin/login.php
+INFO - 2026-01-28 06:59:06 --> Final output sent to browser
+DEBUG - 2026-01-28 06:59:06 --> Total execution time: 0.0416
+ERROR - 2026-01-28 06:59:07 --> $config['composer_autoload'] is set to TRUE but C:\xampp\htdocs\Aconnect_ci3\application\vendor/autoload.php was not found.
+INFO - 2026-01-28 06:59:07 --> Config Class Initialized
+INFO - 2026-01-28 06:59:07 --> Hooks Class Initialized
+DEBUG - 2026-01-28 06:59:07 --> UTF-8 Support Enabled
+INFO - 2026-01-28 06:59:07 --> Utf8 Class Initialized
+INFO - 2026-01-28 06:59:07 --> URI Class Initialized
+INFO - 2026-01-28 06:59:07 --> Router Class Initialized
+INFO - 2026-01-28 06:59:07 --> Output Class Initialized
+INFO - 2026-01-28 06:59:07 --> Security Class Initialized
+DEBUG - 2026-01-28 06:59:07 --> Global POST, GET and COOKIE data sanitized
+INFO - 2026-01-28 06:59:07 --> Input Class Initialized
+INFO - 2026-01-28 06:59:07 --> Language Class Initialized
+INFO - 2026-01-28 06:59:07 --> Loader Class Initialized
+INFO - 2026-01-28 06:59:07 --> Helper loaded: url_helper
+INFO - 2026-01-28 06:59:07 --> Helper loaded: file_helper
+INFO - 2026-01-28 06:59:07 --> Helper loaded: html_helper
+INFO - 2026-01-28 06:59:07 --> Database Driver Class Initialized
+INFO - 2026-01-28 06:59:07 --> Session: Class initialized using 'files' driver.
+INFO - 2026-01-28 06:59:07 --> Helper loaded: form_helper
+INFO - 2026-01-28 06:59:07 --> Form Validation Class Initialized
+INFO - 2026-01-28 06:59:07 --> User Agent Class Initialized
+INFO - 2026-01-28 06:59:07 --> Language file loaded: language/english/pagination_lang.php
+INFO - 2026-01-28 06:59:07 --> Pagination Class Initialized
+INFO - 2026-01-28 06:59:07 --> Controller Class Initialized
+INFO - 2026-01-28 06:59:07 --> Model "M_login" initialized
+INFO - 2026-01-28 06:59:07 --> File loaded: C:\xampp\htdocs\Aconnect_ci3\application\views\admin/login.php
+INFO - 2026-01-28 06:59:07 --> Final output sent to browser
+DEBUG - 2026-01-28 06:59:07 --> Total execution time: 0.0226
+ERROR - 2026-01-28 06:59:09 --> $config['composer_autoload'] is set to TRUE but C:\xampp\htdocs\Aconnect_ci3\application\vendor/autoload.php was not found.
+INFO - 2026-01-28 06:59:09 --> Config Class Initialized
+INFO - 2026-01-28 06:59:09 --> Hooks Class Initialized
+DEBUG - 2026-01-28 06:59:09 --> UTF-8 Support Enabled
+INFO - 2026-01-28 06:59:09 --> Utf8 Class Initialized
+INFO - 2026-01-28 06:59:09 --> URI Class Initialized
+INFO - 2026-01-28 06:59:09 --> Router Class Initialized
+INFO - 2026-01-28 06:59:09 --> Output Class Initialized
+INFO - 2026-01-28 06:59:09 --> Security Class Initialized
+DEBUG - 2026-01-28 06:59:09 --> Global POST, GET and COOKIE data sanitized
+INFO - 2026-01-28 06:59:09 --> Input Class Initialized
+INFO - 2026-01-28 06:59:09 --> Language Class Initialized
+INFO - 2026-01-28 06:59:09 --> Loader Class Initialized
+INFO - 2026-01-28 06:59:09 --> Helper loaded: url_helper
+INFO - 2026-01-28 06:59:09 --> Helper loaded: file_helper
+INFO - 2026-01-28 06:59:09 --> Helper loaded: html_helper
+INFO - 2026-01-28 06:59:09 --> Database Driver Class Initialized
+INFO - 2026-01-28 06:59:09 --> Session: Class initialized using 'files' driver.
+INFO - 2026-01-28 06:59:09 --> Helper loaded: form_helper
+INFO - 2026-01-28 06:59:09 --> Form Validation Class Initialized
+INFO - 2026-01-28 06:59:09 --> User Agent Class Initialized
+INFO - 2026-01-28 06:59:09 --> Language file loaded: language/english/pagination_lang.php
+INFO - 2026-01-28 06:59:09 --> Pagination Class Initialized
+INFO - 2026-01-28 06:59:09 --> Controller Class Initialized
+INFO - 2026-01-28 06:59:09 --> Model "M_login" initialized
+INFO - 2026-01-28 06:59:09 --> File loaded: C:\xampp\htdocs\Aconnect_ci3\application\views\admin/login.php
+ERROR - 2026-01-28 06:59:09 --> $config['composer_autoload'] is set to TRUE but C:\xampp\htdocs\Aconnect_ci3\application\vendor/autoload.php was not found.
+INFO - 2026-01-28 06:59:09 --> Config Class Initialized
+INFO - 2026-01-28 06:59:09 --> Hooks Class Initialized
+DEBUG - 2026-01-28 06:59:09 --> UTF-8 Support Enabled
+INFO - 2026-01-28 06:59:09 --> Utf8 Class Initialized
+INFO - 2026-01-28 06:59:09 --> URI Class Initialized
+INFO - 2026-01-28 06:59:09 --> Router Class Initialized
+INFO - 2026-01-28 06:59:09 --> Output Class Initialized
+INFO - 2026-01-28 06:59:09 --> Security Class Initialized
+DEBUG - 2026-01-28 06:59:09 --> Global POST, GET and COOKIE data sanitized
+INFO - 2026-01-28 06:59:09 --> Input Class Initialized
+INFO - 2026-01-28 06:59:09 --> Language Class Initialized
+INFO - 2026-01-28 06:59:09 --> Loader Class Initialized
+INFO - 2026-01-28 06:59:09 --> Helper loaded: url_helper
+INFO - 2026-01-28 06:59:09 --> Helper loaded: file_helper
+INFO - 2026-01-28 06:59:09 --> Helper loaded: html_helper
+INFO - 2026-01-28 06:59:09 --> Database Driver Class Initialized
+INFO - 2026-01-28 06:59:09 --> Session: Class initialized using 'files' driver.
+INFO - 2026-01-28 06:59:09 --> Helper loaded: form_helper
+INFO - 2026-01-28 06:59:09 --> Form Validation Class Initialized
+INFO - 2026-01-28 06:59:09 --> User Agent Class Initialized
+INFO - 2026-01-28 06:59:09 --> Language file loaded: language/english/pagination_lang.php
+INFO - 2026-01-28 06:59:09 --> Pagination Class Initialized
+INFO - 2026-01-28 06:59:09 --> Controller Class Initialized
+INFO - 2026-01-28 06:59:09 --> File loaded: C:\xampp\htdocs\Aconnect_ci3\application\views\__header.php
+INFO - 2026-01-28 06:59:09 --> File loaded: C:\xampp\htdocs\Aconnect_ci3\application\views\dashboard_a.php
+INFO - 2026-01-28 06:59:09 --> File loaded: C:\xampp\htdocs\Aconnect_ci3\application\views\__footer.php
+INFO - 2026-01-28 06:59:09 --> Final output sent to browser
+DEBUG - 2026-01-28 06:59:09 --> Total execution time: 0.1497
+ERROR - 2026-01-28 06:59:13 --> $config['composer_autoload'] is set to TRUE but C:\xampp\htdocs\Aconnect_ci3\application\vendor/autoload.php was not found.
+INFO - 2026-01-28 06:59:13 --> Config Class Initialized
+INFO - 2026-01-28 06:59:13 --> Hooks Class Initialized
+DEBUG - 2026-01-28 06:59:13 --> UTF-8 Support Enabled
+INFO - 2026-01-28 06:59:13 --> Utf8 Class Initialized
+INFO - 2026-01-28 06:59:13 --> URI Class Initialized
+INFO - 2026-01-28 06:59:13 --> Router Class Initialized
+INFO - 2026-01-28 06:59:13 --> Output Class Initialized
+INFO - 2026-01-28 06:59:13 --> Security Class Initialized
+DEBUG - 2026-01-28 06:59:13 --> Global POST, GET and COOKIE data sanitized
+INFO - 2026-01-28 06:59:13 --> Input Class Initialized
+INFO - 2026-01-28 06:59:13 --> Language Class Initialized
+INFO - 2026-01-28 06:59:13 --> Loader Class Initialized
+INFO - 2026-01-28 06:59:13 --> Helper loaded: url_helper
+INFO - 2026-01-28 06:59:13 --> Helper loaded: file_helper
+INFO - 2026-01-28 06:59:13 --> Helper loaded: html_helper
+INFO - 2026-01-28 06:59:13 --> Database Driver Class Initialized
+INFO - 2026-01-28 06:59:13 --> Session: Class initialized using 'files' driver.
+INFO - 2026-01-28 06:59:13 --> Helper loaded: form_helper
+INFO - 2026-01-28 06:59:13 --> Form Validation Class Initialized
+INFO - 2026-01-28 06:59:13 --> User Agent Class Initialized
+INFO - 2026-01-28 06:59:13 --> Language file loaded: language/english/pagination_lang.php
+INFO - 2026-01-28 06:59:13 --> Pagination Class Initialized
+INFO - 2026-01-28 06:59:13 --> Controller Class Initialized
+INFO - 2026-01-28 06:59:13 --> File loaded: C:\xampp\htdocs\Aconnect_ci3\application\views\__header.php
+INFO - 2026-01-28 06:59:13 --> File loaded: C:\xampp\htdocs\Aconnect_ci3\application\views\dashboard_a.php
+INFO - 2026-01-28 06:59:13 --> File loaded: C:\xampp\htdocs\Aconnect_ci3\application\views\__footer.php
+INFO - 2026-01-28 06:59:13 --> Final output sent to browser
+DEBUG - 2026-01-28 06:59:13 --> Total execution time: 0.0257
+ERROR - 2026-01-28 06:59:16 --> $config['composer_autoload'] is set to TRUE but C:\xampp\htdocs\Aconnect_ci3\application\vendor/autoload.php was not found.
+INFO - 2026-01-28 06:59:16 --> Config Class Initialized
+INFO - 2026-01-28 06:59:16 --> Hooks Class Initialized
+DEBUG - 2026-01-28 06:59:16 --> UTF-8 Support Enabled
+INFO - 2026-01-28 06:59:16 --> Utf8 Class Initialized
+INFO - 2026-01-28 06:59:16 --> URI Class Initialized
+INFO - 2026-01-28 06:59:16 --> Router Class Initialized
+INFO - 2026-01-28 06:59:16 --> Output Class Initialized
+INFO - 2026-01-28 06:59:16 --> Security Class Initialized
+DEBUG - 2026-01-28 06:59:16 --> Global POST, GET and COOKIE data sanitized
+INFO - 2026-01-28 06:59:16 --> Input Class Initialized
+INFO - 2026-01-28 06:59:16 --> Language Class Initialized
+INFO - 2026-01-28 06:59:16 --> Loader Class Initialized
+INFO - 2026-01-28 06:59:16 --> Helper loaded: url_helper
+INFO - 2026-01-28 06:59:16 --> Helper loaded: file_helper
+INFO - 2026-01-28 06:59:16 --> Helper loaded: html_helper
+INFO - 2026-01-28 06:59:16 --> Database Driver Class Initialized
+INFO - 2026-01-28 06:59:16 --> Session: Class initialized using 'files' driver.
+INFO - 2026-01-28 06:59:16 --> Helper loaded: form_helper
+INFO - 2026-01-28 06:59:16 --> Form Validation Class Initialized
+INFO - 2026-01-28 06:59:16 --> User Agent Class Initialized
+INFO - 2026-01-28 06:59:16 --> Language file loaded: language/english/pagination_lang.php
+INFO - 2026-01-28 06:59:16 --> Pagination Class Initialized
+INFO - 2026-01-28 06:59:16 --> Controller Class Initialized
+INFO - 2026-01-28 06:59:16 --> File loaded: C:\xampp\htdocs\Aconnect_ci3\application\views\__header.php
+INFO - 2026-01-28 06:59:16 --> File loaded: C:\xampp\htdocs\Aconnect_ci3\application\views\dashboard_a.php
+INFO - 2026-01-28 06:59:16 --> File loaded: C:\xampp\htdocs\Aconnect_ci3\application\views\__footer.php
+INFO - 2026-01-28 06:59:16 --> Final output sent to browser
+DEBUG - 2026-01-28 06:59:16 --> Total execution time: 0.0253
+ERROR - 2026-01-28 06:59:26 --> $config['composer_autoload'] is set to TRUE but C:\xampp\htdocs\Aconnect_ci3\application\vendor/autoload.php was not found.
+INFO - 2026-01-28 06:59:26 --> Config Class Initialized
+INFO - 2026-01-28 06:59:26 --> Hooks Class Initialized
+DEBUG - 2026-01-28 06:59:26 --> UTF-8 Support Enabled
+INFO - 2026-01-28 06:59:26 --> Utf8 Class Initialized
+INFO - 2026-01-28 06:59:26 --> URI Class Initialized
+INFO - 2026-01-28 06:59:26 --> Router Class Initialized
+INFO - 2026-01-28 06:59:26 --> Output Class Initialized
+INFO - 2026-01-28 06:59:26 --> Security Class Initialized
+DEBUG - 2026-01-28 06:59:26 --> Global POST, GET and COOKIE data sanitized
+INFO - 2026-01-28 06:59:26 --> Input Class Initialized
+INFO - 2026-01-28 06:59:26 --> Language Class Initialized
+INFO - 2026-01-28 06:59:26 --> Loader Class Initialized
+INFO - 2026-01-28 06:59:26 --> Helper loaded: url_helper
+INFO - 2026-01-28 06:59:26 --> Helper loaded: file_helper
+INFO - 2026-01-28 06:59:26 --> Helper loaded: html_helper
+INFO - 2026-01-28 06:59:26 --> Database Driver Class Initialized
+INFO - 2026-01-28 06:59:26 --> Session: Class initialized using 'files' driver.
+INFO - 2026-01-28 06:59:26 --> Helper loaded: form_helper
+INFO - 2026-01-28 06:59:26 --> Form Validation Class Initialized
+INFO - 2026-01-28 06:59:26 --> User Agent Class Initialized
+INFO - 2026-01-28 06:59:26 --> Language file loaded: language/english/pagination_lang.php
+INFO - 2026-01-28 06:59:26 --> Pagination Class Initialized
+INFO - 2026-01-28 06:59:26 --> Controller Class Initialized
+INFO - 2026-01-28 06:59:26 --> File loaded: C:\xampp\htdocs\Aconnect_ci3\application\views\__header.php
+INFO - 2026-01-28 06:59:26 --> File loaded: C:\xampp\htdocs\Aconnect_ci3\application\views\dashboard_a.php
+INFO - 2026-01-28 06:59:26 --> File loaded: C:\xampp\htdocs\Aconnect_ci3\application\views\__footer.php
+INFO - 2026-01-28 06:59:26 --> Final output sent to browser
+DEBUG - 2026-01-28 06:59:26 --> Total execution time: 0.0591
+ERROR - 2026-01-28 06:59:28 --> $config['composer_autoload'] is set to TRUE but C:\xampp\htdocs\Aconnect_ci3\application\vendor/autoload.php was not found.
+INFO - 2026-01-28 06:59:28 --> Config Class Initialized
+INFO - 2026-01-28 06:59:28 --> Hooks Class Initialized
+DEBUG - 2026-01-28 06:59:28 --> UTF-8 Support Enabled
+INFO - 2026-01-28 06:59:28 --> Utf8 Class Initialized
+INFO - 2026-01-28 06:59:28 --> URI Class Initialized
+INFO - 2026-01-28 06:59:28 --> Router Class Initialized
+INFO - 2026-01-28 06:59:28 --> Output Class Initialized
+INFO - 2026-01-28 06:59:28 --> Security Class Initialized
+DEBUG - 2026-01-28 06:59:28 --> Global POST, GET and COOKIE data sanitized
+INFO - 2026-01-28 06:59:28 --> Input Class Initialized
+INFO - 2026-01-28 06:59:28 --> Language Class Initialized
+INFO - 2026-01-28 06:59:28 --> Loader Class Initialized
+INFO - 2026-01-28 06:59:28 --> Helper loaded: url_helper
+INFO - 2026-01-28 06:59:28 --> Helper loaded: file_helper
+INFO - 2026-01-28 06:59:28 --> Helper loaded: html_helper
+INFO - 2026-01-28 06:59:28 --> Database Driver Class Initialized
+INFO - 2026-01-28 06:59:28 --> Session: Class initialized using 'files' driver.
+INFO - 2026-01-28 06:59:28 --> Helper loaded: form_helper
+INFO - 2026-01-28 06:59:28 --> Form Validation Class Initialized
+INFO - 2026-01-28 06:59:28 --> User Agent Class Initialized
+INFO - 2026-01-28 06:59:28 --> Language file loaded: language/english/pagination_lang.php
+INFO - 2026-01-28 06:59:28 --> Pagination Class Initialized
+INFO - 2026-01-28 06:59:28 --> Controller Class Initialized
+INFO - 2026-01-28 06:59:28 --> Model "Activity_log_model" initialized
+INFO - 2026-01-28 06:59:28 --> Model "Alumni_model" initialized
+DEBUG - 2026-01-28 06:59:28 --> Pagination class already loaded. Second attempt ignored.
+DEBUG - 2026-01-28 13:59:28 --> Pagination class already loaded. Second attempt ignored.
+INFO - 2026-01-28 13:59:28 --> File loaded: C:\xampp\htdocs\Aconnect_ci3\application\views\__header.php
+INFO - 2026-01-28 13:59:29 --> File loaded: C:\xampp\htdocs\Aconnect_ci3\application\views\admin/activity_log.php
+INFO - 2026-01-28 13:59:29 --> File loaded: C:\xampp\htdocs\Aconnect_ci3\application\views\__footer.php
+INFO - 2026-01-28 13:59:29 --> Final output sent to browser
+DEBUG - 2026-01-28 13:59:29 --> Total execution time: 0.1496
+ERROR - 2026-01-28 06:59:31 --> $config['composer_autoload'] is set to TRUE but C:\xampp\htdocs\Aconnect_ci3\application\vendor/autoload.php was not found.
+INFO - 2026-01-28 06:59:31 --> Config Class Initialized
+INFO - 2026-01-28 06:59:31 --> Hooks Class Initialized
+DEBUG - 2026-01-28 06:59:31 --> UTF-8 Support Enabled
+INFO - 2026-01-28 06:59:31 --> Utf8 Class Initialized
+INFO - 2026-01-28 06:59:31 --> URI Class Initialized
+INFO - 2026-01-28 06:59:31 --> Router Class Initialized
+INFO - 2026-01-28 06:59:31 --> Output Class Initialized
+INFO - 2026-01-28 06:59:31 --> Security Class Initialized
+DEBUG - 2026-01-28 06:59:31 --> Global POST, GET and COOKIE data sanitized
+INFO - 2026-01-28 06:59:31 --> Input Class Initialized
+INFO - 2026-01-28 06:59:31 --> Language Class Initialized
+INFO - 2026-01-28 06:59:31 --> Loader Class Initialized
+INFO - 2026-01-28 06:59:31 --> Helper loaded: url_helper
+INFO - 2026-01-28 06:59:31 --> Helper loaded: file_helper
+INFO - 2026-01-28 06:59:31 --> Helper loaded: html_helper
+INFO - 2026-01-28 06:59:31 --> Database Driver Class Initialized
+INFO - 2026-01-28 06:59:31 --> Session: Class initialized using 'files' driver.
+INFO - 2026-01-28 06:59:31 --> Helper loaded: form_helper
+INFO - 2026-01-28 06:59:31 --> Form Validation Class Initialized
+INFO - 2026-01-28 06:59:31 --> User Agent Class Initialized
+INFO - 2026-01-28 06:59:31 --> Language file loaded: language/english/pagination_lang.php
+INFO - 2026-01-28 06:59:31 --> Pagination Class Initialized
+INFO - 2026-01-28 06:59:31 --> Controller Class Initialized
+INFO - 2026-01-28 06:59:31 --> File loaded: C:\xampp\htdocs\Aconnect_ci3\application\views\__header.php
+INFO - 2026-01-28 06:59:31 --> File loaded: C:\xampp\htdocs\Aconnect_ci3\application\views\dashboard_a.php
+INFO - 2026-01-28 06:59:31 --> File loaded: C:\xampp\htdocs\Aconnect_ci3\application\views\__footer.php
+INFO - 2026-01-28 06:59:31 --> Final output sent to browser
+DEBUG - 2026-01-28 06:59:31 --> Total execution time: 0.0264
+ERROR - 2026-01-28 06:59:44 --> $config['composer_autoload'] is set to TRUE but C:\xampp\htdocs\Aconnect_ci3\application\vendor/autoload.php was not found.
+INFO - 2026-01-28 06:59:44 --> Config Class Initialized
+INFO - 2026-01-28 06:59:44 --> Hooks Class Initialized
+DEBUG - 2026-01-28 06:59:44 --> UTF-8 Support Enabled
+INFO - 2026-01-28 06:59:44 --> Utf8 Class Initialized
+INFO - 2026-01-28 06:59:44 --> URI Class Initialized
+INFO - 2026-01-28 06:59:44 --> Router Class Initialized
+INFO - 2026-01-28 06:59:44 --> Output Class Initialized
+INFO - 2026-01-28 06:59:44 --> Security Class Initialized
+DEBUG - 2026-01-28 06:59:44 --> Global POST, GET and COOKIE data sanitized
+INFO - 2026-01-28 06:59:44 --> Input Class Initialized
+INFO - 2026-01-28 06:59:44 --> Language Class Initialized
+INFO - 2026-01-28 06:59:44 --> Loader Class Initialized
+INFO - 2026-01-28 06:59:44 --> Helper loaded: url_helper
+INFO - 2026-01-28 06:59:44 --> Helper loaded: file_helper
+INFO - 2026-01-28 06:59:44 --> Helper loaded: html_helper
+INFO - 2026-01-28 06:59:44 --> Database Driver Class Initialized
+INFO - 2026-01-28 06:59:44 --> Session: Class initialized using 'files' driver.
+INFO - 2026-01-28 06:59:44 --> Helper loaded: form_helper
+INFO - 2026-01-28 06:59:44 --> Form Validation Class Initialized
+INFO - 2026-01-28 06:59:44 --> User Agent Class Initialized
+INFO - 2026-01-28 06:59:44 --> Language file loaded: language/english/pagination_lang.php
+INFO - 2026-01-28 06:59:44 --> Pagination Class Initialized
+INFO - 2026-01-28 06:59:44 --> Controller Class Initialized
+INFO - 2026-01-28 06:59:44 --> File loaded: C:\xampp\htdocs\Aconnect_ci3\application\views\__header.php
+DEBUG - 2026-01-28 06:59:44 --> Pagination class already loaded. Second attempt ignored.
+INFO - 2026-01-28 06:59:44 --> Model "Alumni_model" initialized
+INFO - 2026-01-28 06:59:44 --> File loaded: C:\xampp\htdocs\Aconnect_ci3\application\views\admin/alumni.php
+INFO - 2026-01-28 06:59:44 --> File loaded: C:\xampp\htdocs\Aconnect_ci3\application\views\__footer.php
+INFO - 2026-01-28 06:59:44 --> Final output sent to browser
+DEBUG - 2026-01-28 06:59:44 --> Total execution time: 0.1420
+ERROR - 2026-01-28 06:59:47 --> $config['composer_autoload'] is set to TRUE but C:\xampp\htdocs\Aconnect_ci3\application\vendor/autoload.php was not found.
+INFO - 2026-01-28 06:59:47 --> Config Class Initialized
+INFO - 2026-01-28 06:59:47 --> Hooks Class Initialized
+DEBUG - 2026-01-28 06:59:47 --> UTF-8 Support Enabled
+INFO - 2026-01-28 06:59:47 --> Utf8 Class Initialized
+INFO - 2026-01-28 06:59:47 --> URI Class Initialized
+INFO - 2026-01-28 06:59:47 --> Router Class Initialized
+INFO - 2026-01-28 06:59:47 --> Output Class Initialized
+INFO - 2026-01-28 06:59:47 --> Security Class Initialized
+DEBUG - 2026-01-28 06:59:47 --> Global POST, GET and COOKIE data sanitized
+INFO - 2026-01-28 06:59:47 --> Input Class Initialized
+INFO - 2026-01-28 06:59:47 --> Language Class Initialized
+INFO - 2026-01-28 06:59:47 --> Loader Class Initialized
+INFO - 2026-01-28 06:59:47 --> Helper loaded: url_helper
+INFO - 2026-01-28 06:59:47 --> Helper loaded: file_helper
+INFO - 2026-01-28 06:59:47 --> Helper loaded: html_helper
+INFO - 2026-01-28 06:59:47 --> Database Driver Class Initialized
+INFO - 2026-01-28 06:59:47 --> Session: Class initialized using 'files' driver.
+INFO - 2026-01-28 06:59:47 --> Helper loaded: form_helper
+INFO - 2026-01-28 06:59:47 --> Form Validation Class Initialized
+INFO - 2026-01-28 06:59:47 --> User Agent Class Initialized
+INFO - 2026-01-28 06:59:47 --> Language file loaded: language/english/pagination_lang.php
+INFO - 2026-01-28 06:59:47 --> Pagination Class Initialized
+INFO - 2026-01-28 06:59:47 --> Controller Class Initialized
+INFO - 2026-01-28 06:59:47 --> File loaded: C:\xampp\htdocs\Aconnect_ci3\application\views\__header.php
+INFO - 2026-01-28 06:59:47 --> File loaded: C:\xampp\htdocs\Aconnect_ci3\application\views\dashboard_a.php
+INFO - 2026-01-28 06:59:47 --> File loaded: C:\xampp\htdocs\Aconnect_ci3\application\views\__footer.php
+INFO - 2026-01-28 06:59:47 --> Final output sent to browser
+DEBUG - 2026-01-28 06:59:47 --> Total execution time: 0.0251
+ERROR - 2026-01-28 07:00:13 --> $config['composer_autoload'] is set to TRUE but C:\xampp\htdocs\Aconnect_ci3\application\vendor/autoload.php was not found.
+INFO - 2026-01-28 07:00:13 --> Config Class Initialized
+INFO - 2026-01-28 07:00:13 --> Hooks Class Initialized
+DEBUG - 2026-01-28 07:00:13 --> UTF-8 Support Enabled
+INFO - 2026-01-28 07:00:13 --> Utf8 Class Initialized
+INFO - 2026-01-28 07:00:13 --> URI Class Initialized
+INFO - 2026-01-28 07:00:13 --> Router Class Initialized
+INFO - 2026-01-28 07:00:13 --> Output Class Initialized
+INFO - 2026-01-28 07:00:13 --> Security Class Initialized
+DEBUG - 2026-01-28 07:00:13 --> Global POST, GET and COOKIE data sanitized
+INFO - 2026-01-28 07:00:13 --> Input Class Initialized
+INFO - 2026-01-28 07:00:13 --> Language Class Initialized
+INFO - 2026-01-28 07:00:13 --> Loader Class Initialized
+INFO - 2026-01-28 07:00:13 --> Helper loaded: url_helper
+INFO - 2026-01-28 07:00:13 --> Helper loaded: file_helper
+INFO - 2026-01-28 07:00:13 --> Helper loaded: html_helper
+INFO - 2026-01-28 07:00:13 --> Database Driver Class Initialized
+INFO - 2026-01-28 07:00:13 --> Session: Class initialized using 'files' driver.
+INFO - 2026-01-28 07:00:13 --> Helper loaded: form_helper
+INFO - 2026-01-28 07:00:13 --> Form Validation Class Initialized
+INFO - 2026-01-28 07:00:13 --> User Agent Class Initialized
+INFO - 2026-01-28 07:00:13 --> Language file loaded: language/english/pagination_lang.php
+INFO - 2026-01-28 07:00:13 --> Pagination Class Initialized
+INFO - 2026-01-28 07:00:13 --> Controller Class Initialized
+INFO - 2026-01-28 07:00:13 --> File loaded: C:\xampp\htdocs\Aconnect_ci3\application\views\__header.php
+INFO - 2026-01-28 07:00:13 --> File loaded: C:\xampp\htdocs\Aconnect_ci3\application\views\dashboard_a.php
+INFO - 2026-01-28 07:00:13 --> File loaded: C:\xampp\htdocs\Aconnect_ci3\application\views\__footer.php
+INFO - 2026-01-28 07:00:13 --> Final output sent to browser
+DEBUG - 2026-01-28 07:00:13 --> Total execution time: 0.0551
+ERROR - 2026-01-28 07:00:14 --> $config['composer_autoload'] is set to TRUE but C:\xampp\htdocs\Aconnect_ci3\application\vendor/autoload.php was not found.
+INFO - 2026-01-28 07:00:14 --> Config Class Initialized
+INFO - 2026-01-28 07:00:14 --> Hooks Class Initialized
+DEBUG - 2026-01-28 07:00:14 --> UTF-8 Support Enabled
+INFO - 2026-01-28 07:00:14 --> Utf8 Class Initialized
+INFO - 2026-01-28 07:00:14 --> URI Class Initialized
+INFO - 2026-01-28 07:00:14 --> Router Class Initialized
+INFO - 2026-01-28 07:00:14 --> Output Class Initialized
+INFO - 2026-01-28 07:00:14 --> Security Class Initialized
+DEBUG - 2026-01-28 07:00:14 --> Global POST, GET and COOKIE data sanitized
+INFO - 2026-01-28 07:00:14 --> Input Class Initialized
+INFO - 2026-01-28 07:00:14 --> Language Class Initialized
+INFO - 2026-01-28 07:00:14 --> Loader Class Initialized
+INFO - 2026-01-28 07:00:14 --> Helper loaded: url_helper
+INFO - 2026-01-28 07:00:14 --> Helper loaded: file_helper
+INFO - 2026-01-28 07:00:14 --> Helper loaded: html_helper
+INFO - 2026-01-28 07:00:14 --> Database Driver Class Initialized
+INFO - 2026-01-28 07:00:14 --> Session: Class initialized using 'files' driver.
+INFO - 2026-01-28 07:00:14 --> Helper loaded: form_helper
+INFO - 2026-01-28 07:00:14 --> Form Validation Class Initialized
+INFO - 2026-01-28 07:00:14 --> User Agent Class Initialized
+INFO - 2026-01-28 07:00:14 --> Language file loaded: language/english/pagination_lang.php
+INFO - 2026-01-28 07:00:14 --> Pagination Class Initialized
+INFO - 2026-01-28 07:00:14 --> Controller Class Initialized
+INFO - 2026-01-28 07:00:14 --> Model "Support_model" initialized
+DEBUG - 2026-01-28 07:00:14 --> Session class already loaded. Second attempt ignored.
+INFO - 2026-01-28 07:00:14 --> File loaded: C:\xampp\htdocs\Aconnect_ci3\application\views\__header.php
+INFO - 2026-01-28 07:00:14 --> File loaded: C:\xampp\htdocs\Aconnect_ci3\application\views\admin/support_inbox.php
+INFO - 2026-01-28 07:00:14 --> File loaded: C:\xampp\htdocs\Aconnect_ci3\application\views\__footer.php
+INFO - 2026-01-28 07:00:14 --> Final output sent to browser
+DEBUG - 2026-01-28 07:00:14 --> Total execution time: 0.1251
+ERROR - 2026-01-28 07:00:15 --> $config['composer_autoload'] is set to TRUE but C:\xampp\htdocs\Aconnect_ci3\application\vendor/autoload.php was not found.
+INFO - 2026-01-28 07:00:15 --> Config Class Initialized
+INFO - 2026-01-28 07:00:15 --> Hooks Class Initialized
+DEBUG - 2026-01-28 07:00:15 --> UTF-8 Support Enabled
+INFO - 2026-01-28 07:00:15 --> Utf8 Class Initialized
+INFO - 2026-01-28 07:00:15 --> URI Class Initialized
+INFO - 2026-01-28 07:00:15 --> Router Class Initialized
+INFO - 2026-01-28 07:00:15 --> Output Class Initialized
+INFO - 2026-01-28 07:00:15 --> Security Class Initialized
+DEBUG - 2026-01-28 07:00:15 --> Global POST, GET and COOKIE data sanitized
+INFO - 2026-01-28 07:00:15 --> Input Class Initialized
+INFO - 2026-01-28 07:00:15 --> Language Class Initialized
+INFO - 2026-01-28 07:00:15 --> Loader Class Initialized
+INFO - 2026-01-28 07:00:15 --> Helper loaded: url_helper
+INFO - 2026-01-28 07:00:15 --> Helper loaded: file_helper
+INFO - 2026-01-28 07:00:15 --> Helper loaded: html_helper
+INFO - 2026-01-28 07:00:15 --> Database Driver Class Initialized
+INFO - 2026-01-28 07:00:15 --> Session: Class initialized using 'files' driver.
+INFO - 2026-01-28 07:00:15 --> Helper loaded: form_helper
+INFO - 2026-01-28 07:00:15 --> Form Validation Class Initialized
+INFO - 2026-01-28 07:00:15 --> User Agent Class Initialized
+INFO - 2026-01-28 07:00:15 --> Language file loaded: language/english/pagination_lang.php
+INFO - 2026-01-28 07:00:15 --> Pagination Class Initialized
+INFO - 2026-01-28 07:00:15 --> Controller Class Initialized
+INFO - 2026-01-28 07:00:15 --> Model "Support_model" initialized
+DEBUG - 2026-01-28 07:00:15 --> Session class already loaded. Second attempt ignored.
+INFO - 2026-01-28 07:00:15 --> Final output sent to browser
+DEBUG - 2026-01-28 07:00:15 --> Total execution time: 0.0244
+ERROR - 2026-01-28 07:00:17 --> $config['composer_autoload'] is set to TRUE but C:\xampp\htdocs\Aconnect_ci3\application\vendor/autoload.php was not found.
+INFO - 2026-01-28 07:00:17 --> Config Class Initialized
+INFO - 2026-01-28 07:00:17 --> Hooks Class Initialized
+DEBUG - 2026-01-28 07:00:17 --> UTF-8 Support Enabled
+INFO - 2026-01-28 07:00:17 --> Utf8 Class Initialized
+INFO - 2026-01-28 07:00:17 --> URI Class Initialized
+INFO - 2026-01-28 07:00:17 --> Router Class Initialized
+INFO - 2026-01-28 07:00:17 --> Output Class Initialized
+INFO - 2026-01-28 07:00:17 --> Security Class Initialized
+DEBUG - 2026-01-28 07:00:17 --> Global POST, GET and COOKIE data sanitized
+INFO - 2026-01-28 07:00:17 --> Input Class Initialized
+INFO - 2026-01-28 07:00:17 --> Language Class Initialized
+INFO - 2026-01-28 07:00:17 --> Loader Class Initialized
+INFO - 2026-01-28 07:00:17 --> Helper loaded: url_helper
+INFO - 2026-01-28 07:00:17 --> Helper loaded: file_helper
+INFO - 2026-01-28 07:00:17 --> Helper loaded: html_helper
+INFO - 2026-01-28 07:00:17 --> Database Driver Class Initialized
+INFO - 2026-01-28 07:00:17 --> Session: Class initialized using 'files' driver.
+INFO - 2026-01-28 07:00:17 --> Helper loaded: form_helper
+INFO - 2026-01-28 07:00:17 --> Form Validation Class Initialized
+INFO - 2026-01-28 07:00:17 --> User Agent Class Initialized
+INFO - 2026-01-28 07:00:17 --> Language file loaded: language/english/pagination_lang.php
+INFO - 2026-01-28 07:00:17 --> Pagination Class Initialized
+INFO - 2026-01-28 07:00:17 --> Controller Class Initialized
+INFO - 2026-01-28 07:00:17 --> Model "M_login" initialized
+ERROR - 2026-01-28 07:00:17 --> $config['composer_autoload'] is set to TRUE but C:\xampp\htdocs\Aconnect_ci3\application\vendor/autoload.php was not found.
+INFO - 2026-01-28 07:00:17 --> Config Class Initialized
+INFO - 2026-01-28 07:00:17 --> Hooks Class Initialized
+DEBUG - 2026-01-28 07:00:17 --> UTF-8 Support Enabled
+INFO - 2026-01-28 07:00:17 --> Utf8 Class Initialized
+INFO - 2026-01-28 07:00:17 --> URI Class Initialized
+INFO - 2026-01-28 07:00:17 --> Router Class Initialized
+INFO - 2026-01-28 07:00:17 --> Output Class Initialized
+INFO - 2026-01-28 07:00:17 --> Security Class Initialized
+DEBUG - 2026-01-28 07:00:17 --> Global POST, GET and COOKIE data sanitized
+INFO - 2026-01-28 07:00:17 --> Input Class Initialized
+INFO - 2026-01-28 07:00:17 --> Language Class Initialized
+INFO - 2026-01-28 07:00:17 --> Loader Class Initialized
+INFO - 2026-01-28 07:00:17 --> Helper loaded: url_helper
+INFO - 2026-01-28 07:00:17 --> Helper loaded: file_helper
+INFO - 2026-01-28 07:00:17 --> Helper loaded: html_helper
+INFO - 2026-01-28 07:00:17 --> Database Driver Class Initialized
+INFO - 2026-01-28 07:00:17 --> Session: Class initialized using 'files' driver.
+INFO - 2026-01-28 07:00:17 --> Helper loaded: form_helper
+INFO - 2026-01-28 07:00:17 --> Form Validation Class Initialized
+INFO - 2026-01-28 07:00:17 --> User Agent Class Initialized
+INFO - 2026-01-28 07:00:17 --> Language file loaded: language/english/pagination_lang.php
+INFO - 2026-01-28 07:00:17 --> Pagination Class Initialized
+INFO - 2026-01-28 07:00:17 --> Controller Class Initialized
+INFO - 2026-01-28 07:00:17 --> Model "M_login" initialized
+INFO - 2026-01-28 07:00:17 --> File loaded: C:\xampp\htdocs\Aconnect_ci3\application\views\admin/login.php
+INFO - 2026-01-28 07:00:17 --> Final output sent to browser
+DEBUG - 2026-01-28 07:00:17 --> Total execution time: 0.0440
+ERROR - 2026-01-28 07:00:19 --> $config['composer_autoload'] is set to TRUE but C:\xampp\htdocs\Aconnect_ci3\application\vendor/autoload.php was not found.
+INFO - 2026-01-28 07:00:19 --> Config Class Initialized
+INFO - 2026-01-28 07:00:19 --> Hooks Class Initialized
+DEBUG - 2026-01-28 07:00:19 --> UTF-8 Support Enabled
+INFO - 2026-01-28 07:00:19 --> Utf8 Class Initialized
+INFO - 2026-01-28 07:00:19 --> URI Class Initialized
+INFO - 2026-01-28 07:00:19 --> Router Class Initialized
+INFO - 2026-01-28 07:00:19 --> Output Class Initialized
+INFO - 2026-01-28 07:00:19 --> Security Class Initialized
+DEBUG - 2026-01-28 07:00:19 --> Global POST, GET and COOKIE data sanitized
+INFO - 2026-01-28 07:00:19 --> Input Class Initialized
+INFO - 2026-01-28 07:00:19 --> Language Class Initialized
+INFO - 2026-01-28 07:00:19 --> Loader Class Initialized
+INFO - 2026-01-28 07:00:19 --> Helper loaded: url_helper
+INFO - 2026-01-28 07:00:19 --> Helper loaded: file_helper
+INFO - 2026-01-28 07:00:19 --> Helper loaded: html_helper
+INFO - 2026-01-28 07:00:19 --> Database Driver Class Initialized
+INFO - 2026-01-28 07:00:19 --> Session: Class initialized using 'files' driver.
+INFO - 2026-01-28 07:00:19 --> Helper loaded: form_helper
+INFO - 2026-01-28 07:00:19 --> Form Validation Class Initialized
+INFO - 2026-01-28 07:00:19 --> User Agent Class Initialized
+INFO - 2026-01-28 07:00:19 --> Language file loaded: language/english/pagination_lang.php
+INFO - 2026-01-28 07:00:19 --> Pagination Class Initialized
+INFO - 2026-01-28 07:00:19 --> Controller Class Initialized
+INFO - 2026-01-28 07:00:19 --> Model "M_login" initialized
+INFO - 2026-01-28 07:00:19 --> File loaded: C:\xampp\htdocs\Aconnect_ci3\application\views\login.php
+INFO - 2026-01-28 07:00:19 --> Final output sent to browser
+DEBUG - 2026-01-28 07:00:19 --> Total execution time: 0.0219
+ERROR - 2026-01-28 07:00:21 --> $config['composer_autoload'] is set to TRUE but C:\xampp\htdocs\Aconnect_ci3\application\vendor/autoload.php was not found.
+INFO - 2026-01-28 07:00:21 --> Config Class Initialized
+INFO - 2026-01-28 07:00:21 --> Hooks Class Initialized
+DEBUG - 2026-01-28 07:00:21 --> UTF-8 Support Enabled
+INFO - 2026-01-28 07:00:21 --> Utf8 Class Initialized
+INFO - 2026-01-28 07:00:21 --> URI Class Initialized
+INFO - 2026-01-28 07:00:21 --> Router Class Initialized
+INFO - 2026-01-28 07:00:21 --> Output Class Initialized
+INFO - 2026-01-28 07:00:21 --> Security Class Initialized
+DEBUG - 2026-01-28 07:00:21 --> Global POST, GET and COOKIE data sanitized
+INFO - 2026-01-28 07:00:21 --> Input Class Initialized
+INFO - 2026-01-28 07:00:21 --> Language Class Initialized
+INFO - 2026-01-28 07:00:21 --> Loader Class Initialized
+INFO - 2026-01-28 07:00:21 --> Helper loaded: url_helper
+INFO - 2026-01-28 07:00:21 --> Helper loaded: file_helper
+INFO - 2026-01-28 07:00:21 --> Helper loaded: html_helper
+INFO - 2026-01-28 07:00:21 --> Database Driver Class Initialized
+INFO - 2026-01-28 07:00:21 --> Session: Class initialized using 'files' driver.
+INFO - 2026-01-28 07:00:21 --> Helper loaded: form_helper
+INFO - 2026-01-28 07:00:21 --> Form Validation Class Initialized
+INFO - 2026-01-28 07:00:21 --> User Agent Class Initialized
+INFO - 2026-01-28 07:00:21 --> Language file loaded: language/english/pagination_lang.php
+INFO - 2026-01-28 07:00:21 --> Pagination Class Initialized
+INFO - 2026-01-28 07:00:21 --> Controller Class Initialized
+INFO - 2026-01-28 07:00:21 --> Model "M_login" initialized
+ERROR - 2026-01-28 07:00:21 --> $config['composer_autoload'] is set to TRUE but C:\xampp\htdocs\Aconnect_ci3\application\vendor/autoload.php was not found.
+INFO - 2026-01-28 07:00:21 --> Config Class Initialized
+INFO - 2026-01-28 07:00:21 --> Hooks Class Initialized
+DEBUG - 2026-01-28 07:00:21 --> UTF-8 Support Enabled
+INFO - 2026-01-28 07:00:21 --> Utf8 Class Initialized
+INFO - 2026-01-28 07:00:21 --> URI Class Initialized
+INFO - 2026-01-28 07:00:21 --> Router Class Initialized
+INFO - 2026-01-28 07:00:21 --> Output Class Initialized
+INFO - 2026-01-28 07:00:21 --> Security Class Initialized
+DEBUG - 2026-01-28 07:00:21 --> Global POST, GET and COOKIE data sanitized
+INFO - 2026-01-28 07:00:21 --> Input Class Initialized
+INFO - 2026-01-28 07:00:21 --> Language Class Initialized
+INFO - 2026-01-28 07:00:21 --> Loader Class Initialized
+INFO - 2026-01-28 07:00:21 --> Helper loaded: url_helper
+INFO - 2026-01-28 07:00:21 --> Helper loaded: file_helper
+INFO - 2026-01-28 07:00:21 --> Helper loaded: html_helper
+INFO - 2026-01-28 07:00:21 --> Database Driver Class Initialized
+INFO - 2026-01-28 07:00:21 --> Session: Class initialized using 'files' driver.
+INFO - 2026-01-28 07:00:21 --> Helper loaded: form_helper
+INFO - 2026-01-28 07:00:21 --> Form Validation Class Initialized
+INFO - 2026-01-28 07:00:21 --> User Agent Class Initialized
+INFO - 2026-01-28 07:00:21 --> Language file loaded: language/english/pagination_lang.php
+INFO - 2026-01-28 07:00:21 --> Pagination Class Initialized
+INFO - 2026-01-28 07:00:21 --> Controller Class Initialized
+INFO - 2026-01-28 07:00:21 --> File loaded: C:\xampp\htdocs\Aconnect_ci3\application\views\__header.php
+INFO - 2026-01-28 07:00:21 --> File loaded: C:\xampp\htdocs\Aconnect_ci3\application\views\dashboard_u.php
+INFO - 2026-01-28 07:00:21 --> File loaded: C:\xampp\htdocs\Aconnect_ci3\application\views\__footer.php
+INFO - 2026-01-28 07:00:21 --> Final output sent to browser
+DEBUG - 2026-01-28 07:00:21 --> Total execution time: 0.0742
+ERROR - 2026-01-28 07:01:19 --> $config['composer_autoload'] is set to TRUE but C:\xampp\htdocs\Aconnect_ci3\application\vendor/autoload.php was not found.
+INFO - 2026-01-28 07:01:19 --> Config Class Initialized
+INFO - 2026-01-28 07:01:19 --> Hooks Class Initialized
+DEBUG - 2026-01-28 07:01:19 --> UTF-8 Support Enabled
+INFO - 2026-01-28 07:01:19 --> Utf8 Class Initialized
+INFO - 2026-01-28 07:01:19 --> URI Class Initialized
+INFO - 2026-01-28 07:01:19 --> Router Class Initialized
+INFO - 2026-01-28 07:01:19 --> Output Class Initialized
+INFO - 2026-01-28 07:01:19 --> Security Class Initialized
+DEBUG - 2026-01-28 07:01:19 --> Global POST, GET and COOKIE data sanitized
+INFO - 2026-01-28 07:01:19 --> Input Class Initialized
+INFO - 2026-01-28 07:01:19 --> Language Class Initialized
+INFO - 2026-01-28 07:01:19 --> Loader Class Initialized
+INFO - 2026-01-28 07:01:19 --> Helper loaded: url_helper
+INFO - 2026-01-28 07:01:19 --> Helper loaded: file_helper
+INFO - 2026-01-28 07:01:19 --> Helper loaded: html_helper
+INFO - 2026-01-28 07:01:19 --> Database Driver Class Initialized
+INFO - 2026-01-28 07:01:19 --> Session: Class initialized using 'files' driver.
+INFO - 2026-01-28 07:01:19 --> Helper loaded: form_helper
+INFO - 2026-01-28 07:01:19 --> Form Validation Class Initialized
+INFO - 2026-01-28 07:01:19 --> User Agent Class Initialized
+INFO - 2026-01-28 07:01:19 --> Language file loaded: language/english/pagination_lang.php
+INFO - 2026-01-28 07:01:20 --> Pagination Class Initialized
+INFO - 2026-01-28 07:01:20 --> Controller Class Initialized
+INFO - 2026-01-28 07:01:20 --> Model "M_login" initialized
+INFO - 2026-01-28 07:01:20 --> Model "Activity_log_model" initialized
+ERROR - 2026-01-28 07:01:20 --> $config['composer_autoload'] is set to TRUE but C:\xampp\htdocs\Aconnect_ci3\application\vendor/autoload.php was not found.
+INFO - 2026-01-28 07:01:20 --> Config Class Initialized
+INFO - 2026-01-28 07:01:20 --> Hooks Class Initialized
+DEBUG - 2026-01-28 07:01:20 --> UTF-8 Support Enabled
+INFO - 2026-01-28 07:01:20 --> Utf8 Class Initialized
+INFO - 2026-01-28 07:01:20 --> URI Class Initialized
+INFO - 2026-01-28 07:01:20 --> Router Class Initialized
+INFO - 2026-01-28 07:01:20 --> Output Class Initialized
+INFO - 2026-01-28 07:01:20 --> Security Class Initialized
+DEBUG - 2026-01-28 07:01:20 --> Global POST, GET and COOKIE data sanitized
+INFO - 2026-01-28 07:01:20 --> Input Class Initialized
+INFO - 2026-01-28 07:01:20 --> Language Class Initialized
+INFO - 2026-01-28 07:01:20 --> Loader Class Initialized
+INFO - 2026-01-28 07:01:20 --> Helper loaded: url_helper
+INFO - 2026-01-28 07:01:20 --> Helper loaded: file_helper
+INFO - 2026-01-28 07:01:20 --> Helper loaded: html_helper
+INFO - 2026-01-28 07:01:20 --> Database Driver Class Initialized
+INFO - 2026-01-28 07:01:20 --> Session: Class initialized using 'files' driver.
+INFO - 2026-01-28 07:01:20 --> Helper loaded: form_helper
+INFO - 2026-01-28 07:01:20 --> Form Validation Class Initialized
+INFO - 2026-01-28 07:01:20 --> User Agent Class Initialized
+INFO - 2026-01-28 07:01:20 --> Language file loaded: language/english/pagination_lang.php
+INFO - 2026-01-28 07:01:20 --> Pagination Class Initialized
+INFO - 2026-01-28 07:01:20 --> Controller Class Initialized
+INFO - 2026-01-28 07:01:20 --> Model "M_login" initialized
+INFO - 2026-01-28 07:01:20 --> File loaded: C:\xampp\htdocs\Aconnect_ci3\application\views\login.php
+INFO - 2026-01-28 07:01:20 --> Final output sent to browser
+DEBUG - 2026-01-28 07:01:20 --> Total execution time: 0.0319
+ERROR - 2026-01-28 07:01:21 --> $config['composer_autoload'] is set to TRUE but C:\xampp\htdocs\Aconnect_ci3\application\vendor/autoload.php was not found.
+INFO - 2026-01-28 07:01:21 --> Config Class Initialized
+INFO - 2026-01-28 07:01:21 --> Hooks Class Initialized
+DEBUG - 2026-01-28 07:01:21 --> UTF-8 Support Enabled
+INFO - 2026-01-28 07:01:21 --> Utf8 Class Initialized
+INFO - 2026-01-28 07:01:21 --> URI Class Initialized
+INFO - 2026-01-28 07:01:21 --> Router Class Initialized
+INFO - 2026-01-28 07:01:21 --> Output Class Initialized
+INFO - 2026-01-28 07:01:21 --> Security Class Initialized
+DEBUG - 2026-01-28 07:01:21 --> Global POST, GET and COOKIE data sanitized
+INFO - 2026-01-28 07:01:21 --> Input Class Initialized
+INFO - 2026-01-28 07:01:21 --> Language Class Initialized
+INFO - 2026-01-28 07:01:21 --> Loader Class Initialized
+INFO - 2026-01-28 07:01:21 --> Helper loaded: url_helper
+INFO - 2026-01-28 07:01:21 --> Helper loaded: file_helper
+INFO - 2026-01-28 07:01:21 --> Helper loaded: html_helper
+INFO - 2026-01-28 07:01:21 --> Database Driver Class Initialized
+INFO - 2026-01-28 07:01:21 --> Session: Class initialized using 'files' driver.
+INFO - 2026-01-28 07:01:21 --> Helper loaded: form_helper
+INFO - 2026-01-28 07:01:21 --> Form Validation Class Initialized
+INFO - 2026-01-28 07:01:21 --> User Agent Class Initialized
+INFO - 2026-01-28 07:01:21 --> Language file loaded: language/english/pagination_lang.php
+INFO - 2026-01-28 07:01:21 --> Pagination Class Initialized
+INFO - 2026-01-28 07:01:21 --> Controller Class Initialized
+INFO - 2026-01-28 07:01:21 --> Model "M_login" initialized
+INFO - 2026-01-28 07:01:21 --> File loaded: C:\xampp\htdocs\Aconnect_ci3\application\views\admin/login.php
+INFO - 2026-01-28 07:01:21 --> Final output sent to browser
+DEBUG - 2026-01-28 07:01:21 --> Total execution time: 0.0433
+ERROR - 2026-01-28 07:01:23 --> $config['composer_autoload'] is set to TRUE but C:\xampp\htdocs\Aconnect_ci3\application\vendor/autoload.php was not found.
+INFO - 2026-01-28 07:01:23 --> Config Class Initialized
+INFO - 2026-01-28 07:01:23 --> Hooks Class Initialized
+DEBUG - 2026-01-28 07:01:23 --> UTF-8 Support Enabled
+INFO - 2026-01-28 07:01:23 --> Utf8 Class Initialized
+INFO - 2026-01-28 07:01:23 --> URI Class Initialized
+INFO - 2026-01-28 07:01:23 --> Router Class Initialized
+INFO - 2026-01-28 07:01:23 --> Output Class Initialized
+INFO - 2026-01-28 07:01:23 --> Security Class Initialized
+DEBUG - 2026-01-28 07:01:23 --> Global POST, GET and COOKIE data sanitized
+INFO - 2026-01-28 07:01:23 --> Input Class Initialized
+INFO - 2026-01-28 07:01:23 --> Language Class Initialized
+INFO - 2026-01-28 07:01:23 --> Loader Class Initialized
+INFO - 2026-01-28 07:01:23 --> Helper loaded: url_helper
+INFO - 2026-01-28 07:01:23 --> Helper loaded: file_helper
+INFO - 2026-01-28 07:01:23 --> Helper loaded: html_helper
+INFO - 2026-01-28 07:01:23 --> Database Driver Class Initialized
+INFO - 2026-01-28 07:01:23 --> Session: Class initialized using 'files' driver.
+INFO - 2026-01-28 07:01:23 --> Helper loaded: form_helper
+INFO - 2026-01-28 07:01:23 --> Form Validation Class Initialized
+INFO - 2026-01-28 07:01:23 --> User Agent Class Initialized
+INFO - 2026-01-28 07:01:23 --> Language file loaded: language/english/pagination_lang.php
+INFO - 2026-01-28 07:01:23 --> Pagination Class Initialized
+INFO - 2026-01-28 07:01:23 --> Controller Class Initialized
+INFO - 2026-01-28 07:01:23 --> Model "M_login" initialized
+INFO - 2026-01-28 07:01:23 --> File loaded: C:\xampp\htdocs\Aconnect_ci3\application\views\admin/login.php
+ERROR - 2026-01-28 07:01:23 --> $config['composer_autoload'] is set to TRUE but C:\xampp\htdocs\Aconnect_ci3\application\vendor/autoload.php was not found.
+INFO - 2026-01-28 07:01:23 --> Config Class Initialized
+INFO - 2026-01-28 07:01:23 --> Hooks Class Initialized
+DEBUG - 2026-01-28 07:01:23 --> UTF-8 Support Enabled
+INFO - 2026-01-28 07:01:23 --> Utf8 Class Initialized
+INFO - 2026-01-28 07:01:23 --> URI Class Initialized
+INFO - 2026-01-28 07:01:23 --> Router Class Initialized
+INFO - 2026-01-28 07:01:23 --> Output Class Initialized
+INFO - 2026-01-28 07:01:23 --> Security Class Initialized
+DEBUG - 2026-01-28 07:01:23 --> Global POST, GET and COOKIE data sanitized
+INFO - 2026-01-28 07:01:23 --> Input Class Initialized
+INFO - 2026-01-28 07:01:23 --> Language Class Initialized
+INFO - 2026-01-28 07:01:23 --> Loader Class Initialized
+INFO - 2026-01-28 07:01:23 --> Helper loaded: url_helper
+INFO - 2026-01-28 07:01:23 --> Helper loaded: file_helper
+INFO - 2026-01-28 07:01:23 --> Helper loaded: html_helper
+INFO - 2026-01-28 07:01:23 --> Database Driver Class Initialized
+INFO - 2026-01-28 07:01:23 --> Session: Class initialized using 'files' driver.
+INFO - 2026-01-28 07:01:23 --> Helper loaded: form_helper
+INFO - 2026-01-28 07:01:23 --> Form Validation Class Initialized
+INFO - 2026-01-28 07:01:23 --> User Agent Class Initialized
+INFO - 2026-01-28 07:01:23 --> Language file loaded: language/english/pagination_lang.php
+INFO - 2026-01-28 07:01:23 --> Pagination Class Initialized
+INFO - 2026-01-28 07:01:23 --> Controller Class Initialized
+INFO - 2026-01-28 07:01:23 --> File loaded: C:\xampp\htdocs\Aconnect_ci3\application\views\__header.php
+INFO - 2026-01-28 07:01:23 --> File loaded: C:\xampp\htdocs\Aconnect_ci3\application\views\dashboard_a.php
+INFO - 2026-01-28 07:01:23 --> File loaded: C:\xampp\htdocs\Aconnect_ci3\application\views\__footer.php
+INFO - 2026-01-28 07:01:23 --> Final output sent to browser
+DEBUG - 2026-01-28 07:01:23 --> Total execution time: 0.0603
+ERROR - 2026-01-28 07:01:24 --> $config['composer_autoload'] is set to TRUE but C:\xampp\htdocs\Aconnect_ci3\application\vendor/autoload.php was not found.
+INFO - 2026-01-28 07:01:24 --> Config Class Initialized
+INFO - 2026-01-28 07:01:24 --> Hooks Class Initialized
+DEBUG - 2026-01-28 07:01:24 --> UTF-8 Support Enabled
+INFO - 2026-01-28 07:01:24 --> Utf8 Class Initialized
+INFO - 2026-01-28 07:01:24 --> URI Class Initialized
+INFO - 2026-01-28 07:01:24 --> Router Class Initialized
+INFO - 2026-01-28 07:01:24 --> Output Class Initialized
+INFO - 2026-01-28 07:01:24 --> Security Class Initialized
+DEBUG - 2026-01-28 07:01:24 --> Global POST, GET and COOKIE data sanitized
+INFO - 2026-01-28 07:01:24 --> Input Class Initialized
+INFO - 2026-01-28 07:01:24 --> Language Class Initialized
+INFO - 2026-01-28 07:01:24 --> Loader Class Initialized
+INFO - 2026-01-28 07:01:24 --> Helper loaded: url_helper
+INFO - 2026-01-28 07:01:24 --> Helper loaded: file_helper
+INFO - 2026-01-28 07:01:24 --> Helper loaded: html_helper
+INFO - 2026-01-28 07:01:24 --> Database Driver Class Initialized
+INFO - 2026-01-28 07:01:24 --> Session: Class initialized using 'files' driver.
+INFO - 2026-01-28 07:01:24 --> Helper loaded: form_helper
+INFO - 2026-01-28 07:01:24 --> Form Validation Class Initialized
+INFO - 2026-01-28 07:01:24 --> User Agent Class Initialized
+INFO - 2026-01-28 07:01:24 --> Language file loaded: language/english/pagination_lang.php
+INFO - 2026-01-28 07:01:24 --> Pagination Class Initialized
+INFO - 2026-01-28 07:01:24 --> Controller Class Initialized
+INFO - 2026-01-28 07:01:24 --> File loaded: C:\xampp\htdocs\Aconnect_ci3\application\views\__header.php
+INFO - 2026-01-28 07:01:24 --> File loaded: C:\xampp\htdocs\Aconnect_ci3\application\views\dashboard_a.php
+INFO - 2026-01-28 07:01:24 --> File loaded: C:\xampp\htdocs\Aconnect_ci3\application\views\__footer.php
+INFO - 2026-01-28 07:01:24 --> Final output sent to browser
+DEBUG - 2026-01-28 07:01:24 --> Total execution time: 0.0255
+ERROR - 2026-01-28 07:01:29 --> $config['composer_autoload'] is set to TRUE but C:\xampp\htdocs\Aconnect_ci3\application\vendor/autoload.php was not found.
+INFO - 2026-01-28 07:01:29 --> Config Class Initialized
+INFO - 2026-01-28 07:01:29 --> Hooks Class Initialized
+DEBUG - 2026-01-28 07:01:29 --> UTF-8 Support Enabled
+INFO - 2026-01-28 07:01:29 --> Utf8 Class Initialized
+INFO - 2026-01-28 07:01:29 --> URI Class Initialized
+INFO - 2026-01-28 07:01:29 --> Router Class Initialized
+INFO - 2026-01-28 07:01:29 --> Output Class Initialized
+INFO - 2026-01-28 07:01:29 --> Security Class Initialized
+DEBUG - 2026-01-28 07:01:29 --> Global POST, GET and COOKIE data sanitized
+INFO - 2026-01-28 07:01:29 --> Input Class Initialized
+INFO - 2026-01-28 07:01:29 --> Language Class Initialized
+INFO - 2026-01-28 07:01:29 --> Loader Class Initialized
+INFO - 2026-01-28 07:01:29 --> Helper loaded: url_helper
+INFO - 2026-01-28 07:01:29 --> Helper loaded: file_helper
+INFO - 2026-01-28 07:01:29 --> Helper loaded: html_helper
+INFO - 2026-01-28 07:01:29 --> Database Driver Class Initialized
+INFO - 2026-01-28 07:01:29 --> Session: Class initialized using 'files' driver.
+INFO - 2026-01-28 07:01:29 --> Helper loaded: form_helper
+INFO - 2026-01-28 07:01:29 --> Form Validation Class Initialized
+INFO - 2026-01-28 07:01:29 --> User Agent Class Initialized
+INFO - 2026-01-28 07:01:29 --> Language file loaded: language/english/pagination_lang.php
+INFO - 2026-01-28 07:01:29 --> Pagination Class Initialized
+INFO - 2026-01-28 07:01:29 --> Controller Class Initialized
+INFO - 2026-01-28 07:01:29 --> File loaded: C:\xampp\htdocs\Aconnect_ci3\application\views\__header.php
+INFO - 2026-01-28 07:01:29 --> File loaded: C:\xampp\htdocs\Aconnect_ci3\application\views\dashboard_a.php
+INFO - 2026-01-28 07:01:29 --> File loaded: C:\xampp\htdocs\Aconnect_ci3\application\views\__footer.php
+INFO - 2026-01-28 07:01:29 --> Final output sent to browser
+DEBUG - 2026-01-28 07:01:29 --> Total execution time: 0.0252
+ERROR - 2026-01-28 07:01:30 --> $config['composer_autoload'] is set to TRUE but C:\xampp\htdocs\Aconnect_ci3\application\vendor/autoload.php was not found.
+INFO - 2026-01-28 07:01:30 --> Config Class Initialized
+INFO - 2026-01-28 07:01:30 --> Hooks Class Initialized
+DEBUG - 2026-01-28 07:01:30 --> UTF-8 Support Enabled
+INFO - 2026-01-28 07:01:30 --> Utf8 Class Initialized
+INFO - 2026-01-28 07:01:30 --> URI Class Initialized
+INFO - 2026-01-28 07:01:30 --> Router Class Initialized
+INFO - 2026-01-28 07:01:30 --> Output Class Initialized
+INFO - 2026-01-28 07:01:30 --> Security Class Initialized
+DEBUG - 2026-01-28 07:01:30 --> Global POST, GET and COOKIE data sanitized
+INFO - 2026-01-28 07:01:30 --> Input Class Initialized
+INFO - 2026-01-28 07:01:30 --> Language Class Initialized
+INFO - 2026-01-28 07:01:30 --> Loader Class Initialized
+INFO - 2026-01-28 07:01:30 --> Helper loaded: url_helper
+INFO - 2026-01-28 07:01:30 --> Helper loaded: file_helper
+INFO - 2026-01-28 07:01:30 --> Helper loaded: html_helper
+INFO - 2026-01-28 07:01:30 --> Database Driver Class Initialized
+INFO - 2026-01-28 07:01:30 --> Session: Class initialized using 'files' driver.
+INFO - 2026-01-28 07:01:30 --> Helper loaded: form_helper
+INFO - 2026-01-28 07:01:30 --> Form Validation Class Initialized
+INFO - 2026-01-28 07:01:30 --> User Agent Class Initialized
+INFO - 2026-01-28 07:01:30 --> Language file loaded: language/english/pagination_lang.php
+INFO - 2026-01-28 07:01:30 --> Pagination Class Initialized
+INFO - 2026-01-28 07:01:30 --> Controller Class Initialized
+INFO - 2026-01-28 07:01:30 --> File loaded: C:\xampp\htdocs\Aconnect_ci3\application\views\__header.php
+INFO - 2026-01-28 07:01:30 --> File loaded: C:\xampp\htdocs\Aconnect_ci3\application\views\dashboard_a.php
+INFO - 2026-01-28 07:01:30 --> File loaded: C:\xampp\htdocs\Aconnect_ci3\application\views\__footer.php
+INFO - 2026-01-28 07:01:30 --> Final output sent to browser
+DEBUG - 2026-01-28 07:01:30 --> Total execution time: 0.0440
+ERROR - 2026-01-28 07:01:33 --> $config['composer_autoload'] is set to TRUE but C:\xampp\htdocs\Aconnect_ci3\application\vendor/autoload.php was not found.
+INFO - 2026-01-28 07:01:33 --> Config Class Initialized
+INFO - 2026-01-28 07:01:33 --> Hooks Class Initialized
+DEBUG - 2026-01-28 07:01:33 --> UTF-8 Support Enabled
+INFO - 2026-01-28 07:01:33 --> Utf8 Class Initialized
+INFO - 2026-01-28 07:01:33 --> URI Class Initialized
+INFO - 2026-01-28 07:01:33 --> Router Class Initialized
+INFO - 2026-01-28 07:01:33 --> Output Class Initialized
+INFO - 2026-01-28 07:01:33 --> Security Class Initialized
+DEBUG - 2026-01-28 07:01:33 --> Global POST, GET and COOKIE data sanitized
+INFO - 2026-01-28 07:01:33 --> Input Class Initialized
+INFO - 2026-01-28 07:01:33 --> Language Class Initialized
+INFO - 2026-01-28 07:01:33 --> Loader Class Initialized
+INFO - 2026-01-28 07:01:33 --> Helper loaded: url_helper
+INFO - 2026-01-28 07:01:33 --> Helper loaded: file_helper
+INFO - 2026-01-28 07:01:33 --> Helper loaded: html_helper
+INFO - 2026-01-28 07:01:33 --> Database Driver Class Initialized
+INFO - 2026-01-28 07:01:33 --> Session: Class initialized using 'files' driver.
+INFO - 2026-01-28 07:01:33 --> Helper loaded: form_helper
+INFO - 2026-01-28 07:01:33 --> Form Validation Class Initialized
+INFO - 2026-01-28 07:01:33 --> User Agent Class Initialized
+INFO - 2026-01-28 07:01:33 --> Language file loaded: language/english/pagination_lang.php
+INFO - 2026-01-28 07:01:33 --> Pagination Class Initialized
+INFO - 2026-01-28 07:01:33 --> Controller Class Initialized
+INFO - 2026-01-28 07:01:33 --> File loaded: C:\xampp\htdocs\Aconnect_ci3\application\views\__header.php
+INFO - 2026-01-28 07:01:33 --> File loaded: C:\xampp\htdocs\Aconnect_ci3\application\views\dashboard_a.php
+INFO - 2026-01-28 07:01:33 --> File loaded: C:\xampp\htdocs\Aconnect_ci3\application\views\__footer.php
+INFO - 2026-01-28 07:01:33 --> Final output sent to browser
+DEBUG - 2026-01-28 07:01:33 --> Total execution time: 0.0241
+ERROR - 2026-01-28 07:01:35 --> $config['composer_autoload'] is set to TRUE but C:\xampp\htdocs\Aconnect_ci3\application\vendor/autoload.php was not found.
+INFO - 2026-01-28 07:01:35 --> Config Class Initialized
+INFO - 2026-01-28 07:01:35 --> Hooks Class Initialized
+DEBUG - 2026-01-28 07:01:35 --> UTF-8 Support Enabled
+INFO - 2026-01-28 07:01:35 --> Utf8 Class Initialized
+INFO - 2026-01-28 07:01:35 --> URI Class Initialized
+INFO - 2026-01-28 07:01:35 --> Router Class Initialized
+INFO - 2026-01-28 07:01:35 --> Output Class Initialized
+INFO - 2026-01-28 07:01:35 --> Security Class Initialized
+DEBUG - 2026-01-28 07:01:35 --> Global POST, GET and COOKIE data sanitized
+INFO - 2026-01-28 07:01:35 --> Input Class Initialized
+INFO - 2026-01-28 07:01:35 --> Language Class Initialized
+INFO - 2026-01-28 07:01:35 --> Loader Class Initialized
+INFO - 2026-01-28 07:01:35 --> Helper loaded: url_helper
+INFO - 2026-01-28 07:01:35 --> Helper loaded: file_helper
+INFO - 2026-01-28 07:01:35 --> Helper loaded: html_helper
+INFO - 2026-01-28 07:01:35 --> Database Driver Class Initialized
+INFO - 2026-01-28 07:01:35 --> Session: Class initialized using 'files' driver.
+INFO - 2026-01-28 07:01:35 --> Helper loaded: form_helper
+INFO - 2026-01-28 07:01:35 --> Form Validation Class Initialized
+INFO - 2026-01-28 07:01:35 --> User Agent Class Initialized
+INFO - 2026-01-28 07:01:35 --> Language file loaded: language/english/pagination_lang.php
+INFO - 2026-01-28 07:01:35 --> Pagination Class Initialized
+INFO - 2026-01-28 07:01:35 --> Controller Class Initialized
+INFO - 2026-01-28 07:01:35 --> File loaded: C:\xampp\htdocs\Aconnect_ci3\application\views\__header.php
+DEBUG - 2026-01-28 07:01:35 --> Pagination class already loaded. Second attempt ignored.
+INFO - 2026-01-28 07:01:35 --> Model "Alumni_model" initialized
+INFO - 2026-01-28 07:01:35 --> File loaded: C:\xampp\htdocs\Aconnect_ci3\application\views\admin/alumni.php
+INFO - 2026-01-28 07:01:35 --> File loaded: C:\xampp\htdocs\Aconnect_ci3\application\views\__footer.php
+INFO - 2026-01-28 07:01:35 --> Final output sent to browser
+DEBUG - 2026-01-28 07:01:35 --> Total execution time: 0.0247
+ERROR - 2026-01-28 07:01:36 --> $config['composer_autoload'] is set to TRUE but C:\xampp\htdocs\Aconnect_ci3\application\vendor/autoload.php was not found.
+INFO - 2026-01-28 07:01:36 --> Config Class Initialized
+INFO - 2026-01-28 07:01:36 --> Hooks Class Initialized
+DEBUG - 2026-01-28 07:01:36 --> UTF-8 Support Enabled
+INFO - 2026-01-28 07:01:36 --> Utf8 Class Initialized
+INFO - 2026-01-28 07:01:36 --> URI Class Initialized
+INFO - 2026-01-28 07:01:36 --> Router Class Initialized
+INFO - 2026-01-28 07:01:36 --> Output Class Initialized
+INFO - 2026-01-28 07:01:36 --> Security Class Initialized
+DEBUG - 2026-01-28 07:01:36 --> Global POST, GET and COOKIE data sanitized
+INFO - 2026-01-28 07:01:36 --> Input Class Initialized
+INFO - 2026-01-28 07:01:36 --> Language Class Initialized
+INFO - 2026-01-28 07:01:36 --> Loader Class Initialized
+INFO - 2026-01-28 07:01:36 --> Helper loaded: url_helper
+INFO - 2026-01-28 07:01:36 --> Helper loaded: file_helper
+INFO - 2026-01-28 07:01:36 --> Helper loaded: html_helper
+INFO - 2026-01-28 07:01:36 --> Database Driver Class Initialized
+INFO - 2026-01-28 07:01:36 --> Session: Class initialized using 'files' driver.
+INFO - 2026-01-28 07:01:36 --> Helper loaded: form_helper
+INFO - 2026-01-28 07:01:36 --> Form Validation Class Initialized
+INFO - 2026-01-28 07:01:36 --> User Agent Class Initialized
+INFO - 2026-01-28 07:01:36 --> Language file loaded: language/english/pagination_lang.php
+INFO - 2026-01-28 07:01:36 --> Pagination Class Initialized
+INFO - 2026-01-28 07:01:36 --> Controller Class Initialized
+INFO - 2026-01-28 07:01:36 --> File loaded: C:\xampp\htdocs\Aconnect_ci3\application\views\__header.php
+INFO - 2026-01-28 07:01:36 --> File loaded: C:\xampp\htdocs\Aconnect_ci3\application\views\admin/job_posting.php
+INFO - 2026-01-28 07:01:36 --> File loaded: C:\xampp\htdocs\Aconnect_ci3\application\views\__footer.php
+INFO - 2026-01-28 07:01:36 --> Final output sent to browser
+DEBUG - 2026-01-28 07:01:36 --> Total execution time: 0.1311
+ERROR - 2026-01-28 07:01:36 --> $config['composer_autoload'] is set to TRUE but C:\xampp\htdocs\Aconnect_ci3\application\vendor/autoload.php was not found.
+INFO - 2026-01-28 07:01:36 --> Config Class Initialized
+INFO - 2026-01-28 07:01:36 --> Hooks Class Initialized
+DEBUG - 2026-01-28 07:01:36 --> UTF-8 Support Enabled
+INFO - 2026-01-28 07:01:36 --> Utf8 Class Initialized
+INFO - 2026-01-28 07:01:36 --> URI Class Initialized
+INFO - 2026-01-28 07:01:36 --> Router Class Initialized
+INFO - 2026-01-28 07:01:36 --> Output Class Initialized
+INFO - 2026-01-28 07:01:36 --> Security Class Initialized
+DEBUG - 2026-01-28 07:01:36 --> Global POST, GET and COOKIE data sanitized
+INFO - 2026-01-28 07:01:36 --> Input Class Initialized
+INFO - 2026-01-28 07:01:36 --> Language Class Initialized
+INFO - 2026-01-28 07:01:37 --> Loader Class Initialized
+INFO - 2026-01-28 07:01:37 --> Helper loaded: url_helper
+INFO - 2026-01-28 07:01:37 --> Helper loaded: file_helper
+INFO - 2026-01-28 07:01:37 --> Helper loaded: html_helper
+INFO - 2026-01-28 07:01:37 --> Database Driver Class Initialized
+INFO - 2026-01-28 07:01:37 --> Session: Class initialized using 'files' driver.
+INFO - 2026-01-28 07:01:37 --> Helper loaded: form_helper
+INFO - 2026-01-28 07:01:37 --> Form Validation Class Initialized
+INFO - 2026-01-28 07:01:37 --> User Agent Class Initialized
+INFO - 2026-01-28 07:01:37 --> Language file loaded: language/english/pagination_lang.php
+INFO - 2026-01-28 07:01:37 --> Pagination Class Initialized
+INFO - 2026-01-28 07:01:37 --> Controller Class Initialized
+INFO - 2026-01-28 07:01:37 --> File loaded: C:\xampp\htdocs\Aconnect_ci3\application\views\__header.php
+INFO - 2026-01-28 07:01:37 --> File loaded: C:\xampp\htdocs\Aconnect_ci3\application\views\admin/manage_events.php
+INFO - 2026-01-28 07:01:37 --> File loaded: C:\xampp\htdocs\Aconnect_ci3\application\views\__footer.php
+INFO - 2026-01-28 07:01:37 --> Final output sent to browser
+DEBUG - 2026-01-28 07:01:37 --> Total execution time: 0.0943
+ERROR - 2026-01-28 07:01:37 --> $config['composer_autoload'] is set to TRUE but C:\xampp\htdocs\Aconnect_ci3\application\vendor/autoload.php was not found.
+INFO - 2026-01-28 07:01:37 --> Config Class Initialized
+INFO - 2026-01-28 07:01:37 --> Hooks Class Initialized
+DEBUG - 2026-01-28 07:01:37 --> UTF-8 Support Enabled
+INFO - 2026-01-28 07:01:37 --> Utf8 Class Initialized
+INFO - 2026-01-28 07:01:37 --> URI Class Initialized
+INFO - 2026-01-28 07:01:37 --> Router Class Initialized
+INFO - 2026-01-28 07:01:37 --> Output Class Initialized
+INFO - 2026-01-28 07:01:37 --> Security Class Initialized
+DEBUG - 2026-01-28 07:01:37 --> Global POST, GET and COOKIE data sanitized
+INFO - 2026-01-28 07:01:37 --> Input Class Initialized
+INFO - 2026-01-28 07:01:37 --> Language Class Initialized
+INFO - 2026-01-28 07:01:37 --> Loader Class Initialized
+INFO - 2026-01-28 07:01:37 --> Helper loaded: url_helper
+INFO - 2026-01-28 07:01:37 --> Helper loaded: file_helper
+INFO - 2026-01-28 07:01:37 --> Helper loaded: html_helper
+INFO - 2026-01-28 07:01:37 --> Database Driver Class Initialized
+INFO - 2026-01-28 07:01:37 --> Session: Class initialized using 'files' driver.
+INFO - 2026-01-28 07:01:37 --> Helper loaded: form_helper
+INFO - 2026-01-28 07:01:37 --> Form Validation Class Initialized
+INFO - 2026-01-28 07:01:37 --> User Agent Class Initialized
+INFO - 2026-01-28 07:01:37 --> Language file loaded: language/english/pagination_lang.php
+INFO - 2026-01-28 07:01:37 --> Pagination Class Initialized
+INFO - 2026-01-28 07:01:37 --> Controller Class Initialized
+INFO - 2026-01-28 07:01:37 --> Helper loaded: text_helper
+DEBUG - 2026-01-28 07:01:37 --> Session class already loaded. Second attempt ignored.
+INFO - 2026-01-28 07:01:37 --> File loaded: C:\xampp\htdocs\Aconnect_ci3\application\views\__header.php
+INFO - 2026-01-28 07:01:37 --> File loaded: C:\xampp\htdocs\Aconnect_ci3\application\views\admin/manage_post.php
+INFO - 2026-01-28 07:01:37 --> File loaded: C:\xampp\htdocs\Aconnect_ci3\application\views\__footer.php
+INFO - 2026-01-28 07:01:37 --> Final output sent to browser
+DEBUG - 2026-01-28 07:01:37 --> Total execution time: 0.1288
+ERROR - 2026-01-28 07:01:38 --> $config['composer_autoload'] is set to TRUE but C:\xampp\htdocs\Aconnect_ci3\application\vendor/autoload.php was not found.
+INFO - 2026-01-28 07:01:38 --> Config Class Initialized
+INFO - 2026-01-28 07:01:38 --> Hooks Class Initialized
+DEBUG - 2026-01-28 07:01:38 --> UTF-8 Support Enabled
+INFO - 2026-01-28 07:01:38 --> Utf8 Class Initialized
+INFO - 2026-01-28 07:01:38 --> URI Class Initialized
+INFO - 2026-01-28 07:01:38 --> Router Class Initialized
+INFO - 2026-01-28 07:01:38 --> Output Class Initialized
+INFO - 2026-01-28 07:01:38 --> Security Class Initialized
+DEBUG - 2026-01-28 07:01:38 --> Global POST, GET and COOKIE data sanitized
+INFO - 2026-01-28 07:01:38 --> Input Class Initialized
+INFO - 2026-01-28 07:01:38 --> Language Class Initialized
+INFO - 2026-01-28 07:01:38 --> Loader Class Initialized
+INFO - 2026-01-28 07:01:38 --> Helper loaded: url_helper
+INFO - 2026-01-28 07:01:38 --> Helper loaded: file_helper
+INFO - 2026-01-28 07:01:38 --> Helper loaded: html_helper
+INFO - 2026-01-28 07:01:38 --> Database Driver Class Initialized
+INFO - 2026-01-28 07:01:38 --> Session: Class initialized using 'files' driver.
+INFO - 2026-01-28 07:01:38 --> Helper loaded: form_helper
+INFO - 2026-01-28 07:01:38 --> Form Validation Class Initialized
+INFO - 2026-01-28 07:01:38 --> User Agent Class Initialized
+INFO - 2026-01-28 07:01:38 --> Language file loaded: language/english/pagination_lang.php
+INFO - 2026-01-28 07:01:38 --> Pagination Class Initialized
+INFO - 2026-01-28 07:01:38 --> Controller Class Initialized
+INFO - 2026-01-28 07:01:38 --> File loaded: C:\xampp\htdocs\Aconnect_ci3\application\views\__header.php
+INFO - 2026-01-28 07:01:38 --> File loaded: C:\xampp\htdocs\Aconnect_ci3\application\views\dashboard_a.php
+INFO - 2026-01-28 07:01:38 --> File loaded: C:\xampp\htdocs\Aconnect_ci3\application\views\__footer.php
+INFO - 2026-01-28 07:01:38 --> Final output sent to browser
+DEBUG - 2026-01-28 07:01:38 --> Total execution time: 0.0448
+ERROR - 2026-01-28 07:01:40 --> $config['composer_autoload'] is set to TRUE but C:\xampp\htdocs\Aconnect_ci3\application\vendor/autoload.php was not found.
+INFO - 2026-01-28 07:01:40 --> Config Class Initialized
+INFO - 2026-01-28 07:01:40 --> Hooks Class Initialized
+DEBUG - 2026-01-28 07:01:40 --> UTF-8 Support Enabled
+INFO - 2026-01-28 07:01:40 --> Utf8 Class Initialized
+INFO - 2026-01-28 07:01:40 --> URI Class Initialized
+INFO - 2026-01-28 07:01:40 --> Router Class Initialized
+INFO - 2026-01-28 07:01:40 --> Output Class Initialized
+INFO - 2026-01-28 07:01:40 --> Security Class Initialized
+DEBUG - 2026-01-28 07:01:40 --> Global POST, GET and COOKIE data sanitized
+INFO - 2026-01-28 07:01:40 --> Input Class Initialized
+INFO - 2026-01-28 07:01:40 --> Language Class Initialized
+INFO - 2026-01-28 07:01:40 --> Loader Class Initialized
+INFO - 2026-01-28 07:01:40 --> Helper loaded: url_helper
+INFO - 2026-01-28 07:01:40 --> Helper loaded: file_helper
+INFO - 2026-01-28 07:01:40 --> Helper loaded: html_helper
+INFO - 2026-01-28 07:01:40 --> Database Driver Class Initialized
+INFO - 2026-01-28 07:01:40 --> Session: Class initialized using 'files' driver.
+INFO - 2026-01-28 07:01:40 --> Helper loaded: form_helper
+INFO - 2026-01-28 07:01:40 --> Form Validation Class Initialized
+INFO - 2026-01-28 07:01:40 --> User Agent Class Initialized
+INFO - 2026-01-28 07:01:40 --> Language file loaded: language/english/pagination_lang.php
+INFO - 2026-01-28 07:01:40 --> Pagination Class Initialized
+INFO - 2026-01-28 07:01:40 --> Controller Class Initialized
+INFO - 2026-01-28 07:01:40 --> Model "Activity_log_model" initialized
+INFO - 2026-01-28 07:01:40 --> Model "Alumni_model" initialized
+DEBUG - 2026-01-28 07:01:40 --> Pagination class already loaded. Second attempt ignored.
+DEBUG - 2026-01-28 14:01:40 --> Pagination class already loaded. Second attempt ignored.
+INFO - 2026-01-28 14:01:40 --> File loaded: C:\xampp\htdocs\Aconnect_ci3\application\views\__header.php
+INFO - 2026-01-28 14:01:40 --> File loaded: C:\xampp\htdocs\Aconnect_ci3\application\views\admin/activity_log.php
+INFO - 2026-01-28 14:01:40 --> File loaded: C:\xampp\htdocs\Aconnect_ci3\application\views\__footer.php
+INFO - 2026-01-28 14:01:40 --> Final output sent to browser
+DEBUG - 2026-01-28 14:01:40 --> Total execution time: 0.0259
+ERROR - 2026-01-28 07:01:41 --> $config['composer_autoload'] is set to TRUE but C:\xampp\htdocs\Aconnect_ci3\application\vendor/autoload.php was not found.
+INFO - 2026-01-28 07:01:41 --> Config Class Initialized
+INFO - 2026-01-28 07:01:41 --> Hooks Class Initialized
+DEBUG - 2026-01-28 07:01:41 --> UTF-8 Support Enabled
+INFO - 2026-01-28 07:01:41 --> Utf8 Class Initialized
+INFO - 2026-01-28 07:01:41 --> URI Class Initialized
+INFO - 2026-01-28 07:01:41 --> Router Class Initialized
+INFO - 2026-01-28 07:01:41 --> Output Class Initialized
+INFO - 2026-01-28 07:01:41 --> Security Class Initialized
+DEBUG - 2026-01-28 07:01:41 --> Global POST, GET and COOKIE data sanitized
+INFO - 2026-01-28 07:01:41 --> Input Class Initialized
+INFO - 2026-01-28 07:01:41 --> Language Class Initialized
+INFO - 2026-01-28 07:01:41 --> Loader Class Initialized
+INFO - 2026-01-28 07:01:41 --> Helper loaded: url_helper
+INFO - 2026-01-28 07:01:41 --> Helper loaded: file_helper
+INFO - 2026-01-28 07:01:41 --> Helper loaded: html_helper
+INFO - 2026-01-28 07:01:41 --> Database Driver Class Initialized
+INFO - 2026-01-28 07:01:41 --> Session: Class initialized using 'files' driver.
+INFO - 2026-01-28 07:01:41 --> Helper loaded: form_helper
+INFO - 2026-01-28 07:01:41 --> Form Validation Class Initialized
+INFO - 2026-01-28 07:01:41 --> User Agent Class Initialized
+INFO - 2026-01-28 07:01:41 --> Language file loaded: language/english/pagination_lang.php
+INFO - 2026-01-28 07:01:41 --> Pagination Class Initialized
+INFO - 2026-01-28 07:01:41 --> Controller Class Initialized
+INFO - 2026-01-28 07:01:41 --> File loaded: C:\xampp\htdocs\Aconnect_ci3\application\views\__header.php
+INFO - 2026-01-28 07:01:41 --> File loaded: C:\xampp\htdocs\Aconnect_ci3\application\views\dashboard_a.php
+INFO - 2026-01-28 07:01:41 --> File loaded: C:\xampp\htdocs\Aconnect_ci3\application\views\__footer.php
+INFO - 2026-01-28 07:01:41 --> Final output sent to browser
+DEBUG - 2026-01-28 07:01:41 --> Total execution time: 0.0402
+ERROR - 2026-01-28 07:02:03 --> $config['composer_autoload'] is set to TRUE but C:\xampp\htdocs\Aconnect_ci3\application\vendor/autoload.php was not found.
+INFO - 2026-01-28 07:02:03 --> Config Class Initialized
+INFO - 2026-01-28 07:02:03 --> Hooks Class Initialized
+DEBUG - 2026-01-28 07:02:03 --> UTF-8 Support Enabled
+INFO - 2026-01-28 07:02:03 --> Utf8 Class Initialized
+INFO - 2026-01-28 07:02:04 --> URI Class Initialized
+INFO - 2026-01-28 07:02:04 --> Router Class Initialized
+INFO - 2026-01-28 07:02:04 --> Output Class Initialized
+INFO - 2026-01-28 07:02:04 --> Security Class Initialized
+DEBUG - 2026-01-28 07:02:04 --> Global POST, GET and COOKIE data sanitized
+INFO - 2026-01-28 07:02:04 --> Input Class Initialized
+INFO - 2026-01-28 07:02:04 --> Language Class Initialized
+INFO - 2026-01-28 07:02:04 --> Loader Class Initialized
+INFO - 2026-01-28 07:02:04 --> Helper loaded: url_helper
+INFO - 2026-01-28 07:02:04 --> Helper loaded: file_helper
+INFO - 2026-01-28 07:02:04 --> Helper loaded: html_helper
+INFO - 2026-01-28 07:02:04 --> Database Driver Class Initialized
+INFO - 2026-01-28 07:02:04 --> Session: Class initialized using 'files' driver.
+INFO - 2026-01-28 07:02:04 --> Helper loaded: form_helper
+INFO - 2026-01-28 07:02:04 --> Form Validation Class Initialized
+INFO - 2026-01-28 07:02:04 --> User Agent Class Initialized
+INFO - 2026-01-28 07:02:04 --> Language file loaded: language/english/pagination_lang.php
+INFO - 2026-01-28 07:02:04 --> Pagination Class Initialized
+INFO - 2026-01-28 07:02:04 --> Controller Class Initialized
+INFO - 2026-01-28 07:02:04 --> Helper loaded: text_helper
+DEBUG - 2026-01-28 07:02:04 --> Session class already loaded. Second attempt ignored.
+INFO - 2026-01-28 07:02:04 --> File loaded: C:\xampp\htdocs\Aconnect_ci3\application\views\__header.php
+INFO - 2026-01-28 07:02:04 --> File loaded: C:\xampp\htdocs\Aconnect_ci3\application\views\admin/manage_post.php
+INFO - 2026-01-28 07:02:04 --> File loaded: C:\xampp\htdocs\Aconnect_ci3\application\views\__footer.php
+INFO - 2026-01-28 07:02:04 --> Final output sent to browser
+DEBUG - 2026-01-28 07:02:04 --> Total execution time: 0.0574
+ERROR - 2026-01-28 07:02:05 --> $config['composer_autoload'] is set to TRUE but C:\xampp\htdocs\Aconnect_ci3\application\vendor/autoload.php was not found.
+INFO - 2026-01-28 07:02:05 --> Config Class Initialized
+INFO - 2026-01-28 07:02:05 --> Hooks Class Initialized
+DEBUG - 2026-01-28 07:02:05 --> UTF-8 Support Enabled
+INFO - 2026-01-28 07:02:05 --> Utf8 Class Initialized
+INFO - 2026-01-28 07:02:05 --> URI Class Initialized
+INFO - 2026-01-28 07:02:05 --> Router Class Initialized
+INFO - 2026-01-28 07:02:05 --> Output Class Initialized
+INFO - 2026-01-28 07:02:05 --> Security Class Initialized
+DEBUG - 2026-01-28 07:02:05 --> Global POST, GET and COOKIE data sanitized
+INFO - 2026-01-28 07:02:05 --> Input Class Initialized
+INFO - 2026-01-28 07:02:05 --> Language Class Initialized
+INFO - 2026-01-28 07:02:05 --> Loader Class Initialized
+INFO - 2026-01-28 07:02:05 --> Helper loaded: url_helper
+INFO - 2026-01-28 07:02:05 --> Helper loaded: file_helper
+INFO - 2026-01-28 07:02:05 --> Helper loaded: html_helper
+INFO - 2026-01-28 07:02:05 --> Database Driver Class Initialized
+INFO - 2026-01-28 07:02:05 --> Session: Class initialized using 'files' driver.
+INFO - 2026-01-28 07:02:05 --> Helper loaded: form_helper
+INFO - 2026-01-28 07:02:05 --> Form Validation Class Initialized
+INFO - 2026-01-28 07:02:05 --> User Agent Class Initialized
+INFO - 2026-01-28 07:02:05 --> Language file loaded: language/english/pagination_lang.php
+INFO - 2026-01-28 07:02:05 --> Pagination Class Initialized
+INFO - 2026-01-28 07:02:05 --> Controller Class Initialized
+INFO - 2026-01-28 07:02:05 --> File loaded: C:\xampp\htdocs\Aconnect_ci3\application\views\__header.php
+INFO - 2026-01-28 07:02:05 --> File loaded: C:\xampp\htdocs\Aconnect_ci3\application\views\dashboard_a.php
+INFO - 2026-01-28 07:02:05 --> File loaded: C:\xampp\htdocs\Aconnect_ci3\application\views\__footer.php
+INFO - 2026-01-28 07:02:05 --> Final output sent to browser
+DEBUG - 2026-01-28 07:02:05 --> Total execution time: 0.0245
+ERROR - 2026-01-28 07:02:27 --> $config['composer_autoload'] is set to TRUE but C:\xampp\htdocs\Aconnect_ci3\application\vendor/autoload.php was not found.
+INFO - 2026-01-28 07:02:27 --> Config Class Initialized
+INFO - 2026-01-28 07:02:27 --> Hooks Class Initialized
+DEBUG - 2026-01-28 07:02:27 --> UTF-8 Support Enabled
+INFO - 2026-01-28 07:02:27 --> Utf8 Class Initialized
+INFO - 2026-01-28 07:02:27 --> URI Class Initialized
+INFO - 2026-01-28 07:02:27 --> Router Class Initialized
+INFO - 2026-01-28 07:02:27 --> Output Class Initialized
+INFO - 2026-01-28 07:02:27 --> Security Class Initialized
+DEBUG - 2026-01-28 07:02:27 --> Global POST, GET and COOKIE data sanitized
+INFO - 2026-01-28 07:02:27 --> Input Class Initialized
+INFO - 2026-01-28 07:02:27 --> Language Class Initialized
+INFO - 2026-01-28 07:02:27 --> Loader Class Initialized
+INFO - 2026-01-28 07:02:27 --> Helper loaded: url_helper
+INFO - 2026-01-28 07:02:27 --> Helper loaded: file_helper
+INFO - 2026-01-28 07:02:27 --> Helper loaded: html_helper
+INFO - 2026-01-28 07:02:27 --> Database Driver Class Initialized
+INFO - 2026-01-28 07:02:27 --> Session: Class initialized using 'files' driver.
+INFO - 2026-01-28 07:02:27 --> Helper loaded: form_helper
+INFO - 2026-01-28 07:02:27 --> Form Validation Class Initialized
+INFO - 2026-01-28 07:02:27 --> User Agent Class Initialized
+INFO - 2026-01-28 07:02:27 --> Language file loaded: language/english/pagination_lang.php
+INFO - 2026-01-28 07:02:27 --> Pagination Class Initialized
+INFO - 2026-01-28 07:02:27 --> Controller Class Initialized
+INFO - 2026-01-28 07:02:27 --> File loaded: C:\xampp\htdocs\Aconnect_ci3\application\views\__header.php
+INFO - 2026-01-28 07:02:27 --> File loaded: C:\xampp\htdocs\Aconnect_ci3\application\views\dashboard_a.php
+INFO - 2026-01-28 07:02:27 --> File loaded: C:\xampp\htdocs\Aconnect_ci3\application\views\__footer.php
+INFO - 2026-01-28 07:02:27 --> Final output sent to browser
+DEBUG - 2026-01-28 07:02:27 --> Total execution time: 0.0328
+ERROR - 2026-01-28 07:02:27 --> $config['composer_autoload'] is set to TRUE but C:\xampp\htdocs\Aconnect_ci3\application\vendor/autoload.php was not found.
+INFO - 2026-01-28 07:02:27 --> Config Class Initialized
+INFO - 2026-01-28 07:02:27 --> Hooks Class Initialized
+DEBUG - 2026-01-28 07:02:27 --> UTF-8 Support Enabled
+INFO - 2026-01-28 07:02:27 --> Utf8 Class Initialized
+INFO - 2026-01-28 07:02:27 --> URI Class Initialized
+INFO - 2026-01-28 07:02:27 --> Router Class Initialized
+INFO - 2026-01-28 07:02:27 --> Output Class Initialized
+INFO - 2026-01-28 07:02:27 --> Security Class Initialized
+DEBUG - 2026-01-28 07:02:27 --> Global POST, GET and COOKIE data sanitized
+INFO - 2026-01-28 07:02:27 --> Input Class Initialized
+INFO - 2026-01-28 07:02:27 --> Language Class Initialized
+INFO - 2026-01-28 07:02:27 --> Loader Class Initialized
+INFO - 2026-01-28 07:02:27 --> Helper loaded: url_helper
+INFO - 2026-01-28 07:02:27 --> Helper loaded: file_helper
+INFO - 2026-01-28 07:02:27 --> Helper loaded: html_helper
+INFO - 2026-01-28 07:02:27 --> Database Driver Class Initialized
+INFO - 2026-01-28 07:02:27 --> Session: Class initialized using 'files' driver.
+INFO - 2026-01-28 07:02:27 --> Helper loaded: form_helper
+INFO - 2026-01-28 07:02:27 --> Form Validation Class Initialized
+INFO - 2026-01-28 07:02:27 --> User Agent Class Initialized
+INFO - 2026-01-28 07:02:27 --> Language file loaded: language/english/pagination_lang.php
+INFO - 2026-01-28 07:02:27 --> Pagination Class Initialized
+INFO - 2026-01-28 07:02:27 --> Controller Class Initialized
+INFO - 2026-01-28 07:02:27 --> File loaded: C:\xampp\htdocs\Aconnect_ci3\application\views\__header.php
+INFO - 2026-01-28 07:02:27 --> File loaded: C:\xampp\htdocs\Aconnect_ci3\application\views\dashboard_a.php
+INFO - 2026-01-28 07:02:27 --> File loaded: C:\xampp\htdocs\Aconnect_ci3\application\views\__footer.php
+INFO - 2026-01-28 07:02:27 --> Final output sent to browser
+DEBUG - 2026-01-28 07:02:27 --> Total execution time: 0.0260
+ERROR - 2026-01-28 07:02:28 --> $config['composer_autoload'] is set to TRUE but C:\xampp\htdocs\Aconnect_ci3\application\vendor/autoload.php was not found.
+INFO - 2026-01-28 07:02:28 --> Config Class Initialized
+INFO - 2026-01-28 07:02:28 --> Hooks Class Initialized
+DEBUG - 2026-01-28 07:02:28 --> UTF-8 Support Enabled
+INFO - 2026-01-28 07:02:28 --> Utf8 Class Initialized
+INFO - 2026-01-28 07:02:28 --> URI Class Initialized
+INFO - 2026-01-28 07:02:28 --> Router Class Initialized
+INFO - 2026-01-28 07:02:28 --> Output Class Initialized
+INFO - 2026-01-28 07:02:28 --> Security Class Initialized
+DEBUG - 2026-01-28 07:02:28 --> Global POST, GET and COOKIE data sanitized
+INFO - 2026-01-28 07:02:28 --> Input Class Initialized
+INFO - 2026-01-28 07:02:28 --> Language Class Initialized
+INFO - 2026-01-28 07:02:28 --> Loader Class Initialized
+INFO - 2026-01-28 07:02:28 --> Helper loaded: url_helper
+INFO - 2026-01-28 07:02:28 --> Helper loaded: file_helper
+INFO - 2026-01-28 07:02:28 --> Helper loaded: html_helper
+INFO - 2026-01-28 07:02:28 --> Database Driver Class Initialized
+INFO - 2026-01-28 07:02:28 --> Session: Class initialized using 'files' driver.
+INFO - 2026-01-28 07:02:28 --> Helper loaded: form_helper
+INFO - 2026-01-28 07:02:28 --> Form Validation Class Initialized
+INFO - 2026-01-28 07:02:28 --> User Agent Class Initialized
+INFO - 2026-01-28 07:02:28 --> Language file loaded: language/english/pagination_lang.php
+INFO - 2026-01-28 07:02:28 --> Pagination Class Initialized
+INFO - 2026-01-28 07:02:28 --> Controller Class Initialized
+INFO - 2026-01-28 07:02:28 --> File loaded: C:\xampp\htdocs\Aconnect_ci3\application\views\__header.php
+INFO - 2026-01-28 07:02:28 --> File loaded: C:\xampp\htdocs\Aconnect_ci3\application\views\dashboard_a.php
+INFO - 2026-01-28 07:02:28 --> File loaded: C:\xampp\htdocs\Aconnect_ci3\application\views\__footer.php
+INFO - 2026-01-28 07:02:28 --> Final output sent to browser
+DEBUG - 2026-01-28 07:02:28 --> Total execution time: 0.0261
+ERROR - 2026-01-28 07:02:28 --> $config['composer_autoload'] is set to TRUE but C:\xampp\htdocs\Aconnect_ci3\application\vendor/autoload.php was not found.
+INFO - 2026-01-28 07:02:28 --> Config Class Initialized
+INFO - 2026-01-28 07:02:28 --> Hooks Class Initialized
+DEBUG - 2026-01-28 07:02:28 --> UTF-8 Support Enabled
+INFO - 2026-01-28 07:02:28 --> Utf8 Class Initialized
+INFO - 2026-01-28 07:02:28 --> URI Class Initialized
+INFO - 2026-01-28 07:02:28 --> Router Class Initialized
+INFO - 2026-01-28 07:02:28 --> Output Class Initialized
+INFO - 2026-01-28 07:02:28 --> Security Class Initialized
+DEBUG - 2026-01-28 07:02:28 --> Global POST, GET and COOKIE data sanitized
+INFO - 2026-01-28 07:02:28 --> Input Class Initialized
+INFO - 2026-01-28 07:02:28 --> Language Class Initialized
+INFO - 2026-01-28 07:02:28 --> Loader Class Initialized
+INFO - 2026-01-28 07:02:28 --> Helper loaded: url_helper
+INFO - 2026-01-28 07:02:28 --> Helper loaded: file_helper
+INFO - 2026-01-28 07:02:28 --> Helper loaded: html_helper
+INFO - 2026-01-28 07:02:28 --> Database Driver Class Initialized
+INFO - 2026-01-28 07:02:28 --> Session: Class initialized using 'files' driver.
+INFO - 2026-01-28 07:02:28 --> Helper loaded: form_helper
+INFO - 2026-01-28 07:02:28 --> Form Validation Class Initialized
+INFO - 2026-01-28 07:02:28 --> User Agent Class Initialized
+INFO - 2026-01-28 07:02:28 --> Language file loaded: language/english/pagination_lang.php
+INFO - 2026-01-28 07:02:28 --> Pagination Class Initialized
+INFO - 2026-01-28 07:02:28 --> Controller Class Initialized
+INFO - 2026-01-28 07:02:28 --> File loaded: C:\xampp\htdocs\Aconnect_ci3\application\views\__header.php
+INFO - 2026-01-28 07:02:28 --> File loaded: C:\xampp\htdocs\Aconnect_ci3\application\views\dashboard_a.php
+INFO - 2026-01-28 07:02:28 --> File loaded: C:\xampp\htdocs\Aconnect_ci3\application\views\__footer.php
+INFO - 2026-01-28 07:02:28 --> Final output sent to browser
+DEBUG - 2026-01-28 07:02:28 --> Total execution time: 0.0251
+ERROR - 2026-01-28 07:04:25 --> $config['composer_autoload'] is set to TRUE but C:\xampp\htdocs\Aconnect_ci3\application\vendor/autoload.php was not found.
+INFO - 2026-01-28 07:04:25 --> Config Class Initialized
+INFO - 2026-01-28 07:04:25 --> Hooks Class Initialized
+DEBUG - 2026-01-28 07:04:25 --> UTF-8 Support Enabled
+INFO - 2026-01-28 07:04:25 --> Utf8 Class Initialized
+INFO - 2026-01-28 07:04:25 --> URI Class Initialized
+INFO - 2026-01-28 07:04:25 --> Router Class Initialized
+INFO - 2026-01-28 07:04:25 --> Output Class Initialized
+INFO - 2026-01-28 07:04:25 --> Security Class Initialized
+DEBUG - 2026-01-28 07:04:25 --> Global POST, GET and COOKIE data sanitized
+INFO - 2026-01-28 07:04:25 --> Input Class Initialized
+INFO - 2026-01-28 07:04:25 --> Language Class Initialized
+INFO - 2026-01-28 07:04:25 --> Loader Class Initialized
+INFO - 2026-01-28 07:04:25 --> Helper loaded: url_helper
+INFO - 2026-01-28 07:04:25 --> Helper loaded: file_helper
+INFO - 2026-01-28 07:04:25 --> Helper loaded: html_helper
+INFO - 2026-01-28 07:04:25 --> Database Driver Class Initialized
+INFO - 2026-01-28 07:04:25 --> Session: Class initialized using 'files' driver.
+INFO - 2026-01-28 07:04:25 --> Helper loaded: form_helper
+INFO - 2026-01-28 07:04:25 --> Form Validation Class Initialized
+INFO - 2026-01-28 07:04:25 --> User Agent Class Initialized
+INFO - 2026-01-28 07:04:25 --> Language file loaded: language/english/pagination_lang.php
+INFO - 2026-01-28 07:04:25 --> Pagination Class Initialized
+INFO - 2026-01-28 07:04:25 --> Controller Class Initialized
+INFO - 2026-01-28 07:04:25 --> File loaded: C:\xampp\htdocs\Aconnect_ci3\application\views\__header.php
+INFO - 2026-01-28 07:04:25 --> File loaded: C:\xampp\htdocs\Aconnect_ci3\application\views\dashboard_a.php
+INFO - 2026-01-28 07:04:25 --> File loaded: C:\xampp\htdocs\Aconnect_ci3\application\views\__footer.php
+INFO - 2026-01-28 07:04:25 --> Final output sent to browser
+DEBUG - 2026-01-28 07:04:25 --> Total execution time: 0.0395
+ERROR - 2026-01-28 07:04:28 --> $config['composer_autoload'] is set to TRUE but C:\xampp\htdocs\Aconnect_ci3\application\vendor/autoload.php was not found.
+INFO - 2026-01-28 07:04:28 --> Config Class Initialized
+INFO - 2026-01-28 07:04:28 --> Hooks Class Initialized
+DEBUG - 2026-01-28 07:04:28 --> UTF-8 Support Enabled
+INFO - 2026-01-28 07:04:28 --> Utf8 Class Initialized
+INFO - 2026-01-28 07:04:28 --> URI Class Initialized
+INFO - 2026-01-28 07:04:28 --> Router Class Initialized
+INFO - 2026-01-28 07:04:28 --> Output Class Initialized
+INFO - 2026-01-28 07:04:28 --> Security Class Initialized
+DEBUG - 2026-01-28 07:04:28 --> Global POST, GET and COOKIE data sanitized
+INFO - 2026-01-28 07:04:28 --> Input Class Initialized
+INFO - 2026-01-28 07:04:28 --> Language Class Initialized
+INFO - 2026-01-28 07:04:28 --> Loader Class Initialized
+INFO - 2026-01-28 07:04:28 --> Helper loaded: url_helper
+INFO - 2026-01-28 07:04:28 --> Helper loaded: file_helper
+INFO - 2026-01-28 07:04:28 --> Helper loaded: html_helper
+INFO - 2026-01-28 07:04:28 --> Database Driver Class Initialized
+INFO - 2026-01-28 07:04:28 --> Session: Class initialized using 'files' driver.
+INFO - 2026-01-28 07:04:28 --> Helper loaded: form_helper
+INFO - 2026-01-28 07:04:28 --> Form Validation Class Initialized
+INFO - 2026-01-28 07:04:28 --> User Agent Class Initialized
+INFO - 2026-01-28 07:04:28 --> Language file loaded: language/english/pagination_lang.php
+INFO - 2026-01-28 07:04:28 --> Pagination Class Initialized
+INFO - 2026-01-28 07:04:28 --> Controller Class Initialized
+INFO - 2026-01-28 07:04:28 --> Model "Activity_log_model" initialized
+INFO - 2026-01-28 07:04:28 --> Model "Alumni_model" initialized
+DEBUG - 2026-01-28 07:04:28 --> Pagination class already loaded. Second attempt ignored.
+DEBUG - 2026-01-28 14:04:28 --> Pagination class already loaded. Second attempt ignored.
+INFO - 2026-01-28 14:04:28 --> File loaded: C:\xampp\htdocs\Aconnect_ci3\application\views\__header.php
+INFO - 2026-01-28 14:04:28 --> File loaded: C:\xampp\htdocs\Aconnect_ci3\application\views\admin/activity_log.php
+INFO - 2026-01-28 14:04:28 --> File loaded: C:\xampp\htdocs\Aconnect_ci3\application\views\__footer.php
+INFO - 2026-01-28 14:04:28 --> Final output sent to browser
+DEBUG - 2026-01-28 14:04:28 --> Total execution time: 0.0254
+ERROR - 2026-01-28 07:04:30 --> $config['composer_autoload'] is set to TRUE but C:\xampp\htdocs\Aconnect_ci3\application\vendor/autoload.php was not found.
+INFO - 2026-01-28 07:04:30 --> Config Class Initialized
+INFO - 2026-01-28 07:04:30 --> Hooks Class Initialized
+DEBUG - 2026-01-28 07:04:30 --> UTF-8 Support Enabled
+INFO - 2026-01-28 07:04:30 --> Utf8 Class Initialized
+INFO - 2026-01-28 07:04:30 --> URI Class Initialized
+INFO - 2026-01-28 07:04:30 --> Router Class Initialized
+INFO - 2026-01-28 07:04:30 --> Output Class Initialized
+INFO - 2026-01-28 07:04:30 --> Security Class Initialized
+DEBUG - 2026-01-28 07:04:30 --> Global POST, GET and COOKIE data sanitized
+INFO - 2026-01-28 07:04:30 --> Input Class Initialized
+INFO - 2026-01-28 07:04:30 --> Language Class Initialized
+INFO - 2026-01-28 07:04:30 --> Loader Class Initialized
+INFO - 2026-01-28 07:04:30 --> Helper loaded: url_helper
+INFO - 2026-01-28 07:04:30 --> Helper loaded: file_helper
+INFO - 2026-01-28 07:04:30 --> Helper loaded: html_helper
+INFO - 2026-01-28 07:04:30 --> Database Driver Class Initialized
+INFO - 2026-01-28 07:04:30 --> Session: Class initialized using 'files' driver.
+INFO - 2026-01-28 07:04:30 --> Helper loaded: form_helper
+INFO - 2026-01-28 07:04:30 --> Form Validation Class Initialized
+INFO - 2026-01-28 07:04:30 --> User Agent Class Initialized
+INFO - 2026-01-28 07:04:30 --> Language file loaded: language/english/pagination_lang.php
+INFO - 2026-01-28 07:04:30 --> Pagination Class Initialized
+INFO - 2026-01-28 07:04:30 --> Controller Class Initialized
+INFO - 2026-01-28 07:04:30 --> File loaded: C:\xampp\htdocs\Aconnect_ci3\application\views\__header.php
+INFO - 2026-01-28 07:04:30 --> File loaded: C:\xampp\htdocs\Aconnect_ci3\application\views\dashboard_a.php
+INFO - 2026-01-28 07:04:30 --> File loaded: C:\xampp\htdocs\Aconnect_ci3\application\views\__footer.php
+INFO - 2026-01-28 07:04:30 --> Final output sent to browser
+DEBUG - 2026-01-28 07:04:30 --> Total execution time: 0.0260
+ERROR - 2026-01-28 07:04:32 --> $config['composer_autoload'] is set to TRUE but C:\xampp\htdocs\Aconnect_ci3\application\vendor/autoload.php was not found.
+INFO - 2026-01-28 07:04:32 --> Config Class Initialized
+INFO - 2026-01-28 07:04:32 --> Hooks Class Initialized
+DEBUG - 2026-01-28 07:04:32 --> UTF-8 Support Enabled
+INFO - 2026-01-28 07:04:32 --> Utf8 Class Initialized
+INFO - 2026-01-28 07:04:32 --> URI Class Initialized
+INFO - 2026-01-28 07:04:32 --> Router Class Initialized
+INFO - 2026-01-28 07:04:32 --> Output Class Initialized
+INFO - 2026-01-28 07:04:32 --> Security Class Initialized
+DEBUG - 2026-01-28 07:04:32 --> Global POST, GET and COOKIE data sanitized
+INFO - 2026-01-28 07:04:32 --> Input Class Initialized
+INFO - 2026-01-28 07:04:32 --> Language Class Initialized
+INFO - 2026-01-28 07:04:32 --> Loader Class Initialized
+INFO - 2026-01-28 07:04:32 --> Helper loaded: url_helper
+INFO - 2026-01-28 07:04:32 --> Helper loaded: file_helper
+INFO - 2026-01-28 07:04:32 --> Helper loaded: html_helper
+INFO - 2026-01-28 07:04:32 --> Database Driver Class Initialized
+INFO - 2026-01-28 07:04:32 --> Session: Class initialized using 'files' driver.
+INFO - 2026-01-28 07:04:32 --> Helper loaded: form_helper
+INFO - 2026-01-28 07:04:32 --> Form Validation Class Initialized
+INFO - 2026-01-28 07:04:32 --> User Agent Class Initialized
+INFO - 2026-01-28 07:04:32 --> Language file loaded: language/english/pagination_lang.php
+INFO - 2026-01-28 07:04:32 --> Pagination Class Initialized
+INFO - 2026-01-28 07:04:32 --> Controller Class Initialized
+INFO - 2026-01-28 07:04:32 --> Model "Activity_log_model" initialized
+INFO - 2026-01-28 07:04:32 --> Model "Alumni_model" initialized
+DEBUG - 2026-01-28 07:04:32 --> Pagination class already loaded. Second attempt ignored.
+DEBUG - 2026-01-28 14:04:32 --> Pagination class already loaded. Second attempt ignored.
+INFO - 2026-01-28 14:04:32 --> File loaded: C:\xampp\htdocs\Aconnect_ci3\application\views\__header.php
+INFO - 2026-01-28 14:04:32 --> File loaded: C:\xampp\htdocs\Aconnect_ci3\application\views\admin/activity_log.php
+INFO - 2026-01-28 14:04:32 --> File loaded: C:\xampp\htdocs\Aconnect_ci3\application\views\__footer.php
+INFO - 2026-01-28 14:04:32 --> Final output sent to browser
+DEBUG - 2026-01-28 14:04:32 --> Total execution time: 0.0266
+ERROR - 2026-01-28 07:04:34 --> $config['composer_autoload'] is set to TRUE but C:\xampp\htdocs\Aconnect_ci3\application\vendor/autoload.php was not found.
+INFO - 2026-01-28 07:04:34 --> Config Class Initialized
+INFO - 2026-01-28 07:04:34 --> Hooks Class Initialized
+DEBUG - 2026-01-28 07:04:34 --> UTF-8 Support Enabled
+INFO - 2026-01-28 07:04:34 --> Utf8 Class Initialized
+INFO - 2026-01-28 07:04:34 --> URI Class Initialized
+INFO - 2026-01-28 07:04:34 --> Router Class Initialized
+INFO - 2026-01-28 07:04:34 --> Output Class Initialized
+INFO - 2026-01-28 07:04:34 --> Security Class Initialized
+DEBUG - 2026-01-28 07:04:34 --> Global POST, GET and COOKIE data sanitized
+INFO - 2026-01-28 07:04:34 --> Input Class Initialized
+INFO - 2026-01-28 07:04:34 --> Language Class Initialized
+INFO - 2026-01-28 07:04:34 --> Loader Class Initialized
+INFO - 2026-01-28 07:04:34 --> Helper loaded: url_helper
+INFO - 2026-01-28 07:04:34 --> Helper loaded: file_helper
+INFO - 2026-01-28 07:04:34 --> Helper loaded: html_helper
+INFO - 2026-01-28 07:04:34 --> Database Driver Class Initialized
+INFO - 2026-01-28 07:04:34 --> Session: Class initialized using 'files' driver.
+INFO - 2026-01-28 07:04:34 --> Helper loaded: form_helper
+INFO - 2026-01-28 07:04:34 --> Form Validation Class Initialized
+INFO - 2026-01-28 07:04:34 --> User Agent Class Initialized
+INFO - 2026-01-28 07:04:34 --> Language file loaded: language/english/pagination_lang.php
+INFO - 2026-01-28 07:04:34 --> Pagination Class Initialized
+INFO - 2026-01-28 07:04:34 --> Controller Class Initialized
+INFO - 2026-01-28 07:04:34 --> File loaded: C:\xampp\htdocs\Aconnect_ci3\application\views\__header.php
+INFO - 2026-01-28 07:04:34 --> File loaded: C:\xampp\htdocs\Aconnect_ci3\application\views\dashboard_a.php
+INFO - 2026-01-28 07:04:34 --> File loaded: C:\xampp\htdocs\Aconnect_ci3\application\views\__footer.php
+INFO - 2026-01-28 07:04:34 --> Final output sent to browser
+DEBUG - 2026-01-28 07:04:34 --> Total execution time: 0.0275
+ERROR - 2026-01-28 07:04:36 --> $config['composer_autoload'] is set to TRUE but C:\xampp\htdocs\Aconnect_ci3\application\vendor/autoload.php was not found.
+INFO - 2026-01-28 07:04:36 --> Config Class Initialized
+INFO - 2026-01-28 07:04:36 --> Hooks Class Initialized
+DEBUG - 2026-01-28 07:04:36 --> UTF-8 Support Enabled
+INFO - 2026-01-28 07:04:36 --> Utf8 Class Initialized
+INFO - 2026-01-28 07:04:36 --> URI Class Initialized
+INFO - 2026-01-28 07:04:36 --> Router Class Initialized
+INFO - 2026-01-28 07:04:36 --> Output Class Initialized
+INFO - 2026-01-28 07:04:36 --> Security Class Initialized
+DEBUG - 2026-01-28 07:04:36 --> Global POST, GET and COOKIE data sanitized
+INFO - 2026-01-28 07:04:36 --> Input Class Initialized
+INFO - 2026-01-28 07:04:36 --> Language Class Initialized
+INFO - 2026-01-28 07:04:36 --> Loader Class Initialized
+INFO - 2026-01-28 07:04:36 --> Helper loaded: url_helper
+INFO - 2026-01-28 07:04:36 --> Helper loaded: file_helper
+INFO - 2026-01-28 07:04:36 --> Helper loaded: html_helper
+INFO - 2026-01-28 07:04:36 --> Database Driver Class Initialized
+INFO - 2026-01-28 07:04:36 --> Session: Class initialized using 'files' driver.
+INFO - 2026-01-28 07:04:36 --> Helper loaded: form_helper
+INFO - 2026-01-28 07:04:36 --> Form Validation Class Initialized
+INFO - 2026-01-28 07:04:36 --> User Agent Class Initialized
+INFO - 2026-01-28 07:04:36 --> Language file loaded: language/english/pagination_lang.php
+INFO - 2026-01-28 07:04:36 --> Pagination Class Initialized
+INFO - 2026-01-28 07:04:36 --> Controller Class Initialized
+DEBUG - 2026-01-28 07:04:36 --> Pagination class already loaded. Second attempt ignored.
+INFO - 2026-01-28 07:04:36 --> File loaded: C:\xampp\htdocs\Aconnect_ci3\application\views\__header.php
+INFO - 2026-01-28 07:04:36 --> File loaded: C:\xampp\htdocs\Aconnect_ci3\application\views\admin/manage_accounts.php
+INFO - 2026-01-28 07:04:36 --> File loaded: C:\xampp\htdocs\Aconnect_ci3\application\views\__footer.php
+INFO - 2026-01-28 07:04:36 --> Final output sent to browser
+DEBUG - 2026-01-28 07:04:36 --> Total execution time: 0.0688
+ERROR - 2026-01-28 07:04:40 --> $config['composer_autoload'] is set to TRUE but C:\xampp\htdocs\Aconnect_ci3\application\vendor/autoload.php was not found.
+INFO - 2026-01-28 07:04:40 --> Config Class Initialized
+INFO - 2026-01-28 07:04:40 --> Hooks Class Initialized
+DEBUG - 2026-01-28 07:04:40 --> UTF-8 Support Enabled
+INFO - 2026-01-28 07:04:40 --> Utf8 Class Initialized
+INFO - 2026-01-28 07:04:40 --> URI Class Initialized
+INFO - 2026-01-28 07:04:40 --> Router Class Initialized
+INFO - 2026-01-28 07:04:40 --> Output Class Initialized
+INFO - 2026-01-28 07:04:40 --> Security Class Initialized
+DEBUG - 2026-01-28 07:04:40 --> Global POST, GET and COOKIE data sanitized
+INFO - 2026-01-28 07:04:40 --> Input Class Initialized
+INFO - 2026-01-28 07:04:40 --> Language Class Initialized
+INFO - 2026-01-28 07:04:40 --> Loader Class Initialized
+INFO - 2026-01-28 07:04:40 --> Helper loaded: url_helper
+INFO - 2026-01-28 07:04:40 --> Helper loaded: file_helper
+INFO - 2026-01-28 07:04:40 --> Helper loaded: html_helper
+INFO - 2026-01-28 07:04:40 --> Database Driver Class Initialized
+INFO - 2026-01-28 07:04:40 --> Session: Class initialized using 'files' driver.
+INFO - 2026-01-28 07:04:40 --> Helper loaded: form_helper
+INFO - 2026-01-28 07:04:40 --> Form Validation Class Initialized
+INFO - 2026-01-28 07:04:40 --> User Agent Class Initialized
+INFO - 2026-01-28 07:04:40 --> Language file loaded: language/english/pagination_lang.php
+INFO - 2026-01-28 07:04:40 --> Pagination Class Initialized
+INFO - 2026-01-28 07:04:40 --> Controller Class Initialized
+DEBUG - 2026-01-28 07:04:40 --> Pagination class already loaded. Second attempt ignored.
+INFO - 2026-01-28 07:04:40 --> File loaded: C:\xampp\htdocs\Aconnect_ci3\application\views\__header.php
+INFO - 2026-01-28 07:04:40 --> File loaded: C:\xampp\htdocs\Aconnect_ci3\application\views\admin/manage_accounts.php
+INFO - 2026-01-28 07:04:40 --> File loaded: C:\xampp\htdocs\Aconnect_ci3\application\views\__footer.php
+INFO - 2026-01-28 07:04:40 --> Final output sent to browser
+DEBUG - 2026-01-28 07:04:40 --> Total execution time: 0.0243
+ERROR - 2026-01-28 07:04:41 --> $config['composer_autoload'] is set to TRUE but C:\xampp\htdocs\Aconnect_ci3\application\vendor/autoload.php was not found.
+INFO - 2026-01-28 07:04:41 --> Config Class Initialized
+INFO - 2026-01-28 07:04:41 --> Hooks Class Initialized
+DEBUG - 2026-01-28 07:04:41 --> UTF-8 Support Enabled
+INFO - 2026-01-28 07:04:41 --> Utf8 Class Initialized
+INFO - 2026-01-28 07:04:41 --> URI Class Initialized
+INFO - 2026-01-28 07:04:41 --> Router Class Initialized
+INFO - 2026-01-28 07:04:41 --> Output Class Initialized
+INFO - 2026-01-28 07:04:41 --> Security Class Initialized
+DEBUG - 2026-01-28 07:04:41 --> Global POST, GET and COOKIE data sanitized
+INFO - 2026-01-28 07:04:41 --> Input Class Initialized
+INFO - 2026-01-28 07:04:41 --> Language Class Initialized
+INFO - 2026-01-28 07:04:41 --> Loader Class Initialized
+INFO - 2026-01-28 07:04:41 --> Helper loaded: url_helper
+INFO - 2026-01-28 07:04:41 --> Helper loaded: file_helper
+INFO - 2026-01-28 07:04:41 --> Helper loaded: html_helper
+INFO - 2026-01-28 07:04:41 --> Database Driver Class Initialized
+INFO - 2026-01-28 07:04:41 --> Session: Class initialized using 'files' driver.
+INFO - 2026-01-28 07:04:41 --> Helper loaded: form_helper
+INFO - 2026-01-28 07:04:41 --> Form Validation Class Initialized
+INFO - 2026-01-28 07:04:41 --> User Agent Class Initialized
+INFO - 2026-01-28 07:04:41 --> Language file loaded: language/english/pagination_lang.php
+INFO - 2026-01-28 07:04:41 --> Pagination Class Initialized
+INFO - 2026-01-28 07:04:41 --> Controller Class Initialized
+INFO - 2026-01-28 07:04:41 --> File loaded: C:\xampp\htdocs\Aconnect_ci3\application\views\__header.php
+INFO - 2026-01-28 07:04:41 --> File loaded: C:\xampp\htdocs\Aconnect_ci3\application\views\dashboard_a.php
+INFO - 2026-01-28 07:04:41 --> File loaded: C:\xampp\htdocs\Aconnect_ci3\application\views\__footer.php
+INFO - 2026-01-28 07:04:41 --> Final output sent to browser
+DEBUG - 2026-01-28 07:04:41 --> Total execution time: 0.0244
+ERROR - 2026-01-28 07:04:44 --> $config['composer_autoload'] is set to TRUE but C:\xampp\htdocs\Aconnect_ci3\application\vendor/autoload.php was not found.
+INFO - 2026-01-28 07:04:44 --> Config Class Initialized
+INFO - 2026-01-28 07:04:44 --> Hooks Class Initialized
+DEBUG - 2026-01-28 07:04:44 --> UTF-8 Support Enabled
+INFO - 2026-01-28 07:04:44 --> Utf8 Class Initialized
+INFO - 2026-01-28 07:04:44 --> URI Class Initialized
+INFO - 2026-01-28 07:04:44 --> Router Class Initialized
+INFO - 2026-01-28 07:04:44 --> Output Class Initialized
+INFO - 2026-01-28 07:04:44 --> Security Class Initialized
+DEBUG - 2026-01-28 07:04:44 --> Global POST, GET and COOKIE data sanitized
+INFO - 2026-01-28 07:04:44 --> Input Class Initialized
+INFO - 2026-01-28 07:04:44 --> Language Class Initialized
+INFO - 2026-01-28 07:04:44 --> Loader Class Initialized
+INFO - 2026-01-28 07:04:44 --> Helper loaded: url_helper
+INFO - 2026-01-28 07:04:44 --> Helper loaded: file_helper
+INFO - 2026-01-28 07:04:44 --> Helper loaded: html_helper
+INFO - 2026-01-28 07:04:44 --> Database Driver Class Initialized
+INFO - 2026-01-28 07:04:44 --> Session: Class initialized using 'files' driver.
+INFO - 2026-01-28 07:04:44 --> Helper loaded: form_helper
+INFO - 2026-01-28 07:04:44 --> Form Validation Class Initialized
+INFO - 2026-01-28 07:04:44 --> User Agent Class Initialized
+INFO - 2026-01-28 07:04:44 --> Language file loaded: language/english/pagination_lang.php
+INFO - 2026-01-28 07:04:44 --> Pagination Class Initialized
+INFO - 2026-01-28 07:04:44 --> Controller Class Initialized
+INFO - 2026-01-28 07:04:44 --> File loaded: C:\xampp\htdocs\Aconnect_ci3\application\views\__header.php
+DEBUG - 2026-01-28 07:04:44 --> Pagination class already loaded. Second attempt ignored.
+INFO - 2026-01-28 07:04:44 --> Model "Alumni_model" initialized
+INFO - 2026-01-28 07:04:44 --> File loaded: C:\xampp\htdocs\Aconnect_ci3\application\views\admin/alumni.php
+INFO - 2026-01-28 07:04:44 --> File loaded: C:\xampp\htdocs\Aconnect_ci3\application\views\__footer.php
+INFO - 2026-01-28 07:04:44 --> Final output sent to browser
+DEBUG - 2026-01-28 07:04:44 --> Total execution time: 0.0249
+ERROR - 2026-01-28 07:04:45 --> $config['composer_autoload'] is set to TRUE but C:\xampp\htdocs\Aconnect_ci3\application\vendor/autoload.php was not found.
+INFO - 2026-01-28 07:04:45 --> Config Class Initialized
+INFO - 2026-01-28 07:04:45 --> Hooks Class Initialized
+DEBUG - 2026-01-28 07:04:45 --> UTF-8 Support Enabled
+INFO - 2026-01-28 07:04:45 --> Utf8 Class Initialized
+INFO - 2026-01-28 07:04:45 --> URI Class Initialized
+INFO - 2026-01-28 07:04:45 --> Router Class Initialized
+INFO - 2026-01-28 07:04:45 --> Output Class Initialized
+INFO - 2026-01-28 07:04:45 --> Security Class Initialized
+DEBUG - 2026-01-28 07:04:45 --> Global POST, GET and COOKIE data sanitized
+INFO - 2026-01-28 07:04:45 --> Input Class Initialized
+INFO - 2026-01-28 07:04:45 --> Language Class Initialized
+INFO - 2026-01-28 07:04:45 --> Loader Class Initialized
+INFO - 2026-01-28 07:04:45 --> Helper loaded: url_helper
+INFO - 2026-01-28 07:04:45 --> Helper loaded: file_helper
+INFO - 2026-01-28 07:04:45 --> Helper loaded: html_helper
+INFO - 2026-01-28 07:04:45 --> Database Driver Class Initialized
+INFO - 2026-01-28 07:04:45 --> Session: Class initialized using 'files' driver.
+INFO - 2026-01-28 07:04:45 --> Helper loaded: form_helper
+INFO - 2026-01-28 07:04:45 --> Form Validation Class Initialized
+INFO - 2026-01-28 07:04:45 --> User Agent Class Initialized
+INFO - 2026-01-28 07:04:45 --> Language file loaded: language/english/pagination_lang.php
+INFO - 2026-01-28 07:04:45 --> Pagination Class Initialized
+INFO - 2026-01-28 07:04:45 --> Controller Class Initialized
+INFO - 2026-01-28 07:04:45 --> File loaded: C:\xampp\htdocs\Aconnect_ci3\application\views\__header.php
+INFO - 2026-01-28 07:04:45 --> File loaded: C:\xampp\htdocs\Aconnect_ci3\application\views\dashboard_a.php
+INFO - 2026-01-28 07:04:45 --> File loaded: C:\xampp\htdocs\Aconnect_ci3\application\views\__footer.php
+INFO - 2026-01-28 07:04:45 --> Final output sent to browser
+DEBUG - 2026-01-28 07:04:45 --> Total execution time: 0.0240
+ERROR - 2026-01-28 07:04:52 --> $config['composer_autoload'] is set to TRUE but C:\xampp\htdocs\Aconnect_ci3\application\vendor/autoload.php was not found.
+INFO - 2026-01-28 07:04:52 --> Config Class Initialized
+INFO - 2026-01-28 07:04:52 --> Hooks Class Initialized
+DEBUG - 2026-01-28 07:04:52 --> UTF-8 Support Enabled
+INFO - 2026-01-28 07:04:52 --> Utf8 Class Initialized
+INFO - 2026-01-28 07:04:52 --> URI Class Initialized
+INFO - 2026-01-28 07:04:52 --> Router Class Initialized
+INFO - 2026-01-28 07:04:52 --> Output Class Initialized
+INFO - 2026-01-28 07:04:52 --> Security Class Initialized
+DEBUG - 2026-01-28 07:04:52 --> Global POST, GET and COOKIE data sanitized
+INFO - 2026-01-28 07:04:52 --> Input Class Initialized
+INFO - 2026-01-28 07:04:52 --> Language Class Initialized
+INFO - 2026-01-28 07:04:52 --> Loader Class Initialized
+INFO - 2026-01-28 07:04:52 --> Helper loaded: url_helper
+INFO - 2026-01-28 07:04:52 --> Helper loaded: file_helper
+INFO - 2026-01-28 07:04:52 --> Helper loaded: html_helper
+INFO - 2026-01-28 07:04:52 --> Database Driver Class Initialized
+INFO - 2026-01-28 07:04:52 --> Session: Class initialized using 'files' driver.
+INFO - 2026-01-28 07:04:52 --> Helper loaded: form_helper
+INFO - 2026-01-28 07:04:52 --> Form Validation Class Initialized
+INFO - 2026-01-28 07:04:52 --> User Agent Class Initialized
+INFO - 2026-01-28 07:04:52 --> Language file loaded: language/english/pagination_lang.php
+INFO - 2026-01-28 07:04:52 --> Pagination Class Initialized
+INFO - 2026-01-28 07:04:52 --> Controller Class Initialized
+INFO - 2026-01-28 07:04:52 --> File loaded: C:\xampp\htdocs\Aconnect_ci3\application\views\__header.php
+INFO - 2026-01-28 07:04:52 --> File loaded: C:\xampp\htdocs\Aconnect_ci3\application\views\admin/job_posting.php
+INFO - 2026-01-28 07:04:52 --> File loaded: C:\xampp\htdocs\Aconnect_ci3\application\views\__footer.php
+INFO - 2026-01-28 07:04:52 --> Final output sent to browser
+DEBUG - 2026-01-28 07:04:52 --> Total execution time: 0.0262
+ERROR - 2026-01-28 07:04:55 --> $config['composer_autoload'] is set to TRUE but C:\xampp\htdocs\Aconnect_ci3\application\vendor/autoload.php was not found.
+INFO - 2026-01-28 07:04:55 --> Config Class Initialized
+INFO - 2026-01-28 07:04:55 --> Hooks Class Initialized
+DEBUG - 2026-01-28 07:04:55 --> UTF-8 Support Enabled
+INFO - 2026-01-28 07:04:55 --> Utf8 Class Initialized
+INFO - 2026-01-28 07:04:55 --> URI Class Initialized
+INFO - 2026-01-28 07:04:55 --> Router Class Initialized
+INFO - 2026-01-28 07:04:55 --> Output Class Initialized
+INFO - 2026-01-28 07:04:55 --> Security Class Initialized
+DEBUG - 2026-01-28 07:04:55 --> Global POST, GET and COOKIE data sanitized
+INFO - 2026-01-28 07:04:55 --> Input Class Initialized
+INFO - 2026-01-28 07:04:55 --> Language Class Initialized
+INFO - 2026-01-28 07:04:55 --> Loader Class Initialized
+INFO - 2026-01-28 07:04:55 --> Helper loaded: url_helper
+INFO - 2026-01-28 07:04:55 --> Helper loaded: file_helper
+INFO - 2026-01-28 07:04:55 --> Helper loaded: html_helper
+INFO - 2026-01-28 07:04:55 --> Database Driver Class Initialized
+INFO - 2026-01-28 07:04:55 --> Session: Class initialized using 'files' driver.
+INFO - 2026-01-28 07:04:55 --> Helper loaded: form_helper
+INFO - 2026-01-28 07:04:55 --> Form Validation Class Initialized
+INFO - 2026-01-28 07:04:55 --> User Agent Class Initialized
+INFO - 2026-01-28 07:04:55 --> Language file loaded: language/english/pagination_lang.php
+INFO - 2026-01-28 07:04:55 --> Pagination Class Initialized
+INFO - 2026-01-28 07:04:55 --> Controller Class Initialized
+INFO - 2026-01-28 07:04:55 --> File loaded: C:\xampp\htdocs\Aconnect_ci3\application\views\__header.php
+INFO - 2026-01-28 07:04:55 --> File loaded: C:\xampp\htdocs\Aconnect_ci3\application\views\dashboard_a.php
+INFO - 2026-01-28 07:04:55 --> File loaded: C:\xampp\htdocs\Aconnect_ci3\application\views\__footer.php
+INFO - 2026-01-28 07:04:55 --> Final output sent to browser
+DEBUG - 2026-01-28 07:04:55 --> Total execution time: 0.0250
+ERROR - 2026-01-28 07:04:58 --> $config['composer_autoload'] is set to TRUE but C:\xampp\htdocs\Aconnect_ci3\application\vendor/autoload.php was not found.
+INFO - 2026-01-28 07:04:58 --> Config Class Initialized
+INFO - 2026-01-28 07:04:58 --> Hooks Class Initialized
+DEBUG - 2026-01-28 07:04:58 --> UTF-8 Support Enabled
+INFO - 2026-01-28 07:04:58 --> Utf8 Class Initialized
+INFO - 2026-01-28 07:04:58 --> URI Class Initialized
+INFO - 2026-01-28 07:04:58 --> Router Class Initialized
+INFO - 2026-01-28 07:04:58 --> Output Class Initialized
+INFO - 2026-01-28 07:04:58 --> Security Class Initialized
+DEBUG - 2026-01-28 07:04:58 --> Global POST, GET and COOKIE data sanitized
+INFO - 2026-01-28 07:04:58 --> Input Class Initialized
+INFO - 2026-01-28 07:04:58 --> Language Class Initialized
+INFO - 2026-01-28 07:04:58 --> Loader Class Initialized
+INFO - 2026-01-28 07:04:58 --> Helper loaded: url_helper
+INFO - 2026-01-28 07:04:58 --> Helper loaded: file_helper
+INFO - 2026-01-28 07:04:58 --> Helper loaded: html_helper
+INFO - 2026-01-28 07:04:58 --> Database Driver Class Initialized
+INFO - 2026-01-28 07:04:58 --> Session: Class initialized using 'files' driver.
+INFO - 2026-01-28 07:04:58 --> Helper loaded: form_helper
+INFO - 2026-01-28 07:04:58 --> Form Validation Class Initialized
+INFO - 2026-01-28 07:04:58 --> User Agent Class Initialized
+INFO - 2026-01-28 07:04:58 --> Language file loaded: language/english/pagination_lang.php
+INFO - 2026-01-28 07:04:58 --> Pagination Class Initialized
+INFO - 2026-01-28 07:04:58 --> Controller Class Initialized
+INFO - 2026-01-28 07:04:58 --> File loaded: C:\xampp\htdocs\Aconnect_ci3\application\views\__header.php
+INFO - 2026-01-28 07:04:58 --> File loaded: C:\xampp\htdocs\Aconnect_ci3\application\views\dashboard_a.php
+INFO - 2026-01-28 07:04:58 --> File loaded: C:\xampp\htdocs\Aconnect_ci3\application\views\__footer.php
+INFO - 2026-01-28 07:04:58 --> Final output sent to browser
+DEBUG - 2026-01-28 07:04:58 --> Total execution time: 0.0254
+ERROR - 2026-01-28 07:04:58 --> $config['composer_autoload'] is set to TRUE but C:\xampp\htdocs\Aconnect_ci3\application\vendor/autoload.php was not found.
+INFO - 2026-01-28 07:04:58 --> Config Class Initialized
+INFO - 2026-01-28 07:04:58 --> Hooks Class Initialized
+DEBUG - 2026-01-28 07:04:58 --> UTF-8 Support Enabled
+INFO - 2026-01-28 07:04:58 --> Utf8 Class Initialized
+INFO - 2026-01-28 07:04:58 --> URI Class Initialized
+INFO - 2026-01-28 07:04:58 --> Router Class Initialized
+INFO - 2026-01-28 07:04:58 --> Output Class Initialized
+INFO - 2026-01-28 07:04:58 --> Security Class Initialized
+DEBUG - 2026-01-28 07:04:58 --> Global POST, GET and COOKIE data sanitized
+INFO - 2026-01-28 07:04:58 --> Input Class Initialized
+INFO - 2026-01-28 07:04:58 --> Language Class Initialized
+INFO - 2026-01-28 07:04:58 --> Loader Class Initialized
+INFO - 2026-01-28 07:04:58 --> Helper loaded: url_helper
+INFO - 2026-01-28 07:04:58 --> Helper loaded: file_helper
+INFO - 2026-01-28 07:04:58 --> Helper loaded: html_helper
+INFO - 2026-01-28 07:04:58 --> Database Driver Class Initialized
+INFO - 2026-01-28 07:04:58 --> Session: Class initialized using 'files' driver.
+INFO - 2026-01-28 07:04:58 --> Helper loaded: form_helper
+INFO - 2026-01-28 07:04:58 --> Form Validation Class Initialized
+INFO - 2026-01-28 07:04:58 --> User Agent Class Initialized
+INFO - 2026-01-28 07:04:58 --> Language file loaded: language/english/pagination_lang.php
+INFO - 2026-01-28 07:04:58 --> Pagination Class Initialized
+INFO - 2026-01-28 07:04:58 --> Controller Class Initialized
+INFO - 2026-01-28 07:04:58 --> File loaded: C:\xampp\htdocs\Aconnect_ci3\application\views\__header.php
+INFO - 2026-01-28 07:04:58 --> File loaded: C:\xampp\htdocs\Aconnect_ci3\application\views\dashboard_a.php
+INFO - 2026-01-28 07:04:58 --> File loaded: C:\xampp\htdocs\Aconnect_ci3\application\views\__footer.php
+INFO - 2026-01-28 07:04:58 --> Final output sent to browser
+DEBUG - 2026-01-28 07:04:58 --> Total execution time: 0.0237
+ERROR - 2026-01-28 07:04:58 --> $config['composer_autoload'] is set to TRUE but C:\xampp\htdocs\Aconnect_ci3\application\vendor/autoload.php was not found.
+INFO - 2026-01-28 07:04:58 --> Config Class Initialized
+INFO - 2026-01-28 07:04:58 --> Hooks Class Initialized
+DEBUG - 2026-01-28 07:04:58 --> UTF-8 Support Enabled
+INFO - 2026-01-28 07:04:58 --> Utf8 Class Initialized
+INFO - 2026-01-28 07:04:58 --> URI Class Initialized
+INFO - 2026-01-28 07:04:58 --> Router Class Initialized
+INFO - 2026-01-28 07:04:58 --> Output Class Initialized
+INFO - 2026-01-28 07:04:58 --> Security Class Initialized
+DEBUG - 2026-01-28 07:04:58 --> Global POST, GET and COOKIE data sanitized
+INFO - 2026-01-28 07:04:58 --> Input Class Initialized
+INFO - 2026-01-28 07:04:58 --> Language Class Initialized
+INFO - 2026-01-28 07:04:58 --> Loader Class Initialized
+INFO - 2026-01-28 07:04:58 --> Helper loaded: url_helper
+INFO - 2026-01-28 07:04:58 --> Helper loaded: file_helper
+INFO - 2026-01-28 07:04:58 --> Helper loaded: html_helper
+INFO - 2026-01-28 07:04:58 --> Database Driver Class Initialized
+INFO - 2026-01-28 07:04:58 --> Session: Class initialized using 'files' driver.
+INFO - 2026-01-28 07:04:58 --> Helper loaded: form_helper
+INFO - 2026-01-28 07:04:58 --> Form Validation Class Initialized
+INFO - 2026-01-28 07:04:58 --> User Agent Class Initialized
+INFO - 2026-01-28 07:04:58 --> Language file loaded: language/english/pagination_lang.php
+INFO - 2026-01-28 07:04:58 --> Pagination Class Initialized
+INFO - 2026-01-28 07:04:58 --> Controller Class Initialized
+INFO - 2026-01-28 07:04:58 --> File loaded: C:\xampp\htdocs\Aconnect_ci3\application\views\__header.php
+INFO - 2026-01-28 07:04:58 --> File loaded: C:\xampp\htdocs\Aconnect_ci3\application\views\dashboard_a.php
+INFO - 2026-01-28 07:04:58 --> File loaded: C:\xampp\htdocs\Aconnect_ci3\application\views\__footer.php
+INFO - 2026-01-28 07:04:58 --> Final output sent to browser
+DEBUG - 2026-01-28 07:04:58 --> Total execution time: 0.0548
+ERROR - 2026-01-28 07:05:17 --> $config['composer_autoload'] is set to TRUE but C:\xampp\htdocs\Aconnect_ci3\application\vendor/autoload.php was not found.
+INFO - 2026-01-28 07:05:17 --> Config Class Initialized
+INFO - 2026-01-28 07:05:17 --> Hooks Class Initialized
+DEBUG - 2026-01-28 07:05:17 --> UTF-8 Support Enabled
+INFO - 2026-01-28 07:05:17 --> Utf8 Class Initialized
+INFO - 2026-01-28 07:05:17 --> URI Class Initialized
+INFO - 2026-01-28 07:05:17 --> Router Class Initialized
+INFO - 2026-01-28 07:05:17 --> Output Class Initialized
+INFO - 2026-01-28 07:05:17 --> Security Class Initialized
+DEBUG - 2026-01-28 07:05:17 --> Global POST, GET and COOKIE data sanitized
+INFO - 2026-01-28 07:05:17 --> Input Class Initialized
+INFO - 2026-01-28 07:05:17 --> Language Class Initialized
+INFO - 2026-01-28 07:05:17 --> Loader Class Initialized
+INFO - 2026-01-28 07:05:17 --> Helper loaded: url_helper
+INFO - 2026-01-28 07:05:17 --> Helper loaded: file_helper
+INFO - 2026-01-28 07:05:17 --> Helper loaded: html_helper
+INFO - 2026-01-28 07:05:17 --> Database Driver Class Initialized
+INFO - 2026-01-28 07:05:17 --> Session: Class initialized using 'files' driver.
+INFO - 2026-01-28 07:05:17 --> Helper loaded: form_helper
+INFO - 2026-01-28 07:05:17 --> Form Validation Class Initialized
+INFO - 2026-01-28 07:05:17 --> User Agent Class Initialized
+INFO - 2026-01-28 07:05:17 --> Language file loaded: language/english/pagination_lang.php
+INFO - 2026-01-28 07:05:17 --> Pagination Class Initialized
+INFO - 2026-01-28 07:05:17 --> Controller Class Initialized
+INFO - 2026-01-28 07:05:17 --> Model "M_login" initialized
+ERROR - 2026-01-28 07:05:17 --> $config['composer_autoload'] is set to TRUE but C:\xampp\htdocs\Aconnect_ci3\application\vendor/autoload.php was not found.
+INFO - 2026-01-28 07:05:17 --> Config Class Initialized
+INFO - 2026-01-28 07:05:17 --> Hooks Class Initialized
+DEBUG - 2026-01-28 07:05:17 --> UTF-8 Support Enabled
+INFO - 2026-01-28 07:05:17 --> Utf8 Class Initialized
+INFO - 2026-01-28 07:05:17 --> URI Class Initialized
+INFO - 2026-01-28 07:05:17 --> Router Class Initialized
+INFO - 2026-01-28 07:05:17 --> Output Class Initialized
+INFO - 2026-01-28 07:05:17 --> Security Class Initialized
+DEBUG - 2026-01-28 07:05:17 --> Global POST, GET and COOKIE data sanitized
+INFO - 2026-01-28 07:05:17 --> Input Class Initialized
+INFO - 2026-01-28 07:05:17 --> Language Class Initialized
+INFO - 2026-01-28 07:05:17 --> Loader Class Initialized
+INFO - 2026-01-28 07:05:17 --> Helper loaded: url_helper
+INFO - 2026-01-28 07:05:17 --> Helper loaded: file_helper
+INFO - 2026-01-28 07:05:17 --> Helper loaded: html_helper
+INFO - 2026-01-28 07:05:17 --> Database Driver Class Initialized
+INFO - 2026-01-28 07:05:17 --> Session: Class initialized using 'files' driver.
+INFO - 2026-01-28 07:05:17 --> Helper loaded: form_helper
+INFO - 2026-01-28 07:05:17 --> Form Validation Class Initialized
+INFO - 2026-01-28 07:05:17 --> User Agent Class Initialized
+INFO - 2026-01-28 07:05:17 --> Language file loaded: language/english/pagination_lang.php
+INFO - 2026-01-28 07:05:17 --> Pagination Class Initialized
+INFO - 2026-01-28 07:05:17 --> Controller Class Initialized
+INFO - 2026-01-28 07:05:17 --> Model "M_login" initialized
+INFO - 2026-01-28 07:05:17 --> File loaded: C:\xampp\htdocs\Aconnect_ci3\application\views\admin/login.php
+INFO - 2026-01-28 07:05:17 --> Final output sent to browser
+DEBUG - 2026-01-28 07:05:17 --> Total execution time: 0.0596
+ERROR - 2026-01-28 07:05:19 --> $config['composer_autoload'] is set to TRUE but C:\xampp\htdocs\Aconnect_ci3\application\vendor/autoload.php was not found.
+INFO - 2026-01-28 07:05:19 --> Config Class Initialized
+INFO - 2026-01-28 07:05:19 --> Hooks Class Initialized
+DEBUG - 2026-01-28 07:05:19 --> UTF-8 Support Enabled
+INFO - 2026-01-28 07:05:19 --> Utf8 Class Initialized
+INFO - 2026-01-28 07:05:19 --> URI Class Initialized
+INFO - 2026-01-28 07:05:19 --> Router Class Initialized
+INFO - 2026-01-28 07:05:19 --> Output Class Initialized
+INFO - 2026-01-28 07:05:19 --> Security Class Initialized
+DEBUG - 2026-01-28 07:05:19 --> Global POST, GET and COOKIE data sanitized
+INFO - 2026-01-28 07:05:19 --> Input Class Initialized
+INFO - 2026-01-28 07:05:19 --> Language Class Initialized
+INFO - 2026-01-28 07:05:19 --> Loader Class Initialized
+INFO - 2026-01-28 07:05:19 --> Helper loaded: url_helper
+INFO - 2026-01-28 07:05:19 --> Helper loaded: file_helper
+INFO - 2026-01-28 07:05:19 --> Helper loaded: html_helper
+INFO - 2026-01-28 07:05:19 --> Database Driver Class Initialized
+INFO - 2026-01-28 07:05:19 --> Session: Class initialized using 'files' driver.
+INFO - 2026-01-28 07:05:19 --> Helper loaded: form_helper
+INFO - 2026-01-28 07:05:19 --> Form Validation Class Initialized
+INFO - 2026-01-28 07:05:19 --> User Agent Class Initialized
+INFO - 2026-01-28 07:05:19 --> Language file loaded: language/english/pagination_lang.php
+INFO - 2026-01-28 07:05:19 --> Pagination Class Initialized
+INFO - 2026-01-28 07:05:19 --> Controller Class Initialized
+INFO - 2026-01-28 07:05:19 --> Model "M_login" initialized
+INFO - 2026-01-28 07:05:19 --> File loaded: C:\xampp\htdocs\Aconnect_ci3\application\views\login.php
+INFO - 2026-01-28 07:05:19 --> Final output sent to browser
+DEBUG - 2026-01-28 07:05:19 --> Total execution time: 0.0224
+ERROR - 2026-01-28 07:05:21 --> $config['composer_autoload'] is set to TRUE but C:\xampp\htdocs\Aconnect_ci3\application\vendor/autoload.php was not found.
+INFO - 2026-01-28 07:05:21 --> Config Class Initialized
+INFO - 2026-01-28 07:05:21 --> Hooks Class Initialized
+DEBUG - 2026-01-28 07:05:21 --> UTF-8 Support Enabled
+INFO - 2026-01-28 07:05:21 --> Utf8 Class Initialized
+INFO - 2026-01-28 07:05:21 --> URI Class Initialized
+INFO - 2026-01-28 07:05:21 --> Router Class Initialized
+INFO - 2026-01-28 07:05:21 --> Output Class Initialized
+INFO - 2026-01-28 07:05:21 --> Security Class Initialized
+DEBUG - 2026-01-28 07:05:21 --> Global POST, GET and COOKIE data sanitized
+INFO - 2026-01-28 07:05:21 --> Input Class Initialized
+INFO - 2026-01-28 07:05:21 --> Language Class Initialized
+INFO - 2026-01-28 07:05:21 --> Loader Class Initialized
+INFO - 2026-01-28 07:05:21 --> Helper loaded: url_helper
+INFO - 2026-01-28 07:05:21 --> Helper loaded: file_helper
+INFO - 2026-01-28 07:05:21 --> Helper loaded: html_helper
+INFO - 2026-01-28 07:05:21 --> Database Driver Class Initialized
+INFO - 2026-01-28 07:05:21 --> Session: Class initialized using 'files' driver.
+INFO - 2026-01-28 07:05:21 --> Helper loaded: form_helper
+INFO - 2026-01-28 07:05:21 --> Form Validation Class Initialized
+INFO - 2026-01-28 07:05:21 --> User Agent Class Initialized
+INFO - 2026-01-28 07:05:21 --> Language file loaded: language/english/pagination_lang.php
+INFO - 2026-01-28 07:05:21 --> Pagination Class Initialized
+INFO - 2026-01-28 07:05:21 --> Controller Class Initialized
+INFO - 2026-01-28 07:05:21 --> Model "M_login" initialized
+INFO - 2026-01-28 07:05:21 --> File loaded: C:\xampp\htdocs\Aconnect_ci3\application\views\admin/login.php
+INFO - 2026-01-28 07:05:21 --> Final output sent to browser
+DEBUG - 2026-01-28 07:05:21 --> Total execution time: 0.0333
+ERROR - 2026-01-28 07:05:22 --> $config['composer_autoload'] is set to TRUE but C:\xampp\htdocs\Aconnect_ci3\application\vendor/autoload.php was not found.
+INFO - 2026-01-28 07:05:22 --> Config Class Initialized
+INFO - 2026-01-28 07:05:22 --> Hooks Class Initialized
+DEBUG - 2026-01-28 07:05:22 --> UTF-8 Support Enabled
+INFO - 2026-01-28 07:05:22 --> Utf8 Class Initialized
+INFO - 2026-01-28 07:05:22 --> URI Class Initialized
+INFO - 2026-01-28 07:05:22 --> Router Class Initialized
+INFO - 2026-01-28 07:05:22 --> Output Class Initialized
+INFO - 2026-01-28 07:05:22 --> Security Class Initialized
+DEBUG - 2026-01-28 07:05:22 --> Global POST, GET and COOKIE data sanitized
+INFO - 2026-01-28 07:05:22 --> Input Class Initialized
+INFO - 2026-01-28 07:05:22 --> Language Class Initialized
+INFO - 2026-01-28 07:05:22 --> Loader Class Initialized
+INFO - 2026-01-28 07:05:22 --> Helper loaded: url_helper
+INFO - 2026-01-28 07:05:22 --> Helper loaded: file_helper
+INFO - 2026-01-28 07:05:22 --> Helper loaded: html_helper
+INFO - 2026-01-28 07:05:22 --> Database Driver Class Initialized
+INFO - 2026-01-28 07:05:22 --> Session: Class initialized using 'files' driver.
+INFO - 2026-01-28 07:05:22 --> Helper loaded: form_helper
+INFO - 2026-01-28 07:05:22 --> Form Validation Class Initialized
+INFO - 2026-01-28 07:05:22 --> User Agent Class Initialized
+INFO - 2026-01-28 07:05:22 --> Language file loaded: language/english/pagination_lang.php
+INFO - 2026-01-28 07:05:22 --> Pagination Class Initialized
+INFO - 2026-01-28 07:05:22 --> Controller Class Initialized
+INFO - 2026-01-28 07:05:22 --> Model "M_login" initialized
+INFO - 2026-01-28 07:05:22 --> File loaded: C:\xampp\htdocs\Aconnect_ci3\application\views\login.php
+INFO - 2026-01-28 07:05:22 --> Final output sent to browser
+DEBUG - 2026-01-28 07:05:22 --> Total execution time: 0.0222
+ERROR - 2026-01-28 07:05:24 --> $config['composer_autoload'] is set to TRUE but C:\xampp\htdocs\Aconnect_ci3\application\vendor/autoload.php was not found.
+INFO - 2026-01-28 07:05:24 --> Config Class Initialized
+INFO - 2026-01-28 07:05:24 --> Hooks Class Initialized
+DEBUG - 2026-01-28 07:05:24 --> UTF-8 Support Enabled
+INFO - 2026-01-28 07:05:24 --> Utf8 Class Initialized
+INFO - 2026-01-28 07:05:24 --> URI Class Initialized
+INFO - 2026-01-28 07:05:24 --> Router Class Initialized
+INFO - 2026-01-28 07:05:24 --> Output Class Initialized
+INFO - 2026-01-28 07:05:24 --> Security Class Initialized
+DEBUG - 2026-01-28 07:05:24 --> Global POST, GET and COOKIE data sanitized
+INFO - 2026-01-28 07:05:24 --> Input Class Initialized
+INFO - 2026-01-28 07:05:24 --> Language Class Initialized
+INFO - 2026-01-28 07:05:24 --> Loader Class Initialized
+INFO - 2026-01-28 07:05:24 --> Helper loaded: url_helper
+INFO - 2026-01-28 07:05:24 --> Helper loaded: file_helper
+INFO - 2026-01-28 07:05:24 --> Helper loaded: html_helper
+INFO - 2026-01-28 07:05:24 --> Database Driver Class Initialized
+INFO - 2026-01-28 07:05:24 --> Session: Class initialized using 'files' driver.
+INFO - 2026-01-28 07:05:24 --> Helper loaded: form_helper
+INFO - 2026-01-28 07:05:24 --> Form Validation Class Initialized
+INFO - 2026-01-28 07:05:24 --> User Agent Class Initialized
+INFO - 2026-01-28 07:05:24 --> Language file loaded: language/english/pagination_lang.php
+INFO - 2026-01-28 07:05:24 --> Pagination Class Initialized
+INFO - 2026-01-28 07:05:24 --> Controller Class Initialized
+INFO - 2026-01-28 07:05:24 --> Model "M_login" initialized
+ERROR - 2026-01-28 07:05:24 --> $config['composer_autoload'] is set to TRUE but C:\xampp\htdocs\Aconnect_ci3\application\vendor/autoload.php was not found.
+INFO - 2026-01-28 07:05:24 --> Config Class Initialized
+INFO - 2026-01-28 07:05:24 --> Hooks Class Initialized
+DEBUG - 2026-01-28 07:05:24 --> UTF-8 Support Enabled
+INFO - 2026-01-28 07:05:24 --> Utf8 Class Initialized
+INFO - 2026-01-28 07:05:24 --> URI Class Initialized
+INFO - 2026-01-28 07:05:24 --> Router Class Initialized
+INFO - 2026-01-28 07:05:24 --> Output Class Initialized
+INFO - 2026-01-28 07:05:24 --> Security Class Initialized
+DEBUG - 2026-01-28 07:05:24 --> Global POST, GET and COOKIE data sanitized
+INFO - 2026-01-28 07:05:24 --> Input Class Initialized
+INFO - 2026-01-28 07:05:24 --> Language Class Initialized
+INFO - 2026-01-28 07:05:24 --> Loader Class Initialized
+INFO - 2026-01-28 07:05:24 --> Helper loaded: url_helper
+INFO - 2026-01-28 07:05:24 --> Helper loaded: file_helper
+INFO - 2026-01-28 07:05:24 --> Helper loaded: html_helper
+INFO - 2026-01-28 07:05:24 --> Database Driver Class Initialized
+INFO - 2026-01-28 07:05:24 --> Session: Class initialized using 'files' driver.
+INFO - 2026-01-28 07:05:24 --> Helper loaded: form_helper
+INFO - 2026-01-28 07:05:24 --> Form Validation Class Initialized
+INFO - 2026-01-28 07:05:24 --> User Agent Class Initialized
+INFO - 2026-01-28 07:05:24 --> Language file loaded: language/english/pagination_lang.php
+INFO - 2026-01-28 07:05:24 --> Pagination Class Initialized
+INFO - 2026-01-28 07:05:24 --> Controller Class Initialized
+INFO - 2026-01-28 07:05:24 --> File loaded: C:\xampp\htdocs\Aconnect_ci3\application\views\__header.php
+INFO - 2026-01-28 07:05:24 --> File loaded: C:\xampp\htdocs\Aconnect_ci3\application\views\dashboard_u.php
+INFO - 2026-01-28 07:05:24 --> File loaded: C:\xampp\htdocs\Aconnect_ci3\application\views\__footer.php
+INFO - 2026-01-28 07:05:24 --> Final output sent to browser
+DEBUG - 2026-01-28 07:05:24 --> Total execution time: 0.0593
+ERROR - 2026-01-28 07:05:58 --> $config['composer_autoload'] is set to TRUE but C:\xampp\htdocs\Aconnect_ci3\application\vendor/autoload.php was not found.
+INFO - 2026-01-28 07:05:58 --> Config Class Initialized
+INFO - 2026-01-28 07:05:58 --> Hooks Class Initialized
+DEBUG - 2026-01-28 07:05:58 --> UTF-8 Support Enabled
+INFO - 2026-01-28 07:05:58 --> Utf8 Class Initialized
+INFO - 2026-01-28 07:05:58 --> URI Class Initialized
+INFO - 2026-01-28 07:05:58 --> Router Class Initialized
+INFO - 2026-01-28 07:05:58 --> Output Class Initialized
+INFO - 2026-01-28 07:05:58 --> Security Class Initialized
+DEBUG - 2026-01-28 07:05:58 --> Global POST, GET and COOKIE data sanitized
+INFO - 2026-01-28 07:05:58 --> Input Class Initialized
+INFO - 2026-01-28 07:05:58 --> Language Class Initialized
+INFO - 2026-01-28 07:05:58 --> Loader Class Initialized
+INFO - 2026-01-28 07:05:58 --> Helper loaded: url_helper
+INFO - 2026-01-28 07:05:58 --> Helper loaded: file_helper
+INFO - 2026-01-28 07:05:58 --> Helper loaded: html_helper
+INFO - 2026-01-28 07:05:58 --> Database Driver Class Initialized
+INFO - 2026-01-28 07:05:58 --> Session: Class initialized using 'files' driver.
+INFO - 2026-01-28 07:05:58 --> Helper loaded: form_helper
+INFO - 2026-01-28 07:05:58 --> Form Validation Class Initialized
+INFO - 2026-01-28 07:05:58 --> User Agent Class Initialized
+INFO - 2026-01-28 07:05:58 --> Language file loaded: language/english/pagination_lang.php
+INFO - 2026-01-28 07:05:58 --> Pagination Class Initialized
+INFO - 2026-01-28 07:05:58 --> Controller Class Initialized
+INFO - 2026-01-28 07:05:58 --> Model "Alumni_model" initialized
+INFO - 2026-01-28 07:05:58 --> File loaded: C:\xampp\htdocs\Aconnect_ci3\application\views\__header.php
+INFO - 2026-01-28 07:05:58 --> File loaded: C:\xampp\htdocs\Aconnect_ci3\application\views\user/chat_list.php
+INFO - 2026-01-28 07:05:58 --> File loaded: C:\xampp\htdocs\Aconnect_ci3\application\views\__footer.php
+INFO - 2026-01-28 07:05:58 --> Final output sent to browser
+DEBUG - 2026-01-28 07:05:58 --> Total execution time: 0.1026
+ERROR - 2026-01-28 07:07:56 --> $config['composer_autoload'] is set to TRUE but C:\xampp\htdocs\Aconnect_ci3\application\vendor/autoload.php was not found.
+INFO - 2026-01-28 07:07:56 --> Config Class Initialized
+INFO - 2026-01-28 07:07:56 --> Hooks Class Initialized
+DEBUG - 2026-01-28 07:07:56 --> UTF-8 Support Enabled
+INFO - 2026-01-28 07:07:56 --> Utf8 Class Initialized
+INFO - 2026-01-28 07:07:56 --> URI Class Initialized
+INFO - 2026-01-28 07:07:56 --> Router Class Initialized
+INFO - 2026-01-28 07:07:56 --> Output Class Initialized
+INFO - 2026-01-28 07:07:56 --> Security Class Initialized
+DEBUG - 2026-01-28 07:07:56 --> Global POST, GET and COOKIE data sanitized
+INFO - 2026-01-28 07:07:56 --> Input Class Initialized
+INFO - 2026-01-28 07:07:56 --> Language Class Initialized
+INFO - 2026-01-28 07:07:56 --> Loader Class Initialized
+INFO - 2026-01-28 07:07:56 --> Helper loaded: url_helper
+INFO - 2026-01-28 07:07:56 --> Helper loaded: file_helper
+INFO - 2026-01-28 07:07:56 --> Helper loaded: html_helper
+INFO - 2026-01-28 07:07:56 --> Database Driver Class Initialized
+INFO - 2026-01-28 07:07:56 --> Session: Class initialized using 'files' driver.
+INFO - 2026-01-28 07:07:56 --> Helper loaded: form_helper
+INFO - 2026-01-28 07:07:56 --> Form Validation Class Initialized
+INFO - 2026-01-28 07:07:56 --> User Agent Class Initialized
+INFO - 2026-01-28 07:07:56 --> Language file loaded: language/english/pagination_lang.php
+INFO - 2026-01-28 07:07:56 --> Pagination Class Initialized
+INFO - 2026-01-28 07:07:56 --> Controller Class Initialized
+INFO - 2026-01-28 07:07:56 --> Model "M_login" initialized
+INFO - 2026-01-28 07:07:56 --> Model "Activity_log_model" initialized
+ERROR - 2026-01-28 07:07:56 --> $config['composer_autoload'] is set to TRUE but C:\xampp\htdocs\Aconnect_ci3\application\vendor/autoload.php was not found.
+INFO - 2026-01-28 07:07:56 --> Config Class Initialized
+INFO - 2026-01-28 07:07:56 --> Hooks Class Initialized
+DEBUG - 2026-01-28 07:07:56 --> UTF-8 Support Enabled
+INFO - 2026-01-28 07:07:56 --> Utf8 Class Initialized
+INFO - 2026-01-28 07:07:56 --> URI Class Initialized
+INFO - 2026-01-28 07:07:56 --> Router Class Initialized
+INFO - 2026-01-28 07:07:56 --> Output Class Initialized
+INFO - 2026-01-28 07:07:56 --> Security Class Initialized
+DEBUG - 2026-01-28 07:07:56 --> Global POST, GET and COOKIE data sanitized
+INFO - 2026-01-28 07:07:56 --> Input Class Initialized
+INFO - 2026-01-28 07:07:56 --> Language Class Initialized
+INFO - 2026-01-28 07:07:56 --> Loader Class Initialized
+INFO - 2026-01-28 07:07:56 --> Helper loaded: url_helper
+INFO - 2026-01-28 07:07:56 --> Helper loaded: file_helper
+INFO - 2026-01-28 07:07:56 --> Helper loaded: html_helper
+INFO - 2026-01-28 07:07:56 --> Database Driver Class Initialized
+INFO - 2026-01-28 07:07:56 --> Session: Class initialized using 'files' driver.
+INFO - 2026-01-28 07:07:56 --> Helper loaded: form_helper
+INFO - 2026-01-28 07:07:56 --> Form Validation Class Initialized
+INFO - 2026-01-28 07:07:56 --> User Agent Class Initialized
+INFO - 2026-01-28 07:07:56 --> Language file loaded: language/english/pagination_lang.php
+INFO - 2026-01-28 07:07:56 --> Pagination Class Initialized
+INFO - 2026-01-28 07:07:56 --> Controller Class Initialized
+INFO - 2026-01-28 07:07:56 --> Model "M_login" initialized
+INFO - 2026-01-28 07:07:56 --> File loaded: C:\xampp\htdocs\Aconnect_ci3\application\views\login.php
+INFO - 2026-01-28 07:07:56 --> Final output sent to browser
+DEBUG - 2026-01-28 07:07:56 --> Total execution time: 0.0659
+ERROR - 2026-01-28 07:15:57 --> $config['composer_autoload'] is set to TRUE but C:\xampp\htdocs\Aconnect_ci3\application\vendor/autoload.php was not found.
+INFO - 2026-01-28 07:15:57 --> Config Class Initialized
+INFO - 2026-01-28 07:15:57 --> Hooks Class Initialized
+DEBUG - 2026-01-28 07:15:57 --> UTF-8 Support Enabled
+INFO - 2026-01-28 07:15:57 --> Utf8 Class Initialized
+INFO - 2026-01-28 07:15:57 --> URI Class Initialized
+INFO - 2026-01-28 07:15:57 --> Router Class Initialized
+INFO - 2026-01-28 07:15:57 --> Output Class Initialized
+INFO - 2026-01-28 07:15:57 --> Security Class Initialized
+DEBUG - 2026-01-28 07:15:57 --> Global POST, GET and COOKIE data sanitized
+INFO - 2026-01-28 07:15:57 --> Input Class Initialized
+INFO - 2026-01-28 07:15:57 --> Language Class Initialized
+INFO - 2026-01-28 07:15:57 --> Loader Class Initialized
+INFO - 2026-01-28 07:15:57 --> Helper loaded: url_helper
+INFO - 2026-01-28 07:15:57 --> Helper loaded: file_helper
+INFO - 2026-01-28 07:15:57 --> Helper loaded: html_helper
+INFO - 2026-01-28 07:15:57 --> Database Driver Class Initialized
+INFO - 2026-01-28 07:15:57 --> Session: Class initialized using 'files' driver.
+INFO - 2026-01-28 07:15:57 --> Helper loaded: form_helper
+INFO - 2026-01-28 07:15:57 --> Form Validation Class Initialized
+INFO - 2026-01-28 07:15:57 --> User Agent Class Initialized
+INFO - 2026-01-28 07:15:57 --> Language file loaded: language/english/pagination_lang.php
+INFO - 2026-01-28 07:15:57 --> Pagination Class Initialized
+INFO - 2026-01-28 07:15:57 --> Controller Class Initialized
+INFO - 2026-01-28 07:15:57 --> Model "M_login" initialized
+ERROR - 2026-01-28 07:15:57 --> $config['composer_autoload'] is set to TRUE but C:\xampp\htdocs\Aconnect_ci3\application\vendor/autoload.php was not found.
+INFO - 2026-01-28 07:15:57 --> Config Class Initialized
+INFO - 2026-01-28 07:15:57 --> Hooks Class Initialized
+DEBUG - 2026-01-28 07:15:57 --> UTF-8 Support Enabled
+INFO - 2026-01-28 07:15:57 --> Utf8 Class Initialized
+INFO - 2026-01-28 07:15:57 --> URI Class Initialized
+INFO - 2026-01-28 07:15:57 --> Router Class Initialized
+INFO - 2026-01-28 07:15:57 --> Output Class Initialized
+INFO - 2026-01-28 07:15:57 --> Security Class Initialized
+DEBUG - 2026-01-28 07:15:57 --> Global POST, GET and COOKIE data sanitized
+INFO - 2026-01-28 07:15:57 --> Input Class Initialized
+INFO - 2026-01-28 07:15:57 --> Language Class Initialized
+INFO - 2026-01-28 07:15:57 --> Loader Class Initialized
+INFO - 2026-01-28 07:15:57 --> Helper loaded: url_helper
+INFO - 2026-01-28 07:15:57 --> Helper loaded: file_helper
+INFO - 2026-01-28 07:15:57 --> Helper loaded: html_helper
+INFO - 2026-01-28 07:15:57 --> Database Driver Class Initialized
+INFO - 2026-01-28 07:15:57 --> Session: Class initialized using 'files' driver.
+INFO - 2026-01-28 07:15:57 --> Helper loaded: form_helper
+INFO - 2026-01-28 07:15:57 --> Form Validation Class Initialized
+INFO - 2026-01-28 07:15:57 --> User Agent Class Initialized
+INFO - 2026-01-28 07:15:57 --> Language file loaded: language/english/pagination_lang.php
+INFO - 2026-01-28 07:15:57 --> Pagination Class Initialized
+INFO - 2026-01-28 07:15:57 --> Controller Class Initialized
+INFO - 2026-01-28 07:15:57 --> File loaded: C:\xampp\htdocs\Aconnect_ci3\application\views\__header.php
+INFO - 2026-01-28 07:15:57 --> File loaded: C:\xampp\htdocs\Aconnect_ci3\application\views\dashboard_u.php
+INFO - 2026-01-28 07:15:57 --> File loaded: C:\xampp\htdocs\Aconnect_ci3\application\views\__footer.php
+INFO - 2026-01-28 07:15:57 --> Final output sent to browser
+DEBUG - 2026-01-28 07:15:57 --> Total execution time: 0.0575
+ERROR - 2026-01-28 07:16:04 --> $config['composer_autoload'] is set to TRUE but C:\xampp\htdocs\Aconnect_ci3\application\vendor/autoload.php was not found.
+INFO - 2026-01-28 07:16:04 --> Config Class Initialized
+INFO - 2026-01-28 07:16:04 --> Hooks Class Initialized
+DEBUG - 2026-01-28 07:16:04 --> UTF-8 Support Enabled
+INFO - 2026-01-28 07:16:04 --> Utf8 Class Initialized
+INFO - 2026-01-28 07:16:04 --> URI Class Initialized
+INFO - 2026-01-28 07:16:04 --> Router Class Initialized
+INFO - 2026-01-28 07:16:04 --> Output Class Initialized
+INFO - 2026-01-28 07:16:04 --> Security Class Initialized
+DEBUG - 2026-01-28 07:16:04 --> Global POST, GET and COOKIE data sanitized
+INFO - 2026-01-28 07:16:04 --> Input Class Initialized
+INFO - 2026-01-28 07:16:04 --> Language Class Initialized
+INFO - 2026-01-28 07:16:04 --> Loader Class Initialized
+INFO - 2026-01-28 07:16:04 --> Helper loaded: url_helper
+INFO - 2026-01-28 07:16:04 --> Helper loaded: file_helper
+INFO - 2026-01-28 07:16:04 --> Helper loaded: html_helper
+INFO - 2026-01-28 07:16:04 --> Database Driver Class Initialized
+INFO - 2026-01-28 07:16:04 --> Session: Class initialized using 'files' driver.
+INFO - 2026-01-28 07:16:04 --> Helper loaded: form_helper
+INFO - 2026-01-28 07:16:04 --> Form Validation Class Initialized
+INFO - 2026-01-28 07:16:04 --> User Agent Class Initialized
+INFO - 2026-01-28 07:16:04 --> Language file loaded: language/english/pagination_lang.php
+INFO - 2026-01-28 07:16:04 --> Pagination Class Initialized
+INFO - 2026-01-28 07:16:04 --> Controller Class Initialized
+INFO - 2026-01-28 07:16:04 --> Model "Post_model" initialized
+INFO - 2026-01-28 07:16:04 --> File loaded: C:\xampp\htdocs\Aconnect_ci3\application\views\__header.php
+INFO - 2026-01-28 07:16:04 --> Helper loaded: text_helper
+INFO - 2026-01-28 07:16:04 --> File loaded: C:\xampp\htdocs\Aconnect_ci3\application\views\user/posts_view.php
+INFO - 2026-01-28 07:16:04 --> File loaded: C:\xampp\htdocs\Aconnect_ci3\application\views\__footer.php
+INFO - 2026-01-28 07:16:04 --> Final output sent to browser
+DEBUG - 2026-01-28 07:16:04 --> Total execution time: 0.0297
+ERROR - 2026-01-28 07:16:04 --> $config['composer_autoload'] is set to TRUE but C:\xampp\htdocs\Aconnect_ci3\application\vendor/autoload.php was not found.
+INFO - 2026-01-28 07:16:04 --> Config Class Initialized
+INFO - 2026-01-28 07:16:04 --> Hooks Class Initialized
+DEBUG - 2026-01-28 07:16:04 --> UTF-8 Support Enabled
+INFO - 2026-01-28 07:16:04 --> Utf8 Class Initialized
+INFO - 2026-01-28 07:16:04 --> URI Class Initialized
+INFO - 2026-01-28 07:16:04 --> Router Class Initialized
+INFO - 2026-01-28 07:16:04 --> Output Class Initialized
+INFO - 2026-01-28 07:16:04 --> Security Class Initialized
+DEBUG - 2026-01-28 07:16:04 --> Global POST, GET and COOKIE data sanitized
+INFO - 2026-01-28 07:16:04 --> Input Class Initialized
+INFO - 2026-01-28 07:16:04 --> Language Class Initialized
+ERROR - 2026-01-28 07:16:04 --> 404 Page Not Found: Assets/uploads
+ERROR - 2026-01-28 07:16:05 --> $config['composer_autoload'] is set to TRUE but C:\xampp\htdocs\Aconnect_ci3\application\vendor/autoload.php was not found.
+INFO - 2026-01-28 07:16:05 --> Config Class Initialized
+INFO - 2026-01-28 07:16:05 --> Hooks Class Initialized
+DEBUG - 2026-01-28 07:16:05 --> UTF-8 Support Enabled
+INFO - 2026-01-28 07:16:05 --> Utf8 Class Initialized
+INFO - 2026-01-28 07:16:05 --> URI Class Initialized
+INFO - 2026-01-28 07:16:05 --> Router Class Initialized
+INFO - 2026-01-28 07:16:05 --> Output Class Initialized
+INFO - 2026-01-28 07:16:05 --> Security Class Initialized
+DEBUG - 2026-01-28 07:16:05 --> Global POST, GET and COOKIE data sanitized
+INFO - 2026-01-28 07:16:05 --> Input Class Initialized
+INFO - 2026-01-28 07:16:05 --> Language Class Initialized
+ERROR - 2026-01-28 07:16:05 --> Severity: error --> Exception: syntax error, unexpected 'public' (T_PUBLIC) C:\xampp\htdocs\Aconnect_ci3\application\controllers\Alumni.php 106
+ERROR - 2026-01-28 07:16:07 --> $config['composer_autoload'] is set to TRUE but C:\xampp\htdocs\Aconnect_ci3\application\vendor/autoload.php was not found.
+INFO - 2026-01-28 07:16:07 --> Config Class Initialized
+INFO - 2026-01-28 07:16:07 --> Hooks Class Initialized
+DEBUG - 2026-01-28 07:16:07 --> UTF-8 Support Enabled
+INFO - 2026-01-28 07:16:07 --> Utf8 Class Initialized
+INFO - 2026-01-28 07:16:07 --> URI Class Initialized
+INFO - 2026-01-28 07:16:07 --> Router Class Initialized
+INFO - 2026-01-28 07:16:07 --> Output Class Initialized
+INFO - 2026-01-28 07:16:07 --> Security Class Initialized
+DEBUG - 2026-01-28 07:16:07 --> Global POST, GET and COOKIE data sanitized
+INFO - 2026-01-28 07:16:07 --> Input Class Initialized
+INFO - 2026-01-28 07:16:07 --> Language Class Initialized
+INFO - 2026-01-28 07:16:07 --> Loader Class Initialized
+INFO - 2026-01-28 07:16:07 --> Helper loaded: url_helper
+INFO - 2026-01-28 07:16:07 --> Helper loaded: file_helper
+INFO - 2026-01-28 07:16:07 --> Helper loaded: html_helper
+INFO - 2026-01-28 07:16:07 --> Database Driver Class Initialized
+INFO - 2026-01-28 07:16:07 --> Session: Class initialized using 'files' driver.
+INFO - 2026-01-28 07:16:07 --> Helper loaded: form_helper
+INFO - 2026-01-28 07:16:07 --> Form Validation Class Initialized
+INFO - 2026-01-28 07:16:07 --> User Agent Class Initialized
+INFO - 2026-01-28 07:16:07 --> Language file loaded: language/english/pagination_lang.php
+INFO - 2026-01-28 07:16:07 --> Pagination Class Initialized
+INFO - 2026-01-28 07:16:07 --> Controller Class Initialized
+INFO - 2026-01-28 07:16:07 --> Helper loaded: date_helper
+DEBUG - 2026-01-28 07:16:07 --> Session class already loaded. Second attempt ignored.
+INFO - 2026-01-28 07:16:07 --> Upload Class Initialized
+INFO - 2026-01-28 07:16:07 --> Model "Job_model" initialized
+INFO - 2026-01-28 07:16:07 --> File loaded: C:\xampp\htdocs\Aconnect_ci3\application\views\__header.php
+INFO - 2026-01-28 07:16:07 --> File loaded: C:\xampp\htdocs\Aconnect_ci3\application\views\user/jobs.php
+INFO - 2026-01-28 07:16:07 --> File loaded: C:\xampp\htdocs\Aconnect_ci3\application\views\__footer.php
+INFO - 2026-01-28 07:16:07 --> Final output sent to browser
+DEBUG - 2026-01-28 07:16:07 --> Total execution time: 0.0715
+ERROR - 2026-01-28 07:16:08 --> $config['composer_autoload'] is set to TRUE but C:\xampp\htdocs\Aconnect_ci3\application\vendor/autoload.php was not found.
+INFO - 2026-01-28 07:16:08 --> Config Class Initialized
+INFO - 2026-01-28 07:16:08 --> Hooks Class Initialized
+DEBUG - 2026-01-28 07:16:08 --> UTF-8 Support Enabled
+INFO - 2026-01-28 07:16:08 --> Utf8 Class Initialized
+INFO - 2026-01-28 07:16:08 --> URI Class Initialized
+INFO - 2026-01-28 07:16:08 --> Router Class Initialized
+INFO - 2026-01-28 07:16:08 --> Output Class Initialized
+INFO - 2026-01-28 07:16:08 --> Security Class Initialized
+DEBUG - 2026-01-28 07:16:08 --> Global POST, GET and COOKIE data sanitized
+INFO - 2026-01-28 07:16:08 --> Input Class Initialized
+INFO - 2026-01-28 07:16:08 --> Language Class Initialized
+INFO - 2026-01-28 07:16:08 --> Loader Class Initialized
+INFO - 2026-01-28 07:16:08 --> Helper loaded: url_helper
+INFO - 2026-01-28 07:16:08 --> Helper loaded: file_helper
+INFO - 2026-01-28 07:16:08 --> Helper loaded: html_helper
+INFO - 2026-01-28 07:16:08 --> Database Driver Class Initialized
+INFO - 2026-01-28 07:16:08 --> Session: Class initialized using 'files' driver.
+INFO - 2026-01-28 07:16:08 --> Helper loaded: form_helper
+INFO - 2026-01-28 07:16:08 --> Form Validation Class Initialized
+INFO - 2026-01-28 07:16:08 --> User Agent Class Initialized
+INFO - 2026-01-28 07:16:08 --> Language file loaded: language/english/pagination_lang.php
+INFO - 2026-01-28 07:16:08 --> Pagination Class Initialized
+INFO - 2026-01-28 07:16:08 --> Controller Class Initialized
+INFO - 2026-01-28 07:16:08 --> Model "Alumni_model" initialized
+INFO - 2026-01-28 07:16:08 --> File loaded: C:\xampp\htdocs\Aconnect_ci3\application\views\__header.php
+INFO - 2026-01-28 07:16:08 --> File loaded: C:\xampp\htdocs\Aconnect_ci3\application\views\user/chat_list.php
+INFO - 2026-01-28 07:16:08 --> File loaded: C:\xampp\htdocs\Aconnect_ci3\application\views\__footer.php
+INFO - 2026-01-28 07:16:08 --> Final output sent to browser
+DEBUG - 2026-01-28 07:16:08 --> Total execution time: 0.0266
+ERROR - 2026-01-28 07:16:09 --> $config['composer_autoload'] is set to TRUE but C:\xampp\htdocs\Aconnect_ci3\application\vendor/autoload.php was not found.
+INFO - 2026-01-28 07:16:09 --> Config Class Initialized
+INFO - 2026-01-28 07:16:09 --> Hooks Class Initialized
+DEBUG - 2026-01-28 07:16:09 --> UTF-8 Support Enabled
+INFO - 2026-01-28 07:16:09 --> Utf8 Class Initialized
+INFO - 2026-01-28 07:16:09 --> URI Class Initialized
+INFO - 2026-01-28 07:16:09 --> Router Class Initialized
+INFO - 2026-01-28 07:16:09 --> Output Class Initialized
+INFO - 2026-01-28 07:16:09 --> Security Class Initialized
+DEBUG - 2026-01-28 07:16:09 --> Global POST, GET and COOKIE data sanitized
+INFO - 2026-01-28 07:16:09 --> Input Class Initialized
+INFO - 2026-01-28 07:16:09 --> Language Class Initialized
+INFO - 2026-01-28 07:16:09 --> Loader Class Initialized
+INFO - 2026-01-28 07:16:09 --> Helper loaded: url_helper
+INFO - 2026-01-28 07:16:09 --> Helper loaded: file_helper
+INFO - 2026-01-28 07:16:09 --> Helper loaded: html_helper
+INFO - 2026-01-28 07:16:09 --> Database Driver Class Initialized
+INFO - 2026-01-28 07:16:09 --> Session: Class initialized using 'files' driver.
+INFO - 2026-01-28 07:16:09 --> Helper loaded: form_helper
+INFO - 2026-01-28 07:16:09 --> Form Validation Class Initialized
+INFO - 2026-01-28 07:16:09 --> User Agent Class Initialized
+INFO - 2026-01-28 07:16:09 --> Language file loaded: language/english/pagination_lang.php
+INFO - 2026-01-28 07:16:09 --> Pagination Class Initialized
+INFO - 2026-01-28 07:16:09 --> Controller Class Initialized
+INFO - 2026-01-28 07:16:09 --> Model "Event_model" initialized
+DEBUG - 2026-01-28 07:16:09 --> Session class already loaded. Second attempt ignored.
+INFO - 2026-01-28 07:16:09 --> Helper loaded: date_helper
+INFO - 2026-01-28 07:16:09 --> File loaded: C:\xampp\htdocs\Aconnect_ci3\application\views\__header.php
+INFO - 2026-01-28 07:16:09 --> File loaded: C:\xampp\htdocs\Aconnect_ci3\application\views\user/events.php
+INFO - 2026-01-28 07:16:09 --> File loaded: C:\xampp\htdocs\Aconnect_ci3\application\views\__footer.php
+INFO - 2026-01-28 07:16:09 --> Final output sent to browser
+DEBUG - 2026-01-28 07:16:09 --> Total execution time: 0.0369
+ERROR - 2026-01-28 07:16:10 --> $config['composer_autoload'] is set to TRUE but C:\xampp\htdocs\Aconnect_ci3\application\vendor/autoload.php was not found.
+INFO - 2026-01-28 07:16:10 --> Config Class Initialized
+INFO - 2026-01-28 07:16:10 --> Hooks Class Initialized
+DEBUG - 2026-01-28 07:16:10 --> UTF-8 Support Enabled
+INFO - 2026-01-28 07:16:10 --> Utf8 Class Initialized
+INFO - 2026-01-28 07:16:10 --> URI Class Initialized
+INFO - 2026-01-28 07:16:10 --> Router Class Initialized
+INFO - 2026-01-28 07:16:10 --> Output Class Initialized
+INFO - 2026-01-28 07:16:10 --> Security Class Initialized
+DEBUG - 2026-01-28 07:16:10 --> Global POST, GET and COOKIE data sanitized
+INFO - 2026-01-28 07:16:10 --> Input Class Initialized
+INFO - 2026-01-28 07:16:10 --> Language Class Initialized
+INFO - 2026-01-28 07:16:10 --> Loader Class Initialized
+INFO - 2026-01-28 07:16:10 --> Helper loaded: url_helper
+INFO - 2026-01-28 07:16:10 --> Helper loaded: file_helper
+INFO - 2026-01-28 07:16:10 --> Helper loaded: html_helper
+INFO - 2026-01-28 07:16:10 --> Database Driver Class Initialized
+INFO - 2026-01-28 07:16:10 --> Session: Class initialized using 'files' driver.
+INFO - 2026-01-28 07:16:10 --> Helper loaded: form_helper
+INFO - 2026-01-28 07:16:10 --> Form Validation Class Initialized
+INFO - 2026-01-28 07:16:10 --> User Agent Class Initialized
+INFO - 2026-01-28 07:16:10 --> Language file loaded: language/english/pagination_lang.php
+INFO - 2026-01-28 07:16:10 --> Pagination Class Initialized
+INFO - 2026-01-28 07:16:10 --> Controller Class Initialized
+INFO - 2026-01-28 07:16:10 --> Model "Event_model" initialized
+DEBUG - 2026-01-28 07:16:10 --> Session class already loaded. Second attempt ignored.
+INFO - 2026-01-28 07:16:10 --> Helper loaded: date_helper
+INFO - 2026-01-28 07:16:10 --> File loaded: C:\xampp\htdocs\Aconnect_ci3\application\views\__header.php
+INFO - 2026-01-28 07:16:10 --> File loaded: C:\xampp\htdocs\Aconnect_ci3\application\views\user/events_previous.php
+INFO - 2026-01-28 07:16:10 --> File loaded: C:\xampp\htdocs\Aconnect_ci3\application\views\__footer.php
+INFO - 2026-01-28 07:16:10 --> Final output sent to browser
+DEBUG - 2026-01-28 07:16:10 --> Total execution time: 0.0440
+ERROR - 2026-01-28 07:16:10 --> $config['composer_autoload'] is set to TRUE but C:\xampp\htdocs\Aconnect_ci3\application\vendor/autoload.php was not found.
+INFO - 2026-01-28 07:16:10 --> Config Class Initialized
+INFO - 2026-01-28 07:16:10 --> Hooks Class Initialized
+ERROR - 2026-01-28 07:16:10 --> $config['composer_autoload'] is set to TRUE but C:\xampp\htdocs\Aconnect_ci3\application\vendor/autoload.php was not found.
+ERROR - 2026-01-28 07:16:10 --> $config['composer_autoload'] is set to TRUE but C:\xampp\htdocs\Aconnect_ci3\application\vendor/autoload.php was not found.
+INFO - 2026-01-28 07:16:10 --> Config Class Initialized
+DEBUG - 2026-01-28 07:16:10 --> UTF-8 Support Enabled
+INFO - 2026-01-28 07:16:10 --> Hooks Class Initialized
+INFO - 2026-01-28 07:16:10 --> Utf8 Class Initialized
+ERROR - 2026-01-28 07:16:10 --> $config['composer_autoload'] is set to TRUE but C:\xampp\htdocs\Aconnect_ci3\application\vendor/autoload.php was not found.
+INFO - 2026-01-28 07:16:10 --> Config Class Initialized
+INFO - 2026-01-28 07:16:10 --> Hooks Class Initialized
+INFO - 2026-01-28 07:16:10 --> URI Class Initialized
+INFO - 2026-01-28 07:16:10 --> Config Class Initialized
+DEBUG - 2026-01-28 07:16:10 --> UTF-8 Support Enabled
+INFO - 2026-01-28 07:16:10 --> Router Class Initialized
+DEBUG - 2026-01-28 07:16:10 --> UTF-8 Support Enabled
+INFO - 2026-01-28 07:16:10 --> Hooks Class Initialized
+INFO - 2026-01-28 07:16:10 --> Utf8 Class Initialized
+ERROR - 2026-01-28 07:16:10 --> $config['composer_autoload'] is set to TRUE but C:\xampp\htdocs\Aconnect_ci3\application\vendor/autoload.php was not found.
+INFO - 2026-01-28 07:16:10 --> Utf8 Class Initialized
+INFO - 2026-01-28 07:16:10 --> Output Class Initialized
+INFO - 2026-01-28 07:16:10 --> URI Class Initialized
+INFO - 2026-01-28 07:16:10 --> URI Class Initialized
+INFO - 2026-01-28 07:16:10 --> Config Class Initialized
+INFO - 2026-01-28 07:16:10 --> Hooks Class Initialized
+DEBUG - 2026-01-28 07:16:10 --> UTF-8 Support Enabled
+INFO - 2026-01-28 07:16:10 --> Router Class Initialized
+INFO - 2026-01-28 07:16:10 --> Utf8 Class Initialized
+INFO - 2026-01-28 07:16:10 --> Security Class Initialized
+INFO - 2026-01-28 07:16:10 --> Router Class Initialized
+INFO - 2026-01-28 07:16:10 --> URI Class Initialized
+DEBUG - 2026-01-28 07:16:10 --> Global POST, GET and COOKIE data sanitized
+INFO - 2026-01-28 07:16:10 --> Output Class Initialized
+DEBUG - 2026-01-28 07:16:10 --> UTF-8 Support Enabled
+INFO - 2026-01-28 07:16:10 --> Input Class Initialized
+INFO - 2026-01-28 07:16:10 --> Utf8 Class Initialized
+INFO - 2026-01-28 07:16:10 --> Output Class Initialized
+INFO - 2026-01-28 07:16:10 --> Router Class Initialized
+INFO - 2026-01-28 07:16:10 --> Security Class Initialized
+INFO - 2026-01-28 07:16:10 --> Language Class Initialized
+INFO - 2026-01-28 07:16:10 --> URI Class Initialized
+INFO - 2026-01-28 07:16:10 --> Security Class Initialized
+INFO - 2026-01-28 07:16:10 --> Output Class Initialized
+ERROR - 2026-01-28 07:16:10 --> 404 Page Not Found: Assets/uploads
+DEBUG - 2026-01-28 07:16:10 --> Global POST, GET and COOKIE data sanitized
+INFO - 2026-01-28 07:16:10 --> Router Class Initialized
+INFO - 2026-01-28 07:16:10 --> Input Class Initialized
+DEBUG - 2026-01-28 07:16:10 --> Global POST, GET and COOKIE data sanitized
+INFO - 2026-01-28 07:16:10 --> Input Class Initialized
+INFO - 2026-01-28 07:16:10 --> Language Class Initialized
+INFO - 2026-01-28 07:16:10 --> Security Class Initialized
+INFO - 2026-01-28 07:16:10 --> Output Class Initialized
+INFO - 2026-01-28 07:16:10 --> Language Class Initialized
+ERROR - 2026-01-28 07:16:10 --> 404 Page Not Found: Assets/uploads
+DEBUG - 2026-01-28 07:16:10 --> Global POST, GET and COOKIE data sanitized
+ERROR - 2026-01-28 07:16:10 --> 404 Page Not Found: Assets/uploads
+INFO - 2026-01-28 07:16:10 --> Security Class Initialized
+INFO - 2026-01-28 07:16:10 --> Input Class Initialized
+INFO - 2026-01-28 07:16:10 --> Language Class Initialized
+DEBUG - 2026-01-28 07:16:10 --> Global POST, GET and COOKIE data sanitized
+INFO - 2026-01-28 07:16:10 --> Input Class Initialized
+ERROR - 2026-01-28 07:16:10 --> 404 Page Not Found: Assets/uploads
+INFO - 2026-01-28 07:16:10 --> Language Class Initialized
+ERROR - 2026-01-28 07:16:10 --> 404 Page Not Found: Assets/uploads
+ERROR - 2026-01-28 07:16:12 --> $config['composer_autoload'] is set to TRUE but C:\xampp\htdocs\Aconnect_ci3\application\vendor/autoload.php was not found.
+INFO - 2026-01-28 07:16:12 --> Config Class Initialized
+INFO - 2026-01-28 07:16:12 --> Hooks Class Initialized
+DEBUG - 2026-01-28 07:16:12 --> UTF-8 Support Enabled
+INFO - 2026-01-28 07:16:12 --> Utf8 Class Initialized
+INFO - 2026-01-28 07:16:12 --> URI Class Initialized
+INFO - 2026-01-28 07:16:12 --> Router Class Initialized
+INFO - 2026-01-28 07:16:12 --> Output Class Initialized
+INFO - 2026-01-28 07:16:12 --> Security Class Initialized
+DEBUG - 2026-01-28 07:16:12 --> Global POST, GET and COOKIE data sanitized
+INFO - 2026-01-28 07:16:12 --> Input Class Initialized
+INFO - 2026-01-28 07:16:12 --> Language Class Initialized
+INFO - 2026-01-28 07:16:12 --> Loader Class Initialized
+INFO - 2026-01-28 07:16:12 --> Helper loaded: url_helper
+INFO - 2026-01-28 07:16:12 --> Helper loaded: file_helper
+INFO - 2026-01-28 07:16:12 --> Helper loaded: html_helper
+INFO - 2026-01-28 07:16:12 --> Database Driver Class Initialized
+INFO - 2026-01-28 07:16:12 --> Session: Class initialized using 'files' driver.
+INFO - 2026-01-28 07:16:12 --> Helper loaded: form_helper
+INFO - 2026-01-28 07:16:12 --> Form Validation Class Initialized
+INFO - 2026-01-28 07:16:12 --> User Agent Class Initialized
+INFO - 2026-01-28 07:16:12 --> Language file loaded: language/english/pagination_lang.php
+INFO - 2026-01-28 07:16:12 --> Pagination Class Initialized
+INFO - 2026-01-28 07:16:12 --> Controller Class Initialized
+INFO - 2026-01-28 07:16:12 --> Model "Post_model" initialized
+INFO - 2026-01-28 07:16:12 --> File loaded: C:\xampp\htdocs\Aconnect_ci3\application\views\__header.php
+INFO - 2026-01-28 07:16:12 --> Helper loaded: text_helper
+INFO - 2026-01-28 07:16:12 --> File loaded: C:\xampp\htdocs\Aconnect_ci3\application\views\user/posts_view.php
+INFO - 2026-01-28 07:16:12 --> File loaded: C:\xampp\htdocs\Aconnect_ci3\application\views\__footer.php
+INFO - 2026-01-28 07:16:12 --> Final output sent to browser
+DEBUG - 2026-01-28 07:16:12 --> Total execution time: 0.0305
+ERROR - 2026-01-28 07:16:12 --> $config['composer_autoload'] is set to TRUE but C:\xampp\htdocs\Aconnect_ci3\application\vendor/autoload.php was not found.
+INFO - 2026-01-28 07:16:12 --> Config Class Initialized
+INFO - 2026-01-28 07:16:12 --> Hooks Class Initialized
+DEBUG - 2026-01-28 07:16:12 --> UTF-8 Support Enabled
+INFO - 2026-01-28 07:16:12 --> Utf8 Class Initialized
+INFO - 2026-01-28 07:16:12 --> URI Class Initialized
+INFO - 2026-01-28 07:16:12 --> Router Class Initialized
+INFO - 2026-01-28 07:16:12 --> Output Class Initialized
+INFO - 2026-01-28 07:16:12 --> Security Class Initialized
+DEBUG - 2026-01-28 07:16:12 --> Global POST, GET and COOKIE data sanitized
+INFO - 2026-01-28 07:16:12 --> Input Class Initialized
+INFO - 2026-01-28 07:16:12 --> Language Class Initialized
+ERROR - 2026-01-28 07:16:12 --> 404 Page Not Found: Assets/uploads
+ERROR - 2026-01-28 07:16:20 --> $config['composer_autoload'] is set to TRUE but C:\xampp\htdocs\Aconnect_ci3\application\vendor/autoload.php was not found.
+INFO - 2026-01-28 07:16:20 --> Config Class Initialized
+INFO - 2026-01-28 07:16:20 --> Hooks Class Initialized
+DEBUG - 2026-01-28 07:16:20 --> UTF-8 Support Enabled
+INFO - 2026-01-28 07:16:20 --> Utf8 Class Initialized
+INFO - 2026-01-28 07:16:20 --> URI Class Initialized
+INFO - 2026-01-28 07:16:20 --> Router Class Initialized
+INFO - 2026-01-28 07:16:20 --> Output Class Initialized
+INFO - 2026-01-28 07:16:20 --> Security Class Initialized
+DEBUG - 2026-01-28 07:16:20 --> Global POST, GET and COOKIE data sanitized
+INFO - 2026-01-28 07:16:20 --> Input Class Initialized
+INFO - 2026-01-28 07:16:20 --> Language Class Initialized
+INFO - 2026-01-28 07:16:20 --> Loader Class Initialized
+INFO - 2026-01-28 07:16:20 --> Helper loaded: url_helper
+INFO - 2026-01-28 07:16:20 --> Helper loaded: file_helper
+INFO - 2026-01-28 07:16:20 --> Helper loaded: html_helper
+INFO - 2026-01-28 07:16:20 --> Database Driver Class Initialized
+INFO - 2026-01-28 07:16:20 --> Session: Class initialized using 'files' driver.
+INFO - 2026-01-28 07:16:20 --> Helper loaded: form_helper
+INFO - 2026-01-28 07:16:20 --> Form Validation Class Initialized
+INFO - 2026-01-28 07:16:20 --> User Agent Class Initialized
+INFO - 2026-01-28 07:16:20 --> Language file loaded: language/english/pagination_lang.php
+INFO - 2026-01-28 07:16:20 --> Pagination Class Initialized
+INFO - 2026-01-28 07:16:20 --> Controller Class Initialized
+INFO - 2026-01-28 07:16:20 --> Model "M_login" initialized
+INFO - 2026-01-28 07:16:20 --> Model "Activity_log_model" initialized
+ERROR - 2026-01-28 07:16:20 --> $config['composer_autoload'] is set to TRUE but C:\xampp\htdocs\Aconnect_ci3\application\vendor/autoload.php was not found.
+INFO - 2026-01-28 07:16:20 --> Config Class Initialized
+INFO - 2026-01-28 07:16:20 --> Hooks Class Initialized
+DEBUG - 2026-01-28 07:16:20 --> UTF-8 Support Enabled
+INFO - 2026-01-28 07:16:20 --> Utf8 Class Initialized
+INFO - 2026-01-28 07:16:20 --> URI Class Initialized
+INFO - 2026-01-28 07:16:20 --> Router Class Initialized
+INFO - 2026-01-28 07:16:20 --> Output Class Initialized
+INFO - 2026-01-28 07:16:20 --> Security Class Initialized
+DEBUG - 2026-01-28 07:16:20 --> Global POST, GET and COOKIE data sanitized
+INFO - 2026-01-28 07:16:20 --> Input Class Initialized
+INFO - 2026-01-28 07:16:20 --> Language Class Initialized
+INFO - 2026-01-28 07:16:20 --> Loader Class Initialized
+INFO - 2026-01-28 07:16:20 --> Helper loaded: url_helper
+INFO - 2026-01-28 07:16:20 --> Helper loaded: file_helper
+INFO - 2026-01-28 07:16:20 --> Helper loaded: html_helper
+INFO - 2026-01-28 07:16:20 --> Database Driver Class Initialized
+INFO - 2026-01-28 07:16:20 --> Session: Class initialized using 'files' driver.
+INFO - 2026-01-28 07:16:20 --> Helper loaded: form_helper
+INFO - 2026-01-28 07:16:20 --> Form Validation Class Initialized
+INFO - 2026-01-28 07:16:20 --> User Agent Class Initialized
+INFO - 2026-01-28 07:16:20 --> Language file loaded: language/english/pagination_lang.php
+INFO - 2026-01-28 07:16:20 --> Pagination Class Initialized
+INFO - 2026-01-28 07:16:20 --> Controller Class Initialized
+INFO - 2026-01-28 07:16:20 --> Model "M_login" initialized
+INFO - 2026-01-28 07:16:20 --> File loaded: C:\xampp\htdocs\Aconnect_ci3\application\views\login.php
+INFO - 2026-01-28 07:16:20 --> Final output sent to browser
+DEBUG - 2026-01-28 07:16:20 --> Total execution time: 0.0404
+ERROR - 2026-01-28 07:16:24 --> $config['composer_autoload'] is set to TRUE but C:\xampp\htdocs\Aconnect_ci3\application\vendor/autoload.php was not found.
+INFO - 2026-01-28 07:16:24 --> Config Class Initialized
+INFO - 2026-01-28 07:16:24 --> Hooks Class Initialized
+DEBUG - 2026-01-28 07:16:24 --> UTF-8 Support Enabled
+INFO - 2026-01-28 07:16:24 --> Utf8 Class Initialized
+INFO - 2026-01-28 07:16:24 --> URI Class Initialized
+INFO - 2026-01-28 07:16:24 --> Router Class Initialized
+INFO - 2026-01-28 07:16:24 --> Output Class Initialized
+INFO - 2026-01-28 07:16:24 --> Security Class Initialized
+DEBUG - 2026-01-28 07:16:24 --> Global POST, GET and COOKIE data sanitized
+INFO - 2026-01-28 07:16:24 --> Input Class Initialized
+INFO - 2026-01-28 07:16:24 --> Language Class Initialized
+INFO - 2026-01-28 07:16:24 --> Loader Class Initialized
+INFO - 2026-01-28 07:16:24 --> Helper loaded: url_helper
+INFO - 2026-01-28 07:16:24 --> Helper loaded: file_helper
+INFO - 2026-01-28 07:16:24 --> Helper loaded: html_helper
+INFO - 2026-01-28 07:16:24 --> Database Driver Class Initialized
+INFO - 2026-01-28 07:16:24 --> Session: Class initialized using 'files' driver.
+INFO - 2026-01-28 07:16:24 --> Helper loaded: form_helper
+INFO - 2026-01-28 07:16:24 --> Form Validation Class Initialized
+INFO - 2026-01-28 07:16:24 --> User Agent Class Initialized
+INFO - 2026-01-28 07:16:24 --> Language file loaded: language/english/pagination_lang.php
+INFO - 2026-01-28 07:16:24 --> Pagination Class Initialized
+INFO - 2026-01-28 07:16:24 --> Controller Class Initialized
+INFO - 2026-01-28 07:16:24 --> Model "M_login" initialized
+INFO - 2026-01-28 07:16:24 --> File loaded: C:\xampp\htdocs\Aconnect_ci3\application\views\admin/login.php
+INFO - 2026-01-28 07:16:24 --> Final output sent to browser
+DEBUG - 2026-01-28 07:16:24 --> Total execution time: 0.0448
+ERROR - 2026-01-28 07:16:49 --> $config['composer_autoload'] is set to TRUE but C:\xampp\htdocs\Aconnect_ci3\application\vendor/autoload.php was not found.
+INFO - 2026-01-28 07:16:49 --> Config Class Initialized
+INFO - 2026-01-28 07:16:49 --> Hooks Class Initialized
+DEBUG - 2026-01-28 07:16:49 --> UTF-8 Support Enabled
+INFO - 2026-01-28 07:16:49 --> Utf8 Class Initialized
+INFO - 2026-01-28 07:16:49 --> URI Class Initialized
+INFO - 2026-01-28 07:16:49 --> Router Class Initialized
+INFO - 2026-01-28 07:16:49 --> Output Class Initialized
+INFO - 2026-01-28 07:16:49 --> Security Class Initialized
+DEBUG - 2026-01-28 07:16:49 --> Global POST, GET and COOKIE data sanitized
+INFO - 2026-01-28 07:16:49 --> Input Class Initialized
+INFO - 2026-01-28 07:16:49 --> Language Class Initialized
+INFO - 2026-01-28 07:16:49 --> Loader Class Initialized
+INFO - 2026-01-28 07:16:49 --> Helper loaded: url_helper
+INFO - 2026-01-28 07:16:49 --> Helper loaded: file_helper
+INFO - 2026-01-28 07:16:49 --> Helper loaded: html_helper
+INFO - 2026-01-28 07:16:49 --> Database Driver Class Initialized
+INFO - 2026-01-28 07:16:49 --> Session: Class initialized using 'files' driver.
+INFO - 2026-01-28 07:16:49 --> Helper loaded: form_helper
+INFO - 2026-01-28 07:16:49 --> Form Validation Class Initialized
+INFO - 2026-01-28 07:16:49 --> User Agent Class Initialized
+INFO - 2026-01-28 07:16:49 --> Language file loaded: language/english/pagination_lang.php
+INFO - 2026-01-28 07:16:49 --> Pagination Class Initialized
+INFO - 2026-01-28 07:16:49 --> Controller Class Initialized
+INFO - 2026-01-28 07:16:49 --> Model "M_login" initialized
+INFO - 2026-01-28 07:16:49 --> File loaded: C:\xampp\htdocs\Aconnect_ci3\application\views\admin/login.php
+INFO - 2026-01-28 07:16:49 --> Final output sent to browser
+DEBUG - 2026-01-28 07:16:49 --> Total execution time: 0.0267
+ERROR - 2026-01-28 07:18:29 --> $config['composer_autoload'] is set to TRUE but C:\xampp\htdocs\Aconnect_ci3\application\vendor/autoload.php was not found.
+INFO - 2026-01-28 07:18:29 --> Config Class Initialized
+INFO - 2026-01-28 07:18:29 --> Hooks Class Initialized
+DEBUG - 2026-01-28 07:18:29 --> UTF-8 Support Enabled
+INFO - 2026-01-28 07:18:29 --> Utf8 Class Initialized
+INFO - 2026-01-28 07:18:29 --> URI Class Initialized
+INFO - 2026-01-28 07:18:29 --> Router Class Initialized
+INFO - 2026-01-28 07:18:29 --> Output Class Initialized
+INFO - 2026-01-28 07:18:29 --> Security Class Initialized
+DEBUG - 2026-01-28 07:18:29 --> Global POST, GET and COOKIE data sanitized
+INFO - 2026-01-28 07:18:29 --> Input Class Initialized
+INFO - 2026-01-28 07:18:29 --> Language Class Initialized
+INFO - 2026-01-28 07:18:29 --> Loader Class Initialized
+INFO - 2026-01-28 07:18:29 --> Helper loaded: url_helper
+INFO - 2026-01-28 07:18:29 --> Helper loaded: file_helper
+INFO - 2026-01-28 07:18:29 --> Helper loaded: html_helper
+INFO - 2026-01-28 07:18:29 --> Database Driver Class Initialized
+INFO - 2026-01-28 07:18:29 --> Session: Class initialized using 'files' driver.
+INFO - 2026-01-28 07:18:29 --> Helper loaded: form_helper
+INFO - 2026-01-28 07:18:29 --> Form Validation Class Initialized
+INFO - 2026-01-28 07:18:29 --> User Agent Class Initialized
+INFO - 2026-01-28 07:18:29 --> Language file loaded: language/english/pagination_lang.php
+INFO - 2026-01-28 07:18:29 --> Pagination Class Initialized
+INFO - 2026-01-28 07:18:29 --> Controller Class Initialized
+ERROR - 2026-01-28 07:18:29 --> $config['composer_autoload'] is set to TRUE but C:\xampp\htdocs\Aconnect_ci3\application\vendor/autoload.php was not found.
+INFO - 2026-01-28 07:18:29 --> Config Class Initialized
+INFO - 2026-01-28 07:18:29 --> Hooks Class Initialized
+DEBUG - 2026-01-28 07:18:29 --> UTF-8 Support Enabled
+INFO - 2026-01-28 07:18:29 --> Utf8 Class Initialized
+INFO - 2026-01-28 07:18:29 --> URI Class Initialized
+INFO - 2026-01-28 07:18:29 --> Router Class Initialized
+INFO - 2026-01-28 07:18:29 --> Output Class Initialized
+INFO - 2026-01-28 07:18:29 --> Security Class Initialized
+DEBUG - 2026-01-28 07:18:29 --> Global POST, GET and COOKIE data sanitized
+INFO - 2026-01-28 07:18:29 --> Input Class Initialized
+INFO - 2026-01-28 07:18:29 --> Language Class Initialized
+INFO - 2026-01-28 07:18:29 --> Loader Class Initialized
+INFO - 2026-01-28 07:18:29 --> Helper loaded: url_helper
+INFO - 2026-01-28 07:18:29 --> Helper loaded: file_helper
+INFO - 2026-01-28 07:18:29 --> Helper loaded: html_helper
+INFO - 2026-01-28 07:18:29 --> Database Driver Class Initialized
+INFO - 2026-01-28 07:18:29 --> Session: Class initialized using 'files' driver.
+INFO - 2026-01-28 07:18:29 --> Helper loaded: form_helper
+INFO - 2026-01-28 07:18:29 --> Form Validation Class Initialized
+INFO - 2026-01-28 07:18:29 --> User Agent Class Initialized
+INFO - 2026-01-28 07:18:29 --> Language file loaded: language/english/pagination_lang.php
+INFO - 2026-01-28 07:18:29 --> Pagination Class Initialized
+INFO - 2026-01-28 07:18:29 --> Controller Class Initialized
+INFO - 2026-01-28 07:18:29 --> Model "M_login" initialized
+INFO - 2026-01-28 07:18:29 --> File loaded: C:\xampp\htdocs\Aconnect_ci3\application\views\login.php
+INFO - 2026-01-28 07:18:29 --> Final output sent to browser
+DEBUG - 2026-01-28 07:18:29 --> Total execution time: 0.0280
+ERROR - 2026-01-28 07:18:31 --> $config['composer_autoload'] is set to TRUE but C:\xampp\htdocs\Aconnect_ci3\application\vendor/autoload.php was not found.
+INFO - 2026-01-28 07:18:31 --> Config Class Initialized
+INFO - 2026-01-28 07:18:31 --> Hooks Class Initialized
+DEBUG - 2026-01-28 07:18:31 --> UTF-8 Support Enabled
+INFO - 2026-01-28 07:18:31 --> Utf8 Class Initialized
+INFO - 2026-01-28 07:18:31 --> URI Class Initialized
+INFO - 2026-01-28 07:18:31 --> Router Class Initialized
+INFO - 2026-01-28 07:18:31 --> Output Class Initialized
+INFO - 2026-01-28 07:18:31 --> Security Class Initialized
+DEBUG - 2026-01-28 07:18:31 --> Global POST, GET and COOKIE data sanitized
+INFO - 2026-01-28 07:18:31 --> Input Class Initialized
+INFO - 2026-01-28 07:18:31 --> Language Class Initialized
+INFO - 2026-01-28 07:18:31 --> Loader Class Initialized
+INFO - 2026-01-28 07:18:31 --> Helper loaded: url_helper
+INFO - 2026-01-28 07:18:31 --> Helper loaded: file_helper
+INFO - 2026-01-28 07:18:31 --> Helper loaded: html_helper
+INFO - 2026-01-28 07:18:31 --> Database Driver Class Initialized
+INFO - 2026-01-28 07:18:31 --> Session: Class initialized using 'files' driver.
+INFO - 2026-01-28 07:18:31 --> Helper loaded: form_helper
+INFO - 2026-01-28 07:18:31 --> Form Validation Class Initialized
+INFO - 2026-01-28 07:18:31 --> User Agent Class Initialized
+INFO - 2026-01-28 07:18:31 --> Language file loaded: language/english/pagination_lang.php
+INFO - 2026-01-28 07:18:31 --> Pagination Class Initialized
+INFO - 2026-01-28 07:18:31 --> Controller Class Initialized
+INFO - 2026-01-28 07:18:31 --> Model "M_login" initialized
+ERROR - 2026-01-28 07:18:31 --> $config['composer_autoload'] is set to TRUE but C:\xampp\htdocs\Aconnect_ci3\application\vendor/autoload.php was not found.
+INFO - 2026-01-28 07:18:31 --> Config Class Initialized
+INFO - 2026-01-28 07:18:31 --> Hooks Class Initialized
+DEBUG - 2026-01-28 07:18:31 --> UTF-8 Support Enabled
+INFO - 2026-01-28 07:18:31 --> Utf8 Class Initialized
+INFO - 2026-01-28 07:18:31 --> URI Class Initialized
+INFO - 2026-01-28 07:18:31 --> Router Class Initialized
+INFO - 2026-01-28 07:18:31 --> Output Class Initialized
+INFO - 2026-01-28 07:18:31 --> Security Class Initialized
+DEBUG - 2026-01-28 07:18:31 --> Global POST, GET and COOKIE data sanitized
+INFO - 2026-01-28 07:18:31 --> Input Class Initialized
+INFO - 2026-01-28 07:18:31 --> Language Class Initialized
+INFO - 2026-01-28 07:18:31 --> Loader Class Initialized
+INFO - 2026-01-28 07:18:31 --> Helper loaded: url_helper
+INFO - 2026-01-28 07:18:31 --> Helper loaded: file_helper
+INFO - 2026-01-28 07:18:31 --> Helper loaded: html_helper
+INFO - 2026-01-28 07:18:31 --> Database Driver Class Initialized
+INFO - 2026-01-28 07:18:31 --> Session: Class initialized using 'files' driver.
+INFO - 2026-01-28 07:18:31 --> Helper loaded: form_helper
+INFO - 2026-01-28 07:18:31 --> Form Validation Class Initialized
+INFO - 2026-01-28 07:18:31 --> User Agent Class Initialized
+INFO - 2026-01-28 07:18:31 --> Language file loaded: language/english/pagination_lang.php
+INFO - 2026-01-28 07:18:31 --> Pagination Class Initialized
+INFO - 2026-01-28 07:18:31 --> Controller Class Initialized
+INFO - 2026-01-28 07:18:31 --> File loaded: C:\xampp\htdocs\Aconnect_ci3\application\views\__header.php
+INFO - 2026-01-28 07:18:31 --> File loaded: C:\xampp\htdocs\Aconnect_ci3\application\views\dashboard_u.php
+INFO - 2026-01-28 07:18:31 --> File loaded: C:\xampp\htdocs\Aconnect_ci3\application\views\__footer.php
+INFO - 2026-01-28 07:18:31 --> Final output sent to browser
+DEBUG - 2026-01-28 07:18:31 --> Total execution time: 0.0314
+ERROR - 2026-01-28 07:18:33 --> $config['composer_autoload'] is set to TRUE but C:\xampp\htdocs\Aconnect_ci3\application\vendor/autoload.php was not found.
+INFO - 2026-01-28 07:18:33 --> Config Class Initialized
+INFO - 2026-01-28 07:18:33 --> Hooks Class Initialized
+DEBUG - 2026-01-28 07:18:33 --> UTF-8 Support Enabled
+INFO - 2026-01-28 07:18:33 --> Utf8 Class Initialized
+INFO - 2026-01-28 07:18:33 --> URI Class Initialized
+INFO - 2026-01-28 07:18:33 --> Router Class Initialized
+INFO - 2026-01-28 07:18:33 --> Output Class Initialized
+INFO - 2026-01-28 07:18:33 --> Security Class Initialized
+DEBUG - 2026-01-28 07:18:33 --> Global POST, GET and COOKIE data sanitized
+INFO - 2026-01-28 07:18:33 --> Input Class Initialized
+INFO - 2026-01-28 07:18:33 --> Language Class Initialized
+ERROR - 2026-01-28 07:18:33 --> Severity: error --> Exception: syntax error, unexpected 'public' (T_PUBLIC) C:\xampp\htdocs\Aconnect_ci3\application\controllers\Alumni.php 106
+ERROR - 2026-01-28 07:18:37 --> $config['composer_autoload'] is set to TRUE but C:\xampp\htdocs\Aconnect_ci3\application\vendor/autoload.php was not found.
+INFO - 2026-01-28 07:18:37 --> Config Class Initialized
+INFO - 2026-01-28 07:18:37 --> Hooks Class Initialized
+DEBUG - 2026-01-28 07:18:37 --> UTF-8 Support Enabled
+INFO - 2026-01-28 07:18:37 --> Utf8 Class Initialized
+INFO - 2026-01-28 07:18:37 --> URI Class Initialized
+INFO - 2026-01-28 07:18:37 --> Router Class Initialized
+INFO - 2026-01-28 07:18:37 --> Output Class Initialized
+INFO - 2026-01-28 07:18:37 --> Security Class Initialized
+DEBUG - 2026-01-28 07:18:37 --> Global POST, GET and COOKIE data sanitized
+INFO - 2026-01-28 07:18:37 --> Input Class Initialized
+INFO - 2026-01-28 07:18:37 --> Language Class Initialized
+INFO - 2026-01-28 07:18:37 --> Loader Class Initialized
+INFO - 2026-01-28 07:18:37 --> Helper loaded: url_helper
+INFO - 2026-01-28 07:18:37 --> Helper loaded: file_helper
+INFO - 2026-01-28 07:18:37 --> Helper loaded: html_helper
+INFO - 2026-01-28 07:18:37 --> Database Driver Class Initialized
+INFO - 2026-01-28 07:18:37 --> Session: Class initialized using 'files' driver.
+INFO - 2026-01-28 07:18:37 --> Helper loaded: form_helper
+INFO - 2026-01-28 07:18:37 --> Form Validation Class Initialized
+INFO - 2026-01-28 07:18:37 --> User Agent Class Initialized
+INFO - 2026-01-28 07:18:37 --> Language file loaded: language/english/pagination_lang.php
+INFO - 2026-01-28 07:18:37 --> Pagination Class Initialized
+INFO - 2026-01-28 07:18:37 --> Controller Class Initialized
+ERROR - 2026-01-28 07:18:37 --> Severity: Compile Error --> Cannot redeclare Alumni_model::remove_connection() C:\xampp\htdocs\Aconnect_ci3\application\models\user\Alumni_model.php 219
+ERROR - 2026-01-28 07:18:41 --> $config['composer_autoload'] is set to TRUE but C:\xampp\htdocs\Aconnect_ci3\application\vendor/autoload.php was not found.
+INFO - 2026-01-28 07:18:41 --> Config Class Initialized
+INFO - 2026-01-28 07:18:41 --> Hooks Class Initialized
+DEBUG - 2026-01-28 07:18:41 --> UTF-8 Support Enabled
+INFO - 2026-01-28 07:18:41 --> Utf8 Class Initialized
+INFO - 2026-01-28 07:18:41 --> URI Class Initialized
+INFO - 2026-01-28 07:18:41 --> Router Class Initialized
+INFO - 2026-01-28 07:18:41 --> Output Class Initialized
+INFO - 2026-01-28 07:18:41 --> Security Class Initialized
+DEBUG - 2026-01-28 07:18:41 --> Global POST, GET and COOKIE data sanitized
+INFO - 2026-01-28 07:18:41 --> Input Class Initialized
+INFO - 2026-01-28 07:18:41 --> Language Class Initialized
+INFO - 2026-01-28 07:18:41 --> Loader Class Initialized
+INFO - 2026-01-28 07:18:41 --> Helper loaded: url_helper
+INFO - 2026-01-28 07:18:41 --> Helper loaded: file_helper
+INFO - 2026-01-28 07:18:41 --> Helper loaded: html_helper
+INFO - 2026-01-28 07:18:41 --> Database Driver Class Initialized
+INFO - 2026-01-28 07:18:41 --> Session: Class initialized using 'files' driver.
+INFO - 2026-01-28 07:18:41 --> Helper loaded: form_helper
+INFO - 2026-01-28 07:18:41 --> Form Validation Class Initialized
+INFO - 2026-01-28 07:18:41 --> User Agent Class Initialized
+INFO - 2026-01-28 07:18:41 --> Language file loaded: language/english/pagination_lang.php
+INFO - 2026-01-28 07:18:41 --> Pagination Class Initialized
+INFO - 2026-01-28 07:18:41 --> Controller Class Initialized
+ERROR - 2026-01-28 07:18:41 --> Severity: Compile Error --> Cannot redeclare Alumni_model::remove_connection() C:\xampp\htdocs\Aconnect_ci3\application\models\user\Alumni_model.php 219
+ERROR - 2026-01-28 07:18:43 --> $config['composer_autoload'] is set to TRUE but C:\xampp\htdocs\Aconnect_ci3\application\vendor/autoload.php was not found.
+INFO - 2026-01-28 07:18:43 --> Config Class Initialized
+INFO - 2026-01-28 07:18:43 --> Hooks Class Initialized
+DEBUG - 2026-01-28 07:18:43 --> UTF-8 Support Enabled
+INFO - 2026-01-28 07:18:43 --> Utf8 Class Initialized
+INFO - 2026-01-28 07:18:43 --> URI Class Initialized
+INFO - 2026-01-28 07:18:43 --> Router Class Initialized
+INFO - 2026-01-28 07:18:43 --> Output Class Initialized
+INFO - 2026-01-28 07:18:43 --> Security Class Initialized
+DEBUG - 2026-01-28 07:18:43 --> Global POST, GET and COOKIE data sanitized
+INFO - 2026-01-28 07:18:43 --> Input Class Initialized
+INFO - 2026-01-28 07:18:43 --> Language Class Initialized
+INFO - 2026-01-28 07:18:43 --> Loader Class Initialized
+INFO - 2026-01-28 07:18:43 --> Helper loaded: url_helper
+INFO - 2026-01-28 07:18:43 --> Helper loaded: file_helper
+INFO - 2026-01-28 07:18:43 --> Helper loaded: html_helper
+INFO - 2026-01-28 07:18:43 --> Database Driver Class Initialized
+INFO - 2026-01-28 07:18:43 --> Session: Class initialized using 'files' driver.
+INFO - 2026-01-28 07:18:43 --> Helper loaded: form_helper
+INFO - 2026-01-28 07:18:43 --> Form Validation Class Initialized
+INFO - 2026-01-28 07:18:43 --> User Agent Class Initialized
+INFO - 2026-01-28 07:18:43 --> Language file loaded: language/english/pagination_lang.php
+INFO - 2026-01-28 07:18:43 --> Pagination Class Initialized
+INFO - 2026-01-28 07:18:43 --> Controller Class Initialized
+INFO - 2026-01-28 07:18:43 --> Helper loaded: date_helper
+DEBUG - 2026-01-28 07:18:43 --> Session class already loaded. Second attempt ignored.
+INFO - 2026-01-28 07:18:43 --> Upload Class Initialized
+INFO - 2026-01-28 07:18:43 --> Model "Job_model" initialized
+INFO - 2026-01-28 07:18:43 --> File loaded: C:\xampp\htdocs\Aconnect_ci3\application\views\__header.php
+INFO - 2026-01-28 07:18:43 --> File loaded: C:\xampp\htdocs\Aconnect_ci3\application\views\user/jobs.php
+INFO - 2026-01-28 07:18:43 --> File loaded: C:\xampp\htdocs\Aconnect_ci3\application\views\__footer.php
+INFO - 2026-01-28 07:18:43 --> Final output sent to browser
+DEBUG - 2026-01-28 07:18:43 --> Total execution time: 0.0390
+ERROR - 2026-01-28 07:18:44 --> $config['composer_autoload'] is set to TRUE but C:\xampp\htdocs\Aconnect_ci3\application\vendor/autoload.php was not found.
+INFO - 2026-01-28 07:18:44 --> Config Class Initialized
+INFO - 2026-01-28 07:18:44 --> Hooks Class Initialized
+DEBUG - 2026-01-28 07:18:44 --> UTF-8 Support Enabled
+INFO - 2026-01-28 07:18:44 --> Utf8 Class Initialized
+INFO - 2026-01-28 07:18:44 --> URI Class Initialized
+INFO - 2026-01-28 07:18:44 --> Router Class Initialized
+INFO - 2026-01-28 07:18:44 --> Output Class Initialized
+INFO - 2026-01-28 07:18:44 --> Security Class Initialized
+DEBUG - 2026-01-28 07:18:44 --> Global POST, GET and COOKIE data sanitized
+INFO - 2026-01-28 07:18:44 --> Input Class Initialized
+INFO - 2026-01-28 07:18:44 --> Language Class Initialized
+INFO - 2026-01-28 07:18:44 --> Loader Class Initialized
+INFO - 2026-01-28 07:18:44 --> Helper loaded: url_helper
+INFO - 2026-01-28 07:18:44 --> Helper loaded: file_helper
+INFO - 2026-01-28 07:18:44 --> Helper loaded: html_helper
+INFO - 2026-01-28 07:18:44 --> Database Driver Class Initialized
+INFO - 2026-01-28 07:18:44 --> Session: Class initialized using 'files' driver.
+INFO - 2026-01-28 07:18:44 --> Helper loaded: form_helper
+INFO - 2026-01-28 07:18:44 --> Form Validation Class Initialized
+INFO - 2026-01-28 07:18:44 --> User Agent Class Initialized
+INFO - 2026-01-28 07:18:44 --> Language file loaded: language/english/pagination_lang.php
+INFO - 2026-01-28 07:18:44 --> Pagination Class Initialized
+INFO - 2026-01-28 07:18:44 --> Controller Class Initialized
+ERROR - 2026-01-28 07:18:44 --> Severity: Compile Error --> Cannot redeclare Alumni_model::remove_connection() C:\xampp\htdocs\Aconnect_ci3\application\models\user\Alumni_model.php 219
+ERROR - 2026-01-28 07:18:46 --> $config['composer_autoload'] is set to TRUE but C:\xampp\htdocs\Aconnect_ci3\application\vendor/autoload.php was not found.
+INFO - 2026-01-28 07:18:46 --> Config Class Initialized
+INFO - 2026-01-28 07:18:46 --> Hooks Class Initialized
+DEBUG - 2026-01-28 07:18:46 --> UTF-8 Support Enabled
+INFO - 2026-01-28 07:18:46 --> Utf8 Class Initialized
+INFO - 2026-01-28 07:18:46 --> URI Class Initialized
+INFO - 2026-01-28 07:18:46 --> Router Class Initialized
+INFO - 2026-01-28 07:18:46 --> Output Class Initialized
+INFO - 2026-01-28 07:18:46 --> Security Class Initialized
+DEBUG - 2026-01-28 07:18:46 --> Global POST, GET and COOKIE data sanitized
+INFO - 2026-01-28 07:18:46 --> Input Class Initialized
+INFO - 2026-01-28 07:18:46 --> Language Class Initialized
+INFO - 2026-01-28 07:18:46 --> Loader Class Initialized
+INFO - 2026-01-28 07:18:46 --> Helper loaded: url_helper
+INFO - 2026-01-28 07:18:46 --> Helper loaded: file_helper
+INFO - 2026-01-28 07:18:46 --> Helper loaded: html_helper
+INFO - 2026-01-28 07:18:46 --> Database Driver Class Initialized
+INFO - 2026-01-28 07:18:46 --> Session: Class initialized using 'files' driver.
+INFO - 2026-01-28 07:18:46 --> Helper loaded: form_helper
+INFO - 2026-01-28 07:18:46 --> Form Validation Class Initialized
+INFO - 2026-01-28 07:18:46 --> User Agent Class Initialized
+INFO - 2026-01-28 07:18:46 --> Language file loaded: language/english/pagination_lang.php
+INFO - 2026-01-28 07:18:46 --> Pagination Class Initialized
+INFO - 2026-01-28 07:18:46 --> Controller Class Initialized
+ERROR - 2026-01-28 07:18:46 --> Severity: Compile Error --> Cannot redeclare Alumni_model::remove_connection() C:\xampp\htdocs\Aconnect_ci3\application\models\user\Alumni_model.php 219
+ERROR - 2026-01-28 07:18:47 --> $config['composer_autoload'] is set to TRUE but C:\xampp\htdocs\Aconnect_ci3\application\vendor/autoload.php was not found.
+INFO - 2026-01-28 07:18:47 --> Config Class Initialized
+INFO - 2026-01-28 07:18:47 --> Hooks Class Initialized
+DEBUG - 2026-01-28 07:18:47 --> UTF-8 Support Enabled
+INFO - 2026-01-28 07:18:47 --> Utf8 Class Initialized
+INFO - 2026-01-28 07:18:47 --> URI Class Initialized
+INFO - 2026-01-28 07:18:47 --> Router Class Initialized
+INFO - 2026-01-28 07:18:47 --> Output Class Initialized
+INFO - 2026-01-28 07:18:47 --> Security Class Initialized
+DEBUG - 2026-01-28 07:18:47 --> Global POST, GET and COOKIE data sanitized
+INFO - 2026-01-28 07:18:47 --> Input Class Initialized
+INFO - 2026-01-28 07:18:47 --> Language Class Initialized
+INFO - 2026-01-28 07:18:47 --> Loader Class Initialized
+INFO - 2026-01-28 07:18:47 --> Helper loaded: url_helper
+INFO - 2026-01-28 07:18:47 --> Helper loaded: file_helper
+INFO - 2026-01-28 07:18:47 --> Helper loaded: html_helper
+INFO - 2026-01-28 07:18:47 --> Database Driver Class Initialized
+INFO - 2026-01-28 07:18:47 --> Session: Class initialized using 'files' driver.
+INFO - 2026-01-28 07:18:47 --> Helper loaded: form_helper
+INFO - 2026-01-28 07:18:47 --> Form Validation Class Initialized
+INFO - 2026-01-28 07:18:47 --> User Agent Class Initialized
+INFO - 2026-01-28 07:18:47 --> Language file loaded: language/english/pagination_lang.php
+INFO - 2026-01-28 07:18:47 --> Pagination Class Initialized
+INFO - 2026-01-28 07:18:47 --> Controller Class Initialized
+INFO - 2026-01-28 07:18:47 --> Helper loaded: date_helper
+DEBUG - 2026-01-28 07:18:47 --> Session class already loaded. Second attempt ignored.
+INFO - 2026-01-28 07:18:47 --> Upload Class Initialized
+INFO - 2026-01-28 07:18:47 --> Model "Job_model" initialized
+INFO - 2026-01-28 07:18:47 --> File loaded: C:\xampp\htdocs\Aconnect_ci3\application\views\__header.php
+INFO - 2026-01-28 07:18:47 --> File loaded: C:\xampp\htdocs\Aconnect_ci3\application\views\user/jobs.php
+INFO - 2026-01-28 07:18:47 --> File loaded: C:\xampp\htdocs\Aconnect_ci3\application\views\__footer.php
+INFO - 2026-01-28 07:18:47 --> Final output sent to browser
+DEBUG - 2026-01-28 07:18:47 --> Total execution time: 0.0368
+ERROR - 2026-01-28 07:18:48 --> $config['composer_autoload'] is set to TRUE but C:\xampp\htdocs\Aconnect_ci3\application\vendor/autoload.php was not found.
+INFO - 2026-01-28 07:18:48 --> Config Class Initialized
+INFO - 2026-01-28 07:18:48 --> Hooks Class Initialized
+DEBUG - 2026-01-28 07:18:48 --> UTF-8 Support Enabled
+INFO - 2026-01-28 07:18:48 --> Utf8 Class Initialized
+INFO - 2026-01-28 07:18:48 --> URI Class Initialized
+INFO - 2026-01-28 07:18:48 --> Router Class Initialized
+INFO - 2026-01-28 07:18:48 --> Output Class Initialized
+INFO - 2026-01-28 07:18:48 --> Security Class Initialized
+DEBUG - 2026-01-28 07:18:48 --> Global POST, GET and COOKIE data sanitized
+INFO - 2026-01-28 07:18:48 --> Input Class Initialized
+INFO - 2026-01-28 07:18:48 --> Language Class Initialized
+INFO - 2026-01-28 07:18:48 --> Loader Class Initialized
+INFO - 2026-01-28 07:18:48 --> Helper loaded: url_helper
+INFO - 2026-01-28 07:18:48 --> Helper loaded: file_helper
+INFO - 2026-01-28 07:18:48 --> Helper loaded: html_helper
+INFO - 2026-01-28 07:18:48 --> Database Driver Class Initialized
+INFO - 2026-01-28 07:18:48 --> Session: Class initialized using 'files' driver.
+INFO - 2026-01-28 07:18:48 --> Helper loaded: form_helper
+INFO - 2026-01-28 07:18:48 --> Form Validation Class Initialized
+INFO - 2026-01-28 07:18:48 --> User Agent Class Initialized
+INFO - 2026-01-28 07:18:48 --> Language file loaded: language/english/pagination_lang.php
+INFO - 2026-01-28 07:18:48 --> Pagination Class Initialized
+INFO - 2026-01-28 07:18:48 --> Controller Class Initialized
+INFO - 2026-01-28 07:18:48 --> Model "Event_model" initialized
+DEBUG - 2026-01-28 07:18:48 --> Session class already loaded. Second attempt ignored.
+INFO - 2026-01-28 07:18:48 --> Helper loaded: date_helper
+INFO - 2026-01-28 07:18:48 --> File loaded: C:\xampp\htdocs\Aconnect_ci3\application\views\__header.php
+INFO - 2026-01-28 07:18:48 --> File loaded: C:\xampp\htdocs\Aconnect_ci3\application\views\user/events.php
+INFO - 2026-01-28 07:18:48 --> File loaded: C:\xampp\htdocs\Aconnect_ci3\application\views\__footer.php
+INFO - 2026-01-28 07:18:48 --> Final output sent to browser
+DEBUG - 2026-01-28 07:18:48 --> Total execution time: 0.0377
+ERROR - 2026-01-28 07:18:49 --> $config['composer_autoload'] is set to TRUE but C:\xampp\htdocs\Aconnect_ci3\application\vendor/autoload.php was not found.
+INFO - 2026-01-28 07:18:49 --> Config Class Initialized
+INFO - 2026-01-28 07:18:49 --> Hooks Class Initialized
+DEBUG - 2026-01-28 07:18:49 --> UTF-8 Support Enabled
+INFO - 2026-01-28 07:18:49 --> Utf8 Class Initialized
+INFO - 2026-01-28 07:18:49 --> URI Class Initialized
+INFO - 2026-01-28 07:18:49 --> Router Class Initialized
+INFO - 2026-01-28 07:18:49 --> Output Class Initialized
+INFO - 2026-01-28 07:18:49 --> Security Class Initialized
+DEBUG - 2026-01-28 07:18:49 --> Global POST, GET and COOKIE data sanitized
+INFO - 2026-01-28 07:18:49 --> Input Class Initialized
+INFO - 2026-01-28 07:18:49 --> Language Class Initialized
+INFO - 2026-01-28 07:18:49 --> Loader Class Initialized
+INFO - 2026-01-28 07:18:49 --> Helper loaded: url_helper
+INFO - 2026-01-28 07:18:49 --> Helper loaded: file_helper
+INFO - 2026-01-28 07:18:49 --> Helper loaded: html_helper
+INFO - 2026-01-28 07:18:49 --> Database Driver Class Initialized
+INFO - 2026-01-28 07:18:49 --> Session: Class initialized using 'files' driver.
+INFO - 2026-01-28 07:18:49 --> Helper loaded: form_helper
+INFO - 2026-01-28 07:18:49 --> Form Validation Class Initialized
+INFO - 2026-01-28 07:18:49 --> User Agent Class Initialized
+INFO - 2026-01-28 07:18:49 --> Language file loaded: language/english/pagination_lang.php
+INFO - 2026-01-28 07:18:49 --> Pagination Class Initialized
+INFO - 2026-01-28 07:18:49 --> Controller Class Initialized
+INFO - 2026-01-28 07:18:49 --> Model "Event_model" initialized
+DEBUG - 2026-01-28 07:18:49 --> Session class already loaded. Second attempt ignored.
+INFO - 2026-01-28 07:18:49 --> Helper loaded: date_helper
+INFO - 2026-01-28 07:18:49 --> File loaded: C:\xampp\htdocs\Aconnect_ci3\application\views\__header.php
+INFO - 2026-01-28 07:18:49 --> File loaded: C:\xampp\htdocs\Aconnect_ci3\application\views\user/events_previous.php
+INFO - 2026-01-28 07:18:49 --> File loaded: C:\xampp\htdocs\Aconnect_ci3\application\views\__footer.php
+INFO - 2026-01-28 07:18:49 --> Final output sent to browser
+DEBUG - 2026-01-28 07:18:49 --> Total execution time: 0.0342
+ERROR - 2026-01-28 07:18:49 --> $config['composer_autoload'] is set to TRUE but C:\xampp\htdocs\Aconnect_ci3\application\vendor/autoload.php was not found.
+INFO - 2026-01-28 07:18:49 --> Config Class Initialized
+INFO - 2026-01-28 07:18:49 --> Hooks Class Initialized
+DEBUG - 2026-01-28 07:18:49 --> UTF-8 Support Enabled
+INFO - 2026-01-28 07:18:49 --> Utf8 Class Initialized
+INFO - 2026-01-28 07:18:49 --> URI Class Initialized
+INFO - 2026-01-28 07:18:49 --> Router Class Initialized
+ERROR - 2026-01-28 07:18:49 --> $config['composer_autoload'] is set to TRUE but C:\xampp\htdocs\Aconnect_ci3\application\vendor/autoload.php was not found.
+ERROR - 2026-01-28 07:18:49 --> $config['composer_autoload'] is set to TRUE but C:\xampp\htdocs\Aconnect_ci3\application\vendor/autoload.php was not found.
+ERROR - 2026-01-28 07:18:49 --> $config['composer_autoload'] is set to TRUE but C:\xampp\htdocs\Aconnect_ci3\application\vendor/autoload.php was not found.
+ERROR - 2026-01-28 07:18:49 --> $config['composer_autoload'] is set to TRUE but C:\xampp\htdocs\Aconnect_ci3\application\vendor/autoload.php was not found.
+INFO - 2026-01-28 07:18:49 --> Output Class Initialized
+INFO - 2026-01-28 07:18:49 --> Config Class Initialized
+INFO - 2026-01-28 07:18:49 --> Security Class Initialized
+INFO - 2026-01-28 07:18:49 --> Hooks Class Initialized
+INFO - 2026-01-28 07:18:49 --> Config Class Initialized
+INFO - 2026-01-28 07:18:49 --> Config Class Initialized
+INFO - 2026-01-28 07:18:49 --> Hooks Class Initialized
+INFO - 2026-01-28 07:18:49 --> Hooks Class Initialized
+INFO - 2026-01-28 07:18:49 --> Config Class Initialized
+DEBUG - 2026-01-28 07:18:49 --> Global POST, GET and COOKIE data sanitized
+INFO - 2026-01-28 07:18:49 --> Hooks Class Initialized
+INFO - 2026-01-28 07:18:49 --> Input Class Initialized
+INFO - 2026-01-28 07:18:49 --> Language Class Initialized
+DEBUG - 2026-01-28 07:18:49 --> UTF-8 Support Enabled
+ERROR - 2026-01-28 07:18:49 --> 404 Page Not Found: Assets/uploads
+DEBUG - 2026-01-28 07:18:49 --> UTF-8 Support Enabled
+INFO - 2026-01-28 07:18:49 --> Utf8 Class Initialized
+DEBUG - 2026-01-28 07:18:49 --> UTF-8 Support Enabled
+DEBUG - 2026-01-28 07:18:49 --> UTF-8 Support Enabled
+INFO - 2026-01-28 07:18:49 --> Utf8 Class Initialized
+INFO - 2026-01-28 07:18:49 --> Utf8 Class Initialized
+INFO - 2026-01-28 07:18:49 --> Utf8 Class Initialized
+INFO - 2026-01-28 07:18:49 --> URI Class Initialized
+INFO - 2026-01-28 07:18:49 --> URI Class Initialized
+INFO - 2026-01-28 07:18:49 --> URI Class Initialized
+INFO - 2026-01-28 07:18:49 --> URI Class Initialized
+INFO - 2026-01-28 07:18:49 --> Router Class Initialized
+INFO - 2026-01-28 07:18:49 --> Router Class Initialized
+INFO - 2026-01-28 07:18:49 --> Router Class Initialized
+INFO - 2026-01-28 07:18:49 --> Router Class Initialized
+INFO - 2026-01-28 07:18:49 --> Output Class Initialized
+INFO - 2026-01-28 07:18:49 --> Output Class Initialized
+INFO - 2026-01-28 07:18:49 --> Output Class Initialized
+INFO - 2026-01-28 07:18:49 --> Output Class Initialized
+INFO - 2026-01-28 07:18:49 --> Security Class Initialized
+INFO - 2026-01-28 07:18:49 --> Security Class Initialized
+INFO - 2026-01-28 07:18:49 --> Security Class Initialized
+INFO - 2026-01-28 07:18:49 --> Security Class Initialized
+DEBUG - 2026-01-28 07:18:49 --> Global POST, GET and COOKIE data sanitized
+DEBUG - 2026-01-28 07:18:49 --> Global POST, GET and COOKIE data sanitized
+INFO - 2026-01-28 07:18:49 --> Input Class Initialized
+INFO - 2026-01-28 07:18:49 --> Input Class Initialized
+DEBUG - 2026-01-28 07:18:49 --> Global POST, GET and COOKIE data sanitized
+DEBUG - 2026-01-28 07:18:49 --> Global POST, GET and COOKIE data sanitized
+INFO - 2026-01-28 07:18:49 --> Input Class Initialized
+INFO - 2026-01-28 07:18:49 --> Language Class Initialized
+INFO - 2026-01-28 07:18:49 --> Input Class Initialized
+INFO - 2026-01-28 07:18:49 --> Language Class Initialized
+INFO - 2026-01-28 07:18:49 --> Language Class Initialized
+INFO - 2026-01-28 07:18:49 --> Language Class Initialized
+ERROR - 2026-01-28 07:18:49 --> 404 Page Not Found: Assets/uploads
+ERROR - 2026-01-28 07:18:49 --> 404 Page Not Found: Assets/uploads
+ERROR - 2026-01-28 07:18:49 --> 404 Page Not Found: Assets/uploads
+ERROR - 2026-01-28 07:18:49 --> 404 Page Not Found: Assets/uploads
+ERROR - 2026-01-28 07:18:50 --> $config['composer_autoload'] is set to TRUE but C:\xampp\htdocs\Aconnect_ci3\application\vendor/autoload.php was not found.
+INFO - 2026-01-28 07:18:50 --> Config Class Initialized
+INFO - 2026-01-28 07:18:50 --> Hooks Class Initialized
+DEBUG - 2026-01-28 07:18:50 --> UTF-8 Support Enabled
+INFO - 2026-01-28 07:18:50 --> Utf8 Class Initialized
+INFO - 2026-01-28 07:18:50 --> URI Class Initialized
+INFO - 2026-01-28 07:18:50 --> Router Class Initialized
+INFO - 2026-01-28 07:18:50 --> Output Class Initialized
+INFO - 2026-01-28 07:18:50 --> Security Class Initialized
+DEBUG - 2026-01-28 07:18:50 --> Global POST, GET and COOKIE data sanitized
+INFO - 2026-01-28 07:18:50 --> Input Class Initialized
+INFO - 2026-01-28 07:18:50 --> Language Class Initialized
+INFO - 2026-01-28 07:18:50 --> Loader Class Initialized
+INFO - 2026-01-28 07:18:50 --> Helper loaded: url_helper
+INFO - 2026-01-28 07:18:50 --> Helper loaded: file_helper
+INFO - 2026-01-28 07:18:50 --> Helper loaded: html_helper
+INFO - 2026-01-28 07:18:50 --> Database Driver Class Initialized
+INFO - 2026-01-28 07:18:50 --> Session: Class initialized using 'files' driver.
+INFO - 2026-01-28 07:18:50 --> Helper loaded: form_helper
+INFO - 2026-01-28 07:18:50 --> Form Validation Class Initialized
+INFO - 2026-01-28 07:18:50 --> User Agent Class Initialized
+INFO - 2026-01-28 07:18:50 --> Language file loaded: language/english/pagination_lang.php
+INFO - 2026-01-28 07:18:50 --> Pagination Class Initialized
+INFO - 2026-01-28 07:18:50 --> Controller Class Initialized
+ERROR - 2026-01-28 07:18:50 --> Severity: Compile Error --> Cannot redeclare Alumni_model::remove_connection() C:\xampp\htdocs\Aconnect_ci3\application\models\user\Alumni_model.php 219
+ERROR - 2026-01-28 07:20:48 --> $config['composer_autoload'] is set to TRUE but C:\xampp\htdocs\Aconnect_ci3\application\vendor/autoload.php was not found.
+INFO - 2026-01-28 07:20:48 --> Config Class Initialized
+INFO - 2026-01-28 07:20:48 --> Hooks Class Initialized
+DEBUG - 2026-01-28 07:20:48 --> UTF-8 Support Enabled
+INFO - 2026-01-28 07:20:48 --> Utf8 Class Initialized
+INFO - 2026-01-28 07:20:48 --> URI Class Initialized
+INFO - 2026-01-28 07:20:48 --> Router Class Initialized
+INFO - 2026-01-28 07:20:48 --> Output Class Initialized
+INFO - 2026-01-28 07:20:48 --> Security Class Initialized
+DEBUG - 2026-01-28 07:20:48 --> Global POST, GET and COOKIE data sanitized
+INFO - 2026-01-28 07:20:48 --> Input Class Initialized
+INFO - 2026-01-28 07:20:48 --> Language Class Initialized
+INFO - 2026-01-28 07:20:48 --> Loader Class Initialized
+INFO - 2026-01-28 07:20:48 --> Helper loaded: url_helper
+INFO - 2026-01-28 07:20:48 --> Helper loaded: file_helper
+INFO - 2026-01-28 07:20:48 --> Helper loaded: html_helper
+INFO - 2026-01-28 07:20:48 --> Database Driver Class Initialized
+INFO - 2026-01-28 07:20:48 --> Session: Class initialized using 'files' driver.
+INFO - 2026-01-28 07:20:48 --> Helper loaded: form_helper
+INFO - 2026-01-28 07:20:48 --> Form Validation Class Initialized
+INFO - 2026-01-28 07:20:48 --> User Agent Class Initialized
+INFO - 2026-01-28 07:20:48 --> Language file loaded: language/english/pagination_lang.php
+INFO - 2026-01-28 07:20:48 --> Pagination Class Initialized
+INFO - 2026-01-28 07:20:48 --> Controller Class Initialized
+INFO - 2026-01-28 07:20:48 --> File loaded: C:\xampp\htdocs\Aconnect_ci3\application\views\__header.php
+INFO - 2026-01-28 07:20:48 --> File loaded: C:\xampp\htdocs\Aconnect_ci3\application\views\dashboard_u.php
+INFO - 2026-01-28 07:20:48 --> File loaded: C:\xampp\htdocs\Aconnect_ci3\application\views\__footer.php
+INFO - 2026-01-28 07:20:48 --> Final output sent to browser
+DEBUG - 2026-01-28 07:20:48 --> Total execution time: 0.0361
+ERROR - 2026-01-28 07:20:50 --> $config['composer_autoload'] is set to TRUE but C:\xampp\htdocs\Aconnect_ci3\application\vendor/autoload.php was not found.
+INFO - 2026-01-28 07:20:50 --> Config Class Initialized
+INFO - 2026-01-28 07:20:50 --> Hooks Class Initialized
+DEBUG - 2026-01-28 07:20:50 --> UTF-8 Support Enabled
+INFO - 2026-01-28 07:20:50 --> Utf8 Class Initialized
+INFO - 2026-01-28 07:20:50 --> URI Class Initialized
+INFO - 2026-01-28 07:20:50 --> Router Class Initialized
+INFO - 2026-01-28 07:20:50 --> Output Class Initialized
+INFO - 2026-01-28 07:20:50 --> Security Class Initialized
+DEBUG - 2026-01-28 07:20:50 --> Global POST, GET and COOKIE data sanitized
+INFO - 2026-01-28 07:20:50 --> Input Class Initialized
+INFO - 2026-01-28 07:20:50 --> Language Class Initialized
+ERROR - 2026-01-28 07:20:50 --> Severity: error --> Exception: syntax error, unexpected 'public' (T_PUBLIC) C:\xampp\htdocs\Aconnect_ci3\application\controllers\Alumni.php 106
+ERROR - 2026-01-28 07:21:08 --> $config['composer_autoload'] is set to TRUE but C:\xampp\htdocs\Aconnect_ci3\application\vendor/autoload.php was not found.
+INFO - 2026-01-28 07:21:08 --> Config Class Initialized
+INFO - 2026-01-28 07:21:08 --> Hooks Class Initialized
+DEBUG - 2026-01-28 07:21:08 --> UTF-8 Support Enabled
+INFO - 2026-01-28 07:21:08 --> Utf8 Class Initialized
+INFO - 2026-01-28 07:21:08 --> URI Class Initialized
+INFO - 2026-01-28 07:21:08 --> Router Class Initialized
+INFO - 2026-01-28 07:21:08 --> Output Class Initialized
+INFO - 2026-01-28 07:21:08 --> Security Class Initialized
+DEBUG - 2026-01-28 07:21:08 --> Global POST, GET and COOKIE data sanitized
+INFO - 2026-01-28 07:21:08 --> Input Class Initialized
+INFO - 2026-01-28 07:21:08 --> Language Class Initialized
+INFO - 2026-01-28 07:21:08 --> Loader Class Initialized
+INFO - 2026-01-28 07:21:08 --> Helper loaded: url_helper
+INFO - 2026-01-28 07:21:08 --> Helper loaded: file_helper
+INFO - 2026-01-28 07:21:08 --> Helper loaded: html_helper
+INFO - 2026-01-28 07:21:08 --> Database Driver Class Initialized
+INFO - 2026-01-28 07:21:08 --> Session: Class initialized using 'files' driver.
+INFO - 2026-01-28 07:21:08 --> Helper loaded: form_helper
+INFO - 2026-01-28 07:21:08 --> Form Validation Class Initialized
+INFO - 2026-01-28 07:21:08 --> User Agent Class Initialized
+INFO - 2026-01-28 07:21:08 --> Language file loaded: language/english/pagination_lang.php
+INFO - 2026-01-28 07:21:08 --> Pagination Class Initialized
+INFO - 2026-01-28 07:21:08 --> Controller Class Initialized
+ERROR - 2026-01-28 07:21:08 --> Severity: Compile Error --> Cannot redeclare Alumni_model::remove_connection() C:\xampp\htdocs\Aconnect_ci3\application\models\user\Alumni_model.php 219
+ERROR - 2026-01-28 07:21:13 --> $config['composer_autoload'] is set to TRUE but C:\xampp\htdocs\Aconnect_ci3\application\vendor/autoload.php was not found.
+INFO - 2026-01-28 07:21:13 --> Config Class Initialized
+INFO - 2026-01-28 07:21:13 --> Hooks Class Initialized
+DEBUG - 2026-01-28 07:21:13 --> UTF-8 Support Enabled
+INFO - 2026-01-28 07:21:13 --> Utf8 Class Initialized
+INFO - 2026-01-28 07:21:13 --> URI Class Initialized
+INFO - 2026-01-28 07:21:13 --> Router Class Initialized
+INFO - 2026-01-28 07:21:13 --> Output Class Initialized
+INFO - 2026-01-28 07:21:13 --> Security Class Initialized
+DEBUG - 2026-01-28 07:21:13 --> Global POST, GET and COOKIE data sanitized
+INFO - 2026-01-28 07:21:13 --> Input Class Initialized
+INFO - 2026-01-28 07:21:13 --> Language Class Initialized
+INFO - 2026-01-28 07:21:13 --> Loader Class Initialized
+INFO - 2026-01-28 07:21:13 --> Helper loaded: url_helper
+INFO - 2026-01-28 07:21:13 --> Helper loaded: file_helper
+INFO - 2026-01-28 07:21:13 --> Helper loaded: html_helper
+INFO - 2026-01-28 07:21:13 --> Database Driver Class Initialized
+INFO - 2026-01-28 07:21:13 --> Session: Class initialized using 'files' driver.
+INFO - 2026-01-28 07:21:13 --> Helper loaded: form_helper
+INFO - 2026-01-28 07:21:13 --> Form Validation Class Initialized
+INFO - 2026-01-28 07:21:13 --> User Agent Class Initialized
+INFO - 2026-01-28 07:21:13 --> Language file loaded: language/english/pagination_lang.php
+INFO - 2026-01-28 07:21:13 --> Pagination Class Initialized
+INFO - 2026-01-28 07:21:13 --> Controller Class Initialized
+INFO - 2026-01-28 07:21:13 --> Helper loaded: date_helper
+DEBUG - 2026-01-28 07:21:13 --> Session class already loaded. Second attempt ignored.
+INFO - 2026-01-28 07:21:13 --> Upload Class Initialized
+INFO - 2026-01-28 07:21:13 --> Model "Job_model" initialized
+INFO - 2026-01-28 07:21:13 --> File loaded: C:\xampp\htdocs\Aconnect_ci3\application\views\__header.php
+INFO - 2026-01-28 07:21:13 --> File loaded: C:\xampp\htdocs\Aconnect_ci3\application\views\user/jobs.php
+INFO - 2026-01-28 07:21:13 --> File loaded: C:\xampp\htdocs\Aconnect_ci3\application\views\__footer.php
+INFO - 2026-01-28 07:21:13 --> Final output sent to browser
+DEBUG - 2026-01-28 07:21:13 --> Total execution time: 0.0612
+ERROR - 2026-01-28 07:21:15 --> $config['composer_autoload'] is set to TRUE but C:\xampp\htdocs\Aconnect_ci3\application\vendor/autoload.php was not found.
+INFO - 2026-01-28 07:21:15 --> Config Class Initialized
+INFO - 2026-01-28 07:21:15 --> Hooks Class Initialized
+DEBUG - 2026-01-28 07:21:15 --> UTF-8 Support Enabled
+INFO - 2026-01-28 07:21:15 --> Utf8 Class Initialized
+INFO - 2026-01-28 07:21:15 --> URI Class Initialized
+INFO - 2026-01-28 07:21:15 --> Router Class Initialized
+INFO - 2026-01-28 07:21:15 --> Output Class Initialized
+INFO - 2026-01-28 07:21:15 --> Security Class Initialized
+DEBUG - 2026-01-28 07:21:15 --> Global POST, GET and COOKIE data sanitized
+INFO - 2026-01-28 07:21:15 --> Input Class Initialized
+INFO - 2026-01-28 07:21:15 --> Language Class Initialized
+INFO - 2026-01-28 07:21:15 --> Loader Class Initialized
+INFO - 2026-01-28 07:21:15 --> Helper loaded: url_helper
+INFO - 2026-01-28 07:21:15 --> Helper loaded: file_helper
+INFO - 2026-01-28 07:21:15 --> Helper loaded: html_helper
+INFO - 2026-01-28 07:21:15 --> Database Driver Class Initialized
+INFO - 2026-01-28 07:21:15 --> Session: Class initialized using 'files' driver.
+INFO - 2026-01-28 07:21:15 --> Helper loaded: form_helper
+INFO - 2026-01-28 07:21:15 --> Form Validation Class Initialized
+INFO - 2026-01-28 07:21:15 --> User Agent Class Initialized
+INFO - 2026-01-28 07:21:15 --> Language file loaded: language/english/pagination_lang.php
+INFO - 2026-01-28 07:21:15 --> Pagination Class Initialized
+INFO - 2026-01-28 07:21:15 --> Controller Class Initialized
+INFO - 2026-01-28 07:21:15 --> Model "Event_model" initialized
+DEBUG - 2026-01-28 07:21:15 --> Session class already loaded. Second attempt ignored.
+INFO - 2026-01-28 07:21:15 --> Helper loaded: date_helper
+INFO - 2026-01-28 07:21:15 --> File loaded: C:\xampp\htdocs\Aconnect_ci3\application\views\__header.php
+INFO - 2026-01-28 07:21:15 --> File loaded: C:\xampp\htdocs\Aconnect_ci3\application\views\user/events.php
+INFO - 2026-01-28 07:21:15 --> File loaded: C:\xampp\htdocs\Aconnect_ci3\application\views\__footer.php
+INFO - 2026-01-28 07:21:15 --> Final output sent to browser
+DEBUG - 2026-01-28 07:21:15 --> Total execution time: 0.0350
+ERROR - 2026-01-28 07:21:16 --> $config['composer_autoload'] is set to TRUE but C:\xampp\htdocs\Aconnect_ci3\application\vendor/autoload.php was not found.
+INFO - 2026-01-28 07:21:16 --> Config Class Initialized
+INFO - 2026-01-28 07:21:16 --> Hooks Class Initialized
+DEBUG - 2026-01-28 07:21:16 --> UTF-8 Support Enabled
+INFO - 2026-01-28 07:21:16 --> Utf8 Class Initialized
+INFO - 2026-01-28 07:21:16 --> URI Class Initialized
+INFO - 2026-01-28 07:21:16 --> Router Class Initialized
+INFO - 2026-01-28 07:21:16 --> Output Class Initialized
+INFO - 2026-01-28 07:21:16 --> Security Class Initialized
+DEBUG - 2026-01-28 07:21:16 --> Global POST, GET and COOKIE data sanitized
+INFO - 2026-01-28 07:21:16 --> Input Class Initialized
+INFO - 2026-01-28 07:21:16 --> Language Class Initialized
+INFO - 2026-01-28 07:21:16 --> Loader Class Initialized
+INFO - 2026-01-28 07:21:16 --> Helper loaded: url_helper
+INFO - 2026-01-28 07:21:16 --> Helper loaded: file_helper
+INFO - 2026-01-28 07:21:16 --> Helper loaded: html_helper
+INFO - 2026-01-28 07:21:16 --> Database Driver Class Initialized
+INFO - 2026-01-28 07:21:16 --> Session: Class initialized using 'files' driver.
+INFO - 2026-01-28 07:21:16 --> Helper loaded: form_helper
+INFO - 2026-01-28 07:21:16 --> Form Validation Class Initialized
+INFO - 2026-01-28 07:21:16 --> User Agent Class Initialized
+INFO - 2026-01-28 07:21:16 --> Language file loaded: language/english/pagination_lang.php
+INFO - 2026-01-28 07:21:16 --> Pagination Class Initialized
+INFO - 2026-01-28 07:21:16 --> Controller Class Initialized
+INFO - 2026-01-28 07:21:16 --> Model "Event_model" initialized
+DEBUG - 2026-01-28 07:21:16 --> Session class already loaded. Second attempt ignored.
+INFO - 2026-01-28 07:21:16 --> Helper loaded: date_helper
+INFO - 2026-01-28 07:21:16 --> File loaded: C:\xampp\htdocs\Aconnect_ci3\application\views\__header.php
+INFO - 2026-01-28 07:21:16 --> File loaded: C:\xampp\htdocs\Aconnect_ci3\application\views\user/events_previous.php
+INFO - 2026-01-28 07:21:16 --> File loaded: C:\xampp\htdocs\Aconnect_ci3\application\views\__footer.php
+INFO - 2026-01-28 07:21:16 --> Final output sent to browser
+DEBUG - 2026-01-28 07:21:16 --> Total execution time: 0.0343
+ERROR - 2026-01-28 07:21:16 --> $config['composer_autoload'] is set to TRUE but C:\xampp\htdocs\Aconnect_ci3\application\vendor/autoload.php was not found.
+INFO - 2026-01-28 07:21:16 --> Config Class Initialized
+INFO - 2026-01-28 07:21:16 --> Hooks Class Initialized
+DEBUG - 2026-01-28 07:21:16 --> UTF-8 Support Enabled
+INFO - 2026-01-28 07:21:16 --> Utf8 Class Initialized
+INFO - 2026-01-28 07:21:16 --> URI Class Initialized
+ERROR - 2026-01-28 07:21:16 --> $config['composer_autoload'] is set to TRUE but C:\xampp\htdocs\Aconnect_ci3\application\vendor/autoload.php was not found.
+ERROR - 2026-01-28 07:21:16 --> $config['composer_autoload'] is set to TRUE but C:\xampp\htdocs\Aconnect_ci3\application\vendor/autoload.php was not found.
+INFO - 2026-01-28 07:21:16 --> Router Class Initialized
+ERROR - 2026-01-28 07:21:16 --> $config['composer_autoload'] is set to TRUE but C:\xampp\htdocs\Aconnect_ci3\application\vendor/autoload.php was not found.
+ERROR - 2026-01-28 07:21:16 --> $config['composer_autoload'] is set to TRUE but C:\xampp\htdocs\Aconnect_ci3\application\vendor/autoload.php was not found.
+INFO - 2026-01-28 07:21:16 --> Config Class Initialized
+INFO - 2026-01-28 07:21:16 --> Config Class Initialized
+INFO - 2026-01-28 07:21:16 --> Hooks Class Initialized
+INFO - 2026-01-28 07:21:16 --> Hooks Class Initialized
+INFO - 2026-01-28 07:21:16 --> Output Class Initialized
+INFO - 2026-01-28 07:21:16 --> Config Class Initialized
+INFO - 2026-01-28 07:21:16 --> Hooks Class Initialized
+INFO - 2026-01-28 07:21:16 --> Config Class Initialized
+INFO - 2026-01-28 07:21:16 --> Security Class Initialized
+INFO - 2026-01-28 07:21:16 --> Hooks Class Initialized
+DEBUG - 2026-01-28 07:21:16 --> UTF-8 Support Enabled
+DEBUG - 2026-01-28 07:21:16 --> UTF-8 Support Enabled
+DEBUG - 2026-01-28 07:21:16 --> Global POST, GET and COOKIE data sanitized
+INFO - 2026-01-28 07:21:16 --> Utf8 Class Initialized
+INFO - 2026-01-28 07:21:16 --> Utf8 Class Initialized
+DEBUG - 2026-01-28 07:21:16 --> UTF-8 Support Enabled
+DEBUG - 2026-01-28 07:21:16 --> UTF-8 Support Enabled
+INFO - 2026-01-28 07:21:16 --> Input Class Initialized
+INFO - 2026-01-28 07:21:16 --> Utf8 Class Initialized
+INFO - 2026-01-28 07:21:16 --> Utf8 Class Initialized
+INFO - 2026-01-28 07:21:16 --> Language Class Initialized
+INFO - 2026-01-28 07:21:16 --> URI Class Initialized
+INFO - 2026-01-28 07:21:16 --> URI Class Initialized
+INFO - 2026-01-28 07:21:16 --> URI Class Initialized
+INFO - 2026-01-28 07:21:16 --> URI Class Initialized
+ERROR - 2026-01-28 07:21:16 --> 404 Page Not Found: Assets/uploads
+INFO - 2026-01-28 07:21:16 --> Router Class Initialized
+INFO - 2026-01-28 07:21:16 --> Router Class Initialized
+INFO - 2026-01-28 07:21:16 --> Router Class Initialized
+INFO - 2026-01-28 07:21:16 --> Router Class Initialized
+INFO - 2026-01-28 07:21:16 --> Output Class Initialized
+INFO - 2026-01-28 07:21:16 --> Output Class Initialized
+INFO - 2026-01-28 07:21:16 --> Output Class Initialized
+INFO - 2026-01-28 07:21:16 --> Output Class Initialized
+INFO - 2026-01-28 07:21:16 --> Security Class Initialized
+INFO - 2026-01-28 07:21:16 --> Security Class Initialized
+INFO - 2026-01-28 07:21:16 --> Security Class Initialized
+INFO - 2026-01-28 07:21:16 --> Security Class Initialized
+DEBUG - 2026-01-28 07:21:16 --> Global POST, GET and COOKIE data sanitized
+INFO - 2026-01-28 07:21:16 --> Input Class Initialized
+DEBUG - 2026-01-28 07:21:16 --> Global POST, GET and COOKIE data sanitized
+DEBUG - 2026-01-28 07:21:16 --> Global POST, GET and COOKIE data sanitized
+INFO - 2026-01-28 07:21:16 --> Language Class Initialized
+DEBUG - 2026-01-28 07:21:16 --> Global POST, GET and COOKIE data sanitized
+INFO - 2026-01-28 07:21:16 --> Input Class Initialized
+INFO - 2026-01-28 07:21:16 --> Input Class Initialized
+INFO - 2026-01-28 07:21:16 --> Input Class Initialized
+INFO - 2026-01-28 07:21:16 --> Language Class Initialized
+ERROR - 2026-01-28 07:21:16 --> 404 Page Not Found: Assets/uploads
+INFO - 2026-01-28 07:21:16 --> Language Class Initialized
+INFO - 2026-01-28 07:21:16 --> Language Class Initialized
+ERROR - 2026-01-28 07:21:16 --> 404 Page Not Found: Assets/uploads
+ERROR - 2026-01-28 07:21:16 --> 404 Page Not Found: Assets/uploads
+ERROR - 2026-01-28 07:21:16 --> 404 Page Not Found: Assets/uploads
+ERROR - 2026-01-28 07:21:16 --> $config['composer_autoload'] is set to TRUE but C:\xampp\htdocs\Aconnect_ci3\application\vendor/autoload.php was not found.
+INFO - 2026-01-28 07:21:16 --> Config Class Initialized
+INFO - 2026-01-28 07:21:16 --> Hooks Class Initialized
+DEBUG - 2026-01-28 07:21:16 --> UTF-8 Support Enabled
+INFO - 2026-01-28 07:21:16 --> Utf8 Class Initialized
+INFO - 2026-01-28 07:21:16 --> URI Class Initialized
+INFO - 2026-01-28 07:21:16 --> Router Class Initialized
+INFO - 2026-01-28 07:21:16 --> Output Class Initialized
+INFO - 2026-01-28 07:21:16 --> Security Class Initialized
+DEBUG - 2026-01-28 07:21:16 --> Global POST, GET and COOKIE data sanitized
+INFO - 2026-01-28 07:21:16 --> Input Class Initialized
+INFO - 2026-01-28 07:21:16 --> Language Class Initialized
+ERROR - 2026-01-28 07:21:16 --> Severity: error --> Exception: syntax error, unexpected 'public' (T_PUBLIC) C:\xampp\htdocs\Aconnect_ci3\application\controllers\Alumni.php 106
+ERROR - 2026-01-28 07:22:13 --> $config['composer_autoload'] is set to TRUE but C:\xampp\htdocs\Aconnect_ci3\application\vendor/autoload.php was not found.
+INFO - 2026-01-28 07:22:13 --> Config Class Initialized
+INFO - 2026-01-28 07:22:13 --> Hooks Class Initialized
+DEBUG - 2026-01-28 07:22:13 --> UTF-8 Support Enabled
+INFO - 2026-01-28 07:22:13 --> Utf8 Class Initialized
+INFO - 2026-01-28 07:22:13 --> URI Class Initialized
+INFO - 2026-01-28 07:22:13 --> Router Class Initialized
+INFO - 2026-01-28 07:22:13 --> Output Class Initialized
+INFO - 2026-01-28 07:22:13 --> Security Class Initialized
+DEBUG - 2026-01-28 07:22:13 --> Global POST, GET and COOKIE data sanitized
+INFO - 2026-01-28 07:22:13 --> Input Class Initialized
+INFO - 2026-01-28 07:22:13 --> Language Class Initialized
+INFO - 2026-01-28 07:22:13 --> Loader Class Initialized
+INFO - 2026-01-28 07:22:13 --> Helper loaded: url_helper
+INFO - 2026-01-28 07:22:13 --> Helper loaded: file_helper
+INFO - 2026-01-28 07:22:13 --> Helper loaded: html_helper
+INFO - 2026-01-28 07:22:13 --> Database Driver Class Initialized
+INFO - 2026-01-28 07:22:14 --> Session: Class initialized using 'files' driver.
+INFO - 2026-01-28 07:22:14 --> Helper loaded: form_helper
+INFO - 2026-01-28 07:22:14 --> Form Validation Class Initialized
+INFO - 2026-01-28 07:22:14 --> User Agent Class Initialized
+INFO - 2026-01-28 07:22:14 --> Language file loaded: language/english/pagination_lang.php
+INFO - 2026-01-28 07:22:14 --> Pagination Class Initialized
+INFO - 2026-01-28 07:22:14 --> Controller Class Initialized
+INFO - 2026-01-28 07:22:14 --> Model "Event_model" initialized
+DEBUG - 2026-01-28 07:22:14 --> Session class already loaded. Second attempt ignored.
+INFO - 2026-01-28 07:22:14 --> Helper loaded: date_helper
+INFO - 2026-01-28 07:22:14 --> File loaded: C:\xampp\htdocs\Aconnect_ci3\application\views\__header.php
+INFO - 2026-01-28 07:22:14 --> File loaded: C:\xampp\htdocs\Aconnect_ci3\application\views\user/events_previous.php
+INFO - 2026-01-28 07:22:14 --> File loaded: C:\xampp\htdocs\Aconnect_ci3\application\views\__footer.php
+INFO - 2026-01-28 07:22:14 --> Final output sent to browser
+DEBUG - 2026-01-28 07:22:14 --> Total execution time: 0.0654
+ERROR - 2026-01-28 07:22:14 --> $config['composer_autoload'] is set to TRUE but C:\xampp\htdocs\Aconnect_ci3\application\vendor/autoload.php was not found.
+ERROR - 2026-01-28 07:22:14 --> $config['composer_autoload'] is set to TRUE but C:\xampp\htdocs\Aconnect_ci3\application\vendor/autoload.php was not found.
+ERROR - 2026-01-28 07:22:14 --> $config['composer_autoload'] is set to TRUE but C:\xampp\htdocs\Aconnect_ci3\application\vendor/autoload.php was not found.
+INFO - 2026-01-28 07:22:14 --> Config Class Initialized
+INFO - 2026-01-28 07:22:14 --> Config Class Initialized
+INFO - 2026-01-28 07:22:14 --> Hooks Class Initialized
+INFO - 2026-01-28 07:22:14 --> Config Class Initialized
+ERROR - 2026-01-28 07:22:14 --> $config['composer_autoload'] is set to TRUE but C:\xampp\htdocs\Aconnect_ci3\application\vendor/autoload.php was not found.
+INFO - 2026-01-28 07:22:14 --> Hooks Class Initialized
+INFO - 2026-01-28 07:22:14 --> Hooks Class Initialized
+ERROR - 2026-01-28 07:22:14 --> $config['composer_autoload'] is set to TRUE but C:\xampp\htdocs\Aconnect_ci3\application\vendor/autoload.php was not found.
+INFO - 2026-01-28 07:22:14 --> Config Class Initialized
+DEBUG - 2026-01-28 07:22:14 --> UTF-8 Support Enabled
+INFO - 2026-01-28 07:22:14 --> Hooks Class Initialized
+INFO - 2026-01-28 07:22:14 --> Utf8 Class Initialized
+INFO - 2026-01-28 07:22:14 --> Config Class Initialized
+DEBUG - 2026-01-28 07:22:14 --> UTF-8 Support Enabled
+DEBUG - 2026-01-28 07:22:14 --> UTF-8 Support Enabled
+INFO - 2026-01-28 07:22:14 --> Hooks Class Initialized
+INFO - 2026-01-28 07:22:14 --> Utf8 Class Initialized
+INFO - 2026-01-28 07:22:14 --> Utf8 Class Initialized
+INFO - 2026-01-28 07:22:14 --> URI Class Initialized
+INFO - 2026-01-28 07:22:14 --> URI Class Initialized
+DEBUG - 2026-01-28 07:22:14 --> UTF-8 Support Enabled
+INFO - 2026-01-28 07:22:14 --> URI Class Initialized
+INFO - 2026-01-28 07:22:14 --> Router Class Initialized
+INFO - 2026-01-28 07:22:14 --> Utf8 Class Initialized
+DEBUG - 2026-01-28 07:22:14 --> UTF-8 Support Enabled
+INFO - 2026-01-28 07:22:14 --> Router Class Initialized
+INFO - 2026-01-28 07:22:14 --> Utf8 Class Initialized
+INFO - 2026-01-28 07:22:14 --> Router Class Initialized
+INFO - 2026-01-28 07:22:14 --> URI Class Initialized
+INFO - 2026-01-28 07:22:14 --> Output Class Initialized
+INFO - 2026-01-28 07:22:14 --> URI Class Initialized
+INFO - 2026-01-28 07:22:14 --> Output Class Initialized
+INFO - 2026-01-28 07:22:14 --> Router Class Initialized
+INFO - 2026-01-28 07:22:14 --> Security Class Initialized
+INFO - 2026-01-28 07:22:14 --> Output Class Initialized
+INFO - 2026-01-28 07:22:14 --> Router Class Initialized
+DEBUG - 2026-01-28 07:22:14 --> Global POST, GET and COOKIE data sanitized
+INFO - 2026-01-28 07:22:14 --> Security Class Initialized
+INFO - 2026-01-28 07:22:14 --> Security Class Initialized
+INFO - 2026-01-28 07:22:14 --> Input Class Initialized
+INFO - 2026-01-28 07:22:14 --> Output Class Initialized
+INFO - 2026-01-28 07:22:14 --> Output Class Initialized
+INFO - 2026-01-28 07:22:14 --> Language Class Initialized
+DEBUG - 2026-01-28 07:22:14 --> Global POST, GET and COOKIE data sanitized
+DEBUG - 2026-01-28 07:22:14 --> Global POST, GET and COOKIE data sanitized
+INFO - 2026-01-28 07:22:14 --> Input Class Initialized
+INFO - 2026-01-28 07:22:14 --> Input Class Initialized
+INFO - 2026-01-28 07:22:14 --> Security Class Initialized
+ERROR - 2026-01-28 07:22:14 --> 404 Page Not Found: Assets/uploads
+INFO - 2026-01-28 07:22:14 --> Security Class Initialized
+INFO - 2026-01-28 07:22:14 --> Language Class Initialized
+INFO - 2026-01-28 07:22:14 --> Language Class Initialized
+DEBUG - 2026-01-28 07:22:14 --> Global POST, GET and COOKIE data sanitized
+INFO - 2026-01-28 07:22:14 --> Input Class Initialized
+DEBUG - 2026-01-28 07:22:14 --> Global POST, GET and COOKIE data sanitized
+INFO - 2026-01-28 07:22:14 --> Input Class Initialized
+ERROR - 2026-01-28 07:22:14 --> 404 Page Not Found: Assets/uploads
+ERROR - 2026-01-28 07:22:14 --> 404 Page Not Found: Assets/uploads
+INFO - 2026-01-28 07:22:14 --> Language Class Initialized
+INFO - 2026-01-28 07:22:14 --> Language Class Initialized
+ERROR - 2026-01-28 07:22:14 --> 404 Page Not Found: Assets/uploads
+ERROR - 2026-01-28 07:22:14 --> 404 Page Not Found: Assets/uploads
+ERROR - 2026-01-28 07:22:14 --> $config['composer_autoload'] is set to TRUE but C:\xampp\htdocs\Aconnect_ci3\application\vendor/autoload.php was not found.
+INFO - 2026-01-28 07:22:14 --> Config Class Initialized
+INFO - 2026-01-28 07:22:14 --> Hooks Class Initialized
+DEBUG - 2026-01-28 07:22:14 --> UTF-8 Support Enabled
+INFO - 2026-01-28 07:22:14 --> Utf8 Class Initialized
+INFO - 2026-01-28 07:22:14 --> URI Class Initialized
+INFO - 2026-01-28 07:22:14 --> Router Class Initialized
+INFO - 2026-01-28 07:22:14 --> Output Class Initialized
+INFO - 2026-01-28 07:22:14 --> Security Class Initialized
+DEBUG - 2026-01-28 07:22:14 --> Global POST, GET and COOKIE data sanitized
+INFO - 2026-01-28 07:22:14 --> Input Class Initialized
+INFO - 2026-01-28 07:22:14 --> Language Class Initialized
+INFO - 2026-01-28 07:22:14 --> Loader Class Initialized
+INFO - 2026-01-28 07:22:14 --> Helper loaded: url_helper
+INFO - 2026-01-28 07:22:14 --> Helper loaded: file_helper
+INFO - 2026-01-28 07:22:14 --> Helper loaded: html_helper
+INFO - 2026-01-28 07:22:14 --> Database Driver Class Initialized
+INFO - 2026-01-28 07:22:14 --> Session: Class initialized using 'files' driver.
+INFO - 2026-01-28 07:22:14 --> Helper loaded: form_helper
+INFO - 2026-01-28 07:22:14 --> Form Validation Class Initialized
+INFO - 2026-01-28 07:22:14 --> User Agent Class Initialized
+INFO - 2026-01-28 07:22:14 --> Language file loaded: language/english/pagination_lang.php
+INFO - 2026-01-28 07:22:14 --> Pagination Class Initialized
+INFO - 2026-01-28 07:22:14 --> Controller Class Initialized
+INFO - 2026-01-28 07:22:14 --> Model "Alumni_model" initialized
+INFO - 2026-01-28 07:22:14 --> File loaded: C:\xampp\htdocs\Aconnect_ci3\application\views\__header.php
+INFO - 2026-01-28 07:22:14 --> File loaded: C:\xampp\htdocs\Aconnect_ci3\application\views\user/search_alumni.php
+INFO - 2026-01-28 07:22:14 --> File loaded: C:\xampp\htdocs\Aconnect_ci3\application\views\__footer.php
+INFO - 2026-01-28 07:22:14 --> Final output sent to browser
+DEBUG - 2026-01-28 07:22:14 --> Total execution time: 0.0292
+ERROR - 2026-01-28 07:22:15 --> $config['composer_autoload'] is set to TRUE but C:\xampp\htdocs\Aconnect_ci3\application\vendor/autoload.php was not found.
+INFO - 2026-01-28 07:22:15 --> Config Class Initialized
+INFO - 2026-01-28 07:22:15 --> Hooks Class Initialized
+DEBUG - 2026-01-28 07:22:15 --> UTF-8 Support Enabled
+INFO - 2026-01-28 07:22:15 --> Utf8 Class Initialized
+INFO - 2026-01-28 07:22:15 --> URI Class Initialized
+INFO - 2026-01-28 07:22:15 --> Router Class Initialized
+INFO - 2026-01-28 07:22:15 --> Output Class Initialized
+INFO - 2026-01-28 07:22:15 --> Security Class Initialized
+DEBUG - 2026-01-28 07:22:15 --> Global POST, GET and COOKIE data sanitized
+INFO - 2026-01-28 07:22:15 --> Input Class Initialized
+INFO - 2026-01-28 07:22:15 --> Language Class Initialized
+INFO - 2026-01-28 07:22:15 --> Loader Class Initialized
+INFO - 2026-01-28 07:22:15 --> Helper loaded: url_helper
+INFO - 2026-01-28 07:22:15 --> Helper loaded: file_helper
+INFO - 2026-01-28 07:22:15 --> Helper loaded: html_helper
+INFO - 2026-01-28 07:22:15 --> Database Driver Class Initialized
+INFO - 2026-01-28 07:22:15 --> Session: Class initialized using 'files' driver.
+INFO - 2026-01-28 07:22:15 --> Helper loaded: form_helper
+INFO - 2026-01-28 07:22:15 --> Form Validation Class Initialized
+INFO - 2026-01-28 07:22:15 --> User Agent Class Initialized
+INFO - 2026-01-28 07:22:15 --> Language file loaded: language/english/pagination_lang.php
+INFO - 2026-01-28 07:22:15 --> Pagination Class Initialized
+INFO - 2026-01-28 07:22:15 --> Controller Class Initialized
+INFO - 2026-01-28 07:22:15 --> Model "Alumni_model" initialized
+INFO - 2026-01-28 07:22:15 --> File loaded: C:\xampp\htdocs\Aconnect_ci3\application\views\__header.php
+INFO - 2026-01-28 07:22:15 --> File loaded: C:\xampp\htdocs\Aconnect_ci3\application\views\user/search_alumni.php
+INFO - 2026-01-28 07:22:15 --> File loaded: C:\xampp\htdocs\Aconnect_ci3\application\views\__footer.php
+INFO - 2026-01-28 07:22:15 --> Final output sent to browser
+DEBUG - 2026-01-28 07:22:15 --> Total execution time: 0.0261
+ERROR - 2026-01-28 07:22:15 --> $config['composer_autoload'] is set to TRUE but C:\xampp\htdocs\Aconnect_ci3\application\vendor/autoload.php was not found.
+INFO - 2026-01-28 07:22:15 --> Config Class Initialized
+INFO - 2026-01-28 07:22:15 --> Hooks Class Initialized
+DEBUG - 2026-01-28 07:22:15 --> UTF-8 Support Enabled
+INFO - 2026-01-28 07:22:15 --> Utf8 Class Initialized
+INFO - 2026-01-28 07:22:15 --> URI Class Initialized
+INFO - 2026-01-28 07:22:15 --> Router Class Initialized
+INFO - 2026-01-28 07:22:15 --> Output Class Initialized
+INFO - 2026-01-28 07:22:15 --> Security Class Initialized
+DEBUG - 2026-01-28 07:22:15 --> Global POST, GET and COOKIE data sanitized
+INFO - 2026-01-28 07:22:15 --> Input Class Initialized
+INFO - 2026-01-28 07:22:15 --> Language Class Initialized
+INFO - 2026-01-28 07:22:16 --> Loader Class Initialized
+INFO - 2026-01-28 07:22:16 --> Helper loaded: url_helper
+INFO - 2026-01-28 07:22:16 --> Helper loaded: file_helper
+INFO - 2026-01-28 07:22:16 --> Helper loaded: html_helper
+INFO - 2026-01-28 07:22:16 --> Database Driver Class Initialized
+INFO - 2026-01-28 07:22:16 --> Session: Class initialized using 'files' driver.
+INFO - 2026-01-28 07:22:16 --> Helper loaded: form_helper
+INFO - 2026-01-28 07:22:16 --> Form Validation Class Initialized
+INFO - 2026-01-28 07:22:16 --> User Agent Class Initialized
+INFO - 2026-01-28 07:22:16 --> Language file loaded: language/english/pagination_lang.php
+INFO - 2026-01-28 07:22:16 --> Pagination Class Initialized
+INFO - 2026-01-28 07:22:16 --> Controller Class Initialized
+INFO - 2026-01-28 07:22:16 --> Model "Alumni_model" initialized
+INFO - 2026-01-28 07:22:16 --> File loaded: C:\xampp\htdocs\Aconnect_ci3\application\views\__header.php
+INFO - 2026-01-28 07:22:16 --> File loaded: C:\xampp\htdocs\Aconnect_ci3\application\views\user/search_alumni.php
+INFO - 2026-01-28 07:22:16 --> File loaded: C:\xampp\htdocs\Aconnect_ci3\application\views\__footer.php
+INFO - 2026-01-28 07:22:16 --> Final output sent to browser
+DEBUG - 2026-01-28 07:22:16 --> Total execution time: 0.0266
+ERROR - 2026-01-28 07:22:16 --> $config['composer_autoload'] is set to TRUE but C:\xampp\htdocs\Aconnect_ci3\application\vendor/autoload.php was not found.
+INFO - 2026-01-28 07:22:16 --> Config Class Initialized
+INFO - 2026-01-28 07:22:16 --> Hooks Class Initialized
+DEBUG - 2026-01-28 07:22:16 --> UTF-8 Support Enabled
+INFO - 2026-01-28 07:22:16 --> Utf8 Class Initialized
+INFO - 2026-01-28 07:22:16 --> URI Class Initialized
+INFO - 2026-01-28 07:22:16 --> Router Class Initialized
+INFO - 2026-01-28 07:22:16 --> Output Class Initialized
+INFO - 2026-01-28 07:22:16 --> Security Class Initialized
+DEBUG - 2026-01-28 07:22:16 --> Global POST, GET and COOKIE data sanitized
+INFO - 2026-01-28 07:22:16 --> Input Class Initialized
+INFO - 2026-01-28 07:22:16 --> Language Class Initialized
+INFO - 2026-01-28 07:22:16 --> Loader Class Initialized
+INFO - 2026-01-28 07:22:16 --> Helper loaded: url_helper
+INFO - 2026-01-28 07:22:16 --> Helper loaded: file_helper
+INFO - 2026-01-28 07:22:16 --> Helper loaded: html_helper
+INFO - 2026-01-28 07:22:16 --> Database Driver Class Initialized
+INFO - 2026-01-28 07:22:16 --> Session: Class initialized using 'files' driver.
+INFO - 2026-01-28 07:22:16 --> Helper loaded: form_helper
+INFO - 2026-01-28 07:22:16 --> Form Validation Class Initialized
+INFO - 2026-01-28 07:22:16 --> User Agent Class Initialized
+INFO - 2026-01-28 07:22:16 --> Language file loaded: language/english/pagination_lang.php
+INFO - 2026-01-28 07:22:16 --> Pagination Class Initialized
+INFO - 2026-01-28 07:22:16 --> Controller Class Initialized
+INFO - 2026-01-28 07:22:16 --> Model "Alumni_model" initialized
+INFO - 2026-01-28 07:22:16 --> File loaded: C:\xampp\htdocs\Aconnect_ci3\application\views\__header.php
+INFO - 2026-01-28 07:22:16 --> File loaded: C:\xampp\htdocs\Aconnect_ci3\application\views\user/search_alumni.php
+INFO - 2026-01-28 07:22:16 --> File loaded: C:\xampp\htdocs\Aconnect_ci3\application\views\__footer.php
+INFO - 2026-01-28 07:22:16 --> Final output sent to browser
+DEBUG - 2026-01-28 07:22:16 --> Total execution time: 0.0266
+ERROR - 2026-01-28 07:22:18 --> $config['composer_autoload'] is set to TRUE but C:\xampp\htdocs\Aconnect_ci3\application\vendor/autoload.php was not found.
+INFO - 2026-01-28 07:22:18 --> Config Class Initialized
+INFO - 2026-01-28 07:22:18 --> Hooks Class Initialized
+DEBUG - 2026-01-28 07:22:18 --> UTF-8 Support Enabled
+INFO - 2026-01-28 07:22:18 --> Utf8 Class Initialized
+INFO - 2026-01-28 07:22:18 --> URI Class Initialized
+INFO - 2026-01-28 07:22:18 --> Router Class Initialized
+INFO - 2026-01-28 07:22:18 --> Output Class Initialized
+INFO - 2026-01-28 07:22:18 --> Security Class Initialized
+DEBUG - 2026-01-28 07:22:18 --> Global POST, GET and COOKIE data sanitized
+INFO - 2026-01-28 07:22:18 --> Input Class Initialized
+INFO - 2026-01-28 07:22:18 --> Language Class Initialized
+INFO - 2026-01-28 07:22:18 --> Loader Class Initialized
+INFO - 2026-01-28 07:22:18 --> Helper loaded: url_helper
+INFO - 2026-01-28 07:22:18 --> Helper loaded: file_helper
+INFO - 2026-01-28 07:22:18 --> Helper loaded: html_helper
+INFO - 2026-01-28 07:22:18 --> Database Driver Class Initialized
+INFO - 2026-01-28 07:22:18 --> Session: Class initialized using 'files' driver.
+INFO - 2026-01-28 07:22:18 --> Helper loaded: form_helper
+INFO - 2026-01-28 07:22:18 --> Form Validation Class Initialized
+INFO - 2026-01-28 07:22:18 --> User Agent Class Initialized
+INFO - 2026-01-28 07:22:18 --> Language file loaded: language/english/pagination_lang.php
+INFO - 2026-01-28 07:22:18 --> Pagination Class Initialized
+INFO - 2026-01-28 07:22:18 --> Controller Class Initialized
+INFO - 2026-01-28 07:22:18 --> Helper loaded: date_helper
+DEBUG - 2026-01-28 07:22:18 --> Session class already loaded. Second attempt ignored.
+INFO - 2026-01-28 07:22:18 --> Upload Class Initialized
+INFO - 2026-01-28 07:22:18 --> Model "Job_model" initialized
+INFO - 2026-01-28 07:22:18 --> File loaded: C:\xampp\htdocs\Aconnect_ci3\application\views\__header.php
+INFO - 2026-01-28 07:22:18 --> File loaded: C:\xampp\htdocs\Aconnect_ci3\application\views\user/jobs.php
+INFO - 2026-01-28 07:22:18 --> File loaded: C:\xampp\htdocs\Aconnect_ci3\application\views\__footer.php
+INFO - 2026-01-28 07:22:18 --> Final output sent to browser
+DEBUG - 2026-01-28 07:22:18 --> Total execution time: 0.0283
+ERROR - 2026-01-28 07:22:19 --> $config['composer_autoload'] is set to TRUE but C:\xampp\htdocs\Aconnect_ci3\application\vendor/autoload.php was not found.
+INFO - 2026-01-28 07:22:19 --> Config Class Initialized
+INFO - 2026-01-28 07:22:19 --> Hooks Class Initialized
+DEBUG - 2026-01-28 07:22:19 --> UTF-8 Support Enabled
+INFO - 2026-01-28 07:22:19 --> Utf8 Class Initialized
+INFO - 2026-01-28 07:22:19 --> URI Class Initialized
+INFO - 2026-01-28 07:22:19 --> Router Class Initialized
+INFO - 2026-01-28 07:22:19 --> Output Class Initialized
+INFO - 2026-01-28 07:22:19 --> Security Class Initialized
+DEBUG - 2026-01-28 07:22:19 --> Global POST, GET and COOKIE data sanitized
+INFO - 2026-01-28 07:22:19 --> Input Class Initialized
+INFO - 2026-01-28 07:22:19 --> Language Class Initialized
+INFO - 2026-01-28 07:22:19 --> Loader Class Initialized
+INFO - 2026-01-28 07:22:19 --> Helper loaded: url_helper
+INFO - 2026-01-28 07:22:19 --> Helper loaded: file_helper
+INFO - 2026-01-28 07:22:19 --> Helper loaded: html_helper
+INFO - 2026-01-28 07:22:19 --> Database Driver Class Initialized
+INFO - 2026-01-28 07:22:19 --> Session: Class initialized using 'files' driver.
+INFO - 2026-01-28 07:22:19 --> Helper loaded: form_helper
+INFO - 2026-01-28 07:22:19 --> Form Validation Class Initialized
+INFO - 2026-01-28 07:22:19 --> User Agent Class Initialized
+INFO - 2026-01-28 07:22:19 --> Language file loaded: language/english/pagination_lang.php
+INFO - 2026-01-28 07:22:19 --> Pagination Class Initialized
+INFO - 2026-01-28 07:22:19 --> Controller Class Initialized
+INFO - 2026-01-28 07:22:19 --> Model "Alumni_model" initialized
+INFO - 2026-01-28 07:22:19 --> File loaded: C:\xampp\htdocs\Aconnect_ci3\application\views\__header.php
+INFO - 2026-01-28 07:22:19 --> File loaded: C:\xampp\htdocs\Aconnect_ci3\application\views\user/chat_list.php
+INFO - 2026-01-28 07:22:19 --> File loaded: C:\xampp\htdocs\Aconnect_ci3\application\views\__footer.php
+INFO - 2026-01-28 07:22:19 --> Final output sent to browser
+DEBUG - 2026-01-28 07:22:19 --> Total execution time: 0.0349
+ERROR - 2026-01-28 07:22:19 --> $config['composer_autoload'] is set to TRUE but C:\xampp\htdocs\Aconnect_ci3\application\vendor/autoload.php was not found.
+INFO - 2026-01-28 07:22:19 --> Config Class Initialized
+INFO - 2026-01-28 07:22:19 --> Hooks Class Initialized
+DEBUG - 2026-01-28 07:22:19 --> UTF-8 Support Enabled
+INFO - 2026-01-28 07:22:19 --> Utf8 Class Initialized
+INFO - 2026-01-28 07:22:19 --> URI Class Initialized
+INFO - 2026-01-28 07:22:19 --> Router Class Initialized
+INFO - 2026-01-28 07:22:19 --> Output Class Initialized
+INFO - 2026-01-28 07:22:19 --> Security Class Initialized
+DEBUG - 2026-01-28 07:22:19 --> Global POST, GET and COOKIE data sanitized
+INFO - 2026-01-28 07:22:19 --> Input Class Initialized
+INFO - 2026-01-28 07:22:19 --> Language Class Initialized
+INFO - 2026-01-28 07:22:19 --> Loader Class Initialized
+INFO - 2026-01-28 07:22:19 --> Helper loaded: url_helper
+INFO - 2026-01-28 07:22:19 --> Helper loaded: file_helper
+INFO - 2026-01-28 07:22:19 --> Helper loaded: html_helper
+INFO - 2026-01-28 07:22:19 --> Database Driver Class Initialized
+INFO - 2026-01-28 07:22:19 --> Session: Class initialized using 'files' driver.
+INFO - 2026-01-28 07:22:19 --> Helper loaded: form_helper
+INFO - 2026-01-28 07:22:19 --> Form Validation Class Initialized
+INFO - 2026-01-28 07:22:19 --> User Agent Class Initialized
+INFO - 2026-01-28 07:22:19 --> Language file loaded: language/english/pagination_lang.php
+INFO - 2026-01-28 07:22:19 --> Pagination Class Initialized
+INFO - 2026-01-28 07:22:19 --> Controller Class Initialized
+INFO - 2026-01-28 07:22:19 --> Helper loaded: date_helper
+DEBUG - 2026-01-28 07:22:19 --> Session class already loaded. Second attempt ignored.
+INFO - 2026-01-28 07:22:19 --> Upload Class Initialized
+INFO - 2026-01-28 07:22:19 --> Model "Job_model" initialized
+INFO - 2026-01-28 07:22:19 --> File loaded: C:\xampp\htdocs\Aconnect_ci3\application\views\__header.php
+INFO - 2026-01-28 07:22:19 --> File loaded: C:\xampp\htdocs\Aconnect_ci3\application\views\user/jobs.php
+INFO - 2026-01-28 07:22:19 --> File loaded: C:\xampp\htdocs\Aconnect_ci3\application\views\__footer.php
+INFO - 2026-01-28 07:22:19 --> Final output sent to browser
+DEBUG - 2026-01-28 07:22:19 --> Total execution time: 0.0275
+ERROR - 2026-01-28 07:22:20 --> $config['composer_autoload'] is set to TRUE but C:\xampp\htdocs\Aconnect_ci3\application\vendor/autoload.php was not found.
+INFO - 2026-01-28 07:22:20 --> Config Class Initialized
+INFO - 2026-01-28 07:22:20 --> Hooks Class Initialized
+DEBUG - 2026-01-28 07:22:20 --> UTF-8 Support Enabled
+INFO - 2026-01-28 07:22:20 --> Utf8 Class Initialized
+INFO - 2026-01-28 07:22:20 --> URI Class Initialized
+INFO - 2026-01-28 07:22:20 --> Router Class Initialized
+INFO - 2026-01-28 07:22:20 --> Output Class Initialized
+INFO - 2026-01-28 07:22:20 --> Security Class Initialized
+DEBUG - 2026-01-28 07:22:20 --> Global POST, GET and COOKIE data sanitized
+INFO - 2026-01-28 07:22:20 --> Input Class Initialized
+INFO - 2026-01-28 07:22:20 --> Language Class Initialized
+INFO - 2026-01-28 07:22:20 --> Loader Class Initialized
+INFO - 2026-01-28 07:22:20 --> Helper loaded: url_helper
+INFO - 2026-01-28 07:22:20 --> Helper loaded: file_helper
+INFO - 2026-01-28 07:22:20 --> Helper loaded: html_helper
+INFO - 2026-01-28 07:22:20 --> Database Driver Class Initialized
+INFO - 2026-01-28 07:22:20 --> Session: Class initialized using 'files' driver.
+INFO - 2026-01-28 07:22:20 --> Helper loaded: form_helper
+INFO - 2026-01-28 07:22:20 --> Form Validation Class Initialized
+INFO - 2026-01-28 07:22:20 --> User Agent Class Initialized
+INFO - 2026-01-28 07:22:20 --> Language file loaded: language/english/pagination_lang.php
+INFO - 2026-01-28 07:22:20 --> Pagination Class Initialized
+INFO - 2026-01-28 07:22:20 --> Controller Class Initialized
+INFO - 2026-01-28 07:22:20 --> Helper loaded: date_helper
+DEBUG - 2026-01-28 07:22:20 --> Session class already loaded. Second attempt ignored.
+INFO - 2026-01-28 07:22:20 --> Upload Class Initialized
+INFO - 2026-01-28 07:22:20 --> Model "Job_model" initialized
+INFO - 2026-01-28 07:22:20 --> File loaded: C:\xampp\htdocs\Aconnect_ci3\application\views\__header.php
+INFO - 2026-01-28 07:22:20 --> File loaded: C:\xampp\htdocs\Aconnect_ci3\application\views\user/jobs.php
+INFO - 2026-01-28 07:22:20 --> File loaded: C:\xampp\htdocs\Aconnect_ci3\application\views\__footer.php
+INFO - 2026-01-28 07:22:20 --> Final output sent to browser
+DEBUG - 2026-01-28 07:22:20 --> Total execution time: 0.0278
+ERROR - 2026-01-28 07:22:20 --> $config['composer_autoload'] is set to TRUE but C:\xampp\htdocs\Aconnect_ci3\application\vendor/autoload.php was not found.
+INFO - 2026-01-28 07:22:20 --> Config Class Initialized
+INFO - 2026-01-28 07:22:20 --> Hooks Class Initialized
+DEBUG - 2026-01-28 07:22:20 --> UTF-8 Support Enabled
+INFO - 2026-01-28 07:22:20 --> Utf8 Class Initialized
+INFO - 2026-01-28 07:22:20 --> URI Class Initialized
+INFO - 2026-01-28 07:22:20 --> Router Class Initialized
+INFO - 2026-01-28 07:22:20 --> Output Class Initialized
+INFO - 2026-01-28 07:22:20 --> Security Class Initialized
+DEBUG - 2026-01-28 07:22:20 --> Global POST, GET and COOKIE data sanitized
+INFO - 2026-01-28 07:22:20 --> Input Class Initialized
+INFO - 2026-01-28 07:22:20 --> Language Class Initialized
+INFO - 2026-01-28 07:22:20 --> Loader Class Initialized
+INFO - 2026-01-28 07:22:20 --> Helper loaded: url_helper
+INFO - 2026-01-28 07:22:20 --> Helper loaded: file_helper
+INFO - 2026-01-28 07:22:20 --> Helper loaded: html_helper
+INFO - 2026-01-28 07:22:20 --> Database Driver Class Initialized
+INFO - 2026-01-28 07:22:20 --> Session: Class initialized using 'files' driver.
+INFO - 2026-01-28 07:22:20 --> Helper loaded: form_helper
+INFO - 2026-01-28 07:22:20 --> Form Validation Class Initialized
+INFO - 2026-01-28 07:22:20 --> User Agent Class Initialized
+INFO - 2026-01-28 07:22:20 --> Language file loaded: language/english/pagination_lang.php
+INFO - 2026-01-28 07:22:20 --> Pagination Class Initialized
+INFO - 2026-01-28 07:22:20 --> Controller Class Initialized
+INFO - 2026-01-28 07:22:20 --> Helper loaded: date_helper
+DEBUG - 2026-01-28 07:22:20 --> Session class already loaded. Second attempt ignored.
+INFO - 2026-01-28 07:22:20 --> Upload Class Initialized
+INFO - 2026-01-28 07:22:20 --> Model "Job_model" initialized
+INFO - 2026-01-28 07:22:20 --> File loaded: C:\xampp\htdocs\Aconnect_ci3\application\views\__header.php
+INFO - 2026-01-28 07:22:20 --> File loaded: C:\xampp\htdocs\Aconnect_ci3\application\views\user/jobs.php
+INFO - 2026-01-28 07:22:20 --> File loaded: C:\xampp\htdocs\Aconnect_ci3\application\views\__footer.php
+INFO - 2026-01-28 07:22:20 --> Final output sent to browser
+DEBUG - 2026-01-28 07:22:20 --> Total execution time: 0.0291
+ERROR - 2026-01-28 07:22:21 --> $config['composer_autoload'] is set to TRUE but C:\xampp\htdocs\Aconnect_ci3\application\vendor/autoload.php was not found.
+INFO - 2026-01-28 07:22:21 --> Config Class Initialized
+INFO - 2026-01-28 07:22:21 --> Hooks Class Initialized
+DEBUG - 2026-01-28 07:22:21 --> UTF-8 Support Enabled
+INFO - 2026-01-28 07:22:21 --> Utf8 Class Initialized
+INFO - 2026-01-28 07:22:21 --> URI Class Initialized
+INFO - 2026-01-28 07:22:21 --> Router Class Initialized
+INFO - 2026-01-28 07:22:21 --> Output Class Initialized
+INFO - 2026-01-28 07:22:21 --> Security Class Initialized
+DEBUG - 2026-01-28 07:22:21 --> Global POST, GET and COOKIE data sanitized
+INFO - 2026-01-28 07:22:21 --> Input Class Initialized
+INFO - 2026-01-28 07:22:21 --> Language Class Initialized
+INFO - 2026-01-28 07:22:21 --> Loader Class Initialized
+INFO - 2026-01-28 07:22:21 --> Helper loaded: url_helper
+INFO - 2026-01-28 07:22:21 --> Helper loaded: file_helper
+INFO - 2026-01-28 07:22:21 --> Helper loaded: html_helper
+INFO - 2026-01-28 07:22:21 --> Database Driver Class Initialized
+INFO - 2026-01-28 07:22:21 --> Session: Class initialized using 'files' driver.
+INFO - 2026-01-28 07:22:21 --> Helper loaded: form_helper
+INFO - 2026-01-28 07:22:21 --> Form Validation Class Initialized
+INFO - 2026-01-28 07:22:21 --> User Agent Class Initialized
+INFO - 2026-01-28 07:22:21 --> Language file loaded: language/english/pagination_lang.php
+INFO - 2026-01-28 07:22:21 --> Pagination Class Initialized
+INFO - 2026-01-28 07:22:21 --> Controller Class Initialized
+INFO - 2026-01-28 07:22:21 --> Model "Alumni_model" initialized
+INFO - 2026-01-28 07:22:21 --> File loaded: C:\xampp\htdocs\Aconnect_ci3\application\views\__header.php
+INFO - 2026-01-28 07:22:21 --> File loaded: C:\xampp\htdocs\Aconnect_ci3\application\views\user/chat_list.php
+INFO - 2026-01-28 07:22:21 --> File loaded: C:\xampp\htdocs\Aconnect_ci3\application\views\__footer.php
+INFO - 2026-01-28 07:22:21 --> Final output sent to browser
+DEBUG - 2026-01-28 07:22:21 --> Total execution time: 0.0398
+ERROR - 2026-01-28 07:22:22 --> $config['composer_autoload'] is set to TRUE but C:\xampp\htdocs\Aconnect_ci3\application\vendor/autoload.php was not found.
+INFO - 2026-01-28 07:22:22 --> Config Class Initialized
+INFO - 2026-01-28 07:22:22 --> Hooks Class Initialized
+DEBUG - 2026-01-28 07:22:22 --> UTF-8 Support Enabled
+INFO - 2026-01-28 07:22:22 --> Utf8 Class Initialized
+INFO - 2026-01-28 07:22:22 --> URI Class Initialized
+INFO - 2026-01-28 07:22:22 --> Router Class Initialized
+INFO - 2026-01-28 07:22:22 --> Output Class Initialized
+INFO - 2026-01-28 07:22:22 --> Security Class Initialized
+DEBUG - 2026-01-28 07:22:22 --> Global POST, GET and COOKIE data sanitized
+INFO - 2026-01-28 07:22:22 --> Input Class Initialized
+INFO - 2026-01-28 07:22:22 --> Language Class Initialized
+INFO - 2026-01-28 07:22:22 --> Loader Class Initialized
+INFO - 2026-01-28 07:22:22 --> Helper loaded: url_helper
+INFO - 2026-01-28 07:22:22 --> Helper loaded: file_helper
+INFO - 2026-01-28 07:22:22 --> Helper loaded: html_helper
+INFO - 2026-01-28 07:22:22 --> Database Driver Class Initialized
+INFO - 2026-01-28 07:22:23 --> Session: Class initialized using 'files' driver.
+INFO - 2026-01-28 07:22:23 --> Helper loaded: form_helper
+INFO - 2026-01-28 07:22:23 --> Form Validation Class Initialized
+INFO - 2026-01-28 07:22:23 --> User Agent Class Initialized
+INFO - 2026-01-28 07:22:23 --> Language file loaded: language/english/pagination_lang.php
+INFO - 2026-01-28 07:22:23 --> Pagination Class Initialized
+INFO - 2026-01-28 07:22:23 --> Controller Class Initialized
+INFO - 2026-01-28 07:22:23 --> Model "Event_model" initialized
+DEBUG - 2026-01-28 07:22:23 --> Session class already loaded. Second attempt ignored.
+INFO - 2026-01-28 07:22:23 --> Helper loaded: date_helper
+INFO - 2026-01-28 07:22:23 --> File loaded: C:\xampp\htdocs\Aconnect_ci3\application\views\__header.php
+INFO - 2026-01-28 07:22:23 --> File loaded: C:\xampp\htdocs\Aconnect_ci3\application\views\user/events.php
+INFO - 2026-01-28 07:22:23 --> File loaded: C:\xampp\htdocs\Aconnect_ci3\application\views\__footer.php
+INFO - 2026-01-28 07:22:23 --> Final output sent to browser
+DEBUG - 2026-01-28 07:22:23 --> Total execution time: 0.0477
+ERROR - 2026-01-28 07:22:23 --> $config['composer_autoload'] is set to TRUE but C:\xampp\htdocs\Aconnect_ci3\application\vendor/autoload.php was not found.
+INFO - 2026-01-28 07:22:23 --> Config Class Initialized
+INFO - 2026-01-28 07:22:23 --> Hooks Class Initialized
+DEBUG - 2026-01-28 07:22:23 --> UTF-8 Support Enabled
+INFO - 2026-01-28 07:22:23 --> Utf8 Class Initialized
+INFO - 2026-01-28 07:22:23 --> URI Class Initialized
+INFO - 2026-01-28 07:22:23 --> Router Class Initialized
+INFO - 2026-01-28 07:22:23 --> Output Class Initialized
+INFO - 2026-01-28 07:22:23 --> Security Class Initialized
+DEBUG - 2026-01-28 07:22:23 --> Global POST, GET and COOKIE data sanitized
+INFO - 2026-01-28 07:22:23 --> Input Class Initialized
+INFO - 2026-01-28 07:22:23 --> Language Class Initialized
+INFO - 2026-01-28 07:22:23 --> Loader Class Initialized
+INFO - 2026-01-28 07:22:23 --> Helper loaded: url_helper
+INFO - 2026-01-28 07:22:23 --> Helper loaded: file_helper
+INFO - 2026-01-28 07:22:23 --> Helper loaded: html_helper
+INFO - 2026-01-28 07:22:23 --> Database Driver Class Initialized
+INFO - 2026-01-28 07:22:23 --> Session: Class initialized using 'files' driver.
+INFO - 2026-01-28 07:22:23 --> Helper loaded: form_helper
+INFO - 2026-01-28 07:22:23 --> Form Validation Class Initialized
+INFO - 2026-01-28 07:22:23 --> User Agent Class Initialized
+INFO - 2026-01-28 07:22:23 --> Language file loaded: language/english/pagination_lang.php
+INFO - 2026-01-28 07:22:23 --> Pagination Class Initialized
+INFO - 2026-01-28 07:22:23 --> Controller Class Initialized
+INFO - 2026-01-28 07:22:23 --> Model "Event_model" initialized
+DEBUG - 2026-01-28 07:22:23 --> Session class already loaded. Second attempt ignored.
+INFO - 2026-01-28 07:22:23 --> Helper loaded: date_helper
+INFO - 2026-01-28 07:22:23 --> File loaded: C:\xampp\htdocs\Aconnect_ci3\application\views\__header.php
+INFO - 2026-01-28 07:22:23 --> File loaded: C:\xampp\htdocs\Aconnect_ci3\application\views\user/events_previous.php
+INFO - 2026-01-28 07:22:23 --> File loaded: C:\xampp\htdocs\Aconnect_ci3\application\views\__footer.php
+INFO - 2026-01-28 07:22:23 --> Final output sent to browser
+DEBUG - 2026-01-28 07:22:23 --> Total execution time: 0.0545
+ERROR - 2026-01-28 07:22:24 --> $config['composer_autoload'] is set to TRUE but C:\xampp\htdocs\Aconnect_ci3\application\vendor/autoload.php was not found.
+ERROR - 2026-01-28 07:22:24 --> $config['composer_autoload'] is set to TRUE but C:\xampp\htdocs\Aconnect_ci3\application\vendor/autoload.php was not found.
+INFO - 2026-01-28 07:22:24 --> Config Class Initialized
+INFO - 2026-01-28 07:22:24 --> Hooks Class Initialized
+ERROR - 2026-01-28 07:22:24 --> $config['composer_autoload'] is set to TRUE but C:\xampp\htdocs\Aconnect_ci3\application\vendor/autoload.php was not found.
+ERROR - 2026-01-28 07:22:24 --> $config['composer_autoload'] is set to TRUE but C:\xampp\htdocs\Aconnect_ci3\application\vendor/autoload.php was not found.
+INFO - 2026-01-28 07:22:24 --> Config Class Initialized
+INFO - 2026-01-28 07:22:24 --> Hooks Class Initialized
+ERROR - 2026-01-28 07:22:24 --> $config['composer_autoload'] is set to TRUE but C:\xampp\htdocs\Aconnect_ci3\application\vendor/autoload.php was not found.
+DEBUG - 2026-01-28 07:22:24 --> UTF-8 Support Enabled
+INFO - 2026-01-28 07:22:24 --> Config Class Initialized
+INFO - 2026-01-28 07:22:24 --> Utf8 Class Initialized
+INFO - 2026-01-28 07:22:24 --> Hooks Class Initialized
+INFO - 2026-01-28 07:22:24 --> Config Class Initialized
+INFO - 2026-01-28 07:22:24 --> Hooks Class Initialized
+DEBUG - 2026-01-28 07:22:24 --> UTF-8 Support Enabled
+INFO - 2026-01-28 07:22:24 --> URI Class Initialized
+INFO - 2026-01-28 07:22:24 --> Config Class Initialized
+INFO - 2026-01-28 07:22:24 --> Utf8 Class Initialized
+INFO - 2026-01-28 07:22:24 --> Hooks Class Initialized
+INFO - 2026-01-28 07:22:24 --> URI Class Initialized
+DEBUG - 2026-01-28 07:22:24 --> UTF-8 Support Enabled
+INFO - 2026-01-28 07:22:24 --> Router Class Initialized
+DEBUG - 2026-01-28 07:22:24 --> UTF-8 Support Enabled
+INFO - 2026-01-28 07:22:24 --> Utf8 Class Initialized
+INFO - 2026-01-28 07:22:24 --> Utf8 Class Initialized
+INFO - 2026-01-28 07:22:24 --> Router Class Initialized
+DEBUG - 2026-01-28 07:22:24 --> UTF-8 Support Enabled
+INFO - 2026-01-28 07:22:24 --> Output Class Initialized
+INFO - 2026-01-28 07:22:24 --> Utf8 Class Initialized
+INFO - 2026-01-28 07:22:24 --> URI Class Initialized
+INFO - 2026-01-28 07:22:24 --> URI Class Initialized
+INFO - 2026-01-28 07:22:24 --> Output Class Initialized
+INFO - 2026-01-28 07:22:24 --> URI Class Initialized
+INFO - 2026-01-28 07:22:24 --> Security Class Initialized
+INFO - 2026-01-28 07:22:24 --> Router Class Initialized
+INFO - 2026-01-28 07:22:24 --> Router Class Initialized
+INFO - 2026-01-28 07:22:24 --> Security Class Initialized
+DEBUG - 2026-01-28 07:22:24 --> Global POST, GET and COOKIE data sanitized
+INFO - 2026-01-28 07:22:24 --> Router Class Initialized
+INFO - 2026-01-28 07:22:24 --> Input Class Initialized
+DEBUG - 2026-01-28 07:22:24 --> Global POST, GET and COOKIE data sanitized
+INFO - 2026-01-28 07:22:24 --> Output Class Initialized
+INFO - 2026-01-28 07:22:24 --> Language Class Initialized
+INFO - 2026-01-28 07:22:24 --> Output Class Initialized
+INFO - 2026-01-28 07:22:24 --> Input Class Initialized
+INFO - 2026-01-28 07:22:24 --> Output Class Initialized
+ERROR - 2026-01-28 07:22:24 --> 404 Page Not Found: Assets/uploads
+INFO - 2026-01-28 07:22:24 --> Language Class Initialized
+INFO - 2026-01-28 07:22:24 --> Security Class Initialized
+INFO - 2026-01-28 07:22:24 --> Security Class Initialized
+INFO - 2026-01-28 07:22:24 --> Security Class Initialized
+ERROR - 2026-01-28 07:22:24 --> 404 Page Not Found: Assets/uploads
+DEBUG - 2026-01-28 07:22:24 --> Global POST, GET and COOKIE data sanitized
+DEBUG - 2026-01-28 07:22:24 --> Global POST, GET and COOKIE data sanitized
+INFO - 2026-01-28 07:22:24 --> Input Class Initialized
+DEBUG - 2026-01-28 07:22:24 --> Global POST, GET and COOKIE data sanitized
+INFO - 2026-01-28 07:22:24 --> Input Class Initialized
+INFO - 2026-01-28 07:22:24 --> Input Class Initialized
+INFO - 2026-01-28 07:22:24 --> Language Class Initialized
+INFO - 2026-01-28 07:22:24 --> Language Class Initialized
+INFO - 2026-01-28 07:22:24 --> Language Class Initialized
+ERROR - 2026-01-28 07:22:24 --> 404 Page Not Found: Assets/uploads
+ERROR - 2026-01-28 07:22:24 --> 404 Page Not Found: Assets/uploads
+ERROR - 2026-01-28 07:22:24 --> 404 Page Not Found: Assets/uploads
+ERROR - 2026-01-28 07:22:24 --> $config['composer_autoload'] is set to TRUE but C:\xampp\htdocs\Aconnect_ci3\application\vendor/autoload.php was not found.
+INFO - 2026-01-28 07:22:24 --> Config Class Initialized
+INFO - 2026-01-28 07:22:24 --> Hooks Class Initialized
+DEBUG - 2026-01-28 07:22:24 --> UTF-8 Support Enabled
+INFO - 2026-01-28 07:22:24 --> Utf8 Class Initialized
+INFO - 2026-01-28 07:22:24 --> URI Class Initialized
+INFO - 2026-01-28 07:22:24 --> Router Class Initialized
+INFO - 2026-01-28 07:22:24 --> Output Class Initialized
+INFO - 2026-01-28 07:22:24 --> Security Class Initialized
+DEBUG - 2026-01-28 07:22:24 --> Global POST, GET and COOKIE data sanitized
+INFO - 2026-01-28 07:22:24 --> Input Class Initialized
+INFO - 2026-01-28 07:22:24 --> Language Class Initialized
+INFO - 2026-01-28 07:22:24 --> Loader Class Initialized
+INFO - 2026-01-28 07:22:24 --> Helper loaded: url_helper
+INFO - 2026-01-28 07:22:24 --> Helper loaded: file_helper
+INFO - 2026-01-28 07:22:24 --> Helper loaded: html_helper
+INFO - 2026-01-28 07:22:24 --> Database Driver Class Initialized
+INFO - 2026-01-28 07:22:24 --> Session: Class initialized using 'files' driver.
+INFO - 2026-01-28 07:22:24 --> Helper loaded: form_helper
+INFO - 2026-01-28 07:22:24 --> Form Validation Class Initialized
+INFO - 2026-01-28 07:22:24 --> User Agent Class Initialized
+INFO - 2026-01-28 07:22:24 --> Language file loaded: language/english/pagination_lang.php
+INFO - 2026-01-28 07:22:24 --> Pagination Class Initialized
+INFO - 2026-01-28 07:22:24 --> Controller Class Initialized
+INFO - 2026-01-28 07:22:24 --> Model "Post_model" initialized
+INFO - 2026-01-28 07:22:24 --> File loaded: C:\xampp\htdocs\Aconnect_ci3\application\views\__header.php
+INFO - 2026-01-28 07:22:24 --> Helper loaded: text_helper
+INFO - 2026-01-28 07:22:24 --> File loaded: C:\xampp\htdocs\Aconnect_ci3\application\views\user/posts_view.php
+INFO - 2026-01-28 07:22:24 --> File loaded: C:\xampp\htdocs\Aconnect_ci3\application\views\__footer.php
+INFO - 2026-01-28 07:22:24 --> Final output sent to browser
+DEBUG - 2026-01-28 07:22:24 --> Total execution time: 0.0298
+ERROR - 2026-01-28 07:22:24 --> $config['composer_autoload'] is set to TRUE but C:\xampp\htdocs\Aconnect_ci3\application\vendor/autoload.php was not found.
+INFO - 2026-01-28 07:22:24 --> Config Class Initialized
+INFO - 2026-01-28 07:22:24 --> Hooks Class Initialized
+DEBUG - 2026-01-28 07:22:24 --> UTF-8 Support Enabled
+INFO - 2026-01-28 07:22:24 --> Utf8 Class Initialized
+INFO - 2026-01-28 07:22:24 --> URI Class Initialized
+INFO - 2026-01-28 07:22:24 --> Router Class Initialized
+INFO - 2026-01-28 07:22:24 --> Output Class Initialized
+INFO - 2026-01-28 07:22:24 --> Security Class Initialized
+DEBUG - 2026-01-28 07:22:24 --> Global POST, GET and COOKIE data sanitized
+INFO - 2026-01-28 07:22:24 --> Input Class Initialized
+INFO - 2026-01-28 07:22:24 --> Language Class Initialized
+ERROR - 2026-01-28 07:22:24 --> 404 Page Not Found: Assets/uploads
+ERROR - 2026-01-28 07:22:26 --> $config['composer_autoload'] is set to TRUE but C:\xampp\htdocs\Aconnect_ci3\application\vendor/autoload.php was not found.
+INFO - 2026-01-28 07:22:26 --> Config Class Initialized
+INFO - 2026-01-28 07:22:26 --> Hooks Class Initialized
+DEBUG - 2026-01-28 07:22:26 --> UTF-8 Support Enabled
+INFO - 2026-01-28 07:22:26 --> Utf8 Class Initialized
+INFO - 2026-01-28 07:22:26 --> URI Class Initialized
+INFO - 2026-01-28 07:22:26 --> Router Class Initialized
+INFO - 2026-01-28 07:22:26 --> Output Class Initialized
+INFO - 2026-01-28 07:22:26 --> Security Class Initialized
+DEBUG - 2026-01-28 07:22:26 --> Global POST, GET and COOKIE data sanitized
+INFO - 2026-01-28 07:22:26 --> Input Class Initialized
+INFO - 2026-01-28 07:22:26 --> Language Class Initialized
+INFO - 2026-01-28 07:22:26 --> Loader Class Initialized
+INFO - 2026-01-28 07:22:26 --> Helper loaded: url_helper
+INFO - 2026-01-28 07:22:26 --> Helper loaded: file_helper
+INFO - 2026-01-28 07:22:26 --> Helper loaded: html_helper
+INFO - 2026-01-28 07:22:26 --> Database Driver Class Initialized
+INFO - 2026-01-28 07:22:26 --> Session: Class initialized using 'files' driver.
+INFO - 2026-01-28 07:22:26 --> Helper loaded: form_helper
+INFO - 2026-01-28 07:22:26 --> Form Validation Class Initialized
+INFO - 2026-01-28 07:22:26 --> User Agent Class Initialized
+INFO - 2026-01-28 07:22:26 --> Language file loaded: language/english/pagination_lang.php
+INFO - 2026-01-28 07:22:26 --> Pagination Class Initialized
+INFO - 2026-01-28 07:22:26 --> Controller Class Initialized
+INFO - 2026-01-28 07:22:26 --> Model "Alumni_model" initialized
+INFO - 2026-01-28 07:22:26 --> Final output sent to browser
+DEBUG - 2026-01-28 07:22:26 --> Total execution time: 0.0233
+ERROR - 2026-01-28 07:23:15 --> $config['composer_autoload'] is set to TRUE but C:\xampp\htdocs\Aconnect_ci3\application\vendor/autoload.php was not found.
+INFO - 2026-01-28 07:23:15 --> Config Class Initialized
+INFO - 2026-01-28 07:23:15 --> Hooks Class Initialized
+DEBUG - 2026-01-28 07:23:15 --> UTF-8 Support Enabled
+INFO - 2026-01-28 07:23:15 --> Utf8 Class Initialized
+INFO - 2026-01-28 07:23:15 --> URI Class Initialized
+INFO - 2026-01-28 07:23:15 --> Router Class Initialized
+INFO - 2026-01-28 07:23:15 --> Output Class Initialized
+INFO - 2026-01-28 07:23:15 --> Security Class Initialized
+DEBUG - 2026-01-28 07:23:15 --> Global POST, GET and COOKIE data sanitized
+INFO - 2026-01-28 07:23:15 --> Input Class Initialized
+INFO - 2026-01-28 07:23:15 --> Language Class Initialized
+INFO - 2026-01-28 07:23:15 --> Loader Class Initialized
+INFO - 2026-01-28 07:23:15 --> Helper loaded: url_helper
+INFO - 2026-01-28 07:23:15 --> Helper loaded: file_helper
+INFO - 2026-01-28 07:23:15 --> Helper loaded: html_helper
+INFO - 2026-01-28 07:23:15 --> Database Driver Class Initialized
+INFO - 2026-01-28 07:23:15 --> Session: Class initialized using 'files' driver.
+INFO - 2026-01-28 07:23:15 --> Helper loaded: form_helper
+INFO - 2026-01-28 07:23:15 --> Form Validation Class Initialized
+INFO - 2026-01-28 07:23:15 --> User Agent Class Initialized
+INFO - 2026-01-28 07:23:15 --> Language file loaded: language/english/pagination_lang.php
+INFO - 2026-01-28 07:23:15 --> Pagination Class Initialized
+INFO - 2026-01-28 07:23:15 --> Controller Class Initialized
+INFO - 2026-01-28 07:23:15 --> Model "Alumni_model" initialized
+INFO - 2026-01-28 07:23:15 --> Final output sent to browser
+DEBUG - 2026-01-28 07:23:15 --> Total execution time: 0.0302
+ERROR - 2026-01-28 07:23:19 --> $config['composer_autoload'] is set to TRUE but C:\xampp\htdocs\Aconnect_ci3\application\vendor/autoload.php was not found.
+INFO - 2026-01-28 07:23:19 --> Config Class Initialized
+INFO - 2026-01-28 07:23:19 --> Hooks Class Initialized
+DEBUG - 2026-01-28 07:23:19 --> UTF-8 Support Enabled
+INFO - 2026-01-28 07:23:19 --> Utf8 Class Initialized
+INFO - 2026-01-28 07:23:19 --> URI Class Initialized
+INFO - 2026-01-28 07:23:19 --> Router Class Initialized
+INFO - 2026-01-28 07:23:19 --> Output Class Initialized
+INFO - 2026-01-28 07:23:19 --> Security Class Initialized
+DEBUG - 2026-01-28 07:23:19 --> Global POST, GET and COOKIE data sanitized
+INFO - 2026-01-28 07:23:19 --> Input Class Initialized
+INFO - 2026-01-28 07:23:19 --> Language Class Initialized
+INFO - 2026-01-28 07:23:19 --> Loader Class Initialized
+INFO - 2026-01-28 07:23:19 --> Helper loaded: url_helper
+INFO - 2026-01-28 07:23:19 --> Helper loaded: file_helper
+INFO - 2026-01-28 07:23:19 --> Helper loaded: html_helper
+INFO - 2026-01-28 07:23:19 --> Database Driver Class Initialized
+INFO - 2026-01-28 07:23:19 --> Session: Class initialized using 'files' driver.
+INFO - 2026-01-28 07:23:19 --> Helper loaded: form_helper
+INFO - 2026-01-28 07:23:19 --> Form Validation Class Initialized
+INFO - 2026-01-28 07:23:19 --> User Agent Class Initialized
+INFO - 2026-01-28 07:23:19 --> Language file loaded: language/english/pagination_lang.php
+INFO - 2026-01-28 07:23:19 --> Pagination Class Initialized
+INFO - 2026-01-28 07:23:19 --> Controller Class Initialized
+INFO - 2026-01-28 07:23:19 --> Model "Alumni_model" initialized
+INFO - 2026-01-28 07:23:19 --> File loaded: C:\xampp\htdocs\Aconnect_ci3\application\views\__header.php
+INFO - 2026-01-28 07:23:19 --> File loaded: C:\xampp\htdocs\Aconnect_ci3\application\views\user/chat_list.php
+INFO - 2026-01-28 07:23:19 --> File loaded: C:\xampp\htdocs\Aconnect_ci3\application\views\__footer.php
+INFO - 2026-01-28 07:23:19 --> Final output sent to browser
+DEBUG - 2026-01-28 07:23:19 --> Total execution time: 0.0256
+ERROR - 2026-01-28 07:23:21 --> $config['composer_autoload'] is set to TRUE but C:\xampp\htdocs\Aconnect_ci3\application\vendor/autoload.php was not found.
+INFO - 2026-01-28 07:23:21 --> Config Class Initialized
+INFO - 2026-01-28 07:23:21 --> Hooks Class Initialized
+DEBUG - 2026-01-28 07:23:21 --> UTF-8 Support Enabled
+INFO - 2026-01-28 07:23:21 --> Utf8 Class Initialized
+INFO - 2026-01-28 07:23:21 --> URI Class Initialized
+INFO - 2026-01-28 07:23:21 --> Router Class Initialized
+INFO - 2026-01-28 07:23:21 --> Output Class Initialized
+INFO - 2026-01-28 07:23:21 --> Security Class Initialized
+DEBUG - 2026-01-28 07:23:21 --> Global POST, GET and COOKIE data sanitized
+INFO - 2026-01-28 07:23:21 --> Input Class Initialized
+INFO - 2026-01-28 07:23:21 --> Language Class Initialized
+INFO - 2026-01-28 07:23:21 --> Loader Class Initialized
+INFO - 2026-01-28 07:23:21 --> Helper loaded: url_helper
+INFO - 2026-01-28 07:23:21 --> Helper loaded: file_helper
+INFO - 2026-01-28 07:23:21 --> Helper loaded: html_helper
+INFO - 2026-01-28 07:23:21 --> Database Driver Class Initialized
+INFO - 2026-01-28 07:23:22 --> Session: Class initialized using 'files' driver.
+INFO - 2026-01-28 07:23:22 --> Helper loaded: form_helper
+INFO - 2026-01-28 07:23:22 --> Form Validation Class Initialized
+INFO - 2026-01-28 07:23:22 --> User Agent Class Initialized
+INFO - 2026-01-28 07:23:22 --> Language file loaded: language/english/pagination_lang.php
+INFO - 2026-01-28 07:23:22 --> Pagination Class Initialized
+INFO - 2026-01-28 07:23:22 --> Controller Class Initialized
+INFO - 2026-01-28 07:23:22 --> Model "Alumni_model" initialized
+INFO - 2026-01-28 07:23:22 --> File loaded: C:\xampp\htdocs\Aconnect_ci3\application\views\__header.php
+INFO - 2026-01-28 07:23:22 --> File loaded: C:\xampp\htdocs\Aconnect_ci3\application\views\user/search_alumni.php
+INFO - 2026-01-28 07:23:22 --> File loaded: C:\xampp\htdocs\Aconnect_ci3\application\views\__footer.php
+INFO - 2026-01-28 07:23:22 --> Final output sent to browser
+DEBUG - 2026-01-28 07:23:22 --> Total execution time: 0.0465
+ERROR - 2026-01-28 07:23:22 --> $config['composer_autoload'] is set to TRUE but C:\xampp\htdocs\Aconnect_ci3\application\vendor/autoload.php was not found.
+INFO - 2026-01-28 07:23:22 --> Config Class Initialized
+INFO - 2026-01-28 07:23:22 --> Hooks Class Initialized
+DEBUG - 2026-01-28 07:23:22 --> UTF-8 Support Enabled
+INFO - 2026-01-28 07:23:22 --> Utf8 Class Initialized
+INFO - 2026-01-28 07:23:22 --> URI Class Initialized
+INFO - 2026-01-28 07:23:22 --> Router Class Initialized
+INFO - 2026-01-28 07:23:22 --> Output Class Initialized
+INFO - 2026-01-28 07:23:22 --> Security Class Initialized
+DEBUG - 2026-01-28 07:23:22 --> Global POST, GET and COOKIE data sanitized
+INFO - 2026-01-28 07:23:22 --> Input Class Initialized
+INFO - 2026-01-28 07:23:22 --> Language Class Initialized
+INFO - 2026-01-28 07:23:22 --> Loader Class Initialized
+INFO - 2026-01-28 07:23:22 --> Helper loaded: url_helper
+INFO - 2026-01-28 07:23:22 --> Helper loaded: file_helper
+INFO - 2026-01-28 07:23:22 --> Helper loaded: html_helper
+INFO - 2026-01-28 07:23:22 --> Database Driver Class Initialized
+INFO - 2026-01-28 07:23:22 --> Session: Class initialized using 'files' driver.
+INFO - 2026-01-28 07:23:22 --> Helper loaded: form_helper
+INFO - 2026-01-28 07:23:22 --> Form Validation Class Initialized
+INFO - 2026-01-28 07:23:22 --> User Agent Class Initialized
+INFO - 2026-01-28 07:23:22 --> Language file loaded: language/english/pagination_lang.php
+INFO - 2026-01-28 07:23:22 --> Pagination Class Initialized
+INFO - 2026-01-28 07:23:22 --> Controller Class Initialized
+INFO - 2026-01-28 07:23:22 --> Model "Alumni_model" initialized
+INFO - 2026-01-28 07:23:22 --> Final output sent to browser
+DEBUG - 2026-01-28 07:23:22 --> Total execution time: 0.0415
+ERROR - 2026-01-28 07:23:24 --> $config['composer_autoload'] is set to TRUE but C:\xampp\htdocs\Aconnect_ci3\application\vendor/autoload.php was not found.
+INFO - 2026-01-28 07:23:24 --> Config Class Initialized
+INFO - 2026-01-28 07:23:24 --> Hooks Class Initialized
+DEBUG - 2026-01-28 07:23:24 --> UTF-8 Support Enabled
+INFO - 2026-01-28 07:23:24 --> Utf8 Class Initialized
+INFO - 2026-01-28 07:23:24 --> URI Class Initialized
+INFO - 2026-01-28 07:23:24 --> Router Class Initialized
+INFO - 2026-01-28 07:23:24 --> Output Class Initialized
+INFO - 2026-01-28 07:23:24 --> Security Class Initialized
+DEBUG - 2026-01-28 07:23:24 --> Global POST, GET and COOKIE data sanitized
+INFO - 2026-01-28 07:23:24 --> Input Class Initialized
+INFO - 2026-01-28 07:23:24 --> Language Class Initialized
+INFO - 2026-01-28 07:23:24 --> Loader Class Initialized
+INFO - 2026-01-28 07:23:24 --> Helper loaded: url_helper
+INFO - 2026-01-28 07:23:24 --> Helper loaded: file_helper
+INFO - 2026-01-28 07:23:24 --> Helper loaded: html_helper
+INFO - 2026-01-28 07:23:24 --> Database Driver Class Initialized
+INFO - 2026-01-28 07:23:24 --> Session: Class initialized using 'files' driver.
+INFO - 2026-01-28 07:23:24 --> Helper loaded: form_helper
+INFO - 2026-01-28 07:23:24 --> Form Validation Class Initialized
+INFO - 2026-01-28 07:23:24 --> User Agent Class Initialized
+INFO - 2026-01-28 07:23:24 --> Language file loaded: language/english/pagination_lang.php
+INFO - 2026-01-28 07:23:24 --> Pagination Class Initialized
+INFO - 2026-01-28 07:23:24 --> Controller Class Initialized
+INFO - 2026-01-28 07:23:24 --> Model "Alumni_model" initialized
+INFO - 2026-01-28 07:23:24 --> File loaded: C:\xampp\htdocs\Aconnect_ci3\application\views\__header.php
+INFO - 2026-01-28 07:23:24 --> File loaded: C:\xampp\htdocs\Aconnect_ci3\application\views\user/chat_list.php
+INFO - 2026-01-28 07:23:24 --> File loaded: C:\xampp\htdocs\Aconnect_ci3\application\views\__footer.php
+INFO - 2026-01-28 07:23:24 --> Final output sent to browser
+DEBUG - 2026-01-28 07:23:24 --> Total execution time: 0.0518
+ERROR - 2026-01-28 07:26:05 --> $config['composer_autoload'] is set to TRUE but C:\xampp\htdocs\Aconnect_ci3\application\vendor/autoload.php was not found.
+INFO - 2026-01-28 07:26:05 --> Config Class Initialized
+INFO - 2026-01-28 07:26:05 --> Hooks Class Initialized
+DEBUG - 2026-01-28 07:26:05 --> UTF-8 Support Enabled
+INFO - 2026-01-28 07:26:05 --> Utf8 Class Initialized
+INFO - 2026-01-28 07:26:05 --> URI Class Initialized
+INFO - 2026-01-28 07:26:05 --> Router Class Initialized
+INFO - 2026-01-28 07:26:05 --> Output Class Initialized
+INFO - 2026-01-28 07:26:05 --> Security Class Initialized
+DEBUG - 2026-01-28 07:26:05 --> Global POST, GET and COOKIE data sanitized
+INFO - 2026-01-28 07:26:05 --> Input Class Initialized
+INFO - 2026-01-28 07:26:05 --> Language Class Initialized
+INFO - 2026-01-28 07:26:05 --> Loader Class Initialized
+INFO - 2026-01-28 07:26:05 --> Helper loaded: url_helper
+INFO - 2026-01-28 07:26:05 --> Helper loaded: file_helper
+INFO - 2026-01-28 07:26:05 --> Helper loaded: html_helper
+INFO - 2026-01-28 07:26:05 --> Database Driver Class Initialized
+INFO - 2026-01-28 07:26:05 --> Session: Class initialized using 'files' driver.
+INFO - 2026-01-28 07:26:05 --> Helper loaded: form_helper
+INFO - 2026-01-28 07:26:05 --> Form Validation Class Initialized
+INFO - 2026-01-28 07:26:05 --> User Agent Class Initialized
+INFO - 2026-01-28 07:26:05 --> Language file loaded: language/english/pagination_lang.php
+INFO - 2026-01-28 07:26:05 --> Pagination Class Initialized
+INFO - 2026-01-28 07:26:05 --> Controller Class Initialized
+INFO - 2026-01-28 07:26:05 --> Model "Alumni_model" initialized
+INFO - 2026-01-28 07:26:05 --> Final output sent to browser
+DEBUG - 2026-01-28 07:26:05 --> Total execution time: 0.0374
+ERROR - 2026-01-28 07:26:06 --> $config['composer_autoload'] is set to TRUE but C:\xampp\htdocs\Aconnect_ci3\application\vendor/autoload.php was not found.
+INFO - 2026-01-28 07:26:06 --> Config Class Initialized
+INFO - 2026-01-28 07:26:06 --> Hooks Class Initialized
+DEBUG - 2026-01-28 07:26:06 --> UTF-8 Support Enabled
+INFO - 2026-01-28 07:26:06 --> Utf8 Class Initialized
+INFO - 2026-01-28 07:26:06 --> URI Class Initialized
+INFO - 2026-01-28 07:26:06 --> Router Class Initialized
+INFO - 2026-01-28 07:26:06 --> Output Class Initialized
+INFO - 2026-01-28 07:26:06 --> Security Class Initialized
+DEBUG - 2026-01-28 07:26:06 --> Global POST, GET and COOKIE data sanitized
+INFO - 2026-01-28 07:26:06 --> Input Class Initialized
+INFO - 2026-01-28 07:26:06 --> Language Class Initialized
+INFO - 2026-01-28 07:26:06 --> Loader Class Initialized
+INFO - 2026-01-28 07:26:06 --> Helper loaded: url_helper
+INFO - 2026-01-28 07:26:06 --> Helper loaded: file_helper
+INFO - 2026-01-28 07:26:06 --> Helper loaded: html_helper
+INFO - 2026-01-28 07:26:06 --> Database Driver Class Initialized
+INFO - 2026-01-28 07:26:06 --> Session: Class initialized using 'files' driver.
+INFO - 2026-01-28 07:26:06 --> Helper loaded: form_helper
+INFO - 2026-01-28 07:26:06 --> Form Validation Class Initialized
+INFO - 2026-01-28 07:26:06 --> User Agent Class Initialized
+INFO - 2026-01-28 07:26:06 --> Language file loaded: language/english/pagination_lang.php
+INFO - 2026-01-28 07:26:06 --> Pagination Class Initialized
+INFO - 2026-01-28 07:26:06 --> Controller Class Initialized
+INFO - 2026-01-28 07:26:06 --> Model "Alumni_model" initialized
+INFO - 2026-01-28 07:26:06 --> File loaded: C:\xampp\htdocs\Aconnect_ci3\application\views\user/chat.php
+INFO - 2026-01-28 07:26:06 --> Final output sent to browser
+DEBUG - 2026-01-28 07:26:06 --> Total execution time: 0.0473
+ERROR - 2026-01-28 07:26:07 --> $config['composer_autoload'] is set to TRUE but C:\xampp\htdocs\Aconnect_ci3\application\vendor/autoload.php was not found.
+INFO - 2026-01-28 07:26:07 --> Config Class Initialized
+INFO - 2026-01-28 07:26:07 --> Hooks Class Initialized
+DEBUG - 2026-01-28 07:26:07 --> UTF-8 Support Enabled
+INFO - 2026-01-28 07:26:07 --> Utf8 Class Initialized
+INFO - 2026-01-28 07:26:07 --> URI Class Initialized
+INFO - 2026-01-28 07:26:07 --> Router Class Initialized
+INFO - 2026-01-28 07:26:07 --> Output Class Initialized
+INFO - 2026-01-28 07:26:07 --> Security Class Initialized
+DEBUG - 2026-01-28 07:26:07 --> Global POST, GET and COOKIE data sanitized
+INFO - 2026-01-28 07:26:07 --> Input Class Initialized
+INFO - 2026-01-28 07:26:07 --> Language Class Initialized
+INFO - 2026-01-28 07:26:07 --> Loader Class Initialized
+INFO - 2026-01-28 07:26:07 --> Helper loaded: url_helper
+INFO - 2026-01-28 07:26:07 --> Helper loaded: file_helper
+INFO - 2026-01-28 07:26:07 --> Helper loaded: html_helper
+INFO - 2026-01-28 07:26:07 --> Database Driver Class Initialized
+INFO - 2026-01-28 07:26:07 --> Session: Class initialized using 'files' driver.
+INFO - 2026-01-28 07:26:07 --> Helper loaded: form_helper
+INFO - 2026-01-28 07:26:07 --> Form Validation Class Initialized
+INFO - 2026-01-28 07:26:07 --> User Agent Class Initialized
+INFO - 2026-01-28 07:26:07 --> Language file loaded: language/english/pagination_lang.php
+INFO - 2026-01-28 07:26:07 --> Pagination Class Initialized
+INFO - 2026-01-28 07:26:07 --> Controller Class Initialized
+INFO - 2026-01-28 07:26:07 --> Model "Alumni_model" initialized
+INFO - 2026-01-28 07:26:07 --> Final output sent to browser
+DEBUG - 2026-01-28 07:26:07 --> Total execution time: 0.0239
+ERROR - 2026-01-28 07:26:11 --> $config['composer_autoload'] is set to TRUE but C:\xampp\htdocs\Aconnect_ci3\application\vendor/autoload.php was not found.
+INFO - 2026-01-28 07:26:11 --> Config Class Initialized
+INFO - 2026-01-28 07:26:11 --> Hooks Class Initialized
+DEBUG - 2026-01-28 07:26:11 --> UTF-8 Support Enabled
+INFO - 2026-01-28 07:26:11 --> Utf8 Class Initialized
+INFO - 2026-01-28 07:26:11 --> URI Class Initialized
+INFO - 2026-01-28 07:26:11 --> Router Class Initialized
+INFO - 2026-01-28 07:26:11 --> Output Class Initialized
+INFO - 2026-01-28 07:26:11 --> Security Class Initialized
+DEBUG - 2026-01-28 07:26:11 --> Global POST, GET and COOKIE data sanitized
+INFO - 2026-01-28 07:26:11 --> Input Class Initialized
+INFO - 2026-01-28 07:26:11 --> Language Class Initialized
+INFO - 2026-01-28 07:26:11 --> Loader Class Initialized
+INFO - 2026-01-28 07:26:11 --> Helper loaded: url_helper
+INFO - 2026-01-28 07:26:11 --> Helper loaded: file_helper
+INFO - 2026-01-28 07:26:11 --> Helper loaded: html_helper
+INFO - 2026-01-28 07:26:11 --> Database Driver Class Initialized
+INFO - 2026-01-28 07:26:11 --> Session: Class initialized using 'files' driver.
+INFO - 2026-01-28 07:26:11 --> Helper loaded: form_helper
+INFO - 2026-01-28 07:26:11 --> Form Validation Class Initialized
+INFO - 2026-01-28 07:26:11 --> User Agent Class Initialized
+INFO - 2026-01-28 07:26:11 --> Language file loaded: language/english/pagination_lang.php
+INFO - 2026-01-28 07:26:11 --> Pagination Class Initialized
+INFO - 2026-01-28 07:26:11 --> Controller Class Initialized
+INFO - 2026-01-28 07:26:11 --> Model "Post_model" initialized
+INFO - 2026-01-28 07:26:11 --> File loaded: C:\xampp\htdocs\Aconnect_ci3\application\views\__header.php
+INFO - 2026-01-28 07:26:11 --> Helper loaded: text_helper
+INFO - 2026-01-28 07:26:11 --> File loaded: C:\xampp\htdocs\Aconnect_ci3\application\views\user/posts_view.php
+INFO - 2026-01-28 07:26:11 --> File loaded: C:\xampp\htdocs\Aconnect_ci3\application\views\__footer.php
+INFO - 2026-01-28 07:26:11 --> Final output sent to browser
+DEBUG - 2026-01-28 07:26:11 --> Total execution time: 0.0264
+ERROR - 2026-01-28 07:26:11 --> $config['composer_autoload'] is set to TRUE but C:\xampp\htdocs\Aconnect_ci3\application\vendor/autoload.php was not found.
+INFO - 2026-01-28 07:26:11 --> Config Class Initialized
+INFO - 2026-01-28 07:26:11 --> Hooks Class Initialized
+DEBUG - 2026-01-28 07:26:11 --> UTF-8 Support Enabled
+INFO - 2026-01-28 07:26:11 --> Utf8 Class Initialized
+INFO - 2026-01-28 07:26:11 --> URI Class Initialized
+INFO - 2026-01-28 07:26:11 --> Router Class Initialized
+INFO - 2026-01-28 07:26:11 --> Output Class Initialized
+INFO - 2026-01-28 07:26:11 --> Security Class Initialized
+DEBUG - 2026-01-28 07:26:11 --> Global POST, GET and COOKIE data sanitized
+INFO - 2026-01-28 07:26:11 --> Input Class Initialized
+INFO - 2026-01-28 07:26:11 --> Language Class Initialized
+ERROR - 2026-01-28 07:26:11 --> 404 Page Not Found: Assets/uploads
+ERROR - 2026-01-28 07:26:12 --> $config['composer_autoload'] is set to TRUE but C:\xampp\htdocs\Aconnect_ci3\application\vendor/autoload.php was not found.
+INFO - 2026-01-28 07:26:12 --> Config Class Initialized
+INFO - 2026-01-28 07:26:12 --> Hooks Class Initialized
+DEBUG - 2026-01-28 07:26:12 --> UTF-8 Support Enabled
+INFO - 2026-01-28 07:26:12 --> Utf8 Class Initialized
+INFO - 2026-01-28 07:26:12 --> URI Class Initialized
+INFO - 2026-01-28 07:26:12 --> Router Class Initialized
+INFO - 2026-01-28 07:26:12 --> Output Class Initialized
+INFO - 2026-01-28 07:26:12 --> Security Class Initialized
+DEBUG - 2026-01-28 07:26:12 --> Global POST, GET and COOKIE data sanitized
+INFO - 2026-01-28 07:26:12 --> Input Class Initialized
+INFO - 2026-01-28 07:26:12 --> Language Class Initialized
+INFO - 2026-01-28 07:26:12 --> Loader Class Initialized
+INFO - 2026-01-28 07:26:12 --> Helper loaded: url_helper
+INFO - 2026-01-28 07:26:12 --> Helper loaded: file_helper
+INFO - 2026-01-28 07:26:12 --> Helper loaded: html_helper
+INFO - 2026-01-28 07:26:12 --> Database Driver Class Initialized
+INFO - 2026-01-28 07:26:12 --> Session: Class initialized using 'files' driver.
+INFO - 2026-01-28 07:26:12 --> Helper loaded: form_helper
+INFO - 2026-01-28 07:26:12 --> Form Validation Class Initialized
+INFO - 2026-01-28 07:26:12 --> User Agent Class Initialized
+INFO - 2026-01-28 07:26:12 --> Language file loaded: language/english/pagination_lang.php
+INFO - 2026-01-28 07:26:12 --> Pagination Class Initialized
+INFO - 2026-01-28 07:26:12 --> Controller Class Initialized
+INFO - 2026-01-28 07:26:12 --> Model "Alumni_model" initialized
+INFO - 2026-01-28 07:26:12 --> File loaded: C:\xampp\htdocs\Aconnect_ci3\application\views\__header.php
+INFO - 2026-01-28 07:26:12 --> File loaded: C:\xampp\htdocs\Aconnect_ci3\application\views\user/chat_list.php
+INFO - 2026-01-28 07:26:12 --> File loaded: C:\xampp\htdocs\Aconnect_ci3\application\views\__footer.php
+INFO - 2026-01-28 07:26:12 --> Final output sent to browser
+DEBUG - 2026-01-28 07:26:12 --> Total execution time: 0.0551
+ERROR - 2026-01-28 07:26:13 --> $config['composer_autoload'] is set to TRUE but C:\xampp\htdocs\Aconnect_ci3\application\vendor/autoload.php was not found.
+INFO - 2026-01-28 07:26:13 --> Config Class Initialized
+INFO - 2026-01-28 07:26:13 --> Hooks Class Initialized
+DEBUG - 2026-01-28 07:26:13 --> UTF-8 Support Enabled
+INFO - 2026-01-28 07:26:13 --> Utf8 Class Initialized
+INFO - 2026-01-28 07:26:13 --> URI Class Initialized
+INFO - 2026-01-28 07:26:13 --> Router Class Initialized
+INFO - 2026-01-28 07:26:13 --> Output Class Initialized
+INFO - 2026-01-28 07:26:13 --> Security Class Initialized
+DEBUG - 2026-01-28 07:26:13 --> Global POST, GET and COOKIE data sanitized
+INFO - 2026-01-28 07:26:13 --> Input Class Initialized
+INFO - 2026-01-28 07:26:13 --> Language Class Initialized
+INFO - 2026-01-28 07:26:13 --> Loader Class Initialized
+INFO - 2026-01-28 07:26:13 --> Helper loaded: url_helper
+INFO - 2026-01-28 07:26:13 --> Helper loaded: file_helper
+INFO - 2026-01-28 07:26:13 --> Helper loaded: html_helper
+INFO - 2026-01-28 07:26:13 --> Database Driver Class Initialized
+INFO - 2026-01-28 07:26:13 --> Session: Class initialized using 'files' driver.
+INFO - 2026-01-28 07:26:13 --> Helper loaded: form_helper
+INFO - 2026-01-28 07:26:13 --> Form Validation Class Initialized
+INFO - 2026-01-28 07:26:13 --> User Agent Class Initialized
+INFO - 2026-01-28 07:26:13 --> Language file loaded: language/english/pagination_lang.php
+INFO - 2026-01-28 07:26:13 --> Pagination Class Initialized
+INFO - 2026-01-28 07:26:13 --> Controller Class Initialized
+INFO - 2026-01-28 07:26:13 --> Model "Alumni_model" initialized
+INFO - 2026-01-28 07:26:13 --> File loaded: C:\xampp\htdocs\Aconnect_ci3\application\views\user/chat.php
+INFO - 2026-01-28 07:26:13 --> Final output sent to browser
+DEBUG - 2026-01-28 07:26:13 --> Total execution time: 0.0253
+ERROR - 2026-01-28 07:26:15 --> $config['composer_autoload'] is set to TRUE but C:\xampp\htdocs\Aconnect_ci3\application\vendor/autoload.php was not found.
+INFO - 2026-01-28 07:26:15 --> Config Class Initialized
+INFO - 2026-01-28 07:26:15 --> Hooks Class Initialized
+DEBUG - 2026-01-28 07:26:15 --> UTF-8 Support Enabled
+INFO - 2026-01-28 07:26:15 --> Utf8 Class Initialized
+INFO - 2026-01-28 07:26:15 --> URI Class Initialized
+INFO - 2026-01-28 07:26:15 --> Router Class Initialized
+INFO - 2026-01-28 07:26:15 --> Output Class Initialized
+INFO - 2026-01-28 07:26:15 --> Security Class Initialized
+DEBUG - 2026-01-28 07:26:15 --> Global POST, GET and COOKIE data sanitized
+INFO - 2026-01-28 07:26:15 --> Input Class Initialized
+INFO - 2026-01-28 07:26:15 --> Language Class Initialized
+INFO - 2026-01-28 07:26:15 --> Loader Class Initialized
+INFO - 2026-01-28 07:26:15 --> Helper loaded: url_helper
+INFO - 2026-01-28 07:26:15 --> Helper loaded: file_helper
+INFO - 2026-01-28 07:26:15 --> Helper loaded: html_helper
+INFO - 2026-01-28 07:26:15 --> Database Driver Class Initialized
+INFO - 2026-01-28 07:26:15 --> Session: Class initialized using 'files' driver.
+INFO - 2026-01-28 07:26:15 --> Helper loaded: form_helper
+INFO - 2026-01-28 07:26:15 --> Form Validation Class Initialized
+INFO - 2026-01-28 07:26:15 --> User Agent Class Initialized
+INFO - 2026-01-28 07:26:15 --> Language file loaded: language/english/pagination_lang.php
+INFO - 2026-01-28 07:26:15 --> Pagination Class Initialized
+INFO - 2026-01-28 07:26:15 --> Controller Class Initialized
+INFO - 2026-01-28 07:26:15 --> Model "Alumni_model" initialized
+INFO - 2026-01-28 07:26:15 --> File loaded: C:\xampp\htdocs\Aconnect_ci3\application\views\user/chat.php
+INFO - 2026-01-28 07:26:15 --> Final output sent to browser
+DEBUG - 2026-01-28 07:26:15 --> Total execution time: 0.0239
+ERROR - 2026-01-28 07:26:17 --> $config['composer_autoload'] is set to TRUE but C:\xampp\htdocs\Aconnect_ci3\application\vendor/autoload.php was not found.
+INFO - 2026-01-28 07:26:17 --> Config Class Initialized
+INFO - 2026-01-28 07:26:17 --> Hooks Class Initialized
+DEBUG - 2026-01-28 07:26:17 --> UTF-8 Support Enabled
+INFO - 2026-01-28 07:26:17 --> Utf8 Class Initialized
+INFO - 2026-01-28 07:26:17 --> URI Class Initialized
+INFO - 2026-01-28 07:26:17 --> Router Class Initialized
+INFO - 2026-01-28 07:26:17 --> Output Class Initialized
+INFO - 2026-01-28 07:26:17 --> Security Class Initialized
+DEBUG - 2026-01-28 07:26:17 --> Global POST, GET and COOKIE data sanitized
+INFO - 2026-01-28 07:26:17 --> Input Class Initialized
+INFO - 2026-01-28 07:26:17 --> Language Class Initialized
+INFO - 2026-01-28 07:26:17 --> Loader Class Initialized
+INFO - 2026-01-28 07:26:17 --> Helper loaded: url_helper
+INFO - 2026-01-28 07:26:17 --> Helper loaded: file_helper
+INFO - 2026-01-28 07:26:17 --> Helper loaded: html_helper
+INFO - 2026-01-28 07:26:17 --> Database Driver Class Initialized
+INFO - 2026-01-28 07:26:17 --> Session: Class initialized using 'files' driver.
+INFO - 2026-01-28 07:26:17 --> Helper loaded: form_helper
+INFO - 2026-01-28 07:26:17 --> Form Validation Class Initialized
+INFO - 2026-01-28 07:26:17 --> User Agent Class Initialized
+INFO - 2026-01-28 07:26:17 --> Language file loaded: language/english/pagination_lang.php
+INFO - 2026-01-28 07:26:17 --> Pagination Class Initialized
+INFO - 2026-01-28 07:26:17 --> Controller Class Initialized
+INFO - 2026-01-28 07:26:17 --> Model "Alumni_model" initialized
+INFO - 2026-01-28 07:26:17 --> File loaded: C:\xampp\htdocs\Aconnect_ci3\application\views\__header.php
+INFO - 2026-01-28 07:26:17 --> File loaded: C:\xampp\htdocs\Aconnect_ci3\application\views\user/chat_list.php
+INFO - 2026-01-28 07:26:17 --> File loaded: C:\xampp\htdocs\Aconnect_ci3\application\views\__footer.php
+INFO - 2026-01-28 07:26:17 --> Final output sent to browser
+DEBUG - 2026-01-28 07:26:17 --> Total execution time: 0.0510
+ERROR - 2026-01-28 07:26:18 --> $config['composer_autoload'] is set to TRUE but C:\xampp\htdocs\Aconnect_ci3\application\vendor/autoload.php was not found.
+INFO - 2026-01-28 07:26:18 --> Config Class Initialized
+INFO - 2026-01-28 07:26:18 --> Hooks Class Initialized
+DEBUG - 2026-01-28 07:26:18 --> UTF-8 Support Enabled
+INFO - 2026-01-28 07:26:18 --> Utf8 Class Initialized
+INFO - 2026-01-28 07:26:18 --> URI Class Initialized
+INFO - 2026-01-28 07:26:18 --> Router Class Initialized
+INFO - 2026-01-28 07:26:18 --> Output Class Initialized
+INFO - 2026-01-28 07:26:18 --> Security Class Initialized
+DEBUG - 2026-01-28 07:26:18 --> Global POST, GET and COOKIE data sanitized
+INFO - 2026-01-28 07:26:18 --> Input Class Initialized
+INFO - 2026-01-28 07:26:18 --> Language Class Initialized
+INFO - 2026-01-28 07:26:18 --> Loader Class Initialized
+INFO - 2026-01-28 07:26:18 --> Helper loaded: url_helper
+INFO - 2026-01-28 07:26:18 --> Helper loaded: file_helper
+INFO - 2026-01-28 07:26:18 --> Helper loaded: html_helper
+INFO - 2026-01-28 07:26:18 --> Database Driver Class Initialized
+INFO - 2026-01-28 07:26:18 --> Session: Class initialized using 'files' driver.
+INFO - 2026-01-28 07:26:18 --> Helper loaded: form_helper
+INFO - 2026-01-28 07:26:18 --> Form Validation Class Initialized
+INFO - 2026-01-28 07:26:18 --> User Agent Class Initialized
+INFO - 2026-01-28 07:26:18 --> Language file loaded: language/english/pagination_lang.php
+INFO - 2026-01-28 07:26:18 --> Pagination Class Initialized
+INFO - 2026-01-28 07:26:18 --> Controller Class Initialized
+INFO - 2026-01-28 07:26:18 --> Model "Alumni_model" initialized
+INFO - 2026-01-28 07:26:18 --> File loaded: C:\xampp\htdocs\Aconnect_ci3\application\views\user/chat.php
+INFO - 2026-01-28 07:26:18 --> Final output sent to browser
+DEBUG - 2026-01-28 07:26:18 --> Total execution time: 0.0241
+ERROR - 2026-01-28 07:26:20 --> $config['composer_autoload'] is set to TRUE but C:\xampp\htdocs\Aconnect_ci3\application\vendor/autoload.php was not found.
+INFO - 2026-01-28 07:26:20 --> Config Class Initialized
+INFO - 2026-01-28 07:26:20 --> Hooks Class Initialized
+DEBUG - 2026-01-28 07:26:20 --> UTF-8 Support Enabled
+INFO - 2026-01-28 07:26:20 --> Utf8 Class Initialized
+INFO - 2026-01-28 07:26:20 --> URI Class Initialized
+INFO - 2026-01-28 07:26:20 --> Router Class Initialized
+INFO - 2026-01-28 07:26:20 --> Output Class Initialized
+INFO - 2026-01-28 07:26:20 --> Security Class Initialized
+DEBUG - 2026-01-28 07:26:20 --> Global POST, GET and COOKIE data sanitized
+INFO - 2026-01-28 07:26:20 --> Input Class Initialized
+INFO - 2026-01-28 07:26:20 --> Language Class Initialized
+INFO - 2026-01-28 07:26:20 --> Loader Class Initialized
+INFO - 2026-01-28 07:26:20 --> Helper loaded: url_helper
+INFO - 2026-01-28 07:26:20 --> Helper loaded: file_helper
+INFO - 2026-01-28 07:26:20 --> Helper loaded: html_helper
+INFO - 2026-01-28 07:26:20 --> Database Driver Class Initialized
+INFO - 2026-01-28 07:26:20 --> Session: Class initialized using 'files' driver.
+INFO - 2026-01-28 07:26:20 --> Helper loaded: form_helper
+INFO - 2026-01-28 07:26:20 --> Form Validation Class Initialized
+INFO - 2026-01-28 07:26:20 --> User Agent Class Initialized
+INFO - 2026-01-28 07:26:20 --> Language file loaded: language/english/pagination_lang.php
+INFO - 2026-01-28 07:26:20 --> Pagination Class Initialized
+INFO - 2026-01-28 07:26:20 --> Controller Class Initialized
+INFO - 2026-01-28 07:26:20 --> Model "Alumni_model" initialized
+INFO - 2026-01-28 07:26:20 --> File loaded: C:\xampp\htdocs\Aconnect_ci3\application\views\__header.php
+INFO - 2026-01-28 07:26:20 --> File loaded: C:\xampp\htdocs\Aconnect_ci3\application\views\user/search_alumni.php
+INFO - 2026-01-28 07:26:20 --> File loaded: C:\xampp\htdocs\Aconnect_ci3\application\views\__footer.php
+INFO - 2026-01-28 07:26:20 --> Final output sent to browser
+DEBUG - 2026-01-28 07:26:20 --> Total execution time: 0.0249
+ERROR - 2026-01-28 07:26:21 --> $config['composer_autoload'] is set to TRUE but C:\xampp\htdocs\Aconnect_ci3\application\vendor/autoload.php was not found.
+INFO - 2026-01-28 07:26:21 --> Config Class Initialized
+INFO - 2026-01-28 07:26:21 --> Hooks Class Initialized
+DEBUG - 2026-01-28 07:26:21 --> UTF-8 Support Enabled
+INFO - 2026-01-28 07:26:21 --> Utf8 Class Initialized
+INFO - 2026-01-28 07:26:21 --> URI Class Initialized
+INFO - 2026-01-28 07:26:21 --> Router Class Initialized
+INFO - 2026-01-28 07:26:21 --> Output Class Initialized
+INFO - 2026-01-28 07:26:21 --> Security Class Initialized
+DEBUG - 2026-01-28 07:26:21 --> Global POST, GET and COOKIE data sanitized
+INFO - 2026-01-28 07:26:21 --> Input Class Initialized
+INFO - 2026-01-28 07:26:21 --> Language Class Initialized
+INFO - 2026-01-28 07:26:21 --> Loader Class Initialized
+INFO - 2026-01-28 07:26:21 --> Helper loaded: url_helper
+INFO - 2026-01-28 07:26:21 --> Helper loaded: file_helper
+INFO - 2026-01-28 07:26:21 --> Helper loaded: html_helper
+INFO - 2026-01-28 07:26:21 --> Database Driver Class Initialized
+INFO - 2026-01-28 07:26:21 --> Session: Class initialized using 'files' driver.
+INFO - 2026-01-28 07:26:21 --> Helper loaded: form_helper
+INFO - 2026-01-28 07:26:21 --> Form Validation Class Initialized
+INFO - 2026-01-28 07:26:21 --> User Agent Class Initialized
+INFO - 2026-01-28 07:26:21 --> Language file loaded: language/english/pagination_lang.php
+INFO - 2026-01-28 07:26:21 --> Pagination Class Initialized
+INFO - 2026-01-28 07:26:21 --> Controller Class Initialized
+INFO - 2026-01-28 07:26:21 --> Model "Alumni_model" initialized
+INFO - 2026-01-28 07:26:21 --> Model "Employment_model" initialized
+INFO - 2026-01-28 07:26:21 --> File loaded: C:\xampp\htdocs\Aconnect_ci3\application\views\__header.php
+INFO - 2026-01-28 07:26:21 --> File loaded: C:\xampp\htdocs\Aconnect_ci3\application\views\user/view_profile.php
+INFO - 2026-01-28 07:26:21 --> File loaded: C:\xampp\htdocs\Aconnect_ci3\application\views\__footer.php
+INFO - 2026-01-28 07:26:21 --> Final output sent to browser
+DEBUG - 2026-01-28 07:26:21 --> Total execution time: 0.0536
+ERROR - 2026-01-28 07:26:31 --> $config['composer_autoload'] is set to TRUE but C:\xampp\htdocs\Aconnect_ci3\application\vendor/autoload.php was not found.
+INFO - 2026-01-28 07:26:31 --> Config Class Initialized
+INFO - 2026-01-28 07:26:31 --> Hooks Class Initialized
+DEBUG - 2026-01-28 07:26:31 --> UTF-8 Support Enabled
+INFO - 2026-01-28 07:26:31 --> Utf8 Class Initialized
+INFO - 2026-01-28 07:26:31 --> URI Class Initialized
+INFO - 2026-01-28 07:26:31 --> Router Class Initialized
+INFO - 2026-01-28 07:26:31 --> Output Class Initialized
+INFO - 2026-01-28 07:26:31 --> Security Class Initialized
+DEBUG - 2026-01-28 07:26:31 --> Global POST, GET and COOKIE data sanitized
+INFO - 2026-01-28 07:26:31 --> Input Class Initialized
+INFO - 2026-01-28 07:26:31 --> Language Class Initialized
+INFO - 2026-01-28 07:26:31 --> Loader Class Initialized
+INFO - 2026-01-28 07:26:31 --> Helper loaded: url_helper
+INFO - 2026-01-28 07:26:31 --> Helper loaded: file_helper
+INFO - 2026-01-28 07:26:31 --> Helper loaded: html_helper
+INFO - 2026-01-28 07:26:31 --> Database Driver Class Initialized
+INFO - 2026-01-28 07:26:31 --> Session: Class initialized using 'files' driver.
+INFO - 2026-01-28 07:26:31 --> Helper loaded: form_helper
+INFO - 2026-01-28 07:26:31 --> Form Validation Class Initialized
+INFO - 2026-01-28 07:26:31 --> User Agent Class Initialized
+INFO - 2026-01-28 07:26:31 --> Language file loaded: language/english/pagination_lang.php
+INFO - 2026-01-28 07:26:31 --> Pagination Class Initialized
+INFO - 2026-01-28 07:26:31 --> Controller Class Initialized
+INFO - 2026-01-28 07:26:31 --> Model "Alumni_model" initialized
+INFO - 2026-01-28 07:26:31 --> File loaded: C:\xampp\htdocs\Aconnect_ci3\application\views\__header.php
+INFO - 2026-01-28 07:26:31 --> File loaded: C:\xampp\htdocs\Aconnect_ci3\application\views\user/search_alumni.php
+INFO - 2026-01-28 07:26:31 --> File loaded: C:\xampp\htdocs\Aconnect_ci3\application\views\__footer.php
+INFO - 2026-01-28 07:26:31 --> Final output sent to browser
+DEBUG - 2026-01-28 07:26:31 --> Total execution time: 0.0404
+ERROR - 2026-01-28 07:26:33 --> $config['composer_autoload'] is set to TRUE but C:\xampp\htdocs\Aconnect_ci3\application\vendor/autoload.php was not found.
+INFO - 2026-01-28 07:26:33 --> Config Class Initialized
+INFO - 2026-01-28 07:26:33 --> Hooks Class Initialized
+DEBUG - 2026-01-28 07:26:33 --> UTF-8 Support Enabled
+INFO - 2026-01-28 07:26:33 --> Utf8 Class Initialized
+INFO - 2026-01-28 07:26:33 --> URI Class Initialized
+INFO - 2026-01-28 07:26:33 --> Router Class Initialized
+INFO - 2026-01-28 07:26:33 --> Output Class Initialized
+INFO - 2026-01-28 07:26:33 --> Security Class Initialized
+DEBUG - 2026-01-28 07:26:33 --> Global POST, GET and COOKIE data sanitized
+INFO - 2026-01-28 07:26:33 --> Input Class Initialized
+INFO - 2026-01-28 07:26:33 --> Language Class Initialized
+INFO - 2026-01-28 07:26:33 --> Loader Class Initialized
+INFO - 2026-01-28 07:26:33 --> Helper loaded: url_helper
+INFO - 2026-01-28 07:26:33 --> Helper loaded: file_helper
+INFO - 2026-01-28 07:26:33 --> Helper loaded: html_helper
+INFO - 2026-01-28 07:26:33 --> Database Driver Class Initialized
+INFO - 2026-01-28 07:26:33 --> Session: Class initialized using 'files' driver.
+INFO - 2026-01-28 07:26:33 --> Helper loaded: form_helper
+INFO - 2026-01-28 07:26:33 --> Form Validation Class Initialized
+INFO - 2026-01-28 07:26:33 --> User Agent Class Initialized
+INFO - 2026-01-28 07:26:33 --> Language file loaded: language/english/pagination_lang.php
+INFO - 2026-01-28 07:26:33 --> Pagination Class Initialized
+INFO - 2026-01-28 07:26:33 --> Controller Class Initialized
+INFO - 2026-01-28 07:26:33 --> Model "Alumni_model" initialized
+INFO - 2026-01-28 07:26:33 --> Model "Employment_model" initialized
+INFO - 2026-01-28 07:26:33 --> File loaded: C:\xampp\htdocs\Aconnect_ci3\application\views\__header.php
+INFO - 2026-01-28 07:26:33 --> File loaded: C:\xampp\htdocs\Aconnect_ci3\application\views\user/view_profile.php
+INFO - 2026-01-28 07:26:33 --> File loaded: C:\xampp\htdocs\Aconnect_ci3\application\views\__footer.php
+INFO - 2026-01-28 07:26:33 --> Final output sent to browser
+DEBUG - 2026-01-28 07:26:33 --> Total execution time: 0.0251
+ERROR - 2026-01-28 07:26:37 --> $config['composer_autoload'] is set to TRUE but C:\xampp\htdocs\Aconnect_ci3\application\vendor/autoload.php was not found.
+INFO - 2026-01-28 07:26:37 --> Config Class Initialized
+INFO - 2026-01-28 07:26:37 --> Hooks Class Initialized
+DEBUG - 2026-01-28 07:26:37 --> UTF-8 Support Enabled
+INFO - 2026-01-28 07:26:37 --> Utf8 Class Initialized
+INFO - 2026-01-28 07:26:37 --> URI Class Initialized
+INFO - 2026-01-28 07:26:37 --> Router Class Initialized
+INFO - 2026-01-28 07:26:37 --> Output Class Initialized
+INFO - 2026-01-28 07:26:37 --> Security Class Initialized
+DEBUG - 2026-01-28 07:26:37 --> Global POST, GET and COOKIE data sanitized
+INFO - 2026-01-28 07:26:37 --> Input Class Initialized
+INFO - 2026-01-28 07:26:37 --> Language Class Initialized
+INFO - 2026-01-28 07:26:37 --> Loader Class Initialized
+INFO - 2026-01-28 07:26:37 --> Helper loaded: url_helper
+INFO - 2026-01-28 07:26:37 --> Helper loaded: file_helper
+INFO - 2026-01-28 07:26:37 --> Helper loaded: html_helper
+INFO - 2026-01-28 07:26:37 --> Database Driver Class Initialized
+INFO - 2026-01-28 07:26:37 --> Session: Class initialized using 'files' driver.
+INFO - 2026-01-28 07:26:37 --> Helper loaded: form_helper
+INFO - 2026-01-28 07:26:37 --> Form Validation Class Initialized
+INFO - 2026-01-28 07:26:37 --> User Agent Class Initialized
+INFO - 2026-01-28 07:26:37 --> Language file loaded: language/english/pagination_lang.php
+INFO - 2026-01-28 07:26:37 --> Pagination Class Initialized
+INFO - 2026-01-28 07:26:37 --> Controller Class Initialized
+INFO - 2026-01-28 07:26:37 --> Model "Alumni_model" initialized
+INFO - 2026-01-28 07:26:37 --> File loaded: C:\xampp\htdocs\Aconnect_ci3\application\views\__header.php
+INFO - 2026-01-28 07:26:37 --> File loaded: C:\xampp\htdocs\Aconnect_ci3\application\views\user/search_alumni.php
+INFO - 2026-01-28 07:26:37 --> File loaded: C:\xampp\htdocs\Aconnect_ci3\application\views\__footer.php
+INFO - 2026-01-28 07:26:37 --> Final output sent to browser
+DEBUG - 2026-01-28 07:26:37 --> Total execution time: 0.0251
+ERROR - 2026-01-28 07:26:38 --> $config['composer_autoload'] is set to TRUE but C:\xampp\htdocs\Aconnect_ci3\application\vendor/autoload.php was not found.
+INFO - 2026-01-28 07:26:38 --> Config Class Initialized
+INFO - 2026-01-28 07:26:38 --> Hooks Class Initialized
+DEBUG - 2026-01-28 07:26:38 --> UTF-8 Support Enabled
+INFO - 2026-01-28 07:26:38 --> Utf8 Class Initialized
+INFO - 2026-01-28 07:26:38 --> URI Class Initialized
+INFO - 2026-01-28 07:26:38 --> Router Class Initialized
+INFO - 2026-01-28 07:26:38 --> Output Class Initialized
+INFO - 2026-01-28 07:26:38 --> Security Class Initialized
+DEBUG - 2026-01-28 07:26:38 --> Global POST, GET and COOKIE data sanitized
+INFO - 2026-01-28 07:26:38 --> Input Class Initialized
+INFO - 2026-01-28 07:26:38 --> Language Class Initialized
+INFO - 2026-01-28 07:26:38 --> Loader Class Initialized
+INFO - 2026-01-28 07:26:38 --> Helper loaded: url_helper
+INFO - 2026-01-28 07:26:38 --> Helper loaded: file_helper
+INFO - 2026-01-28 07:26:38 --> Helper loaded: html_helper
+INFO - 2026-01-28 07:26:38 --> Database Driver Class Initialized
+INFO - 2026-01-28 07:26:38 --> Session: Class initialized using 'files' driver.
+INFO - 2026-01-28 07:26:38 --> Helper loaded: form_helper
+INFO - 2026-01-28 07:26:38 --> Form Validation Class Initialized
+INFO - 2026-01-28 07:26:38 --> User Agent Class Initialized
+INFO - 2026-01-28 07:26:38 --> Language file loaded: language/english/pagination_lang.php
+INFO - 2026-01-28 07:26:38 --> Pagination Class Initialized
+INFO - 2026-01-28 07:26:38 --> Controller Class Initialized
+INFO - 2026-01-28 07:26:38 --> Model "Alumni_model" initialized
+INFO - 2026-01-28 07:26:38 --> Model "Employment_model" initialized
+INFO - 2026-01-28 07:26:38 --> File loaded: C:\xampp\htdocs\Aconnect_ci3\application\views\__header.php
+INFO - 2026-01-28 07:26:38 --> File loaded: C:\xampp\htdocs\Aconnect_ci3\application\views\user/view_profile.php
+INFO - 2026-01-28 07:26:38 --> File loaded: C:\xampp\htdocs\Aconnect_ci3\application\views\__footer.php
+INFO - 2026-01-28 07:26:38 --> Final output sent to browser
+DEBUG - 2026-01-28 07:26:38 --> Total execution time: 0.0272
+ERROR - 2026-01-28 07:26:41 --> $config['composer_autoload'] is set to TRUE but C:\xampp\htdocs\Aconnect_ci3\application\vendor/autoload.php was not found.
+INFO - 2026-01-28 07:26:41 --> Config Class Initialized
+INFO - 2026-01-28 07:26:41 --> Hooks Class Initialized
+DEBUG - 2026-01-28 07:26:41 --> UTF-8 Support Enabled
+INFO - 2026-01-28 07:26:41 --> Utf8 Class Initialized
+INFO - 2026-01-28 07:26:41 --> URI Class Initialized
+INFO - 2026-01-28 07:26:41 --> Router Class Initialized
+INFO - 2026-01-28 07:26:41 --> Output Class Initialized
+INFO - 2026-01-28 07:26:41 --> Security Class Initialized
+DEBUG - 2026-01-28 07:26:41 --> Global POST, GET and COOKIE data sanitized
+INFO - 2026-01-28 07:26:41 --> Input Class Initialized
+INFO - 2026-01-28 07:26:41 --> Language Class Initialized
+INFO - 2026-01-28 07:26:41 --> Loader Class Initialized
+INFO - 2026-01-28 07:26:41 --> Helper loaded: url_helper
+INFO - 2026-01-28 07:26:41 --> Helper loaded: file_helper
+INFO - 2026-01-28 07:26:41 --> Helper loaded: html_helper
+INFO - 2026-01-28 07:26:41 --> Database Driver Class Initialized
+INFO - 2026-01-28 07:26:41 --> Session: Class initialized using 'files' driver.
+INFO - 2026-01-28 07:26:41 --> Helper loaded: form_helper
+INFO - 2026-01-28 07:26:41 --> Form Validation Class Initialized
+INFO - 2026-01-28 07:26:41 --> User Agent Class Initialized
+INFO - 2026-01-28 07:26:41 --> Language file loaded: language/english/pagination_lang.php
+INFO - 2026-01-28 07:26:41 --> Pagination Class Initialized
+INFO - 2026-01-28 07:26:41 --> Controller Class Initialized
+INFO - 2026-01-28 07:26:41 --> Model "Alumni_model" initialized
+INFO - 2026-01-28 07:26:41 --> File loaded: C:\xampp\htdocs\Aconnect_ci3\application\views\__header.php
+INFO - 2026-01-28 07:26:41 --> File loaded: C:\xampp\htdocs\Aconnect_ci3\application\views\user/search_alumni.php
+INFO - 2026-01-28 07:26:41 --> File loaded: C:\xampp\htdocs\Aconnect_ci3\application\views\__footer.php
+INFO - 2026-01-28 07:26:41 --> Final output sent to browser
+DEBUG - 2026-01-28 07:26:41 --> Total execution time: 0.0251
+ERROR - 2026-01-28 07:26:55 --> $config['composer_autoload'] is set to TRUE but C:\xampp\htdocs\Aconnect_ci3\application\vendor/autoload.php was not found.
+INFO - 2026-01-28 07:26:55 --> Config Class Initialized
+INFO - 2026-01-28 07:26:55 --> Hooks Class Initialized
+DEBUG - 2026-01-28 07:26:55 --> UTF-8 Support Enabled
+INFO - 2026-01-28 07:26:55 --> Utf8 Class Initialized
+INFO - 2026-01-28 07:26:55 --> URI Class Initialized
+INFO - 2026-01-28 07:26:55 --> Router Class Initialized
+INFO - 2026-01-28 07:26:55 --> Output Class Initialized
+INFO - 2026-01-28 07:26:55 --> Security Class Initialized
+DEBUG - 2026-01-28 07:26:55 --> Global POST, GET and COOKIE data sanitized
+INFO - 2026-01-28 07:26:55 --> Input Class Initialized
+INFO - 2026-01-28 07:26:55 --> Language Class Initialized
+INFO - 2026-01-28 07:26:55 --> Loader Class Initialized
+INFO - 2026-01-28 07:26:55 --> Helper loaded: url_helper
+INFO - 2026-01-28 07:26:55 --> Helper loaded: file_helper
+INFO - 2026-01-28 07:26:55 --> Helper loaded: html_helper
+INFO - 2026-01-28 07:26:55 --> Database Driver Class Initialized
+INFO - 2026-01-28 07:26:55 --> Session: Class initialized using 'files' driver.
+INFO - 2026-01-28 07:26:55 --> Helper loaded: form_helper
+INFO - 2026-01-28 07:26:55 --> Form Validation Class Initialized
+INFO - 2026-01-28 07:26:55 --> User Agent Class Initialized
+INFO - 2026-01-28 07:26:55 --> Language file loaded: language/english/pagination_lang.php
+INFO - 2026-01-28 07:26:55 --> Pagination Class Initialized
+INFO - 2026-01-28 07:26:55 --> Controller Class Initialized
+INFO - 2026-01-28 07:26:55 --> Model "Alumni_model" initialized
+INFO - 2026-01-28 07:26:55 --> Model "Employment_model" initialized
+INFO - 2026-01-28 07:26:55 --> File loaded: C:\xampp\htdocs\Aconnect_ci3\application\views\__header.php
+INFO - 2026-01-28 07:26:55 --> File loaded: C:\xampp\htdocs\Aconnect_ci3\application\views\user/view_profile.php
+INFO - 2026-01-28 07:26:55 --> File loaded: C:\xampp\htdocs\Aconnect_ci3\application\views\__footer.php
+INFO - 2026-01-28 07:26:55 --> Final output sent to browser
+DEBUG - 2026-01-28 07:26:55 --> Total execution time: 0.0358
+ERROR - 2026-01-28 07:27:04 --> $config['composer_autoload'] is set to TRUE but C:\xampp\htdocs\Aconnect_ci3\application\vendor/autoload.php was not found.
+INFO - 2026-01-28 07:27:04 --> Config Class Initialized
+INFO - 2026-01-28 07:27:04 --> Hooks Class Initialized
+DEBUG - 2026-01-28 07:27:04 --> UTF-8 Support Enabled
+INFO - 2026-01-28 07:27:04 --> Utf8 Class Initialized
+INFO - 2026-01-28 07:27:04 --> URI Class Initialized
+INFO - 2026-01-28 07:27:04 --> Router Class Initialized
+INFO - 2026-01-28 07:27:04 --> Output Class Initialized
+INFO - 2026-01-28 07:27:04 --> Security Class Initialized
+DEBUG - 2026-01-28 07:27:04 --> Global POST, GET and COOKIE data sanitized
+INFO - 2026-01-28 07:27:04 --> Input Class Initialized
+INFO - 2026-01-28 07:27:04 --> Language Class Initialized
+INFO - 2026-01-28 07:27:04 --> Loader Class Initialized
+INFO - 2026-01-28 07:27:04 --> Helper loaded: url_helper
+INFO - 2026-01-28 07:27:04 --> Helper loaded: file_helper
+INFO - 2026-01-28 07:27:04 --> Helper loaded: html_helper
+INFO - 2026-01-28 07:27:04 --> Database Driver Class Initialized
+INFO - 2026-01-28 07:27:04 --> Session: Class initialized using 'files' driver.
+INFO - 2026-01-28 07:27:04 --> Helper loaded: form_helper
+INFO - 2026-01-28 07:27:04 --> Form Validation Class Initialized
+INFO - 2026-01-28 07:27:04 --> User Agent Class Initialized
+INFO - 2026-01-28 07:27:04 --> Language file loaded: language/english/pagination_lang.php
+INFO - 2026-01-28 07:27:04 --> Pagination Class Initialized
+INFO - 2026-01-28 07:27:04 --> Controller Class Initialized
+INFO - 2026-01-28 07:27:04 --> Model "Alumni_model" initialized
+INFO - 2026-01-28 07:27:04 --> File loaded: C:\xampp\htdocs\Aconnect_ci3\application\views\__header.php
+INFO - 2026-01-28 07:27:04 --> File loaded: C:\xampp\htdocs\Aconnect_ci3\application\views\user/search_alumni.php
+INFO - 2026-01-28 07:27:04 --> File loaded: C:\xampp\htdocs\Aconnect_ci3\application\views\__footer.php
+INFO - 2026-01-28 07:27:04 --> Final output sent to browser
+DEBUG - 2026-01-28 07:27:04 --> Total execution time: 0.0579
+ERROR - 2026-01-28 07:27:05 --> $config['composer_autoload'] is set to TRUE but C:\xampp\htdocs\Aconnect_ci3\application\vendor/autoload.php was not found.
+INFO - 2026-01-28 07:27:05 --> Config Class Initialized
+INFO - 2026-01-28 07:27:05 --> Hooks Class Initialized
+DEBUG - 2026-01-28 07:27:05 --> UTF-8 Support Enabled
+INFO - 2026-01-28 07:27:05 --> Utf8 Class Initialized
+INFO - 2026-01-28 07:27:05 --> URI Class Initialized
+INFO - 2026-01-28 07:27:05 --> Router Class Initialized
+INFO - 2026-01-28 07:27:05 --> Output Class Initialized
+INFO - 2026-01-28 07:27:05 --> Security Class Initialized
+DEBUG - 2026-01-28 07:27:05 --> Global POST, GET and COOKIE data sanitized
+INFO - 2026-01-28 07:27:05 --> Input Class Initialized
+INFO - 2026-01-28 07:27:05 --> Language Class Initialized
+INFO - 2026-01-28 07:27:05 --> Loader Class Initialized
+INFO - 2026-01-28 07:27:05 --> Helper loaded: url_helper
+INFO - 2026-01-28 07:27:05 --> Helper loaded: file_helper
+INFO - 2026-01-28 07:27:05 --> Helper loaded: html_helper
+INFO - 2026-01-28 07:27:05 --> Database Driver Class Initialized
+INFO - 2026-01-28 07:27:05 --> Session: Class initialized using 'files' driver.
+INFO - 2026-01-28 07:27:05 --> Helper loaded: form_helper
+INFO - 2026-01-28 07:27:05 --> Form Validation Class Initialized
+INFO - 2026-01-28 07:27:05 --> User Agent Class Initialized
+INFO - 2026-01-28 07:27:05 --> Language file loaded: language/english/pagination_lang.php
+INFO - 2026-01-28 07:27:05 --> Pagination Class Initialized
+INFO - 2026-01-28 07:27:05 --> Controller Class Initialized
+INFO - 2026-01-28 07:27:05 --> Model "Alumni_model" initialized
+INFO - 2026-01-28 07:27:05 --> Model "Employment_model" initialized
+INFO - 2026-01-28 07:27:05 --> File loaded: C:\xampp\htdocs\Aconnect_ci3\application\views\__header.php
+INFO - 2026-01-28 07:27:05 --> File loaded: C:\xampp\htdocs\Aconnect_ci3\application\views\user/view_profile.php
+INFO - 2026-01-28 07:27:05 --> File loaded: C:\xampp\htdocs\Aconnect_ci3\application\views\__footer.php
+INFO - 2026-01-28 07:27:05 --> Final output sent to browser
+DEBUG - 2026-01-28 07:27:05 --> Total execution time: 0.0325
+ERROR - 2026-01-28 07:27:21 --> $config['composer_autoload'] is set to TRUE but C:\xampp\htdocs\Aconnect_ci3\application\vendor/autoload.php was not found.
+INFO - 2026-01-28 07:27:21 --> Config Class Initialized
+INFO - 2026-01-28 07:27:21 --> Hooks Class Initialized
+DEBUG - 2026-01-28 07:27:21 --> UTF-8 Support Enabled
+INFO - 2026-01-28 07:27:21 --> Utf8 Class Initialized
+INFO - 2026-01-28 07:27:21 --> URI Class Initialized
+INFO - 2026-01-28 07:27:21 --> Router Class Initialized
+INFO - 2026-01-28 07:27:21 --> Output Class Initialized
+INFO - 2026-01-28 07:27:21 --> Security Class Initialized
+DEBUG - 2026-01-28 07:27:21 --> Global POST, GET and COOKIE data sanitized
+INFO - 2026-01-28 07:27:21 --> Input Class Initialized
+INFO - 2026-01-28 07:27:21 --> Language Class Initialized
+INFO - 2026-01-28 07:27:21 --> Loader Class Initialized
+INFO - 2026-01-28 07:27:21 --> Helper loaded: url_helper
+INFO - 2026-01-28 07:27:21 --> Helper loaded: file_helper
+INFO - 2026-01-28 07:27:21 --> Helper loaded: html_helper
+INFO - 2026-01-28 07:27:21 --> Database Driver Class Initialized
+INFO - 2026-01-28 07:27:21 --> Session: Class initialized using 'files' driver.
+INFO - 2026-01-28 07:27:21 --> Helper loaded: form_helper
+INFO - 2026-01-28 07:27:21 --> Form Validation Class Initialized
+INFO - 2026-01-28 07:27:21 --> User Agent Class Initialized
+INFO - 2026-01-28 07:27:21 --> Language file loaded: language/english/pagination_lang.php
+INFO - 2026-01-28 07:27:21 --> Pagination Class Initialized
+INFO - 2026-01-28 07:27:21 --> Controller Class Initialized
+INFO - 2026-01-28 07:27:21 --> Model "Alumni_model" initialized
+INFO - 2026-01-28 07:27:21 --> File loaded: C:\xampp\htdocs\Aconnect_ci3\application\views\__header.php
+INFO - 2026-01-28 07:27:21 --> File loaded: C:\xampp\htdocs\Aconnect_ci3\application\views\user/search_alumni.php
+INFO - 2026-01-28 07:27:21 --> File loaded: C:\xampp\htdocs\Aconnect_ci3\application\views\__footer.php
+INFO - 2026-01-28 07:27:21 --> Final output sent to browser
+DEBUG - 2026-01-28 07:27:21 --> Total execution time: 0.0423
+ERROR - 2026-01-28 07:27:22 --> $config['composer_autoload'] is set to TRUE but C:\xampp\htdocs\Aconnect_ci3\application\vendor/autoload.php was not found.
+INFO - 2026-01-28 07:27:22 --> Config Class Initialized
+INFO - 2026-01-28 07:27:22 --> Hooks Class Initialized
+DEBUG - 2026-01-28 07:27:22 --> UTF-8 Support Enabled
+INFO - 2026-01-28 07:27:22 --> Utf8 Class Initialized
+INFO - 2026-01-28 07:27:22 --> URI Class Initialized
+INFO - 2026-01-28 07:27:22 --> Router Class Initialized
+INFO - 2026-01-28 07:27:22 --> Output Class Initialized
+INFO - 2026-01-28 07:27:22 --> Security Class Initialized
+DEBUG - 2026-01-28 07:27:22 --> Global POST, GET and COOKIE data sanitized
+INFO - 2026-01-28 07:27:22 --> Input Class Initialized
+INFO - 2026-01-28 07:27:22 --> Language Class Initialized
+INFO - 2026-01-28 07:27:22 --> Loader Class Initialized
+INFO - 2026-01-28 07:27:22 --> Helper loaded: url_helper
+INFO - 2026-01-28 07:27:22 --> Helper loaded: file_helper
+INFO - 2026-01-28 07:27:22 --> Helper loaded: html_helper
+INFO - 2026-01-28 07:27:22 --> Database Driver Class Initialized
+INFO - 2026-01-28 07:27:22 --> Session: Class initialized using 'files' driver.
+INFO - 2026-01-28 07:27:22 --> Helper loaded: form_helper
+INFO - 2026-01-28 07:27:22 --> Form Validation Class Initialized
+INFO - 2026-01-28 07:27:22 --> User Agent Class Initialized
+INFO - 2026-01-28 07:27:22 --> Language file loaded: language/english/pagination_lang.php
+INFO - 2026-01-28 07:27:22 --> Pagination Class Initialized
+INFO - 2026-01-28 07:27:22 --> Controller Class Initialized
+INFO - 2026-01-28 07:27:22 --> Model "Alumni_model" initialized
+INFO - 2026-01-28 07:27:22 --> Final output sent to browser
+DEBUG - 2026-01-28 07:27:22 --> Total execution time: 0.0271
+ERROR - 2026-01-28 07:28:30 --> $config['composer_autoload'] is set to TRUE but C:\xampp\htdocs\Aconnect_ci3\application\vendor/autoload.php was not found.
+INFO - 2026-01-28 07:28:30 --> Config Class Initialized
+INFO - 2026-01-28 07:28:30 --> Hooks Class Initialized
+DEBUG - 2026-01-28 07:28:30 --> UTF-8 Support Enabled
+INFO - 2026-01-28 07:28:30 --> Utf8 Class Initialized
+INFO - 2026-01-28 07:28:30 --> URI Class Initialized
+INFO - 2026-01-28 07:28:30 --> Router Class Initialized
+INFO - 2026-01-28 07:28:30 --> Output Class Initialized
+INFO - 2026-01-28 07:28:30 --> Security Class Initialized
+DEBUG - 2026-01-28 07:28:30 --> Global POST, GET and COOKIE data sanitized
+INFO - 2026-01-28 07:28:30 --> Input Class Initialized
+INFO - 2026-01-28 07:28:30 --> Language Class Initialized
+INFO - 2026-01-28 07:28:30 --> Loader Class Initialized
+INFO - 2026-01-28 07:28:30 --> Helper loaded: url_helper
+INFO - 2026-01-28 07:28:30 --> Helper loaded: file_helper
+INFO - 2026-01-28 07:28:30 --> Helper loaded: html_helper
+INFO - 2026-01-28 07:28:30 --> Database Driver Class Initialized
+INFO - 2026-01-28 07:28:30 --> Session: Class initialized using 'files' driver.
+INFO - 2026-01-28 07:28:30 --> Helper loaded: form_helper
+INFO - 2026-01-28 07:28:30 --> Form Validation Class Initialized
+INFO - 2026-01-28 07:28:30 --> User Agent Class Initialized
+INFO - 2026-01-28 07:28:30 --> Language file loaded: language/english/pagination_lang.php
+INFO - 2026-01-28 07:28:30 --> Pagination Class Initialized
+INFO - 2026-01-28 07:28:30 --> Controller Class Initialized
+INFO - 2026-01-28 07:28:30 --> Model "Alumni_model" initialized
+ERROR - 2026-01-28 07:28:30 --> $config['composer_autoload'] is set to TRUE but C:\xampp\htdocs\Aconnect_ci3\application\vendor/autoload.php was not found.
+INFO - 2026-01-28 07:28:30 --> Config Class Initialized
+INFO - 2026-01-28 07:28:30 --> Hooks Class Initialized
+DEBUG - 2026-01-28 07:28:30 --> UTF-8 Support Enabled
+INFO - 2026-01-28 07:28:30 --> Utf8 Class Initialized
+INFO - 2026-01-28 07:28:30 --> URI Class Initialized
+INFO - 2026-01-28 07:28:30 --> Router Class Initialized
+INFO - 2026-01-28 07:28:30 --> Output Class Initialized
+INFO - 2026-01-28 07:28:30 --> Security Class Initialized
+DEBUG - 2026-01-28 07:28:30 --> Global POST, GET and COOKIE data sanitized
+INFO - 2026-01-28 07:28:30 --> Input Class Initialized
+INFO - 2026-01-28 07:28:30 --> Language Class Initialized
+INFO - 2026-01-28 07:28:30 --> Loader Class Initialized
+INFO - 2026-01-28 07:28:30 --> Helper loaded: url_helper
+INFO - 2026-01-28 07:28:30 --> Helper loaded: file_helper
+INFO - 2026-01-28 07:28:30 --> Helper loaded: html_helper
+INFO - 2026-01-28 07:28:30 --> Database Driver Class Initialized
+INFO - 2026-01-28 07:28:30 --> Session: Class initialized using 'files' driver.
+INFO - 2026-01-28 07:28:30 --> Helper loaded: form_helper
+INFO - 2026-01-28 07:28:30 --> Form Validation Class Initialized
+INFO - 2026-01-28 07:28:30 --> User Agent Class Initialized
+INFO - 2026-01-28 07:28:30 --> Language file loaded: language/english/pagination_lang.php
+INFO - 2026-01-28 07:28:30 --> Pagination Class Initialized
+INFO - 2026-01-28 07:28:30 --> Controller Class Initialized
+INFO - 2026-01-28 07:28:30 --> Model "Alumni_model" initialized
+INFO - 2026-01-28 07:28:30 --> File loaded: C:\xampp\htdocs\Aconnect_ci3\application\views\__header.php
+INFO - 2026-01-28 07:28:30 --> File loaded: C:\xampp\htdocs\Aconnect_ci3\application\views\user/search_alumni.php
+INFO - 2026-01-28 07:28:30 --> File loaded: C:\xampp\htdocs\Aconnect_ci3\application\views\__footer.php
+INFO - 2026-01-28 07:28:30 --> Final output sent to browser
+DEBUG - 2026-01-28 07:28:30 --> Total execution time: 0.0327
+ERROR - 2026-01-28 07:28:32 --> $config['composer_autoload'] is set to TRUE but C:\xampp\htdocs\Aconnect_ci3\application\vendor/autoload.php was not found.
+INFO - 2026-01-28 07:28:32 --> Config Class Initialized
+INFO - 2026-01-28 07:28:32 --> Hooks Class Initialized
+DEBUG - 2026-01-28 07:28:32 --> UTF-8 Support Enabled
+INFO - 2026-01-28 07:28:32 --> Utf8 Class Initialized
+INFO - 2026-01-28 07:28:32 --> URI Class Initialized
+INFO - 2026-01-28 07:28:32 --> Router Class Initialized
+INFO - 2026-01-28 07:28:32 --> Output Class Initialized
+INFO - 2026-01-28 07:28:32 --> Security Class Initialized
+DEBUG - 2026-01-28 07:28:32 --> Global POST, GET and COOKIE data sanitized
+INFO - 2026-01-28 07:28:32 --> Input Class Initialized
+INFO - 2026-01-28 07:28:32 --> Language Class Initialized
+INFO - 2026-01-28 07:28:32 --> Loader Class Initialized
+INFO - 2026-01-28 07:28:32 --> Helper loaded: url_helper
+INFO - 2026-01-28 07:28:32 --> Helper loaded: file_helper
+INFO - 2026-01-28 07:28:32 --> Helper loaded: html_helper
+INFO - 2026-01-28 07:28:32 --> Database Driver Class Initialized
+INFO - 2026-01-28 07:28:32 --> Session: Class initialized using 'files' driver.
+INFO - 2026-01-28 07:28:32 --> Helper loaded: form_helper
+INFO - 2026-01-28 07:28:32 --> Form Validation Class Initialized
+INFO - 2026-01-28 07:28:32 --> User Agent Class Initialized
+INFO - 2026-01-28 07:28:32 --> Language file loaded: language/english/pagination_lang.php
+INFO - 2026-01-28 07:28:32 --> Pagination Class Initialized
+INFO - 2026-01-28 07:28:32 --> Controller Class Initialized
+INFO - 2026-01-28 07:28:32 --> Model "Alumni_model" initialized
+INFO - 2026-01-28 07:28:32 --> Final output sent to browser
+DEBUG - 2026-01-28 07:28:32 --> Total execution time: 0.0267
+ERROR - 2026-01-28 07:28:33 --> $config['composer_autoload'] is set to TRUE but C:\xampp\htdocs\Aconnect_ci3\application\vendor/autoload.php was not found.
+INFO - 2026-01-28 07:28:33 --> Config Class Initialized
+INFO - 2026-01-28 07:28:33 --> Hooks Class Initialized
+DEBUG - 2026-01-28 07:28:33 --> UTF-8 Support Enabled
+INFO - 2026-01-28 07:28:33 --> Utf8 Class Initialized
+INFO - 2026-01-28 07:28:33 --> URI Class Initialized
+INFO - 2026-01-28 07:28:33 --> Router Class Initialized
+INFO - 2026-01-28 07:28:33 --> Output Class Initialized
+INFO - 2026-01-28 07:28:33 --> Security Class Initialized
+DEBUG - 2026-01-28 07:28:33 --> Global POST, GET and COOKIE data sanitized
+INFO - 2026-01-28 07:28:33 --> Input Class Initialized
+INFO - 2026-01-28 07:28:33 --> Language Class Initialized
+INFO - 2026-01-28 07:28:33 --> Loader Class Initialized
+INFO - 2026-01-28 07:28:33 --> Helper loaded: url_helper
+INFO - 2026-01-28 07:28:33 --> Helper loaded: file_helper
+INFO - 2026-01-28 07:28:33 --> Helper loaded: html_helper
+INFO - 2026-01-28 07:28:33 --> Database Driver Class Initialized
+INFO - 2026-01-28 07:28:33 --> Session: Class initialized using 'files' driver.
+INFO - 2026-01-28 07:28:33 --> Helper loaded: form_helper
+INFO - 2026-01-28 07:28:33 --> Form Validation Class Initialized
+INFO - 2026-01-28 07:28:33 --> User Agent Class Initialized
+INFO - 2026-01-28 07:28:33 --> Language file loaded: language/english/pagination_lang.php
+INFO - 2026-01-28 07:28:33 --> Pagination Class Initialized
+INFO - 2026-01-28 07:28:33 --> Controller Class Initialized
+INFO - 2026-01-28 07:28:33 --> Model "Alumni_model" initialized
+INFO - 2026-01-28 07:28:33 --> Final output sent to browser
+DEBUG - 2026-01-28 07:28:33 --> Total execution time: 0.0440
+ERROR - 2026-01-28 07:28:35 --> $config['composer_autoload'] is set to TRUE but C:\xampp\htdocs\Aconnect_ci3\application\vendor/autoload.php was not found.
+INFO - 2026-01-28 07:28:35 --> Config Class Initialized
+INFO - 2026-01-28 07:28:35 --> Hooks Class Initialized
+DEBUG - 2026-01-28 07:28:35 --> UTF-8 Support Enabled
+INFO - 2026-01-28 07:28:35 --> Utf8 Class Initialized
+INFO - 2026-01-28 07:28:35 --> URI Class Initialized
+INFO - 2026-01-28 07:28:35 --> Router Class Initialized
+INFO - 2026-01-28 07:28:35 --> Output Class Initialized
+INFO - 2026-01-28 07:28:35 --> Security Class Initialized
+DEBUG - 2026-01-28 07:28:35 --> Global POST, GET and COOKIE data sanitized
+INFO - 2026-01-28 07:28:35 --> Input Class Initialized
+INFO - 2026-01-28 07:28:35 --> Language Class Initialized
+INFO - 2026-01-28 07:28:35 --> Loader Class Initialized
+INFO - 2026-01-28 07:28:35 --> Helper loaded: url_helper
+INFO - 2026-01-28 07:28:35 --> Helper loaded: file_helper
+INFO - 2026-01-28 07:28:35 --> Helper loaded: html_helper
+INFO - 2026-01-28 07:28:35 --> Database Driver Class Initialized
+INFO - 2026-01-28 07:28:35 --> Session: Class initialized using 'files' driver.
+INFO - 2026-01-28 07:28:35 --> Helper loaded: form_helper
+INFO - 2026-01-28 07:28:35 --> Form Validation Class Initialized
+INFO - 2026-01-28 07:28:35 --> User Agent Class Initialized
+INFO - 2026-01-28 07:28:35 --> Language file loaded: language/english/pagination_lang.php
+INFO - 2026-01-28 07:28:35 --> Pagination Class Initialized
+INFO - 2026-01-28 07:28:35 --> Controller Class Initialized
+INFO - 2026-01-28 07:28:35 --> Helper loaded: date_helper
+DEBUG - 2026-01-28 07:28:35 --> Session class already loaded. Second attempt ignored.
+INFO - 2026-01-28 07:28:35 --> Upload Class Initialized
+INFO - 2026-01-28 07:28:35 --> Model "Job_model" initialized
+INFO - 2026-01-28 07:28:35 --> File loaded: C:\xampp\htdocs\Aconnect_ci3\application\views\__header.php
+INFO - 2026-01-28 07:28:35 --> File loaded: C:\xampp\htdocs\Aconnect_ci3\application\views\user/jobs.php
+INFO - 2026-01-28 07:28:35 --> File loaded: C:\xampp\htdocs\Aconnect_ci3\application\views\__footer.php
+INFO - 2026-01-28 07:28:35 --> Final output sent to browser
+DEBUG - 2026-01-28 07:28:35 --> Total execution time: 0.0560
+ERROR - 2026-01-28 07:28:35 --> $config['composer_autoload'] is set to TRUE but C:\xampp\htdocs\Aconnect_ci3\application\vendor/autoload.php was not found.
+INFO - 2026-01-28 07:28:35 --> Config Class Initialized
+INFO - 2026-01-28 07:28:35 --> Hooks Class Initialized
+DEBUG - 2026-01-28 07:28:35 --> UTF-8 Support Enabled
+INFO - 2026-01-28 07:28:35 --> Utf8 Class Initialized
+INFO - 2026-01-28 07:28:35 --> URI Class Initialized
+INFO - 2026-01-28 07:28:35 --> Router Class Initialized
+INFO - 2026-01-28 07:28:35 --> Output Class Initialized
+INFO - 2026-01-28 07:28:35 --> Security Class Initialized
+DEBUG - 2026-01-28 07:28:35 --> Global POST, GET and COOKIE data sanitized
+INFO - 2026-01-28 07:28:35 --> Input Class Initialized
+INFO - 2026-01-28 07:28:35 --> Language Class Initialized
+INFO - 2026-01-28 07:28:35 --> Loader Class Initialized
+INFO - 2026-01-28 07:28:35 --> Helper loaded: url_helper
+INFO - 2026-01-28 07:28:35 --> Helper loaded: file_helper
+INFO - 2026-01-28 07:28:35 --> Helper loaded: html_helper
+INFO - 2026-01-28 07:28:35 --> Database Driver Class Initialized
+INFO - 2026-01-28 07:28:35 --> Session: Class initialized using 'files' driver.
+INFO - 2026-01-28 07:28:35 --> Helper loaded: form_helper
+INFO - 2026-01-28 07:28:35 --> Form Validation Class Initialized
+INFO - 2026-01-28 07:28:35 --> User Agent Class Initialized
+INFO - 2026-01-28 07:28:35 --> Language file loaded: language/english/pagination_lang.php
+INFO - 2026-01-28 07:28:35 --> Pagination Class Initialized
+INFO - 2026-01-28 07:28:35 --> Controller Class Initialized
+INFO - 2026-01-28 07:28:35 --> Model "Alumni_model" initialized
+INFO - 2026-01-28 07:28:35 --> File loaded: C:\xampp\htdocs\Aconnect_ci3\application\views\__header.php
+INFO - 2026-01-28 07:28:35 --> File loaded: C:\xampp\htdocs\Aconnect_ci3\application\views\user/chat_list.php
+INFO - 2026-01-28 07:28:35 --> File loaded: C:\xampp\htdocs\Aconnect_ci3\application\views\__footer.php
+INFO - 2026-01-28 07:28:35 --> Final output sent to browser
+DEBUG - 2026-01-28 07:28:35 --> Total execution time: 0.0272
+ERROR - 2026-01-28 07:28:36 --> $config['composer_autoload'] is set to TRUE but C:\xampp\htdocs\Aconnect_ci3\application\vendor/autoload.php was not found.
+INFO - 2026-01-28 07:28:36 --> Config Class Initialized
+INFO - 2026-01-28 07:28:36 --> Hooks Class Initialized
+DEBUG - 2026-01-28 07:28:36 --> UTF-8 Support Enabled
+INFO - 2026-01-28 07:28:36 --> Utf8 Class Initialized
+INFO - 2026-01-28 07:28:36 --> URI Class Initialized
+INFO - 2026-01-28 07:28:36 --> Router Class Initialized
+INFO - 2026-01-28 07:28:36 --> Output Class Initialized
+INFO - 2026-01-28 07:28:36 --> Security Class Initialized
+DEBUG - 2026-01-28 07:28:36 --> Global POST, GET and COOKIE data sanitized
+INFO - 2026-01-28 07:28:36 --> Input Class Initialized
+INFO - 2026-01-28 07:28:36 --> Language Class Initialized
+INFO - 2026-01-28 07:28:36 --> Loader Class Initialized
+INFO - 2026-01-28 07:28:36 --> Helper loaded: url_helper
+INFO - 2026-01-28 07:28:36 --> Helper loaded: file_helper
+INFO - 2026-01-28 07:28:36 --> Helper loaded: html_helper
+INFO - 2026-01-28 07:28:36 --> Database Driver Class Initialized
+INFO - 2026-01-28 07:28:36 --> Session: Class initialized using 'files' driver.
+INFO - 2026-01-28 07:28:36 --> Helper loaded: form_helper
+INFO - 2026-01-28 07:28:36 --> Form Validation Class Initialized
+INFO - 2026-01-28 07:28:36 --> User Agent Class Initialized
+INFO - 2026-01-28 07:28:36 --> Language file loaded: language/english/pagination_lang.php
+INFO - 2026-01-28 07:28:36 --> Pagination Class Initialized
+INFO - 2026-01-28 07:28:36 --> Controller Class Initialized
+INFO - 2026-01-28 07:28:36 --> Model "Alumni_model" initialized
+INFO - 2026-01-28 07:28:36 --> Final output sent to browser
+DEBUG - 2026-01-28 07:28:36 --> Total execution time: 0.0476
+ERROR - 2026-01-28 07:28:38 --> $config['composer_autoload'] is set to TRUE but C:\xampp\htdocs\Aconnect_ci3\application\vendor/autoload.php was not found.
+INFO - 2026-01-28 07:28:38 --> Config Class Initialized
+INFO - 2026-01-28 07:28:38 --> Hooks Class Initialized
+DEBUG - 2026-01-28 07:28:38 --> UTF-8 Support Enabled
+INFO - 2026-01-28 07:28:38 --> Utf8 Class Initialized
+INFO - 2026-01-28 07:28:38 --> URI Class Initialized
+INFO - 2026-01-28 07:28:38 --> Router Class Initialized
+INFO - 2026-01-28 07:28:38 --> Output Class Initialized
+INFO - 2026-01-28 07:28:38 --> Security Class Initialized
+DEBUG - 2026-01-28 07:28:38 --> Global POST, GET and COOKIE data sanitized
+INFO - 2026-01-28 07:28:38 --> Input Class Initialized
+INFO - 2026-01-28 07:28:38 --> Language Class Initialized
+INFO - 2026-01-28 07:28:38 --> Loader Class Initialized
+INFO - 2026-01-28 07:28:38 --> Helper loaded: url_helper
+INFO - 2026-01-28 07:28:38 --> Helper loaded: file_helper
+INFO - 2026-01-28 07:28:38 --> Helper loaded: html_helper
+INFO - 2026-01-28 07:28:38 --> Database Driver Class Initialized
+INFO - 2026-01-28 07:28:38 --> Session: Class initialized using 'files' driver.
+INFO - 2026-01-28 07:28:38 --> Helper loaded: form_helper
+INFO - 2026-01-28 07:28:38 --> Form Validation Class Initialized
+INFO - 2026-01-28 07:28:38 --> User Agent Class Initialized
+INFO - 2026-01-28 07:28:38 --> Language file loaded: language/english/pagination_lang.php
+INFO - 2026-01-28 07:28:38 --> Pagination Class Initialized
+INFO - 2026-01-28 07:28:38 --> Controller Class Initialized
+INFO - 2026-01-28 07:28:38 --> Model "Alumni_model" initialized
+INFO - 2026-01-28 07:28:38 --> Final output sent to browser
+DEBUG - 2026-01-28 07:28:38 --> Total execution time: 0.0250
+ERROR - 2026-01-28 07:28:41 --> $config['composer_autoload'] is set to TRUE but C:\xampp\htdocs\Aconnect_ci3\application\vendor/autoload.php was not found.
+INFO - 2026-01-28 07:28:41 --> Config Class Initialized
+INFO - 2026-01-28 07:28:41 --> Hooks Class Initialized
+DEBUG - 2026-01-28 07:28:41 --> UTF-8 Support Enabled
+INFO - 2026-01-28 07:28:41 --> Utf8 Class Initialized
+INFO - 2026-01-28 07:28:41 --> URI Class Initialized
+INFO - 2026-01-28 07:28:41 --> Router Class Initialized
+INFO - 2026-01-28 07:28:41 --> Output Class Initialized
+INFO - 2026-01-28 07:28:41 --> Security Class Initialized
+DEBUG - 2026-01-28 07:28:41 --> Global POST, GET and COOKIE data sanitized
+INFO - 2026-01-28 07:28:41 --> Input Class Initialized
+INFO - 2026-01-28 07:28:41 --> Language Class Initialized
+INFO - 2026-01-28 07:28:41 --> Loader Class Initialized
+INFO - 2026-01-28 07:28:41 --> Helper loaded: url_helper
+INFO - 2026-01-28 07:28:41 --> Helper loaded: file_helper
+INFO - 2026-01-28 07:28:41 --> Helper loaded: html_helper
+INFO - 2026-01-28 07:28:41 --> Database Driver Class Initialized
+INFO - 2026-01-28 07:28:41 --> Session: Class initialized using 'files' driver.
+INFO - 2026-01-28 07:28:41 --> Helper loaded: form_helper
+INFO - 2026-01-28 07:28:41 --> Form Validation Class Initialized
+INFO - 2026-01-28 07:28:41 --> User Agent Class Initialized
+INFO - 2026-01-28 07:28:41 --> Language file loaded: language/english/pagination_lang.php
+INFO - 2026-01-28 07:28:41 --> Pagination Class Initialized
+INFO - 2026-01-28 07:28:41 --> Controller Class Initialized
+INFO - 2026-01-28 07:28:41 --> Model "Alumni_model" initialized
+INFO - 2026-01-28 07:28:41 --> Final output sent to browser
+DEBUG - 2026-01-28 07:28:41 --> Total execution time: 0.0255
+ERROR - 2026-01-28 07:28:43 --> $config['composer_autoload'] is set to TRUE but C:\xampp\htdocs\Aconnect_ci3\application\vendor/autoload.php was not found.
+INFO - 2026-01-28 07:28:43 --> Config Class Initialized
+INFO - 2026-01-28 07:28:43 --> Hooks Class Initialized
+DEBUG - 2026-01-28 07:28:43 --> UTF-8 Support Enabled
+INFO - 2026-01-28 07:28:43 --> Utf8 Class Initialized
+INFO - 2026-01-28 07:28:43 --> URI Class Initialized
+INFO - 2026-01-28 07:28:43 --> Router Class Initialized
+INFO - 2026-01-28 07:28:43 --> Output Class Initialized
+INFO - 2026-01-28 07:28:43 --> Security Class Initialized
+DEBUG - 2026-01-28 07:28:43 --> Global POST, GET and COOKIE data sanitized
+INFO - 2026-01-28 07:28:43 --> Input Class Initialized
+INFO - 2026-01-28 07:28:43 --> Language Class Initialized
+INFO - 2026-01-28 07:28:43 --> Loader Class Initialized
+INFO - 2026-01-28 07:28:43 --> Helper loaded: url_helper
+INFO - 2026-01-28 07:28:43 --> Helper loaded: file_helper
+INFO - 2026-01-28 07:28:43 --> Helper loaded: html_helper
+INFO - 2026-01-28 07:28:43 --> Database Driver Class Initialized
+INFO - 2026-01-28 07:28:43 --> Session: Class initialized using 'files' driver.
+INFO - 2026-01-28 07:28:43 --> Helper loaded: form_helper
+INFO - 2026-01-28 07:28:43 --> Form Validation Class Initialized
+INFO - 2026-01-28 07:28:43 --> User Agent Class Initialized
+INFO - 2026-01-28 07:28:43 --> Language file loaded: language/english/pagination_lang.php
+INFO - 2026-01-28 07:28:43 --> Pagination Class Initialized
+INFO - 2026-01-28 07:28:43 --> Controller Class Initialized
+INFO - 2026-01-28 07:28:43 --> Model "Post_model" initialized
+INFO - 2026-01-28 07:28:43 --> File loaded: C:\xampp\htdocs\Aconnect_ci3\application\views\__header.php
+INFO - 2026-01-28 07:28:43 --> Helper loaded: text_helper
+INFO - 2026-01-28 07:28:43 --> File loaded: C:\xampp\htdocs\Aconnect_ci3\application\views\user/posts_view.php
+INFO - 2026-01-28 07:28:43 --> File loaded: C:\xampp\htdocs\Aconnect_ci3\application\views\__footer.php
+INFO - 2026-01-28 07:28:43 --> Final output sent to browser
+DEBUG - 2026-01-28 07:28:43 --> Total execution time: 0.0359
+ERROR - 2026-01-28 07:28:43 --> $config['composer_autoload'] is set to TRUE but C:\xampp\htdocs\Aconnect_ci3\application\vendor/autoload.php was not found.
+INFO - 2026-01-28 07:28:43 --> Config Class Initialized
+INFO - 2026-01-28 07:28:43 --> Hooks Class Initialized
+DEBUG - 2026-01-28 07:28:43 --> UTF-8 Support Enabled
+INFO - 2026-01-28 07:28:43 --> Utf8 Class Initialized
+INFO - 2026-01-28 07:28:43 --> URI Class Initialized
+INFO - 2026-01-28 07:28:43 --> Router Class Initialized
+INFO - 2026-01-28 07:28:43 --> Output Class Initialized
+INFO - 2026-01-28 07:28:43 --> Security Class Initialized
+DEBUG - 2026-01-28 07:28:43 --> Global POST, GET and COOKIE data sanitized
+INFO - 2026-01-28 07:28:43 --> Input Class Initialized
+INFO - 2026-01-28 07:28:43 --> Language Class Initialized
+ERROR - 2026-01-28 07:28:43 --> 404 Page Not Found: Assets/uploads
+ERROR - 2026-01-28 07:28:43 --> $config['composer_autoload'] is set to TRUE but C:\xampp\htdocs\Aconnect_ci3\application\vendor/autoload.php was not found.
+INFO - 2026-01-28 07:28:43 --> Config Class Initialized
+INFO - 2026-01-28 07:28:43 --> Hooks Class Initialized
+DEBUG - 2026-01-28 07:28:43 --> UTF-8 Support Enabled
+INFO - 2026-01-28 07:28:43 --> Utf8 Class Initialized
+INFO - 2026-01-28 07:28:43 --> URI Class Initialized
+INFO - 2026-01-28 07:28:43 --> Router Class Initialized
+INFO - 2026-01-28 07:28:43 --> Output Class Initialized
+INFO - 2026-01-28 07:28:43 --> Security Class Initialized
+DEBUG - 2026-01-28 07:28:43 --> Global POST, GET and COOKIE data sanitized
+INFO - 2026-01-28 07:28:43 --> Input Class Initialized
+INFO - 2026-01-28 07:28:43 --> Language Class Initialized
+INFO - 2026-01-28 07:28:43 --> Loader Class Initialized
+INFO - 2026-01-28 07:28:43 --> Helper loaded: url_helper
+INFO - 2026-01-28 07:28:43 --> Helper loaded: file_helper
+INFO - 2026-01-28 07:28:43 --> Helper loaded: html_helper
+INFO - 2026-01-28 07:28:43 --> Database Driver Class Initialized
+INFO - 2026-01-28 07:28:43 --> Session: Class initialized using 'files' driver.
+INFO - 2026-01-28 07:28:43 --> Helper loaded: form_helper
+INFO - 2026-01-28 07:28:43 --> Form Validation Class Initialized
+INFO - 2026-01-28 07:28:43 --> User Agent Class Initialized
+INFO - 2026-01-28 07:28:43 --> Language file loaded: language/english/pagination_lang.php
+INFO - 2026-01-28 07:28:43 --> Pagination Class Initialized
+INFO - 2026-01-28 07:28:43 --> Controller Class Initialized
+INFO - 2026-01-28 07:28:43 --> Model "Alumni_model" initialized
+INFO - 2026-01-28 07:28:43 --> Final output sent to browser
+DEBUG - 2026-01-28 07:28:43 --> Total execution time: 0.0517
+ERROR - 2026-01-28 07:28:44 --> $config['composer_autoload'] is set to TRUE but C:\xampp\htdocs\Aconnect_ci3\application\vendor/autoload.php was not found.
+INFO - 2026-01-28 07:28:44 --> Config Class Initialized
+INFO - 2026-01-28 07:28:44 --> Hooks Class Initialized
+DEBUG - 2026-01-28 07:28:44 --> UTF-8 Support Enabled
+INFO - 2026-01-28 07:28:44 --> Utf8 Class Initialized
+INFO - 2026-01-28 07:28:44 --> URI Class Initialized
+INFO - 2026-01-28 07:28:44 --> Router Class Initialized
+INFO - 2026-01-28 07:28:44 --> Output Class Initialized
+INFO - 2026-01-28 07:28:44 --> Security Class Initialized
+DEBUG - 2026-01-28 07:28:44 --> Global POST, GET and COOKIE data sanitized
+INFO - 2026-01-28 07:28:44 --> Input Class Initialized
+INFO - 2026-01-28 07:28:44 --> Language Class Initialized
+INFO - 2026-01-28 07:28:44 --> Loader Class Initialized
+INFO - 2026-01-28 07:28:44 --> Helper loaded: url_helper
+INFO - 2026-01-28 07:28:44 --> Helper loaded: file_helper
+INFO - 2026-01-28 07:28:44 --> Helper loaded: html_helper
+INFO - 2026-01-28 07:28:44 --> Database Driver Class Initialized
+INFO - 2026-01-28 07:28:44 --> Session: Class initialized using 'files' driver.
+INFO - 2026-01-28 07:28:44 --> Helper loaded: form_helper
+INFO - 2026-01-28 07:28:44 --> Form Validation Class Initialized
+INFO - 2026-01-28 07:28:44 --> User Agent Class Initialized
+INFO - 2026-01-28 07:28:44 --> Language file loaded: language/english/pagination_lang.php
+INFO - 2026-01-28 07:28:44 --> Pagination Class Initialized
+INFO - 2026-01-28 07:28:44 --> Controller Class Initialized
+INFO - 2026-01-28 07:28:44 --> Model "Alumni_model" initialized
+INFO - 2026-01-28 07:28:44 --> Final output sent to browser
+DEBUG - 2026-01-28 07:28:44 --> Total execution time: 0.0253
+ERROR - 2026-01-28 07:29:08 --> $config['composer_autoload'] is set to TRUE but C:\xampp\htdocs\Aconnect_ci3\application\vendor/autoload.php was not found.
+INFO - 2026-01-28 07:29:08 --> Config Class Initialized
+INFO - 2026-01-28 07:29:08 --> Hooks Class Initialized
+DEBUG - 2026-01-28 07:29:08 --> UTF-8 Support Enabled
+INFO - 2026-01-28 07:29:08 --> Utf8 Class Initialized
+INFO - 2026-01-28 07:29:08 --> URI Class Initialized
+INFO - 2026-01-28 07:29:08 --> Router Class Initialized
+INFO - 2026-01-28 07:29:08 --> Output Class Initialized
+INFO - 2026-01-28 07:29:08 --> Security Class Initialized
+DEBUG - 2026-01-28 07:29:08 --> Global POST, GET and COOKIE data sanitized
+INFO - 2026-01-28 07:29:08 --> Input Class Initialized
+INFO - 2026-01-28 07:29:08 --> Language Class Initialized
+ERROR - 2026-01-28 07:29:08 --> Severity: error --> Exception: syntax error, unexpected 'public' (T_PUBLIC) C:\xampp\htdocs\Aconnect_ci3\application\controllers\Profile.php 156
+ERROR - 2026-01-28 07:29:32 --> $config['composer_autoload'] is set to TRUE but C:\xampp\htdocs\Aconnect_ci3\application\vendor/autoload.php was not found.
+INFO - 2026-01-28 07:29:32 --> Config Class Initialized
+INFO - 2026-01-28 07:29:32 --> Hooks Class Initialized
+DEBUG - 2026-01-28 07:29:32 --> UTF-8 Support Enabled
+INFO - 2026-01-28 07:29:32 --> Utf8 Class Initialized
+INFO - 2026-01-28 07:29:32 --> URI Class Initialized
+INFO - 2026-01-28 07:29:32 --> Router Class Initialized
+INFO - 2026-01-28 07:29:32 --> Output Class Initialized
+INFO - 2026-01-28 07:29:32 --> Security Class Initialized
+DEBUG - 2026-01-28 07:29:32 --> Global POST, GET and COOKIE data sanitized
+INFO - 2026-01-28 07:29:32 --> Input Class Initialized
+INFO - 2026-01-28 07:29:32 --> Language Class Initialized
+INFO - 2026-01-28 07:29:32 --> Loader Class Initialized
+INFO - 2026-01-28 07:29:32 --> Helper loaded: url_helper
+INFO - 2026-01-28 07:29:32 --> Helper loaded: file_helper
+INFO - 2026-01-28 07:29:32 --> Helper loaded: html_helper
+INFO - 2026-01-28 07:29:32 --> Database Driver Class Initialized
+INFO - 2026-01-28 07:29:32 --> Session: Class initialized using 'files' driver.
+INFO - 2026-01-28 07:29:32 --> Helper loaded: form_helper
+INFO - 2026-01-28 07:29:32 --> Form Validation Class Initialized
+INFO - 2026-01-28 07:29:32 --> User Agent Class Initialized
+INFO - 2026-01-28 07:29:32 --> Language file loaded: language/english/pagination_lang.php
+INFO - 2026-01-28 07:29:32 --> Pagination Class Initialized
+INFO - 2026-01-28 07:29:32 --> Controller Class Initialized
+INFO - 2026-01-28 07:29:32 --> Model "Post_model" initialized
+INFO - 2026-01-28 07:29:32 --> File loaded: C:\xampp\htdocs\Aconnect_ci3\application\views\__header.php
+INFO - 2026-01-28 07:29:32 --> Helper loaded: text_helper
+INFO - 2026-01-28 07:29:32 --> File loaded: C:\xampp\htdocs\Aconnect_ci3\application\views\user/posts_view.php
+INFO - 2026-01-28 07:29:32 --> File loaded: C:\xampp\htdocs\Aconnect_ci3\application\views\__footer.php
+INFO - 2026-01-28 07:29:32 --> Final output sent to browser
+DEBUG - 2026-01-28 07:29:32 --> Total execution time: 0.0560
+ERROR - 2026-01-28 07:29:34 --> $config['composer_autoload'] is set to TRUE but C:\xampp\htdocs\Aconnect_ci3\application\vendor/autoload.php was not found.
+INFO - 2026-01-28 07:29:34 --> Config Class Initialized
+INFO - 2026-01-28 07:29:34 --> Hooks Class Initialized
+DEBUG - 2026-01-28 07:29:34 --> UTF-8 Support Enabled
+INFO - 2026-01-28 07:29:34 --> Utf8 Class Initialized
+INFO - 2026-01-28 07:29:34 --> URI Class Initialized
+INFO - 2026-01-28 07:29:34 --> Router Class Initialized
+INFO - 2026-01-28 07:29:34 --> Output Class Initialized
+INFO - 2026-01-28 07:29:34 --> Security Class Initialized
+DEBUG - 2026-01-28 07:29:34 --> Global POST, GET and COOKIE data sanitized
+INFO - 2026-01-28 07:29:34 --> Input Class Initialized
+INFO - 2026-01-28 07:29:34 --> Language Class Initialized
+INFO - 2026-01-28 07:29:34 --> Loader Class Initialized
+INFO - 2026-01-28 07:29:34 --> Helper loaded: url_helper
+INFO - 2026-01-28 07:29:34 --> Helper loaded: file_helper
+INFO - 2026-01-28 07:29:34 --> Helper loaded: html_helper
+INFO - 2026-01-28 07:29:34 --> Database Driver Class Initialized
+INFO - 2026-01-28 07:29:34 --> Session: Class initialized using 'files' driver.
+INFO - 2026-01-28 07:29:34 --> Helper loaded: form_helper
+INFO - 2026-01-28 07:29:34 --> Form Validation Class Initialized
+INFO - 2026-01-28 07:29:34 --> User Agent Class Initialized
+INFO - 2026-01-28 07:29:34 --> Language file loaded: language/english/pagination_lang.php
+INFO - 2026-01-28 07:29:34 --> Pagination Class Initialized
+INFO - 2026-01-28 07:29:34 --> Controller Class Initialized
+INFO - 2026-01-28 07:29:34 --> Model "Event_model" initialized
+DEBUG - 2026-01-28 07:29:34 --> Session class already loaded. Second attempt ignored.
+INFO - 2026-01-28 07:29:34 --> Helper loaded: date_helper
+INFO - 2026-01-28 07:29:34 --> File loaded: C:\xampp\htdocs\Aconnect_ci3\application\views\__header.php
+INFO - 2026-01-28 07:29:34 --> File loaded: C:\xampp\htdocs\Aconnect_ci3\application\views\user/events.php
+INFO - 2026-01-28 07:29:34 --> File loaded: C:\xampp\htdocs\Aconnect_ci3\application\views\__footer.php
+INFO - 2026-01-28 07:29:34 --> Final output sent to browser
+DEBUG - 2026-01-28 07:29:34 --> Total execution time: 0.0391
+ERROR - 2026-01-28 07:47:54 --> $config['composer_autoload'] is set to TRUE but C:\xampp\htdocs\Aconnect_ci3\application\vendor/autoload.php was not found.
+INFO - 2026-01-28 07:47:54 --> Config Class Initialized
+INFO - 2026-01-28 07:47:54 --> Hooks Class Initialized
+DEBUG - 2026-01-28 07:47:54 --> UTF-8 Support Enabled
+INFO - 2026-01-28 07:47:54 --> Utf8 Class Initialized
+INFO - 2026-01-28 07:47:54 --> URI Class Initialized
+INFO - 2026-01-28 07:47:54 --> Router Class Initialized
+INFO - 2026-01-28 07:47:54 --> Output Class Initialized
+INFO - 2026-01-28 07:47:54 --> Security Class Initialized
+DEBUG - 2026-01-28 07:47:54 --> Global POST, GET and COOKIE data sanitized
+INFO - 2026-01-28 07:47:54 --> Input Class Initialized
+INFO - 2026-01-28 07:47:54 --> Language Class Initialized
+INFO - 2026-01-28 07:47:54 --> Loader Class Initialized
+INFO - 2026-01-28 07:47:54 --> Helper loaded: url_helper
+INFO - 2026-01-28 07:47:54 --> Helper loaded: file_helper
+INFO - 2026-01-28 07:47:54 --> Helper loaded: html_helper
+INFO - 2026-01-28 07:47:54 --> Database Driver Class Initialized
+INFO - 2026-01-28 07:47:54 --> Session: Class initialized using 'files' driver.
+INFO - 2026-01-28 07:47:54 --> Helper loaded: form_helper
+INFO - 2026-01-28 07:47:54 --> Form Validation Class Initialized
+INFO - 2026-01-28 07:47:54 --> User Agent Class Initialized
+INFO - 2026-01-28 07:47:54 --> Language file loaded: language/english/pagination_lang.php
+INFO - 2026-01-28 07:47:54 --> Pagination Class Initialized
+INFO - 2026-01-28 07:47:54 --> Controller Class Initialized
+INFO - 2026-01-28 07:47:54 --> File loaded: C:\xampp\htdocs\Aconnect_ci3\application\views\__header.php
+INFO - 2026-01-28 07:47:54 --> File loaded: C:\xampp\htdocs\Aconnect_ci3\application\views\dashboard_u.php
+INFO - 2026-01-28 07:47:54 --> File loaded: C:\xampp\htdocs\Aconnect_ci3\application\views\__footer.php
+INFO - 2026-01-28 07:47:54 --> Final output sent to browser
+DEBUG - 2026-01-28 07:47:54 --> Total execution time: 0.0859
+ERROR - 2026-01-28 07:47:55 --> $config['composer_autoload'] is set to TRUE but C:\xampp\htdocs\Aconnect_ci3\application\vendor/autoload.php was not found.
+INFO - 2026-01-28 07:47:55 --> Config Class Initialized
+INFO - 2026-01-28 07:47:55 --> Hooks Class Initialized
+DEBUG - 2026-01-28 07:47:55 --> UTF-8 Support Enabled
+INFO - 2026-01-28 07:47:55 --> Utf8 Class Initialized
+INFO - 2026-01-28 07:47:55 --> URI Class Initialized
+INFO - 2026-01-28 07:47:55 --> Router Class Initialized
+INFO - 2026-01-28 07:47:55 --> Output Class Initialized
+INFO - 2026-01-28 07:47:55 --> Security Class Initialized
+DEBUG - 2026-01-28 07:47:55 --> Global POST, GET and COOKIE data sanitized
+INFO - 2026-01-28 07:47:55 --> Input Class Initialized
+INFO - 2026-01-28 07:47:55 --> Language Class Initialized
+INFO - 2026-01-28 07:47:55 --> Loader Class Initialized
+INFO - 2026-01-28 07:47:55 --> Helper loaded: url_helper
+INFO - 2026-01-28 07:47:55 --> Helper loaded: file_helper
+INFO - 2026-01-28 07:47:55 --> Helper loaded: html_helper
+INFO - 2026-01-28 07:47:55 --> Database Driver Class Initialized
+INFO - 2026-01-28 07:47:55 --> Session: Class initialized using 'files' driver.
+INFO - 2026-01-28 07:47:55 --> Helper loaded: form_helper
+INFO - 2026-01-28 07:47:55 --> Form Validation Class Initialized
+INFO - 2026-01-28 07:47:55 --> User Agent Class Initialized
+INFO - 2026-01-28 07:47:55 --> Language file loaded: language/english/pagination_lang.php
+INFO - 2026-01-28 07:47:55 --> Pagination Class Initialized
+INFO - 2026-01-28 07:47:55 --> Controller Class Initialized
+INFO - 2026-01-28 07:47:55 --> Model "Support_model" initialized
+DEBUG - 2026-01-28 07:47:55 --> Session class already loaded. Second attempt ignored.
+INFO - 2026-01-28 07:47:55 --> Final output sent to browser
+DEBUG - 2026-01-28 07:47:55 --> Total execution time: 0.0331
+ERROR - 2026-01-28 07:47:58 --> $config['composer_autoload'] is set to TRUE but C:\xampp\htdocs\Aconnect_ci3\application\vendor/autoload.php was not found.
+INFO - 2026-01-28 07:47:58 --> Config Class Initialized
+INFO - 2026-01-28 07:47:58 --> Hooks Class Initialized
+DEBUG - 2026-01-28 07:47:58 --> UTF-8 Support Enabled
+INFO - 2026-01-28 07:47:58 --> Utf8 Class Initialized
+INFO - 2026-01-28 07:47:58 --> URI Class Initialized
+INFO - 2026-01-28 07:47:58 --> Router Class Initialized
+INFO - 2026-01-28 07:47:58 --> Output Class Initialized
+INFO - 2026-01-28 07:47:58 --> Security Class Initialized
+DEBUG - 2026-01-28 07:47:58 --> Global POST, GET and COOKIE data sanitized
+INFO - 2026-01-28 07:47:58 --> Input Class Initialized
+INFO - 2026-01-28 07:47:58 --> Language Class Initialized
+INFO - 2026-01-28 07:47:58 --> Loader Class Initialized
+INFO - 2026-01-28 07:47:58 --> Helper loaded: url_helper
+INFO - 2026-01-28 07:47:58 --> Helper loaded: file_helper
+INFO - 2026-01-28 07:47:58 --> Helper loaded: html_helper
+INFO - 2026-01-28 07:47:58 --> Database Driver Class Initialized
+INFO - 2026-01-28 07:47:58 --> Session: Class initialized using 'files' driver.
+INFO - 2026-01-28 07:47:58 --> Helper loaded: form_helper
+INFO - 2026-01-28 07:47:58 --> Form Validation Class Initialized
+INFO - 2026-01-28 07:47:58 --> User Agent Class Initialized
+INFO - 2026-01-28 07:47:58 --> Language file loaded: language/english/pagination_lang.php
+INFO - 2026-01-28 07:47:58 --> Pagination Class Initialized
+INFO - 2026-01-28 07:47:58 --> Controller Class Initialized
+INFO - 2026-01-28 07:47:58 --> Model "M_login" initialized
+INFO - 2026-01-28 07:47:58 --> Model "Activity_log_model" initialized
+ERROR - 2026-01-28 07:47:58 --> $config['composer_autoload'] is set to TRUE but C:\xampp\htdocs\Aconnect_ci3\application\vendor/autoload.php was not found.
+INFO - 2026-01-28 07:47:58 --> Config Class Initialized
+INFO - 2026-01-28 07:47:58 --> Hooks Class Initialized
+DEBUG - 2026-01-28 07:47:58 --> UTF-8 Support Enabled
+INFO - 2026-01-28 07:47:58 --> Utf8 Class Initialized
+INFO - 2026-01-28 07:47:58 --> URI Class Initialized
+INFO - 2026-01-28 07:47:58 --> Router Class Initialized
+INFO - 2026-01-28 07:47:58 --> Output Class Initialized
+INFO - 2026-01-28 07:47:58 --> Security Class Initialized
+DEBUG - 2026-01-28 07:47:58 --> Global POST, GET and COOKIE data sanitized
+INFO - 2026-01-28 07:47:58 --> Input Class Initialized
+INFO - 2026-01-28 07:47:58 --> Language Class Initialized
+INFO - 2026-01-28 07:47:58 --> Loader Class Initialized
+INFO - 2026-01-28 07:47:58 --> Helper loaded: url_helper
+INFO - 2026-01-28 07:47:58 --> Helper loaded: file_helper
+INFO - 2026-01-28 07:47:58 --> Helper loaded: html_helper
+INFO - 2026-01-28 07:47:58 --> Database Driver Class Initialized
+INFO - 2026-01-28 07:47:58 --> Session: Class initialized using 'files' driver.
+INFO - 2026-01-28 07:47:58 --> Helper loaded: form_helper
+INFO - 2026-01-28 07:47:58 --> Form Validation Class Initialized
+INFO - 2026-01-28 07:47:58 --> User Agent Class Initialized
+INFO - 2026-01-28 07:47:58 --> Language file loaded: language/english/pagination_lang.php
+INFO - 2026-01-28 07:47:58 --> Pagination Class Initialized
+INFO - 2026-01-28 07:47:58 --> Controller Class Initialized
+INFO - 2026-01-28 07:47:58 --> Model "M_login" initialized
+INFO - 2026-01-28 07:47:58 --> File loaded: C:\xampp\htdocs\Aconnect_ci3\application\views\login.php
+INFO - 2026-01-28 07:47:58 --> Final output sent to browser
+DEBUG - 2026-01-28 07:47:58 --> Total execution time: 0.0528
+ERROR - 2026-01-28 07:47:59 --> $config['composer_autoload'] is set to TRUE but C:\xampp\htdocs\Aconnect_ci3\application\vendor/autoload.php was not found.
+INFO - 2026-01-28 07:47:59 --> Config Class Initialized
+INFO - 2026-01-28 07:47:59 --> Hooks Class Initialized
+DEBUG - 2026-01-28 07:47:59 --> UTF-8 Support Enabled
+INFO - 2026-01-28 07:47:59 --> Utf8 Class Initialized
+INFO - 2026-01-28 07:47:59 --> URI Class Initialized
+INFO - 2026-01-28 07:47:59 --> Router Class Initialized
+INFO - 2026-01-28 07:47:59 --> Output Class Initialized
+INFO - 2026-01-28 07:47:59 --> Security Class Initialized
+DEBUG - 2026-01-28 07:47:59 --> Global POST, GET and COOKIE data sanitized
+INFO - 2026-01-28 07:47:59 --> Input Class Initialized
+INFO - 2026-01-28 07:47:59 --> Language Class Initialized
+INFO - 2026-01-28 07:47:59 --> Loader Class Initialized
+INFO - 2026-01-28 07:47:59 --> Helper loaded: url_helper
+INFO - 2026-01-28 07:47:59 --> Helper loaded: file_helper
+INFO - 2026-01-28 07:47:59 --> Helper loaded: html_helper
+INFO - 2026-01-28 07:47:59 --> Database Driver Class Initialized
+INFO - 2026-01-28 07:47:59 --> Session: Class initialized using 'files' driver.
+INFO - 2026-01-28 07:47:59 --> Helper loaded: form_helper
+INFO - 2026-01-28 07:47:59 --> Form Validation Class Initialized
+INFO - 2026-01-28 07:47:59 --> User Agent Class Initialized
+INFO - 2026-01-28 07:47:59 --> Language file loaded: language/english/pagination_lang.php
+INFO - 2026-01-28 07:47:59 --> Pagination Class Initialized
+INFO - 2026-01-28 07:47:59 --> Controller Class Initialized
+INFO - 2026-01-28 07:47:59 --> Model "M_login" initialized
+INFO - 2026-01-28 07:47:59 --> File loaded: C:\xampp\htdocs\Aconnect_ci3\application\views\admin/login.php
+INFO - 2026-01-28 07:47:59 --> Final output sent to browser
+DEBUG - 2026-01-28 07:47:59 --> Total execution time: 0.0275
+ERROR - 2026-01-28 07:48:01 --> $config['composer_autoload'] is set to TRUE but C:\xampp\htdocs\Aconnect_ci3\application\vendor/autoload.php was not found.
+INFO - 2026-01-28 07:48:01 --> Config Class Initialized
+INFO - 2026-01-28 07:48:01 --> Hooks Class Initialized
+DEBUG - 2026-01-28 07:48:01 --> UTF-8 Support Enabled
+INFO - 2026-01-28 07:48:01 --> Utf8 Class Initialized
+INFO - 2026-01-28 07:48:01 --> URI Class Initialized
+INFO - 2026-01-28 07:48:01 --> Router Class Initialized
+INFO - 2026-01-28 07:48:01 --> Output Class Initialized
+INFO - 2026-01-28 07:48:01 --> Security Class Initialized
+DEBUG - 2026-01-28 07:48:01 --> Global POST, GET and COOKIE data sanitized
+INFO - 2026-01-28 07:48:01 --> Input Class Initialized
+INFO - 2026-01-28 07:48:01 --> Language Class Initialized
+INFO - 2026-01-28 07:48:01 --> Loader Class Initialized
+INFO - 2026-01-28 07:48:01 --> Helper loaded: url_helper
+INFO - 2026-01-28 07:48:01 --> Helper loaded: file_helper
+INFO - 2026-01-28 07:48:01 --> Helper loaded: html_helper
+INFO - 2026-01-28 07:48:01 --> Database Driver Class Initialized
+INFO - 2026-01-28 07:48:01 --> Session: Class initialized using 'files' driver.
+INFO - 2026-01-28 07:48:01 --> Helper loaded: form_helper
+INFO - 2026-01-28 07:48:01 --> Form Validation Class Initialized
+INFO - 2026-01-28 07:48:01 --> User Agent Class Initialized
+INFO - 2026-01-28 07:48:01 --> Language file loaded: language/english/pagination_lang.php
+INFO - 2026-01-28 07:48:01 --> Pagination Class Initialized
+INFO - 2026-01-28 07:48:01 --> Controller Class Initialized
+INFO - 2026-01-28 07:48:01 --> Model "M_login" initialized
+INFO - 2026-01-28 07:48:01 --> File loaded: C:\xampp\htdocs\Aconnect_ci3\application\views\admin/login.php
+ERROR - 2026-01-28 07:48:01 --> $config['composer_autoload'] is set to TRUE but C:\xampp\htdocs\Aconnect_ci3\application\vendor/autoload.php was not found.
+INFO - 2026-01-28 07:48:01 --> Config Class Initialized
+INFO - 2026-01-28 07:48:01 --> Hooks Class Initialized
+DEBUG - 2026-01-28 07:48:01 --> UTF-8 Support Enabled
+INFO - 2026-01-28 07:48:01 --> Utf8 Class Initialized
+INFO - 2026-01-28 07:48:01 --> URI Class Initialized
+INFO - 2026-01-28 07:48:01 --> Router Class Initialized
+INFO - 2026-01-28 07:48:01 --> Output Class Initialized
+INFO - 2026-01-28 07:48:01 --> Security Class Initialized
+DEBUG - 2026-01-28 07:48:01 --> Global POST, GET and COOKIE data sanitized
+INFO - 2026-01-28 07:48:01 --> Input Class Initialized
+INFO - 2026-01-28 07:48:01 --> Language Class Initialized
+INFO - 2026-01-28 07:48:01 --> Loader Class Initialized
+INFO - 2026-01-28 07:48:01 --> Helper loaded: url_helper
+INFO - 2026-01-28 07:48:01 --> Helper loaded: file_helper
+INFO - 2026-01-28 07:48:01 --> Helper loaded: html_helper
+INFO - 2026-01-28 07:48:01 --> Database Driver Class Initialized
+INFO - 2026-01-28 07:48:01 --> Session: Class initialized using 'files' driver.
+INFO - 2026-01-28 07:48:01 --> Helper loaded: form_helper
+INFO - 2026-01-28 07:48:01 --> Form Validation Class Initialized
+INFO - 2026-01-28 07:48:01 --> User Agent Class Initialized
+INFO - 2026-01-28 07:48:01 --> Language file loaded: language/english/pagination_lang.php
+INFO - 2026-01-28 07:48:01 --> Pagination Class Initialized
+INFO - 2026-01-28 07:48:01 --> Controller Class Initialized
+INFO - 2026-01-28 07:48:01 --> File loaded: C:\xampp\htdocs\Aconnect_ci3\application\views\__header.php
+INFO - 2026-01-28 07:48:01 --> File loaded: C:\xampp\htdocs\Aconnect_ci3\application\views\dashboard_a.php
+INFO - 2026-01-28 07:48:01 --> File loaded: C:\xampp\htdocs\Aconnect_ci3\application\views\__footer.php
+INFO - 2026-01-28 07:48:01 --> Final output sent to browser
+DEBUG - 2026-01-28 07:48:01 --> Total execution time: 0.0614
+ERROR - 2026-01-28 07:48:02 --> $config['composer_autoload'] is set to TRUE but C:\xampp\htdocs\Aconnect_ci3\application\vendor/autoload.php was not found.
+INFO - 2026-01-28 07:48:02 --> Config Class Initialized
+INFO - 2026-01-28 07:48:02 --> Hooks Class Initialized
+DEBUG - 2026-01-28 07:48:02 --> UTF-8 Support Enabled
+INFO - 2026-01-28 07:48:02 --> Utf8 Class Initialized
+INFO - 2026-01-28 07:48:02 --> URI Class Initialized
+INFO - 2026-01-28 07:48:02 --> Router Class Initialized
+INFO - 2026-01-28 07:48:02 --> Output Class Initialized
+INFO - 2026-01-28 07:48:02 --> Security Class Initialized
+DEBUG - 2026-01-28 07:48:02 --> Global POST, GET and COOKIE data sanitized
+INFO - 2026-01-28 07:48:02 --> Input Class Initialized
+INFO - 2026-01-28 07:48:02 --> Language Class Initialized
+INFO - 2026-01-28 07:48:02 --> Loader Class Initialized
+INFO - 2026-01-28 07:48:02 --> Helper loaded: url_helper
+INFO - 2026-01-28 07:48:02 --> Helper loaded: file_helper
+INFO - 2026-01-28 07:48:02 --> Helper loaded: html_helper
+INFO - 2026-01-28 07:48:02 --> Database Driver Class Initialized
+INFO - 2026-01-28 07:48:02 --> Session: Class initialized using 'files' driver.
+INFO - 2026-01-28 07:48:02 --> Helper loaded: form_helper
+INFO - 2026-01-28 07:48:02 --> Form Validation Class Initialized
+INFO - 2026-01-28 07:48:02 --> User Agent Class Initialized
+INFO - 2026-01-28 07:48:02 --> Language file loaded: language/english/pagination_lang.php
+INFO - 2026-01-28 07:48:02 --> Pagination Class Initialized
+INFO - 2026-01-28 07:48:02 --> Controller Class Initialized
+INFO - 2026-01-28 07:48:02 --> Model "Support_model" initialized
+DEBUG - 2026-01-28 07:48:02 --> Session class already loaded. Second attempt ignored.
+INFO - 2026-01-28 07:48:02 --> File loaded: C:\xampp\htdocs\Aconnect_ci3\application\views\__header.php
+INFO - 2026-01-28 07:48:02 --> File loaded: C:\xampp\htdocs\Aconnect_ci3\application\views\admin/support_inbox.php
+INFO - 2026-01-28 07:48:02 --> File loaded: C:\xampp\htdocs\Aconnect_ci3\application\views\__footer.php
+INFO - 2026-01-28 07:48:02 --> Final output sent to browser
+DEBUG - 2026-01-28 07:48:02 --> Total execution time: 0.0327
+ERROR - 2026-01-28 07:48:03 --> $config['composer_autoload'] is set to TRUE but C:\xampp\htdocs\Aconnect_ci3\application\vendor/autoload.php was not found.
+INFO - 2026-01-28 07:48:03 --> Config Class Initialized
+INFO - 2026-01-28 07:48:03 --> Hooks Class Initialized
+DEBUG - 2026-01-28 07:48:03 --> UTF-8 Support Enabled
+INFO - 2026-01-28 07:48:03 --> Utf8 Class Initialized
+INFO - 2026-01-28 07:48:03 --> URI Class Initialized
+INFO - 2026-01-28 07:48:03 --> Router Class Initialized
+INFO - 2026-01-28 07:48:03 --> Output Class Initialized
+INFO - 2026-01-28 07:48:03 --> Security Class Initialized
+DEBUG - 2026-01-28 07:48:03 --> Global POST, GET and COOKIE data sanitized
+INFO - 2026-01-28 07:48:03 --> Input Class Initialized
+INFO - 2026-01-28 07:48:03 --> Language Class Initialized
+INFO - 2026-01-28 07:48:03 --> Loader Class Initialized
+INFO - 2026-01-28 07:48:03 --> Helper loaded: url_helper
+INFO - 2026-01-28 07:48:03 --> Helper loaded: file_helper
+INFO - 2026-01-28 07:48:03 --> Helper loaded: html_helper
+INFO - 2026-01-28 07:48:03 --> Database Driver Class Initialized
+INFO - 2026-01-28 07:48:03 --> Session: Class initialized using 'files' driver.
+INFO - 2026-01-28 07:48:03 --> Helper loaded: form_helper
+INFO - 2026-01-28 07:48:03 --> Form Validation Class Initialized
+INFO - 2026-01-28 07:48:03 --> User Agent Class Initialized
+INFO - 2026-01-28 07:48:03 --> Language file loaded: language/english/pagination_lang.php
+INFO - 2026-01-28 07:48:03 --> Pagination Class Initialized
+INFO - 2026-01-28 07:48:03 --> Controller Class Initialized
+INFO - 2026-01-28 07:48:03 --> Model "Support_model" initialized
+DEBUG - 2026-01-28 07:48:03 --> Session class already loaded. Second attempt ignored.
+INFO - 2026-01-28 07:48:03 --> Final output sent to browser
+DEBUG - 2026-01-28 07:48:03 --> Total execution time: 0.0853
+ERROR - 2026-01-28 07:48:04 --> $config['composer_autoload'] is set to TRUE but C:\xampp\htdocs\Aconnect_ci3\application\vendor/autoload.php was not found.
+INFO - 2026-01-28 07:48:04 --> Config Class Initialized
+INFO - 2026-01-28 07:48:04 --> Hooks Class Initialized
+DEBUG - 2026-01-28 07:48:04 --> UTF-8 Support Enabled
+INFO - 2026-01-28 07:48:04 --> Utf8 Class Initialized
+INFO - 2026-01-28 07:48:04 --> URI Class Initialized
+INFO - 2026-01-28 07:48:04 --> Router Class Initialized
+INFO - 2026-01-28 07:48:04 --> Output Class Initialized
+INFO - 2026-01-28 07:48:04 --> Security Class Initialized
+DEBUG - 2026-01-28 07:48:04 --> Global POST, GET and COOKIE data sanitized
+INFO - 2026-01-28 07:48:04 --> Input Class Initialized
+INFO - 2026-01-28 07:48:04 --> Language Class Initialized
+INFO - 2026-01-28 07:48:04 --> Loader Class Initialized
+INFO - 2026-01-28 07:48:04 --> Helper loaded: url_helper
+INFO - 2026-01-28 07:48:04 --> Helper loaded: file_helper
+INFO - 2026-01-28 07:48:04 --> Helper loaded: html_helper
+INFO - 2026-01-28 07:48:04 --> Database Driver Class Initialized
+INFO - 2026-01-28 07:48:04 --> Session: Class initialized using 'files' driver.
+INFO - 2026-01-28 07:48:04 --> Helper loaded: form_helper
+INFO - 2026-01-28 07:48:04 --> Form Validation Class Initialized
+INFO - 2026-01-28 07:48:04 --> User Agent Class Initialized
+INFO - 2026-01-28 07:48:04 --> Language file loaded: language/english/pagination_lang.php
+INFO - 2026-01-28 07:48:04 --> Pagination Class Initialized
+INFO - 2026-01-28 07:48:04 --> Controller Class Initialized
+INFO - 2026-01-28 07:48:04 --> Model "Support_model" initialized
+DEBUG - 2026-01-28 07:48:04 --> Session class already loaded. Second attempt ignored.
+INFO - 2026-01-28 07:48:04 --> Final output sent to browser
+DEBUG - 2026-01-28 07:48:04 --> Total execution time: 0.0262
+ERROR - 2026-01-28 07:48:06 --> $config['composer_autoload'] is set to TRUE but C:\xampp\htdocs\Aconnect_ci3\application\vendor/autoload.php was not found.
+INFO - 2026-01-28 07:48:06 --> Config Class Initialized
+INFO - 2026-01-28 07:48:06 --> Hooks Class Initialized
+DEBUG - 2026-01-28 07:48:06 --> UTF-8 Support Enabled
+INFO - 2026-01-28 07:48:06 --> Utf8 Class Initialized
+INFO - 2026-01-28 07:48:06 --> URI Class Initialized
+INFO - 2026-01-28 07:48:06 --> Router Class Initialized
+INFO - 2026-01-28 07:48:06 --> Output Class Initialized
+INFO - 2026-01-28 07:48:06 --> Security Class Initialized
+DEBUG - 2026-01-28 07:48:06 --> Global POST, GET and COOKIE data sanitized
+INFO - 2026-01-28 07:48:06 --> Input Class Initialized
+INFO - 2026-01-28 07:48:06 --> Language Class Initialized
+INFO - 2026-01-28 07:48:06 --> Loader Class Initialized
+INFO - 2026-01-28 07:48:06 --> Helper loaded: url_helper
+INFO - 2026-01-28 07:48:06 --> Helper loaded: file_helper
+INFO - 2026-01-28 07:48:06 --> Helper loaded: html_helper
+INFO - 2026-01-28 07:48:06 --> Database Driver Class Initialized
+INFO - 2026-01-28 07:48:06 --> Session: Class initialized using 'files' driver.
+INFO - 2026-01-28 07:48:06 --> Helper loaded: form_helper
+INFO - 2026-01-28 07:48:06 --> Form Validation Class Initialized
+INFO - 2026-01-28 07:48:06 --> User Agent Class Initialized
+INFO - 2026-01-28 07:48:06 --> Language file loaded: language/english/pagination_lang.php
+INFO - 2026-01-28 07:48:06 --> Pagination Class Initialized
+INFO - 2026-01-28 07:48:06 --> Controller Class Initialized
+INFO - 2026-01-28 07:48:06 --> Model "M_login" initialized
+ERROR - 2026-01-28 07:48:06 --> $config['composer_autoload'] is set to TRUE but C:\xampp\htdocs\Aconnect_ci3\application\vendor/autoload.php was not found.
+INFO - 2026-01-28 07:48:06 --> Config Class Initialized
+INFO - 2026-01-28 07:48:06 --> Hooks Class Initialized
+DEBUG - 2026-01-28 07:48:06 --> UTF-8 Support Enabled
+INFO - 2026-01-28 07:48:06 --> Utf8 Class Initialized
+INFO - 2026-01-28 07:48:06 --> URI Class Initialized
+INFO - 2026-01-28 07:48:06 --> Router Class Initialized
+INFO - 2026-01-28 07:48:06 --> Output Class Initialized
+INFO - 2026-01-28 07:48:06 --> Security Class Initialized
+DEBUG - 2026-01-28 07:48:06 --> Global POST, GET and COOKIE data sanitized
+INFO - 2026-01-28 07:48:06 --> Input Class Initialized
+INFO - 2026-01-28 07:48:06 --> Language Class Initialized
+INFO - 2026-01-28 07:48:06 --> Loader Class Initialized
+INFO - 2026-01-28 07:48:06 --> Helper loaded: url_helper
+INFO - 2026-01-28 07:48:06 --> Helper loaded: file_helper
+INFO - 2026-01-28 07:48:06 --> Helper loaded: html_helper
+INFO - 2026-01-28 07:48:06 --> Database Driver Class Initialized
+INFO - 2026-01-28 07:48:06 --> Session: Class initialized using 'files' driver.
+INFO - 2026-01-28 07:48:06 --> Helper loaded: form_helper
+INFO - 2026-01-28 07:48:06 --> Form Validation Class Initialized
+INFO - 2026-01-28 07:48:06 --> User Agent Class Initialized
+INFO - 2026-01-28 07:48:06 --> Language file loaded: language/english/pagination_lang.php
+INFO - 2026-01-28 07:48:06 --> Pagination Class Initialized
+INFO - 2026-01-28 07:48:06 --> Controller Class Initialized
+INFO - 2026-01-28 07:48:06 --> Model "M_login" initialized
+INFO - 2026-01-28 07:48:06 --> File loaded: C:\xampp\htdocs\Aconnect_ci3\application\views\admin/login.php
+INFO - 2026-01-28 07:48:06 --> Final output sent to browser
+DEBUG - 2026-01-28 07:48:06 --> Total execution time: 0.0270
+ERROR - 2026-01-28 07:48:08 --> $config['composer_autoload'] is set to TRUE but C:\xampp\htdocs\Aconnect_ci3\application\vendor/autoload.php was not found.
+INFO - 2026-01-28 07:48:08 --> Config Class Initialized
+INFO - 2026-01-28 07:48:08 --> Hooks Class Initialized
+DEBUG - 2026-01-28 07:48:08 --> UTF-8 Support Enabled
+INFO - 2026-01-28 07:48:08 --> Utf8 Class Initialized
+INFO - 2026-01-28 07:48:08 --> URI Class Initialized
+INFO - 2026-01-28 07:48:08 --> Router Class Initialized
+INFO - 2026-01-28 07:48:08 --> Output Class Initialized
+INFO - 2026-01-28 07:48:08 --> Security Class Initialized
+DEBUG - 2026-01-28 07:48:08 --> Global POST, GET and COOKIE data sanitized
+INFO - 2026-01-28 07:48:08 --> Input Class Initialized
+INFO - 2026-01-28 07:48:08 --> Language Class Initialized
+INFO - 2026-01-28 07:48:08 --> Loader Class Initialized
+INFO - 2026-01-28 07:48:08 --> Helper loaded: url_helper
+INFO - 2026-01-28 07:48:08 --> Helper loaded: file_helper
+INFO - 2026-01-28 07:48:08 --> Helper loaded: html_helper
+INFO - 2026-01-28 07:48:08 --> Database Driver Class Initialized
+INFO - 2026-01-28 07:48:08 --> Session: Class initialized using 'files' driver.
+INFO - 2026-01-28 07:48:08 --> Helper loaded: form_helper
+INFO - 2026-01-28 07:48:08 --> Form Validation Class Initialized
+INFO - 2026-01-28 07:48:08 --> User Agent Class Initialized
+INFO - 2026-01-28 07:48:08 --> Language file loaded: language/english/pagination_lang.php
+INFO - 2026-01-28 07:48:08 --> Pagination Class Initialized
+INFO - 2026-01-28 07:48:08 --> Controller Class Initialized
+INFO - 2026-01-28 07:48:08 --> Model "M_login" initialized
+INFO - 2026-01-28 07:48:08 --> File loaded: C:\xampp\htdocs\Aconnect_ci3\application\views\login.php
+INFO - 2026-01-28 07:48:08 --> Final output sent to browser
+DEBUG - 2026-01-28 07:48:08 --> Total execution time: 0.0238
+ERROR - 2026-01-28 07:48:11 --> $config['composer_autoload'] is set to TRUE but C:\xampp\htdocs\Aconnect_ci3\application\vendor/autoload.php was not found.
+INFO - 2026-01-28 07:48:11 --> Config Class Initialized
+INFO - 2026-01-28 07:48:11 --> Hooks Class Initialized
+DEBUG - 2026-01-28 07:48:11 --> UTF-8 Support Enabled
+INFO - 2026-01-28 07:48:11 --> Utf8 Class Initialized
+INFO - 2026-01-28 07:48:11 --> URI Class Initialized
+INFO - 2026-01-28 07:48:11 --> Router Class Initialized
+INFO - 2026-01-28 07:48:11 --> Output Class Initialized
+INFO - 2026-01-28 07:48:11 --> Security Class Initialized
+DEBUG - 2026-01-28 07:48:11 --> Global POST, GET and COOKIE data sanitized
+INFO - 2026-01-28 07:48:11 --> Input Class Initialized
+INFO - 2026-01-28 07:48:11 --> Language Class Initialized
+INFO - 2026-01-28 07:48:11 --> Loader Class Initialized
+INFO - 2026-01-28 07:48:11 --> Helper loaded: url_helper
+INFO - 2026-01-28 07:48:11 --> Helper loaded: file_helper
+INFO - 2026-01-28 07:48:11 --> Helper loaded: html_helper
+INFO - 2026-01-28 07:48:11 --> Database Driver Class Initialized
+INFO - 2026-01-28 07:48:11 --> Session: Class initialized using 'files' driver.
+INFO - 2026-01-28 07:48:11 --> Helper loaded: form_helper
+INFO - 2026-01-28 07:48:11 --> Form Validation Class Initialized
+INFO - 2026-01-28 07:48:11 --> User Agent Class Initialized
+INFO - 2026-01-28 07:48:11 --> Language file loaded: language/english/pagination_lang.php
+INFO - 2026-01-28 07:48:11 --> Pagination Class Initialized
+INFO - 2026-01-28 07:48:11 --> Controller Class Initialized
+INFO - 2026-01-28 07:48:11 --> Model "M_login" initialized
+ERROR - 2026-01-28 07:48:11 --> $config['composer_autoload'] is set to TRUE but C:\xampp\htdocs\Aconnect_ci3\application\vendor/autoload.php was not found.
+INFO - 2026-01-28 07:48:11 --> Config Class Initialized
+INFO - 2026-01-28 07:48:11 --> Hooks Class Initialized
+DEBUG - 2026-01-28 07:48:11 --> UTF-8 Support Enabled
+INFO - 2026-01-28 07:48:11 --> Utf8 Class Initialized
+INFO - 2026-01-28 07:48:11 --> URI Class Initialized
+INFO - 2026-01-28 07:48:11 --> Router Class Initialized
+INFO - 2026-01-28 07:48:11 --> Output Class Initialized
+INFO - 2026-01-28 07:48:11 --> Security Class Initialized
+DEBUG - 2026-01-28 07:48:11 --> Global POST, GET and COOKIE data sanitized
+INFO - 2026-01-28 07:48:11 --> Input Class Initialized
+INFO - 2026-01-28 07:48:11 --> Language Class Initialized
+INFO - 2026-01-28 07:48:11 --> Loader Class Initialized
+INFO - 2026-01-28 07:48:11 --> Helper loaded: url_helper
+INFO - 2026-01-28 07:48:11 --> Helper loaded: file_helper
+INFO - 2026-01-28 07:48:11 --> Helper loaded: html_helper
+INFO - 2026-01-28 07:48:11 --> Database Driver Class Initialized
+INFO - 2026-01-28 07:48:11 --> Session: Class initialized using 'files' driver.
+INFO - 2026-01-28 07:48:11 --> Helper loaded: form_helper
+INFO - 2026-01-28 07:48:11 --> Form Validation Class Initialized
+INFO - 2026-01-28 07:48:11 --> User Agent Class Initialized
+INFO - 2026-01-28 07:48:11 --> Language file loaded: language/english/pagination_lang.php
+INFO - 2026-01-28 07:48:11 --> Pagination Class Initialized
+INFO - 2026-01-28 07:48:11 --> Controller Class Initialized
+INFO - 2026-01-28 07:48:11 --> File loaded: C:\xampp\htdocs\Aconnect_ci3\application\views\__header.php
+INFO - 2026-01-28 07:48:11 --> File loaded: C:\xampp\htdocs\Aconnect_ci3\application\views\dashboard_u.php
+INFO - 2026-01-28 07:48:11 --> File loaded: C:\xampp\htdocs\Aconnect_ci3\application\views\__footer.php
+INFO - 2026-01-28 07:48:11 --> Final output sent to browser
+DEBUG - 2026-01-28 07:48:11 --> Total execution time: 0.0796
+ERROR - 2026-01-28 07:48:12 --> $config['composer_autoload'] is set to TRUE but C:\xampp\htdocs\Aconnect_ci3\application\vendor/autoload.php was not found.
+INFO - 2026-01-28 07:48:12 --> Config Class Initialized
+INFO - 2026-01-28 07:48:12 --> Hooks Class Initialized
+DEBUG - 2026-01-28 07:48:12 --> UTF-8 Support Enabled
+INFO - 2026-01-28 07:48:12 --> Utf8 Class Initialized
+INFO - 2026-01-28 07:48:12 --> URI Class Initialized
+INFO - 2026-01-28 07:48:12 --> Router Class Initialized
+INFO - 2026-01-28 07:48:12 --> Output Class Initialized
+INFO - 2026-01-28 07:48:12 --> Security Class Initialized
+DEBUG - 2026-01-28 07:48:12 --> Global POST, GET and COOKIE data sanitized
+INFO - 2026-01-28 07:48:12 --> Input Class Initialized
+INFO - 2026-01-28 07:48:12 --> Language Class Initialized
+INFO - 2026-01-28 07:48:12 --> Loader Class Initialized
+INFO - 2026-01-28 07:48:12 --> Helper loaded: url_helper
+INFO - 2026-01-28 07:48:12 --> Helper loaded: file_helper
+INFO - 2026-01-28 07:48:12 --> Helper loaded: html_helper
+INFO - 2026-01-28 07:48:12 --> Database Driver Class Initialized
+INFO - 2026-01-28 07:48:12 --> Session: Class initialized using 'files' driver.
+INFO - 2026-01-28 07:48:12 --> Helper loaded: form_helper
+INFO - 2026-01-28 07:48:12 --> Form Validation Class Initialized
+INFO - 2026-01-28 07:48:12 --> User Agent Class Initialized
+INFO - 2026-01-28 07:48:12 --> Language file loaded: language/english/pagination_lang.php
+INFO - 2026-01-28 07:48:12 --> Pagination Class Initialized
+INFO - 2026-01-28 07:48:12 --> Controller Class Initialized
+INFO - 2026-01-28 07:48:12 --> Model "Support_model" initialized
+DEBUG - 2026-01-28 07:48:12 --> Session class already loaded. Second attempt ignored.
+INFO - 2026-01-28 07:48:12 --> Final output sent to browser
+DEBUG - 2026-01-28 07:48:12 --> Total execution time: 0.0770
+ERROR - 2026-01-28 07:48:14 --> $config['composer_autoload'] is set to TRUE but C:\xampp\htdocs\Aconnect_ci3\application\vendor/autoload.php was not found.
+INFO - 2026-01-28 07:48:14 --> Config Class Initialized
+INFO - 2026-01-28 07:48:14 --> Hooks Class Initialized
+DEBUG - 2026-01-28 07:48:14 --> UTF-8 Support Enabled
+INFO - 2026-01-28 07:48:14 --> Utf8 Class Initialized
+INFO - 2026-01-28 07:48:14 --> URI Class Initialized
+INFO - 2026-01-28 07:48:14 --> Router Class Initialized
+INFO - 2026-01-28 07:48:14 --> Output Class Initialized
+INFO - 2026-01-28 07:48:14 --> Security Class Initialized
+DEBUG - 2026-01-28 07:48:14 --> Global POST, GET and COOKIE data sanitized
+INFO - 2026-01-28 07:48:14 --> Input Class Initialized
+INFO - 2026-01-28 07:48:14 --> Language Class Initialized
+INFO - 2026-01-28 07:48:14 --> Loader Class Initialized
+INFO - 2026-01-28 07:48:14 --> Helper loaded: url_helper
+INFO - 2026-01-28 07:48:14 --> Helper loaded: file_helper
+INFO - 2026-01-28 07:48:14 --> Helper loaded: html_helper
+INFO - 2026-01-28 07:48:14 --> Database Driver Class Initialized
+INFO - 2026-01-28 07:48:14 --> Session: Class initialized using 'files' driver.
+INFO - 2026-01-28 07:48:14 --> Helper loaded: form_helper
+INFO - 2026-01-28 07:48:14 --> Form Validation Class Initialized
+INFO - 2026-01-28 07:48:14 --> User Agent Class Initialized
+INFO - 2026-01-28 07:48:14 --> Language file loaded: language/english/pagination_lang.php
+INFO - 2026-01-28 07:48:14 --> Pagination Class Initialized
+INFO - 2026-01-28 07:48:14 --> Controller Class Initialized
+INFO - 2026-01-28 07:48:14 --> Model "Support_model" initialized
+DEBUG - 2026-01-28 07:48:14 --> Session class already loaded. Second attempt ignored.
+INFO - 2026-01-28 07:48:14 --> Final output sent to browser
+DEBUG - 2026-01-28 07:48:14 --> Total execution time: 0.0696
+ERROR - 2026-01-28 07:48:14 --> $config['composer_autoload'] is set to TRUE but C:\xampp\htdocs\Aconnect_ci3\application\vendor/autoload.php was not found.
+INFO - 2026-01-28 07:48:14 --> Config Class Initialized
+INFO - 2026-01-28 07:48:14 --> Hooks Class Initialized
+DEBUG - 2026-01-28 07:48:14 --> UTF-8 Support Enabled
+INFO - 2026-01-28 07:48:14 --> Utf8 Class Initialized
+INFO - 2026-01-28 07:48:14 --> URI Class Initialized
+INFO - 2026-01-28 07:48:14 --> Router Class Initialized
+INFO - 2026-01-28 07:48:14 --> Output Class Initialized
+INFO - 2026-01-28 07:48:14 --> Security Class Initialized
+DEBUG - 2026-01-28 07:48:14 --> Global POST, GET and COOKIE data sanitized
+INFO - 2026-01-28 07:48:14 --> Input Class Initialized
+INFO - 2026-01-28 07:48:14 --> Language Class Initialized
+INFO - 2026-01-28 07:48:14 --> Loader Class Initialized
+INFO - 2026-01-28 07:48:14 --> Helper loaded: url_helper
+INFO - 2026-01-28 07:48:14 --> Helper loaded: file_helper
+INFO - 2026-01-28 07:48:14 --> Helper loaded: html_helper
+INFO - 2026-01-28 07:48:14 --> Database Driver Class Initialized
+INFO - 2026-01-28 07:48:14 --> Session: Class initialized using 'files' driver.
+INFO - 2026-01-28 07:48:14 --> Helper loaded: form_helper
+INFO - 2026-01-28 07:48:14 --> Form Validation Class Initialized
+INFO - 2026-01-28 07:48:14 --> User Agent Class Initialized
+INFO - 2026-01-28 07:48:14 --> Language file loaded: language/english/pagination_lang.php
+INFO - 2026-01-28 07:48:14 --> Pagination Class Initialized
+INFO - 2026-01-28 07:48:14 --> Controller Class Initialized
+INFO - 2026-01-28 07:48:14 --> Model "Support_model" initialized
+DEBUG - 2026-01-28 07:48:14 --> Session class already loaded. Second attempt ignored.
+INFO - 2026-01-28 07:48:14 --> Final output sent to browser
+DEBUG - 2026-01-28 07:48:14 --> Total execution time: 0.0518
+ERROR - 2026-01-28 07:48:15 --> $config['composer_autoload'] is set to TRUE but C:\xampp\htdocs\Aconnect_ci3\application\vendor/autoload.php was not found.
+INFO - 2026-01-28 07:48:15 --> Config Class Initialized
+INFO - 2026-01-28 07:48:15 --> Hooks Class Initialized
+DEBUG - 2026-01-28 07:48:15 --> UTF-8 Support Enabled
+INFO - 2026-01-28 07:48:15 --> Utf8 Class Initialized
+INFO - 2026-01-28 07:48:15 --> URI Class Initialized
+INFO - 2026-01-28 07:48:15 --> Router Class Initialized
+INFO - 2026-01-28 07:48:15 --> Output Class Initialized
+INFO - 2026-01-28 07:48:15 --> Security Class Initialized
+DEBUG - 2026-01-28 07:48:15 --> Global POST, GET and COOKIE data sanitized
+INFO - 2026-01-28 07:48:15 --> Input Class Initialized
+INFO - 2026-01-28 07:48:15 --> Language Class Initialized
+INFO - 2026-01-28 07:48:15 --> Loader Class Initialized
+INFO - 2026-01-28 07:48:15 --> Helper loaded: url_helper
+INFO - 2026-01-28 07:48:15 --> Helper loaded: file_helper
+INFO - 2026-01-28 07:48:15 --> Helper loaded: html_helper
+INFO - 2026-01-28 07:48:15 --> Database Driver Class Initialized
+INFO - 2026-01-28 07:48:15 --> Session: Class initialized using 'files' driver.
+INFO - 2026-01-28 07:48:15 --> Helper loaded: form_helper
+INFO - 2026-01-28 07:48:15 --> Form Validation Class Initialized
+INFO - 2026-01-28 07:48:15 --> User Agent Class Initialized
+INFO - 2026-01-28 07:48:15 --> Language file loaded: language/english/pagination_lang.php
+INFO - 2026-01-28 07:48:15 --> Pagination Class Initialized
+INFO - 2026-01-28 07:48:15 --> Controller Class Initialized
+INFO - 2026-01-28 07:48:15 --> Model "M_login" initialized
+INFO - 2026-01-28 07:48:15 --> Model "Activity_log_model" initialized
+ERROR - 2026-01-28 07:48:15 --> $config['composer_autoload'] is set to TRUE but C:\xampp\htdocs\Aconnect_ci3\application\vendor/autoload.php was not found.
+INFO - 2026-01-28 07:48:15 --> Config Class Initialized
+INFO - 2026-01-28 07:48:15 --> Hooks Class Initialized
+DEBUG - 2026-01-28 07:48:15 --> UTF-8 Support Enabled
+INFO - 2026-01-28 07:48:15 --> Utf8 Class Initialized
+INFO - 2026-01-28 07:48:15 --> URI Class Initialized
+INFO - 2026-01-28 07:48:15 --> Router Class Initialized
+INFO - 2026-01-28 07:48:15 --> Output Class Initialized
+INFO - 2026-01-28 07:48:15 --> Security Class Initialized
+DEBUG - 2026-01-28 07:48:15 --> Global POST, GET and COOKIE data sanitized
+INFO - 2026-01-28 07:48:15 --> Input Class Initialized
+INFO - 2026-01-28 07:48:15 --> Language Class Initialized
+INFO - 2026-01-28 07:48:15 --> Loader Class Initialized
+INFO - 2026-01-28 07:48:15 --> Helper loaded: url_helper
+INFO - 2026-01-28 07:48:15 --> Helper loaded: file_helper
+INFO - 2026-01-28 07:48:15 --> Helper loaded: html_helper
+INFO - 2026-01-28 07:48:15 --> Database Driver Class Initialized
+INFO - 2026-01-28 07:48:15 --> Session: Class initialized using 'files' driver.
+INFO - 2026-01-28 07:48:15 --> Helper loaded: form_helper
+INFO - 2026-01-28 07:48:15 --> Form Validation Class Initialized
+INFO - 2026-01-28 07:48:15 --> User Agent Class Initialized
+INFO - 2026-01-28 07:48:15 --> Language file loaded: language/english/pagination_lang.php
+INFO - 2026-01-28 07:48:15 --> Pagination Class Initialized
+INFO - 2026-01-28 07:48:15 --> Controller Class Initialized
+INFO - 2026-01-28 07:48:15 --> Model "M_login" initialized
+INFO - 2026-01-28 07:48:15 --> File loaded: C:\xampp\htdocs\Aconnect_ci3\application\views\login.php
+INFO - 2026-01-28 07:48:15 --> Final output sent to browser
+DEBUG - 2026-01-28 07:48:15 --> Total execution time: 0.0278
+ERROR - 2026-01-28 07:48:18 --> $config['composer_autoload'] is set to TRUE but C:\xampp\htdocs\Aconnect_ci3\application\vendor/autoload.php was not found.
+INFO - 2026-01-28 07:48:18 --> Config Class Initialized
+INFO - 2026-01-28 07:48:18 --> Hooks Class Initialized
+DEBUG - 2026-01-28 07:48:18 --> UTF-8 Support Enabled
+INFO - 2026-01-28 07:48:18 --> Utf8 Class Initialized
+INFO - 2026-01-28 07:48:18 --> URI Class Initialized
+INFO - 2026-01-28 07:48:18 --> Router Class Initialized
+INFO - 2026-01-28 07:48:18 --> Output Class Initialized
+INFO - 2026-01-28 07:48:18 --> Security Class Initialized
+DEBUG - 2026-01-28 07:48:18 --> Global POST, GET and COOKIE data sanitized
+INFO - 2026-01-28 07:48:18 --> Input Class Initialized
+INFO - 2026-01-28 07:48:18 --> Language Class Initialized
+INFO - 2026-01-28 07:48:18 --> Loader Class Initialized
+INFO - 2026-01-28 07:48:18 --> Helper loaded: url_helper
+INFO - 2026-01-28 07:48:18 --> Helper loaded: file_helper
+INFO - 2026-01-28 07:48:18 --> Helper loaded: html_helper
+INFO - 2026-01-28 07:48:18 --> Database Driver Class Initialized
+INFO - 2026-01-28 07:48:18 --> Session: Class initialized using 'files' driver.
+INFO - 2026-01-28 07:48:18 --> Helper loaded: form_helper
+INFO - 2026-01-28 07:48:18 --> Form Validation Class Initialized
+INFO - 2026-01-28 07:48:18 --> User Agent Class Initialized
+INFO - 2026-01-28 07:48:18 --> Language file loaded: language/english/pagination_lang.php
+INFO - 2026-01-28 07:48:18 --> Pagination Class Initialized
+INFO - 2026-01-28 07:48:18 --> Controller Class Initialized
+INFO - 2026-01-28 07:48:18 --> Model "M_login" initialized
+INFO - 2026-01-28 07:48:18 --> File loaded: C:\xampp\htdocs\Aconnect_ci3\application\views\admin/login.php
+INFO - 2026-01-28 07:48:18 --> Final output sent to browser
+DEBUG - 2026-01-28 07:48:18 --> Total execution time: 0.0827
+ERROR - 2026-01-28 07:48:21 --> $config['composer_autoload'] is set to TRUE but C:\xampp\htdocs\Aconnect_ci3\application\vendor/autoload.php was not found.
+INFO - 2026-01-28 07:48:21 --> Config Class Initialized
+INFO - 2026-01-28 07:48:21 --> Hooks Class Initialized
+DEBUG - 2026-01-28 07:48:21 --> UTF-8 Support Enabled
+INFO - 2026-01-28 07:48:21 --> Utf8 Class Initialized
+INFO - 2026-01-28 07:48:21 --> URI Class Initialized
+INFO - 2026-01-28 07:48:21 --> Router Class Initialized
+INFO - 2026-01-28 07:48:21 --> Output Class Initialized
+INFO - 2026-01-28 07:48:21 --> Security Class Initialized
+DEBUG - 2026-01-28 07:48:21 --> Global POST, GET and COOKIE data sanitized
+INFO - 2026-01-28 07:48:21 --> Input Class Initialized
+INFO - 2026-01-28 07:48:21 --> Language Class Initialized
+INFO - 2026-01-28 07:48:21 --> Loader Class Initialized
+INFO - 2026-01-28 07:48:21 --> Helper loaded: url_helper
+INFO - 2026-01-28 07:48:21 --> Helper loaded: file_helper
+INFO - 2026-01-28 07:48:21 --> Helper loaded: html_helper
+INFO - 2026-01-28 07:48:21 --> Database Driver Class Initialized
+INFO - 2026-01-28 07:48:21 --> Session: Class initialized using 'files' driver.
+INFO - 2026-01-28 07:48:21 --> Helper loaded: form_helper
+INFO - 2026-01-28 07:48:21 --> Form Validation Class Initialized
+INFO - 2026-01-28 07:48:21 --> User Agent Class Initialized
+INFO - 2026-01-28 07:48:21 --> Language file loaded: language/english/pagination_lang.php
+INFO - 2026-01-28 07:48:21 --> Pagination Class Initialized
+INFO - 2026-01-28 07:48:21 --> Controller Class Initialized
+INFO - 2026-01-28 07:48:21 --> Model "M_login" initialized
+INFO - 2026-01-28 07:48:21 --> File loaded: C:\xampp\htdocs\Aconnect_ci3\application\views\admin/login.php
+ERROR - 2026-01-28 07:48:21 --> $config['composer_autoload'] is set to TRUE but C:\xampp\htdocs\Aconnect_ci3\application\vendor/autoload.php was not found.
+INFO - 2026-01-28 07:48:21 --> Config Class Initialized
+INFO - 2026-01-28 07:48:21 --> Hooks Class Initialized
+DEBUG - 2026-01-28 07:48:21 --> UTF-8 Support Enabled
+INFO - 2026-01-28 07:48:21 --> Utf8 Class Initialized
+INFO - 2026-01-28 07:48:21 --> URI Class Initialized
+INFO - 2026-01-28 07:48:21 --> Router Class Initialized
+INFO - 2026-01-28 07:48:21 --> Output Class Initialized
+INFO - 2026-01-28 07:48:21 --> Security Class Initialized
+DEBUG - 2026-01-28 07:48:21 --> Global POST, GET and COOKIE data sanitized
+INFO - 2026-01-28 07:48:21 --> Input Class Initialized
+INFO - 2026-01-28 07:48:21 --> Language Class Initialized
+INFO - 2026-01-28 07:48:21 --> Loader Class Initialized
+INFO - 2026-01-28 07:48:21 --> Helper loaded: url_helper
+INFO - 2026-01-28 07:48:21 --> Helper loaded: file_helper
+INFO - 2026-01-28 07:48:21 --> Helper loaded: html_helper
+INFO - 2026-01-28 07:48:21 --> Database Driver Class Initialized
+INFO - 2026-01-28 07:48:21 --> Session: Class initialized using 'files' driver.
+INFO - 2026-01-28 07:48:21 --> Helper loaded: form_helper
+INFO - 2026-01-28 07:48:21 --> Form Validation Class Initialized
+INFO - 2026-01-28 07:48:21 --> User Agent Class Initialized
+INFO - 2026-01-28 07:48:21 --> Language file loaded: language/english/pagination_lang.php
+INFO - 2026-01-28 07:48:21 --> Pagination Class Initialized
+INFO - 2026-01-28 07:48:21 --> Controller Class Initialized
+INFO - 2026-01-28 07:48:21 --> File loaded: C:\xampp\htdocs\Aconnect_ci3\application\views\__header.php
+INFO - 2026-01-28 07:48:21 --> File loaded: C:\xampp\htdocs\Aconnect_ci3\application\views\dashboard_a.php
+INFO - 2026-01-28 07:48:21 --> File loaded: C:\xampp\htdocs\Aconnect_ci3\application\views\__footer.php
+INFO - 2026-01-28 07:48:21 --> Final output sent to browser
+DEBUG - 2026-01-28 07:48:21 --> Total execution time: 0.0410
+ERROR - 2026-01-28 07:48:23 --> $config['composer_autoload'] is set to TRUE but C:\xampp\htdocs\Aconnect_ci3\application\vendor/autoload.php was not found.
+INFO - 2026-01-28 07:48:23 --> Config Class Initialized
+INFO - 2026-01-28 07:48:23 --> Hooks Class Initialized
+DEBUG - 2026-01-28 07:48:23 --> UTF-8 Support Enabled
+INFO - 2026-01-28 07:48:23 --> Utf8 Class Initialized
+INFO - 2026-01-28 07:48:23 --> URI Class Initialized
+INFO - 2026-01-28 07:48:23 --> Router Class Initialized
+INFO - 2026-01-28 07:48:23 --> Output Class Initialized
+INFO - 2026-01-28 07:48:23 --> Security Class Initialized
+DEBUG - 2026-01-28 07:48:23 --> Global POST, GET and COOKIE data sanitized
+INFO - 2026-01-28 07:48:23 --> Input Class Initialized
+INFO - 2026-01-28 07:48:23 --> Language Class Initialized
+INFO - 2026-01-28 07:48:23 --> Loader Class Initialized
+INFO - 2026-01-28 07:48:23 --> Helper loaded: url_helper
+INFO - 2026-01-28 07:48:23 --> Helper loaded: file_helper
+INFO - 2026-01-28 07:48:23 --> Helper loaded: html_helper
+INFO - 2026-01-28 07:48:23 --> Database Driver Class Initialized
+INFO - 2026-01-28 07:48:23 --> Session: Class initialized using 'files' driver.
+INFO - 2026-01-28 07:48:23 --> Helper loaded: form_helper
+INFO - 2026-01-28 07:48:23 --> Form Validation Class Initialized
+INFO - 2026-01-28 07:48:23 --> User Agent Class Initialized
+INFO - 2026-01-28 07:48:23 --> Language file loaded: language/english/pagination_lang.php
+INFO - 2026-01-28 07:48:23 --> Pagination Class Initialized
+INFO - 2026-01-28 07:48:23 --> Controller Class Initialized
+INFO - 2026-01-28 07:48:23 --> Model "Support_model" initialized
+DEBUG - 2026-01-28 07:48:23 --> Session class already loaded. Second attempt ignored.
+INFO - 2026-01-28 07:48:23 --> File loaded: C:\xampp\htdocs\Aconnect_ci3\application\views\__header.php
+INFO - 2026-01-28 07:48:23 --> File loaded: C:\xampp\htdocs\Aconnect_ci3\application\views\admin/support_inbox.php
+INFO - 2026-01-28 07:48:23 --> File loaded: C:\xampp\htdocs\Aconnect_ci3\application\views\__footer.php
+INFO - 2026-01-28 07:48:23 --> Final output sent to browser
+DEBUG - 2026-01-28 07:48:23 --> Total execution time: 0.0307
+ERROR - 2026-01-28 07:48:24 --> $config['composer_autoload'] is set to TRUE but C:\xampp\htdocs\Aconnect_ci3\application\vendor/autoload.php was not found.
+INFO - 2026-01-28 07:48:24 --> Config Class Initialized
+INFO - 2026-01-28 07:48:24 --> Hooks Class Initialized
+DEBUG - 2026-01-28 07:48:24 --> UTF-8 Support Enabled
+INFO - 2026-01-28 07:48:24 --> Utf8 Class Initialized
+INFO - 2026-01-28 07:48:24 --> URI Class Initialized
+INFO - 2026-01-28 07:48:24 --> Router Class Initialized
+INFO - 2026-01-28 07:48:24 --> Output Class Initialized
+INFO - 2026-01-28 07:48:24 --> Security Class Initialized
+DEBUG - 2026-01-28 07:48:24 --> Global POST, GET and COOKIE data sanitized
+INFO - 2026-01-28 07:48:24 --> Input Class Initialized
+INFO - 2026-01-28 07:48:24 --> Language Class Initialized
+INFO - 2026-01-28 07:48:24 --> Loader Class Initialized
+INFO - 2026-01-28 07:48:24 --> Helper loaded: url_helper
+INFO - 2026-01-28 07:48:24 --> Helper loaded: file_helper
+INFO - 2026-01-28 07:48:24 --> Helper loaded: html_helper
+INFO - 2026-01-28 07:48:24 --> Database Driver Class Initialized
+INFO - 2026-01-28 07:48:24 --> Session: Class initialized using 'files' driver.
+INFO - 2026-01-28 07:48:24 --> Helper loaded: form_helper
+INFO - 2026-01-28 07:48:24 --> Form Validation Class Initialized
+INFO - 2026-01-28 07:48:24 --> User Agent Class Initialized
+INFO - 2026-01-28 07:48:24 --> Language file loaded: language/english/pagination_lang.php
+INFO - 2026-01-28 07:48:24 --> Pagination Class Initialized
+INFO - 2026-01-28 07:48:24 --> Controller Class Initialized
+INFO - 2026-01-28 07:48:24 --> Model "Support_model" initialized
+DEBUG - 2026-01-28 07:48:24 --> Session class already loaded. Second attempt ignored.
+INFO - 2026-01-28 07:48:24 --> Final output sent to browser
+DEBUG - 2026-01-28 07:48:24 --> Total execution time: 0.0254
+ERROR - 2026-01-28 07:48:26 --> $config['composer_autoload'] is set to TRUE but C:\xampp\htdocs\Aconnect_ci3\application\vendor/autoload.php was not found.
+INFO - 2026-01-28 07:48:26 --> Config Class Initialized
+INFO - 2026-01-28 07:48:26 --> Hooks Class Initialized
+DEBUG - 2026-01-28 07:48:26 --> UTF-8 Support Enabled
+INFO - 2026-01-28 07:48:26 --> Utf8 Class Initialized
+INFO - 2026-01-28 07:48:26 --> URI Class Initialized
+INFO - 2026-01-28 07:48:26 --> Router Class Initialized
+INFO - 2026-01-28 07:48:26 --> Output Class Initialized
+INFO - 2026-01-28 07:48:26 --> Security Class Initialized
+DEBUG - 2026-01-28 07:48:26 --> Global POST, GET and COOKIE data sanitized
+INFO - 2026-01-28 07:48:26 --> Input Class Initialized
+INFO - 2026-01-28 07:48:26 --> Language Class Initialized
+INFO - 2026-01-28 07:48:26 --> Loader Class Initialized
+INFO - 2026-01-28 07:48:26 --> Helper loaded: url_helper
+INFO - 2026-01-28 07:48:26 --> Helper loaded: file_helper
+INFO - 2026-01-28 07:48:26 --> Helper loaded: html_helper
+INFO - 2026-01-28 07:48:26 --> Database Driver Class Initialized
+INFO - 2026-01-28 07:48:26 --> Session: Class initialized using 'files' driver.
+INFO - 2026-01-28 07:48:26 --> Helper loaded: form_helper
+INFO - 2026-01-28 07:48:26 --> Form Validation Class Initialized
+INFO - 2026-01-28 07:48:26 --> User Agent Class Initialized
+INFO - 2026-01-28 07:48:26 --> Language file loaded: language/english/pagination_lang.php
+INFO - 2026-01-28 07:48:26 --> Pagination Class Initialized
+INFO - 2026-01-28 07:48:26 --> Controller Class Initialized
+INFO - 2026-01-28 07:48:26 --> File loaded: C:\xampp\htdocs\Aconnect_ci3\application\views\__header.php
+INFO - 2026-01-28 07:48:26 --> File loaded: C:\xampp\htdocs\Aconnect_ci3\application\views\dashboard_a.php
+INFO - 2026-01-28 07:48:26 --> File loaded: C:\xampp\htdocs\Aconnect_ci3\application\views\__footer.php
+INFO - 2026-01-28 07:48:26 --> Final output sent to browser
+DEBUG - 2026-01-28 07:48:26 --> Total execution time: 0.0527
+ERROR - 2026-01-28 08:12:43 --> $config['composer_autoload'] is set to TRUE but C:\xampp\htdocs\Aconnect_ci3\application\vendor/autoload.php was not found.
+INFO - 2026-01-28 08:12:43 --> Config Class Initialized
+INFO - 2026-01-28 08:12:43 --> Hooks Class Initialized
+DEBUG - 2026-01-28 08:12:43 --> UTF-8 Support Enabled
+INFO - 2026-01-28 08:12:43 --> Utf8 Class Initialized
+INFO - 2026-01-28 08:12:43 --> URI Class Initialized
+INFO - 2026-01-28 08:12:43 --> Router Class Initialized
+INFO - 2026-01-28 08:12:43 --> Output Class Initialized
+INFO - 2026-01-28 08:12:43 --> Security Class Initialized
+DEBUG - 2026-01-28 08:12:43 --> Global POST, GET and COOKIE data sanitized
+INFO - 2026-01-28 08:12:43 --> Input Class Initialized
+INFO - 2026-01-28 08:12:43 --> Language Class Initialized
+INFO - 2026-01-28 08:12:43 --> Loader Class Initialized
+INFO - 2026-01-28 08:12:43 --> Helper loaded: url_helper
+INFO - 2026-01-28 08:12:43 --> Helper loaded: file_helper
+INFO - 2026-01-28 08:12:43 --> Helper loaded: html_helper
+INFO - 2026-01-28 08:12:43 --> Database Driver Class Initialized
+INFO - 2026-01-28 08:12:43 --> Session: Class initialized using 'files' driver.
+INFO - 2026-01-28 08:12:43 --> Helper loaded: form_helper
+INFO - 2026-01-28 08:12:43 --> Form Validation Class Initialized
+INFO - 2026-01-28 08:12:43 --> User Agent Class Initialized
+INFO - 2026-01-28 08:12:43 --> Language file loaded: language/english/pagination_lang.php
+INFO - 2026-01-28 08:12:43 --> Pagination Class Initialized
+INFO - 2026-01-28 08:12:43 --> Controller Class Initialized
+INFO - 2026-01-28 08:12:43 --> File loaded: C:\xampp\htdocs\Aconnect_ci3\application\views\__header.php
+INFO - 2026-01-28 08:12:43 --> File loaded: C:\xampp\htdocs\Aconnect_ci3\application\views\dashboard_a.php
+INFO - 2026-01-28 08:12:43 --> File loaded: C:\xampp\htdocs\Aconnect_ci3\application\views\__footer.php
+INFO - 2026-01-28 08:12:43 --> Final output sent to browser
+DEBUG - 2026-01-28 08:12:43 --> Total execution time: 0.0855
+ERROR - 2026-01-28 09:01:13 --> $config['composer_autoload'] is set to TRUE but C:\xampp\htdocs\Aconnect_ci3\application\vendor/autoload.php was not found.
+INFO - 2026-01-28 09:01:13 --> Config Class Initialized
+INFO - 2026-01-28 09:01:13 --> Hooks Class Initialized
+DEBUG - 2026-01-28 09:01:13 --> UTF-8 Support Enabled
+INFO - 2026-01-28 09:01:13 --> Utf8 Class Initialized
+INFO - 2026-01-28 09:01:13 --> URI Class Initialized
+INFO - 2026-01-28 09:01:13 --> Router Class Initialized
+INFO - 2026-01-28 09:01:13 --> Output Class Initialized
+INFO - 2026-01-28 09:01:13 --> Security Class Initialized
+DEBUG - 2026-01-28 09:01:13 --> Global POST, GET and COOKIE data sanitized
+INFO - 2026-01-28 09:01:13 --> Input Class Initialized
+INFO - 2026-01-28 09:01:13 --> Language Class Initialized
+INFO - 2026-01-28 09:01:13 --> Loader Class Initialized
+INFO - 2026-01-28 09:01:13 --> Helper loaded: url_helper
+INFO - 2026-01-28 09:01:13 --> Helper loaded: file_helper
+INFO - 2026-01-28 09:01:13 --> Helper loaded: html_helper
+INFO - 2026-01-28 09:01:13 --> Database Driver Class Initialized
+INFO - 2026-01-28 09:01:13 --> Session: Class initialized using 'files' driver.
+INFO - 2026-01-28 09:01:13 --> Helper loaded: form_helper
+INFO - 2026-01-28 09:01:13 --> Form Validation Class Initialized
+INFO - 2026-01-28 09:01:13 --> User Agent Class Initialized
+INFO - 2026-01-28 09:01:13 --> Language file loaded: language/english/pagination_lang.php
+INFO - 2026-01-28 09:01:13 --> Pagination Class Initialized
+INFO - 2026-01-28 09:01:13 --> Controller Class Initialized
+INFO - 2026-01-28 09:01:13 --> File loaded: C:\xampp\htdocs\Aconnect_ci3\application\views\__header.php
+ERROR - 2026-01-28 09:01:13 --> Severity: Notice --> Undefined variable: total_users C:\xampp\htdocs\Aconnect_ci3\application\views\dashboard_a.php 391
+ERROR - 2026-01-28 09:01:13 --> Severity: Notice --> Undefined variable: total_users C:\xampp\htdocs\Aconnect_ci3\application\views\dashboard_a.php 412
+ERROR - 2026-01-28 09:01:13 --> Severity: Notice --> Undefined variable: total_users C:\xampp\htdocs\Aconnect_ci3\application\views\dashboard_a.php 418
+ERROR - 2026-01-28 09:01:13 --> Severity: Notice --> Undefined variable: total_events C:\xampp\htdocs\Aconnect_ci3\application\views\dashboard_a.php 436
+ERROR - 2026-01-28 09:01:13 --> Severity: Notice --> Undefined variable: growth_events C:\xampp\htdocs\Aconnect_ci3\application\views\dashboard_a.php 437
+ERROR - 2026-01-28 09:01:13 --> Severity: Notice --> Undefined variable: total_post C:\xampp\htdocs\Aconnect_ci3\application\views\dashboard_a.php 453
+ERROR - 2026-01-28 09:01:13 --> Severity: Notice --> Undefined variable: growth_posts C:\xampp\htdocs\Aconnect_ci3\application\views\dashboard_a.php 454
+ERROR - 2026-01-28 09:01:13 --> Severity: Notice --> Undefined variable: total_jobs C:\xampp\htdocs\Aconnect_ci3\application\views\dashboard_a.php 470
+ERROR - 2026-01-28 09:01:13 --> Severity: Notice --> Undefined variable: growth_jobs C:\xampp\htdocs\Aconnect_ci3\application\views\dashboard_a.php 471
+ERROR - 2026-01-28 09:01:13 --> Severity: Notice --> Undefined variable: total_alumni C:\xampp\htdocs\Aconnect_ci3\application\views\dashboard_a.php 487
+ERROR - 2026-01-28 09:01:13 --> Severity: Notice --> Undefined variable: growth_alumni C:\xampp\htdocs\Aconnect_ci3\application\views\dashboard_a.php 488
+ERROR - 2026-01-28 09:01:13 --> Severity: Notice --> Undefined variable: total_accounts C:\xampp\htdocs\Aconnect_ci3\application\views\dashboard_a.php 520
+ERROR - 2026-01-28 09:01:13 --> Severity: Notice --> Undefined variable: growth_accounts C:\xampp\htdocs\Aconnect_ci3\application\views\dashboard_a.php 521
+ERROR - 2026-01-28 09:01:13 --> Severity: Notice --> Undefined variable: active_users C:\xampp\htdocs\Aconnect_ci3\application\views\dashboard_a.php 550
+ERROR - 2026-01-28 09:01:13 --> Severity: Notice --> Undefined variable: inactive_users C:\xampp\htdocs\Aconnect_ci3\application\views\dashboard_a.php 550
+INFO - 2026-01-28 09:01:13 --> File loaded: C:\xampp\htdocs\Aconnect_ci3\application\views\dashboard_a.php
+INFO - 2026-01-28 09:01:13 --> File loaded: C:\xampp\htdocs\Aconnect_ci3\application\views\__footer.php
+INFO - 2026-01-28 09:01:13 --> Final output sent to browser
+DEBUG - 2026-01-28 09:01:13 --> Total execution time: 0.0805
+ERROR - 2026-01-28 09:01:23 --> $config['composer_autoload'] is set to TRUE but C:\xampp\htdocs\Aconnect_ci3\application\vendor/autoload.php was not found.
+INFO - 2026-01-28 09:01:23 --> Config Class Initialized
+INFO - 2026-01-28 09:01:23 --> Hooks Class Initialized
+DEBUG - 2026-01-28 09:01:23 --> UTF-8 Support Enabled
+INFO - 2026-01-28 09:01:23 --> Utf8 Class Initialized
+INFO - 2026-01-28 09:01:23 --> URI Class Initialized
+INFO - 2026-01-28 09:01:23 --> Router Class Initialized
+INFO - 2026-01-28 09:01:23 --> Output Class Initialized
+INFO - 2026-01-28 09:01:23 --> Security Class Initialized
+DEBUG - 2026-01-28 09:01:23 --> Global POST, GET and COOKIE data sanitized
+INFO - 2026-01-28 09:01:23 --> Input Class Initialized
+INFO - 2026-01-28 09:01:23 --> Language Class Initialized
+INFO - 2026-01-28 09:01:23 --> Loader Class Initialized
+INFO - 2026-01-28 09:01:23 --> Helper loaded: url_helper
+INFO - 2026-01-28 09:01:23 --> Helper loaded: file_helper
+INFO - 2026-01-28 09:01:23 --> Helper loaded: html_helper
+INFO - 2026-01-28 09:01:23 --> Database Driver Class Initialized
+INFO - 2026-01-28 09:01:23 --> Session: Class initialized using 'files' driver.
+INFO - 2026-01-28 09:01:23 --> Helper loaded: form_helper
+INFO - 2026-01-28 09:01:23 --> Form Validation Class Initialized
+INFO - 2026-01-28 09:01:23 --> User Agent Class Initialized
+INFO - 2026-01-28 09:01:23 --> Language file loaded: language/english/pagination_lang.php
+INFO - 2026-01-28 09:01:23 --> Pagination Class Initialized
+INFO - 2026-01-28 09:01:23 --> Controller Class Initialized
+INFO - 2026-01-28 09:01:23 --> Model "M_login" initialized
+ERROR - 2026-01-28 09:01:23 --> $config['composer_autoload'] is set to TRUE but C:\xampp\htdocs\Aconnect_ci3\application\vendor/autoload.php was not found.
+INFO - 2026-01-28 09:01:23 --> Config Class Initialized
+INFO - 2026-01-28 09:01:23 --> Hooks Class Initialized
+DEBUG - 2026-01-28 09:01:23 --> UTF-8 Support Enabled
+INFO - 2026-01-28 09:01:23 --> Utf8 Class Initialized
+INFO - 2026-01-28 09:01:23 --> URI Class Initialized
+INFO - 2026-01-28 09:01:23 --> Router Class Initialized
+INFO - 2026-01-28 09:01:23 --> Output Class Initialized
+INFO - 2026-01-28 09:01:23 --> Security Class Initialized
+DEBUG - 2026-01-28 09:01:23 --> Global POST, GET and COOKIE data sanitized
+INFO - 2026-01-28 09:01:23 --> Input Class Initialized
+INFO - 2026-01-28 09:01:23 --> Language Class Initialized
+INFO - 2026-01-28 09:01:23 --> Loader Class Initialized
+INFO - 2026-01-28 09:01:23 --> Helper loaded: url_helper
+INFO - 2026-01-28 09:01:23 --> Helper loaded: file_helper
+INFO - 2026-01-28 09:01:23 --> Helper loaded: html_helper
+INFO - 2026-01-28 09:01:23 --> Database Driver Class Initialized
+INFO - 2026-01-28 09:01:23 --> Session: Class initialized using 'files' driver.
+INFO - 2026-01-28 09:01:23 --> Helper loaded: form_helper
+INFO - 2026-01-28 09:01:23 --> Form Validation Class Initialized
+INFO - 2026-01-28 09:01:23 --> User Agent Class Initialized
+INFO - 2026-01-28 09:01:23 --> Language file loaded: language/english/pagination_lang.php
+INFO - 2026-01-28 09:01:23 --> Pagination Class Initialized
+INFO - 2026-01-28 09:01:23 --> Controller Class Initialized
+INFO - 2026-01-28 09:01:23 --> Model "M_login" initialized
+INFO - 2026-01-28 09:01:23 --> File loaded: C:\xampp\htdocs\Aconnect_ci3\application\views\admin/login.php
+INFO - 2026-01-28 09:01:23 --> Final output sent to browser
+DEBUG - 2026-01-28 09:01:23 --> Total execution time: 0.0806
+ERROR - 2026-01-28 09:01:26 --> $config['composer_autoload'] is set to TRUE but C:\xampp\htdocs\Aconnect_ci3\application\vendor/autoload.php was not found.
+INFO - 2026-01-28 09:01:26 --> Config Class Initialized
+INFO - 2026-01-28 09:01:26 --> Hooks Class Initialized
+DEBUG - 2026-01-28 09:01:26 --> UTF-8 Support Enabled
+INFO - 2026-01-28 09:01:26 --> Utf8 Class Initialized
+INFO - 2026-01-28 09:01:26 --> URI Class Initialized
+INFO - 2026-01-28 09:01:26 --> Router Class Initialized
+INFO - 2026-01-28 09:01:26 --> Output Class Initialized
+INFO - 2026-01-28 09:01:26 --> Security Class Initialized
+DEBUG - 2026-01-28 09:01:26 --> Global POST, GET and COOKIE data sanitized
+INFO - 2026-01-28 09:01:26 --> Input Class Initialized
+INFO - 2026-01-28 09:01:26 --> Language Class Initialized
+INFO - 2026-01-28 09:01:26 --> Loader Class Initialized
+INFO - 2026-01-28 09:01:26 --> Helper loaded: url_helper
+INFO - 2026-01-28 09:01:26 --> Helper loaded: file_helper
+INFO - 2026-01-28 09:01:26 --> Helper loaded: html_helper
+INFO - 2026-01-28 09:01:26 --> Database Driver Class Initialized
+INFO - 2026-01-28 09:01:26 --> Session: Class initialized using 'files' driver.
+INFO - 2026-01-28 09:01:26 --> Helper loaded: form_helper
+INFO - 2026-01-28 09:01:26 --> Form Validation Class Initialized
+INFO - 2026-01-28 09:01:26 --> User Agent Class Initialized
+INFO - 2026-01-28 09:01:26 --> Language file loaded: language/english/pagination_lang.php
+INFO - 2026-01-28 09:01:26 --> Pagination Class Initialized
+INFO - 2026-01-28 09:01:26 --> Controller Class Initialized
+INFO - 2026-01-28 09:01:26 --> Model "M_login" initialized
+INFO - 2026-01-28 09:01:26 --> File loaded: C:\xampp\htdocs\Aconnect_ci3\application\views\admin/login.php
+ERROR - 2026-01-28 09:01:26 --> $config['composer_autoload'] is set to TRUE but C:\xampp\htdocs\Aconnect_ci3\application\vendor/autoload.php was not found.
+INFO - 2026-01-28 09:01:26 --> Config Class Initialized
+INFO - 2026-01-28 09:01:26 --> Hooks Class Initialized
+DEBUG - 2026-01-28 09:01:26 --> UTF-8 Support Enabled
+INFO - 2026-01-28 09:01:26 --> Utf8 Class Initialized
+INFO - 2026-01-28 09:01:26 --> URI Class Initialized
+INFO - 2026-01-28 09:01:26 --> Router Class Initialized
+INFO - 2026-01-28 09:01:26 --> Output Class Initialized
+INFO - 2026-01-28 09:01:26 --> Security Class Initialized
+DEBUG - 2026-01-28 09:01:26 --> Global POST, GET and COOKIE data sanitized
+INFO - 2026-01-28 09:01:26 --> Input Class Initialized
+INFO - 2026-01-28 09:01:26 --> Language Class Initialized
+INFO - 2026-01-28 09:01:26 --> Loader Class Initialized
+INFO - 2026-01-28 09:01:26 --> Helper loaded: url_helper
+INFO - 2026-01-28 09:01:26 --> Helper loaded: file_helper
+INFO - 2026-01-28 09:01:26 --> Helper loaded: html_helper
+INFO - 2026-01-28 09:01:26 --> Database Driver Class Initialized
+INFO - 2026-01-28 09:01:26 --> Session: Class initialized using 'files' driver.
+INFO - 2026-01-28 09:01:26 --> Helper loaded: form_helper
+INFO - 2026-01-28 09:01:26 --> Form Validation Class Initialized
+INFO - 2026-01-28 09:01:26 --> User Agent Class Initialized
+INFO - 2026-01-28 09:01:26 --> Language file loaded: language/english/pagination_lang.php
+INFO - 2026-01-28 09:01:26 --> Pagination Class Initialized
+INFO - 2026-01-28 09:01:26 --> Controller Class Initialized
+INFO - 2026-01-28 09:01:26 --> File loaded: C:\xampp\htdocs\Aconnect_ci3\application\views\__header.php
+INFO - 2026-01-28 09:01:26 --> File loaded: C:\xampp\htdocs\Aconnect_ci3\application\views\dashboard_a.php
+INFO - 2026-01-28 09:01:26 --> File loaded: C:\xampp\htdocs\Aconnect_ci3\application\views\__footer.php
+INFO - 2026-01-28 09:01:26 --> Final output sent to browser
+DEBUG - 2026-01-28 09:01:26 --> Total execution time: 0.0868
+ERROR - 2026-01-28 09:01:28 --> $config['composer_autoload'] is set to TRUE but C:\xampp\htdocs\Aconnect_ci3\application\vendor/autoload.php was not found.
+INFO - 2026-01-28 09:01:28 --> Config Class Initialized
+INFO - 2026-01-28 09:01:28 --> Hooks Class Initialized
+DEBUG - 2026-01-28 09:01:28 --> UTF-8 Support Enabled
+INFO - 2026-01-28 09:01:28 --> Utf8 Class Initialized
+INFO - 2026-01-28 09:01:28 --> URI Class Initialized
+INFO - 2026-01-28 09:01:28 --> Router Class Initialized
+INFO - 2026-01-28 09:01:28 --> Output Class Initialized
+INFO - 2026-01-28 09:01:28 --> Security Class Initialized
+DEBUG - 2026-01-28 09:01:28 --> Global POST, GET and COOKIE data sanitized
+INFO - 2026-01-28 09:01:28 --> Input Class Initialized
+INFO - 2026-01-28 09:01:28 --> Language Class Initialized
+INFO - 2026-01-28 09:01:28 --> Loader Class Initialized
+INFO - 2026-01-28 09:01:28 --> Helper loaded: url_helper
+INFO - 2026-01-28 09:01:28 --> Helper loaded: file_helper
+INFO - 2026-01-28 09:01:28 --> Helper loaded: html_helper
+INFO - 2026-01-28 09:01:28 --> Database Driver Class Initialized
+INFO - 2026-01-28 09:01:28 --> Session: Class initialized using 'files' driver.
+INFO - 2026-01-28 09:01:28 --> Helper loaded: form_helper
+INFO - 2026-01-28 09:01:28 --> Form Validation Class Initialized
+INFO - 2026-01-28 09:01:28 --> User Agent Class Initialized
+INFO - 2026-01-28 09:01:28 --> Language file loaded: language/english/pagination_lang.php
+INFO - 2026-01-28 09:01:28 --> Pagination Class Initialized
+INFO - 2026-01-28 09:01:28 --> Controller Class Initialized
+INFO - 2026-01-28 09:01:28 --> Model "M_login" initialized
+ERROR - 2026-01-28 09:01:28 --> $config['composer_autoload'] is set to TRUE but C:\xampp\htdocs\Aconnect_ci3\application\vendor/autoload.php was not found.
+INFO - 2026-01-28 09:01:28 --> Config Class Initialized
+INFO - 2026-01-28 09:01:28 --> Hooks Class Initialized
+DEBUG - 2026-01-28 09:01:28 --> UTF-8 Support Enabled
+INFO - 2026-01-28 09:01:28 --> Utf8 Class Initialized
+INFO - 2026-01-28 09:01:28 --> URI Class Initialized
+INFO - 2026-01-28 09:01:28 --> Router Class Initialized
+INFO - 2026-01-28 09:01:28 --> Output Class Initialized
+INFO - 2026-01-28 09:01:28 --> Security Class Initialized
+DEBUG - 2026-01-28 09:01:28 --> Global POST, GET and COOKIE data sanitized
+INFO - 2026-01-28 09:01:28 --> Input Class Initialized
+INFO - 2026-01-28 09:01:28 --> Language Class Initialized
+INFO - 2026-01-28 09:01:28 --> Loader Class Initialized
+INFO - 2026-01-28 09:01:28 --> Helper loaded: url_helper
+INFO - 2026-01-28 09:01:28 --> Helper loaded: file_helper
+INFO - 2026-01-28 09:01:28 --> Helper loaded: html_helper
+INFO - 2026-01-28 09:01:28 --> Database Driver Class Initialized
+INFO - 2026-01-28 09:01:28 --> Session: Class initialized using 'files' driver.
+INFO - 2026-01-28 09:01:28 --> Helper loaded: form_helper
+INFO - 2026-01-28 09:01:28 --> Form Validation Class Initialized
+INFO - 2026-01-28 09:01:28 --> User Agent Class Initialized
+INFO - 2026-01-28 09:01:28 --> Language file loaded: language/english/pagination_lang.php
+INFO - 2026-01-28 09:01:28 --> Pagination Class Initialized
+INFO - 2026-01-28 09:01:28 --> Controller Class Initialized
+INFO - 2026-01-28 09:01:28 --> Model "M_login" initialized
+INFO - 2026-01-28 09:01:28 --> File loaded: C:\xampp\htdocs\Aconnect_ci3\application\views\admin/login.php
+INFO - 2026-01-28 09:01:28 --> Final output sent to browser
+DEBUG - 2026-01-28 09:01:28 --> Total execution time: 0.0890
+ERROR - 2026-01-28 09:01:29 --> $config['composer_autoload'] is set to TRUE but C:\xampp\htdocs\Aconnect_ci3\application\vendor/autoload.php was not found.
+INFO - 2026-01-28 09:01:29 --> Config Class Initialized
+INFO - 2026-01-28 09:01:29 --> Hooks Class Initialized
+DEBUG - 2026-01-28 09:01:29 --> UTF-8 Support Enabled
+INFO - 2026-01-28 09:01:29 --> Utf8 Class Initialized
+INFO - 2026-01-28 09:01:29 --> URI Class Initialized
+INFO - 2026-01-28 09:01:29 --> Router Class Initialized
+INFO - 2026-01-28 09:01:29 --> Output Class Initialized
+INFO - 2026-01-28 09:01:29 --> Security Class Initialized
+DEBUG - 2026-01-28 09:01:29 --> Global POST, GET and COOKIE data sanitized
+INFO - 2026-01-28 09:01:29 --> Input Class Initialized
+INFO - 2026-01-28 09:01:29 --> Language Class Initialized
+INFO - 2026-01-28 09:01:29 --> Loader Class Initialized
+INFO - 2026-01-28 09:01:29 --> Helper loaded: url_helper
+INFO - 2026-01-28 09:01:29 --> Helper loaded: file_helper
+INFO - 2026-01-28 09:01:29 --> Helper loaded: html_helper
+INFO - 2026-01-28 09:01:29 --> Database Driver Class Initialized
+INFO - 2026-01-28 09:01:29 --> Session: Class initialized using 'files' driver.
+INFO - 2026-01-28 09:01:29 --> Helper loaded: form_helper
+INFO - 2026-01-28 09:01:29 --> Form Validation Class Initialized
+INFO - 2026-01-28 09:01:29 --> User Agent Class Initialized
+INFO - 2026-01-28 09:01:29 --> Language file loaded: language/english/pagination_lang.php
+INFO - 2026-01-28 09:01:29 --> Pagination Class Initialized
+INFO - 2026-01-28 09:01:29 --> Controller Class Initialized
+INFO - 2026-01-28 09:01:29 --> Model "M_login" initialized
+INFO - 2026-01-28 09:01:29 --> File loaded: C:\xampp\htdocs\Aconnect_ci3\application\views\login.php
+INFO - 2026-01-28 09:01:29 --> Final output sent to browser
+DEBUG - 2026-01-28 09:01:29 --> Total execution time: 0.1050
+ERROR - 2026-01-28 09:01:31 --> $config['composer_autoload'] is set to TRUE but C:\xampp\htdocs\Aconnect_ci3\application\vendor/autoload.php was not found.
+INFO - 2026-01-28 09:01:31 --> Config Class Initialized
+INFO - 2026-01-28 09:01:31 --> Hooks Class Initialized
+DEBUG - 2026-01-28 09:01:31 --> UTF-8 Support Enabled
+INFO - 2026-01-28 09:01:31 --> Utf8 Class Initialized
+INFO - 2026-01-28 09:01:31 --> URI Class Initialized
+INFO - 2026-01-28 09:01:31 --> Router Class Initialized
+INFO - 2026-01-28 09:01:31 --> Output Class Initialized
+INFO - 2026-01-28 09:01:31 --> Security Class Initialized
+DEBUG - 2026-01-28 09:01:31 --> Global POST, GET and COOKIE data sanitized
+INFO - 2026-01-28 09:01:31 --> Input Class Initialized
+INFO - 2026-01-28 09:01:31 --> Language Class Initialized
+INFO - 2026-01-28 09:01:31 --> Loader Class Initialized
+INFO - 2026-01-28 09:01:31 --> Helper loaded: url_helper
+INFO - 2026-01-28 09:01:31 --> Helper loaded: file_helper
+INFO - 2026-01-28 09:01:31 --> Helper loaded: html_helper
+INFO - 2026-01-28 09:01:31 --> Database Driver Class Initialized
+INFO - 2026-01-28 09:01:31 --> Session: Class initialized using 'files' driver.
+INFO - 2026-01-28 09:01:31 --> Helper loaded: form_helper
+INFO - 2026-01-28 09:01:31 --> Form Validation Class Initialized
+INFO - 2026-01-28 09:01:31 --> User Agent Class Initialized
+INFO - 2026-01-28 09:01:31 --> Language file loaded: language/english/pagination_lang.php
+INFO - 2026-01-28 09:01:31 --> Pagination Class Initialized
+INFO - 2026-01-28 09:01:31 --> Controller Class Initialized
+INFO - 2026-01-28 09:01:31 --> Model "M_login" initialized
+ERROR - 2026-01-28 09:01:31 --> $config['composer_autoload'] is set to TRUE but C:\xampp\htdocs\Aconnect_ci3\application\vendor/autoload.php was not found.
+INFO - 2026-01-28 09:01:31 --> Config Class Initialized
+INFO - 2026-01-28 09:01:31 --> Hooks Class Initialized
+DEBUG - 2026-01-28 09:01:31 --> UTF-8 Support Enabled
+INFO - 2026-01-28 09:01:31 --> Utf8 Class Initialized
+INFO - 2026-01-28 09:01:31 --> URI Class Initialized
+INFO - 2026-01-28 09:01:31 --> Router Class Initialized
+INFO - 2026-01-28 09:01:31 --> Output Class Initialized
+INFO - 2026-01-28 09:01:31 --> Security Class Initialized
+DEBUG - 2026-01-28 09:01:31 --> Global POST, GET and COOKIE data sanitized
+INFO - 2026-01-28 09:01:31 --> Input Class Initialized
+INFO - 2026-01-28 09:01:31 --> Language Class Initialized
+INFO - 2026-01-28 09:01:31 --> Loader Class Initialized
+INFO - 2026-01-28 09:01:31 --> Helper loaded: url_helper
+INFO - 2026-01-28 09:01:31 --> Helper loaded: file_helper
+INFO - 2026-01-28 09:01:31 --> Helper loaded: html_helper
+INFO - 2026-01-28 09:01:31 --> Database Driver Class Initialized
+INFO - 2026-01-28 09:01:31 --> Session: Class initialized using 'files' driver.
+INFO - 2026-01-28 09:01:31 --> Helper loaded: form_helper
+INFO - 2026-01-28 09:01:31 --> Form Validation Class Initialized
+INFO - 2026-01-28 09:01:31 --> User Agent Class Initialized
+INFO - 2026-01-28 09:01:31 --> Language file loaded: language/english/pagination_lang.php
+INFO - 2026-01-28 09:01:31 --> Pagination Class Initialized
+INFO - 2026-01-28 09:01:31 --> Controller Class Initialized
+INFO - 2026-01-28 09:01:31 --> File loaded: C:\xampp\htdocs\Aconnect_ci3\application\views\__header.php
+INFO - 2026-01-28 09:01:31 --> File loaded: C:\xampp\htdocs\Aconnect_ci3\application\views\dashboard_u.php
+INFO - 2026-01-28 09:01:31 --> File loaded: C:\xampp\htdocs\Aconnect_ci3\application\views\__footer.php
+INFO - 2026-01-28 09:01:31 --> Final output sent to browser
+DEBUG - 2026-01-28 09:01:31 --> Total execution time: 0.0558
+ERROR - 2026-01-28 09:01:32 --> $config['composer_autoload'] is set to TRUE but C:\xampp\htdocs\Aconnect_ci3\application\vendor/autoload.php was not found.
+INFO - 2026-01-28 09:01:32 --> Config Class Initialized
+INFO - 2026-01-28 09:01:32 --> Hooks Class Initialized
+DEBUG - 2026-01-28 09:01:32 --> UTF-8 Support Enabled
+INFO - 2026-01-28 09:01:32 --> Utf8 Class Initialized
+INFO - 2026-01-28 09:01:32 --> URI Class Initialized
+INFO - 2026-01-28 09:01:32 --> Router Class Initialized
+INFO - 2026-01-28 09:01:32 --> Output Class Initialized
+INFO - 2026-01-28 09:01:32 --> Security Class Initialized
+DEBUG - 2026-01-28 09:01:32 --> Global POST, GET and COOKIE data sanitized
+INFO - 2026-01-28 09:01:32 --> Input Class Initialized
+INFO - 2026-01-28 09:01:32 --> Language Class Initialized
+INFO - 2026-01-28 09:01:32 --> Loader Class Initialized
+INFO - 2026-01-28 09:01:32 --> Helper loaded: url_helper
+INFO - 2026-01-28 09:01:32 --> Helper loaded: file_helper
+INFO - 2026-01-28 09:01:32 --> Helper loaded: html_helper
+INFO - 2026-01-28 09:01:32 --> Database Driver Class Initialized
+INFO - 2026-01-28 09:01:32 --> Session: Class initialized using 'files' driver.
+INFO - 2026-01-28 09:01:32 --> Helper loaded: form_helper
+INFO - 2026-01-28 09:01:32 --> Form Validation Class Initialized
+INFO - 2026-01-28 09:01:32 --> User Agent Class Initialized
+INFO - 2026-01-28 09:01:32 --> Language file loaded: language/english/pagination_lang.php
+INFO - 2026-01-28 09:01:32 --> Pagination Class Initialized
+INFO - 2026-01-28 09:01:32 --> Controller Class Initialized
+INFO - 2026-01-28 09:01:32 --> Model "Support_model" initialized
+DEBUG - 2026-01-28 09:01:32 --> Session class already loaded. Second attempt ignored.
+INFO - 2026-01-28 09:01:32 --> Final output sent to browser
+DEBUG - 2026-01-28 09:01:32 --> Total execution time: 0.1245
+ERROR - 2026-01-28 09:01:36 --> $config['composer_autoload'] is set to TRUE but C:\xampp\htdocs\Aconnect_ci3\application\vendor/autoload.php was not found.
+INFO - 2026-01-28 09:01:36 --> Config Class Initialized
+INFO - 2026-01-28 09:01:36 --> Hooks Class Initialized
+DEBUG - 2026-01-28 09:01:36 --> UTF-8 Support Enabled
+INFO - 2026-01-28 09:01:36 --> Utf8 Class Initialized
+INFO - 2026-01-28 09:01:36 --> URI Class Initialized
+INFO - 2026-01-28 09:01:36 --> Router Class Initialized
+INFO - 2026-01-28 09:01:36 --> Output Class Initialized
+INFO - 2026-01-28 09:01:36 --> Security Class Initialized
+DEBUG - 2026-01-28 09:01:36 --> Global POST, GET and COOKIE data sanitized
+INFO - 2026-01-28 09:01:36 --> Input Class Initialized
+INFO - 2026-01-28 09:01:36 --> Language Class Initialized
+INFO - 2026-01-28 09:01:36 --> Loader Class Initialized
+INFO - 2026-01-28 09:01:36 --> Helper loaded: url_helper
+INFO - 2026-01-28 09:01:36 --> Helper loaded: file_helper
+INFO - 2026-01-28 09:01:36 --> Helper loaded: html_helper
+INFO - 2026-01-28 09:01:36 --> Database Driver Class Initialized
+INFO - 2026-01-28 09:01:36 --> Session: Class initialized using 'files' driver.
+INFO - 2026-01-28 09:01:36 --> Helper loaded: form_helper
+INFO - 2026-01-28 09:01:36 --> Form Validation Class Initialized
+INFO - 2026-01-28 09:01:36 --> User Agent Class Initialized
+INFO - 2026-01-28 09:01:36 --> Language file loaded: language/english/pagination_lang.php
+INFO - 2026-01-28 09:01:36 --> Pagination Class Initialized
+INFO - 2026-01-28 09:01:36 --> Controller Class Initialized
+INFO - 2026-01-28 09:01:36 --> Model "Support_model" initialized
+DEBUG - 2026-01-28 09:01:36 --> Session class already loaded. Second attempt ignored.
+INFO - 2026-01-28 09:01:36 --> Final output sent to browser
+DEBUG - 2026-01-28 09:01:36 --> Total execution time: 0.0887
+ERROR - 2026-01-28 09:01:37 --> $config['composer_autoload'] is set to TRUE but C:\xampp\htdocs\Aconnect_ci3\application\vendor/autoload.php was not found.
+INFO - 2026-01-28 09:01:37 --> Config Class Initialized
+INFO - 2026-01-28 09:01:37 --> Hooks Class Initialized
+DEBUG - 2026-01-28 09:01:37 --> UTF-8 Support Enabled
+INFO - 2026-01-28 09:01:37 --> Utf8 Class Initialized
+INFO - 2026-01-28 09:01:37 --> URI Class Initialized
+INFO - 2026-01-28 09:01:37 --> Router Class Initialized
+INFO - 2026-01-28 09:01:37 --> Output Class Initialized
+INFO - 2026-01-28 09:01:37 --> Security Class Initialized
+DEBUG - 2026-01-28 09:01:37 --> Global POST, GET and COOKIE data sanitized
+INFO - 2026-01-28 09:01:37 --> Input Class Initialized
+INFO - 2026-01-28 09:01:37 --> Language Class Initialized
+INFO - 2026-01-28 09:01:37 --> Loader Class Initialized
+INFO - 2026-01-28 09:01:37 --> Helper loaded: url_helper
+INFO - 2026-01-28 09:01:37 --> Helper loaded: file_helper
+INFO - 2026-01-28 09:01:37 --> Helper loaded: html_helper
+INFO - 2026-01-28 09:01:37 --> Database Driver Class Initialized
+INFO - 2026-01-28 09:01:37 --> Session: Class initialized using 'files' driver.
+INFO - 2026-01-28 09:01:37 --> Helper loaded: form_helper
+INFO - 2026-01-28 09:01:37 --> Form Validation Class Initialized
+INFO - 2026-01-28 09:01:37 --> User Agent Class Initialized
+INFO - 2026-01-28 09:01:37 --> Language file loaded: language/english/pagination_lang.php
+INFO - 2026-01-28 09:01:37 --> Pagination Class Initialized
+INFO - 2026-01-28 09:01:37 --> Controller Class Initialized
+INFO - 2026-01-28 09:01:37 --> Model "M_login" initialized
+INFO - 2026-01-28 09:01:37 --> Model "Activity_log_model" initialized
+ERROR - 2026-01-28 09:01:37 --> $config['composer_autoload'] is set to TRUE but C:\xampp\htdocs\Aconnect_ci3\application\vendor/autoload.php was not found.
+INFO - 2026-01-28 09:01:37 --> Config Class Initialized
+INFO - 2026-01-28 09:01:37 --> Hooks Class Initialized
+DEBUG - 2026-01-28 09:01:37 --> UTF-8 Support Enabled
+INFO - 2026-01-28 09:01:37 --> Utf8 Class Initialized
+INFO - 2026-01-28 09:01:37 --> URI Class Initialized
+INFO - 2026-01-28 09:01:37 --> Router Class Initialized
+INFO - 2026-01-28 09:01:37 --> Output Class Initialized
+INFO - 2026-01-28 09:01:37 --> Security Class Initialized
+DEBUG - 2026-01-28 09:01:37 --> Global POST, GET and COOKIE data sanitized
+INFO - 2026-01-28 09:01:37 --> Input Class Initialized
+INFO - 2026-01-28 09:01:37 --> Language Class Initialized
+INFO - 2026-01-28 09:01:37 --> Loader Class Initialized
+INFO - 2026-01-28 09:01:37 --> Helper loaded: url_helper
+INFO - 2026-01-28 09:01:37 --> Helper loaded: file_helper
+INFO - 2026-01-28 09:01:37 --> Helper loaded: html_helper
+INFO - 2026-01-28 09:01:37 --> Database Driver Class Initialized
+INFO - 2026-01-28 09:01:37 --> Session: Class initialized using 'files' driver.
+INFO - 2026-01-28 09:01:37 --> Helper loaded: form_helper
+INFO - 2026-01-28 09:01:37 --> Form Validation Class Initialized
+INFO - 2026-01-28 09:01:37 --> User Agent Class Initialized
+INFO - 2026-01-28 09:01:37 --> Language file loaded: language/english/pagination_lang.php
+INFO - 2026-01-28 09:01:37 --> Pagination Class Initialized
+INFO - 2026-01-28 09:01:37 --> Controller Class Initialized
+INFO - 2026-01-28 09:01:37 --> Model "M_login" initialized
+INFO - 2026-01-28 09:01:37 --> File loaded: C:\xampp\htdocs\Aconnect_ci3\application\views\login.php
+INFO - 2026-01-28 09:01:37 --> Final output sent to browser
+DEBUG - 2026-01-28 09:01:37 --> Total execution time: 0.0367
+ERROR - 2026-01-28 09:01:41 --> $config['composer_autoload'] is set to TRUE but C:\xampp\htdocs\Aconnect_ci3\application\vendor/autoload.php was not found.
+INFO - 2026-01-28 09:01:41 --> Config Class Initialized
+INFO - 2026-01-28 09:01:41 --> Hooks Class Initialized
+DEBUG - 2026-01-28 09:01:41 --> UTF-8 Support Enabled
+INFO - 2026-01-28 09:01:41 --> Utf8 Class Initialized
+INFO - 2026-01-28 09:01:41 --> URI Class Initialized
+INFO - 2026-01-28 09:01:41 --> Router Class Initialized
+INFO - 2026-01-28 09:01:41 --> Output Class Initialized
+INFO - 2026-01-28 09:01:41 --> Security Class Initialized
+DEBUG - 2026-01-28 09:01:41 --> Global POST, GET and COOKIE data sanitized
+INFO - 2026-01-28 09:01:41 --> Input Class Initialized
+INFO - 2026-01-28 09:01:41 --> Language Class Initialized
+INFO - 2026-01-28 09:01:41 --> Loader Class Initialized
+INFO - 2026-01-28 09:01:41 --> Helper loaded: url_helper
+INFO - 2026-01-28 09:01:41 --> Helper loaded: file_helper
+INFO - 2026-01-28 09:01:41 --> Helper loaded: html_helper
+INFO - 2026-01-28 09:01:41 --> Database Driver Class Initialized
+INFO - 2026-01-28 09:01:41 --> Session: Class initialized using 'files' driver.
+INFO - 2026-01-28 09:01:41 --> Helper loaded: form_helper
+INFO - 2026-01-28 09:01:41 --> Form Validation Class Initialized
+INFO - 2026-01-28 09:01:41 --> User Agent Class Initialized
+INFO - 2026-01-28 09:01:41 --> Language file loaded: language/english/pagination_lang.php
+INFO - 2026-01-28 09:01:41 --> Pagination Class Initialized
+INFO - 2026-01-28 09:01:41 --> Controller Class Initialized
+INFO - 2026-01-28 09:01:41 --> Model "M_login" initialized
+INFO - 2026-01-28 09:01:41 --> File loaded: C:\xampp\htdocs\Aconnect_ci3\application\views\admin/login.php
+INFO - 2026-01-28 09:01:41 --> Final output sent to browser
+DEBUG - 2026-01-28 09:01:41 --> Total execution time: 0.0484
+ERROR - 2026-01-28 09:01:44 --> $config['composer_autoload'] is set to TRUE but C:\xampp\htdocs\Aconnect_ci3\application\vendor/autoload.php was not found.
+INFO - 2026-01-28 09:01:44 --> Config Class Initialized
+INFO - 2026-01-28 09:01:44 --> Hooks Class Initialized
+DEBUG - 2026-01-28 09:01:44 --> UTF-8 Support Enabled
+INFO - 2026-01-28 09:01:44 --> Utf8 Class Initialized
+INFO - 2026-01-28 09:01:44 --> URI Class Initialized
+INFO - 2026-01-28 09:01:44 --> Router Class Initialized
+INFO - 2026-01-28 09:01:44 --> Output Class Initialized
+INFO - 2026-01-28 09:01:44 --> Security Class Initialized
+DEBUG - 2026-01-28 09:01:44 --> Global POST, GET and COOKIE data sanitized
+INFO - 2026-01-28 09:01:44 --> Input Class Initialized
+INFO - 2026-01-28 09:01:44 --> Language Class Initialized
+INFO - 2026-01-28 09:01:44 --> Loader Class Initialized
+INFO - 2026-01-28 09:01:44 --> Helper loaded: url_helper
+INFO - 2026-01-28 09:01:44 --> Helper loaded: file_helper
+INFO - 2026-01-28 09:01:44 --> Helper loaded: html_helper
+INFO - 2026-01-28 09:01:44 --> Database Driver Class Initialized
+INFO - 2026-01-28 09:01:44 --> Session: Class initialized using 'files' driver.
+INFO - 2026-01-28 09:01:44 --> Helper loaded: form_helper
+INFO - 2026-01-28 09:01:44 --> Form Validation Class Initialized
+INFO - 2026-01-28 09:01:44 --> User Agent Class Initialized
+INFO - 2026-01-28 09:01:44 --> Language file loaded: language/english/pagination_lang.php
+INFO - 2026-01-28 09:01:44 --> Pagination Class Initialized
+INFO - 2026-01-28 09:01:44 --> Controller Class Initialized
+INFO - 2026-01-28 09:01:44 --> Model "M_login" initialized
+INFO - 2026-01-28 09:01:44 --> File loaded: C:\xampp\htdocs\Aconnect_ci3\application\views\admin/login.php
+INFO - 2026-01-28 09:01:44 --> Final output sent to browser
+DEBUG - 2026-01-28 09:01:44 --> Total execution time: 0.0249
+ERROR - 2026-01-28 09:01:45 --> $config['composer_autoload'] is set to TRUE but C:\xampp\htdocs\Aconnect_ci3\application\vendor/autoload.php was not found.
+INFO - 2026-01-28 09:01:45 --> Config Class Initialized
+INFO - 2026-01-28 09:01:45 --> Hooks Class Initialized
+DEBUG - 2026-01-28 09:01:45 --> UTF-8 Support Enabled
+INFO - 2026-01-28 09:01:45 --> Utf8 Class Initialized
+INFO - 2026-01-28 09:01:45 --> URI Class Initialized
+INFO - 2026-01-28 09:01:45 --> Router Class Initialized
+INFO - 2026-01-28 09:01:45 --> Output Class Initialized
+INFO - 2026-01-28 09:01:45 --> Security Class Initialized
+DEBUG - 2026-01-28 09:01:45 --> Global POST, GET and COOKIE data sanitized
+INFO - 2026-01-28 09:01:45 --> Input Class Initialized
+INFO - 2026-01-28 09:01:45 --> Language Class Initialized
+INFO - 2026-01-28 09:01:45 --> Loader Class Initialized
+INFO - 2026-01-28 09:01:45 --> Helper loaded: url_helper
+INFO - 2026-01-28 09:01:45 --> Helper loaded: file_helper
+INFO - 2026-01-28 09:01:45 --> Helper loaded: html_helper
+INFO - 2026-01-28 09:01:45 --> Database Driver Class Initialized
+INFO - 2026-01-28 09:01:45 --> Session: Class initialized using 'files' driver.
+INFO - 2026-01-28 09:01:45 --> Helper loaded: form_helper
+INFO - 2026-01-28 09:01:45 --> Form Validation Class Initialized
+INFO - 2026-01-28 09:01:45 --> User Agent Class Initialized
+INFO - 2026-01-28 09:01:45 --> Language file loaded: language/english/pagination_lang.php
+INFO - 2026-01-28 09:01:45 --> Pagination Class Initialized
+INFO - 2026-01-28 09:01:45 --> Controller Class Initialized
+INFO - 2026-01-28 09:01:45 --> Model "M_login" initialized
+INFO - 2026-01-28 09:01:45 --> File loaded: C:\xampp\htdocs\Aconnect_ci3\application\views\admin/login.php
+INFO - 2026-01-28 09:01:45 --> Final output sent to browser
+DEBUG - 2026-01-28 09:01:45 --> Total execution time: 0.0238
+ERROR - 2026-01-28 09:01:46 --> $config['composer_autoload'] is set to TRUE but C:\xampp\htdocs\Aconnect_ci3\application\vendor/autoload.php was not found.
+INFO - 2026-01-28 09:01:46 --> Config Class Initialized
+INFO - 2026-01-28 09:01:46 --> Hooks Class Initialized
+DEBUG - 2026-01-28 09:01:46 --> UTF-8 Support Enabled
+INFO - 2026-01-28 09:01:46 --> Utf8 Class Initialized
+INFO - 2026-01-28 09:01:46 --> URI Class Initialized
+INFO - 2026-01-28 09:01:46 --> Router Class Initialized
+INFO - 2026-01-28 09:01:46 --> Output Class Initialized
+INFO - 2026-01-28 09:01:46 --> Security Class Initialized
+DEBUG - 2026-01-28 09:01:46 --> Global POST, GET and COOKIE data sanitized
+INFO - 2026-01-28 09:01:46 --> Input Class Initialized
+INFO - 2026-01-28 09:01:46 --> Language Class Initialized
+INFO - 2026-01-28 09:01:46 --> Loader Class Initialized
+INFO - 2026-01-28 09:01:46 --> Helper loaded: url_helper
+INFO - 2026-01-28 09:01:46 --> Helper loaded: file_helper
+INFO - 2026-01-28 09:01:46 --> Helper loaded: html_helper
+INFO - 2026-01-28 09:01:46 --> Database Driver Class Initialized
+INFO - 2026-01-28 09:01:46 --> Session: Class initialized using 'files' driver.
+INFO - 2026-01-28 09:01:46 --> Helper loaded: form_helper
+INFO - 2026-01-28 09:01:46 --> Form Validation Class Initialized
+INFO - 2026-01-28 09:01:46 --> User Agent Class Initialized
+INFO - 2026-01-28 09:01:46 --> Language file loaded: language/english/pagination_lang.php
+INFO - 2026-01-28 09:01:46 --> Pagination Class Initialized
+INFO - 2026-01-28 09:01:46 --> Controller Class Initialized
+INFO - 2026-01-28 09:01:46 --> Model "M_login" initialized
+INFO - 2026-01-28 09:01:46 --> File loaded: C:\xampp\htdocs\Aconnect_ci3\application\views\admin/login.php
+ERROR - 2026-01-28 09:01:46 --> $config['composer_autoload'] is set to TRUE but C:\xampp\htdocs\Aconnect_ci3\application\vendor/autoload.php was not found.
+INFO - 2026-01-28 09:01:46 --> Config Class Initialized
+INFO - 2026-01-28 09:01:46 --> Hooks Class Initialized
+DEBUG - 2026-01-28 09:01:46 --> UTF-8 Support Enabled
+INFO - 2026-01-28 09:01:46 --> Utf8 Class Initialized
+INFO - 2026-01-28 09:01:46 --> URI Class Initialized
+INFO - 2026-01-28 09:01:46 --> Router Class Initialized
+INFO - 2026-01-28 09:01:46 --> Output Class Initialized
+INFO - 2026-01-28 09:01:46 --> Security Class Initialized
+DEBUG - 2026-01-28 09:01:46 --> Global POST, GET and COOKIE data sanitized
+INFO - 2026-01-28 09:01:46 --> Input Class Initialized
+INFO - 2026-01-28 09:01:46 --> Language Class Initialized
+INFO - 2026-01-28 09:01:46 --> Loader Class Initialized
+INFO - 2026-01-28 09:01:46 --> Helper loaded: url_helper
+INFO - 2026-01-28 09:01:46 --> Helper loaded: file_helper
+INFO - 2026-01-28 09:01:46 --> Helper loaded: html_helper
+INFO - 2026-01-28 09:01:46 --> Database Driver Class Initialized
+INFO - 2026-01-28 09:01:46 --> Session: Class initialized using 'files' driver.
+INFO - 2026-01-28 09:01:46 --> Helper loaded: form_helper
+INFO - 2026-01-28 09:01:46 --> Form Validation Class Initialized
+INFO - 2026-01-28 09:01:46 --> User Agent Class Initialized
+INFO - 2026-01-28 09:01:46 --> Language file loaded: language/english/pagination_lang.php
+INFO - 2026-01-28 09:01:46 --> Pagination Class Initialized
+INFO - 2026-01-28 09:01:46 --> Controller Class Initialized
+INFO - 2026-01-28 09:01:46 --> File loaded: C:\xampp\htdocs\Aconnect_ci3\application\views\__header.php
+INFO - 2026-01-28 09:01:46 --> File loaded: C:\xampp\htdocs\Aconnect_ci3\application\views\dashboard_a.php
+INFO - 2026-01-28 09:01:46 --> File loaded: C:\xampp\htdocs\Aconnect_ci3\application\views\__footer.php
+INFO - 2026-01-28 09:01:46 --> Final output sent to browser
+DEBUG - 2026-01-28 09:01:46 --> Total execution time: 0.0310
+ERROR - 2026-01-28 09:01:48 --> $config['composer_autoload'] is set to TRUE but C:\xampp\htdocs\Aconnect_ci3\application\vendor/autoload.php was not found.
+INFO - 2026-01-28 09:01:48 --> Config Class Initialized
+INFO - 2026-01-28 09:01:48 --> Hooks Class Initialized
+DEBUG - 2026-01-28 09:01:48 --> UTF-8 Support Enabled
+INFO - 2026-01-28 09:01:48 --> Utf8 Class Initialized
+INFO - 2026-01-28 09:01:48 --> URI Class Initialized
+INFO - 2026-01-28 09:01:48 --> Router Class Initialized
+INFO - 2026-01-28 09:01:48 --> Output Class Initialized
+INFO - 2026-01-28 09:01:48 --> Security Class Initialized
+DEBUG - 2026-01-28 09:01:48 --> Global POST, GET and COOKIE data sanitized
+INFO - 2026-01-28 09:01:48 --> Input Class Initialized
+INFO - 2026-01-28 09:01:48 --> Language Class Initialized
+INFO - 2026-01-28 09:01:48 --> Loader Class Initialized
+INFO - 2026-01-28 09:01:48 --> Helper loaded: url_helper
+INFO - 2026-01-28 09:01:48 --> Helper loaded: file_helper
+INFO - 2026-01-28 09:01:48 --> Helper loaded: html_helper
+INFO - 2026-01-28 09:01:48 --> Database Driver Class Initialized
+INFO - 2026-01-28 09:01:48 --> Session: Class initialized using 'files' driver.
+INFO - 2026-01-28 09:01:48 --> Helper loaded: form_helper
+INFO - 2026-01-28 09:01:48 --> Form Validation Class Initialized
+INFO - 2026-01-28 09:01:48 --> User Agent Class Initialized
+INFO - 2026-01-28 09:01:48 --> Language file loaded: language/english/pagination_lang.php
+INFO - 2026-01-28 09:01:48 --> Pagination Class Initialized
+INFO - 2026-01-28 09:01:48 --> Controller Class Initialized
+INFO - 2026-01-28 09:01:48 --> Helper loaded: text_helper
+DEBUG - 2026-01-28 09:01:48 --> Session class already loaded. Second attempt ignored.
+INFO - 2026-01-28 09:01:48 --> Model "Employment_model" initialized
+INFO - 2026-01-28 09:01:48 --> File loaded: C:\xampp\htdocs\Aconnect_ci3\application\views\__header.php
+INFO - 2026-01-28 09:01:48 --> File loaded: C:\xampp\htdocs\Aconnect_ci3\application\views\admin/reports.php
+INFO - 2026-01-28 09:01:48 --> File loaded: C:\xampp\htdocs\Aconnect_ci3\application\views\__footer.php
+INFO - 2026-01-28 09:01:48 --> Final output sent to browser
+DEBUG - 2026-01-28 09:01:48 --> Total execution time: 0.0427
+ERROR - 2026-01-28 09:01:53 --> $config['composer_autoload'] is set to TRUE but C:\xampp\htdocs\Aconnect_ci3\application\vendor/autoload.php was not found.
+INFO - 2026-01-28 09:01:53 --> Config Class Initialized
+INFO - 2026-01-28 09:01:53 --> Hooks Class Initialized
+DEBUG - 2026-01-28 09:01:53 --> UTF-8 Support Enabled
+INFO - 2026-01-28 09:01:53 --> Utf8 Class Initialized
+INFO - 2026-01-28 09:01:53 --> URI Class Initialized
+INFO - 2026-01-28 09:01:53 --> Router Class Initialized
+INFO - 2026-01-28 09:01:53 --> Output Class Initialized
+INFO - 2026-01-28 09:01:53 --> Security Class Initialized
+DEBUG - 2026-01-28 09:01:53 --> Global POST, GET and COOKIE data sanitized
+INFO - 2026-01-28 09:01:53 --> Input Class Initialized
+INFO - 2026-01-28 09:01:53 --> Language Class Initialized
+INFO - 2026-01-28 09:01:53 --> Loader Class Initialized
+INFO - 2026-01-28 09:01:53 --> Helper loaded: url_helper
+INFO - 2026-01-28 09:01:53 --> Helper loaded: file_helper
+INFO - 2026-01-28 09:01:53 --> Helper loaded: html_helper
+INFO - 2026-01-28 09:01:53 --> Database Driver Class Initialized
+INFO - 2026-01-28 09:01:53 --> Session: Class initialized using 'files' driver.
+INFO - 2026-01-28 09:01:53 --> Helper loaded: form_helper
+INFO - 2026-01-28 09:01:53 --> Form Validation Class Initialized
+INFO - 2026-01-28 09:01:54 --> User Agent Class Initialized
+INFO - 2026-01-28 09:01:54 --> Language file loaded: language/english/pagination_lang.php
+INFO - 2026-01-28 09:01:54 --> Pagination Class Initialized
+INFO - 2026-01-28 09:01:54 --> Controller Class Initialized
+INFO - 2026-01-28 09:01:54 --> Model "Support_model" initialized
+DEBUG - 2026-01-28 09:01:54 --> Session class already loaded. Second attempt ignored.
+INFO - 2026-01-28 09:01:54 --> File loaded: C:\xampp\htdocs\Aconnect_ci3\application\views\__header.php
+INFO - 2026-01-28 09:01:54 --> File loaded: C:\xampp\htdocs\Aconnect_ci3\application\views\admin/support_inbox.php
+INFO - 2026-01-28 09:01:54 --> File loaded: C:\xampp\htdocs\Aconnect_ci3\application\views\__footer.php
+INFO - 2026-01-28 09:01:54 --> Final output sent to browser
+DEBUG - 2026-01-28 09:01:54 --> Total execution time: 0.1031
+ERROR - 2026-01-28 09:01:54 --> $config['composer_autoload'] is set to TRUE but C:\xampp\htdocs\Aconnect_ci3\application\vendor/autoload.php was not found.
+INFO - 2026-01-28 09:01:54 --> Config Class Initialized
+INFO - 2026-01-28 09:01:54 --> Hooks Class Initialized
+DEBUG - 2026-01-28 09:01:54 --> UTF-8 Support Enabled
+INFO - 2026-01-28 09:01:54 --> Utf8 Class Initialized
+INFO - 2026-01-28 09:01:54 --> URI Class Initialized
+INFO - 2026-01-28 09:01:54 --> Router Class Initialized
+INFO - 2026-01-28 09:01:54 --> Output Class Initialized
+INFO - 2026-01-28 09:01:54 --> Security Class Initialized
+DEBUG - 2026-01-28 09:01:54 --> Global POST, GET and COOKIE data sanitized
+INFO - 2026-01-28 09:01:54 --> Input Class Initialized
+INFO - 2026-01-28 09:01:54 --> Language Class Initialized
+INFO - 2026-01-28 09:01:54 --> Loader Class Initialized
+INFO - 2026-01-28 09:01:54 --> Helper loaded: url_helper
+INFO - 2026-01-28 09:01:54 --> Helper loaded: file_helper
+INFO - 2026-01-28 09:01:54 --> Helper loaded: html_helper
+INFO - 2026-01-28 09:01:54 --> Database Driver Class Initialized
+INFO - 2026-01-28 09:01:54 --> Session: Class initialized using 'files' driver.
+INFO - 2026-01-28 09:01:54 --> Helper loaded: form_helper
+INFO - 2026-01-28 09:01:54 --> Form Validation Class Initialized
+INFO - 2026-01-28 09:01:54 --> User Agent Class Initialized
+INFO - 2026-01-28 09:01:54 --> Language file loaded: language/english/pagination_lang.php
+INFO - 2026-01-28 09:01:54 --> Pagination Class Initialized
+INFO - 2026-01-28 09:01:54 --> Controller Class Initialized
+INFO - 2026-01-28 09:01:54 --> Helper loaded: text_helper
+DEBUG - 2026-01-28 09:01:54 --> Session class already loaded. Second attempt ignored.
+INFO - 2026-01-28 09:01:54 --> Model "Employment_model" initialized
+INFO - 2026-01-28 09:01:54 --> File loaded: C:\xampp\htdocs\Aconnect_ci3\application\views\__header.php
+INFO - 2026-01-28 09:01:54 --> File loaded: C:\xampp\htdocs\Aconnect_ci3\application\views\admin/reports.php
+INFO - 2026-01-28 09:01:54 --> File loaded: C:\xampp\htdocs\Aconnect_ci3\application\views\__footer.php
+INFO - 2026-01-28 09:01:54 --> Final output sent to browser
+DEBUG - 2026-01-28 09:01:54 --> Total execution time: 0.0627
+ERROR - 2026-01-28 09:01:55 --> $config['composer_autoload'] is set to TRUE but C:\xampp\htdocs\Aconnect_ci3\application\vendor/autoload.php was not found.
+INFO - 2026-01-28 09:01:55 --> Config Class Initialized
+INFO - 2026-01-28 09:01:55 --> Hooks Class Initialized
+DEBUG - 2026-01-28 09:01:55 --> UTF-8 Support Enabled
+INFO - 2026-01-28 09:01:55 --> Utf8 Class Initialized
+INFO - 2026-01-28 09:01:55 --> URI Class Initialized
+INFO - 2026-01-28 09:01:55 --> Router Class Initialized
+INFO - 2026-01-28 09:01:55 --> Output Class Initialized
+INFO - 2026-01-28 09:01:55 --> Security Class Initialized
+DEBUG - 2026-01-28 09:01:55 --> Global POST, GET and COOKIE data sanitized
+INFO - 2026-01-28 09:01:55 --> Input Class Initialized
+INFO - 2026-01-28 09:01:55 --> Language Class Initialized
+INFO - 2026-01-28 09:01:55 --> Loader Class Initialized
+INFO - 2026-01-28 09:01:55 --> Helper loaded: url_helper
+INFO - 2026-01-28 09:01:55 --> Helper loaded: file_helper
+INFO - 2026-01-28 09:01:55 --> Helper loaded: html_helper
+INFO - 2026-01-28 09:01:55 --> Database Driver Class Initialized
+INFO - 2026-01-28 09:01:55 --> Session: Class initialized using 'files' driver.
+INFO - 2026-01-28 09:01:55 --> Helper loaded: form_helper
+INFO - 2026-01-28 09:01:55 --> Form Validation Class Initialized
+INFO - 2026-01-28 09:01:55 --> User Agent Class Initialized
+INFO - 2026-01-28 09:01:55 --> Language file loaded: language/english/pagination_lang.php
+INFO - 2026-01-28 09:01:55 --> Pagination Class Initialized
+INFO - 2026-01-28 09:01:55 --> Controller Class Initialized
+DEBUG - 2026-01-28 09:01:55 --> Pagination class already loaded. Second attempt ignored.
+INFO - 2026-01-28 09:01:55 --> File loaded: C:\xampp\htdocs\Aconnect_ci3\application\views\__header.php
+INFO - 2026-01-28 09:01:55 --> File loaded: C:\xampp\htdocs\Aconnect_ci3\application\views\admin/manage_accounts.php
+INFO - 2026-01-28 09:01:55 --> File loaded: C:\xampp\htdocs\Aconnect_ci3\application\views\__footer.php
+INFO - 2026-01-28 09:01:55 --> Final output sent to browser
+DEBUG - 2026-01-28 09:01:55 --> Total execution time: 0.0651
+ERROR - 2026-01-28 09:01:56 --> $config['composer_autoload'] is set to TRUE but C:\xampp\htdocs\Aconnect_ci3\application\vendor/autoload.php was not found.
+INFO - 2026-01-28 09:01:56 --> Config Class Initialized
+INFO - 2026-01-28 09:01:56 --> Hooks Class Initialized
+DEBUG - 2026-01-28 09:01:56 --> UTF-8 Support Enabled
+INFO - 2026-01-28 09:01:56 --> Utf8 Class Initialized
+INFO - 2026-01-28 09:01:56 --> URI Class Initialized
+INFO - 2026-01-28 09:01:56 --> Router Class Initialized
+INFO - 2026-01-28 09:01:56 --> Output Class Initialized
+INFO - 2026-01-28 09:01:56 --> Security Class Initialized
+DEBUG - 2026-01-28 09:01:56 --> Global POST, GET and COOKIE data sanitized
+INFO - 2026-01-28 09:01:56 --> Input Class Initialized
+INFO - 2026-01-28 09:01:56 --> Language Class Initialized
+INFO - 2026-01-28 09:01:56 --> Loader Class Initialized
+INFO - 2026-01-28 09:01:56 --> Helper loaded: url_helper
+INFO - 2026-01-28 09:01:56 --> Helper loaded: file_helper
+INFO - 2026-01-28 09:01:56 --> Helper loaded: html_helper
+INFO - 2026-01-28 09:01:56 --> Database Driver Class Initialized
+INFO - 2026-01-28 09:01:56 --> Session: Class initialized using 'files' driver.
+INFO - 2026-01-28 09:01:56 --> Helper loaded: form_helper
+INFO - 2026-01-28 09:01:56 --> Form Validation Class Initialized
+INFO - 2026-01-28 09:01:56 --> User Agent Class Initialized
+INFO - 2026-01-28 09:01:56 --> Language file loaded: language/english/pagination_lang.php
+INFO - 2026-01-28 09:01:56 --> Pagination Class Initialized
+INFO - 2026-01-28 09:01:56 --> Controller Class Initialized
+INFO - 2026-01-28 09:01:56 --> Model "Activity_log_model" initialized
+INFO - 2026-01-28 09:01:56 --> Model "Alumni_model" initialized
+DEBUG - 2026-01-28 09:01:56 --> Pagination class already loaded. Second attempt ignored.
+DEBUG - 2026-01-28 16:01:56 --> Pagination class already loaded. Second attempt ignored.
+INFO - 2026-01-28 16:01:56 --> File loaded: C:\xampp\htdocs\Aconnect_ci3\application\views\__header.php
+INFO - 2026-01-28 16:01:56 --> File loaded: C:\xampp\htdocs\Aconnect_ci3\application\views\admin/activity_log.php
+INFO - 2026-01-28 16:01:56 --> File loaded: C:\xampp\htdocs\Aconnect_ci3\application\views\__footer.php
+INFO - 2026-01-28 16:01:56 --> Final output sent to browser
+DEBUG - 2026-01-28 16:01:56 --> Total execution time: 0.0672
+ERROR - 2026-01-28 09:56:29 --> $config['composer_autoload'] is set to TRUE but C:\xampp\htdocs\Aconnect_ci3\application\vendor/autoload.php was not found.
+INFO - 2026-01-28 09:56:29 --> Config Class Initialized
+INFO - 2026-01-28 09:56:29 --> Hooks Class Initialized
+DEBUG - 2026-01-28 09:56:29 --> UTF-8 Support Enabled
+INFO - 2026-01-28 09:56:29 --> Utf8 Class Initialized
+INFO - 2026-01-28 09:56:29 --> URI Class Initialized
+INFO - 2026-01-28 09:56:29 --> Router Class Initialized
+INFO - 2026-01-28 09:56:29 --> Output Class Initialized
+INFO - 2026-01-28 09:56:29 --> Security Class Initialized
+DEBUG - 2026-01-28 09:56:29 --> Global POST, GET and COOKIE data sanitized
+INFO - 2026-01-28 09:56:29 --> Input Class Initialized
+INFO - 2026-01-28 09:56:29 --> Language Class Initialized
+INFO - 2026-01-28 09:56:29 --> Loader Class Initialized
+INFO - 2026-01-28 09:56:29 --> Helper loaded: url_helper
+INFO - 2026-01-28 09:56:29 --> Helper loaded: file_helper
+INFO - 2026-01-28 09:56:29 --> Helper loaded: html_helper
+INFO - 2026-01-28 09:56:29 --> Database Driver Class Initialized
+INFO - 2026-01-28 09:56:29 --> Session: Class initialized using 'files' driver.
+INFO - 2026-01-28 09:56:29 --> Helper loaded: form_helper
+INFO - 2026-01-28 09:56:29 --> Form Validation Class Initialized
+INFO - 2026-01-28 09:56:29 --> User Agent Class Initialized
+INFO - 2026-01-28 09:56:29 --> Language file loaded: language/english/pagination_lang.php
+INFO - 2026-01-28 09:56:29 --> Pagination Class Initialized
+INFO - 2026-01-28 09:56:29 --> Controller Class Initialized
+INFO - 2026-01-28 09:56:29 --> Model "Activity_log_model" initialized
+INFO - 2026-01-28 09:56:29 --> Model "Alumni_model" initialized
+DEBUG - 2026-01-28 09:56:29 --> Pagination class already loaded. Second attempt ignored.
+DEBUG - 2026-01-28 16:56:29 --> Pagination class already loaded. Second attempt ignored.
+INFO - 2026-01-28 16:56:29 --> File loaded: C:\xampp\htdocs\Aconnect_ci3\application\views\__header.php
+INFO - 2026-01-28 16:56:29 --> File loaded: C:\xampp\htdocs\Aconnect_ci3\application\views\admin/activity_log.php
+INFO - 2026-01-28 16:56:29 --> File loaded: C:\xampp\htdocs\Aconnect_ci3\application\views\__footer.php
+INFO - 2026-01-28 16:56:29 --> Final output sent to browser
+DEBUG - 2026-01-28 16:56:29 --> Total execution time: 0.2067
+ERROR - 2026-01-28 09:56:30 --> $config['composer_autoload'] is set to TRUE but C:\xampp\htdocs\Aconnect_ci3\application\vendor/autoload.php was not found.
+INFO - 2026-01-28 09:56:30 --> Config Class Initialized
+INFO - 2026-01-28 09:56:30 --> Hooks Class Initialized
+DEBUG - 2026-01-28 09:56:30 --> UTF-8 Support Enabled
+INFO - 2026-01-28 09:56:30 --> Utf8 Class Initialized
+INFO - 2026-01-28 09:56:30 --> URI Class Initialized
+INFO - 2026-01-28 09:56:30 --> Router Class Initialized
+INFO - 2026-01-28 09:56:30 --> Output Class Initialized
+INFO - 2026-01-28 09:56:30 --> Security Class Initialized
+DEBUG - 2026-01-28 09:56:30 --> Global POST, GET and COOKIE data sanitized
+INFO - 2026-01-28 09:56:30 --> Input Class Initialized
+INFO - 2026-01-28 09:56:30 --> Language Class Initialized
+INFO - 2026-01-28 09:56:30 --> Loader Class Initialized
+INFO - 2026-01-28 09:56:30 --> Helper loaded: url_helper
+INFO - 2026-01-28 09:56:30 --> Helper loaded: file_helper
+INFO - 2026-01-28 09:56:30 --> Helper loaded: html_helper
+INFO - 2026-01-28 09:56:30 --> Database Driver Class Initialized
+INFO - 2026-01-28 09:56:30 --> Session: Class initialized using 'files' driver.
+INFO - 2026-01-28 09:56:30 --> Helper loaded: form_helper
+INFO - 2026-01-28 09:56:30 --> Form Validation Class Initialized
+INFO - 2026-01-28 09:56:30 --> User Agent Class Initialized
+INFO - 2026-01-28 09:56:30 --> Language file loaded: language/english/pagination_lang.php
+INFO - 2026-01-28 09:56:30 --> Pagination Class Initialized
+INFO - 2026-01-28 09:56:30 --> Controller Class Initialized
+INFO - 2026-01-28 09:56:30 --> Model "Activity_log_model" initialized
+INFO - 2026-01-28 09:56:30 --> Model "Alumni_model" initialized
+DEBUG - 2026-01-28 09:56:30 --> Pagination class already loaded. Second attempt ignored.
+DEBUG - 2026-01-28 16:56:30 --> Pagination class already loaded. Second attempt ignored.
+INFO - 2026-01-28 16:56:30 --> File loaded: C:\xampp\htdocs\Aconnect_ci3\application\views\__header.php
+INFO - 2026-01-28 16:56:30 --> File loaded: C:\xampp\htdocs\Aconnect_ci3\application\views\admin/activity_log.php
+INFO - 2026-01-28 16:56:30 --> File loaded: C:\xampp\htdocs\Aconnect_ci3\application\views\__footer.php
+INFO - 2026-01-28 16:56:30 --> Final output sent to browser
+DEBUG - 2026-01-28 16:56:30 --> Total execution time: 0.0298
+ERROR - 2026-01-28 09:56:35 --> $config['composer_autoload'] is set to TRUE but C:\xampp\htdocs\Aconnect_ci3\application\vendor/autoload.php was not found.
+INFO - 2026-01-28 09:56:35 --> Config Class Initialized
+INFO - 2026-01-28 09:56:35 --> Hooks Class Initialized
+DEBUG - 2026-01-28 09:56:35 --> UTF-8 Support Enabled
+INFO - 2026-01-28 09:56:35 --> Utf8 Class Initialized
+INFO - 2026-01-28 09:56:35 --> URI Class Initialized
+INFO - 2026-01-28 09:56:35 --> Router Class Initialized
+INFO - 2026-01-28 09:56:35 --> Output Class Initialized
+INFO - 2026-01-28 09:56:35 --> Security Class Initialized
+DEBUG - 2026-01-28 09:56:35 --> Global POST, GET and COOKIE data sanitized
+INFO - 2026-01-28 09:56:35 --> Input Class Initialized
+INFO - 2026-01-28 09:56:35 --> Language Class Initialized
+INFO - 2026-01-28 09:56:35 --> Loader Class Initialized
+INFO - 2026-01-28 09:56:35 --> Helper loaded: url_helper
+INFO - 2026-01-28 09:56:35 --> Helper loaded: file_helper
+INFO - 2026-01-28 09:56:35 --> Helper loaded: html_helper
+INFO - 2026-01-28 09:56:35 --> Database Driver Class Initialized
+INFO - 2026-01-28 09:56:35 --> Session: Class initialized using 'files' driver.
+INFO - 2026-01-28 09:56:35 --> Helper loaded: form_helper
+INFO - 2026-01-28 09:56:35 --> Form Validation Class Initialized
+INFO - 2026-01-28 09:56:35 --> User Agent Class Initialized
+INFO - 2026-01-28 09:56:35 --> Language file loaded: language/english/pagination_lang.php
+INFO - 2026-01-28 09:56:35 --> Pagination Class Initialized
+INFO - 2026-01-28 09:56:35 --> Controller Class Initialized
+INFO - 2026-01-28 09:56:35 --> Model "Activity_log_model" initialized
+INFO - 2026-01-28 09:56:35 --> Model "Alumni_model" initialized
+DEBUG - 2026-01-28 09:56:35 --> Pagination class already loaded. Second attempt ignored.
+ERROR - 2026-01-28 11:15:26 --> $config['composer_autoload'] is set to TRUE but C:\xampp\htdocs\Aconnect_ci3\application\vendor/autoload.php was not found.
+INFO - 2026-01-28 11:15:26 --> Config Class Initialized
+INFO - 2026-01-28 11:15:26 --> Hooks Class Initialized
+DEBUG - 2026-01-28 11:15:26 --> UTF-8 Support Enabled
+INFO - 2026-01-28 11:15:26 --> Utf8 Class Initialized
+INFO - 2026-01-28 11:15:26 --> URI Class Initialized
+INFO - 2026-01-28 11:15:26 --> Router Class Initialized
+INFO - 2026-01-28 11:15:26 --> Output Class Initialized
+INFO - 2026-01-28 11:15:26 --> Security Class Initialized
+DEBUG - 2026-01-28 11:15:26 --> Global POST, GET and COOKIE data sanitized
+INFO - 2026-01-28 11:15:26 --> Input Class Initialized
+INFO - 2026-01-28 11:15:26 --> Language Class Initialized
+INFO - 2026-01-28 11:15:26 --> Loader Class Initialized
+INFO - 2026-01-28 11:15:26 --> Helper loaded: url_helper
+INFO - 2026-01-28 11:15:26 --> Helper loaded: file_helper
+INFO - 2026-01-28 11:15:26 --> Helper loaded: html_helper
+INFO - 2026-01-28 11:15:26 --> Database Driver Class Initialized
+INFO - 2026-01-28 11:15:26 --> Session: Class initialized using 'files' driver.
+INFO - 2026-01-28 11:15:26 --> Helper loaded: form_helper
+INFO - 2026-01-28 11:15:26 --> Form Validation Class Initialized
+INFO - 2026-01-28 11:15:26 --> User Agent Class Initialized
+INFO - 2026-01-28 11:15:26 --> Language file loaded: language/english/pagination_lang.php
+INFO - 2026-01-28 11:15:26 --> Pagination Class Initialized
+INFO - 2026-01-28 11:15:26 --> Controller Class Initialized
+INFO - 2026-01-28 11:15:26 --> Model "Support_model" initialized
+DEBUG - 2026-01-28 11:15:26 --> Session class already loaded. Second attempt ignored.
+INFO - 2026-01-28 11:15:26 --> File loaded: C:\xampp\htdocs\Aconnect_ci3\application\views\__header.php
+INFO - 2026-01-28 11:15:26 --> File loaded: C:\xampp\htdocs\Aconnect_ci3\application\views\admin/support_inbox.php
+INFO - 2026-01-28 11:15:26 --> File loaded: C:\xampp\htdocs\Aconnect_ci3\application\views\__footer.php
+INFO - 2026-01-28 11:15:26 --> Final output sent to browser
+DEBUG - 2026-01-28 11:15:26 --> Total execution time: 0.1056
+ERROR - 2026-01-28 11:15:28 --> $config['composer_autoload'] is set to TRUE but C:\xampp\htdocs\Aconnect_ci3\application\vendor/autoload.php was not found.
+INFO - 2026-01-28 11:15:28 --> Config Class Initialized
+INFO - 2026-01-28 11:15:28 --> Hooks Class Initialized
+DEBUG - 2026-01-28 11:15:28 --> UTF-8 Support Enabled
+INFO - 2026-01-28 11:15:28 --> Utf8 Class Initialized
+INFO - 2026-01-28 11:15:28 --> URI Class Initialized
+INFO - 2026-01-28 11:15:28 --> Router Class Initialized
+INFO - 2026-01-28 11:15:28 --> Output Class Initialized
+INFO - 2026-01-28 11:15:28 --> Security Class Initialized
+DEBUG - 2026-01-28 11:15:28 --> Global POST, GET and COOKIE data sanitized
+INFO - 2026-01-28 11:15:28 --> Input Class Initialized
+INFO - 2026-01-28 11:15:28 --> Language Class Initialized
+INFO - 2026-01-28 11:15:28 --> Loader Class Initialized
+INFO - 2026-01-28 11:15:28 --> Helper loaded: url_helper
+INFO - 2026-01-28 11:15:28 --> Helper loaded: file_helper
+INFO - 2026-01-28 11:15:28 --> Helper loaded: html_helper
+INFO - 2026-01-28 11:15:28 --> Database Driver Class Initialized
+INFO - 2026-01-28 11:15:28 --> Session: Class initialized using 'files' driver.
+INFO - 2026-01-28 11:15:28 --> Helper loaded: form_helper
+INFO - 2026-01-28 11:15:28 --> Form Validation Class Initialized
+INFO - 2026-01-28 11:15:28 --> User Agent Class Initialized
+INFO - 2026-01-28 11:15:28 --> Language file loaded: language/english/pagination_lang.php
+INFO - 2026-01-28 11:15:28 --> Pagination Class Initialized
+INFO - 2026-01-28 11:15:28 --> Controller Class Initialized
+INFO - 2026-01-28 11:15:28 --> Model "Support_model" initialized
+DEBUG - 2026-01-28 11:15:28 --> Session class already loaded. Second attempt ignored.
+INFO - 2026-01-28 11:15:28 --> Final output sent to browser
+DEBUG - 2026-01-28 11:15:28 --> Total execution time: 0.0246
+ERROR - 2026-01-28 11:15:30 --> $config['composer_autoload'] is set to TRUE but C:\xampp\htdocs\Aconnect_ci3\application\vendor/autoload.php was not found.
+INFO - 2026-01-28 11:15:30 --> Config Class Initialized
+INFO - 2026-01-28 11:15:30 --> Hooks Class Initialized
+DEBUG - 2026-01-28 11:15:30 --> UTF-8 Support Enabled
+INFO - 2026-01-28 11:15:30 --> Utf8 Class Initialized
+INFO - 2026-01-28 11:15:30 --> URI Class Initialized
+INFO - 2026-01-28 11:15:30 --> Router Class Initialized
+INFO - 2026-01-28 11:15:30 --> Output Class Initialized
+INFO - 2026-01-28 11:15:30 --> Security Class Initialized
+DEBUG - 2026-01-28 11:15:30 --> Global POST, GET and COOKIE data sanitized
+INFO - 2026-01-28 11:15:30 --> Input Class Initialized
+INFO - 2026-01-28 11:15:30 --> Language Class Initialized
+INFO - 2026-01-28 11:15:30 --> Loader Class Initialized
+INFO - 2026-01-28 11:15:30 --> Helper loaded: url_helper
+INFO - 2026-01-28 11:15:30 --> Helper loaded: file_helper
+INFO - 2026-01-28 11:15:30 --> Helper loaded: html_helper
+INFO - 2026-01-28 11:15:30 --> Database Driver Class Initialized
+INFO - 2026-01-28 11:15:30 --> Session: Class initialized using 'files' driver.
+INFO - 2026-01-28 11:15:30 --> Helper loaded: form_helper
+INFO - 2026-01-28 11:15:30 --> Form Validation Class Initialized
+INFO - 2026-01-28 11:15:30 --> User Agent Class Initialized
+INFO - 2026-01-28 11:15:30 --> Language file loaded: language/english/pagination_lang.php
+INFO - 2026-01-28 11:15:30 --> Pagination Class Initialized
+INFO - 2026-01-28 11:15:30 --> Controller Class Initialized
+INFO - 2026-01-28 11:15:30 --> Model "Support_model" initialized
+DEBUG - 2026-01-28 11:15:30 --> Session class already loaded. Second attempt ignored.
+INFO - 2026-01-28 11:15:30 --> Final output sent to browser
+DEBUG - 2026-01-28 11:15:30 --> Total execution time: 0.0752
+ERROR - 2026-01-28 11:15:31 --> $config['composer_autoload'] is set to TRUE but C:\xampp\htdocs\Aconnect_ci3\application\vendor/autoload.php was not found.
+INFO - 2026-01-28 11:15:31 --> Config Class Initialized
+INFO - 2026-01-28 11:15:31 --> Hooks Class Initialized
+DEBUG - 2026-01-28 11:15:31 --> UTF-8 Support Enabled
+INFO - 2026-01-28 11:15:31 --> Utf8 Class Initialized
+INFO - 2026-01-28 11:15:31 --> URI Class Initialized
+INFO - 2026-01-28 11:15:31 --> Router Class Initialized
+INFO - 2026-01-28 11:15:31 --> Output Class Initialized
+INFO - 2026-01-28 11:15:31 --> Security Class Initialized
+DEBUG - 2026-01-28 11:15:31 --> Global POST, GET and COOKIE data sanitized
+INFO - 2026-01-28 11:15:31 --> Input Class Initialized
+INFO - 2026-01-28 11:15:31 --> Language Class Initialized
+INFO - 2026-01-28 11:15:31 --> Loader Class Initialized
+INFO - 2026-01-28 11:15:31 --> Helper loaded: url_helper
+INFO - 2026-01-28 11:15:31 --> Helper loaded: file_helper
+INFO - 2026-01-28 11:15:31 --> Helper loaded: html_helper
+INFO - 2026-01-28 11:15:31 --> Database Driver Class Initialized
+INFO - 2026-01-28 11:15:31 --> Session: Class initialized using 'files' driver.
+INFO - 2026-01-28 11:15:31 --> Helper loaded: form_helper
+INFO - 2026-01-28 11:15:31 --> Form Validation Class Initialized
+INFO - 2026-01-28 11:15:31 --> User Agent Class Initialized
+INFO - 2026-01-28 11:15:32 --> Language file loaded: language/english/pagination_lang.php
+INFO - 2026-01-28 11:15:32 --> Pagination Class Initialized
+INFO - 2026-01-28 11:15:32 --> Controller Class Initialized
+INFO - 2026-01-28 11:15:32 --> Model "Support_model" initialized
+DEBUG - 2026-01-28 11:15:32 --> Session class already loaded. Second attempt ignored.
+INFO - 2026-01-28 11:15:32 --> Final output sent to browser
+DEBUG - 2026-01-28 11:15:32 --> Total execution time: 0.0687
+ERROR - 2026-01-28 11:15:33 --> $config['composer_autoload'] is set to TRUE but C:\xampp\htdocs\Aconnect_ci3\application\vendor/autoload.php was not found.
+INFO - 2026-01-28 11:15:33 --> Config Class Initialized
+INFO - 2026-01-28 11:15:33 --> Hooks Class Initialized
+DEBUG - 2026-01-28 11:15:33 --> UTF-8 Support Enabled
+INFO - 2026-01-28 11:15:33 --> Utf8 Class Initialized
+INFO - 2026-01-28 11:15:33 --> URI Class Initialized
+INFO - 2026-01-28 11:15:33 --> Router Class Initialized
+INFO - 2026-01-28 11:15:33 --> Output Class Initialized
+INFO - 2026-01-28 11:15:33 --> Security Class Initialized
+DEBUG - 2026-01-28 11:15:33 --> Global POST, GET and COOKIE data sanitized
+INFO - 2026-01-28 11:15:33 --> Input Class Initialized
+INFO - 2026-01-28 11:15:33 --> Language Class Initialized
+INFO - 2026-01-28 11:15:33 --> Loader Class Initialized
+INFO - 2026-01-28 11:15:33 --> Helper loaded: url_helper
+INFO - 2026-01-28 11:15:33 --> Helper loaded: file_helper
+INFO - 2026-01-28 11:15:33 --> Helper loaded: html_helper
+INFO - 2026-01-28 11:15:33 --> Database Driver Class Initialized
+INFO - 2026-01-28 11:15:33 --> Session: Class initialized using 'files' driver.
+INFO - 2026-01-28 11:15:33 --> Helper loaded: form_helper
+INFO - 2026-01-28 11:15:33 --> Form Validation Class Initialized
+INFO - 2026-01-28 11:15:33 --> User Agent Class Initialized
+INFO - 2026-01-28 11:15:33 --> Language file loaded: language/english/pagination_lang.php
+INFO - 2026-01-28 11:15:33 --> Pagination Class Initialized
+INFO - 2026-01-28 11:15:33 --> Controller Class Initialized
+INFO - 2026-01-28 11:15:33 --> File loaded: C:\xampp\htdocs\Aconnect_ci3\application\views\__header.php
+INFO - 2026-01-28 11:15:33 --> File loaded: C:\xampp\htdocs\Aconnect_ci3\application\views\dashboard_a.php
+INFO - 2026-01-28 11:15:33 --> File loaded: C:\xampp\htdocs\Aconnect_ci3\application\views\__footer.php
+INFO - 2026-01-28 11:15:33 --> Final output sent to browser
+DEBUG - 2026-01-28 11:15:33 --> Total execution time: 0.0854
+ERROR - 2026-01-28 11:15:35 --> $config['composer_autoload'] is set to TRUE but C:\xampp\htdocs\Aconnect_ci3\application\vendor/autoload.php was not found.
+INFO - 2026-01-28 11:15:35 --> Config Class Initialized
+INFO - 2026-01-28 11:15:35 --> Hooks Class Initialized
+DEBUG - 2026-01-28 11:15:35 --> UTF-8 Support Enabled
+INFO - 2026-01-28 11:15:35 --> Utf8 Class Initialized
+INFO - 2026-01-28 11:15:35 --> URI Class Initialized
+INFO - 2026-01-28 11:15:35 --> Router Class Initialized
+INFO - 2026-01-28 11:15:35 --> Output Class Initialized
+INFO - 2026-01-28 11:15:35 --> Security Class Initialized
+DEBUG - 2026-01-28 11:15:35 --> Global POST, GET and COOKIE data sanitized
+INFO - 2026-01-28 11:15:35 --> Input Class Initialized
+INFO - 2026-01-28 11:15:35 --> Language Class Initialized
+INFO - 2026-01-28 11:15:35 --> Loader Class Initialized
+INFO - 2026-01-28 11:15:35 --> Helper loaded: url_helper
+INFO - 2026-01-28 11:15:35 --> Helper loaded: file_helper
+INFO - 2026-01-28 11:15:35 --> Helper loaded: html_helper
+INFO - 2026-01-28 11:15:35 --> Database Driver Class Initialized
+INFO - 2026-01-28 11:15:35 --> Session: Class initialized using 'files' driver.
+INFO - 2026-01-28 11:15:35 --> Helper loaded: form_helper
+INFO - 2026-01-28 11:15:35 --> Form Validation Class Initialized
+INFO - 2026-01-28 11:15:35 --> User Agent Class Initialized
+INFO - 2026-01-28 11:15:35 --> Language file loaded: language/english/pagination_lang.php
+INFO - 2026-01-28 11:15:35 --> Pagination Class Initialized
+INFO - 2026-01-28 11:15:35 --> Controller Class Initialized
+INFO - 2026-01-28 11:15:35 --> Model "M_login" initialized
+ERROR - 2026-01-28 11:15:35 --> $config['composer_autoload'] is set to TRUE but C:\xampp\htdocs\Aconnect_ci3\application\vendor/autoload.php was not found.
+INFO - 2026-01-28 11:15:35 --> Config Class Initialized
+INFO - 2026-01-28 11:15:35 --> Hooks Class Initialized
+DEBUG - 2026-01-28 11:15:35 --> UTF-8 Support Enabled
+INFO - 2026-01-28 11:15:35 --> Utf8 Class Initialized
+INFO - 2026-01-28 11:15:35 --> URI Class Initialized
+INFO - 2026-01-28 11:15:35 --> Router Class Initialized
+INFO - 2026-01-28 11:15:35 --> Output Class Initialized
+INFO - 2026-01-28 11:15:35 --> Security Class Initialized
+DEBUG - 2026-01-28 11:15:35 --> Global POST, GET and COOKIE data sanitized
+INFO - 2026-01-28 11:15:35 --> Input Class Initialized
+INFO - 2026-01-28 11:15:35 --> Language Class Initialized
+INFO - 2026-01-28 11:15:35 --> Loader Class Initialized
+INFO - 2026-01-28 11:15:35 --> Helper loaded: url_helper
+INFO - 2026-01-28 11:15:35 --> Helper loaded: file_helper
+INFO - 2026-01-28 11:15:35 --> Helper loaded: html_helper
+INFO - 2026-01-28 11:15:35 --> Database Driver Class Initialized
+INFO - 2026-01-28 11:15:35 --> Session: Class initialized using 'files' driver.
+INFO - 2026-01-28 11:15:35 --> Helper loaded: form_helper
+INFO - 2026-01-28 11:15:35 --> Form Validation Class Initialized
+INFO - 2026-01-28 11:15:35 --> User Agent Class Initialized
+INFO - 2026-01-28 11:15:35 --> Language file loaded: language/english/pagination_lang.php
+INFO - 2026-01-28 11:15:35 --> Pagination Class Initialized
+INFO - 2026-01-28 11:15:35 --> Controller Class Initialized
+INFO - 2026-01-28 11:15:35 --> Model "M_login" initialized
+INFO - 2026-01-28 11:15:35 --> File loaded: C:\xampp\htdocs\Aconnect_ci3\application\views\admin/login.php
+INFO - 2026-01-28 11:15:35 --> Final output sent to browser
+DEBUG - 2026-01-28 11:15:35 --> Total execution time: 0.0610
+ERROR - 2026-01-28 11:15:36 --> $config['composer_autoload'] is set to TRUE but C:\xampp\htdocs\Aconnect_ci3\application\vendor/autoload.php was not found.
+INFO - 2026-01-28 11:15:36 --> Config Class Initialized
+INFO - 2026-01-28 11:15:36 --> Hooks Class Initialized
+DEBUG - 2026-01-28 11:15:36 --> UTF-8 Support Enabled
+INFO - 2026-01-28 11:15:37 --> Utf8 Class Initialized
+INFO - 2026-01-28 11:15:37 --> URI Class Initialized
+INFO - 2026-01-28 11:15:37 --> Router Class Initialized
+INFO - 2026-01-28 11:15:37 --> Output Class Initialized
+INFO - 2026-01-28 11:15:37 --> Security Class Initialized
+DEBUG - 2026-01-28 11:15:37 --> Global POST, GET and COOKIE data sanitized
+INFO - 2026-01-28 11:15:37 --> Input Class Initialized
+INFO - 2026-01-28 11:15:37 --> Language Class Initialized
+INFO - 2026-01-28 11:15:37 --> Loader Class Initialized
+INFO - 2026-01-28 11:15:37 --> Helper loaded: url_helper
+INFO - 2026-01-28 11:15:37 --> Helper loaded: file_helper
+INFO - 2026-01-28 11:15:37 --> Helper loaded: html_helper
+INFO - 2026-01-28 11:15:37 --> Database Driver Class Initialized
+INFO - 2026-01-28 11:15:37 --> Session: Class initialized using 'files' driver.
+INFO - 2026-01-28 11:15:37 --> Helper loaded: form_helper
+INFO - 2026-01-28 11:15:37 --> Form Validation Class Initialized
+INFO - 2026-01-28 11:15:37 --> User Agent Class Initialized
+INFO - 2026-01-28 11:15:37 --> Language file loaded: language/english/pagination_lang.php
+INFO - 2026-01-28 11:15:37 --> Pagination Class Initialized
+INFO - 2026-01-28 11:15:37 --> Controller Class Initialized
+INFO - 2026-01-28 11:15:37 --> Model "M_login" initialized
+INFO - 2026-01-28 11:15:37 --> File loaded: C:\xampp\htdocs\Aconnect_ci3\application\views\login.php
+INFO - 2026-01-28 11:15:37 --> Final output sent to browser
+DEBUG - 2026-01-28 11:15:37 --> Total execution time: 0.0856
+ERROR - 2026-01-28 11:15:39 --> $config['composer_autoload'] is set to TRUE but C:\xampp\htdocs\Aconnect_ci3\application\vendor/autoload.php was not found.
+INFO - 2026-01-28 11:15:39 --> Config Class Initialized
+INFO - 2026-01-28 11:15:39 --> Hooks Class Initialized
+DEBUG - 2026-01-28 11:15:39 --> UTF-8 Support Enabled
+INFO - 2026-01-28 11:15:39 --> Utf8 Class Initialized
+INFO - 2026-01-28 11:15:39 --> URI Class Initialized
+INFO - 2026-01-28 11:15:39 --> Router Class Initialized
+INFO - 2026-01-28 11:15:39 --> Output Class Initialized
+INFO - 2026-01-28 11:15:39 --> Security Class Initialized
+DEBUG - 2026-01-28 11:15:39 --> Global POST, GET and COOKIE data sanitized
+INFO - 2026-01-28 11:15:39 --> Input Class Initialized
+INFO - 2026-01-28 11:15:39 --> Language Class Initialized
+INFO - 2026-01-28 11:15:39 --> Loader Class Initialized
+INFO - 2026-01-28 11:15:39 --> Helper loaded: url_helper
+INFO - 2026-01-28 11:15:39 --> Helper loaded: file_helper
+INFO - 2026-01-28 11:15:39 --> Helper loaded: html_helper
+INFO - 2026-01-28 11:15:39 --> Database Driver Class Initialized
+INFO - 2026-01-28 11:15:39 --> Session: Class initialized using 'files' driver.
+INFO - 2026-01-28 11:15:39 --> Helper loaded: form_helper
+INFO - 2026-01-28 11:15:39 --> Form Validation Class Initialized
+INFO - 2026-01-28 11:15:39 --> User Agent Class Initialized
+INFO - 2026-01-28 11:15:39 --> Language file loaded: language/english/pagination_lang.php
+INFO - 2026-01-28 11:15:39 --> Pagination Class Initialized
+INFO - 2026-01-28 11:15:39 --> Controller Class Initialized
+INFO - 2026-01-28 11:15:39 --> Model "M_login" initialized
+INFO - 2026-01-28 11:15:39 --> File loaded: C:\xampp\htdocs\Aconnect_ci3\application\views\admin/login.php
+INFO - 2026-01-28 11:15:39 --> Final output sent to browser
+DEBUG - 2026-01-28 11:15:39 --> Total execution time: 0.0856
+ERROR - 2026-01-28 11:15:40 --> $config['composer_autoload'] is set to TRUE but C:\xampp\htdocs\Aconnect_ci3\application\vendor/autoload.php was not found.
+INFO - 2026-01-28 11:15:40 --> Config Class Initialized
+INFO - 2026-01-28 11:15:40 --> Hooks Class Initialized
+DEBUG - 2026-01-28 11:15:40 --> UTF-8 Support Enabled
+INFO - 2026-01-28 11:15:40 --> Utf8 Class Initialized
+INFO - 2026-01-28 11:15:40 --> URI Class Initialized
+INFO - 2026-01-28 11:15:40 --> Router Class Initialized
+INFO - 2026-01-28 11:15:40 --> Output Class Initialized
+INFO - 2026-01-28 11:15:40 --> Security Class Initialized
+DEBUG - 2026-01-28 11:15:40 --> Global POST, GET and COOKIE data sanitized
+INFO - 2026-01-28 11:15:40 --> Input Class Initialized
+INFO - 2026-01-28 11:15:40 --> Language Class Initialized
+INFO - 2026-01-28 11:15:40 --> Loader Class Initialized
+INFO - 2026-01-28 11:15:40 --> Helper loaded: url_helper
+INFO - 2026-01-28 11:15:40 --> Helper loaded: file_helper
+INFO - 2026-01-28 11:15:40 --> Helper loaded: html_helper
+INFO - 2026-01-28 11:15:40 --> Database Driver Class Initialized
+INFO - 2026-01-28 11:15:40 --> Session: Class initialized using 'files' driver.
+INFO - 2026-01-28 11:15:40 --> Helper loaded: form_helper
+INFO - 2026-01-28 11:15:40 --> Form Validation Class Initialized
+INFO - 2026-01-28 11:15:40 --> User Agent Class Initialized
+INFO - 2026-01-28 11:15:40 --> Language file loaded: language/english/pagination_lang.php
+INFO - 2026-01-28 11:15:40 --> Pagination Class Initialized
+INFO - 2026-01-28 11:15:40 --> Controller Class Initialized
+INFO - 2026-01-28 11:15:40 --> Model "M_login" initialized
+INFO - 2026-01-28 11:15:40 --> File loaded: C:\xampp\htdocs\Aconnect_ci3\application\views\login.php
+INFO - 2026-01-28 11:15:40 --> Final output sent to browser
+DEBUG - 2026-01-28 11:15:40 --> Total execution time: 0.0231
+ERROR - 2026-01-28 11:15:42 --> $config['composer_autoload'] is set to TRUE but C:\xampp\htdocs\Aconnect_ci3\application\vendor/autoload.php was not found.
+INFO - 2026-01-28 11:15:42 --> Config Class Initialized
+INFO - 2026-01-28 11:15:42 --> Hooks Class Initialized
+DEBUG - 2026-01-28 11:15:42 --> UTF-8 Support Enabled
+INFO - 2026-01-28 11:15:42 --> Utf8 Class Initialized
+INFO - 2026-01-28 11:15:42 --> URI Class Initialized
+INFO - 2026-01-28 11:15:42 --> Router Class Initialized
+INFO - 2026-01-28 11:15:42 --> Output Class Initialized
+INFO - 2026-01-28 11:15:42 --> Security Class Initialized
+DEBUG - 2026-01-28 11:15:42 --> Global POST, GET and COOKIE data sanitized
+INFO - 2026-01-28 11:15:42 --> Input Class Initialized
+INFO - 2026-01-28 11:15:42 --> Language Class Initialized
+INFO - 2026-01-28 11:15:42 --> Loader Class Initialized
+INFO - 2026-01-28 11:15:42 --> Helper loaded: url_helper
+INFO - 2026-01-28 11:15:42 --> Helper loaded: file_helper
+INFO - 2026-01-28 11:15:42 --> Helper loaded: html_helper
+INFO - 2026-01-28 11:15:42 --> Database Driver Class Initialized
+INFO - 2026-01-28 11:15:42 --> Session: Class initialized using 'files' driver.
+INFO - 2026-01-28 11:15:42 --> Helper loaded: form_helper
+INFO - 2026-01-28 11:15:42 --> Form Validation Class Initialized
+INFO - 2026-01-28 11:15:42 --> User Agent Class Initialized
+INFO - 2026-01-28 11:15:42 --> Language file loaded: language/english/pagination_lang.php
+INFO - 2026-01-28 11:15:42 --> Pagination Class Initialized
+INFO - 2026-01-28 11:15:42 --> Controller Class Initialized
+INFO - 2026-01-28 11:15:42 --> Model "M_login" initialized
+ERROR - 2026-01-28 11:15:42 --> $config['composer_autoload'] is set to TRUE but C:\xampp\htdocs\Aconnect_ci3\application\vendor/autoload.php was not found.
+INFO - 2026-01-28 11:15:42 --> Config Class Initialized
+INFO - 2026-01-28 11:15:42 --> Hooks Class Initialized
+DEBUG - 2026-01-28 11:15:42 --> UTF-8 Support Enabled
+INFO - 2026-01-28 11:15:42 --> Utf8 Class Initialized
+INFO - 2026-01-28 11:15:42 --> URI Class Initialized
+INFO - 2026-01-28 11:15:42 --> Router Class Initialized
+INFO - 2026-01-28 11:15:42 --> Output Class Initialized
+INFO - 2026-01-28 11:15:42 --> Security Class Initialized
+DEBUG - 2026-01-28 11:15:42 --> Global POST, GET and COOKIE data sanitized
+INFO - 2026-01-28 11:15:42 --> Input Class Initialized
+INFO - 2026-01-28 11:15:42 --> Language Class Initialized
+INFO - 2026-01-28 11:15:42 --> Loader Class Initialized
+INFO - 2026-01-28 11:15:42 --> Helper loaded: url_helper
+INFO - 2026-01-28 11:15:42 --> Helper loaded: file_helper
+INFO - 2026-01-28 11:15:42 --> Helper loaded: html_helper
+INFO - 2026-01-28 11:15:42 --> Database Driver Class Initialized
+INFO - 2026-01-28 11:15:42 --> Session: Class initialized using 'files' driver.
+INFO - 2026-01-28 11:15:42 --> Helper loaded: form_helper
+INFO - 2026-01-28 11:15:42 --> Form Validation Class Initialized
+INFO - 2026-01-28 11:15:42 --> User Agent Class Initialized
+INFO - 2026-01-28 11:15:42 --> Language file loaded: language/english/pagination_lang.php
+INFO - 2026-01-28 11:15:42 --> Pagination Class Initialized
+INFO - 2026-01-28 11:15:42 --> Controller Class Initialized
+INFO - 2026-01-28 11:15:42 --> File loaded: C:\xampp\htdocs\Aconnect_ci3\application\views\__header.php
+INFO - 2026-01-28 11:15:42 --> File loaded: C:\xampp\htdocs\Aconnect_ci3\application\views\dashboard_u.php
+INFO - 2026-01-28 11:15:42 --> File loaded: C:\xampp\htdocs\Aconnect_ci3\application\views\__footer.php
+INFO - 2026-01-28 11:15:42 --> Final output sent to browser
+DEBUG - 2026-01-28 11:15:42 --> Total execution time: 0.0484
+ERROR - 2026-01-28 11:15:43 --> $config['composer_autoload'] is set to TRUE but C:\xampp\htdocs\Aconnect_ci3\application\vendor/autoload.php was not found.
+INFO - 2026-01-28 11:15:43 --> Config Class Initialized
+INFO - 2026-01-28 11:15:43 --> Hooks Class Initialized
+DEBUG - 2026-01-28 11:15:43 --> UTF-8 Support Enabled
+INFO - 2026-01-28 11:15:43 --> Utf8 Class Initialized
+INFO - 2026-01-28 11:15:43 --> URI Class Initialized
+INFO - 2026-01-28 11:15:43 --> Router Class Initialized
+INFO - 2026-01-28 11:15:43 --> Output Class Initialized
+INFO - 2026-01-28 11:15:43 --> Security Class Initialized
+DEBUG - 2026-01-28 11:15:43 --> Global POST, GET and COOKIE data sanitized
+INFO - 2026-01-28 11:15:43 --> Input Class Initialized
+INFO - 2026-01-28 11:15:43 --> Language Class Initialized
+INFO - 2026-01-28 11:15:43 --> Loader Class Initialized
+INFO - 2026-01-28 11:15:43 --> Helper loaded: url_helper
+INFO - 2026-01-28 11:15:43 --> Helper loaded: file_helper
+INFO - 2026-01-28 11:15:43 --> Helper loaded: html_helper
+INFO - 2026-01-28 11:15:43 --> Database Driver Class Initialized
+INFO - 2026-01-28 11:15:43 --> Session: Class initialized using 'files' driver.
+INFO - 2026-01-28 11:15:43 --> Helper loaded: form_helper
+INFO - 2026-01-28 11:15:43 --> Form Validation Class Initialized
+INFO - 2026-01-28 11:15:43 --> User Agent Class Initialized
+INFO - 2026-01-28 11:15:43 --> Language file loaded: language/english/pagination_lang.php
+INFO - 2026-01-28 11:15:43 --> Pagination Class Initialized
+INFO - 2026-01-28 11:15:43 --> Controller Class Initialized
+INFO - 2026-01-28 11:15:43 --> Model "Alumni_model" initialized
+INFO - 2026-01-28 11:15:43 --> File loaded: C:\xampp\htdocs\Aconnect_ci3\application\views\__header.php
+INFO - 2026-01-28 11:15:43 --> File loaded: C:\xampp\htdocs\Aconnect_ci3\application\views\user/chat_list.php
+INFO - 2026-01-28 11:15:43 --> File loaded: C:\xampp\htdocs\Aconnect_ci3\application\views\__footer.php
+INFO - 2026-01-28 11:15:43 --> Final output sent to browser
+DEBUG - 2026-01-28 11:15:43 --> Total execution time: 0.0944
+ERROR - 2026-01-28 11:15:45 --> $config['composer_autoload'] is set to TRUE but C:\xampp\htdocs\Aconnect_ci3\application\vendor/autoload.php was not found.
+INFO - 2026-01-28 11:15:45 --> Config Class Initialized
+INFO - 2026-01-28 11:15:45 --> Hooks Class Initialized
+DEBUG - 2026-01-28 11:15:45 --> UTF-8 Support Enabled
+INFO - 2026-01-28 11:15:45 --> Utf8 Class Initialized
+INFO - 2026-01-28 11:15:45 --> URI Class Initialized
+INFO - 2026-01-28 11:15:45 --> Router Class Initialized
+INFO - 2026-01-28 11:15:45 --> Output Class Initialized
+INFO - 2026-01-28 11:15:45 --> Security Class Initialized
+DEBUG - 2026-01-28 11:15:45 --> Global POST, GET and COOKIE data sanitized
+INFO - 2026-01-28 11:15:45 --> Input Class Initialized
+INFO - 2026-01-28 11:15:45 --> Language Class Initialized
+INFO - 2026-01-28 11:15:45 --> Loader Class Initialized
+INFO - 2026-01-28 11:15:45 --> Helper loaded: url_helper
+INFO - 2026-01-28 11:15:45 --> Helper loaded: file_helper
+INFO - 2026-01-28 11:15:45 --> Helper loaded: html_helper
+INFO - 2026-01-28 11:15:45 --> Database Driver Class Initialized
+INFO - 2026-01-28 11:15:45 --> Session: Class initialized using 'files' driver.
+INFO - 2026-01-28 11:15:45 --> Helper loaded: form_helper
+INFO - 2026-01-28 11:15:45 --> Form Validation Class Initialized
+INFO - 2026-01-28 11:15:45 --> User Agent Class Initialized
+INFO - 2026-01-28 11:15:45 --> Language file loaded: language/english/pagination_lang.php
+INFO - 2026-01-28 11:15:45 --> Pagination Class Initialized
+INFO - 2026-01-28 11:15:45 --> Controller Class Initialized
+INFO - 2026-01-28 11:15:45 --> Model "Alumni_model" initialized
+INFO - 2026-01-28 11:15:45 --> File loaded: C:\xampp\htdocs\Aconnect_ci3\application\views\__header.php
+INFO - 2026-01-28 11:15:45 --> File loaded: C:\xampp\htdocs\Aconnect_ci3\application\views\user/search_alumni.php
+INFO - 2026-01-28 11:15:45 --> File loaded: C:\xampp\htdocs\Aconnect_ci3\application\views\__footer.php
+INFO - 2026-01-28 11:15:45 --> Final output sent to browser
+DEBUG - 2026-01-28 11:15:45 --> Total execution time: 0.1099
+ERROR - 2026-01-28 11:15:51 --> $config['composer_autoload'] is set to TRUE but C:\xampp\htdocs\Aconnect_ci3\application\vendor/autoload.php was not found.
+INFO - 2026-01-28 11:15:51 --> Config Class Initialized
+INFO - 2026-01-28 11:15:51 --> Hooks Class Initialized
+DEBUG - 2026-01-28 11:15:51 --> UTF-8 Support Enabled
+INFO - 2026-01-28 11:15:51 --> Utf8 Class Initialized
+INFO - 2026-01-28 11:15:51 --> URI Class Initialized
+INFO - 2026-01-28 11:15:51 --> Router Class Initialized
+INFO - 2026-01-28 11:15:51 --> Output Class Initialized
+INFO - 2026-01-28 11:15:51 --> Security Class Initialized
+DEBUG - 2026-01-28 11:15:51 --> Global POST, GET and COOKIE data sanitized
+INFO - 2026-01-28 11:15:51 --> Input Class Initialized
+INFO - 2026-01-28 11:15:51 --> Language Class Initialized
+INFO - 2026-01-28 11:15:51 --> Loader Class Initialized
+INFO - 2026-01-28 11:15:51 --> Helper loaded: url_helper
+INFO - 2026-01-28 11:15:51 --> Helper loaded: file_helper
+INFO - 2026-01-28 11:15:51 --> Helper loaded: html_helper
+INFO - 2026-01-28 11:15:51 --> Database Driver Class Initialized
+INFO - 2026-01-28 11:15:51 --> Session: Class initialized using 'files' driver.
+INFO - 2026-01-28 11:15:51 --> Helper loaded: form_helper
+INFO - 2026-01-28 11:15:51 --> Form Validation Class Initialized
+INFO - 2026-01-28 11:15:51 --> User Agent Class Initialized
+INFO - 2026-01-28 11:15:51 --> Language file loaded: language/english/pagination_lang.php
+INFO - 2026-01-28 11:15:51 --> Pagination Class Initialized
+INFO - 2026-01-28 11:15:51 --> Controller Class Initialized
+INFO - 2026-01-28 11:15:51 --> Model "Alumni_model" initialized
+INFO - 2026-01-28 11:15:51 --> Final output sent to browser
+DEBUG - 2026-01-28 11:15:51 --> Total execution time: 0.0933
+ERROR - 2026-01-28 11:15:52 --> $config['composer_autoload'] is set to TRUE but C:\xampp\htdocs\Aconnect_ci3\application\vendor/autoload.php was not found.
+INFO - 2026-01-28 11:15:52 --> Config Class Initialized
+INFO - 2026-01-28 11:15:52 --> Hooks Class Initialized
+DEBUG - 2026-01-28 11:15:52 --> UTF-8 Support Enabled
+INFO - 2026-01-28 11:15:52 --> Utf8 Class Initialized
+INFO - 2026-01-28 11:15:52 --> URI Class Initialized
+INFO - 2026-01-28 11:15:52 --> Router Class Initialized
+INFO - 2026-01-28 11:15:52 --> Output Class Initialized
+INFO - 2026-01-28 11:15:52 --> Security Class Initialized
+DEBUG - 2026-01-28 11:15:52 --> Global POST, GET and COOKIE data sanitized
+INFO - 2026-01-28 11:15:52 --> Input Class Initialized
+INFO - 2026-01-28 11:15:52 --> Language Class Initialized
+INFO - 2026-01-28 11:15:52 --> Loader Class Initialized
+INFO - 2026-01-28 11:15:52 --> Helper loaded: url_helper
+INFO - 2026-01-28 11:15:52 --> Helper loaded: file_helper
+INFO - 2026-01-28 11:15:52 --> Helper loaded: html_helper
+INFO - 2026-01-28 11:15:52 --> Database Driver Class Initialized
+INFO - 2026-01-28 11:15:52 --> Session: Class initialized using 'files' driver.
+INFO - 2026-01-28 11:15:52 --> Helper loaded: form_helper
+INFO - 2026-01-28 11:15:52 --> Form Validation Class Initialized
+INFO - 2026-01-28 11:15:53 --> User Agent Class Initialized
+INFO - 2026-01-28 11:15:53 --> Language file loaded: language/english/pagination_lang.php
+INFO - 2026-01-28 11:15:53 --> Pagination Class Initialized
+INFO - 2026-01-28 11:15:53 --> Controller Class Initialized
+INFO - 2026-01-28 11:15:53 --> Model "M_login" initialized
+INFO - 2026-01-28 11:15:53 --> Model "Activity_log_model" initialized
+ERROR - 2026-01-28 11:15:53 --> $config['composer_autoload'] is set to TRUE but C:\xampp\htdocs\Aconnect_ci3\application\vendor/autoload.php was not found.
+INFO - 2026-01-28 11:15:53 --> Config Class Initialized
+INFO - 2026-01-28 11:15:53 --> Hooks Class Initialized
+DEBUG - 2026-01-28 11:15:53 --> UTF-8 Support Enabled
+INFO - 2026-01-28 11:15:53 --> Utf8 Class Initialized
+INFO - 2026-01-28 11:15:53 --> URI Class Initialized
+INFO - 2026-01-28 11:15:53 --> Router Class Initialized
+INFO - 2026-01-28 11:15:53 --> Output Class Initialized
+INFO - 2026-01-28 11:15:53 --> Security Class Initialized
+DEBUG - 2026-01-28 11:15:53 --> Global POST, GET and COOKIE data sanitized
+INFO - 2026-01-28 11:15:53 --> Input Class Initialized
+INFO - 2026-01-28 11:15:53 --> Language Class Initialized
+INFO - 2026-01-28 11:15:53 --> Loader Class Initialized
+INFO - 2026-01-28 11:15:53 --> Helper loaded: url_helper
+INFO - 2026-01-28 11:15:53 --> Helper loaded: file_helper
+INFO - 2026-01-28 11:15:53 --> Helper loaded: html_helper
+INFO - 2026-01-28 11:15:53 --> Database Driver Class Initialized
+INFO - 2026-01-28 11:15:53 --> Session: Class initialized using 'files' driver.
+INFO - 2026-01-28 11:15:53 --> Helper loaded: form_helper
+INFO - 2026-01-28 11:15:53 --> Form Validation Class Initialized
+INFO - 2026-01-28 11:15:53 --> User Agent Class Initialized
+INFO - 2026-01-28 11:15:53 --> Language file loaded: language/english/pagination_lang.php
+INFO - 2026-01-28 11:15:53 --> Pagination Class Initialized
+INFO - 2026-01-28 11:15:53 --> Controller Class Initialized
+INFO - 2026-01-28 11:15:53 --> Model "M_login" initialized
+INFO - 2026-01-28 11:15:53 --> File loaded: C:\xampp\htdocs\Aconnect_ci3\application\views\login.php
+INFO - 2026-01-28 11:15:53 --> Final output sent to browser
+DEBUG - 2026-01-28 11:15:53 --> Total execution time: 0.0930
+ERROR - 2026-01-28 11:16:00 --> $config['composer_autoload'] is set to TRUE but C:\xampp\htdocs\Aconnect_ci3\application\vendor/autoload.php was not found.
+INFO - 2026-01-28 11:16:00 --> Config Class Initialized
+INFO - 2026-01-28 11:16:00 --> Hooks Class Initialized
+DEBUG - 2026-01-28 11:16:00 --> UTF-8 Support Enabled
+INFO - 2026-01-28 11:16:00 --> Utf8 Class Initialized
+INFO - 2026-01-28 11:16:00 --> URI Class Initialized
+INFO - 2026-01-28 11:16:00 --> Router Class Initialized
+INFO - 2026-01-28 11:16:00 --> Output Class Initialized
+INFO - 2026-01-28 11:16:00 --> Security Class Initialized
+DEBUG - 2026-01-28 11:16:00 --> Global POST, GET and COOKIE data sanitized
+INFO - 2026-01-28 11:16:00 --> Input Class Initialized
+INFO - 2026-01-28 11:16:00 --> Language Class Initialized
+INFO - 2026-01-28 11:16:00 --> Loader Class Initialized
+INFO - 2026-01-28 11:16:00 --> Helper loaded: url_helper
+INFO - 2026-01-28 11:16:00 --> Helper loaded: file_helper
+INFO - 2026-01-28 11:16:00 --> Helper loaded: html_helper
+INFO - 2026-01-28 11:16:00 --> Database Driver Class Initialized
+INFO - 2026-01-28 11:16:00 --> Session: Class initialized using 'files' driver.
+INFO - 2026-01-28 11:16:00 --> Helper loaded: form_helper
+INFO - 2026-01-28 11:16:00 --> Form Validation Class Initialized
+INFO - 2026-01-28 11:16:00 --> User Agent Class Initialized
+INFO - 2026-01-28 11:16:00 --> Language file loaded: language/english/pagination_lang.php
+INFO - 2026-01-28 11:16:00 --> Pagination Class Initialized
+INFO - 2026-01-28 11:16:00 --> Controller Class Initialized
+INFO - 2026-01-28 11:16:00 --> Model "M_login" initialized
+ERROR - 2026-01-28 11:16:00 --> $config['composer_autoload'] is set to TRUE but C:\xampp\htdocs\Aconnect_ci3\application\vendor/autoload.php was not found.
+INFO - 2026-01-28 11:16:00 --> Config Class Initialized
+INFO - 2026-01-28 11:16:00 --> Hooks Class Initialized
+DEBUG - 2026-01-28 11:16:00 --> UTF-8 Support Enabled
+INFO - 2026-01-28 11:16:00 --> Utf8 Class Initialized
+INFO - 2026-01-28 11:16:00 --> URI Class Initialized
+INFO - 2026-01-28 11:16:00 --> Router Class Initialized
+INFO - 2026-01-28 11:16:00 --> Output Class Initialized
+INFO - 2026-01-28 11:16:00 --> Security Class Initialized
+DEBUG - 2026-01-28 11:16:00 --> Global POST, GET and COOKIE data sanitized
+INFO - 2026-01-28 11:16:00 --> Input Class Initialized
+INFO - 2026-01-28 11:16:00 --> Language Class Initialized
+INFO - 2026-01-28 11:16:00 --> Loader Class Initialized
+INFO - 2026-01-28 11:16:00 --> Helper loaded: url_helper
+INFO - 2026-01-28 11:16:00 --> Helper loaded: file_helper
+INFO - 2026-01-28 11:16:00 --> Helper loaded: html_helper
+INFO - 2026-01-28 11:16:00 --> Database Driver Class Initialized
+INFO - 2026-01-28 11:16:00 --> Session: Class initialized using 'files' driver.
+INFO - 2026-01-28 11:16:00 --> Helper loaded: form_helper
+INFO - 2026-01-28 11:16:00 --> Form Validation Class Initialized
+INFO - 2026-01-28 11:16:00 --> User Agent Class Initialized
+INFO - 2026-01-28 11:16:00 --> Language file loaded: language/english/pagination_lang.php
+INFO - 2026-01-28 11:16:00 --> Pagination Class Initialized
+INFO - 2026-01-28 11:16:00 --> Controller Class Initialized
+INFO - 2026-01-28 11:16:00 --> Model "M_login" initialized
+INFO - 2026-01-28 11:16:00 --> File loaded: C:\xampp\htdocs\Aconnect_ci3\application\views\login.php
+INFO - 2026-01-28 11:16:00 --> Final output sent to browser
+DEBUG - 2026-01-28 11:16:00 --> Total execution time: 0.0829
+ERROR - 2026-01-28 11:16:10 --> $config['composer_autoload'] is set to TRUE but C:\xampp\htdocs\Aconnect_ci3\application\vendor/autoload.php was not found.
+INFO - 2026-01-28 11:16:10 --> Config Class Initialized
+INFO - 2026-01-28 11:16:10 --> Hooks Class Initialized
+DEBUG - 2026-01-28 11:16:10 --> UTF-8 Support Enabled
+INFO - 2026-01-28 11:16:10 --> Utf8 Class Initialized
+INFO - 2026-01-28 11:16:10 --> URI Class Initialized
+INFO - 2026-01-28 11:16:10 --> Router Class Initialized
+INFO - 2026-01-28 11:16:10 --> Output Class Initialized
+INFO - 2026-01-28 11:16:10 --> Security Class Initialized
+DEBUG - 2026-01-28 11:16:10 --> Global POST, GET and COOKIE data sanitized
+INFO - 2026-01-28 11:16:10 --> Input Class Initialized
+INFO - 2026-01-28 11:16:10 --> Language Class Initialized
+INFO - 2026-01-28 11:16:10 --> Loader Class Initialized
+INFO - 2026-01-28 11:16:10 --> Helper loaded: url_helper
+INFO - 2026-01-28 11:16:10 --> Helper loaded: file_helper
+INFO - 2026-01-28 11:16:10 --> Helper loaded: html_helper
+INFO - 2026-01-28 11:16:10 --> Database Driver Class Initialized
+INFO - 2026-01-28 11:16:10 --> Session: Class initialized using 'files' driver.
+INFO - 2026-01-28 11:16:10 --> Helper loaded: form_helper
+INFO - 2026-01-28 11:16:10 --> Form Validation Class Initialized
+INFO - 2026-01-28 11:16:10 --> User Agent Class Initialized
+INFO - 2026-01-28 11:16:10 --> Language file loaded: language/english/pagination_lang.php
+INFO - 2026-01-28 11:16:10 --> Pagination Class Initialized
+INFO - 2026-01-28 11:16:10 --> Controller Class Initialized
+INFO - 2026-01-28 11:16:10 --> Model "M_login" initialized
+ERROR - 2026-01-28 11:16:10 --> $config['composer_autoload'] is set to TRUE but C:\xampp\htdocs\Aconnect_ci3\application\vendor/autoload.php was not found.
+INFO - 2026-01-28 11:16:10 --> Config Class Initialized
+INFO - 2026-01-28 11:16:10 --> Hooks Class Initialized
+DEBUG - 2026-01-28 11:16:10 --> UTF-8 Support Enabled
+INFO - 2026-01-28 11:16:10 --> Utf8 Class Initialized
+INFO - 2026-01-28 11:16:10 --> URI Class Initialized
+INFO - 2026-01-28 11:16:10 --> Router Class Initialized
+INFO - 2026-01-28 11:16:10 --> Output Class Initialized
+INFO - 2026-01-28 11:16:10 --> Security Class Initialized
+DEBUG - 2026-01-28 11:16:10 --> Global POST, GET and COOKIE data sanitized
+INFO - 2026-01-28 11:16:10 --> Input Class Initialized
+INFO - 2026-01-28 11:16:10 --> Language Class Initialized
+INFO - 2026-01-28 11:16:10 --> Loader Class Initialized
+INFO - 2026-01-28 11:16:10 --> Helper loaded: url_helper
+INFO - 2026-01-28 11:16:10 --> Helper loaded: file_helper
+INFO - 2026-01-28 11:16:10 --> Helper loaded: html_helper
+INFO - 2026-01-28 11:16:10 --> Database Driver Class Initialized
+INFO - 2026-01-28 11:16:11 --> Session: Class initialized using 'files' driver.
+INFO - 2026-01-28 11:16:11 --> Helper loaded: form_helper
+INFO - 2026-01-28 11:16:11 --> Form Validation Class Initialized
+INFO - 2026-01-28 11:16:11 --> User Agent Class Initialized
+INFO - 2026-01-28 11:16:11 --> Language file loaded: language/english/pagination_lang.php
+INFO - 2026-01-28 11:16:11 --> Pagination Class Initialized
+INFO - 2026-01-28 11:16:11 --> Controller Class Initialized
+INFO - 2026-01-28 11:16:11 --> Model "M_login" initialized
+INFO - 2026-01-28 11:16:11 --> File loaded: C:\xampp\htdocs\Aconnect_ci3\application\views\login.php
+INFO - 2026-01-28 11:16:11 --> Final output sent to browser
+DEBUG - 2026-01-28 11:16:11 --> Total execution time: 0.0603
+ERROR - 2026-01-28 11:16:15 --> $config['composer_autoload'] is set to TRUE but C:\xampp\htdocs\Aconnect_ci3\application\vendor/autoload.php was not found.
+INFO - 2026-01-28 11:16:15 --> Config Class Initialized
+INFO - 2026-01-28 11:16:15 --> Hooks Class Initialized
+DEBUG - 2026-01-28 11:16:15 --> UTF-8 Support Enabled
+INFO - 2026-01-28 11:16:15 --> Utf8 Class Initialized
+INFO - 2026-01-28 11:16:15 --> URI Class Initialized
+INFO - 2026-01-28 11:16:15 --> Router Class Initialized
+INFO - 2026-01-28 11:16:15 --> Output Class Initialized
+INFO - 2026-01-28 11:16:15 --> Security Class Initialized
+DEBUG - 2026-01-28 11:16:15 --> Global POST, GET and COOKIE data sanitized
+INFO - 2026-01-28 11:16:15 --> Input Class Initialized
+INFO - 2026-01-28 11:16:15 --> Language Class Initialized
+INFO - 2026-01-28 11:16:15 --> Loader Class Initialized
+INFO - 2026-01-28 11:16:15 --> Helper loaded: url_helper
+INFO - 2026-01-28 11:16:15 --> Helper loaded: file_helper
+INFO - 2026-01-28 11:16:15 --> Helper loaded: html_helper
+INFO - 2026-01-28 11:16:15 --> Database Driver Class Initialized
+INFO - 2026-01-28 11:16:15 --> Session: Class initialized using 'files' driver.
+INFO - 2026-01-28 11:16:15 --> Helper loaded: form_helper
+INFO - 2026-01-28 11:16:15 --> Form Validation Class Initialized
+INFO - 2026-01-28 11:16:15 --> User Agent Class Initialized
+INFO - 2026-01-28 11:16:15 --> Language file loaded: language/english/pagination_lang.php
+INFO - 2026-01-28 11:16:15 --> Pagination Class Initialized
+INFO - 2026-01-28 11:16:15 --> Controller Class Initialized
+INFO - 2026-01-28 11:16:15 --> Model "M_login" initialized
+ERROR - 2026-01-28 11:16:15 --> $config['composer_autoload'] is set to TRUE but C:\xampp\htdocs\Aconnect_ci3\application\vendor/autoload.php was not found.
+INFO - 2026-01-28 11:16:15 --> Config Class Initialized
+INFO - 2026-01-28 11:16:15 --> Hooks Class Initialized
+DEBUG - 2026-01-28 11:16:15 --> UTF-8 Support Enabled
+INFO - 2026-01-28 11:16:15 --> Utf8 Class Initialized
+INFO - 2026-01-28 11:16:15 --> URI Class Initialized
+INFO - 2026-01-28 11:16:15 --> Router Class Initialized
+INFO - 2026-01-28 11:16:15 --> Output Class Initialized
+INFO - 2026-01-28 11:16:15 --> Security Class Initialized
+DEBUG - 2026-01-28 11:16:15 --> Global POST, GET and COOKIE data sanitized
+INFO - 2026-01-28 11:16:15 --> Input Class Initialized
+INFO - 2026-01-28 11:16:15 --> Language Class Initialized
+INFO - 2026-01-28 11:16:15 --> Loader Class Initialized
+INFO - 2026-01-28 11:16:15 --> Helper loaded: url_helper
+INFO - 2026-01-28 11:16:15 --> Helper loaded: file_helper
+INFO - 2026-01-28 11:16:15 --> Helper loaded: html_helper
+INFO - 2026-01-28 11:16:15 --> Database Driver Class Initialized
+INFO - 2026-01-28 11:16:15 --> Session: Class initialized using 'files' driver.
+INFO - 2026-01-28 11:16:15 --> Helper loaded: form_helper
+INFO - 2026-01-28 11:16:15 --> Form Validation Class Initialized
+INFO - 2026-01-28 11:16:15 --> User Agent Class Initialized
+INFO - 2026-01-28 11:16:15 --> Language file loaded: language/english/pagination_lang.php
+INFO - 2026-01-28 11:16:15 --> Pagination Class Initialized
+INFO - 2026-01-28 11:16:15 --> Controller Class Initialized
+INFO - 2026-01-28 11:16:15 --> File loaded: C:\xampp\htdocs\Aconnect_ci3\application\views\__header.php
+INFO - 2026-01-28 11:16:15 --> File loaded: C:\xampp\htdocs\Aconnect_ci3\application\views\dashboard_u.php
+INFO - 2026-01-28 11:16:15 --> File loaded: C:\xampp\htdocs\Aconnect_ci3\application\views\__footer.php
+INFO - 2026-01-28 11:16:15 --> Final output sent to browser
+DEBUG - 2026-01-28 11:16:15 --> Total execution time: 0.0585
+ERROR - 2026-01-28 11:16:19 --> $config['composer_autoload'] is set to TRUE but C:\xampp\htdocs\Aconnect_ci3\application\vendor/autoload.php was not found.
+INFO - 2026-01-28 11:16:19 --> Config Class Initialized
+INFO - 2026-01-28 11:16:19 --> Hooks Class Initialized
+DEBUG - 2026-01-28 11:16:19 --> UTF-8 Support Enabled
+INFO - 2026-01-28 11:16:19 --> Utf8 Class Initialized
+INFO - 2026-01-28 11:16:19 --> URI Class Initialized
+INFO - 2026-01-28 11:16:19 --> Router Class Initialized
+INFO - 2026-01-28 11:16:19 --> Output Class Initialized
+INFO - 2026-01-28 11:16:19 --> Security Class Initialized
+DEBUG - 2026-01-28 11:16:19 --> Global POST, GET and COOKIE data sanitized
+INFO - 2026-01-28 11:16:19 --> Input Class Initialized
+INFO - 2026-01-28 11:16:19 --> Language Class Initialized
+INFO - 2026-01-28 11:16:19 --> Loader Class Initialized
+INFO - 2026-01-28 11:16:19 --> Helper loaded: url_helper
+INFO - 2026-01-28 11:16:19 --> Helper loaded: file_helper
+INFO - 2026-01-28 11:16:19 --> Helper loaded: html_helper
+INFO - 2026-01-28 11:16:19 --> Database Driver Class Initialized
+INFO - 2026-01-28 11:16:19 --> Session: Class initialized using 'files' driver.
+INFO - 2026-01-28 11:16:19 --> Helper loaded: form_helper
+INFO - 2026-01-28 11:16:19 --> Form Validation Class Initialized
+INFO - 2026-01-28 11:16:19 --> User Agent Class Initialized
+INFO - 2026-01-28 11:16:19 --> Language file loaded: language/english/pagination_lang.php
+INFO - 2026-01-28 11:16:19 --> Pagination Class Initialized
+INFO - 2026-01-28 11:16:19 --> Controller Class Initialized
+INFO - 2026-01-28 11:16:19 --> Model "Alumni_model" initialized
+INFO - 2026-01-28 11:16:19 --> File loaded: C:\xampp\htdocs\Aconnect_ci3\application\views\__header.php
+INFO - 2026-01-28 11:16:19 --> File loaded: C:\xampp\htdocs\Aconnect_ci3\application\views\user/search_alumni.php
+INFO - 2026-01-28 11:16:19 --> File loaded: C:\xampp\htdocs\Aconnect_ci3\application\views\__footer.php
+INFO - 2026-01-28 11:16:19 --> Final output sent to browser
+DEBUG - 2026-01-28 11:16:19 --> Total execution time: 0.0258
+ERROR - 2026-01-28 11:16:22 --> $config['composer_autoload'] is set to TRUE but C:\xampp\htdocs\Aconnect_ci3\application\vendor/autoload.php was not found.
+INFO - 2026-01-28 11:16:22 --> Config Class Initialized
+INFO - 2026-01-28 11:16:22 --> Hooks Class Initialized
+DEBUG - 2026-01-28 11:16:22 --> UTF-8 Support Enabled
+INFO - 2026-01-28 11:16:22 --> Utf8 Class Initialized
+INFO - 2026-01-28 11:16:22 --> URI Class Initialized
+INFO - 2026-01-28 11:16:22 --> Router Class Initialized
+INFO - 2026-01-28 11:16:22 --> Output Class Initialized
+INFO - 2026-01-28 11:16:22 --> Security Class Initialized
+DEBUG - 2026-01-28 11:16:22 --> Global POST, GET and COOKIE data sanitized
+INFO - 2026-01-28 11:16:22 --> Input Class Initialized
+INFO - 2026-01-28 11:16:22 --> Language Class Initialized
+INFO - 2026-01-28 11:16:22 --> Loader Class Initialized
+INFO - 2026-01-28 11:16:22 --> Helper loaded: url_helper
+INFO - 2026-01-28 11:16:22 --> Helper loaded: file_helper
+INFO - 2026-01-28 11:16:22 --> Helper loaded: html_helper
+INFO - 2026-01-28 11:16:22 --> Database Driver Class Initialized
+INFO - 2026-01-28 11:16:22 --> Session: Class initialized using 'files' driver.
+INFO - 2026-01-28 11:16:22 --> Helper loaded: form_helper
+INFO - 2026-01-28 11:16:22 --> Form Validation Class Initialized
+INFO - 2026-01-28 11:16:22 --> User Agent Class Initialized
+INFO - 2026-01-28 11:16:22 --> Language file loaded: language/english/pagination_lang.php
+INFO - 2026-01-28 11:16:22 --> Pagination Class Initialized
+INFO - 2026-01-28 11:16:22 --> Controller Class Initialized
+INFO - 2026-01-28 11:16:22 --> Model "Alumni_model" initialized
+INFO - 2026-01-28 11:16:22 --> Final output sent to browser
+DEBUG - 2026-01-28 11:16:22 --> Total execution time: 0.0491
+ERROR - 2026-01-28 11:16:23 --> $config['composer_autoload'] is set to TRUE but C:\xampp\htdocs\Aconnect_ci3\application\vendor/autoload.php was not found.
+INFO - 2026-01-28 11:16:23 --> Config Class Initialized
+INFO - 2026-01-28 11:16:23 --> Hooks Class Initialized
+DEBUG - 2026-01-28 11:16:23 --> UTF-8 Support Enabled
+INFO - 2026-01-28 11:16:23 --> Utf8 Class Initialized
+INFO - 2026-01-28 11:16:23 --> URI Class Initialized
+INFO - 2026-01-28 11:16:23 --> Router Class Initialized
+INFO - 2026-01-28 11:16:23 --> Output Class Initialized
+INFO - 2026-01-28 11:16:23 --> Security Class Initialized
+DEBUG - 2026-01-28 11:16:23 --> Global POST, GET and COOKIE data sanitized
+INFO - 2026-01-28 11:16:23 --> Input Class Initialized
+INFO - 2026-01-28 11:16:23 --> Language Class Initialized
+INFO - 2026-01-28 11:16:23 --> Loader Class Initialized
+INFO - 2026-01-28 11:16:23 --> Helper loaded: url_helper
+INFO - 2026-01-28 11:16:23 --> Helper loaded: file_helper
+INFO - 2026-01-28 11:16:23 --> Helper loaded: html_helper
+INFO - 2026-01-28 11:16:23 --> Database Driver Class Initialized
+INFO - 2026-01-28 11:16:23 --> Session: Class initialized using 'files' driver.
+INFO - 2026-01-28 11:16:23 --> Helper loaded: form_helper
+INFO - 2026-01-28 11:16:23 --> Form Validation Class Initialized
+INFO - 2026-01-28 11:16:23 --> User Agent Class Initialized
+INFO - 2026-01-28 11:16:23 --> Language file loaded: language/english/pagination_lang.php
+INFO - 2026-01-28 11:16:23 --> Pagination Class Initialized
+INFO - 2026-01-28 11:16:23 --> Controller Class Initialized
+INFO - 2026-01-28 11:16:23 --> Model "M_login" initialized
+INFO - 2026-01-28 11:16:23 --> Model "Activity_log_model" initialized
+ERROR - 2026-01-28 11:16:23 --> $config['composer_autoload'] is set to TRUE but C:\xampp\htdocs\Aconnect_ci3\application\vendor/autoload.php was not found.
+INFO - 2026-01-28 11:16:23 --> Config Class Initialized
+INFO - 2026-01-28 11:16:23 --> Hooks Class Initialized
+DEBUG - 2026-01-28 11:16:23 --> UTF-8 Support Enabled
+INFO - 2026-01-28 11:16:23 --> Utf8 Class Initialized
+INFO - 2026-01-28 11:16:23 --> URI Class Initialized
+INFO - 2026-01-28 11:16:23 --> Router Class Initialized
+INFO - 2026-01-28 11:16:23 --> Output Class Initialized
+INFO - 2026-01-28 11:16:23 --> Security Class Initialized
+DEBUG - 2026-01-28 11:16:23 --> Global POST, GET and COOKIE data sanitized
+INFO - 2026-01-28 11:16:23 --> Input Class Initialized
+INFO - 2026-01-28 11:16:23 --> Language Class Initialized
+INFO - 2026-01-28 11:16:23 --> Loader Class Initialized
+INFO - 2026-01-28 11:16:23 --> Helper loaded: url_helper
+INFO - 2026-01-28 11:16:23 --> Helper loaded: file_helper
+INFO - 2026-01-28 11:16:23 --> Helper loaded: html_helper
+INFO - 2026-01-28 11:16:23 --> Database Driver Class Initialized
+INFO - 2026-01-28 11:16:23 --> Session: Class initialized using 'files' driver.
+INFO - 2026-01-28 11:16:23 --> Helper loaded: form_helper
+INFO - 2026-01-28 11:16:23 --> Form Validation Class Initialized
+INFO - 2026-01-28 11:16:23 --> User Agent Class Initialized
+INFO - 2026-01-28 11:16:23 --> Language file loaded: language/english/pagination_lang.php
+INFO - 2026-01-28 11:16:23 --> Pagination Class Initialized
+INFO - 2026-01-28 11:16:23 --> Controller Class Initialized
+INFO - 2026-01-28 11:16:23 --> Model "M_login" initialized
+INFO - 2026-01-28 11:16:23 --> File loaded: C:\xampp\htdocs\Aconnect_ci3\application\views\login.php
+INFO - 2026-01-28 11:16:23 --> Final output sent to browser
+DEBUG - 2026-01-28 11:16:23 --> Total execution time: 0.0711
+ERROR - 2026-01-28 11:16:25 --> $config['composer_autoload'] is set to TRUE but C:\xampp\htdocs\Aconnect_ci3\application\vendor/autoload.php was not found.
+INFO - 2026-01-28 11:16:25 --> Config Class Initialized
+INFO - 2026-01-28 11:16:25 --> Hooks Class Initialized
+DEBUG - 2026-01-28 11:16:25 --> UTF-8 Support Enabled
+INFO - 2026-01-28 11:16:25 --> Utf8 Class Initialized
+INFO - 2026-01-28 11:16:25 --> URI Class Initialized
+INFO - 2026-01-28 11:16:25 --> Router Class Initialized
+INFO - 2026-01-28 11:16:25 --> Output Class Initialized
+INFO - 2026-01-28 11:16:25 --> Security Class Initialized
+DEBUG - 2026-01-28 11:16:25 --> Global POST, GET and COOKIE data sanitized
+INFO - 2026-01-28 11:16:25 --> Input Class Initialized
+INFO - 2026-01-28 11:16:25 --> Language Class Initialized
+INFO - 2026-01-28 11:16:25 --> Loader Class Initialized
+INFO - 2026-01-28 11:16:25 --> Helper loaded: url_helper
+INFO - 2026-01-28 11:16:25 --> Helper loaded: file_helper
+INFO - 2026-01-28 11:16:25 --> Helper loaded: html_helper
+INFO - 2026-01-28 11:16:25 --> Database Driver Class Initialized
+INFO - 2026-01-28 11:16:25 --> Session: Class initialized using 'files' driver.
+INFO - 2026-01-28 11:16:25 --> Helper loaded: form_helper
+INFO - 2026-01-28 11:16:25 --> Form Validation Class Initialized
+INFO - 2026-01-28 11:16:25 --> User Agent Class Initialized
+INFO - 2026-01-28 11:16:25 --> Language file loaded: language/english/pagination_lang.php
+INFO - 2026-01-28 11:16:25 --> Pagination Class Initialized
+INFO - 2026-01-28 11:16:25 --> Controller Class Initialized
+INFO - 2026-01-28 11:16:25 --> Model "M_login" initialized
+ERROR - 2026-01-28 11:16:25 --> $config['composer_autoload'] is set to TRUE but C:\xampp\htdocs\Aconnect_ci3\application\vendor/autoload.php was not found.
+INFO - 2026-01-28 11:16:25 --> Config Class Initialized
+INFO - 2026-01-28 11:16:25 --> Hooks Class Initialized
+DEBUG - 2026-01-28 11:16:25 --> UTF-8 Support Enabled
+INFO - 2026-01-28 11:16:25 --> Utf8 Class Initialized
+INFO - 2026-01-28 11:16:25 --> URI Class Initialized
+INFO - 2026-01-28 11:16:25 --> Router Class Initialized
+INFO - 2026-01-28 11:16:25 --> Output Class Initialized
+INFO - 2026-01-28 11:16:25 --> Security Class Initialized
+DEBUG - 2026-01-28 11:16:25 --> Global POST, GET and COOKIE data sanitized
+INFO - 2026-01-28 11:16:25 --> Input Class Initialized
+INFO - 2026-01-28 11:16:25 --> Language Class Initialized
+INFO - 2026-01-28 11:16:25 --> Loader Class Initialized
+INFO - 2026-01-28 11:16:25 --> Helper loaded: url_helper
+INFO - 2026-01-28 11:16:25 --> Helper loaded: file_helper
+INFO - 2026-01-28 11:16:25 --> Helper loaded: html_helper
+INFO - 2026-01-28 11:16:25 --> Database Driver Class Initialized
+INFO - 2026-01-28 11:16:25 --> Session: Class initialized using 'files' driver.
+INFO - 2026-01-28 11:16:25 --> Helper loaded: form_helper
+INFO - 2026-01-28 11:16:25 --> Form Validation Class Initialized
+INFO - 2026-01-28 11:16:25 --> User Agent Class Initialized
+INFO - 2026-01-28 11:16:25 --> Language file loaded: language/english/pagination_lang.php
+INFO - 2026-01-28 11:16:25 --> Pagination Class Initialized
+INFO - 2026-01-28 11:16:25 --> Controller Class Initialized
+INFO - 2026-01-28 11:16:25 --> File loaded: C:\xampp\htdocs\Aconnect_ci3\application\views\__header.php
+INFO - 2026-01-28 11:16:25 --> File loaded: C:\xampp\htdocs\Aconnect_ci3\application\views\dashboard_u.php
+INFO - 2026-01-28 11:16:25 --> File loaded: C:\xampp\htdocs\Aconnect_ci3\application\views\__footer.php
+INFO - 2026-01-28 11:16:25 --> Final output sent to browser
+DEBUG - 2026-01-28 11:16:25 --> Total execution time: 0.0408
+ERROR - 2026-01-28 11:16:27 --> $config['composer_autoload'] is set to TRUE but C:\xampp\htdocs\Aconnect_ci3\application\vendor/autoload.php was not found.
+INFO - 2026-01-28 11:16:27 --> Config Class Initialized
+INFO - 2026-01-28 11:16:27 --> Hooks Class Initialized
+DEBUG - 2026-01-28 11:16:27 --> UTF-8 Support Enabled
+INFO - 2026-01-28 11:16:27 --> Utf8 Class Initialized
+INFO - 2026-01-28 11:16:27 --> URI Class Initialized
+INFO - 2026-01-28 11:16:27 --> Router Class Initialized
+INFO - 2026-01-28 11:16:27 --> Output Class Initialized
+INFO - 2026-01-28 11:16:27 --> Security Class Initialized
+DEBUG - 2026-01-28 11:16:27 --> Global POST, GET and COOKIE data sanitized
+INFO - 2026-01-28 11:16:27 --> Input Class Initialized
+INFO - 2026-01-28 11:16:27 --> Language Class Initialized
+INFO - 2026-01-28 11:16:27 --> Loader Class Initialized
+INFO - 2026-01-28 11:16:27 --> Helper loaded: url_helper
+INFO - 2026-01-28 11:16:27 --> Helper loaded: file_helper
+INFO - 2026-01-28 11:16:27 --> Helper loaded: html_helper
+INFO - 2026-01-28 11:16:27 --> Database Driver Class Initialized
+INFO - 2026-01-28 11:16:27 --> Session: Class initialized using 'files' driver.
+INFO - 2026-01-28 11:16:27 --> Helper loaded: form_helper
+INFO - 2026-01-28 11:16:27 --> Form Validation Class Initialized
+INFO - 2026-01-28 11:16:27 --> User Agent Class Initialized
+INFO - 2026-01-28 11:16:27 --> Language file loaded: language/english/pagination_lang.php
+INFO - 2026-01-28 11:16:27 --> Pagination Class Initialized
+INFO - 2026-01-28 11:16:27 --> Controller Class Initialized
+INFO - 2026-01-28 11:16:27 --> Model "Alumni_model" initialized
+INFO - 2026-01-28 11:16:27 --> File loaded: C:\xampp\htdocs\Aconnect_ci3\application\views\__header.php
+INFO - 2026-01-28 11:16:27 --> File loaded: C:\xampp\htdocs\Aconnect_ci3\application\views\user/search_alumni.php
+INFO - 2026-01-28 11:16:27 --> File loaded: C:\xampp\htdocs\Aconnect_ci3\application\views\__footer.php
+INFO - 2026-01-28 11:16:27 --> Final output sent to browser
+DEBUG - 2026-01-28 11:16:27 --> Total execution time: 0.0765
+ERROR - 2026-01-28 11:16:29 --> $config['composer_autoload'] is set to TRUE but C:\xampp\htdocs\Aconnect_ci3\application\vendor/autoload.php was not found.
+INFO - 2026-01-28 11:16:29 --> Config Class Initialized
+INFO - 2026-01-28 11:16:29 --> Hooks Class Initialized
+DEBUG - 2026-01-28 11:16:29 --> UTF-8 Support Enabled
+INFO - 2026-01-28 11:16:29 --> Utf8 Class Initialized
+INFO - 2026-01-28 11:16:29 --> URI Class Initialized
+INFO - 2026-01-28 11:16:29 --> Router Class Initialized
+INFO - 2026-01-28 11:16:29 --> Output Class Initialized
+INFO - 2026-01-28 11:16:29 --> Security Class Initialized
+DEBUG - 2026-01-28 11:16:29 --> Global POST, GET and COOKIE data sanitized
+INFO - 2026-01-28 11:16:29 --> Input Class Initialized
+INFO - 2026-01-28 11:16:29 --> Language Class Initialized
+INFO - 2026-01-28 11:16:29 --> Loader Class Initialized
+INFO - 2026-01-28 11:16:29 --> Helper loaded: url_helper
+INFO - 2026-01-28 11:16:29 --> Helper loaded: file_helper
+INFO - 2026-01-28 11:16:29 --> Helper loaded: html_helper
+INFO - 2026-01-28 11:16:29 --> Database Driver Class Initialized
+INFO - 2026-01-28 11:16:29 --> Session: Class initialized using 'files' driver.
+INFO - 2026-01-28 11:16:29 --> Helper loaded: form_helper
+INFO - 2026-01-28 11:16:29 --> Form Validation Class Initialized
+INFO - 2026-01-28 11:16:29 --> User Agent Class Initialized
+INFO - 2026-01-28 11:16:29 --> Language file loaded: language/english/pagination_lang.php
+INFO - 2026-01-28 11:16:29 --> Pagination Class Initialized
+INFO - 2026-01-28 11:16:29 --> Controller Class Initialized
+INFO - 2026-01-28 11:16:29 --> Model "Alumni_model" initialized
+INFO - 2026-01-28 11:16:29 --> Final output sent to browser
+DEBUG - 2026-01-28 11:16:29 --> Total execution time: 0.0598
+ERROR - 2026-01-28 11:16:30 --> $config['composer_autoload'] is set to TRUE but C:\xampp\htdocs\Aconnect_ci3\application\vendor/autoload.php was not found.
+INFO - 2026-01-28 11:16:30 --> Config Class Initialized
+INFO - 2026-01-28 11:16:30 --> Hooks Class Initialized
+DEBUG - 2026-01-28 11:16:30 --> UTF-8 Support Enabled
+INFO - 2026-01-28 11:16:30 --> Utf8 Class Initialized
+INFO - 2026-01-28 11:16:30 --> URI Class Initialized
+INFO - 2026-01-28 11:16:30 --> Router Class Initialized
+INFO - 2026-01-28 11:16:30 --> Output Class Initialized
+INFO - 2026-01-28 11:16:30 --> Security Class Initialized
+DEBUG - 2026-01-28 11:16:30 --> Global POST, GET and COOKIE data sanitized
+INFO - 2026-01-28 11:16:30 --> Input Class Initialized
+INFO - 2026-01-28 11:16:30 --> Language Class Initialized
+INFO - 2026-01-28 11:16:30 --> Loader Class Initialized
+INFO - 2026-01-28 11:16:30 --> Helper loaded: url_helper
+INFO - 2026-01-28 11:16:30 --> Helper loaded: file_helper
+INFO - 2026-01-28 11:16:30 --> Helper loaded: html_helper
+INFO - 2026-01-28 11:16:30 --> Database Driver Class Initialized
+INFO - 2026-01-28 11:16:30 --> Session: Class initialized using 'files' driver.
+INFO - 2026-01-28 11:16:30 --> Helper loaded: form_helper
+INFO - 2026-01-28 11:16:30 --> Form Validation Class Initialized
+INFO - 2026-01-28 11:16:30 --> User Agent Class Initialized
+INFO - 2026-01-28 11:16:30 --> Language file loaded: language/english/pagination_lang.php
+INFO - 2026-01-28 11:16:30 --> Pagination Class Initialized
+INFO - 2026-01-28 11:16:30 --> Controller Class Initialized
+INFO - 2026-01-28 11:16:30 --> Model "Alumni_model" initialized
+INFO - 2026-01-28 11:16:30 --> File loaded: C:\xampp\htdocs\Aconnect_ci3\application\views\__header.php
+INFO - 2026-01-28 11:16:30 --> File loaded: C:\xampp\htdocs\Aconnect_ci3\application\views\user/chat_list.php
+INFO - 2026-01-28 11:16:30 --> File loaded: C:\xampp\htdocs\Aconnect_ci3\application\views\__footer.php
+INFO - 2026-01-28 11:16:30 --> Final output sent to browser
+DEBUG - 2026-01-28 11:16:30 --> Total execution time: 0.0459
+ERROR - 2026-01-28 11:16:32 --> $config['composer_autoload'] is set to TRUE but C:\xampp\htdocs\Aconnect_ci3\application\vendor/autoload.php was not found.
+INFO - 2026-01-28 11:16:32 --> Config Class Initialized
+INFO - 2026-01-28 11:16:32 --> Hooks Class Initialized
+DEBUG - 2026-01-28 11:16:32 --> UTF-8 Support Enabled
+INFO - 2026-01-28 11:16:32 --> Utf8 Class Initialized
+INFO - 2026-01-28 11:16:32 --> URI Class Initialized
+INFO - 2026-01-28 11:16:32 --> Router Class Initialized
+INFO - 2026-01-28 11:16:32 --> Output Class Initialized
+INFO - 2026-01-28 11:16:32 --> Security Class Initialized
+DEBUG - 2026-01-28 11:16:32 --> Global POST, GET and COOKIE data sanitized
+INFO - 2026-01-28 11:16:32 --> Input Class Initialized
+INFO - 2026-01-28 11:16:32 --> Language Class Initialized
+INFO - 2026-01-28 11:16:32 --> Loader Class Initialized
+INFO - 2026-01-28 11:16:32 --> Helper loaded: url_helper
+INFO - 2026-01-28 11:16:32 --> Helper loaded: file_helper
+INFO - 2026-01-28 11:16:32 --> Helper loaded: html_helper
+INFO - 2026-01-28 11:16:32 --> Database Driver Class Initialized
+INFO - 2026-01-28 11:16:32 --> Session: Class initialized using 'files' driver.
+INFO - 2026-01-28 11:16:32 --> Helper loaded: form_helper
+INFO - 2026-01-28 11:16:32 --> Form Validation Class Initialized
+INFO - 2026-01-28 11:16:32 --> User Agent Class Initialized
+INFO - 2026-01-28 11:16:32 --> Language file loaded: language/english/pagination_lang.php
+INFO - 2026-01-28 11:16:32 --> Pagination Class Initialized
+INFO - 2026-01-28 11:16:32 --> Controller Class Initialized
+INFO - 2026-01-28 11:16:32 --> Model "Alumni_model" initialized
+INFO - 2026-01-28 11:16:32 --> File loaded: C:\xampp\htdocs\Aconnect_ci3\application\views\user/chat.php
+INFO - 2026-01-28 11:16:32 --> Final output sent to browser
+DEBUG - 2026-01-28 11:16:32 --> Total execution time: 0.0297
+ERROR - 2026-01-28 11:16:37 --> $config['composer_autoload'] is set to TRUE but C:\xampp\htdocs\Aconnect_ci3\application\vendor/autoload.php was not found.
+INFO - 2026-01-28 11:16:37 --> Config Class Initialized
+INFO - 2026-01-28 11:16:37 --> Hooks Class Initialized
+DEBUG - 2026-01-28 11:16:37 --> UTF-8 Support Enabled
+INFO - 2026-01-28 11:16:37 --> Utf8 Class Initialized
+INFO - 2026-01-28 11:16:37 --> URI Class Initialized
+INFO - 2026-01-28 11:16:37 --> Router Class Initialized
+INFO - 2026-01-28 11:16:37 --> Output Class Initialized
+INFO - 2026-01-28 11:16:37 --> Security Class Initialized
+DEBUG - 2026-01-28 11:16:37 --> Global POST, GET and COOKIE data sanitized
+INFO - 2026-01-28 11:16:37 --> Input Class Initialized
+INFO - 2026-01-28 11:16:37 --> Language Class Initialized
+INFO - 2026-01-28 11:16:37 --> Loader Class Initialized
+INFO - 2026-01-28 11:16:37 --> Helper loaded: url_helper
+INFO - 2026-01-28 11:16:37 --> Helper loaded: file_helper
+INFO - 2026-01-28 11:16:37 --> Helper loaded: html_helper
+INFO - 2026-01-28 11:16:37 --> Database Driver Class Initialized
+INFO - 2026-01-28 11:16:37 --> Session: Class initialized using 'files' driver.
+INFO - 2026-01-28 11:16:37 --> Helper loaded: form_helper
+INFO - 2026-01-28 11:16:37 --> Form Validation Class Initialized
+INFO - 2026-01-28 11:16:37 --> User Agent Class Initialized
+INFO - 2026-01-28 11:16:37 --> Language file loaded: language/english/pagination_lang.php
+INFO - 2026-01-28 11:16:37 --> Pagination Class Initialized
+INFO - 2026-01-28 11:16:37 --> Controller Class Initialized
+INFO - 2026-01-28 11:16:37 --> Model "Support_model" initialized
+DEBUG - 2026-01-28 11:16:37 --> Session class already loaded. Second attempt ignored.
+INFO - 2026-01-28 11:16:37 --> Final output sent to browser
+DEBUG - 2026-01-28 11:16:37 --> Total execution time: 0.0427
+ERROR - 2026-01-28 11:16:37 --> $config['composer_autoload'] is set to TRUE but C:\xampp\htdocs\Aconnect_ci3\application\vendor/autoload.php was not found.
+INFO - 2026-01-28 11:16:37 --> Config Class Initialized
+INFO - 2026-01-28 11:16:37 --> Hooks Class Initialized
+DEBUG - 2026-01-28 11:16:37 --> UTF-8 Support Enabled
+INFO - 2026-01-28 11:16:37 --> Utf8 Class Initialized
+INFO - 2026-01-28 11:16:37 --> URI Class Initialized
+INFO - 2026-01-28 11:16:37 --> Router Class Initialized
+INFO - 2026-01-28 11:16:37 --> Output Class Initialized
+INFO - 2026-01-28 11:16:37 --> Security Class Initialized
+DEBUG - 2026-01-28 11:16:37 --> Global POST, GET and COOKIE data sanitized
+INFO - 2026-01-28 11:16:37 --> Input Class Initialized
+INFO - 2026-01-28 11:16:37 --> Language Class Initialized
+INFO - 2026-01-28 11:16:37 --> Loader Class Initialized
+INFO - 2026-01-28 11:16:37 --> Helper loaded: url_helper
+INFO - 2026-01-28 11:16:37 --> Helper loaded: file_helper
+INFO - 2026-01-28 11:16:37 --> Helper loaded: html_helper
+INFO - 2026-01-28 11:16:37 --> Database Driver Class Initialized
+INFO - 2026-01-28 11:16:37 --> Session: Class initialized using 'files' driver.
+INFO - 2026-01-28 11:16:37 --> Helper loaded: form_helper
+INFO - 2026-01-28 11:16:37 --> Form Validation Class Initialized
+INFO - 2026-01-28 11:16:37 --> User Agent Class Initialized
+INFO - 2026-01-28 11:16:37 --> Language file loaded: language/english/pagination_lang.php
+INFO - 2026-01-28 11:16:37 --> Pagination Class Initialized
+INFO - 2026-01-28 11:16:37 --> Controller Class Initialized
+INFO - 2026-01-28 11:16:37 --> Model "Support_model" initialized
+DEBUG - 2026-01-28 11:16:37 --> Session class already loaded. Second attempt ignored.
+INFO - 2026-01-28 11:16:37 --> Final output sent to browser
+DEBUG - 2026-01-28 11:16:37 --> Total execution time: 0.0254
+ERROR - 2026-01-28 11:16:38 --> $config['composer_autoload'] is set to TRUE but C:\xampp\htdocs\Aconnect_ci3\application\vendor/autoload.php was not found.
+INFO - 2026-01-28 11:16:38 --> Config Class Initialized
+INFO - 2026-01-28 11:16:38 --> Hooks Class Initialized
+DEBUG - 2026-01-28 11:16:38 --> UTF-8 Support Enabled
+INFO - 2026-01-28 11:16:38 --> Utf8 Class Initialized
+INFO - 2026-01-28 11:16:38 --> URI Class Initialized
+INFO - 2026-01-28 11:16:38 --> Router Class Initialized
+INFO - 2026-01-28 11:16:38 --> Output Class Initialized
+INFO - 2026-01-28 11:16:38 --> Security Class Initialized
+DEBUG - 2026-01-28 11:16:38 --> Global POST, GET and COOKIE data sanitized
+INFO - 2026-01-28 11:16:38 --> Input Class Initialized
+INFO - 2026-01-28 11:16:38 --> Language Class Initialized
+INFO - 2026-01-28 11:16:38 --> Loader Class Initialized
+INFO - 2026-01-28 11:16:38 --> Helper loaded: url_helper
+INFO - 2026-01-28 11:16:38 --> Helper loaded: file_helper
+INFO - 2026-01-28 11:16:38 --> Helper loaded: html_helper
+INFO - 2026-01-28 11:16:38 --> Database Driver Class Initialized
+INFO - 2026-01-28 11:16:38 --> Session: Class initialized using 'files' driver.
+INFO - 2026-01-28 11:16:38 --> Helper loaded: form_helper
+INFO - 2026-01-28 11:16:38 --> Form Validation Class Initialized
+INFO - 2026-01-28 11:16:38 --> User Agent Class Initialized
+INFO - 2026-01-28 11:16:38 --> Language file loaded: language/english/pagination_lang.php
+INFO - 2026-01-28 11:16:38 --> Pagination Class Initialized
+INFO - 2026-01-28 11:16:38 --> Controller Class Initialized
+INFO - 2026-01-28 11:16:38 --> Model "Support_model" initialized
+DEBUG - 2026-01-28 11:16:38 --> Session class already loaded. Second attempt ignored.
+INFO - 2026-01-28 11:16:38 --> Final output sent to browser
+DEBUG - 2026-01-28 11:16:38 --> Total execution time: 0.0248
+ERROR - 2026-01-28 11:16:38 --> $config['composer_autoload'] is set to TRUE but C:\xampp\htdocs\Aconnect_ci3\application\vendor/autoload.php was not found.
+INFO - 2026-01-28 11:16:38 --> Config Class Initialized
+INFO - 2026-01-28 11:16:38 --> Hooks Class Initialized
+DEBUG - 2026-01-28 11:16:38 --> UTF-8 Support Enabled
+INFO - 2026-01-28 11:16:38 --> Utf8 Class Initialized
+INFO - 2026-01-28 11:16:38 --> URI Class Initialized
+INFO - 2026-01-28 11:16:38 --> Router Class Initialized
+INFO - 2026-01-28 11:16:38 --> Output Class Initialized
+INFO - 2026-01-28 11:16:38 --> Security Class Initialized
+DEBUG - 2026-01-28 11:16:38 --> Global POST, GET and COOKIE data sanitized
+INFO - 2026-01-28 11:16:38 --> Input Class Initialized
+INFO - 2026-01-28 11:16:38 --> Language Class Initialized
+INFO - 2026-01-28 11:16:38 --> Loader Class Initialized
+INFO - 2026-01-28 11:16:38 --> Helper loaded: url_helper
+INFO - 2026-01-28 11:16:38 --> Helper loaded: file_helper
+INFO - 2026-01-28 11:16:38 --> Helper loaded: html_helper
+INFO - 2026-01-28 11:16:38 --> Database Driver Class Initialized
+INFO - 2026-01-28 11:16:38 --> Session: Class initialized using 'files' driver.
+INFO - 2026-01-28 11:16:38 --> Helper loaded: form_helper
+INFO - 2026-01-28 11:16:38 --> Form Validation Class Initialized
+INFO - 2026-01-28 11:16:38 --> User Agent Class Initialized
+INFO - 2026-01-28 11:16:38 --> Language file loaded: language/english/pagination_lang.php
+INFO - 2026-01-28 11:16:38 --> Pagination Class Initialized
+INFO - 2026-01-28 11:16:38 --> Controller Class Initialized
+INFO - 2026-01-28 11:16:38 --> Model "Support_model" initialized
+DEBUG - 2026-01-28 11:16:38 --> Session class already loaded. Second attempt ignored.
+INFO - 2026-01-28 11:16:38 --> Final output sent to browser
+DEBUG - 2026-01-28 11:16:38 --> Total execution time: 0.0253
+ERROR - 2026-01-28 11:16:42 --> $config['composer_autoload'] is set to TRUE but C:\xampp\htdocs\Aconnect_ci3\application\vendor/autoload.php was not found.
+INFO - 2026-01-28 11:16:42 --> Config Class Initialized
+INFO - 2026-01-28 11:16:42 --> Hooks Class Initialized
+DEBUG - 2026-01-28 11:16:42 --> UTF-8 Support Enabled
+INFO - 2026-01-28 11:16:42 --> Utf8 Class Initialized
+INFO - 2026-01-28 11:16:42 --> URI Class Initialized
+INFO - 2026-01-28 11:16:42 --> Router Class Initialized
+INFO - 2026-01-28 11:16:42 --> Output Class Initialized
+INFO - 2026-01-28 11:16:42 --> Security Class Initialized
+DEBUG - 2026-01-28 11:16:42 --> Global POST, GET and COOKIE data sanitized
+INFO - 2026-01-28 11:16:42 --> Input Class Initialized
+INFO - 2026-01-28 11:16:42 --> Language Class Initialized
+INFO - 2026-01-28 11:16:42 --> Loader Class Initialized
+INFO - 2026-01-28 11:16:42 --> Helper loaded: url_helper
+INFO - 2026-01-28 11:16:42 --> Helper loaded: file_helper
+INFO - 2026-01-28 11:16:42 --> Helper loaded: html_helper
+INFO - 2026-01-28 11:16:42 --> Database Driver Class Initialized
+INFO - 2026-01-28 11:16:42 --> Session: Class initialized using 'files' driver.
+INFO - 2026-01-28 11:16:42 --> Helper loaded: form_helper
+INFO - 2026-01-28 11:16:42 --> Form Validation Class Initialized
+INFO - 2026-01-28 11:16:42 --> User Agent Class Initialized
+INFO - 2026-01-28 11:16:42 --> Language file loaded: language/english/pagination_lang.php
+INFO - 2026-01-28 11:16:42 --> Pagination Class Initialized
+INFO - 2026-01-28 11:16:42 --> Controller Class Initialized
+INFO - 2026-01-28 11:16:42 --> Model "Support_model" initialized
+DEBUG - 2026-01-28 11:16:42 --> Session class already loaded. Second attempt ignored.
+INFO - 2026-01-28 11:16:42 --> Final output sent to browser
+DEBUG - 2026-01-28 11:16:42 --> Total execution time: 0.0262
+ERROR - 2026-01-28 11:16:46 --> $config['composer_autoload'] is set to TRUE but C:\xampp\htdocs\Aconnect_ci3\application\vendor/autoload.php was not found.
+INFO - 2026-01-28 11:16:46 --> Config Class Initialized
+INFO - 2026-01-28 11:16:46 --> Hooks Class Initialized
+DEBUG - 2026-01-28 11:16:46 --> UTF-8 Support Enabled
+INFO - 2026-01-28 11:16:46 --> Utf8 Class Initialized
+INFO - 2026-01-28 11:16:46 --> URI Class Initialized
+INFO - 2026-01-28 11:16:46 --> Router Class Initialized
+INFO - 2026-01-28 11:16:46 --> Output Class Initialized
+INFO - 2026-01-28 11:16:46 --> Security Class Initialized
+DEBUG - 2026-01-28 11:16:46 --> Global POST, GET and COOKIE data sanitized
+INFO - 2026-01-28 11:16:46 --> Input Class Initialized
+INFO - 2026-01-28 11:16:46 --> Language Class Initialized
+INFO - 2026-01-28 11:16:46 --> Loader Class Initialized
+INFO - 2026-01-28 11:16:46 --> Helper loaded: url_helper
+INFO - 2026-01-28 11:16:46 --> Helper loaded: file_helper
+INFO - 2026-01-28 11:16:46 --> Helper loaded: html_helper
+INFO - 2026-01-28 11:16:46 --> Database Driver Class Initialized
+INFO - 2026-01-28 11:16:46 --> Session: Class initialized using 'files' driver.
+INFO - 2026-01-28 11:16:46 --> Helper loaded: form_helper
+INFO - 2026-01-28 11:16:46 --> Form Validation Class Initialized
+INFO - 2026-01-28 11:16:46 --> User Agent Class Initialized
+INFO - 2026-01-28 11:16:46 --> Language file loaded: language/english/pagination_lang.php
+INFO - 2026-01-28 11:16:46 --> Pagination Class Initialized
+INFO - 2026-01-28 11:16:46 --> Controller Class Initialized
+INFO - 2026-01-28 11:16:46 --> Model "Support_model" initialized
+DEBUG - 2026-01-28 11:16:46 --> Session class already loaded. Second attempt ignored.
+INFO - 2026-01-28 11:16:46 --> Final output sent to browser
+DEBUG - 2026-01-28 11:16:46 --> Total execution time: 0.0239
+ERROR - 2026-01-28 11:16:50 --> $config['composer_autoload'] is set to TRUE but C:\xampp\htdocs\Aconnect_ci3\application\vendor/autoload.php was not found.
+INFO - 2026-01-28 11:16:50 --> Config Class Initialized
+INFO - 2026-01-28 11:16:50 --> Hooks Class Initialized
+DEBUG - 2026-01-28 11:16:50 --> UTF-8 Support Enabled
+INFO - 2026-01-28 11:16:50 --> Utf8 Class Initialized
+INFO - 2026-01-28 11:16:50 --> URI Class Initialized
+INFO - 2026-01-28 11:16:50 --> Router Class Initialized
+INFO - 2026-01-28 11:16:50 --> Output Class Initialized
+INFO - 2026-01-28 11:16:50 --> Security Class Initialized
+DEBUG - 2026-01-28 11:16:50 --> Global POST, GET and COOKIE data sanitized
+INFO - 2026-01-28 11:16:50 --> Input Class Initialized
+INFO - 2026-01-28 11:16:50 --> Language Class Initialized
+INFO - 2026-01-28 11:16:50 --> Loader Class Initialized
+INFO - 2026-01-28 11:16:50 --> Helper loaded: url_helper
+INFO - 2026-01-28 11:16:50 --> Helper loaded: file_helper
+INFO - 2026-01-28 11:16:50 --> Helper loaded: html_helper
+INFO - 2026-01-28 11:16:50 --> Database Driver Class Initialized
+INFO - 2026-01-28 11:16:50 --> Session: Class initialized using 'files' driver.
+INFO - 2026-01-28 11:16:50 --> Helper loaded: form_helper
+INFO - 2026-01-28 11:16:50 --> Form Validation Class Initialized
+INFO - 2026-01-28 11:16:50 --> User Agent Class Initialized
+INFO - 2026-01-28 11:16:50 --> Language file loaded: language/english/pagination_lang.php
+INFO - 2026-01-28 11:16:50 --> Pagination Class Initialized
+INFO - 2026-01-28 11:16:50 --> Controller Class Initialized
+INFO - 2026-01-28 11:16:50 --> Model "Support_model" initialized
+DEBUG - 2026-01-28 11:16:50 --> Session class already loaded. Second attempt ignored.
+INFO - 2026-01-28 11:16:50 --> Final output sent to browser
+DEBUG - 2026-01-28 11:16:50 --> Total execution time: 0.0236
+ERROR - 2026-01-28 11:16:54 --> $config['composer_autoload'] is set to TRUE but C:\xampp\htdocs\Aconnect_ci3\application\vendor/autoload.php was not found.
+INFO - 2026-01-28 11:16:54 --> Config Class Initialized
+INFO - 2026-01-28 11:16:54 --> Hooks Class Initialized
+DEBUG - 2026-01-28 11:16:54 --> UTF-8 Support Enabled
+INFO - 2026-01-28 11:16:54 --> Utf8 Class Initialized
+INFO - 2026-01-28 11:16:54 --> URI Class Initialized
+INFO - 2026-01-28 11:16:54 --> Router Class Initialized
+INFO - 2026-01-28 11:16:54 --> Output Class Initialized
+INFO - 2026-01-28 11:16:54 --> Security Class Initialized
+DEBUG - 2026-01-28 11:16:54 --> Global POST, GET and COOKIE data sanitized
+INFO - 2026-01-28 11:16:54 --> Input Class Initialized
+INFO - 2026-01-28 11:16:54 --> Language Class Initialized
+INFO - 2026-01-28 11:16:54 --> Loader Class Initialized
+INFO - 2026-01-28 11:16:54 --> Helper loaded: url_helper
+INFO - 2026-01-28 11:16:54 --> Helper loaded: file_helper
+INFO - 2026-01-28 11:16:54 --> Helper loaded: html_helper
+INFO - 2026-01-28 11:16:54 --> Database Driver Class Initialized
+INFO - 2026-01-28 11:16:54 --> Session: Class initialized using 'files' driver.
+INFO - 2026-01-28 11:16:54 --> Helper loaded: form_helper
+INFO - 2026-01-28 11:16:54 --> Form Validation Class Initialized
+INFO - 2026-01-28 11:16:54 --> User Agent Class Initialized
+INFO - 2026-01-28 11:16:54 --> Language file loaded: language/english/pagination_lang.php
+INFO - 2026-01-28 11:16:54 --> Pagination Class Initialized
+INFO - 2026-01-28 11:16:54 --> Controller Class Initialized
+INFO - 2026-01-28 11:16:54 --> Model "Support_model" initialized
+DEBUG - 2026-01-28 11:16:54 --> Session class already loaded. Second attempt ignored.
+INFO - 2026-01-28 11:16:54 --> Final output sent to browser
+DEBUG - 2026-01-28 11:16:54 --> Total execution time: 0.0368
+ERROR - 2026-01-28 11:16:58 --> $config['composer_autoload'] is set to TRUE but C:\xampp\htdocs\Aconnect_ci3\application\vendor/autoload.php was not found.
+INFO - 2026-01-28 11:16:58 --> Config Class Initialized
+INFO - 2026-01-28 11:16:58 --> Hooks Class Initialized
+DEBUG - 2026-01-28 11:16:58 --> UTF-8 Support Enabled
+INFO - 2026-01-28 11:16:58 --> Utf8 Class Initialized
+INFO - 2026-01-28 11:16:58 --> URI Class Initialized
+INFO - 2026-01-28 11:16:58 --> Router Class Initialized
+INFO - 2026-01-28 11:16:58 --> Output Class Initialized
+INFO - 2026-01-28 11:16:58 --> Security Class Initialized
+DEBUG - 2026-01-28 11:16:58 --> Global POST, GET and COOKIE data sanitized
+INFO - 2026-01-28 11:16:58 --> Input Class Initialized
+INFO - 2026-01-28 11:16:58 --> Language Class Initialized
+INFO - 2026-01-28 11:16:58 --> Loader Class Initialized
+INFO - 2026-01-28 11:16:58 --> Helper loaded: url_helper
+INFO - 2026-01-28 11:16:58 --> Helper loaded: file_helper
+INFO - 2026-01-28 11:16:58 --> Helper loaded: html_helper
+INFO - 2026-01-28 11:16:58 --> Database Driver Class Initialized
+INFO - 2026-01-28 11:16:58 --> Session: Class initialized using 'files' driver.
+INFO - 2026-01-28 11:16:58 --> Helper loaded: form_helper
+INFO - 2026-01-28 11:16:58 --> Form Validation Class Initialized
+INFO - 2026-01-28 11:16:58 --> User Agent Class Initialized
+INFO - 2026-01-28 11:16:58 --> Language file loaded: language/english/pagination_lang.php
+INFO - 2026-01-28 11:16:58 --> Pagination Class Initialized
+INFO - 2026-01-28 11:16:58 --> Controller Class Initialized
+INFO - 2026-01-28 11:16:58 --> Model "Support_model" initialized
+DEBUG - 2026-01-28 11:16:58 --> Session class already loaded. Second attempt ignored.
+INFO - 2026-01-28 11:16:58 --> Final output sent to browser
+DEBUG - 2026-01-28 11:16:58 --> Total execution time: 0.0426
+ERROR - 2026-01-28 11:17:02 --> $config['composer_autoload'] is set to TRUE but C:\xampp\htdocs\Aconnect_ci3\application\vendor/autoload.php was not found.
+INFO - 2026-01-28 11:17:02 --> Config Class Initialized
+INFO - 2026-01-28 11:17:02 --> Hooks Class Initialized
+DEBUG - 2026-01-28 11:17:02 --> UTF-8 Support Enabled
+INFO - 2026-01-28 11:17:02 --> Utf8 Class Initialized
+INFO - 2026-01-28 11:17:02 --> URI Class Initialized
+INFO - 2026-01-28 11:17:02 --> Router Class Initialized
+INFO - 2026-01-28 11:17:02 --> Output Class Initialized
+INFO - 2026-01-28 11:17:02 --> Security Class Initialized
+DEBUG - 2026-01-28 11:17:02 --> Global POST, GET and COOKIE data sanitized
+INFO - 2026-01-28 11:17:02 --> Input Class Initialized
+INFO - 2026-01-28 11:17:02 --> Language Class Initialized
+INFO - 2026-01-28 11:17:02 --> Loader Class Initialized
+INFO - 2026-01-28 11:17:02 --> Helper loaded: url_helper
+INFO - 2026-01-28 11:17:02 --> Helper loaded: file_helper
+INFO - 2026-01-28 11:17:02 --> Helper loaded: html_helper
+INFO - 2026-01-28 11:17:02 --> Database Driver Class Initialized
+INFO - 2026-01-28 11:17:02 --> Session: Class initialized using 'files' driver.
+INFO - 2026-01-28 11:17:02 --> Helper loaded: form_helper
+INFO - 2026-01-28 11:17:02 --> Form Validation Class Initialized
+INFO - 2026-01-28 11:17:02 --> User Agent Class Initialized
+INFO - 2026-01-28 11:17:02 --> Language file loaded: language/english/pagination_lang.php
+INFO - 2026-01-28 11:17:02 --> Pagination Class Initialized
+INFO - 2026-01-28 11:17:02 --> Controller Class Initialized
+INFO - 2026-01-28 11:17:02 --> Model "Support_model" initialized
+DEBUG - 2026-01-28 11:17:02 --> Session class already loaded. Second attempt ignored.
+INFO - 2026-01-28 11:17:02 --> Final output sent to browser
+DEBUG - 2026-01-28 11:17:02 --> Total execution time: 0.0322
+ERROR - 2026-01-28 11:17:06 --> $config['composer_autoload'] is set to TRUE but C:\xampp\htdocs\Aconnect_ci3\application\vendor/autoload.php was not found.
+INFO - 2026-01-28 11:17:06 --> Config Class Initialized
+INFO - 2026-01-28 11:17:06 --> Hooks Class Initialized
+DEBUG - 2026-01-28 11:17:06 --> UTF-8 Support Enabled
+INFO - 2026-01-28 11:17:06 --> Utf8 Class Initialized
+INFO - 2026-01-28 11:17:06 --> URI Class Initialized
+INFO - 2026-01-28 11:17:06 --> Router Class Initialized
+INFO - 2026-01-28 11:17:06 --> Output Class Initialized
+INFO - 2026-01-28 11:17:06 --> Security Class Initialized
+DEBUG - 2026-01-28 11:17:06 --> Global POST, GET and COOKIE data sanitized
+INFO - 2026-01-28 11:17:06 --> Input Class Initialized
+INFO - 2026-01-28 11:17:06 --> Language Class Initialized
+INFO - 2026-01-28 11:17:06 --> Loader Class Initialized
+INFO - 2026-01-28 11:17:06 --> Helper loaded: url_helper
+INFO - 2026-01-28 11:17:06 --> Helper loaded: file_helper
+INFO - 2026-01-28 11:17:06 --> Helper loaded: html_helper
+INFO - 2026-01-28 11:17:06 --> Database Driver Class Initialized
+INFO - 2026-01-28 11:17:06 --> Session: Class initialized using 'files' driver.
+INFO - 2026-01-28 11:17:06 --> Helper loaded: form_helper
+INFO - 2026-01-28 11:17:06 --> Form Validation Class Initialized
+INFO - 2026-01-28 11:17:06 --> User Agent Class Initialized
+INFO - 2026-01-28 11:17:06 --> Language file loaded: language/english/pagination_lang.php
+INFO - 2026-01-28 11:17:06 --> Pagination Class Initialized
+INFO - 2026-01-28 11:17:06 --> Controller Class Initialized
+INFO - 2026-01-28 11:17:06 --> Model "Support_model" initialized
+DEBUG - 2026-01-28 11:17:06 --> Session class already loaded. Second attempt ignored.
+INFO - 2026-01-28 11:17:06 --> Final output sent to browser
+DEBUG - 2026-01-28 11:17:06 --> Total execution time: 0.0736
+ERROR - 2026-01-28 11:17:10 --> $config['composer_autoload'] is set to TRUE but C:\xampp\htdocs\Aconnect_ci3\application\vendor/autoload.php was not found.
+INFO - 2026-01-28 11:17:10 --> Config Class Initialized
+INFO - 2026-01-28 11:17:10 --> Hooks Class Initialized
+DEBUG - 2026-01-28 11:17:10 --> UTF-8 Support Enabled
+INFO - 2026-01-28 11:17:10 --> Utf8 Class Initialized
+INFO - 2026-01-28 11:17:10 --> URI Class Initialized
+INFO - 2026-01-28 11:17:10 --> Router Class Initialized
+INFO - 2026-01-28 11:17:10 --> Output Class Initialized
+INFO - 2026-01-28 11:17:10 --> Security Class Initialized
+DEBUG - 2026-01-28 11:17:10 --> Global POST, GET and COOKIE data sanitized
+INFO - 2026-01-28 11:17:10 --> Input Class Initialized
+INFO - 2026-01-28 11:17:10 --> Language Class Initialized
+INFO - 2026-01-28 11:17:10 --> Loader Class Initialized
+INFO - 2026-01-28 11:17:10 --> Helper loaded: url_helper
+INFO - 2026-01-28 11:17:10 --> Helper loaded: file_helper
+INFO - 2026-01-28 11:17:10 --> Helper loaded: html_helper
+INFO - 2026-01-28 11:17:10 --> Database Driver Class Initialized
+INFO - 2026-01-28 11:17:10 --> Session: Class initialized using 'files' driver.
+INFO - 2026-01-28 11:17:10 --> Helper loaded: form_helper
+INFO - 2026-01-28 11:17:10 --> Form Validation Class Initialized
+INFO - 2026-01-28 11:17:10 --> User Agent Class Initialized
+INFO - 2026-01-28 11:17:10 --> Language file loaded: language/english/pagination_lang.php
+INFO - 2026-01-28 11:17:10 --> Pagination Class Initialized
+INFO - 2026-01-28 11:17:10 --> Controller Class Initialized
+INFO - 2026-01-28 11:17:10 --> Model "Support_model" initialized
+DEBUG - 2026-01-28 11:17:10 --> Session class already loaded. Second attempt ignored.
+INFO - 2026-01-28 11:17:10 --> Final output sent to browser
+DEBUG - 2026-01-28 11:17:10 --> Total execution time: 0.0842
+ERROR - 2026-01-28 11:17:14 --> $config['composer_autoload'] is set to TRUE but C:\xampp\htdocs\Aconnect_ci3\application\vendor/autoload.php was not found.
+INFO - 2026-01-28 11:17:14 --> Config Class Initialized
+INFO - 2026-01-28 11:17:14 --> Hooks Class Initialized
+DEBUG - 2026-01-28 11:17:14 --> UTF-8 Support Enabled
+INFO - 2026-01-28 11:17:14 --> Utf8 Class Initialized
+INFO - 2026-01-28 11:17:14 --> URI Class Initialized
+INFO - 2026-01-28 11:17:14 --> Router Class Initialized
+INFO - 2026-01-28 11:17:14 --> Output Class Initialized
+INFO - 2026-01-28 11:17:14 --> Security Class Initialized
+DEBUG - 2026-01-28 11:17:14 --> Global POST, GET and COOKIE data sanitized
+INFO - 2026-01-28 11:17:14 --> Input Class Initialized
+INFO - 2026-01-28 11:17:14 --> Language Class Initialized
+INFO - 2026-01-28 11:17:14 --> Loader Class Initialized
+INFO - 2026-01-28 11:17:14 --> Helper loaded: url_helper
+INFO - 2026-01-28 11:17:14 --> Helper loaded: file_helper
+INFO - 2026-01-28 11:17:14 --> Helper loaded: html_helper
+INFO - 2026-01-28 11:17:14 --> Database Driver Class Initialized
+INFO - 2026-01-28 11:17:14 --> Session: Class initialized using 'files' driver.
+INFO - 2026-01-28 11:17:14 --> Helper loaded: form_helper
+INFO - 2026-01-28 11:17:14 --> Form Validation Class Initialized
+INFO - 2026-01-28 11:17:14 --> User Agent Class Initialized
+INFO - 2026-01-28 11:17:14 --> Language file loaded: language/english/pagination_lang.php
+INFO - 2026-01-28 11:17:14 --> Pagination Class Initialized
+INFO - 2026-01-28 11:17:14 --> Controller Class Initialized
+INFO - 2026-01-28 11:17:14 --> Model "Support_model" initialized
+DEBUG - 2026-01-28 11:17:14 --> Session class already loaded. Second attempt ignored.
+INFO - 2026-01-28 11:17:14 --> Final output sent to browser
+DEBUG - 2026-01-28 11:17:14 --> Total execution time: 0.0613
+ERROR - 2026-01-28 11:17:18 --> $config['composer_autoload'] is set to TRUE but C:\xampp\htdocs\Aconnect_ci3\application\vendor/autoload.php was not found.
+INFO - 2026-01-28 11:17:18 --> Config Class Initialized
+INFO - 2026-01-28 11:17:18 --> Hooks Class Initialized
+DEBUG - 2026-01-28 11:17:18 --> UTF-8 Support Enabled
+INFO - 2026-01-28 11:17:18 --> Utf8 Class Initialized
+INFO - 2026-01-28 11:17:18 --> URI Class Initialized
+INFO - 2026-01-28 11:17:18 --> Router Class Initialized
+INFO - 2026-01-28 11:17:18 --> Output Class Initialized
+INFO - 2026-01-28 11:17:18 --> Security Class Initialized
+DEBUG - 2026-01-28 11:17:18 --> Global POST, GET and COOKIE data sanitized
+INFO - 2026-01-28 11:17:18 --> Input Class Initialized
+INFO - 2026-01-28 11:17:18 --> Language Class Initialized
+INFO - 2026-01-28 11:17:18 --> Loader Class Initialized
+INFO - 2026-01-28 11:17:18 --> Helper loaded: url_helper
+INFO - 2026-01-28 11:17:18 --> Helper loaded: file_helper
+INFO - 2026-01-28 11:17:18 --> Helper loaded: html_helper
+INFO - 2026-01-28 11:17:18 --> Database Driver Class Initialized
+INFO - 2026-01-28 11:17:18 --> Session: Class initialized using 'files' driver.
+INFO - 2026-01-28 11:17:18 --> Helper loaded: form_helper
+INFO - 2026-01-28 11:17:18 --> Form Validation Class Initialized
+INFO - 2026-01-28 11:17:18 --> User Agent Class Initialized
+INFO - 2026-01-28 11:17:18 --> Language file loaded: language/english/pagination_lang.php
+INFO - 2026-01-28 11:17:18 --> Pagination Class Initialized
+INFO - 2026-01-28 11:17:18 --> Controller Class Initialized
+INFO - 2026-01-28 11:17:18 --> Model "Support_model" initialized
+DEBUG - 2026-01-28 11:17:18 --> Session class already loaded. Second attempt ignored.
+INFO - 2026-01-28 11:17:18 --> Final output sent to browser
+DEBUG - 2026-01-28 11:17:18 --> Total execution time: 0.0991
+ERROR - 2026-01-28 11:17:22 --> $config['composer_autoload'] is set to TRUE but C:\xampp\htdocs\Aconnect_ci3\application\vendor/autoload.php was not found.
+INFO - 2026-01-28 11:17:22 --> Config Class Initialized
+INFO - 2026-01-28 11:17:22 --> Hooks Class Initialized
+DEBUG - 2026-01-28 11:17:22 --> UTF-8 Support Enabled
+INFO - 2026-01-28 11:17:22 --> Utf8 Class Initialized
+INFO - 2026-01-28 11:17:22 --> URI Class Initialized
+INFO - 2026-01-28 11:17:22 --> Router Class Initialized
+INFO - 2026-01-28 11:17:22 --> Output Class Initialized
+INFO - 2026-01-28 11:17:22 --> Security Class Initialized
+DEBUG - 2026-01-28 11:17:22 --> Global POST, GET and COOKIE data sanitized
+INFO - 2026-01-28 11:17:22 --> Input Class Initialized
+INFO - 2026-01-28 11:17:22 --> Language Class Initialized
+INFO - 2026-01-28 11:17:22 --> Loader Class Initialized
+INFO - 2026-01-28 11:17:22 --> Helper loaded: url_helper
+INFO - 2026-01-28 11:17:22 --> Helper loaded: file_helper
+INFO - 2026-01-28 11:17:22 --> Helper loaded: html_helper
+INFO - 2026-01-28 11:17:22 --> Database Driver Class Initialized
+INFO - 2026-01-28 11:17:22 --> Session: Class initialized using 'files' driver.
+INFO - 2026-01-28 11:17:22 --> Helper loaded: form_helper
+INFO - 2026-01-28 11:17:22 --> Form Validation Class Initialized
+INFO - 2026-01-28 11:17:22 --> User Agent Class Initialized
+INFO - 2026-01-28 11:17:22 --> Language file loaded: language/english/pagination_lang.php
+INFO - 2026-01-28 11:17:22 --> Pagination Class Initialized
+INFO - 2026-01-28 11:17:22 --> Controller Class Initialized
+INFO - 2026-01-28 11:17:22 --> Model "Support_model" initialized
+DEBUG - 2026-01-28 11:17:22 --> Session class already loaded. Second attempt ignored.
+INFO - 2026-01-28 11:17:22 --> Final output sent to browser
+DEBUG - 2026-01-28 11:17:22 --> Total execution time: 0.0899
+ERROR - 2026-01-28 11:17:26 --> $config['composer_autoload'] is set to TRUE but C:\xampp\htdocs\Aconnect_ci3\application\vendor/autoload.php was not found.
+INFO - 2026-01-28 11:17:26 --> Config Class Initialized
+INFO - 2026-01-28 11:17:26 --> Hooks Class Initialized
+DEBUG - 2026-01-28 11:17:26 --> UTF-8 Support Enabled
+INFO - 2026-01-28 11:17:26 --> Utf8 Class Initialized
+INFO - 2026-01-28 11:17:26 --> URI Class Initialized
+INFO - 2026-01-28 11:17:26 --> Router Class Initialized
+INFO - 2026-01-28 11:17:26 --> Output Class Initialized
+INFO - 2026-01-28 11:17:26 --> Security Class Initialized
+DEBUG - 2026-01-28 11:17:26 --> Global POST, GET and COOKIE data sanitized
+INFO - 2026-01-28 11:17:26 --> Input Class Initialized
+INFO - 2026-01-28 11:17:26 --> Language Class Initialized
+INFO - 2026-01-28 11:17:26 --> Loader Class Initialized
+INFO - 2026-01-28 11:17:26 --> Helper loaded: url_helper
+INFO - 2026-01-28 11:17:26 --> Helper loaded: file_helper
+INFO - 2026-01-28 11:17:26 --> Helper loaded: html_helper
+INFO - 2026-01-28 11:17:26 --> Database Driver Class Initialized
+INFO - 2026-01-28 11:17:26 --> Session: Class initialized using 'files' driver.
+INFO - 2026-01-28 11:17:26 --> Helper loaded: form_helper
+INFO - 2026-01-28 11:17:26 --> Form Validation Class Initialized
+INFO - 2026-01-28 11:17:26 --> User Agent Class Initialized
+INFO - 2026-01-28 11:17:26 --> Language file loaded: language/english/pagination_lang.php
+INFO - 2026-01-28 11:17:26 --> Pagination Class Initialized
+INFO - 2026-01-28 11:17:26 --> Controller Class Initialized
+INFO - 2026-01-28 11:17:26 --> Model "Support_model" initialized
+DEBUG - 2026-01-28 11:17:26 --> Session class already loaded. Second attempt ignored.
+INFO - 2026-01-28 11:17:26 --> Final output sent to browser
+DEBUG - 2026-01-28 11:17:26 --> Total execution time: 0.0738
+ERROR - 2026-01-28 11:17:27 --> $config['composer_autoload'] is set to TRUE but C:\xampp\htdocs\Aconnect_ci3\application\vendor/autoload.php was not found.
+INFO - 2026-01-28 11:17:27 --> Config Class Initialized
+INFO - 2026-01-28 11:17:27 --> Hooks Class Initialized
+DEBUG - 2026-01-28 11:17:27 --> UTF-8 Support Enabled
+INFO - 2026-01-28 11:17:27 --> Utf8 Class Initialized
+INFO - 2026-01-28 11:17:27 --> URI Class Initialized
+INFO - 2026-01-28 11:17:27 --> Router Class Initialized
+INFO - 2026-01-28 11:17:27 --> Output Class Initialized
+INFO - 2026-01-28 11:17:27 --> Security Class Initialized
+DEBUG - 2026-01-28 11:17:27 --> Global POST, GET and COOKIE data sanitized
+INFO - 2026-01-28 11:17:27 --> Input Class Initialized
+INFO - 2026-01-28 11:17:27 --> Language Class Initialized
+INFO - 2026-01-28 11:17:27 --> Loader Class Initialized
+INFO - 2026-01-28 11:17:27 --> Helper loaded: url_helper
+INFO - 2026-01-28 11:17:27 --> Helper loaded: file_helper
+INFO - 2026-01-28 11:17:27 --> Helper loaded: html_helper
+INFO - 2026-01-28 11:17:27 --> Database Driver Class Initialized
+INFO - 2026-01-28 11:17:27 --> Session: Class initialized using 'files' driver.
+INFO - 2026-01-28 11:17:27 --> Helper loaded: form_helper
+INFO - 2026-01-28 11:17:27 --> Form Validation Class Initialized
+INFO - 2026-01-28 11:17:27 --> User Agent Class Initialized
+INFO - 2026-01-28 11:17:27 --> Language file loaded: language/english/pagination_lang.php
+INFO - 2026-01-28 11:17:27 --> Pagination Class Initialized
+INFO - 2026-01-28 11:17:27 --> Controller Class Initialized
+INFO - 2026-01-28 11:17:27 --> Model "Alumni_model" initialized
+INFO - 2026-01-28 11:17:27 --> Final output sent to browser
+DEBUG - 2026-01-28 11:17:27 --> Total execution time: 0.0248
+ERROR - 2026-01-28 11:17:28 --> $config['composer_autoload'] is set to TRUE but C:\xampp\htdocs\Aconnect_ci3\application\vendor/autoload.php was not found.
+INFO - 2026-01-28 11:17:28 --> Config Class Initialized
+INFO - 2026-01-28 11:17:28 --> Hooks Class Initialized
+DEBUG - 2026-01-28 11:17:28 --> UTF-8 Support Enabled
+INFO - 2026-01-28 11:17:28 --> Utf8 Class Initialized
+INFO - 2026-01-28 11:17:28 --> URI Class Initialized
+INFO - 2026-01-28 11:17:28 --> Router Class Initialized
+INFO - 2026-01-28 11:17:28 --> Output Class Initialized
+INFO - 2026-01-28 11:17:28 --> Security Class Initialized
+DEBUG - 2026-01-28 11:17:28 --> Global POST, GET and COOKIE data sanitized
+INFO - 2026-01-28 11:17:28 --> Input Class Initialized
+INFO - 2026-01-28 11:17:28 --> Language Class Initialized
+INFO - 2026-01-28 11:17:28 --> Loader Class Initialized
+INFO - 2026-01-28 11:17:28 --> Helper loaded: url_helper
+INFO - 2026-01-28 11:17:28 --> Helper loaded: file_helper
+INFO - 2026-01-28 11:17:28 --> Helper loaded: html_helper
+INFO - 2026-01-28 11:17:28 --> Database Driver Class Initialized
+INFO - 2026-01-28 11:17:28 --> Session: Class initialized using 'files' driver.
+INFO - 2026-01-28 11:17:28 --> Helper loaded: form_helper
+INFO - 2026-01-28 11:17:28 --> Form Validation Class Initialized
+INFO - 2026-01-28 11:17:28 --> User Agent Class Initialized
+INFO - 2026-01-28 11:17:28 --> Language file loaded: language/english/pagination_lang.php
+INFO - 2026-01-28 11:17:28 --> Pagination Class Initialized
+INFO - 2026-01-28 11:17:28 --> Controller Class Initialized
+INFO - 2026-01-28 11:17:28 --> Model "Alumni_model" initialized
+INFO - 2026-01-28 11:17:28 --> Final output sent to browser
+DEBUG - 2026-01-28 11:17:28 --> Total execution time: 0.0230
+ERROR - 2026-01-28 11:17:28 --> $config['composer_autoload'] is set to TRUE but C:\xampp\htdocs\Aconnect_ci3\application\vendor/autoload.php was not found.
+INFO - 2026-01-28 11:17:28 --> Config Class Initialized
+INFO - 2026-01-28 11:17:28 --> Hooks Class Initialized
+DEBUG - 2026-01-28 11:17:28 --> UTF-8 Support Enabled
+INFO - 2026-01-28 11:17:28 --> Utf8 Class Initialized
+INFO - 2026-01-28 11:17:28 --> URI Class Initialized
+INFO - 2026-01-28 11:17:28 --> Router Class Initialized
+INFO - 2026-01-28 11:17:28 --> Output Class Initialized
+INFO - 2026-01-28 11:17:28 --> Security Class Initialized
+DEBUG - 2026-01-28 11:17:28 --> Global POST, GET and COOKIE data sanitized
+INFO - 2026-01-28 11:17:28 --> Input Class Initialized
+INFO - 2026-01-28 11:17:28 --> Language Class Initialized
+INFO - 2026-01-28 11:17:28 --> Loader Class Initialized
+INFO - 2026-01-28 11:17:28 --> Helper loaded: url_helper
+INFO - 2026-01-28 11:17:28 --> Helper loaded: file_helper
+INFO - 2026-01-28 11:17:28 --> Helper loaded: html_helper
+INFO - 2026-01-28 11:17:28 --> Database Driver Class Initialized
+INFO - 2026-01-28 11:17:28 --> Session: Class initialized using 'files' driver.
+INFO - 2026-01-28 11:17:28 --> Helper loaded: form_helper
+INFO - 2026-01-28 11:17:28 --> Form Validation Class Initialized
+INFO - 2026-01-28 11:17:28 --> User Agent Class Initialized
+INFO - 2026-01-28 11:17:28 --> Language file loaded: language/english/pagination_lang.php
+INFO - 2026-01-28 11:17:28 --> Pagination Class Initialized
+INFO - 2026-01-28 11:17:28 --> Controller Class Initialized
+INFO - 2026-01-28 11:17:28 --> Model "Alumni_model" initialized
+INFO - 2026-01-28 11:17:28 --> Final output sent to browser
+DEBUG - 2026-01-28 11:17:28 --> Total execution time: 0.0242
+ERROR - 2026-01-28 11:17:29 --> $config['composer_autoload'] is set to TRUE but C:\xampp\htdocs\Aconnect_ci3\application\vendor/autoload.php was not found.
+INFO - 2026-01-28 11:17:29 --> Config Class Initialized
+INFO - 2026-01-28 11:17:29 --> Hooks Class Initialized
+DEBUG - 2026-01-28 11:17:29 --> UTF-8 Support Enabled
+INFO - 2026-01-28 11:17:29 --> Utf8 Class Initialized
+INFO - 2026-01-28 11:17:29 --> URI Class Initialized
+INFO - 2026-01-28 11:17:29 --> Router Class Initialized
+INFO - 2026-01-28 11:17:29 --> Output Class Initialized
+INFO - 2026-01-28 11:17:29 --> Security Class Initialized
+DEBUG - 2026-01-28 11:17:29 --> Global POST, GET and COOKIE data sanitized
+INFO - 2026-01-28 11:17:29 --> Input Class Initialized
+INFO - 2026-01-28 11:17:29 --> Language Class Initialized
+INFO - 2026-01-28 11:17:29 --> Loader Class Initialized
+INFO - 2026-01-28 11:17:29 --> Helper loaded: url_helper
+INFO - 2026-01-28 11:17:29 --> Helper loaded: file_helper
+INFO - 2026-01-28 11:17:29 --> Helper loaded: html_helper
+INFO - 2026-01-28 11:17:29 --> Database Driver Class Initialized
+INFO - 2026-01-28 11:17:29 --> Session: Class initialized using 'files' driver.
+INFO - 2026-01-28 11:17:29 --> Helper loaded: form_helper
+INFO - 2026-01-28 11:17:29 --> Form Validation Class Initialized
+INFO - 2026-01-28 11:17:29 --> User Agent Class Initialized
+INFO - 2026-01-28 11:17:29 --> Language file loaded: language/english/pagination_lang.php
+INFO - 2026-01-28 11:17:29 --> Pagination Class Initialized
+INFO - 2026-01-28 11:17:29 --> Controller Class Initialized
+INFO - 2026-01-28 11:17:29 --> Model "Alumni_model" initialized
+INFO - 2026-01-28 11:17:29 --> Final output sent to browser
+DEBUG - 2026-01-28 11:17:29 --> Total execution time: 0.0280
+ERROR - 2026-01-28 11:17:30 --> $config['composer_autoload'] is set to TRUE but C:\xampp\htdocs\Aconnect_ci3\application\vendor/autoload.php was not found.
+INFO - 2026-01-28 11:17:30 --> Config Class Initialized
+INFO - 2026-01-28 11:17:30 --> Hooks Class Initialized
+DEBUG - 2026-01-28 11:17:30 --> UTF-8 Support Enabled
+INFO - 2026-01-28 11:17:30 --> Utf8 Class Initialized
+INFO - 2026-01-28 11:17:30 --> URI Class Initialized
+INFO - 2026-01-28 11:17:30 --> Router Class Initialized
+INFO - 2026-01-28 11:17:30 --> Output Class Initialized
+INFO - 2026-01-28 11:17:30 --> Security Class Initialized
+DEBUG - 2026-01-28 11:17:30 --> Global POST, GET and COOKIE data sanitized
+INFO - 2026-01-28 11:17:30 --> Input Class Initialized
+INFO - 2026-01-28 11:17:30 --> Language Class Initialized
+INFO - 2026-01-28 11:17:30 --> Loader Class Initialized
+INFO - 2026-01-28 11:17:30 --> Helper loaded: url_helper
+INFO - 2026-01-28 11:17:30 --> Helper loaded: file_helper
+INFO - 2026-01-28 11:17:30 --> Helper loaded: html_helper
+INFO - 2026-01-28 11:17:30 --> Database Driver Class Initialized
+INFO - 2026-01-28 11:17:30 --> Session: Class initialized using 'files' driver.
+INFO - 2026-01-28 11:17:30 --> Helper loaded: form_helper
+INFO - 2026-01-28 11:17:30 --> Form Validation Class Initialized
+INFO - 2026-01-28 11:17:30 --> User Agent Class Initialized
+INFO - 2026-01-28 11:17:30 --> Language file loaded: language/english/pagination_lang.php
+INFO - 2026-01-28 11:17:30 --> Pagination Class Initialized
+INFO - 2026-01-28 11:17:30 --> Controller Class Initialized
+INFO - 2026-01-28 11:17:30 --> Model "Support_model" initialized
+DEBUG - 2026-01-28 11:17:30 --> Session class already loaded. Second attempt ignored.
+INFO - 2026-01-28 11:17:30 --> Final output sent to browser
+DEBUG - 2026-01-28 11:17:30 --> Total execution time: 0.0356
+ERROR - 2026-01-28 11:17:34 --> $config['composer_autoload'] is set to TRUE but C:\xampp\htdocs\Aconnect_ci3\application\vendor/autoload.php was not found.
+INFO - 2026-01-28 11:17:34 --> Config Class Initialized
+INFO - 2026-01-28 11:17:34 --> Hooks Class Initialized
+DEBUG - 2026-01-28 11:17:34 --> UTF-8 Support Enabled
+INFO - 2026-01-28 11:17:34 --> Utf8 Class Initialized
+INFO - 2026-01-28 11:17:34 --> URI Class Initialized
+INFO - 2026-01-28 11:17:34 --> Router Class Initialized
+INFO - 2026-01-28 11:17:34 --> Output Class Initialized
+INFO - 2026-01-28 11:17:34 --> Security Class Initialized
+DEBUG - 2026-01-28 11:17:34 --> Global POST, GET and COOKIE data sanitized
+INFO - 2026-01-28 11:17:34 --> Input Class Initialized
+INFO - 2026-01-28 11:17:34 --> Language Class Initialized
+INFO - 2026-01-28 11:17:34 --> Loader Class Initialized
+INFO - 2026-01-28 11:17:34 --> Helper loaded: url_helper
+INFO - 2026-01-28 11:17:34 --> Helper loaded: file_helper
+INFO - 2026-01-28 11:17:34 --> Helper loaded: html_helper
+INFO - 2026-01-28 11:17:34 --> Database Driver Class Initialized
+INFO - 2026-01-28 11:17:34 --> Session: Class initialized using 'files' driver.
+INFO - 2026-01-28 11:17:34 --> Helper loaded: form_helper
+INFO - 2026-01-28 11:17:34 --> Form Validation Class Initialized
+INFO - 2026-01-28 11:17:34 --> User Agent Class Initialized
+INFO - 2026-01-28 11:17:34 --> Language file loaded: language/english/pagination_lang.php
+INFO - 2026-01-28 11:17:34 --> Pagination Class Initialized
+INFO - 2026-01-28 11:17:34 --> Controller Class Initialized
+INFO - 2026-01-28 11:17:34 --> Model "Support_model" initialized
+DEBUG - 2026-01-28 11:17:34 --> Session class already loaded. Second attempt ignored.
+INFO - 2026-01-28 11:17:34 --> Final output sent to browser
+DEBUG - 2026-01-28 11:17:34 --> Total execution time: 0.0239
+ERROR - 2026-01-28 11:17:38 --> $config['composer_autoload'] is set to TRUE but C:\xampp\htdocs\Aconnect_ci3\application\vendor/autoload.php was not found.
+INFO - 2026-01-28 11:17:38 --> Config Class Initialized
+INFO - 2026-01-28 11:17:38 --> Hooks Class Initialized
+DEBUG - 2026-01-28 11:17:38 --> UTF-8 Support Enabled
+INFO - 2026-01-28 11:17:38 --> Utf8 Class Initialized
+INFO - 2026-01-28 11:17:38 --> URI Class Initialized
+INFO - 2026-01-28 11:17:38 --> Router Class Initialized
+INFO - 2026-01-28 11:17:38 --> Output Class Initialized
+INFO - 2026-01-28 11:17:38 --> Security Class Initialized
+DEBUG - 2026-01-28 11:17:38 --> Global POST, GET and COOKIE data sanitized
+INFO - 2026-01-28 11:17:38 --> Input Class Initialized
+INFO - 2026-01-28 11:17:38 --> Language Class Initialized
+INFO - 2026-01-28 11:17:38 --> Loader Class Initialized
+INFO - 2026-01-28 11:17:38 --> Helper loaded: url_helper
+INFO - 2026-01-28 11:17:38 --> Helper loaded: file_helper
+INFO - 2026-01-28 11:17:38 --> Helper loaded: html_helper
+INFO - 2026-01-28 11:17:38 --> Database Driver Class Initialized
+INFO - 2026-01-28 11:17:38 --> Session: Class initialized using 'files' driver.
+INFO - 2026-01-28 11:17:38 --> Helper loaded: form_helper
+INFO - 2026-01-28 11:17:38 --> Form Validation Class Initialized
+INFO - 2026-01-28 11:17:38 --> User Agent Class Initialized
+INFO - 2026-01-28 11:17:38 --> Language file loaded: language/english/pagination_lang.php
+INFO - 2026-01-28 11:17:38 --> Pagination Class Initialized
+INFO - 2026-01-28 11:17:38 --> Controller Class Initialized
+INFO - 2026-01-28 11:17:38 --> Model "Support_model" initialized
+DEBUG - 2026-01-28 11:17:38 --> Session class already loaded. Second attempt ignored.
+INFO - 2026-01-28 11:17:38 --> Final output sent to browser
+DEBUG - 2026-01-28 11:17:38 --> Total execution time: 0.0248
+ERROR - 2026-01-28 11:17:42 --> $config['composer_autoload'] is set to TRUE but C:\xampp\htdocs\Aconnect_ci3\application\vendor/autoload.php was not found.
+INFO - 2026-01-28 11:17:42 --> Config Class Initialized
+INFO - 2026-01-28 11:17:42 --> Hooks Class Initialized
+DEBUG - 2026-01-28 11:17:42 --> UTF-8 Support Enabled
+INFO - 2026-01-28 11:17:42 --> Utf8 Class Initialized
+INFO - 2026-01-28 11:17:42 --> URI Class Initialized
+INFO - 2026-01-28 11:17:42 --> Router Class Initialized
+INFO - 2026-01-28 11:17:42 --> Output Class Initialized
+INFO - 2026-01-28 11:17:42 --> Security Class Initialized
+DEBUG - 2026-01-28 11:17:42 --> Global POST, GET and COOKIE data sanitized
+INFO - 2026-01-28 11:17:42 --> Input Class Initialized
+INFO - 2026-01-28 11:17:42 --> Language Class Initialized
+INFO - 2026-01-28 11:17:42 --> Loader Class Initialized
+INFO - 2026-01-28 11:17:42 --> Helper loaded: url_helper
+INFO - 2026-01-28 11:17:42 --> Helper loaded: file_helper
+INFO - 2026-01-28 11:17:42 --> Helper loaded: html_helper
+INFO - 2026-01-28 11:17:42 --> Database Driver Class Initialized
+INFO - 2026-01-28 11:17:42 --> Session: Class initialized using 'files' driver.
+INFO - 2026-01-28 11:17:42 --> Helper loaded: form_helper
+INFO - 2026-01-28 11:17:42 --> Form Validation Class Initialized
+INFO - 2026-01-28 11:17:42 --> User Agent Class Initialized
+INFO - 2026-01-28 11:17:42 --> Language file loaded: language/english/pagination_lang.php
+INFO - 2026-01-28 11:17:42 --> Pagination Class Initialized
+INFO - 2026-01-28 11:17:42 --> Controller Class Initialized
+INFO - 2026-01-28 11:17:42 --> Model "Support_model" initialized
+DEBUG - 2026-01-28 11:17:42 --> Session class already loaded. Second attempt ignored.
+INFO - 2026-01-28 11:17:42 --> Final output sent to browser
+DEBUG - 2026-01-28 11:17:42 --> Total execution time: 0.0253
+ERROR - 2026-01-28 11:17:46 --> $config['composer_autoload'] is set to TRUE but C:\xampp\htdocs\Aconnect_ci3\application\vendor/autoload.php was not found.
+INFO - 2026-01-28 11:17:46 --> Config Class Initialized
+INFO - 2026-01-28 11:17:46 --> Hooks Class Initialized
+DEBUG - 2026-01-28 11:17:46 --> UTF-8 Support Enabled
+INFO - 2026-01-28 11:17:46 --> Utf8 Class Initialized
+INFO - 2026-01-28 11:17:46 --> URI Class Initialized
+INFO - 2026-01-28 11:17:46 --> Router Class Initialized
+INFO - 2026-01-28 11:17:46 --> Output Class Initialized
+INFO - 2026-01-28 11:17:46 --> Security Class Initialized
+DEBUG - 2026-01-28 11:17:46 --> Global POST, GET and COOKIE data sanitized
+INFO - 2026-01-28 11:17:46 --> Input Class Initialized
+INFO - 2026-01-28 11:17:46 --> Language Class Initialized
+INFO - 2026-01-28 11:17:46 --> Loader Class Initialized
+INFO - 2026-01-28 11:17:46 --> Helper loaded: url_helper
+INFO - 2026-01-28 11:17:46 --> Helper loaded: file_helper
+INFO - 2026-01-28 11:17:46 --> Helper loaded: html_helper
+INFO - 2026-01-28 11:17:46 --> Database Driver Class Initialized
+INFO - 2026-01-28 11:17:46 --> Session: Class initialized using 'files' driver.
+INFO - 2026-01-28 11:17:46 --> Helper loaded: form_helper
+INFO - 2026-01-28 11:17:46 --> Form Validation Class Initialized
+INFO - 2026-01-28 11:17:46 --> User Agent Class Initialized
+INFO - 2026-01-28 11:17:46 --> Language file loaded: language/english/pagination_lang.php
+INFO - 2026-01-28 11:17:46 --> Pagination Class Initialized
+INFO - 2026-01-28 11:17:46 --> Controller Class Initialized
+INFO - 2026-01-28 11:17:46 --> Model "Support_model" initialized
+DEBUG - 2026-01-28 11:17:46 --> Session class already loaded. Second attempt ignored.
+INFO - 2026-01-28 11:17:46 --> Final output sent to browser
+DEBUG - 2026-01-28 11:17:46 --> Total execution time: 0.0254
+ERROR - 2026-01-28 11:17:50 --> $config['composer_autoload'] is set to TRUE but C:\xampp\htdocs\Aconnect_ci3\application\vendor/autoload.php was not found.
+INFO - 2026-01-28 11:17:50 --> Config Class Initialized
+INFO - 2026-01-28 11:17:50 --> Hooks Class Initialized
+DEBUG - 2026-01-28 11:17:50 --> UTF-8 Support Enabled
+INFO - 2026-01-28 11:17:50 --> Utf8 Class Initialized
+INFO - 2026-01-28 11:17:50 --> URI Class Initialized
+INFO - 2026-01-28 11:17:50 --> Router Class Initialized
+INFO - 2026-01-28 11:17:50 --> Output Class Initialized
+INFO - 2026-01-28 11:17:50 --> Security Class Initialized
+DEBUG - 2026-01-28 11:17:50 --> Global POST, GET and COOKIE data sanitized
+INFO - 2026-01-28 11:17:50 --> Input Class Initialized
+INFO - 2026-01-28 11:17:50 --> Language Class Initialized
+INFO - 2026-01-28 11:17:50 --> Loader Class Initialized
+INFO - 2026-01-28 11:17:50 --> Helper loaded: url_helper
+INFO - 2026-01-28 11:17:50 --> Helper loaded: file_helper
+INFO - 2026-01-28 11:17:50 --> Helper loaded: html_helper
+INFO - 2026-01-28 11:17:50 --> Database Driver Class Initialized
+INFO - 2026-01-28 11:17:50 --> Session: Class initialized using 'files' driver.
+INFO - 2026-01-28 11:17:50 --> Helper loaded: form_helper
+INFO - 2026-01-28 11:17:50 --> Form Validation Class Initialized
+INFO - 2026-01-28 11:17:50 --> User Agent Class Initialized
+INFO - 2026-01-28 11:17:50 --> Language file loaded: language/english/pagination_lang.php
+INFO - 2026-01-28 11:17:50 --> Pagination Class Initialized
+INFO - 2026-01-28 11:17:50 --> Controller Class Initialized
+INFO - 2026-01-28 11:17:50 --> Model "Support_model" initialized
+DEBUG - 2026-01-28 11:17:50 --> Session class already loaded. Second attempt ignored.
+INFO - 2026-01-28 11:17:50 --> Final output sent to browser
+DEBUG - 2026-01-28 11:17:50 --> Total execution time: 0.0246
+ERROR - 2026-01-28 11:17:54 --> $config['composer_autoload'] is set to TRUE but C:\xampp\htdocs\Aconnect_ci3\application\vendor/autoload.php was not found.
+INFO - 2026-01-28 11:17:54 --> Config Class Initialized
+INFO - 2026-01-28 11:17:54 --> Hooks Class Initialized
+DEBUG - 2026-01-28 11:17:54 --> UTF-8 Support Enabled
+INFO - 2026-01-28 11:17:54 --> Utf8 Class Initialized
+INFO - 2026-01-28 11:17:54 --> URI Class Initialized
+INFO - 2026-01-28 11:17:54 --> Router Class Initialized
+INFO - 2026-01-28 11:17:54 --> Output Class Initialized
+INFO - 2026-01-28 11:17:54 --> Security Class Initialized
+DEBUG - 2026-01-28 11:17:54 --> Global POST, GET and COOKIE data sanitized
+INFO - 2026-01-28 11:17:54 --> Input Class Initialized
+INFO - 2026-01-28 11:17:54 --> Language Class Initialized
+INFO - 2026-01-28 11:17:54 --> Loader Class Initialized
+INFO - 2026-01-28 11:17:54 --> Helper loaded: url_helper
+INFO - 2026-01-28 11:17:54 --> Helper loaded: file_helper
+INFO - 2026-01-28 11:17:54 --> Helper loaded: html_helper
+INFO - 2026-01-28 11:17:54 --> Database Driver Class Initialized
+INFO - 2026-01-28 11:17:54 --> Session: Class initialized using 'files' driver.
+INFO - 2026-01-28 11:17:54 --> Helper loaded: form_helper
+INFO - 2026-01-28 11:17:54 --> Form Validation Class Initialized
+INFO - 2026-01-28 11:17:54 --> User Agent Class Initialized
+INFO - 2026-01-28 11:17:54 --> Language file loaded: language/english/pagination_lang.php
+INFO - 2026-01-28 11:17:54 --> Pagination Class Initialized
+INFO - 2026-01-28 11:17:54 --> Controller Class Initialized
+INFO - 2026-01-28 11:17:54 --> Model "Support_model" initialized
+DEBUG - 2026-01-28 11:17:54 --> Session class already loaded. Second attempt ignored.
+INFO - 2026-01-28 11:17:54 --> Final output sent to browser
+DEBUG - 2026-01-28 11:17:54 --> Total execution time: 0.0238
+ERROR - 2026-01-28 11:17:58 --> $config['composer_autoload'] is set to TRUE but C:\xampp\htdocs\Aconnect_ci3\application\vendor/autoload.php was not found.
+INFO - 2026-01-28 11:17:58 --> Config Class Initialized
+INFO - 2026-01-28 11:17:58 --> Hooks Class Initialized
+DEBUG - 2026-01-28 11:17:58 --> UTF-8 Support Enabled
+INFO - 2026-01-28 11:17:58 --> Utf8 Class Initialized
+INFO - 2026-01-28 11:17:58 --> URI Class Initialized
+INFO - 2026-01-28 11:17:58 --> Router Class Initialized
+INFO - 2026-01-28 11:17:58 --> Output Class Initialized
+INFO - 2026-01-28 11:17:58 --> Security Class Initialized
+DEBUG - 2026-01-28 11:17:58 --> Global POST, GET and COOKIE data sanitized
+INFO - 2026-01-28 11:17:58 --> Input Class Initialized
+INFO - 2026-01-28 11:17:58 --> Language Class Initialized
+INFO - 2026-01-28 11:17:58 --> Loader Class Initialized
+INFO - 2026-01-28 11:17:58 --> Helper loaded: url_helper
+INFO - 2026-01-28 11:17:58 --> Helper loaded: file_helper
+INFO - 2026-01-28 11:17:58 --> Helper loaded: html_helper
+INFO - 2026-01-28 11:17:58 --> Database Driver Class Initialized
+INFO - 2026-01-28 11:17:58 --> Session: Class initialized using 'files' driver.
+INFO - 2026-01-28 11:17:58 --> Helper loaded: form_helper
+INFO - 2026-01-28 11:17:58 --> Form Validation Class Initialized
+INFO - 2026-01-28 11:17:58 --> User Agent Class Initialized
+INFO - 2026-01-28 11:17:58 --> Language file loaded: language/english/pagination_lang.php
+INFO - 2026-01-28 11:17:58 --> Pagination Class Initialized
+INFO - 2026-01-28 11:17:58 --> Controller Class Initialized
+INFO - 2026-01-28 11:17:58 --> Model "Support_model" initialized
+DEBUG - 2026-01-28 11:17:58 --> Session class already loaded. Second attempt ignored.
+INFO - 2026-01-28 11:17:58 --> Final output sent to browser
+DEBUG - 2026-01-28 11:17:58 --> Total execution time: 0.0233
+ERROR - 2026-01-28 11:18:02 --> $config['composer_autoload'] is set to TRUE but C:\xampp\htdocs\Aconnect_ci3\application\vendor/autoload.php was not found.
+INFO - 2026-01-28 11:18:02 --> Config Class Initialized
+INFO - 2026-01-28 11:18:02 --> Hooks Class Initialized
+DEBUG - 2026-01-28 11:18:02 --> UTF-8 Support Enabled
+INFO - 2026-01-28 11:18:02 --> Utf8 Class Initialized
+INFO - 2026-01-28 11:18:02 --> URI Class Initialized
+INFO - 2026-01-28 11:18:02 --> Router Class Initialized
+INFO - 2026-01-28 11:18:02 --> Output Class Initialized
+INFO - 2026-01-28 11:18:02 --> Security Class Initialized
+DEBUG - 2026-01-28 11:18:02 --> Global POST, GET and COOKIE data sanitized
+INFO - 2026-01-28 11:18:02 --> Input Class Initialized
+INFO - 2026-01-28 11:18:02 --> Language Class Initialized
+INFO - 2026-01-28 11:18:02 --> Loader Class Initialized
+INFO - 2026-01-28 11:18:02 --> Helper loaded: url_helper
+INFO - 2026-01-28 11:18:02 --> Helper loaded: file_helper
+INFO - 2026-01-28 11:18:02 --> Helper loaded: html_helper
+INFO - 2026-01-28 11:18:02 --> Database Driver Class Initialized
+INFO - 2026-01-28 11:18:02 --> Session: Class initialized using 'files' driver.
+INFO - 2026-01-28 11:18:02 --> Helper loaded: form_helper
+INFO - 2026-01-28 11:18:02 --> Form Validation Class Initialized
+INFO - 2026-01-28 11:18:02 --> User Agent Class Initialized
+INFO - 2026-01-28 11:18:02 --> Language file loaded: language/english/pagination_lang.php
+INFO - 2026-01-28 11:18:02 --> Pagination Class Initialized
+INFO - 2026-01-28 11:18:02 --> Controller Class Initialized
+INFO - 2026-01-28 11:18:02 --> Model "Support_model" initialized
+DEBUG - 2026-01-28 11:18:02 --> Session class already loaded. Second attempt ignored.
+INFO - 2026-01-28 11:18:02 --> Final output sent to browser
+DEBUG - 2026-01-28 11:18:02 --> Total execution time: 0.0271
+ERROR - 2026-01-28 11:18:06 --> $config['composer_autoload'] is set to TRUE but C:\xampp\htdocs\Aconnect_ci3\application\vendor/autoload.php was not found.
+INFO - 2026-01-28 11:18:06 --> Config Class Initialized
+INFO - 2026-01-28 11:18:06 --> Hooks Class Initialized
+DEBUG - 2026-01-28 11:18:06 --> UTF-8 Support Enabled
+INFO - 2026-01-28 11:18:06 --> Utf8 Class Initialized
+INFO - 2026-01-28 11:18:06 --> URI Class Initialized
+INFO - 2026-01-28 11:18:06 --> Router Class Initialized
+INFO - 2026-01-28 11:18:06 --> Output Class Initialized
+INFO - 2026-01-28 11:18:06 --> Security Class Initialized
+DEBUG - 2026-01-28 11:18:06 --> Global POST, GET and COOKIE data sanitized
+INFO - 2026-01-28 11:18:06 --> Input Class Initialized
+INFO - 2026-01-28 11:18:06 --> Language Class Initialized
+INFO - 2026-01-28 11:18:06 --> Loader Class Initialized
+INFO - 2026-01-28 11:18:06 --> Helper loaded: url_helper
+INFO - 2026-01-28 11:18:06 --> Helper loaded: file_helper
+INFO - 2026-01-28 11:18:06 --> Helper loaded: html_helper
+INFO - 2026-01-28 11:18:06 --> Database Driver Class Initialized
+INFO - 2026-01-28 11:18:06 --> Session: Class initialized using 'files' driver.
+INFO - 2026-01-28 11:18:06 --> Helper loaded: form_helper
+INFO - 2026-01-28 11:18:06 --> Form Validation Class Initialized
+ERROR - 2026-01-28 11:18:06 --> $config['composer_autoload'] is set to TRUE but C:\xampp\htdocs\Aconnect_ci3\application\vendor/autoload.php was not found.
+INFO - 2026-01-28 11:18:06 --> User Agent Class Initialized
+INFO - 2026-01-28 11:18:06 --> Language file loaded: language/english/pagination_lang.php
+INFO - 2026-01-28 11:18:06 --> Config Class Initialized
+INFO - 2026-01-28 11:18:06 --> Hooks Class Initialized
+INFO - 2026-01-28 11:18:06 --> Pagination Class Initialized
+INFO - 2026-01-28 11:18:06 --> Controller Class Initialized
+INFO - 2026-01-28 11:18:06 --> Model "Support_model" initialized
+DEBUG - 2026-01-28 11:18:06 --> Session class already loaded. Second attempt ignored.
+DEBUG - 2026-01-28 11:18:06 --> UTF-8 Support Enabled
+INFO - 2026-01-28 11:18:06 --> Utf8 Class Initialized
+INFO - 2026-01-28 11:18:06 --> Final output sent to browser
+DEBUG - 2026-01-28 11:18:06 --> Total execution time: 0.0438
+INFO - 2026-01-28 11:18:06 --> URI Class Initialized
+INFO - 2026-01-28 11:18:06 --> Router Class Initialized
+INFO - 2026-01-28 11:18:06 --> Output Class Initialized
+INFO - 2026-01-28 11:18:06 --> Security Class Initialized
+DEBUG - 2026-01-28 11:18:06 --> Global POST, GET and COOKIE data sanitized
+INFO - 2026-01-28 11:18:06 --> Input Class Initialized
+INFO - 2026-01-28 11:18:06 --> Language Class Initialized
+INFO - 2026-01-28 11:18:06 --> Loader Class Initialized
+INFO - 2026-01-28 11:18:06 --> Helper loaded: url_helper
+INFO - 2026-01-28 11:18:06 --> Helper loaded: file_helper
+INFO - 2026-01-28 11:18:06 --> Helper loaded: html_helper
+INFO - 2026-01-28 11:18:06 --> Database Driver Class Initialized
+INFO - 2026-01-28 11:18:06 --> Session: Class initialized using 'files' driver.
+INFO - 2026-01-28 11:18:06 --> Helper loaded: form_helper
+INFO - 2026-01-28 11:18:06 --> Form Validation Class Initialized
+INFO - 2026-01-28 11:18:06 --> User Agent Class Initialized
+INFO - 2026-01-28 11:18:06 --> Language file loaded: language/english/pagination_lang.php
+INFO - 2026-01-28 11:18:06 --> Pagination Class Initialized
+INFO - 2026-01-28 11:18:06 --> Controller Class Initialized
+INFO - 2026-01-28 11:18:06 --> Model "Alumni_model" initialized
+INFO - 2026-01-28 11:18:06 --> Final output sent to browser
+DEBUG - 2026-01-28 11:18:06 --> Total execution time: 0.0464
+ERROR - 2026-01-28 11:18:07 --> $config['composer_autoload'] is set to TRUE but C:\xampp\htdocs\Aconnect_ci3\application\vendor/autoload.php was not found.
+INFO - 2026-01-28 11:18:07 --> Config Class Initialized
+INFO - 2026-01-28 11:18:07 --> Hooks Class Initialized
+DEBUG - 2026-01-28 11:18:07 --> UTF-8 Support Enabled
+INFO - 2026-01-28 11:18:07 --> Utf8 Class Initialized
+INFO - 2026-01-28 11:18:07 --> URI Class Initialized
+INFO - 2026-01-28 11:18:07 --> Router Class Initialized
+INFO - 2026-01-28 11:18:07 --> Output Class Initialized
+INFO - 2026-01-28 11:18:07 --> Security Class Initialized
+DEBUG - 2026-01-28 11:18:07 --> Global POST, GET and COOKIE data sanitized
+INFO - 2026-01-28 11:18:07 --> Input Class Initialized
+INFO - 2026-01-28 11:18:07 --> Language Class Initialized
+INFO - 2026-01-28 11:18:07 --> Loader Class Initialized
+INFO - 2026-01-28 11:18:07 --> Helper loaded: url_helper
+INFO - 2026-01-28 11:18:07 --> Helper loaded: file_helper
+INFO - 2026-01-28 11:18:07 --> Helper loaded: html_helper
+INFO - 2026-01-28 11:18:07 --> Database Driver Class Initialized
+INFO - 2026-01-28 11:18:07 --> Session: Class initialized using 'files' driver.
+INFO - 2026-01-28 11:18:07 --> Helper loaded: form_helper
+INFO - 2026-01-28 11:18:07 --> Form Validation Class Initialized
+INFO - 2026-01-28 11:18:07 --> User Agent Class Initialized
+INFO - 2026-01-28 11:18:07 --> Language file loaded: language/english/pagination_lang.php
+INFO - 2026-01-28 11:18:07 --> Pagination Class Initialized
+INFO - 2026-01-28 11:18:07 --> Controller Class Initialized
+INFO - 2026-01-28 11:18:07 --> Model "Alumni_model" initialized
+INFO - 2026-01-28 11:18:07 --> File loaded: C:\xampp\htdocs\Aconnect_ci3\application\views\user/chat.php
+INFO - 2026-01-28 11:18:07 --> Final output sent to browser
+DEBUG - 2026-01-28 11:18:07 --> Total execution time: 0.0349
+ERROR - 2026-01-28 11:18:10 --> $config['composer_autoload'] is set to TRUE but C:\xampp\htdocs\Aconnect_ci3\application\vendor/autoload.php was not found.
+INFO - 2026-01-28 11:18:10 --> Config Class Initialized
+INFO - 2026-01-28 11:18:10 --> Hooks Class Initialized
+DEBUG - 2026-01-28 11:18:10 --> UTF-8 Support Enabled
+INFO - 2026-01-28 11:18:10 --> Utf8 Class Initialized
+INFO - 2026-01-28 11:18:10 --> URI Class Initialized
+INFO - 2026-01-28 11:18:10 --> Router Class Initialized
+INFO - 2026-01-28 11:18:10 --> Output Class Initialized
+INFO - 2026-01-28 11:18:10 --> Security Class Initialized
+DEBUG - 2026-01-28 11:18:10 --> Global POST, GET and COOKIE data sanitized
+INFO - 2026-01-28 11:18:10 --> Input Class Initialized
+INFO - 2026-01-28 11:18:10 --> Language Class Initialized
+INFO - 2026-01-28 11:18:10 --> Loader Class Initialized
+INFO - 2026-01-28 11:18:10 --> Helper loaded: url_helper
+INFO - 2026-01-28 11:18:10 --> Helper loaded: file_helper
+INFO - 2026-01-28 11:18:10 --> Helper loaded: html_helper
+INFO - 2026-01-28 11:18:10 --> Database Driver Class Initialized
+INFO - 2026-01-28 11:18:10 --> Session: Class initialized using 'files' driver.
+INFO - 2026-01-28 11:18:10 --> Helper loaded: form_helper
+INFO - 2026-01-28 11:18:10 --> Form Validation Class Initialized
+INFO - 2026-01-28 11:18:10 --> User Agent Class Initialized
+INFO - 2026-01-28 11:18:10 --> Language file loaded: language/english/pagination_lang.php
+INFO - 2026-01-28 11:18:10 --> Pagination Class Initialized
+INFO - 2026-01-28 11:18:10 --> Controller Class Initialized
+INFO - 2026-01-28 11:18:10 --> Model "Support_model" initialized
+DEBUG - 2026-01-28 11:18:10 --> Session class already loaded. Second attempt ignored.
+INFO - 2026-01-28 11:18:10 --> Final output sent to browser
+DEBUG - 2026-01-28 11:18:10 --> Total execution time: 0.0440
+ERROR - 2026-01-28 11:18:14 --> $config['composer_autoload'] is set to TRUE but C:\xampp\htdocs\Aconnect_ci3\application\vendor/autoload.php was not found.
+INFO - 2026-01-28 11:18:14 --> Config Class Initialized
+INFO - 2026-01-28 11:18:14 --> Hooks Class Initialized
+DEBUG - 2026-01-28 11:18:14 --> UTF-8 Support Enabled
+INFO - 2026-01-28 11:18:14 --> Utf8 Class Initialized
+INFO - 2026-01-28 11:18:14 --> URI Class Initialized
+INFO - 2026-01-28 11:18:14 --> Router Class Initialized
+INFO - 2026-01-28 11:18:14 --> Output Class Initialized
+INFO - 2026-01-28 11:18:14 --> Security Class Initialized
+DEBUG - 2026-01-28 11:18:14 --> Global POST, GET and COOKIE data sanitized
+INFO - 2026-01-28 11:18:14 --> Input Class Initialized
+INFO - 2026-01-28 11:18:14 --> Language Class Initialized
+INFO - 2026-01-28 11:18:14 --> Loader Class Initialized
+INFO - 2026-01-28 11:18:14 --> Helper loaded: url_helper
+INFO - 2026-01-28 11:18:14 --> Helper loaded: file_helper
+INFO - 2026-01-28 11:18:14 --> Helper loaded: html_helper
+INFO - 2026-01-28 11:18:14 --> Database Driver Class Initialized
+INFO - 2026-01-28 11:18:14 --> Session: Class initialized using 'files' driver.
+INFO - 2026-01-28 11:18:14 --> Helper loaded: form_helper
+INFO - 2026-01-28 11:18:14 --> Form Validation Class Initialized
+INFO - 2026-01-28 11:18:14 --> User Agent Class Initialized
+INFO - 2026-01-28 11:18:14 --> Language file loaded: language/english/pagination_lang.php
+INFO - 2026-01-28 11:18:14 --> Pagination Class Initialized
+INFO - 2026-01-28 11:18:14 --> Controller Class Initialized
+INFO - 2026-01-28 11:18:14 --> Model "Support_model" initialized
+DEBUG - 2026-01-28 11:18:14 --> Session class already loaded. Second attempt ignored.
+INFO - 2026-01-28 11:18:14 --> Final output sent to browser
+DEBUG - 2026-01-28 11:18:14 --> Total execution time: 0.0423
+ERROR - 2026-01-28 11:18:18 --> $config['composer_autoload'] is set to TRUE but C:\xampp\htdocs\Aconnect_ci3\application\vendor/autoload.php was not found.
+INFO - 2026-01-28 11:18:18 --> Config Class Initialized
+INFO - 2026-01-28 11:18:18 --> Hooks Class Initialized
+DEBUG - 2026-01-28 11:18:18 --> UTF-8 Support Enabled
+INFO - 2026-01-28 11:18:18 --> Utf8 Class Initialized
+INFO - 2026-01-28 11:18:18 --> URI Class Initialized
+INFO - 2026-01-28 11:18:18 --> Router Class Initialized
+INFO - 2026-01-28 11:18:18 --> Output Class Initialized
+INFO - 2026-01-28 11:18:18 --> Security Class Initialized
+DEBUG - 2026-01-28 11:18:18 --> Global POST, GET and COOKIE data sanitized
+INFO - 2026-01-28 11:18:18 --> Input Class Initialized
+INFO - 2026-01-28 11:18:18 --> Language Class Initialized
+INFO - 2026-01-28 11:18:18 --> Loader Class Initialized
+INFO - 2026-01-28 11:18:18 --> Helper loaded: url_helper
+INFO - 2026-01-28 11:18:18 --> Helper loaded: file_helper
+INFO - 2026-01-28 11:18:18 --> Helper loaded: html_helper
+INFO - 2026-01-28 11:18:18 --> Database Driver Class Initialized
+INFO - 2026-01-28 11:18:18 --> Session: Class initialized using 'files' driver.
+INFO - 2026-01-28 11:18:18 --> Helper loaded: form_helper
+INFO - 2026-01-28 11:18:18 --> Form Validation Class Initialized
+INFO - 2026-01-28 11:18:18 --> User Agent Class Initialized
+INFO - 2026-01-28 11:18:18 --> Language file loaded: language/english/pagination_lang.php
+INFO - 2026-01-28 11:18:18 --> Pagination Class Initialized
+INFO - 2026-01-28 11:18:18 --> Controller Class Initialized
+INFO - 2026-01-28 11:18:18 --> Model "Support_model" initialized
+DEBUG - 2026-01-28 11:18:18 --> Session class already loaded. Second attempt ignored.
+INFO - 2026-01-28 11:18:18 --> Final output sent to browser
+DEBUG - 2026-01-28 11:18:18 --> Total execution time: 0.0247
+ERROR - 2026-01-28 11:18:22 --> $config['composer_autoload'] is set to TRUE but C:\xampp\htdocs\Aconnect_ci3\application\vendor/autoload.php was not found.
+INFO - 2026-01-28 11:18:22 --> Config Class Initialized
+INFO - 2026-01-28 11:18:22 --> Hooks Class Initialized
+DEBUG - 2026-01-28 11:18:22 --> UTF-8 Support Enabled
+INFO - 2026-01-28 11:18:22 --> Utf8 Class Initialized
+INFO - 2026-01-28 11:18:22 --> URI Class Initialized
+INFO - 2026-01-28 11:18:22 --> Router Class Initialized
+INFO - 2026-01-28 11:18:22 --> Output Class Initialized
+INFO - 2026-01-28 11:18:22 --> Security Class Initialized
+DEBUG - 2026-01-28 11:18:22 --> Global POST, GET and COOKIE data sanitized
+INFO - 2026-01-28 11:18:22 --> Input Class Initialized
+INFO - 2026-01-28 11:18:22 --> Language Class Initialized
+INFO - 2026-01-28 11:18:22 --> Loader Class Initialized
+INFO - 2026-01-28 11:18:22 --> Helper loaded: url_helper
+INFO - 2026-01-28 11:18:22 --> Helper loaded: file_helper
+INFO - 2026-01-28 11:18:22 --> Helper loaded: html_helper
+INFO - 2026-01-28 11:18:22 --> Database Driver Class Initialized
+INFO - 2026-01-28 11:18:22 --> Session: Class initialized using 'files' driver.
+INFO - 2026-01-28 11:18:22 --> Helper loaded: form_helper
+INFO - 2026-01-28 11:18:22 --> Form Validation Class Initialized
+INFO - 2026-01-28 11:18:22 --> User Agent Class Initialized
+INFO - 2026-01-28 11:18:22 --> Language file loaded: language/english/pagination_lang.php
+INFO - 2026-01-28 11:18:22 --> Pagination Class Initialized
+INFO - 2026-01-28 11:18:22 --> Controller Class Initialized
+INFO - 2026-01-28 11:18:22 --> Model "Support_model" initialized
+DEBUG - 2026-01-28 11:18:22 --> Session class already loaded. Second attempt ignored.
+INFO - 2026-01-28 11:18:22 --> Final output sent to browser
+DEBUG - 2026-01-28 11:18:22 --> Total execution time: 0.0240
+ERROR - 2026-01-28 11:18:26 --> $config['composer_autoload'] is set to TRUE but C:\xampp\htdocs\Aconnect_ci3\application\vendor/autoload.php was not found.
+INFO - 2026-01-28 11:18:26 --> Config Class Initialized
+INFO - 2026-01-28 11:18:26 --> Hooks Class Initialized
+DEBUG - 2026-01-28 11:18:26 --> UTF-8 Support Enabled
+INFO - 2026-01-28 11:18:26 --> Utf8 Class Initialized
+INFO - 2026-01-28 11:18:26 --> URI Class Initialized
+INFO - 2026-01-28 11:18:26 --> Router Class Initialized
+INFO - 2026-01-28 11:18:26 --> Output Class Initialized
+INFO - 2026-01-28 11:18:26 --> Security Class Initialized
+DEBUG - 2026-01-28 11:18:26 --> Global POST, GET and COOKIE data sanitized
+INFO - 2026-01-28 11:18:26 --> Input Class Initialized
+INFO - 2026-01-28 11:18:26 --> Language Class Initialized
+INFO - 2026-01-28 11:18:26 --> Loader Class Initialized
+INFO - 2026-01-28 11:18:26 --> Helper loaded: url_helper
+INFO - 2026-01-28 11:18:26 --> Helper loaded: file_helper
+INFO - 2026-01-28 11:18:26 --> Helper loaded: html_helper
+INFO - 2026-01-28 11:18:26 --> Database Driver Class Initialized
+INFO - 2026-01-28 11:18:26 --> Session: Class initialized using 'files' driver.
+INFO - 2026-01-28 11:18:26 --> Helper loaded: form_helper
+INFO - 2026-01-28 11:18:26 --> Form Validation Class Initialized
+INFO - 2026-01-28 11:18:26 --> User Agent Class Initialized
+INFO - 2026-01-28 11:18:26 --> Language file loaded: language/english/pagination_lang.php
+INFO - 2026-01-28 11:18:26 --> Pagination Class Initialized
+INFO - 2026-01-28 11:18:26 --> Controller Class Initialized
+INFO - 2026-01-28 11:18:26 --> Model "Support_model" initialized
+DEBUG - 2026-01-28 11:18:26 --> Session class already loaded. Second attempt ignored.
+INFO - 2026-01-28 11:18:26 --> Final output sent to browser
+DEBUG - 2026-01-28 11:18:26 --> Total execution time: 0.0245
+ERROR - 2026-01-28 11:18:30 --> $config['composer_autoload'] is set to TRUE but C:\xampp\htdocs\Aconnect_ci3\application\vendor/autoload.php was not found.
+INFO - 2026-01-28 11:18:30 --> Config Class Initialized
+INFO - 2026-01-28 11:18:30 --> Hooks Class Initialized
+DEBUG - 2026-01-28 11:18:30 --> UTF-8 Support Enabled
+INFO - 2026-01-28 11:18:30 --> Utf8 Class Initialized
+INFO - 2026-01-28 11:18:30 --> URI Class Initialized
+INFO - 2026-01-28 11:18:30 --> Router Class Initialized
+INFO - 2026-01-28 11:18:30 --> Output Class Initialized
+INFO - 2026-01-28 11:18:30 --> Security Class Initialized
+DEBUG - 2026-01-28 11:18:30 --> Global POST, GET and COOKIE data sanitized
+INFO - 2026-01-28 11:18:30 --> Input Class Initialized
+INFO - 2026-01-28 11:18:30 --> Language Class Initialized
+INFO - 2026-01-28 11:18:30 --> Loader Class Initialized
+INFO - 2026-01-28 11:18:30 --> Helper loaded: url_helper
+INFO - 2026-01-28 11:18:30 --> Helper loaded: file_helper
+INFO - 2026-01-28 11:18:30 --> Helper loaded: html_helper
+INFO - 2026-01-28 11:18:30 --> Database Driver Class Initialized
+INFO - 2026-01-28 11:18:30 --> Session: Class initialized using 'files' driver.
+INFO - 2026-01-28 11:18:30 --> Helper loaded: form_helper
+INFO - 2026-01-28 11:18:30 --> Form Validation Class Initialized
+INFO - 2026-01-28 11:18:30 --> User Agent Class Initialized
+INFO - 2026-01-28 11:18:30 --> Language file loaded: language/english/pagination_lang.php
+INFO - 2026-01-28 11:18:30 --> Pagination Class Initialized
+INFO - 2026-01-28 11:18:30 --> Controller Class Initialized
+INFO - 2026-01-28 11:18:30 --> Model "Support_model" initialized
+DEBUG - 2026-01-28 11:18:30 --> Session class already loaded. Second attempt ignored.
+INFO - 2026-01-28 11:18:30 --> Final output sent to browser
+DEBUG - 2026-01-28 11:18:30 --> Total execution time: 0.0454
+ERROR - 2026-01-28 11:18:34 --> $config['composer_autoload'] is set to TRUE but C:\xampp\htdocs\Aconnect_ci3\application\vendor/autoload.php was not found.
+INFO - 2026-01-28 11:18:34 --> Config Class Initialized
+INFO - 2026-01-28 11:18:34 --> Hooks Class Initialized
+DEBUG - 2026-01-28 11:18:34 --> UTF-8 Support Enabled
+INFO - 2026-01-28 11:18:34 --> Utf8 Class Initialized
+INFO - 2026-01-28 11:18:34 --> URI Class Initialized
+INFO - 2026-01-28 11:18:34 --> Router Class Initialized
+INFO - 2026-01-28 11:18:34 --> Output Class Initialized
+INFO - 2026-01-28 11:18:34 --> Security Class Initialized
+DEBUG - 2026-01-28 11:18:34 --> Global POST, GET and COOKIE data sanitized
+INFO - 2026-01-28 11:18:34 --> Input Class Initialized
+INFO - 2026-01-28 11:18:34 --> Language Class Initialized
+INFO - 2026-01-28 11:18:34 --> Loader Class Initialized
+INFO - 2026-01-28 11:18:34 --> Helper loaded: url_helper
+INFO - 2026-01-28 11:18:34 --> Helper loaded: file_helper
+INFO - 2026-01-28 11:18:34 --> Helper loaded: html_helper
+INFO - 2026-01-28 11:18:34 --> Database Driver Class Initialized
+INFO - 2026-01-28 11:18:34 --> Session: Class initialized using 'files' driver.
+INFO - 2026-01-28 11:18:34 --> Helper loaded: form_helper
+INFO - 2026-01-28 11:18:34 --> Form Validation Class Initialized
+INFO - 2026-01-28 11:18:34 --> User Agent Class Initialized
+INFO - 2026-01-28 11:18:34 --> Language file loaded: language/english/pagination_lang.php
+INFO - 2026-01-28 11:18:34 --> Pagination Class Initialized
+INFO - 2026-01-28 11:18:34 --> Controller Class Initialized
+INFO - 2026-01-28 11:18:34 --> Model "Support_model" initialized
+DEBUG - 2026-01-28 11:18:34 --> Session class already loaded. Second attempt ignored.
+INFO - 2026-01-28 11:18:34 --> Final output sent to browser
+DEBUG - 2026-01-28 11:18:34 --> Total execution time: 0.0407
+ERROR - 2026-01-28 11:18:38 --> $config['composer_autoload'] is set to TRUE but C:\xampp\htdocs\Aconnect_ci3\application\vendor/autoload.php was not found.
+INFO - 2026-01-28 11:18:38 --> Config Class Initialized
+INFO - 2026-01-28 11:18:38 --> Hooks Class Initialized
+DEBUG - 2026-01-28 11:18:38 --> UTF-8 Support Enabled
+INFO - 2026-01-28 11:18:38 --> Utf8 Class Initialized
+INFO - 2026-01-28 11:18:38 --> URI Class Initialized
+INFO - 2026-01-28 11:18:38 --> Router Class Initialized
+INFO - 2026-01-28 11:18:38 --> Output Class Initialized
+INFO - 2026-01-28 11:18:38 --> Security Class Initialized
+DEBUG - 2026-01-28 11:18:38 --> Global POST, GET and COOKIE data sanitized
+INFO - 2026-01-28 11:18:38 --> Input Class Initialized
+INFO - 2026-01-28 11:18:38 --> Language Class Initialized
+INFO - 2026-01-28 11:18:38 --> Loader Class Initialized
+INFO - 2026-01-28 11:18:38 --> Helper loaded: url_helper
+INFO - 2026-01-28 11:18:38 --> Helper loaded: file_helper
+INFO - 2026-01-28 11:18:38 --> Helper loaded: html_helper
+INFO - 2026-01-28 11:18:38 --> Database Driver Class Initialized
+INFO - 2026-01-28 11:18:38 --> Session: Class initialized using 'files' driver.
+INFO - 2026-01-28 11:18:38 --> Helper loaded: form_helper
+INFO - 2026-01-28 11:18:38 --> Form Validation Class Initialized
+INFO - 2026-01-28 11:18:38 --> User Agent Class Initialized
+INFO - 2026-01-28 11:18:38 --> Language file loaded: language/english/pagination_lang.php
+INFO - 2026-01-28 11:18:38 --> Pagination Class Initialized
+INFO - 2026-01-28 11:18:38 --> Controller Class Initialized
+INFO - 2026-01-28 11:18:38 --> Model "Support_model" initialized
+DEBUG - 2026-01-28 11:18:38 --> Session class already loaded. Second attempt ignored.
+INFO - 2026-01-28 11:18:38 --> Final output sent to browser
+DEBUG - 2026-01-28 11:18:38 --> Total execution time: 0.0434
+ERROR - 2026-01-28 11:18:42 --> $config['composer_autoload'] is set to TRUE but C:\xampp\htdocs\Aconnect_ci3\application\vendor/autoload.php was not found.
+INFO - 2026-01-28 11:18:42 --> Config Class Initialized
+INFO - 2026-01-28 11:18:42 --> Hooks Class Initialized
+DEBUG - 2026-01-28 11:18:42 --> UTF-8 Support Enabled
+INFO - 2026-01-28 11:18:42 --> Utf8 Class Initialized
+INFO - 2026-01-28 11:18:42 --> URI Class Initialized
+INFO - 2026-01-28 11:18:42 --> Router Class Initialized
+INFO - 2026-01-28 11:18:42 --> Output Class Initialized
+INFO - 2026-01-28 11:18:42 --> Security Class Initialized
+DEBUG - 2026-01-28 11:18:42 --> Global POST, GET and COOKIE data sanitized
+INFO - 2026-01-28 11:18:42 --> Input Class Initialized
+INFO - 2026-01-28 11:18:42 --> Language Class Initialized
+INFO - 2026-01-28 11:18:42 --> Loader Class Initialized
+INFO - 2026-01-28 11:18:42 --> Helper loaded: url_helper
+INFO - 2026-01-28 11:18:42 --> Helper loaded: file_helper
+INFO - 2026-01-28 11:18:42 --> Helper loaded: html_helper
+INFO - 2026-01-28 11:18:42 --> Database Driver Class Initialized
+INFO - 2026-01-28 11:18:42 --> Session: Class initialized using 'files' driver.
+INFO - 2026-01-28 11:18:42 --> Helper loaded: form_helper
+INFO - 2026-01-28 11:18:42 --> Form Validation Class Initialized
+INFO - 2026-01-28 11:18:42 --> User Agent Class Initialized
+INFO - 2026-01-28 11:18:42 --> Language file loaded: language/english/pagination_lang.php
+INFO - 2026-01-28 11:18:42 --> Pagination Class Initialized
+INFO - 2026-01-28 11:18:42 --> Controller Class Initialized
+INFO - 2026-01-28 11:18:42 --> Model "Support_model" initialized
+DEBUG - 2026-01-28 11:18:42 --> Session class already loaded. Second attempt ignored.
+INFO - 2026-01-28 11:18:42 --> Final output sent to browser
+DEBUG - 2026-01-28 11:18:42 --> Total execution time: 0.0253
+ERROR - 2026-01-28 11:18:46 --> $config['composer_autoload'] is set to TRUE but C:\xampp\htdocs\Aconnect_ci3\application\vendor/autoload.php was not found.
+INFO - 2026-01-28 11:18:46 --> Config Class Initialized
+INFO - 2026-01-28 11:18:46 --> Hooks Class Initialized
+DEBUG - 2026-01-28 11:18:46 --> UTF-8 Support Enabled
+INFO - 2026-01-28 11:18:46 --> Utf8 Class Initialized
+INFO - 2026-01-28 11:18:46 --> URI Class Initialized
+INFO - 2026-01-28 11:18:46 --> Router Class Initialized
+INFO - 2026-01-28 11:18:46 --> Output Class Initialized
+INFO - 2026-01-28 11:18:46 --> Security Class Initialized
+DEBUG - 2026-01-28 11:18:46 --> Global POST, GET and COOKIE data sanitized
+INFO - 2026-01-28 11:18:46 --> Input Class Initialized
+INFO - 2026-01-28 11:18:46 --> Language Class Initialized
+INFO - 2026-01-28 11:18:46 --> Loader Class Initialized
+INFO - 2026-01-28 11:18:46 --> Helper loaded: url_helper
+INFO - 2026-01-28 11:18:46 --> Helper loaded: file_helper
+INFO - 2026-01-28 11:18:46 --> Helper loaded: html_helper
+INFO - 2026-01-28 11:18:46 --> Database Driver Class Initialized
+INFO - 2026-01-28 11:18:46 --> Session: Class initialized using 'files' driver.
+INFO - 2026-01-28 11:18:46 --> Helper loaded: form_helper
+INFO - 2026-01-28 11:18:46 --> Form Validation Class Initialized
+INFO - 2026-01-28 11:18:46 --> User Agent Class Initialized
+INFO - 2026-01-28 11:18:46 --> Language file loaded: language/english/pagination_lang.php
+INFO - 2026-01-28 11:18:46 --> Pagination Class Initialized
+INFO - 2026-01-28 11:18:46 --> Controller Class Initialized
+INFO - 2026-01-28 11:18:46 --> Model "Support_model" initialized
+DEBUG - 2026-01-28 11:18:46 --> Session class already loaded. Second attempt ignored.
+INFO - 2026-01-28 11:18:46 --> Final output sent to browser
+DEBUG - 2026-01-28 11:18:46 --> Total execution time: 0.0255
+ERROR - 2026-01-28 11:18:46 --> $config['composer_autoload'] is set to TRUE but C:\xampp\htdocs\Aconnect_ci3\application\vendor/autoload.php was not found.
+INFO - 2026-01-28 11:18:46 --> Config Class Initialized
+INFO - 2026-01-28 11:18:46 --> Hooks Class Initialized
+DEBUG - 2026-01-28 11:18:46 --> UTF-8 Support Enabled
+INFO - 2026-01-28 11:18:46 --> Utf8 Class Initialized
+INFO - 2026-01-28 11:18:46 --> URI Class Initialized
+INFO - 2026-01-28 11:18:46 --> Router Class Initialized
+INFO - 2026-01-28 11:18:46 --> Output Class Initialized
+INFO - 2026-01-28 11:18:46 --> Security Class Initialized
+DEBUG - 2026-01-28 11:18:46 --> Global POST, GET and COOKIE data sanitized
+INFO - 2026-01-28 11:18:46 --> Input Class Initialized
+INFO - 2026-01-28 11:18:46 --> Language Class Initialized
+INFO - 2026-01-28 11:18:46 --> Loader Class Initialized
+INFO - 2026-01-28 11:18:46 --> Helper loaded: url_helper
+INFO - 2026-01-28 11:18:46 --> Helper loaded: file_helper
+INFO - 2026-01-28 11:18:46 --> Helper loaded: html_helper
+INFO - 2026-01-28 11:18:46 --> Database Driver Class Initialized
+INFO - 2026-01-28 11:18:46 --> Session: Class initialized using 'files' driver.
+INFO - 2026-01-28 11:18:46 --> Helper loaded: form_helper
+INFO - 2026-01-28 11:18:46 --> Form Validation Class Initialized
+INFO - 2026-01-28 11:18:46 --> User Agent Class Initialized
+INFO - 2026-01-28 11:18:46 --> Language file loaded: language/english/pagination_lang.php
+INFO - 2026-01-28 11:18:46 --> Pagination Class Initialized
+INFO - 2026-01-28 11:18:46 --> Controller Class Initialized
+INFO - 2026-01-28 11:18:46 --> Model "Alumni_model" initialized
+INFO - 2026-01-28 11:18:46 --> Model "Employment_model" initialized
+INFO - 2026-01-28 11:18:46 --> Helper loaded: text_helper
+INFO - 2026-01-28 11:18:46 --> File loaded: C:\xampp\htdocs\Aconnect_ci3\application\views\__header.php
+INFO - 2026-01-28 11:18:46 --> File loaded: C:\xampp\htdocs\Aconnect_ci3\application\views\user/profile.php
+INFO - 2026-01-28 11:18:46 --> File loaded: C:\xampp\htdocs\Aconnect_ci3\application\views\__footer.php
+INFO - 2026-01-28 11:18:46 --> Final output sent to browser
+DEBUG - 2026-01-28 11:18:46 --> Total execution time: 0.0337
+ERROR - 2026-01-28 11:19:05 --> $config['composer_autoload'] is set to TRUE but C:\xampp\htdocs\Aconnect_ci3\application\vendor/autoload.php was not found.
+INFO - 2026-01-28 11:19:05 --> Config Class Initialized
+INFO - 2026-01-28 11:19:05 --> Hooks Class Initialized
+DEBUG - 2026-01-28 11:19:05 --> UTF-8 Support Enabled
+INFO - 2026-01-28 11:19:05 --> Utf8 Class Initialized
+INFO - 2026-01-28 11:19:05 --> URI Class Initialized
+INFO - 2026-01-28 11:19:05 --> Router Class Initialized
+INFO - 2026-01-28 11:19:05 --> Output Class Initialized
+INFO - 2026-01-28 11:19:05 --> Security Class Initialized
+DEBUG - 2026-01-28 11:19:05 --> Global POST, GET and COOKIE data sanitized
+INFO - 2026-01-28 11:19:05 --> Input Class Initialized
+INFO - 2026-01-28 11:19:05 --> Language Class Initialized
+INFO - 2026-01-28 11:19:05 --> Loader Class Initialized
+INFO - 2026-01-28 11:19:05 --> Helper loaded: url_helper
+INFO - 2026-01-28 11:19:05 --> Helper loaded: file_helper
+INFO - 2026-01-28 11:19:05 --> Helper loaded: html_helper
+INFO - 2026-01-28 11:19:05 --> Database Driver Class Initialized
+INFO - 2026-01-28 11:19:05 --> Session: Class initialized using 'files' driver.
+INFO - 2026-01-28 11:19:05 --> Helper loaded: form_helper
+INFO - 2026-01-28 11:19:05 --> Form Validation Class Initialized
+INFO - 2026-01-28 11:19:05 --> User Agent Class Initialized
+INFO - 2026-01-28 11:19:05 --> Language file loaded: language/english/pagination_lang.php
+INFO - 2026-01-28 11:19:05 --> Pagination Class Initialized
+INFO - 2026-01-28 11:19:05 --> Controller Class Initialized
+INFO - 2026-01-28 11:19:05 --> Model "Alumni_model" initialized
+INFO - 2026-01-28 11:19:05 --> Model "Employment_model" initialized
+INFO - 2026-01-28 11:19:05 --> Helper loaded: text_helper
+INFO - 2026-01-28 11:19:05 --> Upload Class Initialized
+ERROR - 2026-01-28 11:19:05 --> $config['composer_autoload'] is set to TRUE but C:\xampp\htdocs\Aconnect_ci3\application\vendor/autoload.php was not found.
+INFO - 2026-01-28 11:19:05 --> Config Class Initialized
+INFO - 2026-01-28 11:19:05 --> Hooks Class Initialized
+DEBUG - 2026-01-28 11:19:05 --> UTF-8 Support Enabled
+INFO - 2026-01-28 11:19:05 --> Utf8 Class Initialized
+INFO - 2026-01-28 11:19:05 --> URI Class Initialized
+INFO - 2026-01-28 11:19:05 --> Router Class Initialized
+INFO - 2026-01-28 11:19:05 --> Output Class Initialized
+INFO - 2026-01-28 11:19:05 --> Security Class Initialized
+DEBUG - 2026-01-28 11:19:05 --> Global POST, GET and COOKIE data sanitized
+INFO - 2026-01-28 11:19:05 --> Input Class Initialized
+INFO - 2026-01-28 11:19:05 --> Language Class Initialized
+INFO - 2026-01-28 11:19:05 --> Loader Class Initialized
+INFO - 2026-01-28 11:19:05 --> Helper loaded: url_helper
+INFO - 2026-01-28 11:19:05 --> Helper loaded: file_helper
+INFO - 2026-01-28 11:19:05 --> Helper loaded: html_helper
+INFO - 2026-01-28 11:19:05 --> Database Driver Class Initialized
+INFO - 2026-01-28 11:19:05 --> Session: Class initialized using 'files' driver.
+INFO - 2026-01-28 11:19:05 --> Helper loaded: form_helper
+INFO - 2026-01-28 11:19:05 --> Form Validation Class Initialized
+INFO - 2026-01-28 11:19:05 --> User Agent Class Initialized
+INFO - 2026-01-28 11:19:05 --> Language file loaded: language/english/pagination_lang.php
+INFO - 2026-01-28 11:19:05 --> Pagination Class Initialized
+INFO - 2026-01-28 11:19:05 --> Controller Class Initialized
+INFO - 2026-01-28 11:19:05 --> Model "Alumni_model" initialized
+INFO - 2026-01-28 11:19:05 --> Model "Employment_model" initialized
+INFO - 2026-01-28 11:19:05 --> Helper loaded: text_helper
+INFO - 2026-01-28 11:19:05 --> File loaded: C:\xampp\htdocs\Aconnect_ci3\application\views\__header.php
+INFO - 2026-01-28 11:19:05 --> File loaded: C:\xampp\htdocs\Aconnect_ci3\application\views\user/profile.php
+INFO - 2026-01-28 11:19:05 --> File loaded: C:\xampp\htdocs\Aconnect_ci3\application\views\__footer.php
+INFO - 2026-01-28 11:19:05 --> Final output sent to browser
+DEBUG - 2026-01-28 11:19:05 --> Total execution time: 0.1032
+ERROR - 2026-01-28 11:19:12 --> $config['composer_autoload'] is set to TRUE but C:\xampp\htdocs\Aconnect_ci3\application\vendor/autoload.php was not found.
+INFO - 2026-01-28 11:19:12 --> Config Class Initialized
+INFO - 2026-01-28 11:19:12 --> Hooks Class Initialized
+DEBUG - 2026-01-28 11:19:12 --> UTF-8 Support Enabled
+INFO - 2026-01-28 11:19:12 --> Utf8 Class Initialized
+INFO - 2026-01-28 11:19:12 --> URI Class Initialized
+INFO - 2026-01-28 11:19:12 --> Router Class Initialized
+INFO - 2026-01-28 11:19:12 --> Output Class Initialized
+INFO - 2026-01-28 11:19:12 --> Security Class Initialized
+DEBUG - 2026-01-28 11:19:12 --> Global POST, GET and COOKIE data sanitized
+INFO - 2026-01-28 11:19:12 --> Input Class Initialized
+INFO - 2026-01-28 11:19:12 --> Language Class Initialized
+INFO - 2026-01-28 11:19:12 --> Loader Class Initialized
+INFO - 2026-01-28 11:19:12 --> Helper loaded: url_helper
+INFO - 2026-01-28 11:19:12 --> Helper loaded: file_helper
+INFO - 2026-01-28 11:19:12 --> Helper loaded: html_helper
+INFO - 2026-01-28 11:19:12 --> Database Driver Class Initialized
+INFO - 2026-01-28 11:19:12 --> Session: Class initialized using 'files' driver.
+INFO - 2026-01-28 11:19:12 --> Helper loaded: form_helper
+INFO - 2026-01-28 11:19:12 --> Form Validation Class Initialized
+INFO - 2026-01-28 11:19:12 --> User Agent Class Initialized
+INFO - 2026-01-28 11:19:12 --> Language file loaded: language/english/pagination_lang.php
+INFO - 2026-01-28 11:19:12 --> Pagination Class Initialized
+INFO - 2026-01-28 11:19:12 --> Controller Class Initialized
+INFO - 2026-01-28 11:19:12 --> Model "M_login" initialized
+INFO - 2026-01-28 11:19:12 --> Model "Activity_log_model" initialized
+ERROR - 2026-01-28 11:19:12 --> $config['composer_autoload'] is set to TRUE but C:\xampp\htdocs\Aconnect_ci3\application\vendor/autoload.php was not found.
+INFO - 2026-01-28 11:19:12 --> Config Class Initialized
+INFO - 2026-01-28 11:19:12 --> Hooks Class Initialized
+DEBUG - 2026-01-28 11:19:12 --> UTF-8 Support Enabled
+INFO - 2026-01-28 11:19:12 --> Utf8 Class Initialized
+INFO - 2026-01-28 11:19:12 --> URI Class Initialized
+INFO - 2026-01-28 11:19:12 --> Router Class Initialized
+INFO - 2026-01-28 11:19:12 --> Output Class Initialized
+INFO - 2026-01-28 11:19:12 --> Security Class Initialized
+DEBUG - 2026-01-28 11:19:12 --> Global POST, GET and COOKIE data sanitized
+INFO - 2026-01-28 11:19:12 --> Input Class Initialized
+INFO - 2026-01-28 11:19:12 --> Language Class Initialized
+INFO - 2026-01-28 11:19:12 --> Loader Class Initialized
+INFO - 2026-01-28 11:19:12 --> Helper loaded: url_helper
+INFO - 2026-01-28 11:19:12 --> Helper loaded: file_helper
+INFO - 2026-01-28 11:19:12 --> Helper loaded: html_helper
+INFO - 2026-01-28 11:19:12 --> Database Driver Class Initialized
+INFO - 2026-01-28 11:19:12 --> Session: Class initialized using 'files' driver.
+INFO - 2026-01-28 11:19:12 --> Helper loaded: form_helper
+INFO - 2026-01-28 11:19:12 --> Form Validation Class Initialized
+INFO - 2026-01-28 11:19:12 --> User Agent Class Initialized
+INFO - 2026-01-28 11:19:12 --> Language file loaded: language/english/pagination_lang.php
+INFO - 2026-01-28 11:19:12 --> Pagination Class Initialized
+INFO - 2026-01-28 11:19:12 --> Controller Class Initialized
+INFO - 2026-01-28 11:19:12 --> Model "M_login" initialized
+INFO - 2026-01-28 11:19:12 --> File loaded: C:\xampp\htdocs\Aconnect_ci3\application\views\login.php
+INFO - 2026-01-28 11:19:12 --> Final output sent to browser
+DEBUG - 2026-01-28 11:19:12 --> Total execution time: 0.0361
+ERROR - 2026-01-28 11:19:17 --> $config['composer_autoload'] is set to TRUE but C:\xampp\htdocs\Aconnect_ci3\application\vendor/autoload.php was not found.
+INFO - 2026-01-28 11:19:17 --> Config Class Initialized
+INFO - 2026-01-28 11:19:17 --> Hooks Class Initialized
+DEBUG - 2026-01-28 11:19:17 --> UTF-8 Support Enabled
+INFO - 2026-01-28 11:19:17 --> Utf8 Class Initialized
+INFO - 2026-01-28 11:19:17 --> URI Class Initialized
+INFO - 2026-01-28 11:19:17 --> Router Class Initialized
+INFO - 2026-01-28 11:19:17 --> Output Class Initialized
+INFO - 2026-01-28 11:19:17 --> Security Class Initialized
+DEBUG - 2026-01-28 11:19:17 --> Global POST, GET and COOKIE data sanitized
+INFO - 2026-01-28 11:19:17 --> Input Class Initialized
+INFO - 2026-01-28 11:19:17 --> Language Class Initialized
+INFO - 2026-01-28 11:19:17 --> Loader Class Initialized
+INFO - 2026-01-28 11:19:17 --> Helper loaded: url_helper
+INFO - 2026-01-28 11:19:17 --> Helper loaded: file_helper
+INFO - 2026-01-28 11:19:17 --> Helper loaded: html_helper
+INFO - 2026-01-28 11:19:17 --> Database Driver Class Initialized
+INFO - 2026-01-28 11:19:17 --> Session: Class initialized using 'files' driver.
+INFO - 2026-01-28 11:19:17 --> Helper loaded: form_helper
+INFO - 2026-01-28 11:19:17 --> Form Validation Class Initialized
+INFO - 2026-01-28 11:19:17 --> User Agent Class Initialized
+INFO - 2026-01-28 11:19:17 --> Language file loaded: language/english/pagination_lang.php
+INFO - 2026-01-28 11:19:17 --> Pagination Class Initialized
+INFO - 2026-01-28 11:19:17 --> Controller Class Initialized
+INFO - 2026-01-28 11:19:17 --> Model "M_login" initialized
+ERROR - 2026-01-28 11:19:17 --> $config['composer_autoload'] is set to TRUE but C:\xampp\htdocs\Aconnect_ci3\application\vendor/autoload.php was not found.
+INFO - 2026-01-28 11:19:17 --> Config Class Initialized
+INFO - 2026-01-28 11:19:17 --> Hooks Class Initialized
+DEBUG - 2026-01-28 11:19:17 --> UTF-8 Support Enabled
+INFO - 2026-01-28 11:19:17 --> Utf8 Class Initialized
+INFO - 2026-01-28 11:19:17 --> URI Class Initialized
+INFO - 2026-01-28 11:19:17 --> Router Class Initialized
+INFO - 2026-01-28 11:19:17 --> Output Class Initialized
+INFO - 2026-01-28 11:19:17 --> Security Class Initialized
+DEBUG - 2026-01-28 11:19:17 --> Global POST, GET and COOKIE data sanitized
+INFO - 2026-01-28 11:19:17 --> Input Class Initialized
+INFO - 2026-01-28 11:19:17 --> Language Class Initialized
+INFO - 2026-01-28 11:19:17 --> Loader Class Initialized
+INFO - 2026-01-28 11:19:17 --> Helper loaded: url_helper
+INFO - 2026-01-28 11:19:17 --> Helper loaded: file_helper
+INFO - 2026-01-28 11:19:17 --> Helper loaded: html_helper
+INFO - 2026-01-28 11:19:17 --> Database Driver Class Initialized
+INFO - 2026-01-28 11:19:17 --> Session: Class initialized using 'files' driver.
+INFO - 2026-01-28 11:19:17 --> Helper loaded: form_helper
+INFO - 2026-01-28 11:19:17 --> Form Validation Class Initialized
+INFO - 2026-01-28 11:19:17 --> User Agent Class Initialized
+INFO - 2026-01-28 11:19:17 --> Language file loaded: language/english/pagination_lang.php
+INFO - 2026-01-28 11:19:17 --> Pagination Class Initialized
+INFO - 2026-01-28 11:19:17 --> Controller Class Initialized
+INFO - 2026-01-28 11:19:17 --> File loaded: C:\xampp\htdocs\Aconnect_ci3\application\views\__header.php
+INFO - 2026-01-28 11:19:17 --> File loaded: C:\xampp\htdocs\Aconnect_ci3\application\views\dashboard_u.php
+INFO - 2026-01-28 11:19:17 --> File loaded: C:\xampp\htdocs\Aconnect_ci3\application\views\__footer.php
+INFO - 2026-01-28 11:19:17 --> Final output sent to browser
+DEBUG - 2026-01-28 11:19:17 --> Total execution time: 0.0718
+ERROR - 2026-01-28 11:19:18 --> $config['composer_autoload'] is set to TRUE but C:\xampp\htdocs\Aconnect_ci3\application\vendor/autoload.php was not found.
+INFO - 2026-01-28 11:19:18 --> Config Class Initialized
+INFO - 2026-01-28 11:19:18 --> Hooks Class Initialized
+DEBUG - 2026-01-28 11:19:18 --> UTF-8 Support Enabled
+INFO - 2026-01-28 11:19:18 --> Utf8 Class Initialized
+INFO - 2026-01-28 11:19:18 --> URI Class Initialized
+INFO - 2026-01-28 11:19:18 --> Router Class Initialized
+INFO - 2026-01-28 11:19:18 --> Output Class Initialized
+INFO - 2026-01-28 11:19:18 --> Security Class Initialized
+DEBUG - 2026-01-28 11:19:18 --> Global POST, GET and COOKIE data sanitized
+INFO - 2026-01-28 11:19:18 --> Input Class Initialized
+INFO - 2026-01-28 11:19:18 --> Language Class Initialized
+INFO - 2026-01-28 11:19:18 --> Loader Class Initialized
+INFO - 2026-01-28 11:19:18 --> Helper loaded: url_helper
+INFO - 2026-01-28 11:19:18 --> Helper loaded: file_helper
+INFO - 2026-01-28 11:19:18 --> Helper loaded: html_helper
+INFO - 2026-01-28 11:19:18 --> Database Driver Class Initialized
+INFO - 2026-01-28 11:19:18 --> Session: Class initialized using 'files' driver.
+INFO - 2026-01-28 11:19:18 --> Helper loaded: form_helper
+INFO - 2026-01-28 11:19:18 --> Form Validation Class Initialized
+INFO - 2026-01-28 11:19:18 --> User Agent Class Initialized
+INFO - 2026-01-28 11:19:18 --> Language file loaded: language/english/pagination_lang.php
+INFO - 2026-01-28 11:19:18 --> Pagination Class Initialized
+INFO - 2026-01-28 11:19:18 --> Controller Class Initialized
+INFO - 2026-01-28 11:19:18 --> Model "M_login" initialized
+INFO - 2026-01-28 11:19:18 --> Model "Activity_log_model" initialized
+ERROR - 2026-01-28 11:19:18 --> $config['composer_autoload'] is set to TRUE but C:\xampp\htdocs\Aconnect_ci3\application\vendor/autoload.php was not found.
+INFO - 2026-01-28 11:19:18 --> Config Class Initialized
+INFO - 2026-01-28 11:19:18 --> Hooks Class Initialized
+DEBUG - 2026-01-28 11:19:18 --> UTF-8 Support Enabled
+INFO - 2026-01-28 11:19:18 --> Utf8 Class Initialized
+INFO - 2026-01-28 11:19:18 --> URI Class Initialized
+INFO - 2026-01-28 11:19:18 --> Router Class Initialized
+INFO - 2026-01-28 11:19:18 --> Output Class Initialized
+INFO - 2026-01-28 11:19:18 --> Security Class Initialized
+DEBUG - 2026-01-28 11:19:18 --> Global POST, GET and COOKIE data sanitized
+INFO - 2026-01-28 11:19:18 --> Input Class Initialized
+INFO - 2026-01-28 11:19:18 --> Language Class Initialized
+INFO - 2026-01-28 11:19:18 --> Loader Class Initialized
+INFO - 2026-01-28 11:19:18 --> Helper loaded: url_helper
+INFO - 2026-01-28 11:19:18 --> Helper loaded: file_helper
+INFO - 2026-01-28 11:19:18 --> Helper loaded: html_helper
+INFO - 2026-01-28 11:19:18 --> Database Driver Class Initialized
+INFO - 2026-01-28 11:19:18 --> Session: Class initialized using 'files' driver.
+INFO - 2026-01-28 11:19:18 --> Helper loaded: form_helper
+INFO - 2026-01-28 11:19:18 --> Form Validation Class Initialized
+INFO - 2026-01-28 11:19:18 --> User Agent Class Initialized
+INFO - 2026-01-28 11:19:18 --> Language file loaded: language/english/pagination_lang.php
+INFO - 2026-01-28 11:19:18 --> Pagination Class Initialized
+INFO - 2026-01-28 11:19:18 --> Controller Class Initialized
+INFO - 2026-01-28 11:19:18 --> Model "M_login" initialized
+INFO - 2026-01-28 11:19:18 --> File loaded: C:\xampp\htdocs\Aconnect_ci3\application\views\login.php
+INFO - 2026-01-28 11:19:18 --> Final output sent to browser
+DEBUG - 2026-01-28 11:19:18 --> Total execution time: 0.0468
+ERROR - 2026-01-28 11:19:19 --> $config['composer_autoload'] is set to TRUE but C:\xampp\htdocs\Aconnect_ci3\application\vendor/autoload.php was not found.
+INFO - 2026-01-28 11:19:19 --> Config Class Initialized
+INFO - 2026-01-28 11:19:19 --> Hooks Class Initialized
+DEBUG - 2026-01-28 11:19:19 --> UTF-8 Support Enabled
+INFO - 2026-01-28 11:19:19 --> Utf8 Class Initialized
+INFO - 2026-01-28 11:19:19 --> URI Class Initialized
+INFO - 2026-01-28 11:19:19 --> Router Class Initialized
+INFO - 2026-01-28 11:19:19 --> Output Class Initialized
+INFO - 2026-01-28 11:19:19 --> Security Class Initialized
+DEBUG - 2026-01-28 11:19:19 --> Global POST, GET and COOKIE data sanitized
+INFO - 2026-01-28 11:19:19 --> Input Class Initialized
+INFO - 2026-01-28 11:19:19 --> Language Class Initialized
+INFO - 2026-01-28 11:19:19 --> Loader Class Initialized
+INFO - 2026-01-28 11:19:19 --> Helper loaded: url_helper
+INFO - 2026-01-28 11:19:19 --> Helper loaded: file_helper
+INFO - 2026-01-28 11:19:19 --> Helper loaded: html_helper
+INFO - 2026-01-28 11:19:19 --> Database Driver Class Initialized
+INFO - 2026-01-28 11:19:19 --> Session: Class initialized using 'files' driver.
+INFO - 2026-01-28 11:19:19 --> Helper loaded: form_helper
+INFO - 2026-01-28 11:19:19 --> Form Validation Class Initialized
+INFO - 2026-01-28 11:19:19 --> User Agent Class Initialized
+INFO - 2026-01-28 11:19:19 --> Language file loaded: language/english/pagination_lang.php
+INFO - 2026-01-28 11:19:19 --> Pagination Class Initialized
+INFO - 2026-01-28 11:19:19 --> Controller Class Initialized
+INFO - 2026-01-28 11:19:19 --> Model "M_login" initialized
+ERROR - 2026-01-28 11:19:20 --> $config['composer_autoload'] is set to TRUE but C:\xampp\htdocs\Aconnect_ci3\application\vendor/autoload.php was not found.
+INFO - 2026-01-28 11:19:20 --> Config Class Initialized
+INFO - 2026-01-28 11:19:20 --> Hooks Class Initialized
+DEBUG - 2026-01-28 11:19:20 --> UTF-8 Support Enabled
+INFO - 2026-01-28 11:19:20 --> Utf8 Class Initialized
+INFO - 2026-01-28 11:19:20 --> URI Class Initialized
+INFO - 2026-01-28 11:19:20 --> Router Class Initialized
+INFO - 2026-01-28 11:19:20 --> Output Class Initialized
+INFO - 2026-01-28 11:19:20 --> Security Class Initialized
+DEBUG - 2026-01-28 11:19:20 --> Global POST, GET and COOKIE data sanitized
+INFO - 2026-01-28 11:19:20 --> Input Class Initialized
+INFO - 2026-01-28 11:19:20 --> Language Class Initialized
+INFO - 2026-01-28 11:19:20 --> Loader Class Initialized
+INFO - 2026-01-28 11:19:20 --> Helper loaded: url_helper
+INFO - 2026-01-28 11:19:20 --> Helper loaded: file_helper
+INFO - 2026-01-28 11:19:20 --> Helper loaded: html_helper
+INFO - 2026-01-28 11:19:20 --> Database Driver Class Initialized
+INFO - 2026-01-28 11:19:20 --> Session: Class initialized using 'files' driver.
+INFO - 2026-01-28 11:19:20 --> Helper loaded: form_helper
+INFO - 2026-01-28 11:19:20 --> Form Validation Class Initialized
+INFO - 2026-01-28 11:19:20 --> User Agent Class Initialized
+INFO - 2026-01-28 11:19:20 --> Language file loaded: language/english/pagination_lang.php
+INFO - 2026-01-28 11:19:20 --> Pagination Class Initialized
+INFO - 2026-01-28 11:19:20 --> Controller Class Initialized
+INFO - 2026-01-28 11:19:20 --> File loaded: C:\xampp\htdocs\Aconnect_ci3\application\views\__header.php
+INFO - 2026-01-28 11:19:20 --> File loaded: C:\xampp\htdocs\Aconnect_ci3\application\views\dashboard_u.php
+INFO - 2026-01-28 11:19:20 --> File loaded: C:\xampp\htdocs\Aconnect_ci3\application\views\__footer.php
+INFO - 2026-01-28 11:19:20 --> Final output sent to browser
+DEBUG - 2026-01-28 11:19:20 --> Total execution time: 0.0375
+ERROR - 2026-01-28 11:19:21 --> $config['composer_autoload'] is set to TRUE but C:\xampp\htdocs\Aconnect_ci3\application\vendor/autoload.php was not found.
+INFO - 2026-01-28 11:19:21 --> Config Class Initialized
+INFO - 2026-01-28 11:19:21 --> Hooks Class Initialized
+DEBUG - 2026-01-28 11:19:21 --> UTF-8 Support Enabled
+INFO - 2026-01-28 11:19:21 --> Utf8 Class Initialized
+INFO - 2026-01-28 11:19:21 --> URI Class Initialized
+INFO - 2026-01-28 11:19:21 --> Router Class Initialized
+INFO - 2026-01-28 11:19:21 --> Output Class Initialized
+INFO - 2026-01-28 11:19:21 --> Security Class Initialized
+DEBUG - 2026-01-28 11:19:21 --> Global POST, GET and COOKIE data sanitized
+INFO - 2026-01-28 11:19:21 --> Input Class Initialized
+INFO - 2026-01-28 11:19:21 --> Language Class Initialized
+INFO - 2026-01-28 11:19:21 --> Loader Class Initialized
+INFO - 2026-01-28 11:19:21 --> Helper loaded: url_helper
+INFO - 2026-01-28 11:19:21 --> Helper loaded: file_helper
+INFO - 2026-01-28 11:19:21 --> Helper loaded: html_helper
+INFO - 2026-01-28 11:19:21 --> Database Driver Class Initialized
+INFO - 2026-01-28 11:19:21 --> Session: Class initialized using 'files' driver.
+INFO - 2026-01-28 11:19:21 --> Helper loaded: form_helper
+INFO - 2026-01-28 11:19:21 --> Form Validation Class Initialized
+INFO - 2026-01-28 11:19:21 --> User Agent Class Initialized
+INFO - 2026-01-28 11:19:21 --> Language file loaded: language/english/pagination_lang.php
+INFO - 2026-01-28 11:19:21 --> Pagination Class Initialized
+INFO - 2026-01-28 11:19:21 --> Controller Class Initialized
+INFO - 2026-01-28 11:19:21 --> Model "Alumni_model" initialized
+INFO - 2026-01-28 11:19:21 --> File loaded: C:\xampp\htdocs\Aconnect_ci3\application\views\__header.php
+INFO - 2026-01-28 11:19:21 --> File loaded: C:\xampp\htdocs\Aconnect_ci3\application\views\user/search_alumni.php
+INFO - 2026-01-28 11:19:21 --> File loaded: C:\xampp\htdocs\Aconnect_ci3\application\views\__footer.php
+INFO - 2026-01-28 11:19:21 --> Final output sent to browser
+DEBUG - 2026-01-28 11:19:21 --> Total execution time: 0.0321
+ERROR - 2026-01-28 11:19:26 --> $config['composer_autoload'] is set to TRUE but C:\xampp\htdocs\Aconnect_ci3\application\vendor/autoload.php was not found.
+INFO - 2026-01-28 11:19:26 --> Config Class Initialized
+INFO - 2026-01-28 11:19:26 --> Hooks Class Initialized
+DEBUG - 2026-01-28 11:19:26 --> UTF-8 Support Enabled
+INFO - 2026-01-28 11:19:26 --> Utf8 Class Initialized
+INFO - 2026-01-28 11:19:26 --> URI Class Initialized
+INFO - 2026-01-28 11:19:26 --> Router Class Initialized
+INFO - 2026-01-28 11:19:26 --> Output Class Initialized
+INFO - 2026-01-28 11:19:26 --> Security Class Initialized
+DEBUG - 2026-01-28 11:19:26 --> Global POST, GET and COOKIE data sanitized
+INFO - 2026-01-28 11:19:26 --> Input Class Initialized
+INFO - 2026-01-28 11:19:26 --> Language Class Initialized
+INFO - 2026-01-28 11:19:26 --> Loader Class Initialized
+INFO - 2026-01-28 11:19:26 --> Helper loaded: url_helper
+INFO - 2026-01-28 11:19:26 --> Helper loaded: file_helper
+INFO - 2026-01-28 11:19:26 --> Helper loaded: html_helper
+INFO - 2026-01-28 11:19:26 --> Database Driver Class Initialized
+INFO - 2026-01-28 11:19:26 --> Session: Class initialized using 'files' driver.
+INFO - 2026-01-28 11:19:26 --> Helper loaded: form_helper
+INFO - 2026-01-28 11:19:26 --> Form Validation Class Initialized
+INFO - 2026-01-28 11:19:26 --> User Agent Class Initialized
+INFO - 2026-01-28 11:19:26 --> Language file loaded: language/english/pagination_lang.php
+INFO - 2026-01-28 11:19:26 --> Pagination Class Initialized
+INFO - 2026-01-28 11:19:26 --> Controller Class Initialized
+INFO - 2026-01-28 11:19:26 --> Model "Alumni_model" initialized
+INFO - 2026-01-28 11:19:26 --> Model "Employment_model" initialized
+INFO - 2026-01-28 11:19:26 --> File loaded: C:\xampp\htdocs\Aconnect_ci3\application\views\__header.php
+INFO - 2026-01-28 11:19:26 --> File loaded: C:\xampp\htdocs\Aconnect_ci3\application\views\user/view_profile.php
+INFO - 2026-01-28 11:19:26 --> File loaded: C:\xampp\htdocs\Aconnect_ci3\application\views\__footer.php
+INFO - 2026-01-28 11:19:26 --> Final output sent to browser
+DEBUG - 2026-01-28 11:19:26 --> Total execution time: 0.0277
+ERROR - 2026-01-28 11:19:32 --> $config['composer_autoload'] is set to TRUE but C:\xampp\htdocs\Aconnect_ci3\application\vendor/autoload.php was not found.
+INFO - 2026-01-28 11:19:32 --> Config Class Initialized
+INFO - 2026-01-28 11:19:32 --> Hooks Class Initialized
+DEBUG - 2026-01-28 11:19:32 --> UTF-8 Support Enabled
+INFO - 2026-01-28 11:19:32 --> Utf8 Class Initialized
+INFO - 2026-01-28 11:19:32 --> URI Class Initialized
+INFO - 2026-01-28 11:19:32 --> Router Class Initialized
+INFO - 2026-01-28 11:19:32 --> Output Class Initialized
+INFO - 2026-01-28 11:19:32 --> Security Class Initialized
+DEBUG - 2026-01-28 11:19:32 --> Global POST, GET and COOKIE data sanitized
+INFO - 2026-01-28 11:19:32 --> Input Class Initialized
+INFO - 2026-01-28 11:19:32 --> Language Class Initialized
+INFO - 2026-01-28 11:19:32 --> Loader Class Initialized
+INFO - 2026-01-28 11:19:32 --> Helper loaded: url_helper
+INFO - 2026-01-28 11:19:32 --> Helper loaded: file_helper
+INFO - 2026-01-28 11:19:32 --> Helper loaded: html_helper
+INFO - 2026-01-28 11:19:32 --> Database Driver Class Initialized
+INFO - 2026-01-28 11:19:32 --> Session: Class initialized using 'files' driver.
+INFO - 2026-01-28 11:19:32 --> Helper loaded: form_helper
+INFO - 2026-01-28 11:19:32 --> Form Validation Class Initialized
+INFO - 2026-01-28 11:19:32 --> User Agent Class Initialized
+INFO - 2026-01-28 11:19:32 --> Language file loaded: language/english/pagination_lang.php
+INFO - 2026-01-28 11:19:32 --> Pagination Class Initialized
+INFO - 2026-01-28 11:19:32 --> Controller Class Initialized
+INFO - 2026-01-28 11:19:32 --> Model "Alumni_model" initialized
+INFO - 2026-01-28 11:19:32 --> File loaded: C:\xampp\htdocs\Aconnect_ci3\application\views\__header.php
+INFO - 2026-01-28 11:19:32 --> File loaded: C:\xampp\htdocs\Aconnect_ci3\application\views\user/search_alumni.php
+INFO - 2026-01-28 11:19:32 --> File loaded: C:\xampp\htdocs\Aconnect_ci3\application\views\__footer.php
+INFO - 2026-01-28 11:19:32 --> Final output sent to browser
+DEBUG - 2026-01-28 11:19:32 --> Total execution time: 0.0296
+ERROR - 2026-01-28 11:19:33 --> $config['composer_autoload'] is set to TRUE but C:\xampp\htdocs\Aconnect_ci3\application\vendor/autoload.php was not found.
+INFO - 2026-01-28 11:19:33 --> Config Class Initialized
+INFO - 2026-01-28 11:19:33 --> Hooks Class Initialized
+DEBUG - 2026-01-28 11:19:33 --> UTF-8 Support Enabled
+INFO - 2026-01-28 11:19:33 --> Utf8 Class Initialized
+INFO - 2026-01-28 11:19:33 --> URI Class Initialized
+INFO - 2026-01-28 11:19:33 --> Router Class Initialized
+INFO - 2026-01-28 11:19:33 --> Output Class Initialized
+INFO - 2026-01-28 11:19:33 --> Security Class Initialized
+DEBUG - 2026-01-28 11:19:33 --> Global POST, GET and COOKIE data sanitized
+INFO - 2026-01-28 11:19:33 --> Input Class Initialized
+INFO - 2026-01-28 11:19:33 --> Language Class Initialized
+INFO - 2026-01-28 11:19:33 --> Loader Class Initialized
+INFO - 2026-01-28 11:19:33 --> Helper loaded: url_helper
+INFO - 2026-01-28 11:19:33 --> Helper loaded: file_helper
+INFO - 2026-01-28 11:19:33 --> Helper loaded: html_helper
+INFO - 2026-01-28 11:19:33 --> Database Driver Class Initialized
+INFO - 2026-01-28 11:19:33 --> Session: Class initialized using 'files' driver.
+INFO - 2026-01-28 11:19:33 --> Helper loaded: form_helper
+INFO - 2026-01-28 11:19:33 --> Form Validation Class Initialized
+INFO - 2026-01-28 11:19:33 --> User Agent Class Initialized
+INFO - 2026-01-28 11:19:33 --> Language file loaded: language/english/pagination_lang.php
+INFO - 2026-01-28 11:19:33 --> Pagination Class Initialized
+INFO - 2026-01-28 11:19:33 --> Controller Class Initialized
+INFO - 2026-01-28 11:19:33 --> Model "Post_model" initialized
+INFO - 2026-01-28 11:19:33 --> File loaded: C:\xampp\htdocs\Aconnect_ci3\application\views\__header.php
+INFO - 2026-01-28 11:19:33 --> Helper loaded: text_helper
+INFO - 2026-01-28 11:19:33 --> File loaded: C:\xampp\htdocs\Aconnect_ci3\application\views\user/posts_view.php
+INFO - 2026-01-28 11:19:33 --> File loaded: C:\xampp\htdocs\Aconnect_ci3\application\views\__footer.php
+INFO - 2026-01-28 11:19:33 --> Final output sent to browser
+DEBUG - 2026-01-28 11:19:33 --> Total execution time: 0.0350
+ERROR - 2026-01-28 11:19:33 --> $config['composer_autoload'] is set to TRUE but C:\xampp\htdocs\Aconnect_ci3\application\vendor/autoload.php was not found.
+INFO - 2026-01-28 11:19:33 --> Config Class Initialized
+INFO - 2026-01-28 11:19:33 --> Hooks Class Initialized
+DEBUG - 2026-01-28 11:19:33 --> UTF-8 Support Enabled
+INFO - 2026-01-28 11:19:33 --> Utf8 Class Initialized
+INFO - 2026-01-28 11:19:33 --> URI Class Initialized
+INFO - 2026-01-28 11:19:33 --> Router Class Initialized
+INFO - 2026-01-28 11:19:33 --> Output Class Initialized
+INFO - 2026-01-28 11:19:33 --> Security Class Initialized
+DEBUG - 2026-01-28 11:19:33 --> Global POST, GET and COOKIE data sanitized
+INFO - 2026-01-28 11:19:33 --> Input Class Initialized
+INFO - 2026-01-28 11:19:33 --> Language Class Initialized
+ERROR - 2026-01-28 11:19:33 --> 404 Page Not Found: Assets/uploads
+ERROR - 2026-01-28 11:20:45 --> $config['composer_autoload'] is set to TRUE but C:\xampp\htdocs\Aconnect_ci3\application\vendor/autoload.php was not found.
+INFO - 2026-01-28 11:20:45 --> Config Class Initialized
+INFO - 2026-01-28 11:20:45 --> Hooks Class Initialized
+DEBUG - 2026-01-28 11:20:45 --> UTF-8 Support Enabled
+INFO - 2026-01-28 11:20:45 --> Utf8 Class Initialized
+INFO - 2026-01-28 11:20:45 --> URI Class Initialized
+INFO - 2026-01-28 11:20:45 --> Router Class Initialized
+INFO - 2026-01-28 11:20:45 --> Output Class Initialized
+INFO - 2026-01-28 11:20:45 --> Security Class Initialized
+DEBUG - 2026-01-28 11:20:45 --> Global POST, GET and COOKIE data sanitized
+INFO - 2026-01-28 11:20:45 --> Input Class Initialized
+INFO - 2026-01-28 11:20:45 --> Language Class Initialized
+INFO - 2026-01-28 11:20:45 --> Loader Class Initialized
+INFO - 2026-01-28 11:20:45 --> Helper loaded: url_helper
+INFO - 2026-01-28 11:20:45 --> Helper loaded: file_helper
+INFO - 2026-01-28 11:20:45 --> Helper loaded: html_helper
+INFO - 2026-01-28 11:20:45 --> Database Driver Class Initialized
+INFO - 2026-01-28 11:20:45 --> Session: Class initialized using 'files' driver.
+INFO - 2026-01-28 11:20:45 --> Helper loaded: form_helper
+INFO - 2026-01-28 11:20:45 --> Form Validation Class Initialized
+INFO - 2026-01-28 11:20:45 --> User Agent Class Initialized
+INFO - 2026-01-28 11:20:45 --> Language file loaded: language/english/pagination_lang.php
+INFO - 2026-01-28 11:20:45 --> Pagination Class Initialized
+INFO - 2026-01-28 11:20:45 --> Controller Class Initialized
+INFO - 2026-01-28 11:20:45 --> Model "Alumni_model" initialized
+INFO - 2026-01-28 11:20:45 --> File loaded: C:\xampp\htdocs\Aconnect_ci3\application\views\__header.php
+INFO - 2026-01-28 11:20:45 --> File loaded: C:\xampp\htdocs\Aconnect_ci3\application\views\user/search_alumni.php
+INFO - 2026-01-28 11:20:45 --> File loaded: C:\xampp\htdocs\Aconnect_ci3\application\views\__footer.php
+INFO - 2026-01-28 11:20:45 --> Final output sent to browser
+DEBUG - 2026-01-28 11:20:45 --> Total execution time: 0.1037
+ERROR - 2026-01-28 11:20:45 --> $config['composer_autoload'] is set to TRUE but C:\xampp\htdocs\Aconnect_ci3\application\vendor/autoload.php was not found.
+INFO - 2026-01-28 11:20:45 --> Config Class Initialized
+INFO - 2026-01-28 11:20:45 --> Hooks Class Initialized
+DEBUG - 2026-01-28 11:20:45 --> UTF-8 Support Enabled
+INFO - 2026-01-28 11:20:45 --> Utf8 Class Initialized
+INFO - 2026-01-28 11:20:45 --> URI Class Initialized
+INFO - 2026-01-28 11:20:45 --> Router Class Initialized
+INFO - 2026-01-28 11:20:45 --> Output Class Initialized
+INFO - 2026-01-28 11:20:45 --> Security Class Initialized
+DEBUG - 2026-01-28 11:20:45 --> Global POST, GET and COOKIE data sanitized
+INFO - 2026-01-28 11:20:45 --> Input Class Initialized
+INFO - 2026-01-28 11:20:45 --> Language Class Initialized
+INFO - 2026-01-28 11:20:45 --> Loader Class Initialized
+INFO - 2026-01-28 11:20:45 --> Helper loaded: url_helper
+INFO - 2026-01-28 11:20:45 --> Helper loaded: file_helper
+INFO - 2026-01-28 11:20:45 --> Helper loaded: html_helper
+INFO - 2026-01-28 11:20:45 --> Database Driver Class Initialized
+INFO - 2026-01-28 11:20:45 --> Session: Class initialized using 'files' driver.
+INFO - 2026-01-28 11:20:45 --> Helper loaded: form_helper
+INFO - 2026-01-28 11:20:45 --> Form Validation Class Initialized
+INFO - 2026-01-28 11:20:45 --> User Agent Class Initialized
+INFO - 2026-01-28 11:20:45 --> Language file loaded: language/english/pagination_lang.php
+INFO - 2026-01-28 11:20:45 --> Pagination Class Initialized
+INFO - 2026-01-28 11:20:45 --> Controller Class Initialized
+INFO - 2026-01-28 11:20:45 --> Helper loaded: date_helper
+DEBUG - 2026-01-28 11:20:45 --> Session class already loaded. Second attempt ignored.
+INFO - 2026-01-28 11:20:45 --> Upload Class Initialized
+INFO - 2026-01-28 11:20:45 --> Model "Job_model" initialized
+INFO - 2026-01-28 11:20:45 --> File loaded: C:\xampp\htdocs\Aconnect_ci3\application\views\__header.php
+INFO - 2026-01-28 11:20:45 --> File loaded: C:\xampp\htdocs\Aconnect_ci3\application\views\user/jobs.php
+INFO - 2026-01-28 11:20:45 --> File loaded: C:\xampp\htdocs\Aconnect_ci3\application\views\__footer.php
+INFO - 2026-01-28 11:20:45 --> Final output sent to browser
+DEBUG - 2026-01-28 11:20:45 --> Total execution time: 0.0888
+ERROR - 2026-01-28 11:20:46 --> $config['composer_autoload'] is set to TRUE but C:\xampp\htdocs\Aconnect_ci3\application\vendor/autoload.php was not found.
+INFO - 2026-01-28 11:20:46 --> Config Class Initialized
+INFO - 2026-01-28 11:20:46 --> Hooks Class Initialized
+DEBUG - 2026-01-28 11:20:46 --> UTF-8 Support Enabled
+INFO - 2026-01-28 11:20:46 --> Utf8 Class Initialized
+INFO - 2026-01-28 11:20:46 --> URI Class Initialized
+INFO - 2026-01-28 11:20:46 --> Router Class Initialized
+INFO - 2026-01-28 11:20:46 --> Output Class Initialized
+INFO - 2026-01-28 11:20:46 --> Security Class Initialized
+DEBUG - 2026-01-28 11:20:46 --> Global POST, GET and COOKIE data sanitized
+INFO - 2026-01-28 11:20:46 --> Input Class Initialized
+INFO - 2026-01-28 11:20:46 --> Language Class Initialized
+INFO - 2026-01-28 11:20:46 --> Loader Class Initialized
+INFO - 2026-01-28 11:20:46 --> Helper loaded: url_helper
+INFO - 2026-01-28 11:20:46 --> Helper loaded: file_helper
+INFO - 2026-01-28 11:20:46 --> Helper loaded: html_helper
+INFO - 2026-01-28 11:20:46 --> Database Driver Class Initialized
+INFO - 2026-01-28 11:20:46 --> Session: Class initialized using 'files' driver.
+INFO - 2026-01-28 11:20:46 --> Helper loaded: form_helper
+INFO - 2026-01-28 11:20:46 --> Form Validation Class Initialized
+INFO - 2026-01-28 11:20:46 --> User Agent Class Initialized
+INFO - 2026-01-28 11:20:46 --> Language file loaded: language/english/pagination_lang.php
+INFO - 2026-01-28 11:20:46 --> Pagination Class Initialized
+INFO - 2026-01-28 11:20:46 --> Controller Class Initialized
+INFO - 2026-01-28 11:20:46 --> Model "Post_model" initialized
+INFO - 2026-01-28 11:20:46 --> File loaded: C:\xampp\htdocs\Aconnect_ci3\application\views\__header.php
+INFO - 2026-01-28 11:20:46 --> Helper loaded: text_helper
+INFO - 2026-01-28 11:20:46 --> File loaded: C:\xampp\htdocs\Aconnect_ci3\application\views\user/posts_view.php
+INFO - 2026-01-28 11:20:46 --> File loaded: C:\xampp\htdocs\Aconnect_ci3\application\views\__footer.php
+INFO - 2026-01-28 11:20:46 --> Final output sent to browser
+DEBUG - 2026-01-28 11:20:46 --> Total execution time: 0.0797
+ERROR - 2026-01-28 11:20:46 --> $config['composer_autoload'] is set to TRUE but C:\xampp\htdocs\Aconnect_ci3\application\vendor/autoload.php was not found.
+INFO - 2026-01-28 11:20:46 --> Config Class Initialized
+INFO - 2026-01-28 11:20:46 --> Hooks Class Initialized
+DEBUG - 2026-01-28 11:20:46 --> UTF-8 Support Enabled
+INFO - 2026-01-28 11:20:46 --> Utf8 Class Initialized
+INFO - 2026-01-28 11:20:46 --> URI Class Initialized
+INFO - 2026-01-28 11:20:46 --> Router Class Initialized
+INFO - 2026-01-28 11:20:46 --> Output Class Initialized
+INFO - 2026-01-28 11:20:46 --> Security Class Initialized
+DEBUG - 2026-01-28 11:20:46 --> Global POST, GET and COOKIE data sanitized
+INFO - 2026-01-28 11:20:46 --> Input Class Initialized
+INFO - 2026-01-28 11:20:46 --> Language Class Initialized
+ERROR - 2026-01-28 11:20:46 --> 404 Page Not Found: Assets/uploads
+ERROR - 2026-01-28 11:20:48 --> $config['composer_autoload'] is set to TRUE but C:\xampp\htdocs\Aconnect_ci3\application\vendor/autoload.php was not found.
+INFO - 2026-01-28 11:20:48 --> Config Class Initialized
+INFO - 2026-01-28 11:20:48 --> Hooks Class Initialized
+DEBUG - 2026-01-28 11:20:48 --> UTF-8 Support Enabled
+INFO - 2026-01-28 11:20:48 --> Utf8 Class Initialized
+INFO - 2026-01-28 11:20:48 --> URI Class Initialized
+INFO - 2026-01-28 11:20:48 --> Router Class Initialized
+INFO - 2026-01-28 11:20:48 --> Output Class Initialized
+INFO - 2026-01-28 11:20:48 --> Security Class Initialized
+DEBUG - 2026-01-28 11:20:48 --> Global POST, GET and COOKIE data sanitized
+INFO - 2026-01-28 11:20:48 --> Input Class Initialized
+INFO - 2026-01-28 11:20:48 --> Language Class Initialized
+INFO - 2026-01-28 11:20:48 --> Loader Class Initialized
+INFO - 2026-01-28 11:20:48 --> Helper loaded: url_helper
+INFO - 2026-01-28 11:20:48 --> Helper loaded: file_helper
+INFO - 2026-01-28 11:20:48 --> Helper loaded: html_helper
+INFO - 2026-01-28 11:20:48 --> Database Driver Class Initialized
+INFO - 2026-01-28 11:20:48 --> Session: Class initialized using 'files' driver.
+INFO - 2026-01-28 11:20:48 --> Helper loaded: form_helper
+INFO - 2026-01-28 11:20:48 --> Form Validation Class Initialized
+INFO - 2026-01-28 11:20:48 --> User Agent Class Initialized
+INFO - 2026-01-28 11:20:48 --> Language file loaded: language/english/pagination_lang.php
+INFO - 2026-01-28 11:20:48 --> Pagination Class Initialized
+INFO - 2026-01-28 11:20:48 --> Controller Class Initialized
+INFO - 2026-01-28 11:20:48 --> Model "Alumni_model" initialized
+INFO - 2026-01-28 11:20:48 --> File loaded: C:\xampp\htdocs\Aconnect_ci3\application\views\__header.php
+INFO - 2026-01-28 11:20:48 --> File loaded: C:\xampp\htdocs\Aconnect_ci3\application\views\user/search_alumni.php
+INFO - 2026-01-28 11:20:48 --> File loaded: C:\xampp\htdocs\Aconnect_ci3\application\views\__footer.php
+INFO - 2026-01-28 11:20:48 --> Final output sent to browser
+DEBUG - 2026-01-28 11:20:48 --> Total execution time: 0.0665
+ERROR - 2026-01-28 11:20:48 --> $config['composer_autoload'] is set to TRUE but C:\xampp\htdocs\Aconnect_ci3\application\vendor/autoload.php was not found.
+INFO - 2026-01-28 11:20:48 --> Config Class Initialized
+INFO - 2026-01-28 11:20:48 --> Hooks Class Initialized
+DEBUG - 2026-01-28 11:20:48 --> UTF-8 Support Enabled
+INFO - 2026-01-28 11:20:48 --> Utf8 Class Initialized
+INFO - 2026-01-28 11:20:48 --> URI Class Initialized
+INFO - 2026-01-28 11:20:48 --> Router Class Initialized
+INFO - 2026-01-28 11:20:48 --> Output Class Initialized
+INFO - 2026-01-28 11:20:48 --> Security Class Initialized
+DEBUG - 2026-01-28 11:20:48 --> Global POST, GET and COOKIE data sanitized
+INFO - 2026-01-28 11:20:48 --> Input Class Initialized
+INFO - 2026-01-28 11:20:48 --> Language Class Initialized
+INFO - 2026-01-28 11:20:48 --> Loader Class Initialized
+INFO - 2026-01-28 11:20:48 --> Helper loaded: url_helper
+INFO - 2026-01-28 11:20:48 --> Helper loaded: file_helper
+INFO - 2026-01-28 11:20:48 --> Helper loaded: html_helper
+INFO - 2026-01-28 11:20:48 --> Database Driver Class Initialized
+INFO - 2026-01-28 11:20:48 --> Session: Class initialized using 'files' driver.
+INFO - 2026-01-28 11:20:48 --> Helper loaded: form_helper
+INFO - 2026-01-28 11:20:48 --> Form Validation Class Initialized
+INFO - 2026-01-28 11:20:48 --> User Agent Class Initialized
+INFO - 2026-01-28 11:20:48 --> Language file loaded: language/english/pagination_lang.php
+INFO - 2026-01-28 11:20:48 --> Pagination Class Initialized
+INFO - 2026-01-28 11:20:48 --> Controller Class Initialized
+INFO - 2026-01-28 11:20:48 --> Model "Alumni_model" initialized
+INFO - 2026-01-28 11:20:48 --> Model "Employment_model" initialized
+INFO - 2026-01-28 11:20:48 --> File loaded: C:\xampp\htdocs\Aconnect_ci3\application\views\__header.php
+INFO - 2026-01-28 11:20:48 --> File loaded: C:\xampp\htdocs\Aconnect_ci3\application\views\user/view_profile.php
+INFO - 2026-01-28 11:20:48 --> File loaded: C:\xampp\htdocs\Aconnect_ci3\application\views\__footer.php
+INFO - 2026-01-28 11:20:48 --> Final output sent to browser
+DEBUG - 2026-01-28 11:20:48 --> Total execution time: 0.0293
+ERROR - 2026-01-28 11:38:34 --> $config['composer_autoload'] is set to TRUE but C:\xampp\htdocs\Aconnect_ci3\application\vendor/autoload.php was not found.
+INFO - 2026-01-28 11:38:34 --> Config Class Initialized
+INFO - 2026-01-28 11:38:34 --> Hooks Class Initialized
+DEBUG - 2026-01-28 11:38:35 --> UTF-8 Support Enabled
+INFO - 2026-01-28 11:38:35 --> Utf8 Class Initialized
+INFO - 2026-01-28 11:38:35 --> URI Class Initialized
+INFO - 2026-01-28 11:38:35 --> Router Class Initialized
+INFO - 2026-01-28 11:38:35 --> Output Class Initialized
+INFO - 2026-01-28 11:38:35 --> Security Class Initialized
+DEBUG - 2026-01-28 11:38:35 --> Global POST, GET and COOKIE data sanitized
+INFO - 2026-01-28 11:38:35 --> Input Class Initialized
+INFO - 2026-01-28 11:38:35 --> Language Class Initialized
+INFO - 2026-01-28 11:38:35 --> Loader Class Initialized
+INFO - 2026-01-28 11:38:35 --> Helper loaded: url_helper
+INFO - 2026-01-28 11:38:35 --> Helper loaded: file_helper
+INFO - 2026-01-28 11:38:35 --> Helper loaded: html_helper
+INFO - 2026-01-28 11:38:35 --> Database Driver Class Initialized
+INFO - 2026-01-28 11:38:35 --> Session: Class initialized using 'files' driver.
+INFO - 2026-01-28 11:38:35 --> Helper loaded: form_helper
+INFO - 2026-01-28 11:38:35 --> Form Validation Class Initialized
+INFO - 2026-01-28 11:38:35 --> User Agent Class Initialized
+INFO - 2026-01-28 11:38:35 --> Language file loaded: language/english/pagination_lang.php
+INFO - 2026-01-28 11:38:35 --> Pagination Class Initialized
+INFO - 2026-01-28 11:38:35 --> Controller Class Initialized
+INFO - 2026-01-28 11:38:35 --> Model "Alumni_model" initialized
+INFO - 2026-01-28 11:38:35 --> Model "Employment_model" initialized
+INFO - 2026-01-28 11:38:35 --> File loaded: C:\xampp\htdocs\Aconnect_ci3\application\views\__header.php
+INFO - 2026-01-28 11:38:35 --> File loaded: C:\xampp\htdocs\Aconnect_ci3\application\views\user/view_profile.php
+INFO - 2026-01-28 11:38:35 --> File loaded: C:\xampp\htdocs\Aconnect_ci3\application\views\__footer.php
+INFO - 2026-01-28 11:38:35 --> Final output sent to browser
+DEBUG - 2026-01-28 11:38:35 --> Total execution time: 0.0419
+ERROR - 2026-01-28 12:49:06 --> $config['composer_autoload'] is set to TRUE but C:\xampp\htdocs\Aconnect_ci3\application\vendor/autoload.php was not found.
+INFO - 2026-01-28 12:49:06 --> Config Class Initialized
+INFO - 2026-01-28 12:49:06 --> Hooks Class Initialized
+DEBUG - 2026-01-28 12:49:06 --> UTF-8 Support Enabled
+INFO - 2026-01-28 12:49:06 --> Utf8 Class Initialized
+INFO - 2026-01-28 12:49:06 --> URI Class Initialized
+INFO - 2026-01-28 12:49:06 --> Router Class Initialized
+INFO - 2026-01-28 12:49:06 --> Output Class Initialized
+INFO - 2026-01-28 12:49:06 --> Security Class Initialized
+DEBUG - 2026-01-28 12:49:06 --> Global POST, GET and COOKIE data sanitized
+INFO - 2026-01-28 12:49:06 --> Input Class Initialized
+INFO - 2026-01-28 12:49:06 --> Language Class Initialized
+INFO - 2026-01-28 12:49:06 --> Loader Class Initialized
+INFO - 2026-01-28 12:49:06 --> Helper loaded: url_helper
+INFO - 2026-01-28 12:49:06 --> Helper loaded: file_helper
+INFO - 2026-01-28 12:49:06 --> Helper loaded: html_helper
+INFO - 2026-01-28 12:49:06 --> Database Driver Class Initialized
+INFO - 2026-01-28 12:49:06 --> Session: Class initialized using 'files' driver.
+INFO - 2026-01-28 12:49:06 --> Helper loaded: form_helper
+INFO - 2026-01-28 12:49:06 --> Form Validation Class Initialized
+INFO - 2026-01-28 12:49:06 --> User Agent Class Initialized
+INFO - 2026-01-28 12:49:06 --> Language file loaded: language/english/pagination_lang.php
+INFO - 2026-01-28 12:49:06 --> Pagination Class Initialized
+INFO - 2026-01-28 12:49:06 --> Controller Class Initialized
+INFO - 2026-01-28 12:49:06 --> Helper loaded: date_helper
+DEBUG - 2026-01-28 12:49:06 --> Session class already loaded. Second attempt ignored.
+INFO - 2026-01-28 12:49:06 --> Upload Class Initialized
+INFO - 2026-01-28 12:49:06 --> Model "Job_model" initialized
+INFO - 2026-01-28 12:49:06 --> File loaded: C:\xampp\htdocs\Aconnect_ci3\application\views\__header.php
+INFO - 2026-01-28 12:49:06 --> File loaded: C:\xampp\htdocs\Aconnect_ci3\application\views\user/jobs.php
+INFO - 2026-01-28 12:49:06 --> File loaded: C:\xampp\htdocs\Aconnect_ci3\application\views\__footer.php
+INFO - 2026-01-28 12:49:06 --> Final output sent to browser
+DEBUG - 2026-01-28 12:49:06 --> Total execution time: 0.1274
+ERROR - 2026-01-28 12:49:07 --> $config['composer_autoload'] is set to TRUE but C:\xampp\htdocs\Aconnect_ci3\application\vendor/autoload.php was not found.
+INFO - 2026-01-28 12:49:07 --> Config Class Initialized
+INFO - 2026-01-28 12:49:07 --> Hooks Class Initialized
+DEBUG - 2026-01-28 12:49:07 --> UTF-8 Support Enabled
+INFO - 2026-01-28 12:49:07 --> Utf8 Class Initialized
+INFO - 2026-01-28 12:49:07 --> URI Class Initialized
+INFO - 2026-01-28 12:49:07 --> Router Class Initialized
+INFO - 2026-01-28 12:49:07 --> Output Class Initialized
+INFO - 2026-01-28 12:49:07 --> Security Class Initialized
+DEBUG - 2026-01-28 12:49:07 --> Global POST, GET and COOKIE data sanitized
+INFO - 2026-01-28 12:49:07 --> Input Class Initialized
+INFO - 2026-01-28 12:49:07 --> Language Class Initialized
+INFO - 2026-01-28 12:49:07 --> Loader Class Initialized
+INFO - 2026-01-28 12:49:07 --> Helper loaded: url_helper
+INFO - 2026-01-28 12:49:07 --> Helper loaded: file_helper
+INFO - 2026-01-28 12:49:07 --> Helper loaded: html_helper
+INFO - 2026-01-28 12:49:07 --> Database Driver Class Initialized
+INFO - 2026-01-28 12:49:07 --> Session: Class initialized using 'files' driver.
+INFO - 2026-01-28 12:49:07 --> Helper loaded: form_helper
+INFO - 2026-01-28 12:49:07 --> Form Validation Class Initialized
+INFO - 2026-01-28 12:49:07 --> User Agent Class Initialized
+INFO - 2026-01-28 12:49:07 --> Language file loaded: language/english/pagination_lang.php
+INFO - 2026-01-28 12:49:07 --> Pagination Class Initialized
+INFO - 2026-01-28 12:49:07 --> Controller Class Initialized
+INFO - 2026-01-28 12:49:07 --> Model "M_login" initialized
+INFO - 2026-01-28 12:49:07 --> Model "Activity_log_model" initialized
+ERROR - 2026-01-28 12:49:07 --> $config['composer_autoload'] is set to TRUE but C:\xampp\htdocs\Aconnect_ci3\application\vendor/autoload.php was not found.
+INFO - 2026-01-28 12:49:07 --> Config Class Initialized
+INFO - 2026-01-28 12:49:07 --> Hooks Class Initialized
+DEBUG - 2026-01-28 12:49:07 --> UTF-8 Support Enabled
+INFO - 2026-01-28 12:49:07 --> Utf8 Class Initialized
+INFO - 2026-01-28 12:49:07 --> URI Class Initialized
+INFO - 2026-01-28 12:49:07 --> Router Class Initialized
+INFO - 2026-01-28 12:49:07 --> Output Class Initialized
+INFO - 2026-01-28 12:49:07 --> Security Class Initialized
+DEBUG - 2026-01-28 12:49:07 --> Global POST, GET and COOKIE data sanitized
+INFO - 2026-01-28 12:49:07 --> Input Class Initialized
+INFO - 2026-01-28 12:49:07 --> Language Class Initialized
+INFO - 2026-01-28 12:49:07 --> Loader Class Initialized
+INFO - 2026-01-28 12:49:07 --> Helper loaded: url_helper
+INFO - 2026-01-28 12:49:07 --> Helper loaded: file_helper
+INFO - 2026-01-28 12:49:07 --> Helper loaded: html_helper
+INFO - 2026-01-28 12:49:07 --> Database Driver Class Initialized
+INFO - 2026-01-28 12:49:07 --> Session: Class initialized using 'files' driver.
+INFO - 2026-01-28 12:49:07 --> Helper loaded: form_helper
+INFO - 2026-01-28 12:49:07 --> Form Validation Class Initialized
+INFO - 2026-01-28 12:49:07 --> User Agent Class Initialized
+INFO - 2026-01-28 12:49:07 --> Language file loaded: language/english/pagination_lang.php
+INFO - 2026-01-28 12:49:07 --> Pagination Class Initialized
+INFO - 2026-01-28 12:49:07 --> Controller Class Initialized
+INFO - 2026-01-28 12:49:07 --> Model "M_login" initialized
+INFO - 2026-01-28 12:49:07 --> File loaded: C:\xampp\htdocs\Aconnect_ci3\application\views\login.php
+INFO - 2026-01-28 12:49:07 --> Final output sent to browser
+DEBUG - 2026-01-28 12:49:07 --> Total execution time: 0.0444
+ERROR - 2026-01-28 12:49:08 --> $config['composer_autoload'] is set to TRUE but C:\xampp\htdocs\Aconnect_ci3\application\vendor/autoload.php was not found.
+INFO - 2026-01-28 12:49:08 --> Config Class Initialized
+INFO - 2026-01-28 12:49:08 --> Hooks Class Initialized
+DEBUG - 2026-01-28 12:49:08 --> UTF-8 Support Enabled
+INFO - 2026-01-28 12:49:08 --> Utf8 Class Initialized
+INFO - 2026-01-28 12:49:08 --> URI Class Initialized
+INFO - 2026-01-28 12:49:08 --> Router Class Initialized
+INFO - 2026-01-28 12:49:08 --> Output Class Initialized
+INFO - 2026-01-28 12:49:08 --> Security Class Initialized
+DEBUG - 2026-01-28 12:49:08 --> Global POST, GET and COOKIE data sanitized
+INFO - 2026-01-28 12:49:08 --> Input Class Initialized
+INFO - 2026-01-28 12:49:08 --> Language Class Initialized
+INFO - 2026-01-28 12:49:08 --> Loader Class Initialized
+INFO - 2026-01-28 12:49:08 --> Helper loaded: url_helper
+INFO - 2026-01-28 12:49:08 --> Helper loaded: file_helper
+INFO - 2026-01-28 12:49:08 --> Helper loaded: html_helper
+INFO - 2026-01-28 12:49:08 --> Database Driver Class Initialized
+INFO - 2026-01-28 12:49:08 --> Session: Class initialized using 'files' driver.
+INFO - 2026-01-28 12:49:08 --> Helper loaded: form_helper
+INFO - 2026-01-28 12:49:08 --> Form Validation Class Initialized
+INFO - 2026-01-28 12:49:08 --> User Agent Class Initialized
+INFO - 2026-01-28 12:49:08 --> Language file loaded: language/english/pagination_lang.php
+INFO - 2026-01-28 12:49:08 --> Pagination Class Initialized
+INFO - 2026-01-28 12:49:08 --> Controller Class Initialized
+INFO - 2026-01-28 12:49:08 --> Model "M_login" initialized
+INFO - 2026-01-28 12:49:08 --> File loaded: C:\xampp\htdocs\Aconnect_ci3\application\views\admin/login.php
+INFO - 2026-01-28 12:49:08 --> Final output sent to browser
+DEBUG - 2026-01-28 12:49:08 --> Total execution time: 0.0398
+ERROR - 2026-01-28 12:49:10 --> $config['composer_autoload'] is set to TRUE but C:\xampp\htdocs\Aconnect_ci3\application\vendor/autoload.php was not found.
+INFO - 2026-01-28 12:49:10 --> Config Class Initialized
+INFO - 2026-01-28 12:49:10 --> Hooks Class Initialized
+DEBUG - 2026-01-28 12:49:10 --> UTF-8 Support Enabled
+INFO - 2026-01-28 12:49:10 --> Utf8 Class Initialized
+INFO - 2026-01-28 12:49:10 --> URI Class Initialized
+INFO - 2026-01-28 12:49:10 --> Router Class Initialized
+INFO - 2026-01-28 12:49:10 --> Output Class Initialized
+INFO - 2026-01-28 12:49:10 --> Security Class Initialized
+DEBUG - 2026-01-28 12:49:10 --> Global POST, GET and COOKIE data sanitized
+INFO - 2026-01-28 12:49:10 --> Input Class Initialized
+INFO - 2026-01-28 12:49:10 --> Language Class Initialized
+INFO - 2026-01-28 12:49:10 --> Loader Class Initialized
+INFO - 2026-01-28 12:49:10 --> Helper loaded: url_helper
+INFO - 2026-01-28 12:49:10 --> Helper loaded: file_helper
+INFO - 2026-01-28 12:49:10 --> Helper loaded: html_helper
+INFO - 2026-01-28 12:49:10 --> Database Driver Class Initialized
+INFO - 2026-01-28 12:49:10 --> Session: Class initialized using 'files' driver.
+INFO - 2026-01-28 12:49:10 --> Helper loaded: form_helper
+INFO - 2026-01-28 12:49:10 --> Form Validation Class Initialized
+INFO - 2026-01-28 12:49:10 --> User Agent Class Initialized
+INFO - 2026-01-28 12:49:10 --> Language file loaded: language/english/pagination_lang.php
+INFO - 2026-01-28 12:49:10 --> Pagination Class Initialized
+INFO - 2026-01-28 12:49:10 --> Controller Class Initialized
+INFO - 2026-01-28 12:49:10 --> Model "M_login" initialized
+INFO - 2026-01-28 12:49:10 --> File loaded: C:\xampp\htdocs\Aconnect_ci3\application\views\admin/login.php
+ERROR - 2026-01-28 12:49:10 --> $config['composer_autoload'] is set to TRUE but C:\xampp\htdocs\Aconnect_ci3\application\vendor/autoload.php was not found.
+INFO - 2026-01-28 12:49:10 --> Config Class Initialized
+INFO - 2026-01-28 12:49:10 --> Hooks Class Initialized
+DEBUG - 2026-01-28 12:49:10 --> UTF-8 Support Enabled
+INFO - 2026-01-28 12:49:10 --> Utf8 Class Initialized
+INFO - 2026-01-28 12:49:10 --> URI Class Initialized
+INFO - 2026-01-28 12:49:10 --> Router Class Initialized
+INFO - 2026-01-28 12:49:10 --> Output Class Initialized
+INFO - 2026-01-28 12:49:10 --> Security Class Initialized
+DEBUG - 2026-01-28 12:49:10 --> Global POST, GET and COOKIE data sanitized
+INFO - 2026-01-28 12:49:10 --> Input Class Initialized
+INFO - 2026-01-28 12:49:10 --> Language Class Initialized
+INFO - 2026-01-28 12:49:10 --> Loader Class Initialized
+INFO - 2026-01-28 12:49:10 --> Helper loaded: url_helper
+INFO - 2026-01-28 12:49:10 --> Helper loaded: file_helper
+INFO - 2026-01-28 12:49:10 --> Helper loaded: html_helper
+INFO - 2026-01-28 12:49:10 --> Database Driver Class Initialized
+INFO - 2026-01-28 12:49:10 --> Session: Class initialized using 'files' driver.
+INFO - 2026-01-28 12:49:10 --> Helper loaded: form_helper
+INFO - 2026-01-28 12:49:10 --> Form Validation Class Initialized
+INFO - 2026-01-28 12:49:10 --> User Agent Class Initialized
+INFO - 2026-01-28 12:49:10 --> Language file loaded: language/english/pagination_lang.php
+INFO - 2026-01-28 12:49:10 --> Pagination Class Initialized
+INFO - 2026-01-28 12:49:10 --> Controller Class Initialized
+INFO - 2026-01-28 12:49:10 --> File loaded: C:\xampp\htdocs\Aconnect_ci3\application\views\__header.php
+INFO - 2026-01-28 12:49:10 --> File loaded: C:\xampp\htdocs\Aconnect_ci3\application\views\dashboard_a.php
+INFO - 2026-01-28 12:49:10 --> File loaded: C:\xampp\htdocs\Aconnect_ci3\application\views\__footer.php
+INFO - 2026-01-28 12:49:10 --> Final output sent to browser
+DEBUG - 2026-01-28 12:49:10 --> Total execution time: 0.0564
+ERROR - 2026-01-28 12:49:12 --> $config['composer_autoload'] is set to TRUE but C:\xampp\htdocs\Aconnect_ci3\application\vendor/autoload.php was not found.
+INFO - 2026-01-28 12:49:12 --> Config Class Initialized
+INFO - 2026-01-28 12:49:12 --> Hooks Class Initialized
+DEBUG - 2026-01-28 12:49:12 --> UTF-8 Support Enabled
+INFO - 2026-01-28 12:49:12 --> Utf8 Class Initialized
+INFO - 2026-01-28 12:49:12 --> URI Class Initialized
+INFO - 2026-01-28 12:49:12 --> Router Class Initialized
+INFO - 2026-01-28 12:49:12 --> Output Class Initialized
+INFO - 2026-01-28 12:49:12 --> Security Class Initialized
+DEBUG - 2026-01-28 12:49:12 --> Global POST, GET and COOKIE data sanitized
+INFO - 2026-01-28 12:49:12 --> Input Class Initialized
+INFO - 2026-01-28 12:49:12 --> Language Class Initialized
+INFO - 2026-01-28 12:49:12 --> Loader Class Initialized
+INFO - 2026-01-28 12:49:12 --> Helper loaded: url_helper
+INFO - 2026-01-28 12:49:12 --> Helper loaded: file_helper
+INFO - 2026-01-28 12:49:12 --> Helper loaded: html_helper
+INFO - 2026-01-28 12:49:12 --> Database Driver Class Initialized
+INFO - 2026-01-28 12:49:12 --> Session: Class initialized using 'files' driver.
+INFO - 2026-01-28 12:49:12 --> Helper loaded: form_helper
+INFO - 2026-01-28 12:49:12 --> Form Validation Class Initialized
+INFO - 2026-01-28 12:49:12 --> User Agent Class Initialized
+INFO - 2026-01-28 12:49:12 --> Language file loaded: language/english/pagination_lang.php
+INFO - 2026-01-28 12:49:12 --> Pagination Class Initialized
+INFO - 2026-01-28 12:49:12 --> Controller Class Initialized
+DEBUG - 2026-01-28 12:49:12 --> Pagination class already loaded. Second attempt ignored.
+INFO - 2026-01-28 12:49:12 --> File loaded: C:\xampp\htdocs\Aconnect_ci3\application\views\__header.php
+INFO - 2026-01-28 12:49:12 --> File loaded: C:\xampp\htdocs\Aconnect_ci3\application\views\admin/manage_accounts.php
+INFO - 2026-01-28 12:49:12 --> File loaded: C:\xampp\htdocs\Aconnect_ci3\application\views\__footer.php
+INFO - 2026-01-28 12:49:12 --> Final output sent to browser
+DEBUG - 2026-01-28 12:49:12 --> Total execution time: 0.0262
+ERROR - 2026-01-28 12:49:13 --> $config['composer_autoload'] is set to TRUE but C:\xampp\htdocs\Aconnect_ci3\application\vendor/autoload.php was not found.
+INFO - 2026-01-28 12:49:13 --> Config Class Initialized
+INFO - 2026-01-28 12:49:13 --> Hooks Class Initialized
+DEBUG - 2026-01-28 12:49:13 --> UTF-8 Support Enabled
+INFO - 2026-01-28 12:49:13 --> Utf8 Class Initialized
+INFO - 2026-01-28 12:49:13 --> URI Class Initialized
+INFO - 2026-01-28 12:49:13 --> Router Class Initialized
+INFO - 2026-01-28 12:49:13 --> Output Class Initialized
+INFO - 2026-01-28 12:49:13 --> Security Class Initialized
+DEBUG - 2026-01-28 12:49:13 --> Global POST, GET and COOKIE data sanitized
+INFO - 2026-01-28 12:49:13 --> Input Class Initialized
+INFO - 2026-01-28 12:49:13 --> Language Class Initialized
+INFO - 2026-01-28 12:49:13 --> Loader Class Initialized
+INFO - 2026-01-28 12:49:13 --> Helper loaded: url_helper
+INFO - 2026-01-28 12:49:13 --> Helper loaded: file_helper
+INFO - 2026-01-28 12:49:13 --> Helper loaded: html_helper
+INFO - 2026-01-28 12:49:13 --> Database Driver Class Initialized
+INFO - 2026-01-28 12:49:13 --> Session: Class initialized using 'files' driver.
+INFO - 2026-01-28 12:49:13 --> Helper loaded: form_helper
+INFO - 2026-01-28 12:49:13 --> Form Validation Class Initialized
+INFO - 2026-01-28 12:49:13 --> User Agent Class Initialized
+INFO - 2026-01-28 12:49:13 --> Language file loaded: language/english/pagination_lang.php
+INFO - 2026-01-28 12:49:13 --> Pagination Class Initialized
+INFO - 2026-01-28 12:49:13 --> Controller Class Initialized
+INFO - 2026-01-28 12:49:13 --> Model "Activity_log_model" initialized
+INFO - 2026-01-28 12:49:13 --> Model "Alumni_model" initialized
+DEBUG - 2026-01-28 12:49:13 --> Pagination class already loaded. Second attempt ignored.
+DEBUG - 2026-01-28 19:49:13 --> Pagination class already loaded. Second attempt ignored.
+INFO - 2026-01-28 19:49:13 --> File loaded: C:\xampp\htdocs\Aconnect_ci3\application\views\__header.php
+INFO - 2026-01-28 19:49:13 --> File loaded: C:\xampp\htdocs\Aconnect_ci3\application\views\admin/activity_log.php
+INFO - 2026-01-28 19:49:13 --> File loaded: C:\xampp\htdocs\Aconnect_ci3\application\views\__footer.php
+INFO - 2026-01-28 19:49:13 --> Final output sent to browser
+DEBUG - 2026-01-28 19:49:13 --> Total execution time: 0.0557
+ERROR - 2026-01-28 12:49:14 --> $config['composer_autoload'] is set to TRUE but C:\xampp\htdocs\Aconnect_ci3\application\vendor/autoload.php was not found.
+INFO - 2026-01-28 12:49:14 --> Config Class Initialized
+INFO - 2026-01-28 12:49:14 --> Hooks Class Initialized
+DEBUG - 2026-01-28 12:49:14 --> UTF-8 Support Enabled
+INFO - 2026-01-28 12:49:14 --> Utf8 Class Initialized
+INFO - 2026-01-28 12:49:14 --> URI Class Initialized
+INFO - 2026-01-28 12:49:14 --> Router Class Initialized
+INFO - 2026-01-28 12:49:14 --> Output Class Initialized
+INFO - 2026-01-28 12:49:14 --> Security Class Initialized
+DEBUG - 2026-01-28 12:49:14 --> Global POST, GET and COOKIE data sanitized
+INFO - 2026-01-28 12:49:14 --> Input Class Initialized
+INFO - 2026-01-28 12:49:14 --> Language Class Initialized
+INFO - 2026-01-28 12:49:14 --> Loader Class Initialized
+INFO - 2026-01-28 12:49:14 --> Helper loaded: url_helper
+INFO - 2026-01-28 12:49:14 --> Helper loaded: file_helper
+INFO - 2026-01-28 12:49:14 --> Helper loaded: html_helper
+INFO - 2026-01-28 12:49:14 --> Database Driver Class Initialized
+INFO - 2026-01-28 12:49:14 --> Session: Class initialized using 'files' driver.
+INFO - 2026-01-28 12:49:14 --> Helper loaded: form_helper
+INFO - 2026-01-28 12:49:14 --> Form Validation Class Initialized
+INFO - 2026-01-28 12:49:14 --> User Agent Class Initialized
+INFO - 2026-01-28 12:49:14 --> Language file loaded: language/english/pagination_lang.php
+INFO - 2026-01-28 12:49:14 --> Pagination Class Initialized
+INFO - 2026-01-28 12:49:14 --> Controller Class Initialized
+INFO - 2026-01-28 12:49:14 --> Model "Support_model" initialized
+DEBUG - 2026-01-28 12:49:14 --> Session class already loaded. Second attempt ignored.
+INFO - 2026-01-28 12:49:14 --> File loaded: C:\xampp\htdocs\Aconnect_ci3\application\views\__header.php
+INFO - 2026-01-28 12:49:14 --> File loaded: C:\xampp\htdocs\Aconnect_ci3\application\views\admin/support_inbox.php
+INFO - 2026-01-28 12:49:14 --> File loaded: C:\xampp\htdocs\Aconnect_ci3\application\views\__footer.php
+INFO - 2026-01-28 12:49:14 --> Final output sent to browser
+DEBUG - 2026-01-28 12:49:14 --> Total execution time: 0.0291
+ERROR - 2026-01-28 12:49:16 --> $config['composer_autoload'] is set to TRUE but C:\xampp\htdocs\Aconnect_ci3\application\vendor/autoload.php was not found.
+INFO - 2026-01-28 12:49:16 --> Config Class Initialized
+INFO - 2026-01-28 12:49:16 --> Hooks Class Initialized
+DEBUG - 2026-01-28 12:49:16 --> UTF-8 Support Enabled
+INFO - 2026-01-28 12:49:16 --> Utf8 Class Initialized
+INFO - 2026-01-28 12:49:16 --> URI Class Initialized
+INFO - 2026-01-28 12:49:16 --> Router Class Initialized
+INFO - 2026-01-28 12:49:16 --> Output Class Initialized
+INFO - 2026-01-28 12:49:16 --> Security Class Initialized
+DEBUG - 2026-01-28 12:49:16 --> Global POST, GET and COOKIE data sanitized
+INFO - 2026-01-28 12:49:16 --> Input Class Initialized
+INFO - 2026-01-28 12:49:16 --> Language Class Initialized
+INFO - 2026-01-28 12:49:16 --> Loader Class Initialized
+INFO - 2026-01-28 12:49:16 --> Helper loaded: url_helper
+INFO - 2026-01-28 12:49:16 --> Helper loaded: file_helper
+INFO - 2026-01-28 12:49:16 --> Helper loaded: html_helper
+INFO - 2026-01-28 12:49:16 --> Database Driver Class Initialized
+INFO - 2026-01-28 12:49:16 --> Session: Class initialized using 'files' driver.
+INFO - 2026-01-28 12:49:16 --> Helper loaded: form_helper
+INFO - 2026-01-28 12:49:16 --> Form Validation Class Initialized
+INFO - 2026-01-28 12:49:16 --> User Agent Class Initialized
+INFO - 2026-01-28 12:49:16 --> Language file loaded: language/english/pagination_lang.php
+INFO - 2026-01-28 12:49:16 --> Pagination Class Initialized
+INFO - 2026-01-28 12:49:16 --> Controller Class Initialized
+INFO - 2026-01-28 12:49:16 --> Helper loaded: text_helper
+DEBUG - 2026-01-28 12:49:16 --> Session class already loaded. Second attempt ignored.
+INFO - 2026-01-28 12:49:16 --> Model "Employment_model" initialized
+INFO - 2026-01-28 12:49:16 --> File loaded: C:\xampp\htdocs\Aconnect_ci3\application\views\__header.php
+INFO - 2026-01-28 12:49:16 --> File loaded: C:\xampp\htdocs\Aconnect_ci3\application\views\admin/reports.php
+INFO - 2026-01-28 12:49:16 --> File loaded: C:\xampp\htdocs\Aconnect_ci3\application\views\__footer.php
+INFO - 2026-01-28 12:49:16 --> Final output sent to browser
+DEBUG - 2026-01-28 12:49:16 --> Total execution time: 0.0415

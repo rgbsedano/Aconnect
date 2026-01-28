@@ -1,293 +1,290 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Manage Alumni Content | Professional</title>
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
-    <style>
-        :root {
-            --primary-maroon: #800000;
-            --primary-hover: #600000;
-            --charcoal-text: #2C3E50;
-            --bg-soft-grey: #F4F7F6;
-            --card-white: #FFFFFF;
-            --border-light: #E0E4E8;
-            --danger-soft: #e35d6a;
-            --success-green: #10B981;
-            --accent-gold: #C19A6B;
-            --delete-red: #D32F2F; 
-        }
+<style>
+    @import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap');
 
-        body {
-            background-color: var(--bg-soft-grey);
-            font-family: 'Inter', -apple-system, sans-serif;
-            color: var(--charcoal-text);
-        }
+    :root {
+        --primary-bg: #f8fafc;
+        --card-bg: #ffffff;
+        --text-main: #1e293b;
+        --text-muted: #64748b;
+        --accent-red: #700a0a;
+        --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        --border-radius: 24px;
+    }
 
-        .admin-wrapper { 
-            max-width: 1400px; 
-            margin: 40px auto; 
-            padding: 0 20px; 
-        }
+    .dashboard-wrapper {
+        max-width: 1400px;
+        margin: 0 auto;
+        padding: 20px 24px;
+        animation: fadeIn 0.8s ease-out;
+    }
 
-        .content-management-container {
-            padding: 32px;
-            background: var(--card-white);
-            border-radius: 16px;
-            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-            border: 1px solid var(--border-light);
-        }
+    @keyframes fadeIn {
+        from { opacity: 0; transform: translateY(10px); }
+        to { opacity: 1; transform: translateY(0); }
+    }
 
-        .management-header {
-            color: var(--primary-maroon);
-            font-weight: 800;
-            border-bottom: 3px solid var(--primary-maroon);
-            display: inline-block;
-            padding-bottom: 10px;
-        }
+    .header-section {
+        margin-bottom: 30px;
+        display: flex;
+        justify-content: space-between;
+        align-items: flex-end;
+    }
 
-        .content-card-custom {
-            min-width: 320px;
-            max-width: 320px;
-            border: 1px solid var(--border-light);
-            border-radius: 12px;
-            transition: all 0.3s ease;
-            background: var(--card-white);
-            padding: 24px;
-            display: flex;
-            flex-direction: column;
-        }
+    .header-section h1 {
+        font-size: 28px;
+        font-weight: 700;
+        margin-bottom: 4px;
+        color: var(--text-main);
+    }
 
-        .category-label {
-            color: var(--accent-gold);
-            font-size: 0.75rem;
-            font-weight: 800;
-            letter-spacing: 1.2px;
-            text-transform: uppercase;
-            margin-bottom: 8px;
-        }
+    .header-section h1 span { color: var(--accent-red); }
+    .header-section p { color: var(--text-muted); font-size: 14px; margin: 0; }
 
-        .applicant-badge {
-            background-color: #F8E8EB;
-            color: var(--primary-maroon);
-            padding: 4px 12px;
-            border-radius: 20px;
-            font-size: 0.75rem;
-            font-weight: 700;
-        }
+    .section-title {
+        display: flex;
+        align-items: center;
+        gap: 12px;
+        margin-bottom: 20px;
+        margin-top: 40px;
+    }
 
-        .post-main-title {
-            font-size: 1.25rem;
-            font-weight: 700;
-            color: #1A202C;
-            margin-bottom: 15px;
-            height: 3rem;
-            overflow: hidden;
-            display: -webkit-box;
-            -webkit-line-clamp: 2;
-            -webkit-box-orient: vertical;
-        }
+    .section-title h2 {
+        font-size: 18px;
+        font-weight: 700;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+        color: var(--text-main);
+        margin: 0;
+    }
 
-        .info-row {
-            font-size: 0.85rem;
-            color: #718096;
-            margin-bottom: 8px;
-            display: flex;
-            align-items: center;
-        }
+    .section-title .badge {
+        background: #fef2f2;
+        color: var(--accent-red);
+        font-size: 11px;
+        font-weight: 700;
+        padding: 4px 10px;
+        border-radius: 8px;
+    }
 
-        .info-row i {
-            width: 20px;
-            color: #A0AEC0;
-        }
+    /* Horizontal Scroller */
+    .cards-scroller {
+        display: flex;
+        gap: 20px;
+        overflow-x: auto;
+        padding: 10px 5px 25px;
+        scrollbar-width: none; /* Firefox */
+        -ms-overflow-style: none;  /* IE and Edge */
+    }
 
-        .btn-review-outline {
-            width: 100%;
-            background: transparent;
-            border: 1px solid var(--primary-maroon);
-            color: var(--primary-maroon) !important;
-            border-radius: 10px;
-            padding: 10px;
-            font-weight: 600;
-            margin: 20px 0 15px 0;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            transition: all 0.2s;
-            cursor: pointer;
-        }
+    .cards-scroller::-webkit-scrollbar { display: none; }
 
-        .btn-review-outline:hover {
-            background: #FFF5F5;
-            text-decoration: none;
-        }
+    /* Post Card */
+    .post-card {
+        min-width: 320px;
+        max-width: 320px;
+        background: var(--card-bg);
+        border-radius: 20px;
+        padding: 24px;
+        box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
+        border: 1px solid #f1f5f9;
+        transition: var(--transition);
+        display: flex;
+        flex-direction: column;
+        position: relative;
+    }
 
-        .card-footer-actions {
-            border-top: 1px solid #F0F0F0;
-            padding-top: 15px;
-            display: flex;
-            justify-content: space-between;
-        }
+    .post-card:hover {
+        transform: translateY(-8px);
+        box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1);
+        border-color: var(--accent-red);
+    }
 
-        .action-link {
-            font-size: 0.85rem;
-            color: #4A5568;
-            font-weight: 600;
-            text-decoration: none !important;
-            display: inline-flex;
-            align-items: center;
-            transition: opacity 0.2s;
-            background: none;
-            border: none;
-            padding: 0;
-            cursor: pointer;
-        }
+    .post-type-badge {
+        font-size: 10px;
+        font-weight: 800;
+        text-transform: uppercase;
+        color: var(--accent-red);
+        letter-spacing: 1px;
+        margin-bottom: 12px;
+        display: block;
+    }
 
-        .action-link i { margin-right: 5px; font-size: 0.9rem; }
-        .action-link:hover { opacity: 0.7; }
+    .post-title {
+        font-size: 17px;
+        font-weight: 700;
+        color: var(--text-main);
+        margin-bottom: 12px;
+        line-height: 1.4;
+        height: 48px;
+        overflow: hidden;
+        display: -webkit-box;
+        -webkit-line-clamp: 2;
+        -webkit-box-orient: vertical;
+    }
 
-        .action-link.delete { 
-            color: var(--delete-red) !important; 
-        }
+    .post-meta {
+        display: flex;
+        align-items: center;
+        gap: 12px;
+        font-size: 12px;
+        color: var(--text-muted);
+        margin-bottom: 20px;
+    }
 
-        .section-divider { margin-bottom: 3rem; }
-        .cards-scroller {
-            display: flex;
-            gap: 1.5rem;
-            overflow-x: auto;
-            padding: 10px 5px 20px 5px;
-            scrollbar-width: thin;
-        }
+    .post-meta i { font-size: 14px; color: #cbd5e1; }
 
-        .btn-maroon { 
-            background: linear-gradient(135deg, var(--primary-maroon), var(--primary-hover));
-            color: white !important; font-weight: 600; border: none; padding: 10px 24px; border-radius: 10px;
-        }
+    .btn-review {
+        width: 100%;
+        padding: 10px;
+        border-radius: 12px;
+        font-size: 13px;
+        font-weight: 700;
+        text-align: center;
+        background: #f8fafc;
+        border: 1px solid #e2e8f0;
+        color: var(--text-main);
+        transition: var(--transition);
+        margin-bottom: 12px;
+    }
 
-        #toastContainer { position: fixed; top: 20px; right: 20px; z-index: 9999; }
-        .custom-toast { min-width: 280px; padding: 16px 20px; border-radius: 12px; color: white; margin-bottom: 10px; display: flex; align-items: center; background: var(--success-green); animation: slideIn 0.3s ease-out; }
-        .toast-error { background: var(--danger-soft); }
+    .btn-review:hover {
+        background: var(--accent-red);
+        color: white;
+        border-color: var(--accent-red);
+        text-decoration: none;
+    }
 
-        @keyframes slideIn {
-            from { transform: translateX(100%); opacity: 0; }
-            to { transform: translateX(0); opacity: 1; }
-        }
-    </style>
-</head>
-<body>
+    .card-footer {
+        margin-top: auto;
+        padding-top: 15px;
+        border-top: 1px solid #f1f5f9;
+        display: flex;
+        justify-content: space-between;
+        background: transparent;
+    }
 
-<div id="toastContainer"></div>
+    .action-btn {
+        font-size: 12px;
+        font-weight: 700;
+        color: var(--text-muted);
+        display: flex;
+        align-items: center;
+        gap: 6px;
+        cursor: pointer;
+        transition: var(--transition);
+        border: none;
+        background: none;
+    }
 
-<div class="admin-wrapper">
-    <div class="content-management-container">
-        <div class="d-flex justify-content-between align-items-center mb-5">
-            <h2 class="management-header"><i class="fas fa-bullhorn mr-3"></i>Alumni Content</h2>
-            <div>
-                <button class="btn btn-maroon shadow-sm" data-toggle="modal" data-target="#createPostModal">
-                    <i class="fas fa-plus-circle mr-2"></i> Create Post
-                </button>
-                <button class="btn btn-outline-secondary ml-2 shadow-sm" style="border-radius: 10px; padding: 10px 24px;" data-toggle="modal" data-target="#uploadCarouselModal">
-                    <i class="fas fa-images mr-2"></i> Manage Carousel
-                </button>
-            </div>
+    .action-btn:hover { color: var(--accent-red); }
+    .action-btn.delete:hover { color: #ef4444; }
+
+    /* Modal Styling */
+    .modal-content { border-radius: 24px; border: none; overflow: hidden; }
+    .modal-header { background: var(--accent-red); color: white; padding: 25px; border: none; }
+    .form-label { font-size: 11px; font-weight: 700; color: var(--text-muted); text-transform: uppercase; margin-bottom: 8px; display: block; }
+    .form-input { border-radius: 12px; padding: 12px; font-size: 14px; font-weight: 500; border: 1px solid #e2e8f0; }
+    .form-input:focus { border-color: var(--accent-red); box-shadow: 0 0 0 4px rgba(112, 10, 10, 0.05); }
+
+</style>
+
+<div class="dashboard-wrapper">
+    <div class="header-section">
+        <div>
+            <h1>Alumni <span>Content</span></h1>
+            <p>Publish announcements, news, and success stories to the network.</p>
+        </div>
+        <div class="actions">
+            <button class="btn btn-danger" data-toggle="modal" data-target="#createPostModal" style="background: var(--accent-red); border-radius: 12px; font-weight: 700; padding: 10px 24px;">
+                <i class="fas fa-plus mr-2"></i> Create Post
+            </button>
+            <button class="btn btn-outline-secondary ml-2" data-toggle="modal" data-target="#uploadCarouselModal" style="border-radius: 12px; font-weight: 600; padding: 10px 20px;">
+                <i class="fas fa-images mr-2"></i> Carousel
+            </button>
+        </div>
+    </div>
+
+    <?php function render_modern_section($title, $items, $type) { ?>
+        <div class="section-title">
+            <h2><?= $title ?></h2>
+            <span class="badge"><?= count($items) ?> POSTS</span>
         </div>
 
-        <?php function render_section($title, $items, $type) { ?>
-            <div class="section-divider">
-                <div class="d-flex justify-content-between align-items-center mb-3">
-                    <div class="section-title">
-                        <h4 style="font-weight: 700; text-transform: uppercase; letter-spacing: 1px;">
-                            <i class="<?= $type === 'announcements' ? 'fas fa-bullhorn' : ($type === 'news' ? 'fas fa-newspaper' : 'fas fa-star') ?>" style="color: var(--primary-maroon); margin-right: 12px;"></i>
-                            <?= $title ?>
-                        </h4>
+        <div class="cards-scroller" id="<?= $type ?>Wrapper">
+            <?php if (empty($items)): ?>
+                <div class="py-5 text-center w-100" style="background: white; border-radius: 20px; border: 2px dashed #e2e8f0;">
+                    <i class="fas fa-folder-open fa-3x text-light mb-3"></i>
+                    <p class="text-muted font-weight-bold">No <?= strtolower($title) ?> found.</p>
+                </div>
+            <?php else: foreach($items as $post): ?>
+                <div class="post-card">
+                    <span class="post-type-badge"><?= $type ?></span>
+                    <h5 class="post-title"><?= htmlspecialchars($post['title']) ?></h5>
+                    
+                    <div class="post-meta">
+                        <div><i class="fas fa-calendar-alt mr-1"></i> <?= date('M d, Y', strtotime($post['created_at'] ?? 'now')) ?></div>
+                        <div><i class="fas fa-tag mr-1"></i> Admin</div>
                     </div>
-                    <div class="scroll-controls">
-                        <button class="btn btn-sm btn-light border shadow-sm" onclick="scrollCarousel('<?= $type ?>Wrapper', -1)"><i class="fas fa-chevron-left"></i></button>
-                        <button class="btn btn-sm btn-light border shadow-sm" onclick="scrollCarousel('<?= $type ?>Wrapper', 1)"><i class="fas fa-chevron-right"></i></button>
+
+                    <a href="javascript:void(0)" onclick='reviewDetails(<?= json_encode($post) ?>)' class="btn-review">
+                        <i class="fas fa-eye mr-2"></i> Full Details
+                    </a>
+
+                    <div class="card-footer">
+                        <button onclick='editPost(<?= json_encode($post) ?>)' class="action-btn">
+                            <i class="fas fa-pen"></i> Edit
+                        </button>
+                        <button onclick="deletePost(<?= $post['id'] ?>)" class="action-btn delete">
+                            <i class="fas fa-trash"></i> Delete
+                        </button>
                     </div>
                 </div>
+            <?php endforeach; endif; ?>
+        </div>
+    <?php } ?>
 
-                <div class="cards-scroller" id="<?= $type ?>Wrapper">
-                    <?php if (empty($items)): ?>
-                        <div class="alert alert-light border w-100 text-muted"><i class="fas fa-info-circle mr-2"></i> No <?= strtolower($title) ?> posted yet.</div>
-                    <?php else: foreach($items as $post): ?>
-                        <div class="card content-card-custom shadow-sm">
-                            <div class="d-flex justify-content-between align-items-start">
-                                <span class="category-label"><?= strtoupper($type) ?></span>
-                                <span class="applicant-badge">0 Applicants</span>
-                            </div>
-                            
-                            <h5 class="post-main-title"><?= htmlspecialchars($post['title']) ?></h5>
-                            
-                            <div class="info-row">
-                                <i class="fas fa-map-marker-alt"></i> 
-                                <span>Main Campus</span>
-                            </div>
-                            <div class="info-row">
-                                <i class="fas fa-calendar-alt"></i> 
-                                <span>Posted: <?= date('M d, Y', strtotime($post['created_at'] ?? 'now')) ?></span>
-                            </div>
-
-                            <button type="button" onclick='reviewDetails(<?= json_encode($post) ?>)' class="btn-review-outline">
-                                <i class="fas fa-eye mr-2"></i> Review Details
-                            </button>
-
-                            <div class="card-footer-actions">
-                                <button type="button" onclick='editPost(<?= json_encode($post) ?>)' class="action-link">
-                                    <i class="fas fa-edit mr-1"></i> Edit
-                                </button>
-                                <a href="javascript:void(0)" onclick="deletePost(<?= $post['id'] ?>)" class="action-link delete">
-                                    <i class="fas fa-trash-alt mr-1"></i> Delete
-                                </a>
-                            </div>
-                        </div>
-                    <?php endforeach; endif; ?>
-                </div>
-            </div>
-        <?php } ?>
-
-        <?php render_section('Announcements', $announcements ?? [], 'announcements'); ?>
-        <?php render_section('Campus News', $news ?? [], 'news'); ?>
-        <?php render_section('Alumni Stories', $stories ?? [], 'stories'); ?>
-    </div>
+    <?php render_modern_section('Announcements', $announcements ?? [], 'announcements'); ?>
+    <?php render_modern_section('Campus News', $news ?? [], 'news'); ?>
+    <?php render_modern_section('Alumni Stories', $stories ?? [], 'stories'); ?>
 </div>
 
+<!-- Modals -->
 <div class="modal fade" id="createPostModal" tabindex="-1">
     <div class="modal-dialog modal-lg modal-dialog-centered">
         <div class="modal-content">
             <form id="createPostForm" enctype="multipart/form-data">
                 <div class="modal-header">
-                    <h5 class="modal-title font-weight-bold">Create New Post</h5>
-                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                    <h5 class="modal-title" style="font-weight: 700;"><i class="fas fa-plus mr-2"></i> New Content Post</h5>
+                    <button type="button" class="close text-white" data-dismiss="modal">&times;</button>
                 </div>
-                <div class="modal-body p-4">
-                    <div class="form-group">
-                        <label class="small font-weight-bold text-muted">POST TYPE</label>
-                        <select name="post_type" class="form-control" required>
-                            <option value="">Select Type</option>
-                            <option value="announcements">Announcements</option>
-                            <option value="news">Campus News</option>
-                            <option value="stories">Alumni Stories</option>
-                        </select>
-                    </div>
-                    <div class="form-group">
-                        <label class="small font-weight-bold text-muted">TITLE</label>
-                        <input type="text" name="title" class="form-control" required>
-                    </div>
-                    <div class="form-group">
-                        <label class="small font-weight-bold text-muted">CONTENT</label>
-                        <textarea name="content" class="form-control" rows="5" required></textarea>
-                    </div>
-                    <div class="form-group">
-                        <label class="small font-weight-bold text-muted">FEATURED IMAGE</label>
-                        <input type="file" name="image" class="form-control" accept="image/*">
+                <div class="modal-body">
+                    <div class="row">
+                        <div class="col-md-6 mb-3">
+                            <label class="form-label">Category</label>
+                            <select name="post_type" class="form-control form-input" required>
+                                <option value="">Select Category...</option>
+                                <option value="announcements">Official Announcement</option>
+                                <option value="news">Campus News</option>
+                                <option value="stories">Alumni Story</option>
+                            </select>
+                        </div>
+                        <div class="col-md-6 mb-3">
+                            <label class="form-label">Post Title</label>
+                            <input type="text" name="title" class="form-control form-input" required>
+                        </div>
+                        <div class="col-12 mb-3">
+                            <label class="form-label">Content Description</label>
+                            <textarea name="content" class="form-control form-input" rows="6" required></textarea>
+                        </div>
+                        <div class="col-12">
+                            <label class="form-label">Cover Image (Optional)</label>
+                            <input type="file" name="image" class="form-control form-input" accept="image/*">
+                        </div>
                     </div>
                 </div>
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-light" data-dismiss="modal">Cancel</button>
-                    <button type="submit" class="btn btn-maroon px-5">Publish Post</button>
+                <div class="modal-footer" style="background: #f8fafc;">
+                    <button type="button" class="btn btn-light" data-dismiss="modal" style="border-radius: 12px; font-weight: 600;">Cancel</button>
+                    <button type="submit" class="btn btn-danger" style="background: var(--accent-red); border-radius: 12px; font-weight: 700; padding: 10px 24px;">Publish Now</button>
                 </div>
             </form>
         </div>
@@ -299,35 +296,37 @@
         <div class="modal-content">
             <form id="editPostForm" enctype="multipart/form-data">
                 <div class="modal-header">
-                    <h5 class="modal-title font-weight-bold">Edit Post</h5>
-                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                    <h5 class="modal-title" style="font-weight: 700;"><i class="fas fa-edit mr-2"></i> Update Post</h5>
+                    <button type="button" class="close text-white" data-dismiss="modal">&times;</button>
                 </div>
-                <div class="modal-body p-4">
+                <div class="modal-body">
                     <input type="hidden" name="post_id" id="edit_post_id">
-                    <div class="form-group">
-                        <label class="small font-weight-bold text-muted">POST TYPE</label>
-                        <select name="post_type" id="edit_post_type" class="form-control" required>
-                            <option value="announcements">Announcements</option>
-                            <option value="news">Campus News</option>
-                            <option value="stories">Alumni Stories</option>
-                        </select>
-                    </div>
-                    <div class="form-group">
-                        <label class="small font-weight-bold text-muted">TITLE</label>
-                        <input type="text" name="title" id="edit_title" class="form-control" required>
-                    </div>
-                    <div class="form-group">
-                        <label class="small font-weight-bold text-muted">CONTENT</label>
-                        <textarea name="content" id="edit_content" class="form-control" rows="5" required></textarea>
-                    </div>
-                    <div class="form-group">
-                        <label class="small font-weight-bold text-muted">REPLACE IMAGE (OPTIONAL)</label>
-                        <input type="file" name="image" class="form-control" accept="image/*">
+                    <div class="row">
+                        <div class="col-md-6 mb-3">
+                            <label class="form-label">Category</label>
+                            <select name="post_type" id="edit_post_type" class="form-control form-input" required>
+                                <option value="announcements">Announcements</option>
+                                <option value="news">Campus News</option>
+                                <option value="stories">Alumni Stories</option>
+                            </select>
+                        </div>
+                        <div class="col-md-6 mb-3">
+                            <label class="form-label">Post Title</label>
+                            <input type="text" name="title" id="edit_title" class="form-control form-input" required>
+                        </div>
+                        <div class="col-12 mb-3">
+                            <label class="form-label">Content Description</label>
+                            <textarea name="content" id="edit_content" class="form-control form-input" rows="6" required></textarea>
+                        </div>
+                        <div class="col-12">
+                            <label class="form-label">Replace Image</label>
+                            <input type="file" name="image" class="form-control form-input" accept="image/*">
+                        </div>
                     </div>
                 </div>
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-light" data-dismiss="modal">Cancel</button>
-                    <button type="submit" class="btn btn-maroon px-5">Update Post</button>
+                <div class="modal-footer" style="background: #f8fafc;">
+                    <button type="button" class="btn btn-light" data-dismiss="modal" style="border-radius: 12px; font-weight: 600;">Cancel</button>
+                    <button type="submit" class="btn btn-danger" style="background: var(--accent-red); border-radius: 12px; font-weight: 700; padding: 10px 24px;">Update Changes</button>
                 </div>
             </form>
         </div>
@@ -336,48 +335,47 @@
 
 <div class="modal fade" id="viewPostModal" tabindex="-1">
     <div class="modal-dialog modal-lg modal-dialog-centered">
-        <div class="modal-content" style="border-radius: 16px; border: none;">
-            <div class="modal-header border-0 p-4">
+        <div class="modal-content">
+            <div class="modal-header" style="height: 100px; display: flex; align-items: center;">
                 <div>
-                    <span id="view_post_type" class="category-label mb-2 d-block"></span>
-                    <h3 id="view_title" class="font-weight-bold" style="color: var(--charcoal-text);"></h3>
+                    <span id="view_post_type" class="post-type-badge text-white-50 mb-1" style="color: rgba(255,255,255,0.7) !important;"></span>
+                    <h3 id="view_title" class="modal-title m-0" style="font-weight: 700; color: white;"></h3>
                 </div>
-                <button type="button" class="close" data-dismiss="modal">&times;</button>
+                <button type="button" class="close text-white" data-dismiss="modal">&times;</button>
             </div>
-            <div class="modal-body px-4 pb-4">
+            <div class="modal-body">
                 <div id="view_image_container" class="mb-4" style="display:none;">
-                    <img id="view_image" src="" class="img-fluid rounded shadow-sm" style="width: 100%; max-height: 400px; object-fit: cover;">
+                    <img id="view_image" src="" class="img-fluid" style="width: 100%; max-height: 400px; object-fit: cover; border-radius: 16px;">
                 </div>
-                <div class="d-flex mb-4 text-muted small">
-                    <div class="mr-4"><i class="fas fa-calendar-alt mr-2"></i><span id="view_date"></span></div>
-                </div>
-                <div class="p-3 bg-light rounded" style="min-height: 200px; white-space: pre-wrap; line-height: 1.6; color: #4A5568;" id="view_content"></div>
+                <div class="p-4" style="background: #f8fafc; border-radius: 16px; min-height: 200px; white-space: pre-wrap; line-height: 1.8; color: var(--text-main);" id="view_content"></div>
             </div>
-            <div class="modal-footer border-0">
-                <button type="button" class="btn btn-light" data-dismiss="modal">Close</button>
-                <button type="button" id="edit_from_view" class="btn btn-maroon px-4">Edit Post</button>
+            <div class="modal-footer" style="background: #f8fafc;">
+                <button type="button" class="btn btn-light" data-dismiss="modal" style="border-radius: 12px; font-weight: 600;">Close</button>
+                <button type="button" id="edit_from_view" class="btn btn-danger" style="background: var(--accent-red); border-radius: 12px; font-weight: 700; padding: 10px 24px;">Edit This Post</button>
             </div>
         </div>
     </div>
 </div>
 
 <div class="modal fade" id="uploadCarouselModal" tabindex="-1">
-    <div class="modal-dialog modal-lg modal-dialog-centered">
+    <div class="modal-dialog modal-dialog-centered">
         <div class="modal-content">
             <form id="carouselForm">
                 <div class="modal-header">
-                    <h5 class="modal-title font-weight-bold">Manage Carousel</h5>
-                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                    <h5 class="modal-title" style="font-weight: 700;"><i class="fas fa-images mr-2"></i> Banner Manager</h5>
+                    <button type="button" class="close text-white" data-dismiss="modal">&times;</button>
                 </div>
-                <div class="modal-body p-4">
-                    <div class="custom-file mb-4">
+                <div class="modal-body p-5 text-center">
+                    <i class="fas fa-cloud-upload-alt fa-3x text-light mb-4"></i>
+                    <p class="text-muted mb-4">Select a high-resolution photo for the homepage carousel banner.</p>
+                    <div class="custom-file">
                         <input type="file" class="custom-file-input" id="carouselInput" required>
-                        <label class="custom-file-label">Choose file...</label>
+                        <label class="custom-file-label text-left">Choose Image...</label>
                     </div>
                 </div>
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-light" data-dismiss="modal">Cancel</button>
-                    <button type="submit" class="btn btn-maroon px-4">Upload Banner</button>
+                <div class="modal-footer" style="background: #f8fafc;">
+                    <button type="button" class="btn btn-light" data-dismiss="modal" style="border-radius: 12px; font-weight: 600;">Cancel</button>
+                    <button type="submit" class="btn btn-danger" style="background: var(--accent-red); border-radius: 12px; font-weight: 700; padding: 10px 24px;">Upload & Set</button>
                 </div>
             </form>
         </div>
@@ -385,28 +383,11 @@
 </div>
 
 <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
-<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
-
 <script>
-    function showToast(message, type = 'success') {
-        const toastClass = type === 'success' ? '' : 'toast-error';
-        const html = `<div class="custom-toast ${toastClass}"><i class="fas fa-check-circle mr-3"></i>${message}</div>`;
-        $('#toastContainer').append(html);
-        setTimeout(() => { $('.custom-toast').fadeOut(400, function() { $(this).remove(); }); }, 3000);
-    }
-
-    function scrollCarousel(wrapperId, direction) {
-        const wrapper = document.getElementById(wrapperId);
-        if (wrapper) wrapper.scrollBy({ left: direction * 320, behavior: 'smooth' });
-    }
-
-    // Review Details Function
     function reviewDetails(post) {
         $('#view_title').text(post.title);
-        $('#view_post_type').text(post.post_type ? post.post_type.toUpperCase() : 'POST');
+        $('#view_post_type').text(post.post_type.toUpperCase());
         $('#view_content').text(post.content);
-        $('#view_date').text('Posted on: ' + (post.created_at || new Date().toLocaleDateString()));
 
         if (post.image_path) {
             $('#view_image').attr('src', '<?= base_url('uploads/posts/') ?>' + post.image_path);
@@ -423,7 +404,6 @@
         $('#viewPostModal').modal('show');
     }
 
-    // Edit Function to open modal and fill data
     function editPost(post) {
         $('#edit_post_id').val(post.id);
         $('#edit_post_type').val(post.post_type);
@@ -432,81 +412,54 @@
         $('#editPostModal').modal('show');
     }
 
+    function deletePost(id) {
+        if(confirm('Are you sure you want to delete this post permanently?')) {
+            window.location.href = '<?= base_url('AdminPost/delete/') ?>' + id;
+        }
+    }
+
     $(document).ready(function() {
-        // Create Submission
         $('#createPostForm').on('submit', function(e) {
             e.preventDefault();
             const btn = $(this).find('button[type="submit"]');
-            btn.prop('disabled', true).text('Processing...');
-            const formData = new FormData(this);
-
+            btn.prop('disabled', true).text('Publishing...');
             $.ajax({
                 url: '<?= base_url('AdminPost/create') ?>',
                 type: 'POST',
-                data: formData,
-                contentType: false,
-                processData: false,
-                success: function(response) {
-                    showToast('Post created successfully!');
-                    $('#createPostModal').modal('hide');
-                    setTimeout(() => location.reload(), 1500);
-                },
-                error: function() {
-                    showToast('Failed to create post', 'error');
-                    btn.prop('disabled', false).text('Publish Post');
-                }
+                data: new FormData(this),
+                contentType: false, processData: false,
+                success: function() { location.reload(); },
+                error: function() { alert('Failed to create post.'); btn.prop('disabled', false).text('Publish Now'); }
             });
         });
 
-        // Edit Submission
         $('#editPostForm').on('submit', function(e) {
             e.preventDefault();
             const btn = $(this).find('button[type="submit"]');
-            const postId = $('#edit_post_id').val();
-            btn.prop('disabled', true).text('Updating...');
-            const formData = new FormData(this);
-
+            btn.prop('disabled', true).text('Saving...');
             $.ajax({
-                url: '<?= base_url('AdminPost/update/') ?>' + postId,
+                url: '<?= base_url('AdminPost/update/') ?>' + $('#edit_post_id').val(),
                 type: 'POST',
-                data: formData,
-                contentType: false,
-                processData: false,
-                success: function(response) {
-                    showToast('Post updated successfully!');
-                    $('#editPostModal').modal('hide');
-                    setTimeout(() => location.reload(), 1500);
-                },
-                error: function() {
-                    showToast('Failed to update post', 'error');
-                    btn.prop('disabled', false).text('Update Post');
-                }
+                data: new FormData(this),
+                contentType: false, processData: false,
+                success: function() { location.reload(); },
+                error: function() { alert('Failed to update post.'); btn.prop('disabled', false).text('Update Changes'); }
             });
         });
 
-        // Carousel Upload
         $('#carouselForm').on('submit', function(e) {
             e.preventDefault();
             const btn = $(this).find('button[type="submit"]');
             btn.prop('disabled', true).text('Uploading...');
-            const formData = new FormData(this);
+            const formData = new FormData();
             formData.append('carousel_photo', $('#carouselInput')[0].files[0]);
-
             $.ajax({
                 url: '<?= base_url('AdminPost/upload') ?>',
                 type: 'POST',
                 data: formData,
-                contentType: false,
-                processData: false,
-                success: function(response) {
-                    showToast('Banner uploaded successfully!');
-                    $('#uploadCarouselModal').modal('hide');
-                    setTimeout(() => location.reload(), 1500);
-                },
-                error: function() {
-                    showToast('Failed to upload banner', 'error');
-                    btn.prop('disabled', false).text('Upload Banner');
-                }
+                contentType: false, processData: false,
+                success: function() { location.reload(); },
+                error: function() { alert('Failed to upload banner.'); btn.prop('disabled', false).text('Upload & Set'); }
             });
         });
 
@@ -515,12 +468,4 @@
             $(this).next('.custom-file-label').html(fileName);
         });
     });
-
-    function deletePost(id) {
-        if(confirm('Delete this post?')) {
-            window.location.href = '<?= base_url('AdminPost/delete/') ?>' + id;
-        }
-    }
 </script>
-</body>
-</html>

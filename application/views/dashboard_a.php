@@ -1,212 +1,591 @@
 <style>
-    /* LinkedIn-style Dashboard Layout */
-    .dashboard-container {
-        max-width: 1128px;
+    @import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap');
+
+    :root {
+        --primary-bg: #f8fafc;
+        --card-bg: #ffffff;
+        --text-main: #1e293b;
+        --text-muted: #64748b;
+        --accent-red: #700a0a;
+        --accent-green: #04b373;
+        --accent-blue: #3b59ff;
+        --accent-pink: #ff2d55;
+        --accent-orange: #ff9500;
+        --accent-teal: #00a28a;
+        --accent-purple: #5856d6;
+        --dark-footer: #1a1e2e;
+        --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+
+    body {
+        background-color: var(--primary-bg);
+        font-family: 'Plus Jakarta Sans', sans-serif;
+        color: var(--text-main);
+    }
+
+    .dashboard-wrapper {
+        max-width: 1400px;
         margin: 0 auto;
-        padding: 24px 15px;
-        font-family: -apple-system, system-ui, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", "Fira Sans", Ubuntu, Oxygen, "Oxygen Sans", Cantarell, "Droid Sans", "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Lucida Grande", Helvetica, Arial, sans-serif;
+        padding: 20px 24px;
+        animation: fadeIn 0.8s ease-out;
     }
 
-    .analytics-section {
-        background: #fff;
-        border: 1px solid #e0e0e0;
-        border-radius: 8px;
-        padding: 20px;
+    @keyframes fadeIn {
+        from { opacity: 0; transform: translateY(10px); }
+        to { opacity: 1; transform: translateY(0); }
+    }
+
+    .header-section {
         margin-bottom: 24px;
-        box-shadow: 0 0 0 1px rgba(0,0,0,0.02);
     }
 
-    .section-header {
+    .header-section h1 {
+        font-size: 28px;
+        font-weight: 700;
+        margin-bottom: 4px;
+    }
+
+    .header-section h1 span {
+        color: var(--accent-red);
+    }
+
+    .header-section p {
+        color: var(--text-muted);
+        font-size: 14px;
+    }
+
+    .main-grid {
+        display: grid;
+        grid-template-columns: 300px 1fr;
+        gap: 20px;
+        margin-bottom: 0;
+    }
+
+    /* Left Column: Alumni Status */
+    .status-card {
+        background: var(--card-bg);
+        border-radius: 24px;
+        padding: 24px;
+        box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05), 0 2px 4px -1px rgba(0, 0, 0, 0.03);
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        transition: var(--transition);
+        height: fit-content;
+    }
+
+    .status-card:hover {
+        transform: translateY(-8px) scale(1.01);
+        box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.15);
+    }
+
+    .status-card-header {
+        width: 100%;
         display: flex;
         justify-content: space-between;
         align-items: center;
         margin-bottom: 20px;
-        padding-bottom: 12px;
-        border-bottom: 1px solid #f0f0f0;
     }
 
-    .section-header h2 {
-        font-size: 20px;
-        font-weight: 600;
-        color: rgba(0,0,0,0.9);
+    .status-card-header h3 {
+        font-size: 16px;
+        font-weight: 700;
         margin: 0;
     }
 
-    /* Chart Container */
-    .chart-wrapper {
+    .status-card-header p {
+        font-size: 11px;
+        color: var(--text-muted);
+        text-transform: uppercase;
+        letter-spacing: 1px;
+        font-weight: 600;
+        margin: 2px 0 0 0;
+    }
+
+    .chart-container {
+        position: relative;
+        width: 180px;
+        height: 180px;
+        margin: 10px 0;
+    }
+
+    .chart-center-text {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        text-align: center;
+    }
+
+    .chart-center-text .total-num {
+        font-size: 32px;
+        font-weight: 800;
+        line-height: 1;
+        display: block;
+    }
+
+    .chart-center-text .total-label {
+        font-size: 8px;
+        font-weight: 700;
+        text-transform: uppercase;
+        color: var(--text-muted);
+        letter-spacing: 0.5px;
+    }
+
+    .legend-container {
+        width: 100%;
+        margin-top: 20px;
+    }
+
+    .legend-row {
         display: flex;
         justify-content: center;
-        padding: 20px 0;
-    }
-
-    /* Grid for Widgets */
-    .dashboard-widgets {
-        display: grid;
-        grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
         gap: 16px;
+        margin-bottom: 20px;
     }
 
-    /* Professional Card Design */
-    .widget {
-        background: #fff;
-        border: 1px solid #e0e0e0;
-        border-radius: 8px;
-        padding: 16px;
-        transition: box-shadow 0.3s ease;
+    .legend-item {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-bottom: 10px;
+        font-size: 13px;
+        font-weight: 600;
+        width: 100%;
+    }
+
+    .legend-label {
+        display: flex;
+        align-items: center;
+        gap: 8px;
+    }
+
+    .dot {
+        width: 10px;
+        height: 10px;
+        border-radius: 50%;
+        flex-shrink: 0;
+    }
+
+    .dot.active { background-color: var(--accent-green); box-shadow: 0 0 8px rgba(4, 179, 115, 0.2); }
+    .dot.inactive { background-color: var(--accent-pink); box-shadow: 0 0 8px rgba(255, 45, 85, 0.2); }
+
+    /* Right Column: Metrics Grid */
+    .metrics-grid {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        grid-template-rows: repeat(2, 1fr);
+        gap: 20px;
+    }
+
+    .metric-card {
+        background: var(--card-bg);
+        border-radius: 24px;
+        padding: 20px;
         display: flex;
         flex-direction: column;
         justify-content: space-between;
+        text-decoration: none;
+        color: inherit;
+        transition: var(--transition);
+        border: 1px solid transparent;
         position: relative;
+        overflow: hidden;
+        min-height: 160px;
     }
 
-    .widget:hover {
-        box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+    .metric-card:hover {
+        transform: translateY(-8px);
+        box-shadow: 0 15px 30px -5px rgba(0, 0, 0, 0.1);
+        border-color: #f1f5f9;
+    }
+    
+    .metric-card::after {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 4px;
+        background: currentColor;
+        opacity: 0;
+        transition: var(--transition);
+    }
+    
+    .metric-card:hover::after {
+        opacity: 0.5;
     }
 
-    .widget-header {
-        display: flex;
-        align-items: center;
-        margin-bottom: 12px;
-    }
-
-    .widget-icon-container {
-        width: 48px;
-        height: 48px;
-        background: #f3f2ef;
-        border-radius: 4px;
+    .icon-box {
+        width: 40px;
+        height: 40px;
+        border-radius: 10px;
         display: flex;
         align-items: center;
         justify-content: center;
-        margin-right: 12px;
+        color: white;
+        font-size: 18px;
+        transition: var(--transition);
+    }
+    
+    .metric-card:hover .icon-box {
+        transform: scale(1.1) rotate(-5deg);
     }
 
-    .widget-icon-container img {
-        width: 24px;
-        height: 24px;
-        object-fit: contain;
-    }
-
-    .widget-info {
-        flex-grow: 1;
-    }
-
-    .widget-title {
-        display: block;
+    .arrow-icon {
+        color: var(--text-muted);
+        opacity: 0.3;
         font-size: 14px;
-        font-weight: 600;
-        color: rgba(0,0,0,0.6);
+        transition: var(--transition);
+    }
+    
+    .metric-card:hover .arrow-icon {
+        opacity: 1;
+        transform: translateX(5px);
     }
 
-    .widget-value {
-        display: block;
-        font-size: 24px;
+    .metric-content h4 {
+        font-size: 11px;
+        text-transform: uppercase;
+        color: var(--text-muted);
+        letter-spacing: 0.5px;
+        margin-bottom: 6px;
         font-weight: 700;
-        color: rgba(0,0,0,0.9);
     }
 
-    /* LinkedIn-style Action Button */
-    .widget-button {
-        margin-top: 16px;
-        padding: 6px 16px;
-        border: 1px solid var(--primary-color);
-        background: transparent;
-        color: var(--primary-color);
-        border-radius: 16px;
-        font-size: 14px;
+    .metric-value-box {
+        display: flex;
+        align-items: baseline;
+        gap: 6px;
+    }
+
+    .metric-value {
+        font-size: 28px;
+        font-weight: 700;
+        transition: var(--transition);
+    }
+    
+    .metric-card:hover .metric-value {
+        color: var(--accent-red);
+    }
+
+    .growth {
+        font-size: 11px;
         font-weight: 600;
-        text-decoration: none;
-        text-align: center;
-        transition: all 0.2s;
-        display: inline-block;
+        color: var(--accent-green);
+        display: flex;
+        align-items: center;
+        gap: 2px;
+        background: rgba(4, 179, 115, 0.1);
+        padding: 1px 6px;
+        border-radius: 8px;
     }
 
-    .widget-button:hover {
-        background: rgba(112, 10, 10, 0.05);
-        border-width: 2px;
-        padding: 5px 15px;
-        color: var(--primary-color);
-        text-decoration: none;
+    /* System Audit Section */
+    .audit-card {
+        background: var(--dark-footer);
+        border-radius: 24px;
+        padding: 20px;
+        color: white;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        transition: var(--transition);
+        position: relative;
     }
 
-    @media (max-width: 768px) {
-        .chart-wrapper #alumniChart {
-            width: 100% !important;
+    .audit-card:hover {
+        transform: translateY(-8px);
+        box-shadow: 0 20px 40px -10px rgba(0, 0, 0, 0.4);
+    }
+
+    .audit-info h5 {
+        font-size: 10px;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+        opacity: 0.7;
+        margin-bottom: 4px;
+    }
+
+    .audit-info h2 {
+        font-size: 18px;
+        font-weight: 700;
+        margin-bottom: 4px;
+    }
+
+    .audit-info p {
+        font-size: 13px;
+        opacity: 0.6;
+        margin: 0;
+    }
+
+    .audit-action {
+        width: 40px;
+        height: 40px;
+        background: rgba(255,255,255,0.1);
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: white;
+        text-decoration: none;
+        font-size: 18px;
+        transition: var(--transition);
+        align-self: flex-end;
+    }
+
+    .audit-action:hover {
+        background: white;
+        color: var(--dark-footer);
+        transform: rotate(90deg);
+    }
+
+    @media (max-width: 1200px) {
+        .metrics-grid {
+            grid-template-columns: repeat(2, 1fr);
+        }
+    }
+
+    @media (max-width: 1024px) {
+        .main-grid {
+            grid-template-columns: 1fr;
+        }
+        .status-card {
+            max-width: 300px;
+            margin: 0 auto 20px;
+        }
+    }
+
+    @media (max-width: 640px) {
+        .metrics-grid {
+            grid-template-columns: 1fr;
+        }
+        .legend-row {
+            flex-direction: column;
+            gap: 12px;
+            align-items: flex-start;
         }
     }
 </style>
 
-<div class="dashboard-container">
-    <section class="analytics-section">
-        <div class="section-header">
-            <h2><i class="fas fa-chart-pie mr-2" style="color: var(--primary-color);"></i> Alumni Analytics</h2>
-            <span class="text-muted" style="font-size: 12px;">Real-time status</span>
-        </div>
-        <div class="chart-wrapper">
-            <canvas id="alumniChart" style="max-width: 400px; max-height: 400px;"></canvas>
-        </div>
-    </section>
+<div class="dashboard-wrapper">
+    <header class="header-section">
+        <h1>Platform <span>Overview</span></h1>
+        <p>Welcome back, Administrator. Here's what's happening today.</p>
+    </header>
 
-    <div class="dashboard-widgets">
-        <?php
-        function widget($icon, $value, $title, $link) {
-            $icon_url = base_url("/assets/icons/$icon");
-            $target_url = site_url($link);
-            echo "
-            <div class='widget'>
+    <div class="main-grid">
+        <!-- Alumni Status Card -->
+        <aside class="status-card">
+            <div class="status-card-header">
                 <div>
-                    <div class='widget-header'>
-                        <div class='widget-icon-container'>
-                            <img src='{$icon_url}' alt='{$title}'>
-                        </div>
-                        <div class='widget-info'>
-                            <span class='widget-title'>{$title}</span>
-                            <span class='widget-value'>{$value}</span>
-                        </div>
+                    <h3>Alumni Status</h3>
+                    <p>Real-time metrics</p>
+                </div>
+                <div class="text-muted"><i class="fas fa-chart-pie"></i></div>
+            </div>
+
+            <div class="chart-container">
+                <canvas id="statusChart"></canvas>
+                <div class="chart-center-text">
+                    <span class="total-num"><?= $total_users ?></span>
+                    <span class="total-label">Members</span>
+                </div>
+            </div>
+
+            <div class="legend-container">
+                <div class="legend-row">
+                    <span class="legend-label" style="font-size: 12px; font-weight: 600; color: var(--text-main);">
+                        <span class="dot active"></span>
+                        Active
+                    </span>
+                    <span class="legend-label" style="font-size: 12px; font-weight: 600; color: var(--text-main);">
+                        <span class="dot inactive"></span>
+                        Inactive
+                    </span>
+                </div>
+                
+                <div class="legend-item">
+                    <span class="legend-label">
+                        <span class="dot active"></span> Active
+                    </span>
+                    <span><?= $total_users > 0 ? round(($active_users / $total_users) * 100) : 0 ?>%</span>
+                </div>
+                <div class="legend-item">
+                    <span class="legend-label">
+                        <span class="dot inactive"></span> Inactive
+                    </span>
+                    <span><?= $total_users > 0 ? round(($inactive_users / $total_users) * 100) : 0 ?>%</span>
+                </div>
+            </div>
+        </aside>
+
+        <!-- Metrics Grid -->
+        <main class="metrics-grid">
+            <!-- Community Events -->
+            <a href="<?= site_url('AdminEvents') ?>" class="metric-card" style="color: var(--accent-blue);">
+                <div class="metric-top">
+                    <div class="icon-box" style="background-color: var(--accent-blue);">
+                        <i class="fas fa-calendar-alt"></i>
+                    </div>
+                    <i class="fas fa-chevron-right arrow-icon"></i>
+                </div>
+                <div class="metric-content">
+                    <h4>Community Events</h4>
+                    <div class="metric-value-box">
+                        <span class="metric-value"><?= $total_events ?></span>
+                        <span class="growth"><i class="fas fa-caret-up"></i> <?= $growth_events ?></span>
                     </div>
                 </div>
-                <a href='{$target_url}' class='widget-button'>Manage</a>
-            </div>";
-        }
+            </a>
 
-        widget('events.png', $total_events, 'Total Events', 'AdminEvents');
-        widget('post.png', $total_post, 'Feed Posts', 'AdminPost');
-        widget('job.png', $total_jobs, 'Active Jobs', 'AdminJobPosting');
-        widget('user.svg', $total_alumni, 'Alumni Directory', 'AdminAlumni');
-        widget('user.svg', $total_accounts, 'System Accounts', 'AdminManageAccounts');
-        ?>
+            <!-- Platform Posts -->
+            <a href="<?= site_url('AdminPost') ?>" class="metric-card" style="color: var(--accent-pink);">
+                <div class="metric-top">
+                    <div class="icon-box" style="background-color: var(--accent-pink);">
+                        <i class="fas fa-rss"></i>
+                    </div>
+                    <i class="fas fa-chevron-right arrow-icon"></i>
+                </div>
+                <div class="metric-content">
+                    <h4>Platform Posts</h4>
+                    <div class="metric-value-box">
+                        <span class="metric-value"><?= $total_post ?></span>
+                        <span class="growth"><i class="fas fa-caret-up"></i> <?= $growth_posts ?></span>
+                    </div>
+                </div>
+            </a>
+
+            <!-- Job Opportunities -->
+            <a href="<?= site_url('AdminJobPosting') ?>" class="metric-card" style="color: var(--accent-orange);">
+                <div class="metric-top">
+                    <div class="icon-box" style="background-color: var(--accent-orange);">
+                        <i class="fas fa-briefcase"></i>
+                    </div>
+                    <i class="fas fa-chevron-right arrow-icon"></i>
+                </div>
+                <div class="metric-content">
+                    <h4>Job Opportunities</h4>
+                    <div class="metric-value-box">
+                        <span class="metric-value"><?= $total_jobs ?></span>
+                        <span class="growth"><i class="fas fa-caret-up"></i> <?= $growth_jobs ?></span>
+                    </div>
+                </div>
+            </a>
+
+            <!-- Verified Alumni -->
+            <a href="<?= site_url('AdminAlumni') ?>" class="metric-card" style="color: var(--accent-teal);">
+                <div class="metric-top">
+                    <div class="icon-box" style="background-color: var(--accent-teal);">
+                        <i class="fas fa-user-graduate"></i>
+                    </div>
+                    <i class="fas fa-chevron-right arrow-icon"></i>
+                </div>
+                <div class="metric-content">
+                    <h4>Verified Alumni</h4>
+                    <div class="metric-value-box">
+                        <span class="metric-value"><?= $total_alumni ?></span>
+                        <span class="growth"><i class="fas fa-caret-up"></i> <?= $growth_alumni ?></span>
+                    </div>
+                </div>
+            </a>
+
+            <!-- Support Chat -->
+            <a href="<?= site_url('support/admin_inbox') ?>" class="metric-card" style="color: var(--accent-purple);">
+                <div class="metric-top">
+                    <div class="icon-box" style="background-color: var(--accent-purple);">
+                        <i class="fas fa-headset"></i>
+                    </div>
+                    <i class="fas fa-chevron-right arrow-icon"></i>
+                </div>
+                <div class="metric-content">
+                    <h4>Support Chat</h4>
+                    <div class="metric-value-box">
+                        <span class="metric-value">View</span>
+                    </div>
+                </div>
+            </a>
+
+            <!-- Admin Access -->
+            <a href="<?= site_url('AdminManageAccounts') ?>" class="metric-card" style="color: var(--accent-teal);">
+                <div class="metric-top">
+                    <div class="icon-box" style="background-color: var(--accent-teal);">
+                        <i class="fas fa-shield-alt"></i>
+                    </div>
+                    <i class="fas fa-chevron-right arrow-icon"></i>
+                </div>
+                <div class="metric-content">
+                    <h4>Admin Access</h4>
+                    <div class="metric-value-box">
+                        <span class="metric-value"><?= $total_accounts ?></span>
+                        <span class="growth"><i class="fas fa-caret-up"></i> <?= $growth_accounts ?></span>
+                    </div>
+                </div>
+            </a>
+            
+            <div class="audit-card">
+                <div class="audit-info">
+                    <h5>System Audit</h5>
+                    <h2>Integrity Check</h2>
+                    <p>Review activities.</p>
+                </div>
+                <a href="<?= site_url('AdminActivityLog') ?>" class="audit-action">
+                    <i class="fas fa-history"></i>
+                </a>
+            </div>
+        </main>
     </div>
 </div>
 
 <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 <script>
     document.addEventListener("DOMContentLoaded", function() {
-        const ctx = document.getElementById('alumniChart').getContext('2d');
-        new Chart(ctx, {
+        const ctx = document.getElementById('statusChart').getContext('2d');
+        
+        const statusChart = new Chart(ctx, {
             type: 'doughnut',
             data: {
-                labels: ['Active Members', 'Inactive Members'],
+                labels: ['Active', 'Inactive'],
                 datasets: [{
                     data: [<?= $active_users ?>, <?= $inactive_users ?>],
-                    backgroundColor: ['#057642', '#d11124'],
-                    hoverOffset: 4,
-                    borderWidth: 0
+                    backgroundColor: ['#04b373', '#ff2d55'],
+                    borderWidth: 0,
+                    hoverOffset: 12
                 }]
             },
             options: {
                 responsive: true,
-                maintainAspectRatio: true,
-                cutout: '70%',
+                maintainAspectRatio: false,
+                cutout: '80%',
+                legend: { display: false }, 
                 plugins: {
-                    legend: {
-                        position: 'bottom',
-                        labels: {
-                            usePointStyle: true,
-                            padding: 20,
-                            font: { size: 13 }
-                        }
+                    legend: { display: false },
+                    tooltip: {
+                        enabled: true,
+                        backgroundColor: '#1a1e2e',
+                        padding: 10,
+                        cornerRadius: 10
                     }
+                },
+                animation: {
+                    animateScale: true,
+                    animateRotate: true,
+                    duration: 1200,
+                    easing: 'easeOutQuart'
                 }
             }
         });
+
+        const cards = document.querySelectorAll('.metric-card, .status-card, .audit-card');
+        cards.forEach((card, index) => {
+            card.style.opacity = '0';
+            card.style.transform = 'translateY(20px)';
+            card.style.transition = 'all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275)';
+            setTimeout(() => {
+                card.style.opacity = '1';
+                card.style.transform = 'translateY(0)';
+            }, 60 * (index + 1));
+        });
     });
 </script>
+```

@@ -166,17 +166,24 @@
     /* --- Chat Modal Styles --- */
     .chat-modal {
         position: fixed;
-        bottom: 20px;
-        right: 20px;
+        bottom: 24px;
+        right: 24px;
         width: 400px;
-        height: 500px;
+        height: 550px;
         background: var(--card);
-        box-shadow: 0 8px 32px rgba(0, 0, 0, 0.15);
-        border-radius: 12px;
+        box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+        border-radius: 20px;
         display: none;
         flex-direction: column;
         z-index: 1000;
         overflow: hidden;
+        border: 1px solid #f1f5f9;
+        animation: modalFadeUp 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    }
+
+    @keyframes modalFadeUp {
+        from { opacity: 0; transform: translateY(40px) scale(0.95); }
+        to { opacity: 1; transform: translateY(0) scale(1); }
     }
 
     .chat-modal-header {
@@ -252,13 +259,16 @@
     .message-bubble {
         display: flex;
         margin: 4px 0;
-        animation: slideIn 0.2s ease-out;
+        animation: bubblePop 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275) both;
     }
 
-    @keyframes slideIn {
-        from { opacity: 0; transform: translateY(8px); }
-        to { opacity: 1; transform: translateY(0); }
+    @keyframes bubblePop {
+        from { opacity: 0; transform: scale(0.8) translateY(10px); }
+        to { opacity: 1; transform: scale(1) translateY(0); }
     }
+    
+    .message-bubble.own { transform-origin: right bottom; }
+    .message-bubble.other { transform-origin: left bottom; }
 
     .message-bubble > div {
         max-width: 75%;
@@ -480,7 +490,7 @@ function loadMessages(friendId) {
             let modernHtml = '';
             const messages = tempDiv.querySelectorAll('#chatContent > div');
 
-            messages.forEach(msgDiv => {
+            messages.forEach((msgDiv, index) => {
                 const isOwn = msgDiv.querySelector('div').style.justifyContent === 'flex-end';
                 const messageBubble = msgDiv.querySelector('div > div');
                 const messageText = messageBubble ? messageBubble.childNodes[0].nodeValue.trim() : '';
@@ -488,7 +498,7 @@ function loadMessages(friendId) {
                 const timeText = timeElement ? timeElement.innerHTML : '';
 
                 modernHtml += `
-                <div class="message-bubble ${isOwn ? 'own' : 'other'}">
+                <div class="message-bubble ${isOwn ? 'own' : 'other'}" style="animation-delay: ${index * 0.05}s">
                     <div>
                         ${messageText}
                         <div class="message-time">${timeText}</div>

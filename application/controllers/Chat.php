@@ -59,4 +59,9 @@ class Chat extends CI_Controller {
     $this->load->view('user/chat', $data);
 }
 
+    public function get_connections() {
+        $user_id = $this->session->userdata('alumni_id');
+        $connections = $this->Alumni_model->get_connections($user_id);
+        echo json_encode($connections);
+    }
 }

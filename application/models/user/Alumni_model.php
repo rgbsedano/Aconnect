@@ -192,10 +192,28 @@ public function get_connections($alumni_id) {
         return $this->db->update('alumni', $data);
     }
 
+    // Certifications Logic
+    public function get_certifications($alumni_id) {
+        return $this->db->where('alumni_id', $alumni_id)->get('certifications')->result();
+    }
+
+    public function add_certification($data) {
+        return $this->db->insert('certifications', $data);
+    }
+
+    public function delete_certification($id, $alumni_id) {
+        return $this->db->where(['id' => $id, 'alumni_id' => $alumni_id])->delete('certifications');
+    }
+
+    // Public Profile fetching
+    public function get_public_profile($alumni_id) {
+        // Just reuse get_alumni_by_id, but we can add more joins here if needed
+        return $this->get_alumni_by_id($alumni_id);
+    }
+
     // Optional: If you ever need to get all alumni (e.g., admin side)
     public function get_all_alumni()
     {
         return $this->db->get('alumni')->result();
     }
-
 }

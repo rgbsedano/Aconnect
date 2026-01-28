@@ -22,10 +22,12 @@ class Profile extends CI_Controller{
 
         $alumni = $this->Alumni_model->get_alumni_by_id($alumni_id);
         $employment = $this->Employment_model->get_by_alumni($alumni_id);
+        $certifications = $this->Alumni_model->get_certifications($alumni_id);
 
           $data = [
             'alumni'     => $alumni,
-            'employment' => $employment
+            'employment' => $employment,
+            'certifications' => $certifications
         ];
 
         $this->load->view('__header', $data);
@@ -149,9 +151,64 @@ public function update_skill_info($id)
 
     // Success message
     $this->session->set_flashdata('success', 'Skills updated successfully.');
-    redirect('profile');
-}
+    }
 
+    // Certification Management
+    public function add_certification($id) {
+        $alumni_id = $this->session->userdata('alumni_id');
+        if ($alumni_id != $id) redirect('profile');
 
+        $data = [
+            'alumni_id' => $alumni_id,
+            'title' => $this->input->post('title'),
+            'issuer' => $this->input->post('issuer'),
+            'date_issued' => $this->input->post('date_issued')
+        ];
 
+        if (!empty($_FILES['certificate_image']['name'])) {
+            $config['upload_path']   = './assets/uploads/alumni/';
+            $config['allowed_types'] = 'jpg|jpeg|png|gif';
+            $config['file_name']     = uniqid() . '_cert_' . $_FILES['certificate_image']['name'];
+
+            $this->load->library('upload', $config);
+            $this->upload->initialize($config);
+
+            if ($this->upload->do_upload('certificate_image')) {
+                $uploadData = $this->upload->data();
+                $data['certificate_image'] = $uploadData['file_name'];
+            }
+        }
+
+        $this->Alumni_model->add_certification($data);
+        $this->session->set_flashdata('success', 'Certification added successfully.');
+        redirect('profile');
+    }
+
+    public function delete_certification($cert_id) {
+        $alumni_id = $this->session->userdata('alumni_id');
+        $this->Alumni_model->delete_certification($cert_id, $alumni_id);
+        $this->session->set_flashdata('success', 'Certification removed.');
+        redirect('profile');
+    }
+
+    public function update_cover_photo($id) {
+        $alumni_id = $this->session->userdata('alumni_id');
+        if ($alumni_id != $id) redirect('profile');
+
+        if (!empty($_FILES['cover_photo']['name'])) {
+            $config['upload_path']   = './assets/uploads/alumni/';
+            $config['allowed_types'] = 'jpg|jpeg|png|gif';
+            $config['file_name']     = uniqid() . '_cover_' . $_FILES['cover_photo']['name'];
+
+            $this->load->library('upload', $config);
+            $this->upload->initialize($config);
+
+            if ($this->upload->do_upload('cover_photo')) {
+                $uploadData = $this->upload->data();
+                $this->Alumni_model->update_alumni($id, ['cover_photo' => $uploadData['file_name']]);
+                $this->session->set_flashdata('success', 'Cover photo updated.');
+            }
+        }
+        redirect('profile');
+    }
 }

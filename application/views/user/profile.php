@@ -129,6 +129,24 @@
         .info-label { font-size: 12px; font-weight: 700; color: var(--muted); text-transform: uppercase; letter-spacing: 0.5px; margin-bottom: 6px; }
         .info-value { font-size: 15px; color: var(--text); font-weight: 600; }
 
+        .cert-item {
+            display: flex;
+            gap: 15px;
+            padding: 15px;
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            transition: all 0.3s;
+            cursor: pointer;
+            position: relative;
+        }
+
+        .cert-item:hover { 
+            background: #F9F9F9;
+            transform: translateY(-2px);
+            box-shadow: var(--shadow-md);
+            border-color: var(--maroon);
+        }
+
         /* Section Cards */
         .section-card {
             background: var(--card);
@@ -353,7 +371,11 @@
 
 <div class="container-fluid">
     <!-- Profile Header -->
-    <div class="profile-header"></div>
+    <div class="profile-header" style="<?= (!empty($alumni->cover_photo)) ? 'background: url(\''.base_url('assets/uploads/alumni/'.$alumni->cover_photo).'\') center/cover;' : '' ?>">
+        <button class="btn btn-sm btn-light" style="position: absolute; bottom: 10px; right: 10px; opacity: 0.8;" data-toggle="modal" data-target="#coverPhotoModal">
+            <i class="fas fa-camera"></i> Edit Cover
+        </button>
+    </div>
 
     <!-- Profile Info Card -->
     <div class="profile-info">
@@ -479,6 +501,54 @@
                 <?php endif; ?>
             </div>
         </div>
+    </div>
+
+    <!-- Certifications Section -->
+    <div class="section-card">
+        <div class="section-header">
+            <h3 class="section-title"><i class="fas fa-certificate"></i> Certifications</h3>
+            <button class="btn-edit-section" data-toggle="modal" data-target="#addCertModal">
+                <i class="fas fa-plus"></i> Add New
+            </button>
+        </div>
+
+        <?php if (!empty($certifications)): ?>
+            <div class="row">
+                <?php foreach ($certifications as $cert): ?>
+                    <div class="col-md-6 mb-3">
+                        <div class="cert-item d-flex align-items-center p-3 border rounded view-cert-details" 
+                             data-title="<?= htmlspecialchars($cert->title) ?>"
+                             data-issuer="<?= htmlspecialchars($cert->issuer) ?>"
+                             data-date="<?= $cert->date_issued ?>"
+                             data-image="<?= $cert->certificate_image ? base_url('assets/uploads/alumni/' . $cert->certificate_image) : '' ?>">
+                            <div class="flex-shrink-0 mr-3">
+                                <?php if ($cert->certificate_image): ?>
+                                    <img src="<?= base_url('assets/uploads/alumni/' . $cert->certificate_image) ?>" style="width: 50px; height: 50px; object-fit: cover; border-radius: 8px;">
+                                <?php else: ?>
+                                    <div class="bg-light d-flex align-items-center justify-content-center" style="width: 50px; height: 50px; border-radius: 8px;">
+                                        <i class="fas fa-award text-muted"></i>
+                                    </div>
+                                <?php endif; ?>
+                            </div>
+                            <div class="flex-grow-1">
+                                <h6 class="mb-0"><?= htmlspecialchars($cert->title) ?></h6>
+                                <small class="text-muted d-block"><?= htmlspecialchars($cert->issuer) ?></small>
+                                <small class="text-muted"><?= $cert->date_issued ?></small>
+                            </div>
+                            <a href="<?= base_url('profile/delete_certification/' . $cert->id) ?>" class="text-danger ml-2" onclick="event.stopPropagation(); return confirm('Remove this certificate?')">
+                                <i class="fas fa-trash"></i>
+                            </a>
+                        </div>
+                    </div>
+                <?php endforeach; ?>
+            </div>
+        <?php else: ?>
+            <div class="empty-state">
+                <i class="fas fa-certificate"></i>
+                <p style="font-weight: 600; color: var(--text);">No Certifications Yet</p>
+                <p>Showcase your professional achievements</p>
+            </div>
+        <?php endif; ?>
     </div>
     
     <!-- MODALS -->
@@ -700,6 +770,107 @@
             </div>
         </div>
     </div>
+    <!-- Certification Detail Modal -->
+    <div class="modal fade" id="certDetailModal" tabindex="-1" role="dialog" aria-labelledby="certDetailModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered modal-lg" role="document">
+            <div class="modal-content">
+                <div class="modal-header" style="background: linear-gradient(135deg, #d4a574, #b08d5c); color: white;">
+                    <h5 class="modal-title" id="certDetailModalLabel"><i class="fas fa-medal"></i> Certification Details</h5>
+                    <button type="button" class="close text-white" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body p-0">
+                    <div class="row no-gutters">
+                        <div class="col-md-5 bg-light d-flex align-items-center justify-content-center p-4" style="min-height: 300px;">
+                            <img id="certDetailImage" src="" class="img-fluid rounded shadow-sm" style="max-height: 250px; display: none;">
+                            <div id="certDetailIcon" class="text-muted"><i class="fas fa-award fa-5x"></i></div>
+                        </div>
+                        <div class="col-md-7 p-4">
+                            <h3 id="certDetailTitle" class="mb-2" style="font-weight: 700; color: var(--maroon);"></h3>
+                            <p id="certDetailIssuer" class="mb-3 text-muted" style="font-size: 16px; font-weight: 500;"></p>
+                            <div class="divider mb-3"></div>
+                            <div class="d-flex align-items-center mb-3 text-muted">
+                                <i class="fas fa-calendar-alt mr-2"></i>
+                                <span id="certDetailDate"></span>
+                            </div>
+                            <div class="mt-4">
+                                <p class="text-muted small">This credential was verified and uploaded by the user to showcase their professional expertise.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Add Certification Modal -->
+    <div class="modal fade" id="addCertModal" tabindex="-1" role="dialog" aria-labelledby="addCertModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="addCertModalLabel"><i class="fas fa-certificate"></i> Add Certification</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <form action="<?= base_url('profile/add_certification/' . $alumni->id) ?>" method="post" enctype="multipart/form-data">
+                    <div class="modal-body">
+                        <div class="form-group">
+                            <label>Certification Title</label>
+                            <input type="text" name="title" class="form-control" required>
+                        </div>
+                        <div class="form-group">
+                            <label>Issuing Organization</label>
+                            <input type="text" name="issuer" class="form-control" required>
+                        </div>
+                        <div class="form-group">
+                            <label>Issue Date</label>
+                            <input type="date" name="date_issued" class="form-control">
+                        </div>
+                        <div class="form-group">
+                            <label>Certificate Image/Photo</label>
+                            <input type="file" name="certificate_image" class="form-control" accept="image/*">
+                        </div>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
+                        <button type="submit" class="btn btn-primary">Add Credential</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <!-- Cover Photo Modal -->
+    <div class="modal fade" id="coverPhotoModal" tabindex="-1" role="dialog" aria-labelledby="coverPhotoModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered" role="document">
+            <div class="modal-content">
+                <div class="modal-header" style="background: linear-gradient(135deg, #8B1538, #6B0F2A); color: white;">
+                    <h5 class="modal-title" id="coverPhotoModalLabel"><i class="fas fa-image"></i> Update Cover Photo</h5>
+                    <button type="button" class="close text-white" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <form action="<?= base_url('profile/update_cover_photo/' . $alumni->id) ?>" method="post" enctype="multipart/form-data">
+                    <div class="modal-body">
+                        <div class="form-group">
+                            <label>Select Cover Photo</label>
+                            <input type="file" name="cover_photo" class="form-control" accept="image/*" required>
+                            <small class="text-muted">Recommended: 1200x400px</small>
+                        </div>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
+                        <button type="submit" class="btn btn-primary">Upload Cover</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
 </div>
 
 <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
@@ -725,6 +896,26 @@ $(document).ready(function() {
     <?php if ($this->session->flashdata('show_employment_modal')): ?>
         $('#employmentModal').modal('show');
     <?php endif; ?>
+    $('.view-cert-details').on('click', function() {
+        const title = $(this).data('title');
+        const issuer = $(this).data('issuer');
+        const date = $(this).data('date');
+        const image = $(this).data('image');
+
+        $('#certDetailTitle').text(title);
+        $('#certDetailIssuer').text(issuer);
+        $('#certDetailDate').text(date ? 'Issued: ' + date : 'Date not specified');
+        
+        if (image) {
+            $('#certDetailImage').attr('src', image).show();
+            $('#certDetailIcon').hide();
+        } else {
+            $('#certDetailImage').hide();
+            $('#certDetailIcon').show();
+        }
+
+        $('#certDetailModal').modal('show');
+    });
 });
 </script>
 

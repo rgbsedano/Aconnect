@@ -1,236 +1,185 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Admin Panel | Alumni Management</title>
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
-    <style>
-        :root {
-            --primary-color: #700A0A;
-            --accent-gold: #D4AF37;
-            --sidebar-width: 260px;
-            --glass-bg: rgba(255, 255, 255, 0.95);
-            --shadow-sm: 0 2px 4px rgba(0,0,0,0.05);
-            --shadow-md: 0 8px 30px rgba(0,0,0,0.08);
-        }
+<style>
+    @import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap');
 
-        body {
-            background-color: #f0f2f5;
-            font-family: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
-            color: #334155;
-            overflow-x: hidden;
-        }
+    :root {
+        --primary-bg: #f8fafc;
+        --card-bg: #ffffff;
+        --text-main: #1e293b;
+        --text-muted: #64748b;
+        --accent-red: #700a0a;
+        --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        --border-radius: 24px;
+    }
 
-        .modal-backdrop {
-            z-index: 1040 !important;
-        }
-        .modal {
-            z-index: 1050 !important;
-        }
+    .dashboard-wrapper {
+        max-width: 1400px;
+        margin: 0 auto;
+        padding: 20px 24px;
+        animation: fadeIn 0.8s ease-out;
+    }
 
-        .admin-wrapper {
-            padding: 40px 20px;
-            max-width: 1400px;
-            margin: 0 auto;
-        }
+    @keyframes fadeIn {
+        from { opacity: 0; transform: translateY(10px); }
+        to { opacity: 1; transform: translateY(0); }
+    }
 
-        .alumni-card {
-            background: var(--glass-bg);
-            border-radius: 16px;
-            border: 1px solid rgba(255, 255, 255, 0.3);
-            box-shadow: var(--shadow-md);
-            padding: 30px;
-        }
+    .header-section {
+        margin-bottom: 24px;
+        display: flex;
+        justify-content: space-between;
+        align-items: flex-end;
+    }
 
-        .page-guide {
-            background: #fff9f9;
-            border-left: 4px solid var(--primary-color);
-            padding: 15px 20px;
-            margin-bottom: 25px;
-            border-radius: 4px 12px 12px 4px;
-            font-size: 0.9rem;
-        }
+    .header-section h1 {
+        font-size: 28px;
+        font-weight: 700;
+        margin-bottom: 4px;
+        color: var(--text-main);
+    }
 
-        .main-header {
-            color: var(--primary-color);
-            font-weight: 800;
-            letter-spacing: -0.5px;
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-        }
+    .header-section h1 span { color: var(--accent-red); }
+    .header-section p { color: var(--text-muted); font-size: 14px; margin: 0; }
 
-        .search-box-wrapper {
-            background: #fff;
-            border-radius: 12px;
-            padding: 10px;
-            box-shadow: var(--shadow-sm);
-            border: 1px solid #e2e8f0;
-        }
+    .main-card {
+        background: var(--card-bg);
+        border-radius: var(--border-radius);
+        padding: 30px;
+        box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05), 0 2px 4px -1px rgba(0, 0, 0, 0.03);
+        border: 1px solid #f1f5f9;
+    }
 
-        .search-input-clean {
-            border: none !important;
-            box-shadow: none !important;
-            font-size: 0.95rem;
-        }
+    /* Search Box */
+    .search-container {
+        background: #f1f5f9;
+        border-radius: 16px;
+        padding: 6px;
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        max-width: 500px;
+        transition: var(--transition);
+        border: 2px solid transparent;
+    }
 
-        .btn-modern-search {
-            background: var(--primary-color);
-            color: white;
-            border-radius: 10px;
-            padding: 10px 25px;
-            font-weight: 600;
-        }
+    .search-container:focus-within {
+        background: white;
+        border-color: var(--accent-red);
+        box-shadow: 0 0 0 4px rgba(112, 10, 10, 0.1);
+    }
 
-        .btn-modern-search:hover {
-            background: #5A0808;
-            color: #fff;
-        }
+    .search-input {
+        background: transparent;
+        border: none;
+        padding: 8px 12px;
+        font-size: 14px;
+        font-weight: 500;
+        outline: none;
+        flex: 1;
+    }
 
-        .table-responsive {
-            border-radius: 12px;
-            overflow: visible;
-        }
+    .btn-search {
+        background: var(--accent-red);
+        color: white;
+        border: none;
+        padding: 10px 20px;
+        border-radius: 12px;
+        font-weight: 600;
+        font-size: 14px;
+        transition: var(--transition);
+    }
 
-        .table-modern {
-            border-collapse: separate;
-            border-spacing: 0 8px;
-            background: transparent;
-        }
+    .btn-search:hover { transform: scale(1.02); opacity: 0.9; }
 
-        .table-modern thead th {
-            background: transparent !important;
-            color: #64748b;
-            text-transform: uppercase;
-            font-size: 0.75rem;
-            font-weight: 700;
-            border: none;
-            padding: 15px;
-        }
+    /* Table Styling */
+    .table-container { margin-top: 25px; overflow-x: auto; }
+    
+    .custom-table { width: 100%; border-collapse: separate; border-spacing: 0 12px; }
+    .custom-table th { 
+        padding: 12px 20px; color: var(--text-muted); font-weight: 700; font-size: 12px; 
+        text-transform: uppercase; letter-spacing: 1px; border: none;
+    }
+    
+    .custom-table tr.data-row { 
+        background: white; transition: var(--transition); box-shadow: 0 2px 4px rgba(0,0,0,0.02);
+    }
+    
+    .custom-table tr.data-row:hover { 
+        transform: scale(1.005); box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.05);
+        background: #fffcfc;
+    }
 
-        .table-modern tbody tr {
-            background: #fff;
-            box-shadow: var(--shadow-sm);
-        }
+    .custom-table td { 
+        padding: 20px; vertical-align: middle; border-top: 1px solid #f1f5f9; border-bottom: 1px solid #f1f5f9;
+        font-size: 14px; color: var(--text-main);
+    }
 
-        .table-modern td {
-            padding: 18px 15px;
-            border: none;
-            vertical-align: middle;
-        }
+    .custom-table td:first-child { border-left: 1px solid #f1f5f9; border-top-left-radius: 16px; border-bottom-left-radius: 16px; }
+    .custom-table td:last-child { border-right: 1px solid #f1f5f9; border-top-right-radius: 16px; border-bottom-right-radius: 16px; }
 
-        .table-modern td:first-child { border-radius: 12px 0 0 12px; }
-        .table-modern td:last-child { border-radius: 0 12px 12px 0; }
+    .alumni-avatar {
+        width: 45px; height: 45px; border-radius: 12px; object-fit: cover; background: #eee;
+    }
 
-        .badge-status {
-            padding: 6px 12px;
-            border-radius: 20px;
-            font-weight: 600;
-            font-size: 0.75rem;
-            background: #ecfdf5;
-            color: #059669;
-        }
+    .student-id { 
+        font-family: monospace; font-weight: 700; color: var(--accent-red); background: rgba(112, 10, 10, 0.05);
+        padding: 4px 8px; border-radius: 6px;
+    }
 
-        .pagination .page-link {
-            color: var(--primary-color);
-            border: 1px solid #dee2e6;
-        }
+    .badge-active { background: #dcfce7; color: #166534; padding: 4px 12px; border-radius: 20px; font-weight: 600; font-size: 11px; }
 
-        .pagination .page-item.active .page-link {
-            background-color: var(--primary-color);
-            border-color: var(--primary-color);
-            color: #fff;
-        }
+    .btn-action {
+        width: 36px; height: 36px; border-radius: 10px; display: inline-flex; align-items: center; justify-content: center;
+        background: #f8fafc; color: var(--text-muted); transition: var(--transition); border: 1px solid #e2e8f0;
+    }
+    .btn-action:hover { background: var(--accent-red); color: white; border-color: var(--accent-red); transform: translateY(-2px); }
 
-        .modal-modern .modal-content {
-            border: none;
-            border-radius: 24px;
-            overflow: hidden;
-        }
+    /* Modal Styling */
+    .modal-content { border-radius: 24px; border: none; overflow: hidden; }
+    .modal-header { background: var(--accent-red); color: white; padding: 25px; border: none; }
+    .modal-body { padding: 30px; }
+    
+    .info-label { font-size: 11px; font-weight: 700; color: var(--text-muted); text-transform: uppercase; display: block; margin-bottom: 4px; }
+    .info-value { font-size: 16px; font-weight: 600; color: var(--text-main); }
+    .profile-section { border-bottom: 1px solid #f1f5f9; padding-bottom: 15px; margin-bottom: 15px; }
 
-        .modal-modern .modal-header {
-            background: var(--primary-color);
-            color: #fff;
-            padding: 25px;
-            border: none;
-        }
+</style>
 
-        .info-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-            gap: 20px;
-            padding: 10px;
-        }
-
-        .info-item {
-            padding: 12px;
-            background: #f8fafc;
-            border-radius: 12px;
-        }
-
-        .info-label {
-            display: block;
-            font-size: 0.75rem;
-            text-transform: uppercase;
-            color: #94a3b8;
-            margin-bottom: 4px;
-            font-weight: 700;
-        }
-
-        .info-value {
-            font-weight: 600;
-            color: #1e293b;
-        }
-    </style>
-</head>
-<body>
-
-<div class="admin-wrapper">
-    <div class="alumni-card">
-        <div class="main-header mb-4">
-            <div>
-                <h2 class="mb-0"><i class="fas fa-id-card-alt mr-3"></i>Alumni Directory</h2>
-                <p class="text-muted mt-2 mb-0">Manage and oversee all registered alumni records</p>
-            </div>
-            <button class="btn btn-outline-danger btn-sm" onclick="location.reload()">
-                <i class="fas fa-sync-alt"></i> Refresh Data
+<div class="dashboard-wrapper">
+    <div class="header-section">
+        <div>
+            <h1>Alumni <span>Management</span></h1>
+            <p>Maintain and verify alumni records and professional profiles.</p>
+        </div>
+        <div class="actions">
+            <button class="btn btn-outline-secondary" onclick="location.reload()" style="border-radius: 12px; font-size: 14px; font-weight: 600;">
+                <i class="fas fa-sync-alt mr-2"></i> Sync Database
             </button>
         </div>
+    </div>
 
-        <div class="page-guide">
-            <i class="fas fa-info-circle mr-2 text-danger"></i>
-            <strong>Admin Guide:</strong> Click on any row to view full profile details. Use the universal search bar to filter by degree, year, or student ID.
-        </div>
-
-        <form method="get" id="searchForm" class="mb-5">
-            <div class="search-box-wrapper d-flex align-items-center">
+    <div class="main-card">
+        <form method="get" id="searchForm">
+            <div class="search-container">
                 <i class="fas fa-search ml-3 text-muted"></i>
-                <input type="text" name="search" id="searchInput" 
-                       class="form-control search-input-clean flex-grow-1" 
-                       placeholder="Global search: Enter name, ID, or Batch..." 
+                <input type="text" name="search" id="searchInput" class="search-input" 
+                       placeholder="Find by name, student ID, or batch..." 
                        value="<?= $this->input->get('search') ?>">
                 
                 <?php if ($this->input->get('search')): ?>
-                    <button type="button" id="clearSearch" class="btn text-muted mx-2">
-                        <i class="fas fa-times-circle"></i>
-                    </button>
+                    <a href="<?= site_url('AdminAlumni') ?>" class="btn text-muted p-0 mr-2"><i class="fas fa-times-circle"></i></a>
                 <?php endif; ?>
                 
-                <button type="submit" class="btn btn-modern-search ml-2">
-                    Generate List
-                </button>
+                <button type="submit" class="btn-search">Search</button>
             </div>
         </form>
 
-        <div class="table-responsive">
-            <table class="table table-modern">
+        <div class="table-container">
+            <table class="custom-table">
                 <thead>
                     <tr>
-                        <th><i class="fas fa-hashtag mr-1"></i> ID</th>
-                        <th>Name & Contact</th>
-                        <th>Degree Info</th>
+                        <th>Alumni</th>
+                        <th>Student ID</th>
+                        <th>Academic Detail</th>
                         <th>Batch</th>
                         <th>Status</th>
                         <th class="text-right">Actions</th>
@@ -240,27 +189,37 @@
                     <?php if (empty($alumni_list)): ?>
                         <tr>
                             <td colspan="6" class="text-center py-5">
-                                <img src="https://cdn-icons-png.flaticon.com/512/7486/7486744.png" style="width: 80px; opacity: 0.3;">
-                                <p class="text-muted mt-3">No matching records found in database.</p>
+                                <div style="opacity: 0.3; margin-bottom: 15px;"><i class="fas fa-user-slash fa-4x"></i></div>
+                                <p class="text-muted">No alumni records found matching your criteria.</p>
                             </td>
                         </tr>
                     <?php else: ?>
                         <?php foreach ($alumni_list as $alumni): ?>
-                            <tr>
-                                <td class="font-weight-bold text-danger"><?= $alumni['student_number'] ?></td>
+                            <tr class="data-row">
                                 <td>
-                                    <div class="font-weight-bold"><?= ucwords(htmlspecialchars($alumni['first_name'] . ' ' . $alumni['last_name'])) ?></div>
-                                    <div class="small text-muted"><?= htmlspecialchars($alumni['email']) ?></div>
+                                    <div class="d-flex align-items-center gap-3">
+                                        <?php 
+                                            $img = (!empty($alumni['profile_image'])) 
+                                                ? base_url('assets/uploads/alumni/' . $alumni['profile_image']) 
+                                                : base_url('assets/images/' . (strtolower($alumni['gender'] ?? 'male') === 'female' ? 'person-female.png' : 'person-male.png'));
+                                        ?>
+                                        <img src="<?= $img ?>" class="alumni-avatar mr-3">
+                                        <div>
+                                            <div style="font-weight: 700;"><?= ucwords(htmlspecialchars($alumni['first_name'] . ' ' . $alumni['last_name'])) ?></div>
+                                            <div style="font-size: 12px; color: var(--text-muted);"><?= htmlspecialchars($alumni['email']) ?></div>
+                                        </div>
+                                    </div>
                                 </td>
+                                <td><span class="student-id"><?= $alumni['student_number'] ?></span></td>
                                 <td>
-                                    <div class="small font-weight-bold"><?= ucwords(htmlspecialchars($alumni['degree'])) ?></div>
-                                    <div class="small text-muted"><?= htmlspecialchars($alumni['school']) ?></div>
+                                    <div style="font-weight: 600; font-size: 13px;"><?= ucwords(htmlspecialchars($alumni['degree'])) ?></div>
+                                    <div style="font-size: 11px; color: var(--text-muted);"><?= htmlspecialchars($alumni['school']) ?></div>
                                 </td>
-                                <td><span class="badge badge-light p-2"><?= $alumni['graduation_year'] ?></span></td>
-                                <td><span class="badge-status">Active</span></td>
+                                <td><span style="font-weight: 600; color: var(--text-muted);"><?= $alumni['graduation_year'] ?></span></td>
+                                <td><span class="badge-active">Verified</span></td>
                                 <td class="text-right">
-                                    <button class="btn btn-sm btn-light btn-view-custom" data-toggle="modal" data-target="#viewModal<?= $alumni['id'] ?>">
-                                        <i class="fas fa-external-link-alt text-danger"></i> Profile
+                                    <button class="btn-action" data-toggle="modal" data-target="#viewModal<?= $alumni['id'] ?>" title="View Profile">
+                                        <i class="fas fa-eye"></i>
                                     </button>
                                 </td>
                             </tr>
@@ -270,72 +229,61 @@
             </table>
         </div>
 
-        <div class="d-flex justify-content-center mt-4">
-            <nav aria-label="Page navigation">
-                <?= $pagination ?>
-            </nav>
+        <div class="mt-4">
+            <?= $pagination ?>
         </div>
     </div>
 </div>
 
 <?php if (!empty($alumni_list)): ?>
     <?php foreach ($alumni_list as $alumni): ?>
-        <div class="modal fade modal-modern" id="viewModal<?= $alumni['id'] ?>" tabindex="-1" role="dialog" aria-hidden="true">
+        <div class="modal fade" id="viewModal<?= $alumni['id'] ?>" tabindex="-1" role="dialog" aria-hidden="true">
             <div class="modal-dialog modal-lg modal-dialog-centered" role="document">
                 <div class="modal-content">
                     <div class="modal-header">
                         <div class="d-flex align-items-center">
-                            <div class="rounded-circle bg-white p-3 mr-3">
-                                <i class="fas fa-user-tie text-danger fa-2x"></i>
-                            </div>
+                            <i class="fas fa-user-circle fa-3x mr-3"></i>
                             <div>
-                                <h4 class="modal-title mb-0"><?= ucwords(htmlspecialchars($alumni['first_name'] . ' ' . $alumni['last_name'])) ?></h4>
-                                <small class="text-white-50">Alumni Member since <?= date('Y') ?></small>
+                                <h4 class="modal-title mb-0" style="font-weight: 700;"><?= ucwords(htmlspecialchars($alumni['first_name'] . ' ' . $alumni['last_name'])) ?></h4>
+                                <p class="text-white-50 mb-0" style="font-size: 13px;">Member Profile Details</p>
                             </div>
                         </div>
                         <button type="button" class="close text-white" data-dismiss="modal">&times;</button>
                     </div>
-                    <div class="modal-body p-4">
-                        <h6 class="text-uppercase font-weight-bold text-danger mb-3" style="font-size: 0.7rem; letter-spacing: 1px;">Academic History</h6>
-                        <div class="info-grid mb-4">
-                            <div class="info-item"><span class="info-label">Degree</span><span class="info-value"><?= $alumni['degree'] ?></span></div>
-                            <div class="info-item"><span class="info-label">Student ID</span><span class="info-value"><?= $alumni['student_number'] ?></span></div>
-                            <div class="info-item"><span class="info-label">Grad Year</span><span class="info-value"><?= $alumni['graduation_year'] ?></span></div>
-                            <div class="info-item"><span class="info-label">School</span><span class="info-value"><?= $alumni['school'] ?></span></div>
-                        </div>
-
-                        <h6 class="text-uppercase font-weight-bold text-danger mb-3" style="font-size: 0.7rem; letter-spacing: 1px;">Professional Background</h6>
-                        <div class="info-grid">
-                            <div class="info-item"><span class="info-label">Current Role</span><span class="info-value"><?= $alumni['current_job'] ?: 'Unspecified' ?></span></div>
-                            <div class="info-item"><span class="info-label">Company</span><span class="info-value"><?= $alumni['current_job_organization'] ?: 'N/A' ?></span></div>
-                            <div class="info-item"><span class="info-label">Phone</span><span class="info-value"><?= $alumni['phone'] ?></span></div>
+                    <div class="modal-body">
+                        <div class="row">
+                            <div class="col-md-6 profile-section">
+                                <span class="info-label">Degree</span>
+                                <span class="info-value"><?= $alumni['degree'] ?></span>
+                            </div>
+                            <div class="col-md-6 profile-section">
+                                <span class="info-label">Student ID</span>
+                                <span class="info-value"><?= $alumni['student_number'] ?></span>
+                            </div>
+                            <div class="col-md-6 profile-section">
+                                <span class="info-label">Grad Year</span>
+                                <span class="info-value"><?= $alumni['graduation_year'] ?></span>
+                            </div>
+                            <div class="col-md-6 profile-section">
+                                <span class="info-label">School</span>
+                                <span class="info-value"><?= $alumni['school'] ?></span>
+                            </div>
+                            <div class="col-md-6 profile-section">
+                                <span class="info-label">Current Role</span>
+                                <span class="info-value"><?= !empty($alumni['current_job']) ? $alumni['current_job'] : 'None Listed' ?></span>
+                            </div>
+                            <div class="col-md-6 profile-section">
+                                <span class="info-label">Organization</span>
+                                <span class="info-value"><?= !empty($alumni['current_job_organization']) ? $alumni['current_job_organization'] : 'N/A' ?></span>
+                            </div>
                         </div>
                     </div>
-                    <div class="modal-footer bg-light">
-                        <button type="button" class="btn btn-secondary rounded-pill px-4" data-dismiss="modal">Close Overlay</button>
-                        <button type="button" class="btn btn-danger rounded-pill px-4">Generate Report</button>
+                    <div class="modal-footer" style="background: #f8fafc; border-top: 1px solid #f1f5f9;">
+                        <button type="button" class="btn btn-light" data-dismiss="modal" style="border-radius: 12px; font-weight: 600;">Close</button>
+                        <button type="button" class="btn btn-danger" style="background: var(--accent-red); border-radius: 12px; font-weight: 600;">Download Profile</button>
                     </div>
                 </div>
             </div>
         </div>
     <?php endforeach; ?>
 <?php endif; ?>
-
-<script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.2/dist/js/bootstrap.bundle.min.js"></script>
-
-<script>
-    $(document).ready(function() {
-        $('#clearSearch').on('click', function() {
-            $('#searchInput').val('');
-            window.location.href = window.location.pathname;
-        });
-
-        $(document).on('click', '.table-modern tbody tr', function(e) {
-            if ($(e.target).closest('.btn-view-custom').length) return;
-            $(this).find('.btn-view-custom').click();
-        });
-    });
-</script>
-</body>
-</html>

@@ -312,9 +312,9 @@ $student_number = $this->session->userdata('student_number') ? $this->session->u
                             </div>
 
                             <div class="card-footer">
-                                <button type="button" class="btn-tile btn-view" data-toggle="modal" data-target="#profileModal<?= $alumnus->id ?>">
+                                <a href="<?= site_url('alumni/view/' . $alumnus->id) ?>" class="btn-tile btn-view">
                                     <i class="fas fa-eye mr-1"></i> View
-                                </button>
+                                </a>
 
                                 <?php 
                                     $my_id = $this->session->userdata('alumni_id');

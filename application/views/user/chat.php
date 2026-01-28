@@ -23,19 +23,16 @@
     .message-wrapper {
         display: flex;
         margin: 8px 0;
-        animation: slideIn 0.3s ease-out;
+        animation: bubblePop 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275) both;
     }
 
-    @keyframes slideIn {
-        from {
-            opacity: 0;
-            transform: translateY(10px);
-        }
-        to {
-            opacity: 1;
-            transform: translateY(0);
-        }
+    @keyframes bubblePop {
+        from { opacity: 0; transform: scale(0.8) translateY(10px); }
+        to { opacity: 1; transform: scale(1) translateY(0); }
     }
+    
+    .message-wrapper.own { transform-origin: right bottom; }
+    .message-wrapper.other { transform-origin: left bottom; }
 
     .message-wrapper.own {
         justify-content: flex-end;
@@ -130,9 +127,9 @@
             <p>Start the conversation by sending a message</p>
         </div>
     <?php else: ?>
-        <?php foreach ($messages as $msg): ?>
+        <?php foreach ($messages as $index => $msg): ?>
             <?php $isOwn = ($msg->sender_id == $this->session->userdata('alumni_id')); ?>
-            <div class="message-wrapper <?= $isOwn ? 'own' : 'other' ?>">
+            <div class="message-wrapper <?= $isOwn ? 'own' : 'other' ?>" style="animation-delay: <?= $index * 0.05 ?>s">
                 <div class="message-bubble <?= $isOwn ? 'own' : 'other' ?>">
                     <p class="message-text"><?= htmlspecialchars($msg->message) ?></p>
                     <div class="message-time">

@@ -85,14 +85,18 @@ class Alumni extends CI_Controller {
 
 
     public function remove_connection() {
-    $current_user_id = $this->session->userdata('alumni_id');
-    $target_user_id = $this->input->post('receiver_id');
-
-    $this->Alumni_model->remove_connection($current_user_id, $target_user_id);
-
-    header('Content-Type: application/json');
-    echo json_encode(['status' => 'success']);
-}
+        $user_id = $this->session->userdata('alumni_id');
+        $receiver_id = $this->input->post('receiver_id');
+        
+        $this->load->model('user/Alumni_model');
+        $this->Alumni_model->remove_connection($user_id, $receiver_id);
+        
+        if ($this->input->is_ajax_request()) {
+            echo json_encode(['status' => 'success']);
+        } else {
+            redirect('alumni');
+        }
+    }
 
 
 
@@ -105,6 +109,27 @@ class Alumni extends CI_Controller {
 		$this->load->view('__footer');
     }
 
+    public function view($id) {
+        $current_user_id = $this->session->userdata('alumni_id');
+        $alumni = $this->Alumni_model->get_public_profile($id);
+        
+        if (!$alumni) {
+            show_404();
+        }
 
+        $this->load->model('Employment_model');
+        $data['alumni'] = $alumni;
+        $data['employment'] = $this->Employment_model->get_by_alumni($id);
+        $data['certifications'] = $this->Alumni_model->get_certifications($id);
+        $data['is_connected'] = $this->Alumni_model->is_connected($current_user_id, $id);
+        
+        // Also check for pending status
+        $connection = $this->Alumni_model->connection_exists($current_user_id, $id);
+        $data['connection_status'] = $connection ? $connection->status : null;
+        $data['is_receiver'] = ($connection && $connection->receiver_id == $current_user_id);
 
+        $this->load->view('__header');
+        $this->load->view('user/view_profile', $data);
+        $this->load->view('__footer');
+    }
 }
