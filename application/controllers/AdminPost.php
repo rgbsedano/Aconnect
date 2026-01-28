@@ -16,9 +16,18 @@ class AdminPost extends CI_Controller {
 
     public function index()
     {
+        // Auto-migration for carousel table
+        if (!$this->db->field_exists('title', 'carousel_photos')) {
+            $this->db->query("ALTER TABLE carousel_photos ADD COLUMN title VARCHAR(255) DEFAULT ''");
+        }
+        if (!$this->db->field_exists('description', 'carousel_photos')) {
+            $this->db->query("ALTER TABLE carousel_photos ADD COLUMN description TEXT");
+        }
+
         $data['announcements'] = $this->db->get_where('post', ['post_type' => 'announcements'])->result_array();
         $data['news'] = $this->db->get_where('post', ['post_type' => 'news'])->result_array();
         $data['stories'] = $this->db->get_where('post', ['post_type' => 'stories'])->result_array();
+        $data['carousel'] = $this->db->get('carousel_photos')->result_array();
 
         $this->load->view('__header');
         $this->load->view('admin/manage_post', $data);
@@ -79,14 +88,34 @@ class AdminPost extends CI_Controller {
     /**
      * Upload single carousel image
      */
-    public function upload()
+    /**
+     * Delete carousel image
+     */
+    public function delete_carousel($id = null)
     {
-        if (empty($_FILES['carousel_photo']['name'])) {
-            $this->session->set_flashdata('error', 'No file selected.');
+        if (!$id) {
+            $this->session->set_flashdata('error', 'Invalid photo ID.');
             redirect('AdminPost');
             return;
         }
 
+        $photo = $this->db->get_where('carousel_photos', ['id' => $id])->row_array();
+        if ($photo) {
+            $file = FCPATH . 'assets/uploads/carousel/' . $photo['file_name'];
+            if (file_exists($file)) {
+                @unlink($file);
+            }
+            $this->db->where('id', $id)->delete('carousel_photos');
+            $this->session->set_flashdata('success', 'Banner removed successfully.');
+        } else {
+            $this->session->set_flashdata('error', 'Photo not found.');
+        }
+
+        redirect('AdminPost');
+    }
+
+    public function upload()
+    {
         $upload_path = './assets/uploads/carousel/';
         if (!is_dir($upload_path)) {
             mkdir($upload_path, 0755, true);
@@ -102,12 +131,61 @@ class AdminPost extends CI_Controller {
 
         if ($this->upload->do_upload('carousel_photo')) {
             $data = $this->upload->data();
-            $this->db->insert('carousel_photos', ['file_name' => $data['file_name']]);
-            $this->session->set_flashdata('success', 'Image uploaded!');
+            $insert_data = [
+                'file_name'   => $data['file_name'],
+                'title'       => $this->input->post('title', TRUE),
+                'description' => $this->input->post('description', TRUE)
+            ];
+            $this->db->insert('carousel_photos', $insert_data);
+            $this->session->set_flashdata('success', 'Banner added successfully!');
         } else {
             $this->session->set_flashdata('error', strip_tags($this->upload->display_errors()));
         }
 
+        redirect('AdminPost');
+    }
+
+    /**
+     * Update carousel image/details
+     */
+    public function update_carousel($id = null)
+    {
+        if (!$id) redirect('AdminPost');
+
+        $photo = $this->db->get_where('carousel_photos', ['id' => $id])->row_array();
+        if (!$photo) redirect('AdminPost');
+
+        $file_name = $photo['file_name'];
+
+        if (!empty($_FILES['carousel_photo']['name'])) {
+            $upload_path = './assets/uploads/carousel/';
+            $config = [
+                'upload_path'   => $upload_path,
+                'allowed_types' => 'jpg|jpeg|png|gif',
+                'max_size'      => 7048,
+                'file_name'     => time() . '_' . basename($_FILES['carousel_photo']['name'])
+            ];
+            $this->load->library('upload', $config);
+
+            if ($this->upload->do_upload('carousel_photo')) {
+                $data = $this->upload->data();
+                $file_name = $data['file_name'];
+                
+                // delete old file
+                if (file_exists($upload_path . $photo['file_name'])) {
+                    @unlink($upload_path . $photo['file_name']);
+                }
+            }
+        }
+
+        $update_data = [
+            'file_name'   => $file_name,
+            'title'       => $this->input->post('title', TRUE),
+            'description' => $this->input->post('description', TRUE)
+        ];
+
+        $this->db->where('id', $id)->update('carousel_photos', $update_data);
+        $this->session->set_flashdata('success', 'Banner updated successfully!');
         redirect('AdminPost');
     }
 

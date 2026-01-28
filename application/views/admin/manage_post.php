@@ -186,6 +186,58 @@
     .form-input { border-radius: 12px; padding: 12px; font-size: 14px; font-weight: 500; border: 1px solid #e2e8f0; }
     .form-input:focus { border-color: var(--accent-red); box-shadow: 0 0 0 4px rgba(112, 10, 10, 0.05); }
 
+    /* Carousel Manager Styles */
+    .carousel-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
+        gap: 16px;
+        margin-bottom: 30px;
+    }
+
+    .carousel-item-card {
+        background: #f8fafc;
+        border-radius: 16px;
+        padding: 8px;
+        border: 1px solid #e2e8f0;
+        position: relative;
+        transition: var(--transition);
+    }
+
+    .carousel-item-card:hover {
+        border-color: var(--accent-red);
+        transform: translateY(-4px);
+    }
+
+    .carousel-item-card img {
+        width: 100%;
+        aspect-ratio: 16/9;
+        object-fit: cover;
+        border-radius: 12px;
+    }
+
+    .delete-carousel-btn {
+        position: absolute;
+        top: -8px;
+        right: -8px;
+        width: 28px;
+        height: 28px;
+        border-radius: 50%;
+        background: #ef4444;
+        color: white;
+        border: 2px solid white;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        cursor: pointer;
+        transition: var(--transition);
+        box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+    }
+
+    .delete-carousel-btn:hover {
+        background: #dc2626;
+        transform: scale(1.1);
+    }
+
 </style>
 
 <div class="dashboard-wrapper">
@@ -358,26 +410,66 @@
 </div>
 
 <div class="modal fade" id="uploadCarouselModal" tabindex="-1">
-    <div class="modal-dialog modal-dialog-centered">
+    <div class="modal-dialog modal-lg modal-dialog-centered">
         <div class="modal-content">
-            <form id="carouselForm">
-                <div class="modal-header">
-                    <h5 class="modal-title" style="font-weight: 700;"><i class="fas fa-images mr-2"></i> Banner Manager</h5>
-                    <button type="button" class="close text-white" data-dismiss="modal">&times;</button>
-                </div>
-                <div class="modal-body p-5 text-center">
-                    <i class="fas fa-cloud-upload-alt fa-3x text-light mb-4"></i>
-                    <p class="text-muted mb-4">Select a high-resolution photo for the homepage carousel banner.</p>
-                    <div class="custom-file">
-                        <input type="file" class="custom-file-input" id="carouselInput" required>
-                        <label class="custom-file-label text-left">Choose Image...</label>
+            <div class="modal-header">
+                <h5 class="modal-title" style="font-weight: 700;"><i class="fas fa-images mr-2"></i> Carousel Manager</h5>
+                <button type="button" class="close text-white" data-dismiss="modal">&times;</button>
+            </div>
+            <div class="modal-body p-4">
+                <div class="mb-4">
+                    <label class="form-label mb-3">Currently Active Banners</label>
+                    <div class="carousel-grid">
+                        <?php if (!empty($carousel)): foreach($carousel as $item): ?>
+                            <div class="carousel-item-card">
+                                <img src="<?= base_url('assets/uploads/carousel/' . $item['file_name']) ?>" alt="Carousel">
+                                <div class="mt-2 text-center">
+                                    <button onclick='editCarousel(<?= json_encode($item) ?>)' class="btn btn-sm btn-link text-primary p-0" style="font-size: 11px; font-weight: 700;">EDIT INFO</button>
+                                </div>
+                                <button onclick="deleteCarousel(<?= $item['id'] ?>)" class="delete-carousel-btn" title="Delete Banner">
+                                    <i class="fas fa-times"></i>
+                                </button>
+                            </div>
+                        <?php endforeach; else: ?>
+                            <div class="col-12 py-4 text-center text-muted" style="background: #f8fafc; border-radius: 16px; border: 2px dashed #e2e8f0;">
+                                <i class="fas fa-images fa-2x mb-2 opacity-25"></i>
+                                <p class="small m-0">No carousel banners active.</p>
+                            </div>
+                        <?php endif; ?>
                     </div>
                 </div>
-                <div class="modal-footer" style="background: #f8fafc;">
-                    <button type="button" class="btn btn-light" data-dismiss="modal" style="border-radius: 12px; font-weight: 600;">Cancel</button>
-                    <button type="submit" class="btn btn-danger" style="background: var(--accent-red); border-radius: 12px; font-weight: 700; padding: 10px 24px;">Upload & Set</button>
-                </div>
-            </form>
+
+                <div style="height: 1px; background: #f1f5f9; margin-bottom: 24px;"></div>
+
+                <form id="carouselForm" method="POST" enctype="multipart/form-data">
+                    <input type="hidden" name="carousel_id" id="carousel_id">
+                    <div id="carouselFormTitle" class="form-label mb-3">Add New Banner</div>
+                    
+                    <div class="row">
+                        <div class="col-md-12 mb-3">
+                            <label class="form-label">Banner Title</label>
+                            <input type="text" name="title" id="carouselTitle" class="form-control form-input" placeholder="e.g. Welcome to SDCA">
+                        </div>
+                        <div class="col-md-12 mb-3">
+                            <label class="form-label">Short Description</label>
+                            <textarea name="description" id="carouselDescription" class="form-control form-input" rows="3" placeholder="Clicking the banner will show this in a modal..."></textarea>
+                        </div>
+                    </div>
+
+                    <div class="p-4 text-center" style="background: #f8fafc; border-radius: 20px; border: 2px dashed #e2e8f0;">
+                        <i class="fas fa-cloud-upload-alt fa-2x text-light mb-3"></i>
+                        <p class="text-muted small mb-3">Recommended size: 1920x600px (16:9 ratio)</p>
+                        <div class="custom-file text-left" style="max-width: 300px; margin: 0 auto;">
+                            <input type="file" name="carousel_photo" class="custom-file-input" id="carouselInput" accept="image/*">
+                            <label class="custom-file-label">Choose file...</label>
+                        </div>
+                    </div>
+                    <div class="mt-4 text-right">
+                        <button type="button" id="resetCarouselForm" class="btn btn-light" style="border-radius: 12px; font-weight: 600; display:none;">Cancel Edit</button>
+                        <button type="submit" id="carouselSubmitBtn" class="btn btn-danger" style="background: var(--accent-red); border-radius: 12px; font-weight: 700; padding: 10px 24px;">Upload Banner</button>
+                    </div>
+                </form>
+            </div>
         </div>
     </div>
 </div>
@@ -410,6 +502,34 @@
         $('#edit_title').val(post.title);
         $('#edit_content').val(post.content);
         $('#editPostModal').modal('show');
+    }
+
+    function editCarousel(item) {
+        $('#carousel_id').val(item.id);
+        $('#carouselTitle').val(item.title);
+        $('#carouselDescription').val(item.description);
+        $('#carouselFormTitle').text('Editing Banner: ' + (item.title || 'Untitled'));
+        $('#carouselSubmitBtn').text('Save Changes');
+        $('#carouselInput').removeAttr('required');
+        $('#resetCarouselForm').show();
+        $('#carouselForm').attr('action', '<?= base_url('AdminPost/update_carousel/') ?>' + item.id);
+    }
+
+    $('#resetCarouselForm').on('click', function() {
+        $('#carousel_id').val('');
+        $('#carouselTitle').val('');
+        $('#carouselDescription').val('');
+        $('#carouselFormTitle').text('Add New Banner');
+        $('#carouselSubmitBtn').text('Upload Banner');
+        $('#carouselInput').attr('required', 'required');
+        $(this).hide();
+        $('#carouselForm').attr('action', '<?= base_url('AdminPost/upload') ?>');
+    });
+
+    function deleteCarousel(id) {
+        if(confirm('Are you sure you want to remove this banner from the carousel?')) {
+            window.location.href = '<?= base_url('AdminPost/delete_carousel/') ?>' + id;
+        }
     }
 
     function deletePost(id) {
@@ -450,16 +570,17 @@
         $('#carouselForm').on('submit', function(e) {
             e.preventDefault();
             const btn = $(this).find('button[type="submit"]');
-            btn.prop('disabled', true).text('Uploading...');
-            const formData = new FormData();
-            formData.append('carousel_photo', $('#carouselInput')[0].files[0]);
+            btn.prop('disabled', true).text('Processing...');
+            
+            const action = $(this).attr('action') || '<?= base_url('AdminPost/upload') ?>';
+            
             $.ajax({
-                url: '<?= base_url('AdminPost/upload') ?>',
+                url: action,
                 type: 'POST',
-                data: formData,
+                data: new FormData(this),
                 contentType: false, processData: false,
                 success: function() { location.reload(); },
-                error: function() { alert('Failed to upload banner.'); btn.prop('disabled', false).text('Upload & Set'); }
+                error: function() { alert('Failed to process carousel item.'); btn.prop('disabled', false).text('Try Again'); }
             });
         });
 

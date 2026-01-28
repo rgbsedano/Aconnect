@@ -426,7 +426,7 @@
                             
                             <div class="mt-4 p-3 rounded-lg" style="border-left: 4px solid #d4a574; background: #fffcf5;">
                                 <p class="mb-0" style="color: #78350f; font-size: 13px; line-height: 1.5;">
-                                    This certification represents a verified achievement in the specified field. AConnect honors the professional growth of our alumni network.
+                                    Certificate is verified by AConnect
                                 </p>
                             </div>
                         </div>

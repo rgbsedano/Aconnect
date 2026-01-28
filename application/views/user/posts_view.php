@@ -68,6 +68,7 @@ $student_number = $this->session->userdata('student_number') ? $this->session->u
         }
         .carousel-inner, .carousel-item { height: 100%; }
         .carousel-item img { width: 100%; height: 100%; object-fit: cover; }
+        .carousel-item { cursor: pointer; }
 
         .posts-section {
             display: flex;
@@ -216,7 +217,10 @@ $student_number = $this->session->userdata('student_number') ? $this->session->u
                 <div id="carouselExample" class="carousel slide" data-ride="carousel">
                     <div class="carousel-inner">
                         <?php foreach ($photos as $index => $photo): ?>
-                            <div class="carousel-item <?= $index === 0 ? 'active' : '' ?>">
+                            <div class="carousel-item <?= $index === 0 ? 'active' : '' ?> open-carousel-details" 
+                                 data-title="<?= htmlspecialchars($photo['title'] ?: 'Announcement') ?>"
+                                 data-description="<?= htmlspecialchars($photo['description'] ?: '') ?>"
+                                 data-image="<?= base_url('assets/uploads/carousel/' . $photo['file_name']) ?>">
                                 <img src="<?= base_url('assets/uploads/carousel/' . $photo['file_name']) ?>" alt="SDCA Flyer">
                             </div>
                         <?php endforeach; ?>
@@ -287,6 +291,31 @@ $student_number = $this->session->userdata('student_number') ? $this->session->u
                     </div>
                 </section>
             <?php endforeach; ?>
+        </div>
+    </div>
+</div>
+
+<!-- Carousel Detail Modal -->
+<div class="modal fade" id="carouselDetailModal" tabindex="-1" role="dialog" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered modal-lg" role="document">
+        <div class="modal-content shadow-2xl">
+            <div class="modal-header" style="background: linear-gradient(135deg, var(--accent) 0%, var(--primary) 100%); color: white;">
+                <h5 class="modal-title font-bold" id="c-title">Flash Update</h5>
+                <button type="button" class="close text-white" data-dismiss="modal">&times;</button>
+            </div>
+            <div class="modal-body">
+                <div id="c-image-container" style="width: 100%; height: 400px; background: #000;">
+                    <img id="c-image" src="" style="width: 100%; height: 100%; object-fit: contain;">
+                </div>
+                <div class="modal-body-text p-5">
+                    <h3 id="c-title-display" class="font-extrabold text-2xl mb-3 text-gray-900"></h3>
+                    <div style="height: 4px; width: 60px; background: var(--primary); margin-bottom: 24px; border-radius: 2px;"></div>
+                    <div id="c-description" class="text-gray-700 text-lg leading-relaxed"></div>
+                </div>
+            </div>
+            <div class="modal-footer bg-gray-50">
+                <button type="button" class="btn btn-secondary px-5 py-2.5 rounded-xl font-bold" data-dismiss="modal" style="background: #e2e8f0; color: #475569; border: none;">Close</button>
+            </div>
         </div>
     </div>
 </div>
@@ -371,6 +400,21 @@ $(document).ready(function() {
         
         $('#m-content').html(currentPost.content);
         $('#postDetailModal').modal('show');
+    });
+
+    $('.open-carousel-details').on('click', function() {
+        const title = $(this).data('title');
+        const description = $(this).data('description');
+        const image = $(this).data('image');
+
+        if (!description && !title) return; // Don't show modal if no info
+
+        $('#c-title').text(title || 'Announcement');
+        $('#c-title-display').text(title || 'Network Update');
+        $('#c-image').attr('src', image);
+        $('#c-description').html(description.replace(/\n/g, '<br>'));
+        
+        $('#carouselDetailModal').modal('show');
     });
 });
 </script>
