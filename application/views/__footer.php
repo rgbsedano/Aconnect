@@ -50,38 +50,56 @@
 <!-- Dual Floating Chat Widgets -->
 <?php if ($this->session->userdata('alumni_id')): ?>
 <!-- Friends Chat (Bottom Right, Stacked Above Support) -->
-<div id="friends-chat-container" style="position: fixed; bottom: 100px; right: 30px; z-index: 10000; font-family: 'Plus Jakarta Sans', sans-serif;">
-    <button id="friends-toggle-btn" style="width: 54px; height: 54px; border-radius: 50%; background: #8B1538; color: white; border: none; box-shadow: 0 4px 15px rgba(0,0,0,0.3); cursor: pointer; display: flex; align-items: center; justify-content: center; transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);">
+<div id="friends-chat-container" style="position: fixed; bottom: 100px; right: 30px; z-index: 10000; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', sans-serif;">
+    <button id="friends-toggle-btn" style="width: 60px; height: 60px; border-radius: 50%; background: linear-gradient(135deg, #8B1538, #A52A2A); color: white; border: none; box-shadow: 0 6px 20px rgba(139, 21, 56, 0.4); cursor: pointer; display: flex; align-items: center; justify-content: center; transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275); position: relative;">
         <i class="fas fa-comment-dots fa-lg"></i>
+        <span style="position: absolute; top: -5px; right: -5px; background: #FF4444; color: white; border-radius: 50%; width: 20px; height: 20px; font-size: 11px; font-weight: 700; display: none; align-items: center; justify-content: center;" id="friends-unread-badge">0</span>
     </button>
 
-    <div id="friends-chat-window" style="display: none; position: absolute; bottom: 0; right: 70px; width: 350px; height: 500px; background: white; border-radius: 15px; box-shadow: 0 10px 40px rgba(0,0,0,0.2); overflow: hidden; border: 1px solid #EEE; flex-direction: column; transform-origin: right bottom;">
-        <div style="background: #800020; color: white; padding: 12px 15px; display: flex; justify-content: space-between; align-items: center;">
-            <div style="display: flex; align-items: center; gap: 10px;">
-                <img id="friends-chat-avatar" src="<?= base_url('assets/images/person-male.png') ?>" style="width: 35px; height: 35px; border-radius: 50%; border: 2px solid white; display: none;">
-                <h6 id="friends-chat-title" style="margin: 0; font-weight: 700; font-size: 15px;">Friends Chat</h6>
+    <div id="friends-chat-window" style="display: none; position: absolute; bottom: 75px; right: 0; width: 380px; height: 550px; background: white; border-radius: 16px; box-shadow: 0 12px 48px rgba(0,0,0,0.15); overflow: hidden; border: 1px solid rgba(0,0,0,0.08); flex-direction: column; transform-origin: right bottom;">
+        <!-- Header -->
+        <div style="background: linear-gradient(135deg, #8B1538, #A52A2A); color: white; padding: 16px 20px; display: flex; justify-content: space-between; align-items: center; box-shadow: 0 2px 8px rgba(0,0,0,0.1);">
+            <div style="display: flex; align-items: center; gap: 12px;">
+                <img id="friends-chat-avatar" src="<?= base_url('assets/images/person-male.png') ?>" style="width: 40px; height: 40px; border-radius: 50%; border: 2px solid rgba(255,255,255,0.3); display: none; object-fit: cover;">
+                <div>
+                    <h6 id="friends-chat-title" style="margin: 0; font-weight: 700; font-size: 16px; letter-spacing: 0.3px;">Messaging</h6>
+                    <span id="friends-chat-status" style="font-size: 11px; opacity: 0.85; display: none;">Active now</span>
+                </div>
             </div>
-            <button id="close-friends-chat" style="background: transparent; border: none; color: white; cursor: pointer; font-size: 18px;"><i class="fas fa-times"></i></button>
+            <button id="close-friends-chat" style="background: rgba(255,255,255,0.2); border: none; color: white; cursor: pointer; font-size: 18px; width: 32px; height: 32px; border-radius: 50%; display: flex; align-items: center; justify-content: center; transition: background 0.2s;">
+                <i class="fas fa-times"></i>
+            </button>
         </div>
         
-        <div id="friends-contacts" style="flex: 1; overflow-y: auto; padding: 10px;">
-            <div style="text-align: center; color: #888; margin-top: 50px;">
-                <i class="fas fa-spinner fa-spin fa-2x"></i>
-                <p>Loading connections...</p>
+        <!-- Contacts List -->
+        <div id="friends-contacts" style="flex: 1; overflow-y: auto; background: #FAFAFA;">
+            <div style="padding: 16px 20px; border-bottom: 1px solid #E8E8E8; background: white;">
+                <input type="text" id="friends-search" placeholder="Search conversations..." style="width: 100%; border: 1px solid #E0E0E0; border-radius: 20px; padding: 10px 16px; font-size: 14px; outline: none; transition: all 0.2s;">
+            </div>
+            <div id="friends-list-container" style="padding: 8px 0;">
+                <div style="text-align: center; color: #999; margin-top: 80px; padding: 0 30px;">
+                    <i class="fas fa-spinner fa-spin fa-2x" style="color: #8B1538;"></i>
+                    <p style="margin-top: 16px; font-size: 14px;">Loading your connections...</p>
+                </div>
             </div>
         </div>
 
-        <div id="active-friends-chat" style="display: none; flex: 1; flex-direction: column;">
-            <div id="friends-chat-header" style="padding: 10px; border-bottom: 1px solid #EEE; display: flex; align-items: center; gap: 10px;">
-                <button id="back-to-friends" style="background: transparent; border: none; color: #8B1538; cursor: pointer;"><i class="fas fa-chevron-left"></i></button>
-                <div style="flex: 1; font-weight: 600; font-size: 14px;" id="friends-chat-user-name"></div>
+        <!-- Active Chat -->
+        <div id="active-friends-chat" style="display: none; flex: 1; flex-direction: column; background: #F5F5F5;">
+            <div id="friends-chat-header" style="padding: 12px 16px; background: white; border-bottom: 1px solid #E8E8E8; display: flex; align-items: center; gap: 12px;">
+                <button id="back-to-friends" style="background: transparent; border: none; color: #8B1538; cursor: pointer; font-size: 18px; width: 36px; height: 36px; border-radius: 50%; display: flex; align-items: center; justify-content: center; transition: background 0.2s;">
+                    <i class="fas fa-chevron-left"></i>
+                </button>
+                <div style="flex: 1; font-weight: 600; font-size: 15px; color: #1a1a1a;" id="friends-chat-user-name"></div>
             </div>
-            <div id="friends-chat-messages" style="flex: 1; overflow-y: auto; padding: 15px; background: #FFF; display: flex; flex-direction: column; gap: 15px;">
+            
+            <div id="friends-chat-messages" style="flex: 1; overflow-y: auto; padding: 20px 16px; display: flex; flex-direction: column; gap: 12px; background: linear-gradient(to bottom, #F5F5F5, #FAFAFA);">
                 <!-- Messages load here -->
             </div>
-            <div style="padding: 15px; border-top: 1px solid #EEE; display: flex; gap: 10px; background: #F8F9FA;">
-                <input type="text" id="friends-chat-input" placeholder="Aa" style="flex: 1; border: none; border-radius: 20px; padding: 10px 15px; outline: none; font-size: 14px; background: #E9ECEF;">
-                <button id="send-friends-btn" style="background: #A52A2A; color: white; border: none; border-radius: 50%; width: 40px; height: 40px; cursor: pointer; display: flex; align-items: center; justify-content: center;">
+            
+            <div style="padding: 16px; background: white; border-top: 1px solid #E8E8E8; display: flex; gap: 10px; align-items: center;">
+                <input type="text" id="friends-chat-input" placeholder="Type a message..." style="flex: 1; border: 1px solid #E0E0E0; border-radius: 24px; padding: 12px 18px; outline: none; font-size: 14px; background: #F8F8F8; transition: all 0.2s;">
+                <button id="send-friends-btn" style="background: linear-gradient(135deg, #8B1538, #A52A2A); color: white; border: none; border-radius: 50%; width: 44px; height: 44px; cursor: pointer; display: flex; align-items: center; justify-content: center; box-shadow: 0 2px 8px rgba(139, 21, 56, 0.3); transition: all 0.2s;">
                     <i class="fas fa-paper-plane"></i>
                 </button>
             </div>
@@ -90,24 +108,31 @@
 </div>
 
 <!-- Support Chat (Bottom Right) -->
-<div id="support-chat-container" style="position: fixed; bottom: 25px; right: 25px; z-index: 10000; font-family: 'Plus Jakarta Sans', sans-serif;">
-    <button id="support-toggle-btn" style="width: 60px; height: 60px; border-radius: 50%; background: #8B1538; color: white; border: none; box-shadow: 0 4px 15px rgba(0,0,0,0.3); cursor: pointer; display: flex; align-items: center; justify-content: center; transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);">
+<div id="support-chat-container" style="position: fixed; bottom: 20px; right: 25px; z-index: 10000; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', sans-serif;">
+    <button id="support-toggle-btn" style="width: 64px; height: 64px; border-radius: 50%; background: linear-gradient(135deg, #8B1538, #6B0F2A); color: white; border: none; box-shadow: 0 6px 24px rgba(139, 21, 56, 0.4); cursor: pointer; display: flex; align-items: center; justify-content: center; transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);">
         <i class="fas fa-headset fa-2x"></i>
     </button>
 
-    <div id="support-chat-window" style="display: none; position: absolute; bottom: 80px; right: 0; width: 350px; height: 500px; background: white; border-radius: 15px; box-shadow: 0 10px 40px rgba(0,0,0,0.2); overflow: hidden; border: 1px solid #EEE; flex-direction: column;">
-        <div style="background: #8B1538; color: white; padding: 15px; display: flex; justify-content: space-between; align-items: center;">
-            <h6 style="margin: 0; font-weight: 700;">AConnect Support</h6>
-            <button id="close-support-chat" style="background: transparent; border: none; color: white; cursor: pointer;"><i class="fas fa-times"></i></button>
+    <div id="support-chat-window" style="display: none; position: absolute; bottom: 80px; right: 0; width: 380px; height: 550px; background: white; border-radius: 16px; box-shadow: 0 12px 48px rgba(0,0,0,0.15); overflow: hidden; border: 1px solid rgba(0,0,0,0.08); flex-direction: column;">
+        <div style="background: linear-gradient(135deg, #8B1538, #6B0F2A); color: white; padding: 20px; box-shadow: 0 2px 8px rgba(0,0,0,0.1);">
+            <div style="display: flex; justify-content: space-between; align-items: center;">
+                <div>
+                    <h6 style="margin: 0; font-weight: 700; font-size: 18px; letter-spacing: 0.3px;">AConnect Support</h6>
+                    <p style="margin: 4px 0 0; font-size: 12px; opacity: 0.9;">We're here to help</p>
+                </div>
+                <button id="close-support-chat" style="background: rgba(255,255,255,0.2); border: none; color: white; cursor: pointer; width: 32px; height: 32px; border-radius: 50%; display: flex; align-items: center; justify-content: center;">
+                    <i class="fas fa-times"></i>
+                </button>
+            </div>
         </div>
         
-        <div id="support-messages" style="flex: 1; overflow-y: auto; padding: 15px; background: #F8F9FA; display: flex; flex-direction: column; gap: 10px;">
+        <div id="support-messages" style="flex: 1; overflow-y: auto; padding: 20px 16px; background: linear-gradient(to bottom, #F5F5F5, #FAFAFA); display: flex; flex-direction: column; gap: 12px;">
             <!-- Support messages load here -->
         </div>
 
-        <div style="padding: 15px; border-top: 1px solid #EEE; display: flex; gap: 10px;">
-            <input type="text" id="support-input" placeholder="How can we help?" style="flex: 1; border: 1px solid #DDD; border-radius: 20px; padding: 8px 15px; outline: none; font-size: 14px;">
-            <button id="send-support-btn" style="background: #8B1538; color: white; border: none; border-radius: 50%; width: 35px; height: 35px; cursor: pointer; display: flex; align-items: center; justify-content: center;">
+        <div style="padding: 16px; background: white; border-top: 1px solid #E8E8E8; display: flex; gap: 10px; align-items: center;">
+            <input type="text" id="support-input" placeholder="How can we help you?" style="flex: 1; border: 1px solid #E0E0E0; border-radius: 24px; padding: 12px 18px; outline: none; font-size: 14px; background: #F8F8F8;">
+            <button id="send-support-btn" style="background: linear-gradient(135deg, #8B1538, #6B0F2A); color: white; border: none; border-radius: 50%; width: 44px; height: 44px; cursor: pointer; display: flex; align-items: center; justify-content: center; box-shadow: 0 2px 8px rgba(139, 21, 56, 0.3);">
                 <i class="fas fa-paper-plane"></i>
             </button>
         </div>
@@ -115,26 +140,166 @@
 </div>
 
 <style>
+    /* Contact Item Styling */
     .contact-item { 
-        display: flex; align-items: center; gap: 12px; padding: 12px; border-radius: 10px; cursor: pointer; transition: background 0.2s; border-bottom: 1px solid #F5F5F5;
+        display: flex; 
+        align-items: center; 
+        gap: 12px; 
+        padding: 14px 20px; 
+        cursor: pointer; 
+        transition: all 0.2s ease;
+        border-bottom: 1px solid #F0F0F0;
+        background: white;
+        position: relative;
     }
-    .contact-item:hover { background: #F8F9FA; }
+    .contact-item:hover { 
+        background: linear-gradient(to right, #F8F8F8, #FAFAFA);
+        transform: translateX(4px);
+    }
+    .contact-item:active {
+        background: #F0F0F0;
+    }
+    .contact-item img {
+        width: 48px;
+        height: 48px;
+        border-radius: 50%;
+        object-fit: cover;
+        border: 2px solid #F0F0F0;
+    }
+    .contact-item-name {
+        font-weight: 600;
+        font-size: 14px;
+        color: #1a1a1a;
+        margin-bottom: 2px;
+    }
+    .contact-item-preview {
+        font-size: 12px;
+        color: #888;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+    }
     
+    /* Message Bubbles - Modern Style */
+    .fb-bubble { 
+        border-radius: 18px; 
+        padding: 10px 16px; 
+        max-width: 70%; 
+        font-size: 14px; 
+        line-height: 1.4;
+        position: relative;
+        word-wrap: break-word;
+        box-shadow: 0 1px 2px rgba(0,0,0,0.05);
+        animation: messageSlideIn 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    }
+    .fb-sent { 
+        align-self: flex-end; 
+        background: linear-gradient(135deg, #8B1538, #A52A2A);
+        color: white;
+        border-bottom-right-radius: 4px;
+    }
+    .fb-received { 
+        align-self: flex-start; 
+        background: white;
+        color: #1a1a1a;
+        border: 1px solid #E8E8E8;
+        border-bottom-left-radius: 4px;
+    }
+    .bubble-time { 
+        font-size: 10px; 
+        color: rgba(255,255,255,0.7);
+        margin-top: 4px; 
+        display: block;
+        text-align: right;
+    }
+    .fb-received .bubble-time {
+        color: #999;
+    }
+
+    /* Support Bubbles */
     .bubble { 
-        max-width: 80%; padding: 10px 14px; border-radius: 18px; font-size: 14px; position: relative;
+        max-width: 75%; 
+        padding: 12px 16px; 
+        border-radius: 18px; 
+        font-size: 14px; 
+        line-height: 1.4;
+        position: relative;
+        box-shadow: 0 1px 2px rgba(0,0,0,0.05);
     }
     .bubble-sent { 
-        align-self: flex-end; background: #EEE; color: #333; border-bottom-right-radius: 4px; border: 1px solid #DDD;
+        align-self: flex-end; 
+        background: linear-gradient(135deg, #8B1538, #A52A2A);
+        color: white;
+        border-bottom-right-radius: 4px;
     }
     .bubble-received { 
-        align-self: flex-start; background: #FFF; color: #333; border-bottom-left-radius: 4px; border: 1px solid #8B153820; box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+        align-self: flex-start; 
+        background: white;
+        color: #1a1a1a;
+        border: 1px solid #E8E8E8;
+        border-bottom-left-radius: 4px;
     }
-    .bubble-time { font-size: 10px; color: #999; margin-top: 4px; display: block; }
 
-    /* FB Style Specific */
-    .fb-bubble { border-radius: 20px; padding: 10px 15px; max-width: 75%; font-size: 14px; position: relative; }
-    .fb-sent { align-self: flex-end; background: #E4E6EB; color: #050505; }
-    .fb-received { align-self: flex-start; background: #FFF; border: 1px solid #E4E6EB; color: #050505; }
+    /* Animations */
+    @keyframes messageSlideIn {
+        from {
+            opacity: 0;
+            transform: translateY(10px) scale(0.95);
+        }
+        to {
+            opacity: 1;
+            transform: translateY(0) scale(1);
+        }
+    }
+
+    /* Scrollbar Styling */
+    #friends-contacts::-webkit-scrollbar,
+    #friends-chat-messages::-webkit-scrollbar,
+    #support-messages::-webkit-scrollbar {
+        width: 6px;
+    }
+    #friends-contacts::-webkit-scrollbar-track,
+    #friends-chat-messages::-webkit-scrollbar-track,
+    #support-messages::-webkit-scrollbar-track {
+        background: transparent;
+    }
+    #friends-contacts::-webkit-scrollbar-thumb,
+    #friends-chat-messages::-webkit-scrollbar-thumb,
+    #support-messages::-webkit-scrollbar-thumb {
+        background: #D0D0D0;
+        border-radius: 10px;
+    }
+    #friends-contacts::-webkit-scrollbar-thumb:hover,
+    #friends-chat-messages::-webkit-scrollbar-thumb:hover,
+    #support-messages::-webkit-scrollbar-thumb:hover {
+        background: #B0B0B0;
+    }
+
+    /* Input Focus States */
+    #friends-chat-input:focus,
+    #support-input:focus,
+    #friends-search:focus {
+        border-color: #8B1538;
+        background: white;
+        box-shadow: 0 0 0 3px rgba(139, 21, 56, 0.1);
+    }
+
+    /* Button Hover States */
+    #friends-toggle-btn:hover,
+    #support-toggle-btn:hover {
+        transform: scale(1.05);
+        box-shadow: 0 8px 28px rgba(139, 21, 56, 0.5);
+    }
+    #send-friends-btn:hover,
+    #send-support-btn:hover {
+        transform: scale(1.05);
+        box-shadow: 0 4px 12px rgba(139, 21, 56, 0.4);
+    }
+    #close-friends-chat:hover,
+    #close-support-chat:hover,
+    #back-to-friends:hover {
+        background: rgba(255,255,255,0.3);
+    }
 </style>
 
 <script>
@@ -143,9 +308,16 @@ $(document).ready(function() {
     let currentFriendId = null;
     let friendsPoll = null;
 
+
     $('#friends-toggle-btn').on('click', function() {
         $('#friends-chat-window').fadeToggle(200).css('display', 'flex');
         if ($('#friends-chat-window').is(':visible')) loadFriends();
+    });
+
+    // Navbar Messaging button handler
+    $('#navbar-messaging-btn').on('click', function() {
+        $('#friends-chat-window').fadeIn(200).css('display', 'flex');
+        loadFriends();
     });
 
     $('#close-friends-chat').on('click', function() { $('#friends-chat-window').fadeOut(200); stopFriendsPoll(); });
@@ -164,21 +336,22 @@ $(document).ready(function() {
             let data = typeof res === 'string' ? JSON.parse(res) : res;
             let html = '';
             if (data.length === 0) {
-                html = '<div style="text-align: center; color: #888; margin-top: 100px;">No friends found.</div>';
+                html = '<div style="text-align: center; color: #999; margin-top: 100px; padding: 0 30px;"><i class="fas fa-user-friends fa-3x" style="color: #DDD; margin-bottom: 16px;"></i><p style="font-size: 14px;">No connections yet</p><p style="font-size: 12px; color: #BBB;">Connect with alumni to start chatting</p></div>';
             } else {
                 data.forEach(friend => {
                     let img = friend.profile_image ? '<?= base_url("assets/uploads/alumni/") ?>' + friend.profile_image : '<?= base_url("assets/images/person-male.png") ?>';
                     html += `
                         <div class="contact-item browse-friend" data-id="${friend.id}" data-name="${friend.first_name} ${friend.last_name}" data-img="${img}">
-                            <img src="${img}" style="width: 40px; height: 40px; border-radius: 50%; object-fit: cover;">
-                            <div style="flex: 1;">
-                                <div style="font-weight: 700; font-size: 14px;">${friend.first_name} ${friend.last_name}</div>
+                            <img src="${img}">
+                            <div style="flex: 1; min-width: 0;">
+                                <div class="contact-item-name">${friend.first_name} ${friend.last_name}</div>
+                                <div class="contact-item-preview">Click to start chatting</div>
                             </div>
                         </div>
                     `;
                 });
             }
-            $('#friends-contacts').html(html);
+            $('#friends-list-container').html(html);
         });
     }
 
@@ -216,14 +389,22 @@ $(document).ready(function() {
             let html = '';
             data.forEach(m => {
                 let isSent = m.sender_id == '<?= $this->session->userdata("alumni_id") ?>';
+                let dateStr = m.sent_at ? m.sent_at.replace(/-/g, "/") : new Date();
+                let timeStr = new Date(dateStr).toLocaleTimeString([], {hour: '2-digit', minute:'2-digit'});
+                
                 html += `
                     <div class="fb-bubble ${isSent ? 'fb-sent' : 'fb-received'}">
-                        ${m.message}
-                        <span class="bubble-time">${new Date(m.sent_at).toLocaleTimeString([], {hour: '2-digit', minute:'2-digit'})}</span>
+                        <div class="msg-text"></div>
+                        <span class="bubble-time">${timeStr}</span>
                     </div>
                 `;
             });
             $('#friends-chat-messages').html(html);
+            
+            // Set text separately for safety
+            data.forEach((m, i) => {
+                $('#friends-chat-messages .msg-text').eq(i).text(m.message);
+            });
             $('#friends-chat-messages').scrollTop($('#friends-chat-messages')[0].scrollHeight);
         });
     }
@@ -277,6 +458,27 @@ $(document).ready(function() {
 
     function startSupportPoll() { if(supportPoll) clearInterval(supportPoll); supportPoll = setInterval(loadSupportMessages, 4000); }
     function stopSupportPoll() { if(supportPoll) clearInterval(supportPoll); supportPoll = null; }
+
+    // Expose Global Function for Profile "Message" button
+    window.openDirectChat = function(friendId, name, img) {
+        currentFriendId = friendId;
+        
+        // Ensure chat window is open
+        $('#friends-chat-window').fadeIn(200).css('display', 'flex');
+        
+        // Set header info
+        $('#friends-chat-user-name').text(name);
+        $('#friends-chat-avatar').attr('src', img || '<?= base_url("assets/images/person-male.png") ?>').show();
+        $('#friends-chat-title').text(name);
+        
+        // Toggle views
+        $('#friends-contacts').hide();
+        $('#active-friends-chat').show().css('display', 'flex');
+        
+        // Start conversation
+        loadFriendsMessages();
+        startFriendsPoll();
+    };
 });
 </script>
 <?php endif; ?>
