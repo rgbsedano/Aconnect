@@ -10,8 +10,8 @@
         :root {
             --maroon: #8B1538;
             --maroon-dark: #6B0F2A;
-            --gold: #D4A574;
-            --bg: #FAFAF8;
+            --gold: #f5f5f5;
+            --bg: #fcf9f2;
             --card: #ffffff;
             --text: #1F2937;
             --muted: #6B7280;

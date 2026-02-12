@@ -482,26 +482,25 @@ function loadMessages(friendId) {
     const url = "<?= site_url('chat/get_messages_ajax/') ?>" + friendId;
 
     fetch(url)
-        .then(response => response.text())
-        .then(html => {
-            const tempDiv = document.createElement('div');
-            tempDiv.innerHTML = html;
-
+        .then(response => response.json())
+        .then(data => {
             let modernHtml = '';
-            const messages = tempDiv.querySelectorAll('#chatContent > div');
+            const currentUserId = <?= $this->session->userdata('alumni_id') ?>;
 
-            messages.forEach((msgDiv, index) => {
-                const isOwn = msgDiv.querySelector('div').style.justifyContent === 'flex-end';
-                const messageBubble = msgDiv.querySelector('div > div');
-                const messageText = messageBubble ? messageBubble.childNodes[0].nodeValue.trim() : '';
-                const timeElement = messageBubble ? messageBubble.querySelector('div') : null;
-                const timeText = timeElement ? timeElement.innerHTML : '';
+            if (data.error) {
+                renderMessages(`<p style="text-align:center; color: #e74c3c; font-size: 13px;">${data.error}</p>`);
+                return;
+            }
+
+            data.forEach((msg, index) => {
+                const isOwn = msg.sender_id == currentUserId;
+                const timeStr = new Date(msg.sent_at).toLocaleTimeString([], {hour: '2-digit', minute:'2-digit'});
 
                 modernHtml += `
                 <div class="message-bubble ${isOwn ? 'own' : 'other'}" style="animation-delay: ${index * 0.05}s">
                     <div>
-                        ${messageText}
-                        <div class="message-time">${timeText}</div>
+                        ${msg.message}
+                        <div class="message-time">${timeStr}</div>
                     </div>
                 </div>`;
             });

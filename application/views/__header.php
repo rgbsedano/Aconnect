@@ -301,7 +301,7 @@ $admin_system_active = in_array($current_uri_segment_1, ['AdminManageAccounts', 
                         </a>
                     </li>
                     <li class="nav-item">
-                        <a href="<?php echo base_url('chat'); ?>" class="nav-link-item <?php echo $is_messaging ? 'active-link' : ''; ?>">
+                        <a href="javascript:void(0)" id="navbar-messaging-btn" class="nav-link-item <?php echo $is_messaging ? 'active-link' : ''; ?>">
                             <i class="fas fa-comment-dots"></i><span>Messaging</span>
                         </a>
                     </li>
