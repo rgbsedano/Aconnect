@@ -11,7 +11,7 @@
             --maroon: #8B1538;
             --maroon-dark: #6B0F2A;
             --gold: #f5f5f5;
-            --bg: #fcf9f2;
+            --bg: #f8f5f3;
             --card: #ffffff;
             --text: #1F2937;
             --muted: #6B7280;
