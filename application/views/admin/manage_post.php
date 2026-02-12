@@ -186,6 +186,72 @@
     .form-input { border-radius: 12px; padding: 12px; font-size: 14px; font-weight: 500; border: 1px solid #e2e8f0; }
     .form-input:focus { border-color: var(--accent-red); box-shadow: 0 0 0 4px rgba(112, 10, 10, 0.05); }
 
+    /* Normalize select appearance and ensure caret aligns correctly */
+    select.form-input {
+        -webkit-appearance: none;
+        -moz-appearance: none;
+        appearance: none;
+        background-color: #fff;
+        background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='14' height='10' viewBox='0 0 14 10'><path fill='%2364748b' d='M7 10L0 0h14z'/></svg>");
+        background-repeat: no-repeat;
+        background-position: right 12px center;
+        background-size: 14px 10px;
+        padding-right: 44px;
+        line-height: 1.4;
+        height: auto;
+        display: block;
+    }
+
+    /* Hide IE/Edge default dropdown arrow */
+    select.form-input::-ms-expand { display: none; }
+
+    /* Make file inputs more visible and easier to interact with */
+    input.form-input[type="file"], .custom-file {
+        font-size: 14px;
+        line-height: 1.4;
+    }
+
+    /* Native file input styling (for non-bootstrap controls) */
+    input.form-input[type="file"] {
+        padding: 10px 12px;
+        min-height: 44px;
+        border-radius: 12px;
+        background: #fff;
+        border: 1px solid #e2e8f0;
+    }
+
+    /* Bootstrap custom-file wrapper adjustments */
+    .custom-file {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .custom-file-input {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        opacity: 0;
+        z-index: 2;
+        cursor: pointer;
+    }
+
+    .custom-file-label {
+        display: block;
+        width: 100%;
+        padding: 10px 12px;
+        border-radius: 12px;
+        border: 1px solid #e2e8f0;
+        background: #fff;
+        color: var(--text-main);
+        text-align: left;
+        overflow: hidden;
+        white-space: nowrap;
+        text-overflow: ellipsis;
+    }
+
+    /* Slight hover/focus for visibility */
+    .custom-file-label:hover, input.form-input[type="file"]:hover { border-color: var(--accent-red); }
     /* Carousel Manager Styles */
     .carousel-grid {
         display: grid;
