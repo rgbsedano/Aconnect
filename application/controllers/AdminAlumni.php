@@ -60,16 +60,39 @@ class AdminAlumni extends CI_Controller {
 
         // Return full alumni details as HTML
         if ($alumni) {
+            $this->load->model('Employment_model');
+            $employment = $this->Employment_model->get_by_alumni($alumni_id);
+
             $details = '
-                <p><strong>First Name:</strong> ' . $alumni['first_name'] . '</p>
-                <p><strong>Last Name:</strong> ' . $alumni['last_name'] . '</p>
-                <p><strong>Email:</strong> ' . $alumni['email'] . '</p>
-                <p><strong>Phone:</strong> ' . $alumni['phone'] . '</p>
-                <p><strong>Batch:</strong> ' . $alumni['graduation_year'] . '</p>
-                <p><strong>Degree:</strong> ' . $alumni['degree'] . '</p>
-                <p><strong>Status:</strong> ' . $alumni['status'] . '</p>
-                <p><strong>Student Number:</strong> ' . $alumni['student_number'] . '</p>
-            ';
+                <div class="row">
+                    <div class="col-md-6">
+                        <p><strong>First Name:</strong> ' . htmlspecialchars($alumni['first_name']) . '</p>
+                        <p><strong>Last Name:</strong> ' . htmlspecialchars($alumni['last_name']) . '</p>
+                        <p><strong>Email:</strong> ' . htmlspecialchars($alumni['email']) . '</p>
+                        <p><strong>Phone:</strong> ' . htmlspecialchars($alumni['phone']) . '</p>
+                    </div>
+                    <div class="col-md-6">
+                        <p><strong>Batch:</strong> ' . htmlspecialchars($alumni['graduation_year']) . '</p>
+                        <p><strong>Degree:</strong> ' . htmlspecialchars($alumni['degree']) . '</p>
+                        <p><strong>Status:</strong> ' . htmlspecialchars($alumni['status']) . '</p>
+                        <p><strong>Student Number:</strong> ' . htmlspecialchars($alumni['student_number']) . '</p>
+                    </div>
+                </div>
+                <hr>
+                <h5>Employment Record</h5>';
+
+            if ($employment) {
+                $details .= '
+                    <p><strong>Employment Status:</strong> ' . htmlspecialchars($employment['employment_status']) . '</p>
+                    <p><strong>Company:</strong> ' . htmlspecialchars($employment['company_name']) . '</p>
+                    <p><strong>Job Title:</strong> ' . htmlspecialchars($employment['job_title']) . '</p>
+                    <p><strong>Job Description:</strong> ' . nl2br(htmlspecialchars($employment['job_description'])) . '</p>
+                    <p><strong>Years of Service:</strong> ' . (int)$employment['year_of_service'] . '</p>
+                    <p><strong>Promotions:</strong> ' . (int)$employment['promotion_count'] . '</p>';
+            } else {
+                $details .= '<p class="text-muted">No employment record found.</p>';
+            }
+            
             echo $details;
         }
     }

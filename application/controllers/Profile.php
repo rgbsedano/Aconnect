@@ -38,21 +38,20 @@ class Profile extends CI_Controller{
 public function update($id) {
     $this->load->model('user/Alumni_model');
 
-    // Basic validation (optional but recommended)
+    // Get inputs
     $graduation_year = $this->input->post('graduation_year');
     $email           = $this->input->post('email');
     $alt_email       = $this->input->post('alternative_email');
     $phone           = $this->input->post('phone');
     $alt_phone       = $this->input->post('alternative_phone');
 
-
-    /* // Check: Year admitted must be earlier than graduation year
-    if ($year_admitted >= $graduation_year) {
-        $this->session->set_flashdata('edit_error', 'Year admitted must be earlier than graduation year.');
+    // Basic validation
+    if (empty($graduation_year) || !is_numeric($graduation_year)) {
+        $this->session->set_flashdata('edit_error', 'Graduation Year is required and must be a number.');
         $this->session->set_flashdata('show_edit_modal', true);
         redirect('profile');
         return;
-    } */
+    }
 
     // Check: Primary email and alternate email should not be the same
     if ($email === $alt_email) {
