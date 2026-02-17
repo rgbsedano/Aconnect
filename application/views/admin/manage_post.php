@@ -419,7 +419,7 @@ $all_posts = array_merge(
 
 <td>
 <div class="post-title-cell"
-     onclick='reviewDetails(<?= json_encode($post) ?>)'
+     onclick='reviewDetails(<?= htmlspecialchars(json_encode($post), ENT_QUOTES, 'UTF-8') ?>)'
      style="cursor:pointer;">
 <?= htmlspecialchars($post['title']) ?>
 </div>
@@ -429,7 +429,7 @@ $all_posts = array_merge(
 <td><?= date('M d, Y', strtotime($post['created_at'])) ?></td>
 
 <td class="text-right">
-<button onclick='editPost(<?= json_encode($post) ?>)' class="btn-action">
+<button onclick='editPost(<?= htmlspecialchars(json_encode($post), ENT_QUOTES, 'UTF-8') ?>)' class="btn-action">
 <i class="fas fa-pen"></i>
 </button>
 
