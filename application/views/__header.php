@@ -26,8 +26,7 @@ $is_network = in_array($current_uri_segment_1, ['alumni', 'alumni_request']);
 $is_jobs = ($current_uri_segment_1 === 'jobs');
 $is_messaging = ($current_uri_segment_1 === 'chat');
 $is_events = in_array($current_uri_segment_1, ['events', 'eventsprevious']);
-$admin_management_active = in_array($current_uri_segment_1, ['adminalumni', 'AdminJobPosting', 'AdminEvents', 'AdminPost']);
-$admin_system_active = in_array($current_uri_segment_1, ['AdminManageAccounts', 'AdminActivityLog']);
+$admin_management_active = in_array($current_uri_segment_1, ['adminalumni', 'AdminJobPosting', 'AdminEvents', 'AdminPost', 'AdminManageAccounts', 'AdminActivityLog']);
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -263,6 +262,16 @@ $admin_system_active = in_array($current_uri_segment_1, ['AdminManageAccounts', 
             .nav-link-item span { display: none; }
             .nav-link-item { min-width: 53px; }
             .student-id-label { display: none; }
+            .ac-container { padding: 0 10px; }
+            .logo-area img { height: 40px !important; }
+            .user-logout-area { margin-left: 5px; padding-left: 5px; }
+            .account-info-display { padding: 0 5px; }
+        }
+
+        @media (max-width: 576px) {
+            .nav-link-item { min-width: 45px; }
+            .primary-nav { margin-left: 0; width: 100%; justify-content: space-around; }
+            .logo-area { display: none; }
         }
     </style>
 </head>
@@ -270,7 +279,10 @@ $admin_system_active = in_array($current_uri_segment_1, ['AdminManageAccounts', 
 
 <header id="ac-main-header">
     <div class="ac-container">
-        <div class="logo-area">
+        <div class="logo-area d-flex align-items-center">
+            <a href="<?php echo base_url('dashboard'); ?>">
+                <img src="<?php echo base_url('assets/images/schoollogo.jpg'); ?>" alt="School Logo" class="mr-2" style="height:52px; border-radius: 4px;">
+            </a>
             <?php if($this->session->userdata('role') == 'administrator'): ?>
                 <a href="<?php echo base_url('AdminDashboard'); ?>">
                     <img src="<?php echo base_url('assets/images/logo.png'); ?>" alt="Admin Logo" style="height:52px;">
@@ -326,19 +338,13 @@ $admin_system_active = in_array($current_uri_segment_1, ['AdminManageAccounts', 
                             <i class="fas fa-tasks"></i><span>Management</span>
                         </a>
                         <div class="dropdown-menu dropdown-menu-right" aria-labelledby="mgmtDropdown">
-                            <a class="dropdown-item" href="<?php echo base_url('adminalumni'); ?>">Alumni List</a>
+                            <a class="dropdown-item" href="<?php echo base_url('AdminManageAccounts'); ?>">User Accounts</a>
+                            <div class="dropdown-divider"></div>
+                            <!-- <a class="dropdown-item" href="<?php echo base_url('adminalumni'); ?>">Alumni List</a> -->
                             <a class="dropdown-item" href="<?php echo base_url('AdminJobPosting'); ?>">Job Posting</a>
                             <a class="dropdown-item" href="<?php echo base_url('AdminEvents'); ?>">Events</a>
                             <a class="dropdown-item" href="<?php echo base_url('AdminPost'); ?>">Posting</a>
-                        </div>
-                    </li>
-                    <li class="nav-item dropdown">
-                        <a class="nav-link-item dropdown-toggle <?php echo $admin_system_active ? 'active-link' : ''; ?>" href="#" id="sysDropdown" data-toggle="dropdown">
-                            <i class="fas fa-cogs"></i><span>System</span>
-                        </a>
-                        <div class="dropdown-menu dropdown-menu-right" aria-labelledby="sysDropdown">
-                            <a class="dropdown-item" href="<?php echo base_url('AdminManageAccounts'); ?>">User Accounts</a>
-                            <a class="dropdown-item" href="<?php echo base_url('AdminActivityLog'); ?>">Activity Log</a>
+                            <!-- <a class="dropdown-item" href="<?php echo base_url('AdminActivityLog'); ?>">Activity Log</a> -->
                         </div>
                     </li>
                     <li class="nav-item">

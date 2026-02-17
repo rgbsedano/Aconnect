@@ -281,64 +281,6 @@
         border-radius: 8px;
     }
 
-    /* System Audit Section */
-    .audit-card {
-        background: var(--dark-footer);
-        border-radius: 24px;
-        padding: 20px;
-        color: white;
-        display: flex;
-        flex-direction: column;
-        justify-content: space-between;
-        transition: var(--transition);
-        position: relative;
-    }
-
-    .audit-card:hover {
-        transform: translateY(-8px);
-        box-shadow: 0 20px 40px -10px rgba(0, 0, 0, 0.4);
-    }
-
-    .audit-info h5 {
-        font-size: 10px;
-        text-transform: uppercase;
-        letter-spacing: 1px;
-        opacity: 0.7;
-        margin-bottom: 4px;
-    }
-
-    .audit-info h2 {
-        font-size: 18px;
-        font-weight: 700;
-        margin-bottom: 4px;
-    }
-
-    .audit-info p {
-        font-size: 13px;
-        opacity: 0.6;
-        margin: 0;
-    }
-
-    .audit-action {
-        width: 40px;
-        height: 40px;
-        background: rgba(255,255,255,0.1);
-        border-radius: 50%;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        color: white;
-        text-decoration: none;
-        font-size: 18px;
-        transition: var(--transition);
-        align-self: flex-end;
-    }
-
-    .audit-action:hover {
-        background: white;
-        color: var(--dark-footer);
-        transform: rotate(90deg);
-    }
 
     @media (max-width: 1200px) {
         .metrics-grid {
@@ -365,6 +307,9 @@
             gap: 12px;
             align-items: flex-start;
         }
+        .header-section h1 { font-size: 24px; }
+        .dashboard-wrapper { padding: 15px; }
+        .metric-card { min-height: 140px; }
     }
 </style>
 
@@ -523,16 +468,6 @@
                 </div>
             </a>
             
-            <div class="audit-card">
-                <div class="audit-info">
-                    <h5>System Audit</h5>
-                    <h2>Integrity Check</h2>
-                    <p>Review activities.</p>
-                </div>
-                <a href="<?= site_url('AdminActivityLog') ?>" class="audit-action">
-                    <i class="fas fa-history"></i>
-                </a>
-            </div>
         </main>
     </div>
 </div>
@@ -576,7 +511,7 @@
             }
         });
 
-        const cards = document.querySelectorAll('.metric-card, .status-card, .audit-card');
+        const cards = document.querySelectorAll('.metric-card, .status-card');
         cards.forEach((card, index) => {
             card.style.opacity = '0';
             card.style.transform = 'translateY(20px)';

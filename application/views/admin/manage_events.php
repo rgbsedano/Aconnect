@@ -146,12 +146,20 @@
     .btn-action:hover { background: var(--accent-red); color: white; border-color: var(--accent-red); transform: translateY(-2px); }
     .btn-action.delete:hover { background: #ef4444; border-color: #ef4444; }
 
-    /* Modal Styling */
-    .modal-content { border-radius: 24px; border: none; }
-    .modal-header { background: var(--accent-red); color: white; padding: 25px; border: none; }
-    .form-label { font-size: 11px; font-weight: 700; color: var(--text-muted); text-transform: uppercase; margin-bottom: 6px; display: block; }
-    .form-input { border-radius: 12px; padding: 12px; font-size: 14px; font-weight: 500; border: 1px solid #e2e8f0; }
+    @media (max-width: 768px) {
+        .dashboard-wrapper { padding: 15px; margin: 10px auto; }
+        .header-section { flex-direction: column; align-items: flex-start !important; gap: 15px; }
+        .header-section h1 { font-size: 24px; }
+        .stats-grid { grid-template-columns: 1fr; }
+        .main-card { padding: 15px; }
+        .toolbar { flex-direction: column; align-items: stretch; }
+        .search-box { max-width: none; }
+    }
 
+    @media (max-width: 576px) {
+        .actions, .actions .btn { width: 100%; }
+        .filter-pills { overflow-x: auto; padding-bottom: 5px; }
+    }
 </style>
 
 <div class="dashboard-wrapper">

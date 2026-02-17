@@ -236,7 +236,7 @@
                                 <button onclick="closeModal(${event.id})" class="text-slate-400 hover:text-slate-600 bg-slate-50 p-2 rounded-full"><svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path d="M6 18L18 6M6 6l12 12"/></svg></button>
                             </div>
 
-                            <div class="grid grid-cols-2 gap-4 mt-8">
+                            <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mt-8">
                                 <div class="bg-slate-50 p-4 rounded-2xl border border-slate-100">
                                     <p class="text-[10px] font-black text-slate-400 uppercase tracking-widest">When</p>
                                     <p class="text-sm font-bold text-slate-700 mt-1">${formattedDate}</p>
@@ -254,8 +254,8 @@
                                 </div>
                             </div>
 
-                            <div class="mt-10 pt-6 border-t border-slate-100 flex items-center justify-between">
-                                <div class="flex items-center gap-3">
+                            <div class="mt-10 pt-6 border-t border-slate-100 flex flex-col sm:flex-row items-center justify-between gap-4">
+                                <div class="flex items-center gap-3 w-full sm:w-auto">
                                     <div class="w-10 h-10 rounded-full bg-slate-100 flex items-center justify-center text-slate-500 font-bold border border-slate-200">
                                         ${(event.contact_person || 'O').charAt(0)}
                                     </div>
@@ -264,15 +264,15 @@
                                         <p class="text-[10px] text-slate-500 font-medium">Event Host</p>
                                     </div>
                                 </div>
-                                <div class="flex gap-3">
-                                    <button onclick="closeModal(${event.id})" class="px-6 py-3 text-xs font-bold text-slate-600 bg-slate-50 rounded-xl hover:bg-slate-100 transition">Close</button>
+                                <div class="flex gap-3 w-full sm:w-auto">
+                                    <button onclick="closeModal(${event.id})" class="flex-1 sm:flex-none px-6 py-3 text-xs font-bold text-slate-600 bg-slate-50 rounded-xl hover:bg-slate-100 transition">Close</button>
                                     ${event.is_registered == 1 ? 
-                                        `<button disabled class="bg-emerald-600 text-white text-xs font-bold px-8 py-3 rounded-xl flex items-center gap-2 cursor-default">
+                                        `<button disabled class="flex-1 sm:flex-none bg-emerald-600 text-white text-xs font-bold px-8 py-3 rounded-xl flex items-center justify-center gap-2 cursor-default">
                                             <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 20 20"><path d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"/></svg>
                                             Registered
                                         </button>` : 
-                                        `<form action="<?= base_url('events/register/') ?>${event.id}" method="post">
-                                            <button type="submit" class="bg-rose-700 text-white text-xs font-bold px-8 py-3 rounded-xl hover:bg-rose-800 transition shadow-lg shadow-rose-100">Confirm Registration</button>
+                                        `<form action="<?= base_url('events/register/') ?>${event.id}" method="post" class="flex-1 sm:flex-none">
+                                            <button type="submit" class="w-full bg-rose-700 text-white text-xs font-bold px-8 py-3 rounded-xl hover:bg-rose-800 transition shadow-lg shadow-rose-100">Confirm Registration</button>
                                         </form>`
                                     }
                                 </div>

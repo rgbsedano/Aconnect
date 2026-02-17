@@ -304,6 +304,49 @@
         transform: scale(1.1);
     }
 
+    @media (max-width: 768px) {
+        .header-section {
+            flex-direction: column;
+            align-items: flex-start;
+            gap: 20px;
+        }
+
+        .header-section .actions {
+            width: 100%;
+            display: flex;
+            gap: 10px;
+        }
+
+        .header-section .actions .btn {
+            flex: 1;
+            margin: 0 !important;
+            padding: 10px;
+            font-size: 13px;
+        }
+
+        .cards-scroller {
+            flex-direction: column;
+            overflow-x: hidden;
+            padding: 10px 0;
+        }
+
+        .post-card {
+            min-width: 100%;
+            max-width: 100%;
+            margin-bottom: 10px;
+        }
+
+        .dashboard-wrapper {
+            padding: 15px;
+        }
+    }
+
+    @media (max-width: 576px) {
+        .header-section h1 {
+            font-size: 22px;
+        }
+    }
+
 </style>
 
 <div class="dashboard-wrapper">

@@ -36,7 +36,11 @@ defined('BASEPATH') OR exit('No direct script access allowed');
     .login-link-container { margin-top:0.75rem; text-align:center; font-size:0.85rem; padding-top:10px; border-top:1px solid #eee; }
     .login-link-container a { color:#700A0A; text-decoration:none; font-weight:600; }
     .validation-error { width:100%; max-width:450px; margin-bottom:0.5rem; padding:0.75rem; color:#721c24; background-color:#f8d7da; border:1px solid #f5c6cb; border-radius:5px; font-size:0.85rem; text-align:left; }
-    @media screen and (max-width:767.98px) { html, body { overflow-y:auto; } .image-container { display:none !important; } .form-container { flex:0 0 100vw; max-width:100vw; justify-content:flex-start; } }
+    @media screen and (max-width:767.98px) { 
+        html, body { overflow-y:auto; height: auto; } 
+        .image-container { display:none !important; } 
+        .form-container { flex:0 0 100vw; max-width:100vw; justify-content:flex-start; height: auto; max-height: none; padding: 40px 20px; } 
+    }
     </style>
 </head>
 <body class="register-page">

@@ -19,7 +19,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 
     <style>
     /* (your existing styles — kept identical) */
-    html, body { height: 100%; margin: 0; font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif; overflow: hidden; }
+    html, body { min-height: 100%; margin: 0; font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif; }
     .login-page { display: flex; min-height: 100vh; background-color: #f7f7f7; }
     .container-fluid { display: flex; width: 100%; max-width: none !important; height: 100vh; padding: 0 !important; margin: 0 !important; }
     .row_container { display: flex !important; width: 100%; margin: 0 !important; }
@@ -46,8 +46,11 @@ defined('BASEPATH') OR exit('No direct script access allowed');
     .btn-outline-dark { color: #000; border: 1px solid #ccc; background-color: transparent; padding: 8px 15px; font-size: 0.9rem; line-height: 1.2; border-radius: 5px; transition: all 0.2s ease; }
     .btn-outline-dark:hover { background-color: #f0f0f0; border-color: #700A0A; color: #000; }
     @media screen and (max-width: 767.98px) {
+        html, body { overflow: auto; height: auto; }
         .image-container { display: none !important; }
-        .form-container { flex: 0 0 100vw; }
+        .form-container { flex: 0 0 100vw; height: auto; min-height: 100vh; padding: 40px 20px; }
+        .branding-text h1 { font-size: 1.5rem; }
+        .branding-text p { font-size: 0.9rem; }
     }
     </style>
 </head>

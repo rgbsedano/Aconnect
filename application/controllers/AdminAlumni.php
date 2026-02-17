@@ -103,4 +103,32 @@ class AdminAlumni extends CI_Controller {
     }
 
 
+    public function get_edit_data() {
+        $id = $this->input->post('id');
+        $this->db->where('id', $id);
+        $alumni = $this->db->get('alumni')->row_array();
+        echo json_encode($alumni);
+    }
+
+    public function update() {
+        $id = $this->input->post('id');
+        $data = [
+            'first_name' => $this->input->post('first_name'),
+            'last_name' => $this->input->post('last_name'),
+            'email' => $this->input->post('email'),
+            'phone' => $this->input->post('phone'),
+            'student_number' => $this->input->post('student_number'),
+            'degree' => $this->input->post('degree'),
+            'graduation_year' => $this->input->post('graduation_year'),
+            'school' => $this->input->post('school')
+        ];
+
+        $this->load->model('user/Alumni_model');
+        if ($this->Alumni_model->update_alumni($id, $data)) {
+            $this->session->set_flashdata('success', 'Alumni record updated successfully.');
+        } else {
+            $this->session->set_flashdata('error', 'Failed to update alumni record.');
+        }
+        redirect('AdminAlumni');
+    }
 }

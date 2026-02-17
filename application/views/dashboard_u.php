@@ -48,7 +48,7 @@
         .container {
             max-width: 1400px;
             width: 100%;
-            margin: -40px auto 40px 280px;
+            margin: 20px auto;
             display: grid;
             grid-template-columns: 1fr;
             gap: 32px;
@@ -58,7 +58,6 @@
         @media (min-width: 1024px) {
             .container {
                 grid-template-columns: 1fr 320px;
-                margin: -40px auto 40px 280px;
             }
         }
 
@@ -84,9 +83,11 @@
 
         .hero-banner img {
             width: 100%;
-            height: 600px;
+            height: auto;
+            max-height: 650px;
             display: block;
-            object-fit: cover;
+            object-fit: contain;
+            background-color: rgba(0,0,0,0.05);
             transition: transform 0.6s ease;
         }
 

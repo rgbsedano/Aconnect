@@ -324,6 +324,15 @@ function compute_ai_match($alumni, $job) {
             .job-card { flex-direction: column; text-align: center; }
             .job-info p { justify-content: center; }
             .badge-ai { margin-top: 12px; }
+            .header-section { padding: 20px; }
+            .f-pill { padding: 6px 14px; font-size: 12px; }
+        }
+
+        @media (max-width: 576px) {
+            .modal-header-custom { padding: 16px; }
+            .modal-content { padding: 16px; }
+            .percent { padding: 6px 10px; font-size: 11px; }
+            .job-info h3 { font-size: 15px; }
         }
     </style>
 </head>

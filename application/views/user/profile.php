@@ -359,11 +359,22 @@
         }
 
         @media (max-width: 768px) {
+            .container-fluid { padding: 0 15px 30px; }
+            .profile-header { height: 140px; }
+            .profile-image-wrapper { top: -50px; left: 50%; transform: translateX(-50%); width: 120px; height: 120px; }
+            .profile-header-content { flex-direction: column; align-items: center; text-align: center; }
+            .profile-name-section { padding-left: 0; margin-top: 50px; width: 100%; }
             .profile-name { font-size: 22px; }
-            .profile-name-section { padding-left: 0; margin-top: 60px; }
-            .profile-header-content { flex-direction: column; }
-            .info-grid { grid-template-columns: 1fr; }
-            .employment-container { flex-direction: column; }
+            .profile-meta { justify-content: center; gap: 10px; }
+            .btn-edit-primary { width: 100%; justify-content: center; margin-top: 15px; }
+            .info-grid { grid-template-columns: 1fr; gap: 15px; }
+            .section-card { padding: 20px 15px; }
+            .section-header { flex-direction: column; align-items: flex-start; gap: 10px; }
+            .btn-edit-section { width: 100%; justify-content: center; }
+            .employment-container { flex-direction: column; align-items: center; text-align: center; }
+            .job-meta { justify-content: center; }
+            .row.no-gutters { flex-direction: column; }
+            .col-md-5 { min-height: 200px !important; }
         }
     </style>
 </head>

@@ -371,12 +371,21 @@
 
     /* Responsive adjustments */
     @media (max-width: 768px) {
+        .container-fluid { padding: 10px; }
         .inbox-list-container {
             max-width: 100%;
-            margin: 70px 0 0 0;
+            margin: 60px 0 20px 0;
+            padding: 15px;
         }
         .inbox-item {
             padding: 12px;
+            flex-direction: column;
+            align-items: flex-start;
+            gap: 12px;
+        }
+        .btn-message-chat {
+            width: 100%;
+            justify-content: center;
         }
         .profile-image-inbox {
             width: 48px;

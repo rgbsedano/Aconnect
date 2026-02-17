@@ -170,15 +170,17 @@
             border: 1px solid var(--border);
         }
 
-        /* Guide Banner */
-        .page-guide {
-            background: #FFF5F7;
-            border-left: 4px solid var(--maroon);
-            padding: 15px 20px;
-            margin-bottom: 25px;
-            border-radius: 4px 12px 12px 4px;
-            font-size: 0.9rem;
-            color: var(--maroon-dark);
+        @media (max-width: 768px) {
+            .admin-wrapper { margin: 20px auto; padding: 0 10px; }
+            .alumni-card { padding: 20px; }
+            .main-header h2 { font-size: 20px; }
+            .btn-modern-search, .btn-outline-custom { padding: 8px 16px; font-size: 14px; }
+        }
+
+        @media (max-width: 576px) {
+            .main-header { flex-direction: column; align-items: flex-start !important; }
+            .main-header .mt-3 { width: 100%; display: flex; flex-direction: column; gap: 10px; }
+            .main-header .btn { width: 100%; margin-left: 0 !important; }
         }
     </style>
 </head>

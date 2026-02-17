@@ -239,8 +239,20 @@
     }
 
     @media (max-width: 768px) {
-        .profile-avatar { width: 120px; height: 120px; top: -80px; }
-        .profile-intro { margin-top: 50px; }
+        .profile-container { padding: 20px 15px; }
+        .cover-photo { height: 140px; }
+        .profile-avatar-container { top: -60px; left: 50%; transform: translateX(-50%); }
+        .profile-avatar { width: 120px; height: 120px; border-width: 3px; }
+        .header-actions { justify-content: center; margin-top: 70px; }
+        .profile-intro { margin-top: 15px; text-align: center; }
+        .profile-intro .sub-meta { justify-content: center; flex-direction: column; gap: 5px; }
+        .cert-list { grid-template-columns: 1fr; }
+        .row.no-gutters { flex-direction: column; }
+        .col-md-5 { min-height: 200px !important; }
+        .header-actions .d-flex { flex-direction: column; width: 100%; gap: 10px; }
+        .header-actions .btn { width: 100%; justify-content: center; }
+        .dropdown, .dropdown-toggle { width: 100%; }
+        .modal-body .p-4 { padding: 15px !important; }
     }
 </style>
 

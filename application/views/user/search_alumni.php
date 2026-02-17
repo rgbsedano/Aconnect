@@ -247,6 +247,43 @@ $student_number = $this->session->userdata('student_number') ? $this->session->u
         .noti-box.success { border-left: 6px solid #10B981; color: #065F46; }
         .noti-box.error { border-left: 6px solid #EF4444; color: #7F1D1D; }
         .noti-box.info { border-left: 6px solid #3B82F6; color: #1E40AF; }
+
+        @media (max-width: 768px) {
+            .alumni-grid {
+                grid-template-columns: 1fr;
+                gap: 16px;
+            }
+            .main-search-bar {
+                flex-direction: column;
+            }
+            .filter-btns {
+                overflow-x: auto;
+                padding-bottom: 5px;
+                width: 100%;
+                justify-content: flex-start !important;
+            }
+            .max-w-6xl {
+                padding-left: 15px;
+                padding-right: 15px;
+            }
+            .card-footer {
+                flex-direction: column;
+            }
+            .btn-tile {
+                width: 100%;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .alumni-name {
+                font-size: 1.1rem;
+            }
+            .profile-img-container {
+                width: 80px;
+                height: 80px;
+                margin-top: -40px;
+            }
+        }
     </style>
 </head>
 <body class="bg-pattern text-slate-900 antialiased">

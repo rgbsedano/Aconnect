@@ -139,7 +139,9 @@ document.addEventListener('DOMContentLoaded', function() {
                     <?php foreach($alumni_list as $a): ?>
                         <tr class="data-row">
                             <td>
-                                <div class="user-name"><?= ucwords($a->first_name . " " . $a->last_name) ?></div>
+                                <div class="user-name view-profile" data-id="<?= $a->id ?>" style="cursor: pointer; color: var(--text-muted); transition: var(--transition);" onmouseover="this.style.textDecoration='underline'" onmouseout="this.style.textDecoration='none'">
+                                    <?= ucwords($a->first_name . " " . $a->last_name) ?>
+                                </div>
                                 <div class="student-id"><?= $a->student_number ?></div>
                             </td>
                             <td>
@@ -192,13 +194,6 @@ document.addEventListener('DOMContentLoaded', function() {
                                                     <label class="form-label">Student ID No.</label>
                                                     <input type="text" name="student_number" class="form-control form-input" value="<?= $a->student_number ?>">
                                                 </div>
-                                                <div class="col-12">
-                                                    <label class="form-label">Account Privilege Status</label>
-                                                    <select name="status" class="form-control form-input">
-                                                        <option value="active" <?= $a->status == "active" ? "selected" : "" ?>>Active - Full Access</option>
-                                                        <option value="inactive" <?= $a->status == "inactive" ? "selected" : "" ?>>Inactive - Restricted</option>
-                                                    </select>
-                                                </div>
                                             </div>
                                         </div>
                                         <div class="modal-footer" style="background: #f8fafc;">
@@ -238,4 +233,49 @@ document.addEventListener('DOMContentLoaded', function() {
         <?= $pagination ?>
     </div>
 </div>
+
+<!-- VIEW MODAL -->
+<div class="modal fade" id="viewModal" tabindex="-1">
+    <div class="modal-dialog modal-dialog-centered modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" style="font-weight: 700;"><i class="fas fa-id-card mr-2"></i> Alumni Detailed Profile</h5>
+                <button type="button" class="close text-white" data-dismiss="modal">&times;</button>
+            </div>
+            <div class="modal-body" id="viewModalContent">
+                <div class="text-center py-5">
+                    <div class="spinner-border text-danger" role="status">
+                        <span class="sr-only">Loading...</span>
+                    </div>
+                </div>
+            </div>
+            <div class="modal-footer" style="background: #f8fafc;">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal" style="border-radius: 12px; font-weight: 600;">Close View</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+<script>
+$(document).ready(function() {
+    $('.view-profile').on('click', function() {
+        const id = $(this).data('id');
+        $('#viewModalContent').html('<div class="text-center py-5"><div class="spinner-border text-danger" role="status"><span class="sr-only">Loading...</span></div></div>');
+        $('#viewModal').modal('show');
+
+        $.ajax({
+            url: '<?= base_url("AdminManageAccounts/details") ?>',
+            type: 'POST',
+            data: { id: id },
+            success: function(response) {
+                $('#viewModalContent').html(response);
+            },
+            error: function() {
+                $('#viewModalContent').html('<div class="alert alert-danger">Failed to load profile details. Please try again.</div>');
+            }
+        });
+    });
+});
+</script>
 

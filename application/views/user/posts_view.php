@@ -29,11 +29,10 @@ $student_number = $this->session->userdata('student_number') ? $this->session->u
         }
 
         html, body {
-            height: 100vh;
+            min-height: 100vh;
             width: 100vw;
             margin: 0;
             padding: 0;
-            overflow: hidden !important; 
             background-color: var(--bg-page);
             display: flex;
             flex-direction: column;
@@ -51,13 +50,13 @@ $student_number = $this->session->userdata('student_number') ? $this->session->u
         .dashboard-container {
             width: 100%;
             max-width: 1300px;
-            height: 85vh;
+            min-height: 85vh;
             display: grid;
             grid-template-columns: 1.3fr 1fr;
             gap: 32px;
         }
 
-        .carousel-section { height: 100%; min-height: 0; }
+        .carousel-section { min-height: 0; }
         #carouselExample {
             height: 100%;
             border-radius: 16px;
@@ -74,7 +73,6 @@ $student_number = $this->session->userdata('student_number') ? $this->session->u
             display: flex;
             flex-direction: column;
             gap: 18px;
-            height: 100%;
             min-height: 0;
         }
 
@@ -88,7 +86,7 @@ $student_number = $this->session->userdata('student_number') ? $this->session->u
             justify-content: space-between;
             box-shadow: var(--shadow-md);
             border-left: 6px solid var(--primary);
-            min-height: 0;
+            min-height: 200px;
             transition: all 0.3s ease;
             overflow: hidden;
         }
@@ -204,6 +202,34 @@ $student_number = $this->session->userdata('student_number') ? $this->session->u
         .post-content-container { transition: opacity 0.3s ease; }
         .animate-out { opacity: 0; }
         .animate-in { opacity: 1; }
+
+        @media (max-width: 1024px) {
+            .dashboard-container {
+                grid-template-columns: 1fr;
+                height: auto;
+            }
+            .carousel-section {
+                height: 400px;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .dashboard-wrapper {
+                padding: 15px;
+            }
+            .carousel-section {
+                height: 300px;
+            }
+            #m-image-container {
+                height: 250px;
+            }
+            .modal-body-text {
+                padding: 15px;
+            }
+            .post-title {
+                font-size: 1rem;
+            }
+        }
     </style>
 </head>
 <body>

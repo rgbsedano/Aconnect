@@ -221,6 +221,60 @@
 
     .btn-send:hover { transform: scale(1.1); background: #5a0808; }
 
+    @media (max-width: 768px) {
+        .header-section {
+            flex-direction: column;
+            align-items: flex-start;
+            gap: 15px;
+        }
+
+        .dashboard-wrapper {
+            padding: 15px;
+        }
+
+        .inbox-card {
+            padding: 15px;
+            min-height: auto;
+        }
+
+        .inbox-item {
+            padding: 12px;
+            flex-direction: column;
+            align-items: flex-start;
+            gap: 12px;
+        }
+
+        .inbox-item .profile-img {
+            margin-right: 0;
+            width: 48px;
+            height: 48px;
+        }
+
+        .alumni-meta {
+            width: 100%;
+        }
+
+        .btn-view-chat {
+            width: 100%;
+            text-align: center;
+        }
+
+        .chat-popup {
+            width: 100%;
+            height: 100%;
+            bottom: 0;
+            right: 0;
+            border-radius: 0;
+            z-index: 2000;
+        }
+    }
+
+    @media (max-width: 576px) {
+        .header-section h1 {
+            font-size: 22px;
+        }
+    }
+
 </style>
 
 <div class="dashboard-wrapper">

@@ -221,6 +221,9 @@
                                     <button class="btn-action" data-toggle="modal" data-target="#viewModal<?= $alumni['id'] ?>" title="View Profile">
                                         <i class="fas fa-eye"></i>
                                     </button>
+                                    <button class="btn-action btn-edit-alumni" data-id="<?= $alumni['id'] ?>" title="Edit Profile">
+                                        <i class="fas fa-edit"></i>
+                                    </button>
                                 </td>
                             </tr>
                         <?php endforeach; ?>
@@ -287,3 +290,90 @@
         </div>
     <?php endforeach; ?>
 <?php endif; ?>
+
+<!-- Edit Modal -->
+<div class="modal fade" id="editModal" tabindex="-1" role="dialog" aria-hidden="true">
+    <div class="modal-dialog modal-lg modal-dialog-centered" role="document">
+        <div class="modal-content">
+            <form action="<?= site_url('AdminAlumni/update') ?>" method="post">
+                <input type="hidden" name="id" id="edit_alumni_id">
+                <div class="modal-header" style="background: #1e293b;">
+                    <div class="d-flex align-items-center">
+                        <i class="fas fa-user-edit fa-3x mr-3"></i>
+                        <div>
+                            <h4 class="modal-title mb-0" style="font-weight: 700;">Edit Alumni Info</h4>
+                            <p class="text-white-50 mb-0" style="font-size: 13px;">Update profile details</p>
+                        </div>
+                    </div>
+                    <button type="button" class="close text-white" data-dismiss="modal">&times;</button>
+                </div>
+                <div class="modal-body">
+                    <div class="row">
+                        <div class="col-md-6 mb-3">
+                            <label class="info-label">First Name</label>
+                            <input type="text" name="first_name" id="edit_first_name" class="form-control" required style="border-radius: 12px;">
+                        </div>
+                        <div class="col-md-6 mb-3">
+                            <label class="info-label">Last Name</label>
+                            <input type="text" name="last_name" id="edit_last_name" class="form-control" required style="border-radius: 12px;">
+                        </div>
+                        <div class="col-md-6 mb-3">
+                            <label class="info-label">Email</label>
+                            <input type="email" name="email" id="edit_email" class="form-control" required style="border-radius: 12px;">
+                        </div>
+                        <div class="col-md-6 mb-3">
+                            <label class="info-label">Phone</label>
+                            <input type="text" name="phone" id="edit_phone" class="form-control" style="border-radius: 12px;">
+                        </div>
+                        <div class="col-md-6 mb-3">
+                            <label class="info-label">Student ID</label>
+                            <input type="text" name="student_number" id="edit_student_number" class="form-control" required style="border-radius: 12px;">
+                        </div>
+                        <div class="col-md-6 mb-3">
+                            <label class="info-label">Degree</label>
+                            <input type="text" name="degree" id="edit_degree" class="form-control" required style="border-radius: 12px;">
+                        </div>
+                        <div class="col-md-6 mb-3">
+                            <label class="info-label">Graduation Year</label>
+                            <input type="number" name="graduation_year" id="edit_graduation_year" class="form-control" required style="border-radius: 12px;">
+                        </div>
+                        <div class="col-md-6 mb-3">
+                            <label class="info-label">School</label>
+                            <input type="text" name="school" id="edit_school" class="form-control" style="border-radius: 12px;">
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-footer" style="background: #f8fafc; border-top: 1px solid #f1f5f9;">
+                    <button type="button" class="btn btn-light" data-dismiss="modal" style="border-radius: 12px; font-weight: 600;">Cancel</button>
+                    <button type="submit" class="btn btn-primary" style="background: #1e293b; border: none; border-radius: 12px; font-weight: 600;">Save Changes</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+
+<script>
+$(document).ready(function() {
+    $('.btn-edit-alumni').on('click', function() {
+        var id = $(this).data('id');
+        $.ajax({
+            url: '<?= site_url('AdminAlumni/get_edit_data') ?>',
+            type: 'POST',
+            data: {id: id},
+            dataType: 'json',
+            success: function(data) {
+                $('#edit_alumni_id').val(data.id);
+                $('#edit_first_name').val(data.first_name);
+                $('#edit_last_name').val(data.last_name);
+                $('#edit_email').val(data.email);
+                $('#edit_phone').val(data.phone);
+                $('#edit_student_number').val(data.student_number);
+                $('#edit_degree').val(data.degree);
+                $('#edit_graduation_year').val(data.graduation_year);
+                $('#edit_school').val(data.school);
+                $('#editModal').modal('show');
+            }
+        });
+    });
+});
+</script>

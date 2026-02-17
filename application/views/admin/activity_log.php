@@ -127,6 +127,17 @@
     .pagination-wrapper strong { background: var(--accent-red); border-color: var(--accent-red); color: white; }
     .pagination-wrapper a:hover { background: #f8fafc; color: var(--accent-red); border-color: var(--accent-red); }
 
+    @media (max-width: 768px) {
+        .dashboard-wrapper { padding: 15px; margin: 10px auto; }
+        .header-section { flex-direction: column; align-items: flex-start !important; gap: 15px; }
+        .header-section h1 { font-size: 24px; }
+        .main-card { padding: 15px; }
+        .toolbar { flex-direction: column; align-items: stretch; }
+        .search-box { max-width: none; }
+        .btn-export { width: 100%; justify-content: center; }
+        .header-section .d-flex { flex-direction: column; width: 100%; gap: 10px; }
+    }
+
     @media print {
         .dashboard-wrapper { padding: 0; }
         .header-section, .toolbar, .pagination-wrapper { display: none !important; }
@@ -135,7 +146,6 @@
         .custom-table th, .custom-table td { border: 1px solid #000 !important; padding: 10px; border-radius: 0 !important; }
         .print-only-header { display: block !important; text-align: center; margin-bottom: 30px; }
     }
-
 </style>
 
 <div class="dashboard-wrapper">

@@ -55,7 +55,6 @@ class AdminManageAccounts extends CI_Controller {
         'phone' => $this->input->post('phone'),
         'graduation_year' => $this->input->post('graduation_year'),
         'student_number' => $this->input->post('student_number'),
-        'status' => $this->input->post('status'),
     ];
 
     $this->db->where('id', $id)->update('alumni', $data);
@@ -80,4 +79,70 @@ class AdminManageAccounts extends CI_Controller {
 }
 
 
+    public function details() {
+        $alumni_id = $this->input->post('id');
+        $this->db->where('id', $alumni_id);
+        $alumni = $this->db->get('alumni')->row_array();
+
+        if ($alumni) {
+            $this->load->model('Employment_model');
+            $employment = $this->Employment_model->get_by_alumni($alumni_id);
+
+            $details = '
+                <div class="row">
+                    <div class="col-md-6 mb-3">
+                        <label class="form-label text-muted small text-uppercase font-weight-bold">Full Name</label>
+                        <div class="bg-light p-3 rounded-lg border">' . htmlspecialchars($alumni['first_name'] . ' ' . $alumni['last_name']) . '</div>
+                    </div>
+                    <div class="col-md-6 mb-3">
+                        <label class="form-label text-muted small text-uppercase font-weight-bold">Student Number</label>
+                        <div class="bg-light p-3 rounded-lg border">' . htmlspecialchars($alumni['student_number']) . '</div>
+                    </div>
+                    <div class="col-md-6 mb-3">
+                        <label class="form-label text-muted small text-uppercase font-weight-bold">Email</label>
+                        <div class="bg-light p-3 rounded-lg border">' . htmlspecialchars($alumni['email']) . '</div>
+                    </div>
+                    <div class="col-md-6 mb-3">
+                        <label class="form-label text-muted small text-uppercase font-weight-bold">Phone</label>
+                        <div class="bg-light p-3 rounded-lg border">' . htmlspecialchars($alumni['phone']) . '</div>
+                    </div>
+                    <div class="col-md-6 mb-3">
+                        <label class="form-label text-muted small text-uppercase font-weight-bold">Degree</label>
+                        <div class="bg-light p-3 rounded-lg border">' . htmlspecialchars($alumni['degree']) . '</div>
+                    </div>
+                    <div class="col-md-6 mb-3">
+                        <label class="form-label text-muted small text-uppercase font-weight-bold">Batch</label>
+                        <div class="bg-light p-3 rounded-lg border">' . htmlspecialchars($alumni['graduation_year']) . '</div>
+                    </div>
+                </div>
+                <hr class="my-4">
+                <h5 class="mb-4 font-weight-bold"><i class="fas fa-briefcase mr-2 text-primary"></i> Employment History</h5>';
+
+            if ($employment) {
+                $details .= '
+                    <div class="row">
+                        <div class="col-md-6 mb-3">
+                            <label class="form-label text-muted small text-uppercase font-weight-bold">Status</label>
+                            <div class="bg-light p-3 rounded-lg border">' . htmlspecialchars($employment['employment_status']) . '</div>
+                        </div>
+                        <div class="col-md-6 mb-3">
+                            <label class="form-label text-muted small text-uppercase font-weight-bold">Company</label>
+                            <div class="bg-light p-3 rounded-lg border">' . htmlspecialchars($employment['company_name']) . '</div>
+                        </div>
+                        <div class="col-md-12 mb-3">
+                            <label class="form-label text-muted small text-uppercase font-weight-bold">Job Title</label>
+                            <div class="bg-light p-3 rounded-lg border font-weight-bold text-dark">' . htmlspecialchars($employment['job_title']) . '</div>
+                        </div>
+                        <div class="col-md-12">
+                            <label class="form-label text-muted small text-uppercase font-weight-bold">Description</label>
+                            <div class="bg-light p-3 rounded-lg border">' . nl2br(htmlspecialchars($employment['job_description'])) . '</div>
+                        </div>
+                    </div>';
+            } else {
+                $details .= '<div class="alert alert-info border-0 rounded-lg"><i class="fas fa-info-circle mr-2"></i> No active employment record found for this profile.</div>';
+            }
+            
+            echo $details;
+        }
+    }
 }

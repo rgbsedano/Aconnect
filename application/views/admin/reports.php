@@ -138,6 +138,48 @@
     .status-unemployed { background: #f1f5f9; color: var(--text-muted); }
     .status-self { background: #fef2f2; color: var(--accent-red); }
 
+    .chart-container-card { padding: 30px; }
+    .chart-wrapper { position: relative; height: 350px; width: 100%; }
+
+    @media (max-width: 768px) {
+        .chart-container-card { padding: 15px; }
+        .chart-wrapper { height: 250px; }
+        .header-section {
+            flex-direction: column;
+            align-items: flex-start;
+            gap: 20px;
+        }
+        
+        .header-section .d-flex {
+            width: 100%;
+            flex-wrap: wrap;
+        }
+
+        .btn-action {
+            flex: 1;
+            justify-content: center;
+        }
+
+        .dashboard-wrapper {
+            padding: 15px;
+        }
+
+        .report-card {
+            padding: 20px;
+        }
+    }
+
+    @media (max-width: 576px) {
+        .header-section h1 {
+            font-size: 22px;
+        }
+        
+        .custom-table th, .custom-table td {
+            padding: 10px;
+            font-size: 12px;
+        }
+    }
+
 </style>
 
 <div class="dashboard-wrapper">
@@ -165,12 +207,14 @@
     </div>
 
     <!-- Analytics Chart -->
-    <div class="report-card mb-4" style="padding: 30px;">
+    <div class="report-card mb-4 chart-container-card">
         <div class="card-title">
             <span>Alumni Engagement Trend</span>
             <span style="font-size: 11px; color: var(--text-muted);">Interactive Data Visualization</span>
         </div>
-        <canvas id="engagementChart" height="80"></canvas>
+        <div class="chart-wrapper">
+            <canvas id="engagementChart"></canvas>
+        </div>
     </div>
 
     <!-- Tracer Records Section -->
@@ -292,12 +336,21 @@
             },
             options: {
                 responsive: true,
+                maintainAspectRatio: false,
                 plugins: {
-                    legend: { position: 'top', labels: { usePointStyle: true, font: { family: 'Plus Jakarta Sans', weight: '700', size: 11 } } }
+                    legend: { 
+                        position: 'top', 
+                        labels: { 
+                            usePointStyle: true, 
+                            boxWidth: 8,
+                            padding: 20,
+                            font: { family: 'Plus Jakarta Sans', weight: '700', size: 11 } 
+                        } 
+                    }
                 },
                 scales: {
-                    x: { grid: { display: false }, ticks: { font: { family: 'Plus Jakarta Sans', weight: '600' } } },
-                    y: { beginAtZero: true, grid: { borderDash: [5, 5] }, ticks: { font: { family: 'Plus Jakarta Sans' } } }
+                    x: { grid: { display: false }, ticks: { font: { family: 'Plus Jakarta Sans', weight: '600', size: 10 } } },
+                    y: { beginAtZero: true, grid: { borderDash: [5, 5] }, ticks: { font: { family: 'Plus Jakarta Sans', size: 10 } } }
                 }
             }
         });
