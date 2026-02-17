@@ -2,29 +2,45 @@
 // ... (compute_ai_match function remains exactly as you provided) ...
 function compute_ai_match($alumni, $job) {
     if (!$alumni) return 0;
-    $wTech  = 30; $wSoft  = 10; $wKey   = 5; $wTitle = 55; 
-    $score = 0; $titleMatch = 0;
-    $jobTitle = strtolower($job->job_title);
-    $deg = strtolower($alumni->degree);
-    if (strpos($jobTitle, "it") !== false && strpos($deg, "information technology") !== false) $titleMatch = 1;
-    if (strpos($jobTitle, "developer") !== false && strpos($deg, "information technology") !== false) $titleMatch = 1;
-    if (strpos($jobTitle, "programmer") !== false && strpos($deg, "information technology") !== false) $titleMatch = 1;
-    if (strpos($jobTitle, "software") !== false && strpos($deg, "information technology") !== false) $titleMatch = 1;
-    if (strpos($jobTitle, "technical") !== false && strpos($deg, "information technology") !== false) $titleMatch = 1;
-    if (strpos($jobTitle, "nurse") !== false && strpos($deg, "nursing") !== false) $titleMatch = 1;
-    if (strpos($jobTitle, "staff nurse") !== false && strpos($deg, "nursing") !== false) $titleMatch = 1;
-    if (strpos($jobTitle, "radtech") !== false && strpos($deg, "radiologic") !== false) $titleMatch = 1;
-    if (strpos($jobTitle, "radiologic") !== false && strpos($deg, "radiologic") !== false) $titleMatch = 1;
-    if (strpos($jobTitle, "marketing") !== false && strpos($deg, "business") !== false) $titleMatch = 1;
-    if (strpos($jobTitle, "hr") !== false && strpos($deg, "business") !== false) $titleMatch = 1;
-    if (strpos($jobTitle, "finance") !== false && strpos($deg, "accountancy") !== false) $titleMatch = 1;
-    if (strpos($jobTitle, "graphic") !== false && strpos($deg, "multimedia") !== false) $titleMatch = 1;
-    if (strpos($jobTitle, "designer") !== false && strpos($deg, "multimedia") !== false) $titleMatch = 1;
-    if (strpos($jobTitle, "editor") !== false && strpos($deg, "communication") !== false) $titleMatch = 1;
-    if (strpos($jobTitle, "writer") !== false && strpos($deg, "communication") !== false) $titleMatch = 1;
+    $wTitle = 25;   // reduced
+    $wTech  = 45;   // MOST IMPORTANT
+    $wSoft  = 15;
+    $wKey   = 15;
+    $score = 0; 
+    $titleMatch = 0;
 
-    $alTech = array_filter(array_map('trim', explode(',', strtolower($alumni->technical_skills ?? ""))));
-    $jobTech = array_filter(array_map('trim', explode(',', strtolower($job->qualifications ?? ""))));
+    $titleGroups = [
+        'information technology' => ['it','developer','programmer','software','technical','web'],
+        'nursing' => ['nurse','staff nurse','clinical nurse'],
+        'radiologic' => ['radtech','radiologic','xray'],
+        'business' => ['marketing','hr','human resource','business'],
+        'accountancy' => ['finance','accounting','bookkeeper'],
+        'multimedia' => ['graphic','designer','multimedia','ui','ux'],
+        'communication' => ['editor','writer','content']
+    ];
+
+    $deg = strtolower($alumni->degree);
+    $jobTitle = strtolower($job->job_title);
+
+    foreach ($titleGroups as $degreeKey => $keywords) {
+        if (strpos($deg, $degreeKey) !== false) {
+            foreach ($keywords as $kw) {
+                if (strpos($jobTitle, $kw) !== false) {
+                    $titleMatch = 1;
+                    break 2;
+                }
+            }
+        }
+    }
+
+    $alTech = array_map('normalize_skill',
+    array_filter(array_map('trim', explode(',', strtolower($alumni->technical_skills ?? ""))))
+    );
+
+    $jobTech = array_map('normalize_skill',
+        array_filter(array_map('trim', explode(',', strtolower($job->qualifications ?? ""))))
+    );
+
     $techMatch = 0;
     if (count($jobTech) > 0) {
         $match = array_intersect($alTech, $jobTech);
@@ -34,13 +50,37 @@ function compute_ai_match($alumni, $job) {
     $desc = strtolower($job->description ?? "");
     $softCount = 0;
     foreach ($alSoft as $soft) { if (strpos($desc, $soft) !== false) $softCount++; }
-    $softMatch = (count($alSoft) > 0) ? $softCount / count($alSoft) : 0;
+    $softMatch = (count($alSoft) > 0)
+        ? min(1, $softCount / max(3, count($alSoft)))
+        : 0;
+
     $searchSpace = strtolower($job->company . " " . $job->job_title . " " . $job->description);
-    $keyMatch = 0;
-    foreach ($alTech as $skill) { if (strpos($searchSpace, $skill) !== false) { $keyMatch = 1; break; } }
+    $keyHits = 0;
+    foreach ($alTech as $skill) {
+        if (strpos($searchSpace, $skill) !== false) {
+            $keyHits++;
+        }
+    }
+
+    $keyMatch = count($alTech) > 0 ? $keyHits / count($alTech) : 0;
+
     $score = ($techMatch * $wTech) + ($softMatch * $wSoft) + ($keyMatch * $wKey) + ($titleMatch * $wTitle);
     return round($score);
 }
+function normalize_skill($skill) {
+    $skill = strtolower(trim($skill));
+    $map = [
+        'js' => 'javascript',
+        'nodejs' => 'node.js',
+        'node js' => 'node.js',
+        'mysql' => 'sql',
+        'postgresql' => 'sql',
+        'html5' => 'html',
+        'css3' => 'css',
+    ];
+    return $map[$skill] ?? $skill;
+}
+
 ?>
 
 <!DOCTYPE html>
