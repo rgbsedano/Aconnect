@@ -1,7 +1,7 @@
 <style>
     :root {
         --primary-color: #8B1538;
-        --accent-red: #ff6b6b;
+        --accent-red: #700a0a;
         --text-main: #1e293b;
         --text-muted: #64748b;
         --card-bg: rgba(255, 255, 255, 0.95);
@@ -73,7 +73,7 @@
     .custom-table { width: 100%; border-collapse: separate; border-spacing: 0 10px; }
     .custom-table th { padding: 12px 20px; font-size: 11px; font-weight: 700; text-transform: uppercase; color: var(--text-muted); border: none; }
     .custom-table tr.data-row { background: white; transition: var(--transition); }
-    .custom-table tr.data-row:hover { transform: scale(1.005); box-shadow: 0 4px 12px rgba(0,0,0,0.05); }
+    .custom-table tr.data-row:hover { box-shadow: 0 4px 12px rgba(0,0,0,0.05); }
     .custom-table td { padding: 16px 20px; vertical-align: middle; border-top: 1px solid #f1f5f9; border-bottom: 1px solid #f1f5f9; }
     .custom-table td:first-child { border-left: 1px solid #f1f5f9; border-top-left-radius: 14px; border-bottom-left-radius: 14px; }
     .custom-table td:last-child { border-right: 1px solid #f1f5f9; border-top-right-radius: 14px; border-bottom-right-radius: 14px; }
@@ -94,10 +94,12 @@
     .btn-action.delete:hover { background: #fff5f5; color: #ef4444; border-color: #ef4444; }
 
     /* Modal Styling */
-    .modal-content { border-radius: 24px; border: none; box-shadow: 0 20px 25px -5px rgba(0,0,0,0.1); }
-    .modal-header { background: var(--primary-color); color: white; padding: 25px; border: none; }
-    .form-input { border-radius: 12px; border: 1px solid #e2e8f0; padding: 12px; font-size: 14px; transition: var(--transition); }
-    .form-input:focus { border-color: var(--primary-color); box-shadow: 0 0 0 4px rgba(139, 21, 56, 0.05); }
+    .modal-content { border-radius: 24px; border: none; overflow: hidden; }
+    .modal-header { background: var(--accent-red); color: white; padding: 25px; border: none; }
+    .modal-body { padding: 30px; }
+    .form-label { font-size: 11px; font-weight: 700; color: var(--text-muted); text-transform: uppercase; margin-bottom: 8px; display: block; }
+    .form-input { border-radius: 12px; padding: 12px; font-size: 14px; font-weight: 500; border: 1px solid #e2e8f0; }
+    .form-input:focus { border-color: var(--accent-red); box-shadow: 0 0 0 4px rgba(112, 10, 10, 0.05); }
 
     .targeted-tag { background: #f8fafc; border: 1px solid #e2e8f0; padding: 15px; border-radius: 14px; margin-top: 10px; }
 
@@ -126,8 +128,8 @@
             <p>Publish and manage career postings for the alumni network.</p>
         </div>
         <div class="d-flex gap-3">
-            <button class="btn-header btn-create" data-toggle="modal" data-target="#createJobModal">
-                <i class="fas fa-plus"></i> NEW POSTING
+            <button class="btn btn-danger" data-toggle="modal" data-target="#createJobModal" style="background: var(--accent-red); border-radius: 12px; font-weight: 700; padding: 10px 24px;">
+                <i class="fas fa-plus mr-2"></i> Create Posting
             </button>
             <a href="<?= base_url('AdminJobPosting/run_worker') ?>" class="btn-header btn-notify" style="text-decoration:none;">
                 <i class="fas fa-paper-plane"></i> NOTIFY ALUMNI
@@ -252,7 +254,7 @@
                 </div>
                 <div class="modal-footer">
                     <button type="button" class="btn btn-light px-4" style="border-radius: 12px; font-weight: 700;" data-dismiss="modal">CANCEL</button>
-                    <button type="submit" class="btn btn-danger px-5" style="background: var(--primary-color); border-radius: 12px; font-weight: 700;">PUBLISH NOW</button>
+                    <button type="submit" class="btn btn-danger px-5" style="background: var(--accent-red); border-radius: 12px; font-weight: 700;">PUBLISH NOW</button>
                 </div>
             </form>
         </div>
@@ -295,7 +297,7 @@
                     </div>
                     <div class="modal-footer">
                         <button type="button" class="btn btn-light px-4" data-dismiss="modal">CANCEL</button>
-                        <button type="submit" class="btn btn-danger px-5" style="background: var(--primary-color);">SAVE CHANGES</button>
+                        <button type="submit" class="btn btn-danger px-5" style="background: var(--accent-red);">SAVE CHANGES</button>
                     </div>
                 </form>
             </div>
