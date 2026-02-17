@@ -309,11 +309,11 @@
     }
 
     .message-bubble.own .message-time {
-        color: rgba(255,255,255,0.8);
+        color: #000000; /* Ensured pure black */
     }
 
     .message-bubble.other .message-time {
-        color: var(--muted);
+        color: #000000; /* Ensured pure black */
     }
 
     /* Chat Footer */

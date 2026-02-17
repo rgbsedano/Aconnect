@@ -48,6 +48,14 @@ $admin_management_active = in_array($current_uri_segment_1, ['adminalumni', 'Adm
             --nav-height: 55px;
         }
 
+        html, body { 
+            overflow-x: hidden;
+            width: 100%;
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
         body { 
             background-color: #f3f2ef; 
             padding-top: 0 !important;
@@ -89,6 +97,7 @@ $admin_management_active = in_array($current_uri_segment_1, ['adminalumni', 'Adm
             align-items: center;
             padding: 0 25px;
             height: 100%;
+            box-sizing: border-box;
         }
 
         .primary-nav, .primary-nav ul {

@@ -48,42 +48,6 @@ class AdminManageAccounts extends CI_Controller {
         $this->load->view('__footer');
     }
 
-    public function create() {
-        $degree = $this->input->post('degree');
-        $degree_value = ($degree === "Other") ? $this->input->post('degree_other') : $degree;
-
-        $data = [
-            'first_name' => $this->input->post('first_name'),
-            'last_name' => $this->input->post('last_name'),
-            'email' => $this->input->post('email'),
-            'alternative_email' => $this->input->post('alternative_email'),
-            'phone' => $this->input->post('phone'),
-            'telephone' => $this->input->post('telephone'),
-            'graduation_year' => $this->input->post('graduation_year'),
-            'student_number' => $this->input->post('student_number'),
-            'degree' => $degree_value,
-            'gender' => $this->input->post('gender'),
-            'status' => 'active',
-            'password' => password_hash($this->input->post('password'), PASSWORD_BCRYPT),
-            'email_verified' => 1
-        ];
-
-        if (!empty($_FILES['profile_image']['name'])) {
-            $config['upload_path']   = './assets/uploads/alumni/';
-            $config['allowed_types'] = 'jpg|jpeg|png|gif';
-            $config['file_name']     = uniqid() . '_' . $_FILES['profile_image']['name'];
-
-            $this->load->library('upload', $config);
-            if ($this->upload->do_upload('profile_image')) {
-                $uploadData = $this->upload->data();
-                $data['profile_image'] = $uploadData['file_name'];
-            }
-        }
-
-        $this->db->insert('alumni', $data);
-        $this->session->set_flashdata('success', 'Account created successfully!');
-        redirect('AdminManageAccounts');
-    }
 
     public function update($id) {
         $degree = $this->input->post('degree');

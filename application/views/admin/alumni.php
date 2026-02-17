@@ -158,6 +158,14 @@
         .modal-body { padding: 20px; }
         .modal-header { padding: 20px; }
     }
+
+    .pagination-wrapper { margin-top: 30px; display: flex; justify-content: center; }
+    .pagination-wrapper a, .pagination-wrapper strong {
+        padding: 8px 16px; margin: 0 4px; border-radius: 10px; font-weight: 600; font-size: 14px;
+        border: 1px solid #e2e8f0; color: var(--accent-red); transition: var(--transition);
+    }
+    .pagination-wrapper strong { background: var(--accent-red); border-color: var(--accent-red); color: white; }
+    .pagination-wrapper a:hover { background: #f8fafc; color: var(--accent-red); border-color: var(--accent-red); }
 </style>
 
 <div class="dashboard-wrapper">
@@ -248,7 +256,7 @@
             </table>
         </div>
 
-        <div class="mt-4">
+        <div class="pagination-wrapper">
             <?= $pagination ?>
         </div>
     </div>

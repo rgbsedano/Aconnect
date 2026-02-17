@@ -85,7 +85,7 @@
     .pagination-wrapper { margin-top: 30px; display: flex; justify-content: center; }
     .pagination-wrapper a, .pagination-wrapper strong {
         padding: 8px 16px; margin: 0 4px; border-radius: 10px; font-weight: 600; font-size: 14px;
-        border: 1px solid #e2e8f0; color: var(--text-muted); transition: var(--transition);
+        border: 1px solid #e2e8f0; color: var(--accent-red); transition: var(--transition);
     }
     .pagination-wrapper strong { background: var(--accent-red); border-color: var(--accent-red); color: white; }
     .pagination-wrapper a:hover { background: #f8fafc; color: var(--accent-red); border-color: var(--accent-red); }
@@ -135,9 +135,6 @@ document.addEventListener('DOMContentLoaded', function() {
             <h1>User <span>Accounts</span></h1>
             <p>Manage alumni credentials, access status, and profile information.</p>
         </div>
-        <button class="btn btn-danger" style="background: var(--accent-red); border-radius: 12px; font-weight: 700; padding: 10px 24px;" data-toggle="modal" data-target="#createAccountModal">
-            <i class="fas fa-plus-circle mr-2"></i> Create Account
-        </button>
     </div>
 
     <div class="main-card">
@@ -203,117 +200,6 @@ document.addEventListener('DOMContentLoaded', function() {
     </div>
 </div>
 
-<!-- CREATE ACCOUNT MODAL -->
-<div class="modal fade" id="createAccountModal" tabindex="-1">
-    <div class="modal-dialog modal-adaptive">
-        <div class="modal-content">
-            <div class="modal-header">
-                <h5 class="modal-title" style="font-weight: 700;"><i class="fas fa-plus-circle mr-2"></i> Create Your AConnect Profile</h5>
-                <button type="button" class="close text-white" data-dismiss="modal">&times;</button>
-            </div>
-            <form method="post" action="<?= base_url('AdminManageAccounts/create') ?>" enctype="multipart/form-data">
-                <div class="modal-body">
-                    <div class="row">
-                        <div class="col-md-6 mb-3">
-                            <label class="form-label">Student Number</label>
-                            <input type="text" name="student_number" class="form-control form-input" placeholder="e.g., 2017-00001" required>
-                        </div>
-                        <div class="col-md-6 mb-3">
-                            <label class="form-label">Password</label>
-                            <input type="password" name="password" class="form-control form-input" required>
-                        </div>
-                        <div class="col-md-6 mb-3">
-                            <label class="form-label">First Name</label>
-                            <input type="text" name="first_name" class="form-control form-input" required>
-                        </div>
-                        <div class="col-md-6 mb-3">
-                            <label class="form-label">Last Name</label>
-                            <input type="text" name="last_name" class="form-control form-input" required>
-                        </div>
-                        <div class="col-12 mb-3">
-                            <label class="form-label">Email - (Do not use the SDCA Email)</label>
-                            <input type="email" name="email" class="form-control form-input" required>
-                        </div>
-                        <div class="col-12 mb-3">
-                            <label class="form-label">Alternate Email</label>
-                            <input type="email" name="alternative_email" class="form-control form-input" required>
-                        </div>
-                        <div class="col-md-6 mb-3">
-                            <label class="form-label">Phone Number</label>
-                            <input type="text" name="phone" class="form-control form-input" placeholder="e.g., 09xxxxxxxxx" required>
-                        </div>
-                        <div class="col-md-6 mb-3">
-                            <label class="form-label">Telephone Number</label>
-                            <input type="text" name="telephone" class="form-control form-input" placeholder="e.g., 02-8123-4567">
-                        </div>
-                        <div class="col-md-6 mb-3">
-                            <label class="form-label">Graduation Year</label>
-                            <input type="number" name="graduation_year" class="form-control form-input" required>
-                        </div>
-                        <div class="col-md-6 mb-3">
-                            <label class="form-label">Degree</label>
-                            <select name="degree" class="form-control form-input" required onchange="toggleOtherDegree(this, 'create_other_degree_container')">
-                                <option value="">-- Select Degree --</option>
-                                <optgroup label="School of Nursing and Allied Health Studies">
-                                    <option value="BS in Nursing">BS in Nursing</option>
-                                    <option value="BS in Radiologic Technology">BS in Radiologic Technology</option>
-                                    <option value="BS in Physical Therapy">BS in Physical Therapy</option>
-                                </optgroup>
-                                <optgroup label="School of Medical Laboratory Science">
-                                    <option value="BS in Medical Laboratory Science">BS in Medical Laboratory Science</option>
-                                    <option value="BS in Pharmacy">BS in Pharmacy</option>
-                                    <option value="BS in Biology">BS in Biology</option>
-                                </optgroup>
-                                <optgroup label="School of Accountancy, Science, and Education">
-                                    <option value="BS in Accountancy">BS in Accountancy</option>
-                                    <option value="BS in Accounting Technology / AIS">BS in Accounting Technology / AIS</option>
-                                    <option value="BS in Psychology">BS in Psychology</option>
-                                    <option value="BS in Elementary Education">BS in Elementary Education</option>
-                                    <option value="BS in Secondary Education">BS in Secondary Education</option>
-                                </optgroup>
-                                <optgroup label="School of International, Hospitality, Tourism & Management">
-                                    <option value="BS in Business Administration - Financial Management">BS in Business Administration - Financial Management</option>
-                                    <option value="BS in Business Administration - Marketing Management">BS in Business Administration - Marketing Management</option>
-                                    <option value="BS in Business Administration - HR Development">BS in Business Administration - HR Development</option>
-                                    <option value="BS in Business Administration - Operations Management">BS in Business Administration - Operations Management</option>
-                                    <option value="BS in Tourism Management">BS in Tourism Management</option>
-                                    <option value="BS in Hospitality Management">BS in Hospitality Management</option>
-                                    <option value="BS in Hospitality Management - Culinary Arts">BS in Hospitality Management - Culinary Arts</option>
-                                    <option value="BS in Hospitality Management - Cruiseline Operations">BS in Hospitality Management - Cruiseline Operations</option>
-                                </optgroup>
-                                <optgroup label="School of Communication, Multimedia, and Computer Studies">
-                                    <option value="BA in Communication">BA in Communication</option>
-                                    <option value="Bachelor of Multimedia Arts">Bachelor of Multimedia Arts</option>
-                                    <option value="BS in Information Technology">BS in Information Technology</option>
-                                </optgroup>
-                                <option value="Other">Other (Not Listed)</option>
-                            </select>
-                        </div>
-                        <div class="col-12 mb-3 d-none" id="create_other_degree_container">
-                            <label class="form-label">Specify Other Degree</label>
-                            <input type="text" name="degree_other" class="form-control form-input" placeholder="Enter your degree">
-                        </div>
-                        <div class="col-md-6 mb-3">
-                            <label class="form-label">Gender</label>
-                            <select name="gender" class="form-control form-input" required>
-                                <option value="Male">Male</option>
-                                <option value="Female">Female</option>
-                            </select>
-                        </div>
-                        <div class="col-md-6 mb-3">
-                            <label class="form-label">Profile Picture</label>
-                            <input type="file" name="profile_image" class="form-control border-0 p-0" style="font-size: 12px;">
-                        </div>
-                    </div>
-                </div>
-                <div class="modal-footer" style="background: #f8fafc;">
-                    <button type="button" class="btn btn-light" data-dismiss="modal" style="border-radius: 12px; font-weight: 600;">Cancel</button>
-                    <button type="submit" class="btn btn-danger" style="background: var(--accent-red); border-radius: 12px; font-weight: 700; padding: 10px 24px;">Create Account</button>
-                </div>
-            </form>
-        </div>
-    </div>
-</div>
 
 <!-- EDIT ACCOUNT MODAL (Shared) -->
 <div class="modal fade" id="editAccountModal" tabindex="-1">

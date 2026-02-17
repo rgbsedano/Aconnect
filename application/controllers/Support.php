@@ -32,7 +32,7 @@ public function send_message() {
     $this->Support_model->send_message([
         'sender_id' => 1,
         'receiver_id' => $sender_id,
-        'message' => "Thanks for contacting support. We will get back to you shortly. If you want a faster reply email me instead in admin@gmail.com.",
+        'message' => "Hello! This is AConnect Support. Your message has been received, and one of our team members will get back to you shortly. We're here to help!",
         'is_admin' => 1
     ]);
 
@@ -109,6 +109,14 @@ public function get_chat_details($user_id)
             'receiver_id' => 1, // admin
             'message' => $message,
             'is_admin' => 0
+        ]);
+
+        // Add auto-response from admin
+        $this->Support_model->send_message([
+            'sender_id' => 1,
+            'receiver_id' => $sender_id,
+            'message' => "Hello! This is AConnect Support. Your message has been received, and one of our team members will get back to you shortly. We're here to help!",
+            'is_admin' => 1
         ]);
 
         echo json_encode(['status' => 'success']);

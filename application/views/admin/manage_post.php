@@ -686,15 +686,37 @@ function editCarousel(item){
 }
 
 function deletePost(id){
-    if(confirm("Delete this post?")){
-        window.location.href='<?= base_url("AdminPost/delete/") ?>'+id;
-    }
+    Swal.fire({
+        title: 'Delete this post?',
+        text: "This action cannot be undone!",
+        icon: 'warning',
+        showCancelButton: true,
+        confirmButtonColor: '#700a0a',
+        cancelButtonColor: '#64748b',
+        confirmButtonText: 'Yes, delete it!',
+        cancelButtonText: 'Cancel'
+    }).then((result) => {
+        if (result.isConfirmed) {
+            window.location.href='<?= base_url("AdminPost/delete/") ?>'+id;
+        }
+    });
 }
 
 function deleteCarousel(id){
-    if(confirm("Delete this banner?")){
-        window.location.href='<?= base_url("AdminPost/delete_carousel/") ?>'+id;
-    }
+    Swal.fire({
+        title: 'Delete this banner?',
+        text: "This action cannot be undone!",
+        icon: 'warning',
+        showCancelButton: true,
+        confirmButtonColor: '#700a0a',
+        cancelButtonColor: '#64748b',
+        confirmButtonText: 'Yes, delete it!',
+        cancelButtonText: 'Cancel'
+    }).then((result) => {
+        if (result.isConfirmed) {
+            window.location.href='<?= base_url("AdminPost/delete_carousel/") ?>'+id;
+        }
+    });
 }
 
 function reviewDetails(post){

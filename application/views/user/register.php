@@ -201,14 +201,92 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                             <small class="text-muted">Optional. JPG, PNG, or GIF only.</small>
                         </div>
 
-                        <div class="form-group mt-4">
-                            <button type="submit" class="btn-register">Register Account</button>
+                        <div class="form-group d-flex align-items-start mb-3" style="font-size: 0.85rem; color: #555;">
+                            <input type="checkbox" id="privacyConsent" name="privacy_consent" style="width: 18px; height: 18px; margin-right: 10px; margin-top: 2px; pointer-events: none;" required>
+                            <label for="privacyConsentLabel" id="triggerPrivacyModal" style="cursor: pointer;">
+                                I have read and agree to the <a href="#" style="color: #700A0A; border-bottom: 1px dashed #700A0A;">Data Privacy Terms</a>.
+                            </label>
+                        </div>
+
+                        <div class="form-group mt-2">
+                            <button type="submit" id="btnRegister" class="btn-register" disabled>Register Account</button>
                         </div>
                     </form>
 
                     <div class="login-link-container">
                         <p>Already have an account? <a href="<?= base_url('login') ?>">Log in here</a></p>
                     </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Data Privacy Modal -->
+    <div class="modal fade" id="privacyModal" tabindex="-1" role="dialog" aria-labelledby="privacyModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-lg modal-dialog-centered" role="document">
+            <div class="modal-content" style="border-radius: 12px; border: none; overflow: hidden; box-shadow: 0 10px 30px rgba(0,0,0,0.2);">
+                <div class="modal-header" style="background: #700A0A; color: white; border: none; padding: 15px 25px;">
+                    <h5 class="modal-title" id="privacyModalLabel" style="font-weight: 700;">Data Privacy</h5>
+                    <button type="button" class="close text-white" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body" style="padding: 30px; font-size: 0.9rem; color: #333; line-height: 1.6; max-height: 70vh; overflow-y: auto;">
+                    <div class="text-center mb-4">
+                        <h6 style="font-weight: 800; margin-bottom: 5px;">DATA PRIVACY CONSENT</h6>
+                        <p style="font-size: 0.8rem; font-weight: 700; margin-bottom: 0;">SDCA Learning Management System</p>
+                        <p style="font-size: 0.8rem;">(For Students)</p>
+                    </div>
+
+                    <p>St. Dominic College of Asia puts premium value to the privacy and security of personal data entrusted by its stakeholders for legitimate purposes. We aim to comply with the Data Privacy Act of 2012 (DPA) and cooperate fully with the National Privacy Commission (NPC). We regard your privacy with utmost importance. SDCA is committed to meeting both your personal privacy, which is important to us, and ensuring that our genuine and legitimate interests as an educational institution and our ability to fully and effectively carry out our responsibilities as such are met.</p>
+
+                    <p>By selecting the options below, I hereby confirm that I have read and understood the contents of the SDCA Data Privacy Notice and consent to the following conditions:</p>
+
+                    <ul style="list-style-type: none; padding-left: 0;">
+                        <li class="mb-3 d-flex">
+                            <span class="mr-2">•</span>
+                            <span>SDCA may collect information for and in relation to co-curricular matters, such as outreach activities, as well as extra-curricular activities, such as membership in student organizations, leadership positions and participation and attendance in seminars, competitions and programs.</span>
+                        </li>
+                        <li class="mb-3 d-flex">
+                            <span class="mr-2">•</span>
+                            <span>SDCA may collect information for and in relation to co-curricular matters, such as outreach activities, as well as extra-curricular activities, such as membership in student organizations, leadership positions and participation and attendance in seminars, competitions and programs.</span>
+                        </li>
+                        <li class="mb-3 d-flex">
+                            <span class="mr-2">•</span>
+                            <span>SDCA and its authorized representatives may process all data that I have voluntarily provided to the institution for the purpose of carrying out their mandated duties.</span>
+                        </li>
+                    </ul>
+
+                    <p>SDCA may use and share my information in the Learning Management System to pursue its legitimate interests as an educational institution such as but not limited to:</p>
+                    <ol style="margin-bottom: 20px;">
+                        <li>recording, generating and maintaining student records of academic, co-curricular and extra-curricular progress;</li>
+                        <li>establishing and maintaining student information systems;</li>
+                        <li>sharing of grades between and among faculty members, and others with legitimate official need, for academic deliberations;</li>
+                        <li>processing scholarship applications, grants and other forms of assistance;</li>
+                        <li>investigating incidents that relate to student behavior and implementing disciplinary measures;</li>
+                        <li>maintaining directories and alumni records; compiling and generating reports for statistical and research purposes;</li>
+                        <li>providing services such as health, counseling, information technology, library, sports/recreation, transportation, safety and security;</li>
+                        <li>communicating official school announcements; sharing marketing and promotional materials regarding school-related functions, events, projects and activities;</li>
+                        <li>soliciting your participation in research and non-commercial surveys;</li>
+                        <li>reporting and/or disclosing information to the Commission on Higher Education (CHED) and other government bodies or agencies (e.g., NPC, TESDA, etc.);</li>
+                        <li>conducting research or surveys for purposes of institutional development;</li>
+                        <li>sharing your directory information to the schools’ alumni association.</li>
+                    </ol>
+
+                    <p>I have read this agreement, understood its contents and consent to the processing of my personal data. I understand that my consent does not preclude the existence of other criteria for lawful processing of personal data, and does not waive any of my rights under the Data Privacy Act of 2012 and other applicable laws.</p>
+
+                    <div class="p-3 bg-light rounded" style="border: 1px solid #ddd; margin-top: 20px;">
+                        <div class="custom-control custom-checkbox">
+                            <input type="checkbox" class="custom-control-input" id="acceptAllPrivacy">
+                            <label class="custom-control-label" for="acceptAllPrivacy" style="font-weight: 600; cursor: pointer;">
+                                Accept all: By checking this box, I hereby confirm my consent to all of the conditions and terms listed above regarding the use and processing of my personal data for the specified purposes.
+                            </label>
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-footer" style="padding: 15px 25px; background: #f8f9fa; border-top: 1px solid #eee;">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal" style="border-radius: 8px; font-weight: 600;">Close</button>
+                    <button type="button" id="submitPrivacy" class="btn btn-danger" style="background: #700A0A; border: none; border-radius: 8px; font-weight: 600; padding: 8px 25px;">Submit</button>
                 </div>
             </div>
         </div>
@@ -234,5 +312,50 @@ defined('BASEPATH') OR exit('No direct script access allowed');
       });
     </script>
     <?php endif; ?>
+
+    <script>
+    $(document).ready(function() {
+        // Handle privacy modal submission
+        $('#submitPrivacy').on('click', function() {
+            if ($('#acceptAllPrivacy').is(':checked')) {
+                $('#privacyConsent').prop('checked', true);
+                $('#btnRegister').prop('disabled', false);
+                $('#privacyModal').modal('hide');
+            } else {
+                Swal.fire({
+                    icon: 'warning',
+                    title: 'Consent Required',
+                    text: 'Please check the "Accept all" box to continue.',
+                    target: document.getElementById('privacyModal')
+                });
+            }
+        });
+
+        // Trigger modal on label/link click
+        $('#triggerPrivacyModal, #triggerPrivacyModal a').on('click', function(e) {
+            e.preventDefault();
+            $('#privacyModal').modal('show');
+        });
+
+        // Sync main checkbox with button state (only allows checking via JS)
+        $('#privacyConsent').on('click', function(e) {
+            if (!$(this).is(':checked')) {
+                $('#btnRegister').prop('disabled', true);
+            } else {
+                // Prevent manual checking
+                e.preventDefault();
+                $('#privacyModal').modal('show');
+            }
+        });
+
+        // Prevent registration submission if not checked
+        $('form').on('submit', function(e) {
+            if (!$('#privacyConsent').is(':checked')) {
+                e.preventDefault();
+                $('#privacyModal').modal('show');
+            }
+        });
+    });
+</script>
 </body>
 </html>
