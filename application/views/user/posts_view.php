@@ -79,7 +79,20 @@ $student_number = $this->session->userdata('student_number') ? $this->session->u
             border: 1px solid var(--border);
         }
         .carousel-inner, .carousel-item { height: 100%; }
-        .carousel-item img { width: 100%; height: 100%; object-fit: cover; }
+        .carousel-item img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            object-position: center;
+            transition: transform 0.6s ease;
+            filter: saturate(1.05) contrast(1.05);
+        }
+
+        /* subtle zoom on hover */
+        .carousel-item:hover img {
+            transform: scale(1.04);
+        }
+
         .carousel-item { cursor: pointer; }
 
         .posts-section {
@@ -107,21 +120,55 @@ $student_number = $this->session->userdata('student_number') ? $this->session->u
 
         .post-image-container {
             width: 100%;
-            height: 140px;
+            height: 170px;
             overflow: hidden;
-            background: #f5f5f5;
+            background: #0f172a; /* dark fallback */
             display: flex;
             align-items: center;
             justify-content: center;
             border-bottom: 1px solid var(--border);
+            position: relative;
         }
+
 
         .post-image-container img {
             width: 100%;
             height: 100%;
-            object-fit: cover;
+            object-fit: contain; /* 🔥 key fix */
+            object-position: center;
             display: block;
+            transition: transform 0.4s ease;
+            background: #0f172a;
         }
+
+        /* subtle hover only */
+        .post-card:hover .post-image-container img {
+            transform: scale(1.03);
+        }
+
+        .post-image-container::before {
+            content: "";
+            position: absolute;
+            inset: 0;
+            background-size: cover;
+            background-position: center;
+            filter: blur(20px) brightness(0.6);
+            transform: scale(1.1);
+            z-index: 1;
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+
+        .post-image-container.has-portrait::before {
+            opacity: 1;
+        }
+
+        .post-image-container img {
+            position: relative;
+            z-index: 2;
+        }
+
+
 
         .post-image-placeholder {
             width: 100%;
@@ -129,14 +176,16 @@ $student_number = $this->session->userdata('student_number') ? $this->session->u
             display: flex;
             align-items: center;
             justify-content: center;
-            background: linear-gradient(135deg, #f0f0f0, #e8e8e8);
+            background: linear-gradient(135deg, #f8fafc, #eef2f7);
             color: var(--text-muted);
+            position: relative;
         }
 
         .post-image-placeholder i {
-            font-size: 32px;
-            color: var(--border);
+            font-size: 36px;
+            color: #cbd5e1;
         }
+
 
         .post-content {
             padding: 15px 20px;
@@ -201,15 +250,24 @@ $student_number = $this->session->userdata('student_number') ? $this->session->u
         
         #m-image-container {
             width: 100%;
-            height: 350px;
-            background: #eee;
+            height: 360px;
+            background: linear-gradient(135deg, #0f172a, #111827);
+            display: flex;
+            align-items: center;
+            justify-content: center;
         }
-        #m-image-container img {
+        .post-image-container {
+            border-top-left-radius: 12px;
+            border-top-right-radius: 12px;
+        }
+                #m-image-container img {
             width: 100%;
             height: 100%;
             object-fit: contain;
-            background: #000;
+            background: #0f172a;
+            padding: 10px;
         }
+
         .modal-body-text { padding: 32px; }
 
         .post-content-container { transition: opacity 0.3s ease; }
@@ -456,6 +514,40 @@ $(document).ready(function() {
         $('#carouselDetailModal').modal('show');
     });
 });
+
+function fixImageFit($container, imgSrc) {
+    const img = new Image();
+    img.onload = function () {
+        const isPortrait = this.height > this.width;
+
+        if (isPortrait) {
+            $container.addClass('has-portrait');
+            $container.css('--bg-url', `url('${imgSrc}')`);
+            $container[0].style.setProperty('background-image', 'none');
+            $container[0].style.setProperty('--bg-url', `url('${imgSrc}')`);
+            $container[0].style.setProperty('--bg-url', `url('${imgSrc}')`);
+            $container[0].style.setProperty('--bg-url', `url('${imgSrc}')`);
+            $container[0].style.setProperty('--bg-url', `url('${imgSrc}')`);
+            $container[0].style.setProperty('--bg-url', `url('${imgSrc}')`);
+            $container[0].style.setProperty('--bg-url', `url('${imgSrc}')`);
+            $container[0].style.setProperty('--bg-url', `url('${imgSrc}')`);
+            $container[0].style.setProperty('--bg-url', `url('${imgSrc}')`);
+            $container[0].style.setProperty('--bg-url', `url('${imgSrc}')`);
+            $container[0].style.setProperty('--bg-url', `url('${imgSrc}')`);
+            $container[0].style.setProperty('--bg-url', `url('${imgSrc}')`);
+            $container[0].style.setProperty('--bg-url', `url('${imgSrc}')`);
+            $container[0].style.setProperty('--bg-url', `url('${imgSrc}')`);
+            $container[0].style.setProperty('--bg-url', `url('${imgSrc}')`);
+            $container[0].style.setProperty('--bg-url', `url('${imgSrc}')`);
+            $container[0].style.setProperty('--bg-url', `url('${imgSrc}')`);
+            $container[0].style.setProperty('--bg-url', `url('${imgSrc}')`);
+            $container[0].style.setProperty('--bg-url', `url('${imgSrc}')`);
+            $container[0].style.setProperty('--bg-url', `url('${imgSrc}')`);
+        }
+    };
+    img.src = imgSrc;
+}
+
 </script>
 
 </body>

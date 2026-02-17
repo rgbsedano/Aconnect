@@ -151,6 +151,7 @@ public function update_skill_info($id)
 
     // Success message
     $this->session->set_flashdata('success', 'Skills updated successfully.');
+    redirect('profile');
     }
 
     // Certification Management
