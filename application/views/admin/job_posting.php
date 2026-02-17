@@ -381,7 +381,7 @@
             confirmButtonText: 'CONFIRM DELETE',
             padding: '2em',
             customClass: {
-                popup: 'modal-content',
+                popup: '',
                 confirmButton: 'btn btn-danger px-4',
                 cancelButton: 'btn btn-light px-4 mr-2'
             }
@@ -395,7 +395,7 @@
     document.addEventListener('DOMContentLoaded', function() {
         const Toast = Swal.mixin({
             toast: true,
-            position: 'top-end',
+            position: 'bottom-end',
             showConfirmButton: false,
             timer: 3000,
             timerProgressBar: true

@@ -84,6 +84,7 @@ public function update($id) {
     if (!empty($_FILES['profile_image']['name'])) {
         $config['upload_path']   = './assets/uploads/alumni/';
         $config['allowed_types'] = 'jpg|jpeg|png|gif';
+        $config['max_size']      = 7048;
         $config['file_name']     = uniqid() . '_' . $_FILES['profile_image']['name'];
 
         $this->load->library('upload', $config);
