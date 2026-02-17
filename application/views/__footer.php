@@ -217,17 +217,17 @@
     }
     
     /* Message Bubbles - Modern Style */
-    .fb-bubble { 
-        border-radius: 18px; 
-        padding: 10px 16px; 
-        max-width: 70%; 
-        font-size: 14px; 
+    .fb-bubble {
+        border-radius: 18px;
+        padding: 10px 16px;
+        max-width: 70%;
+        font-size: 14px;
         line-height: 1.4;
         position: relative;
         word-wrap: break-word;
         box-shadow: 0 1px 2px rgba(0,0,0,0.05);
-        animation: messageSlideIn 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
     }
+
     .fb-sent { 
         align-self: flex-end; 
         background: linear-gradient(135deg, #8B1538, #A52A2A);
@@ -354,7 +354,7 @@ $(document).ready(function() {
     // --- FRIENDS CHAT LOGIC ---
     let currentFriendId = null;
     let friendsPoll = null;
-
+    let lastFriendsHash = '';
 
     $('#friends-toggle-btn').on('click', function() {
         $('#friends-chat-window').fadeToggle(200).css('display', 'flex');
@@ -438,8 +438,23 @@ $(document).ready(function() {
 
         data.forEach(m => {
             let isSent = m.sender_id == '<?= $this->session->userdata("alumni_id") ?>';
-            let dateStr = m.sent_at ? m.sent_at.replace(/-/g, "/") : new Date();
-            let timeStr = new Date(dateStr).toLocaleTimeString([], {hour: '2-digit', minute:'2-digit'});
+            let timeStr = '';
+
+            if (m.sent_at) {
+                // expected format: YYYY-MM-DD HH:MM:SS
+                const parts = m.sent_at.split(/[- :]/);
+                const d = new Date(
+                    parts[0],        // year
+                    parts[1] - 1,    // month (0-based)
+                    parts[2],        // day
+                    parts[3],        // hour
+                    parts[4],        // minute
+                    parts[5] || 0
+                );
+
+                timeStr = d.toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' });
+            }
+
 
             html += `
                 <div class="fb-bubble ${isSent ? 'fb-sent' : 'fb-received'}">
@@ -450,7 +465,18 @@ $(document).ready(function() {
         });
 
         const container = $('#friends-chat-messages');
+
+        // ✅ prevent blinking if same messages
+        const newHash = JSON.stringify(data.map(m => m.id + m.message + m.sent_at));
+
+        if (newHash === lastFriendsHash) return;
+        lastFriendsHash = newHash;
+
         container.html(html);
+
+        // ✅ auto scroll smoothly
+        scrollFriendsToBottom(true);
+
 
         // safe text insert
         data.forEach((m, i) => {
@@ -462,7 +488,7 @@ $(document).ready(function() {
     }
 
 
-    function startFriendsPoll() { if(friendsPoll) clearInterval(friendsPoll); friendsPoll = setInterval(loadFriendsMessages, 3000); }
+    function startFriendsPoll() { if(friendsPoll) clearInterval(friendsPoll); friendsPoll = setInterval(loadFriendsMessages, 5000); }
     function stopFriendsPoll() { if(friendsPoll) clearInterval(friendsPoll); friendsPoll = null; }
 
 
