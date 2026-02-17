@@ -49,17 +49,35 @@ class AdminManageAccounts extends CI_Controller {
     }
 
     public function update($id) {
-        $data = [
-            'first_name' => $this->input->post('first_name'),
-            'last_name' => $this->input->post('last_name'),
-            'status' => $this->input->post('status'),
-        ];
-        $this->db->where('id', $id)->update('alumni', $data);
-        redirect('AdminManageAccounts');
-    }
+    $data = [
+        'first_name' => $this->input->post('first_name'),
+        'last_name' => $this->input->post('last_name'),
+        'phone' => $this->input->post('phone'),
+        'graduation_year' => $this->input->post('graduation_year'),
+        'student_number' => $this->input->post('student_number'),
+        'status' => $this->input->post('status'),
+    ];
+
+    $this->db->where('id', $id)->update('alumni', $data);
+
+    $this->session->set_flashdata('success', 'Account updated successfully!');
+    redirect('AdminManageAccounts');
+}
+
 
     public function delete($id) {
-        $this->db->where('id', $id)->delete('alumni');
-        redirect('AdminManageAccounts');
-    }
+
+    // delete dependencies first (safe)
+    $this->db->where('sender_id', $id)->delete('connection_requests');
+    $this->db->where('receiver_id', $id)->delete('connection_requests');
+    $this->db->where('alumni_id', $id)->delete('job_applications');
+    $this->db->where('alumni_id', $id)->delete('event_registrations');
+
+    $this->db->where('id', $id)->delete('alumni');
+
+    $this->session->set_flashdata('success', 'Account deleted successfully!');
+    redirect('AdminManageAccounts');
+}
+
+
 }

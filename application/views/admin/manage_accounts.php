@@ -92,6 +92,31 @@
 
 </style>
 
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+<?php if($this->session->flashdata('success')): ?>
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+    const Toast = Swal.mixin({
+        toast: true,
+        position: 'bottom-end',
+        showConfirmButton: false,
+        timer: 2500,
+        timerProgressBar: true,
+        didOpen: (toast) => {
+            toast.addEventListener('mouseenter', Swal.stopTimer)
+            toast.addEventListener('mouseleave', Swal.resumeTimer)
+        }
+    });
+
+    Toast.fire({
+        icon: 'success',
+        title: '<?= $this->session->flashdata('success') ?>'
+    });
+});
+</script>
+<?php endif; ?>
+
+
 <div class="dashboard-wrapper">
     <div class="header-section">
         <div>
@@ -213,3 +238,4 @@
         <?= $pagination ?>
     </div>
 </div>
+
