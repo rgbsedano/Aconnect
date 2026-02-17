@@ -11,49 +11,96 @@ class Alumni_model extends CI_Model {
         return $this->db->get('alumni')->result();
     }
     public function search_alumni($current_user_id, $search = '') {
-        $this->db->select('a.*, cr.status AS connection_status');
-        $this->db->from('alumni a');
-        $this->db->where('a.id !=', $current_user_id);
 
-        if (!empty($search)) {
-            $this->db->group_start()
-                     ->like('a.first_name', $search)
-                     ->or_like('a.last_name', $search)
-                     ->group_end();
-        }
+    $this->db->select('
+        a.*,
+        cr.id AS request_id,
+        cr.status AS connection_status,
+        cr.sender_id,
+        cr.receiver_id
+    ');
 
-        $this->db->join(
-            'connection_requests cr',
-            "(cr.sender_id = $current_user_id AND cr.receiver_id = a.id)
-             OR (cr.receiver_id = $current_user_id AND cr.sender_id = a.id)",
-            'left'
-        );
+    $this->db->from('alumni a');
+    $this->db->where('a.id !=', $current_user_id);
 
-        return $this->db->get()->result();
+    if (!empty($search)) {
+        $this->db->group_start()
+                 ->like('a.first_name', $search)
+                 ->or_like('a.last_name', $search)
+                 ->group_end();
     }
 
-    public function connection_exists($sender_id, $receiver_id) {
-        $this->db->where('sender_id', $sender_id);
-        $this->db->where('receiver_id', $receiver_id);
-        return $this->db->get('connection_requests')->row();
-    }
+    // Join any connection involving current user
+    $this->db->join(
+        'connection_requests cr',
+        "(
+            (cr.sender_id = $current_user_id AND cr.receiver_id = a.id)
+            OR 
+            (cr.receiver_id = $current_user_id AND cr.sender_id = a.id)
+        )",
+        'left'
+    );
 
-    public function send_connection_request($sender_id, $receiver_id) {
-        $this->db->insert('connection_requests', [
-            'sender_id' => $sender_id,
-            'receiver_id' => $receiver_id,
-            'status' => 'pending'
-        ]);
-    }
-    // Get incoming pending requests for current user
-public function get_pending_requests($alumni_id) {
-    $this->db->select('cr.*, a.first_name, a.last_name, a.profile_image');
-    $this->db->from('connection_requests cr');
-    $this->db->join('alumni a', 'a.id = cr.sender_id');
-    $this->db->where('cr.receiver_id', $alumni_id);
-    $this->db->where('cr.status', 'pending');
     return $this->db->get()->result();
 }
+
+
+    public function connection_exists($user1, $user2) {
+    $this->db->where("(sender_id = $user1 AND receiver_id = $user2) 
+                      OR (sender_id = $user2 AND receiver_id = $user1)");
+    return $this->db->get('connection_requests')->row();
+}
+
+
+
+   public function send_connection_request($sender_id, $receiver_id) {
+    $this->db->insert('connection_requests', [
+        'sender_id' => $sender_id,
+        'receiver_id' => $receiver_id,
+        'status' => 'pending'
+        
+    ]);
+    }
+
+    // Cancel a pending request
+    public function cancel_request($sender_id, $receiver_id) {
+        $this->db->where('sender_id', $sender_id);
+        $this->db->where('receiver_id', $receiver_id);
+        $this->db->where('status', 'pending');
+        $this->db->delete('connection_requests');
+    }
+
+    // Remove an existing connection (unlink)
+    public function remove_connection($sender_id, $receiver_id) {
+        // Query to find the connection regardless of who sent it
+        $this->db->where("(sender_id = $sender_id AND receiver_id = $receiver_id) OR (sender_id = $receiver_id AND receiver_id = $sender_id)");
+        $this->db->where('status', 'accepted');
+        $this->db->delete('connection_requests');
+    }
+
+    // Get incoming pending requests for current user
+public function get_pending_requests($alumni_id) {
+    $this->db->select('cr.*, 
+        a.first_name, a.last_name, a.profile_image, a.degree, a.gender,
+        cr.sender_id, cr.receiver_id
+    ');
+    $this->db->from('connection_requests cr');
+
+    // Join the OTHER person's profile
+    $this->db->join('alumni a', '
+        a.id = IF(cr.sender_id = '.$alumni_id.', cr.receiver_id, cr.sender_id)
+    ');
+
+    // Show ALL pending where I am involved
+    $this->db->where('cr.status', 'pending');
+    $this->db->where('(
+        cr.sender_id = '.$alumni_id.' OR 
+        cr.receiver_id = '.$alumni_id.'
+    )');
+
+    return $this->db->get()->result();
+}
+
 
 // Accept request
 public function accept_request($request_id) {
@@ -145,10 +192,28 @@ public function get_connections($alumni_id) {
         return $this->db->update('alumni', $data);
     }
 
+    // Certifications Logic
+    public function get_certifications($alumni_id) {
+        return $this->db->where('alumni_id', $alumni_id)->get('certifications')->result();
+    }
+
+    public function add_certification($data) {
+        return $this->db->insert('certifications', $data);
+    }
+
+    public function delete_certification($id, $alumni_id) {
+        return $this->db->where(['id' => $id, 'alumni_id' => $alumni_id])->delete('certifications');
+    }
+
+    // Public Profile fetching
+    public function get_public_profile($alumni_id) {
+        // Just reuse get_alumni_by_id, but we can add more joins here if needed
+        return $this->get_alumni_by_id($alumni_id);
+    }
+
     // Optional: If you ever need to get all alumni (e.g., admin side)
     public function get_all_alumni()
     {
         return $this->db->get('alumni')->result();
     }
-
 }

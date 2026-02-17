@@ -1,196 +1,423 @@
-<style>
-    .post-card {
-        height: 300px; /* Fixed card height */
-        display: flex;
-        flex-direction: column;
-        justify-content: space-between;
-        border: 1px solid #ddd;
-        border-radius: 8px;
-        padding: 15px;
-        overflow: hidden;
-    }
+<?php
+// Account details from session
+$display_full_name = $this->session->userdata('first_name') . ' ' . $this->session->userdata('last_name');
+$student_number = $this->session->userdata('student_number') ? $this->session->userdata('student_number') : 'N/A';
+?>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AConnect | Dashboard</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+    
+    <style>
+        :root {
+            --primary: #8B1538;
+            --primary-dark: #6B0F2A;
+            --accent: #D4A574;
+            --bg-page: #FAFAF8;
+            --white: #FFFFFF;
+            --text-main: #1F2937;
+            --text-muted: #6B7280;
+            --border: #E5E7EB;
+            --shadow-sm: 0 1px 2px rgba(0,0,0,0.05);
+            --shadow-md: 0 4px 6px rgba(0,0,0,0.07);
+            --shadow-lg: 0 10px 15px rgba(0,0,0,0.1);
+        }
 
-    .post-content {
-        flex-grow: 1;
-        overflow: hidden;
-        text-overflow: ellipsis;
-    }
+        html, body {
+            height: 100vh;
+            width: 100vw;
+            margin: 0;
+            padding: 0;
+            overflow: hidden !important; 
+            background-color: var(--bg-page);
+            display: flex;
+            flex-direction: column;
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+        }
 
-    .read-more {
-        text-align: right;
-        font-size: 14px;
-    }
+        .dashboard-wrapper {
+            flex: 1;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 30px;
+        }
 
-    .read-more a {
-        text-decoration: underline;
-        cursor: pointer;
-        color: #700A0A;
-    }
+        .dashboard-container {
+            width: 100%;
+            max-width: 1300px;
+            height: 85vh;
+            display: grid;
+            grid-template-columns: 1.3fr 1fr;
+            gap: 32px;
+        }
 
-    .carousel-control-prev,
-    .carousel-control-next {
-        filter: invert(1);
-    }
+        .carousel-section { height: 100%; min-height: 0; }
+        #carouselExample {
+            height: 100%;
+            border-radius: 16px;
+            overflow: hidden;
+            box-shadow: var(--shadow-lg);
+            background: var(--white);
+            border: 1px solid var(--border);
+        }
+        .carousel-inner, .carousel-item { height: 100%; }
+        .carousel-item img { width: 100%; height: 100%; object-fit: cover; }
+        .carousel-item { cursor: pointer; }
 
-    .carousel-navigation {
-        text-align: center;
-        margin-top: 10px;
-    }
+        .posts-section {
+            display: flex;
+            flex-direction: column;
+            gap: 18px;
+            height: 100%;
+            min-height: 0;
+        }
 
-    .carousel-navigation .btn {
-        background-color: #700A0A;
-        color: white;
-    }
+        .post-card {
+            flex: 1;
+            background: var(--white);
+            border-radius: 12px;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            box-shadow: var(--shadow-md);
+            border-left: 6px solid var(--primary);
+            min-height: 0;
+            transition: all 0.3s ease;
+            overflow: hidden;
+        }
+        .post-card:hover { box-shadow: var(--shadow-lg); }
 
-    /* New Footer for Cards */
-    .post-card-footer {
-        margin-top: auto;
-        font-size: 12px;
-        text-align: right;
-        color: #555;
-    }
+        .post-image-container {
+            width: 100%;
+            height: 140px;
+            overflow: hidden;
+            background: #f5f5f5;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-bottom: 1px solid var(--border);
+        }
 
-    .post-card-footer .date {
-        margin-bottom: 10px;
-    }
+        .post-image-container img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+        }
 
-    .post-card-footer .read-more {
-        margin-top: 10px;
-    }
+        .post-image-placeholder {
+            width: 100%;
+            height: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: linear-gradient(135deg, #f0f0f0, #e8e8e8);
+            color: var(--text-muted);
+        }
 
-    /* Footer styles */
-    footer {
-        background-color: #f8f9fa;
-        padding: 20px 0;
-        text-align: center;
-        font-size: 14px;
-    }
-</style>
+        .post-image-placeholder i {
+            font-size: 32px;
+            color: var(--border);
+        }
 
-<div class="container-fluid">
-        <?php $photos = $this->db->get('carousel_photos')->result_array(); ?>
+        .post-content {
+            padding: 15px 20px;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            flex: 1;
+        }
 
-        <?php if (!empty($photos)): ?>
-        <div class="container my-4">
-        <div id="carouselExample" class="carousel slide carousel-fade shadow rounded" data-ride="carousel" style="max-width: 768px; margin: 0 auto;">
+        .post-category {
+            font-size: 0.75rem;
+            text-transform: uppercase;
+            letter-spacing: 1.2px;
+            font-weight: 800;
+            color: var(--white);
+            background: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%);
+            padding: 4px 10px;
+            border-radius: 6px;
+        }
 
-            <!-- Indicators -->
-            <ol class="carousel-indicators">
-            <?php foreach ($photos as $index => $photo): ?>
-                <li data-target="#carouselExample" data-slide-to="<?= $index ?>" class="<?= $index === 0 ? 'active' : '' ?>"></li>
-            <?php endforeach; ?>
-            </ol>
+        .post-title {
+            font-size: 1.15rem;
+            font-weight: 700;
+            color: var(--text-main);
+            line-height: 1.3;
+            margin-top: 8px;
+            overflow: hidden;
+            display: -webkit-box;
+            -webkit-line-clamp: 2;
+            -webkit-box-orient: vertical;
+        }
 
-            <!-- Slides -->
-            <div class="carousel-inner rounded">
-            <?php foreach ($photos as $index => $photo): ?>
-                <div class="carousel-item <?= $index === 0 ? 'active' : '' ?>">
-                <img src="<?= base_url('assets/uploads/carousel/' . $photo['file_name']) ?>" 
-                    class="d-block w-100" 
-                    alt="Slide <?= $index + 1 ?>" 
-                    style="height: 400px; object-fit: fill; border-radius: 10px;">
-                </div>
-            <?php endforeach; ?>
-            </div>
+        .btn-details {
+            font-size: 0.8rem;
+            font-weight: 700;
+            color: var(--text-muted);
+            text-transform: uppercase;
+            letter-spacing: 0.8px;
+            background: none;
+            border: none;
+            cursor: pointer;
+            transition: color 0.3s ease;
+        }
+        .btn-details:hover { color: var(--primary); }
 
-            <!-- Controls -->
-            <a class="carousel-control-prev" href="#carouselExample" role="button" data-slide="prev">
-            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-            <span class="sr-only">Previous</span>
-            </a>
-            <a class="carousel-control-next" href="#carouselExample" role="button" data-slide="next">
-            <span class="carousel-control-next-icon" aria-hidden="true"></span>
-            <span class="sr-only">Next</span>
-            </a>
+        .btn-next {
+            background: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%);
+            color: white;
+            padding: 6px 16px;
+            border-radius: 8px;
+            font-size: 0.8rem;
+            font-weight: 700;
+            border: none;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+        .btn-next:hover { transform: translateY(-1px); box-shadow: var(--shadow-md); }
 
-        </div>
-        </div>
-        <?php endif; ?>
+        .modal-content { border-radius: 16px; border: none; overflow: hidden; }
+        .modal-header { background: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%); color: white; }
+        .modal-body { padding: 0; color: var(--text-main); line-height: 1.8; }
+        
+        #m-image-container {
+            width: 100%;
+            height: 350px;
+            background: #eee;
+        }
+        #m-image-container img {
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+            background: #000;
+        }
+        .modal-body-text { padding: 32px; }
 
-        <div class="container">
-    <?php foreach ($grouped_posts as $type => $posts): ?>
-        <div class="mb-4">
-            <h3 class="mb-3" style="color: #700A0A"><b><?= ucfirst($type) ?></b></h3>
-            <?php if (!empty($posts)): ?>
-                <div id="<?= $type ?>Carousel" class="carousel slide" data-ride="carousel" data-interval="false">
+        .post-content-container { transition: opacity 0.3s ease; }
+        .animate-out { opacity: 0; }
+        .animate-in { opacity: 1; }
+    </style>
+</head>
+<body>
+
+<div class="dashboard-wrapper">
+    <div class="dashboard-container">
+        
+        <div class="carousel-section">
+            <?php $photos = $this->db->get('carousel_photos')->result_array(); ?>
+            <?php if (!empty($photos)): ?>
+                <div id="carouselExample" class="carousel slide" data-ride="carousel">
                     <div class="carousel-inner">
-                        <?php
-                        $chunks = array_chunk($posts, 3);
-                        foreach ($chunks as $chunkIndex => $chunk): ?>
-                            <div class="carousel-item <?= $chunkIndex === 0 ? 'active' : '' ?>">
-                                <div class="row">
-                                    <?php foreach ($chunk as $post): ?>
-                                        <div class="col-md-4 mb-3">
-                                            <div class="post-card h-100">
-                                                <h5><b><?= $post->title ?></b></h5>
-                                                <div class="post-content"><?= word_limiter(strip_tags($post->content), 20) ?></div>
-                                                
-                                                <!-- Footer with date and Read More -->
-                                                <div class="post-card-footer">
-                                                    <div class="date">Posted on: <?= date('F j, Y, g:i a', strtotime($post->created_at)) ?></div>
-                                                    <div class="read-more">
-                                                        <a href="#" data-toggle="modal" data-target="#postModal<?= $post->id ?>">Read more</a>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-
-                                        <!-- Read More Modal -->
-                                        <div class="modal fade" id="postModal<?= $post->id ?>" tabindex="-1" role="dialog">
-                                            <div class="modal-dialog modal-lg" role="document">
-                                                <div class="modal-content">
-                                                    <div class="modal-header">
-                                                        <h5 class="modal-title"><?= $post->title ?></h5>
-                                                        <button type="button" class="close" data-dismiss="modal">&times;</button>
-                                                    </div>
-                                                    <div class="modal-body">
-                                                        <?php if ($post->image): ?>
-                                                            <img src="<?= base_url('assets/uploads/post/' . $post->image) ?>" alt="<?= $post->title ?>" class="img-fluid mb-3" />
-                                                        <?php endif; ?>
-                                                        <p><?= $post->content ?></p>
-                                                        <p><small>Posted on: <?= date('F j, Y, g:i a', strtotime($post->created_at)) ?></small></p>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    <?php endforeach; ?>
-                                </div>
+                        <?php foreach ($photos as $index => $photo): ?>
+                            <div class="carousel-item <?= $index === 0 ? 'active' : '' ?> open-carousel-details" 
+                                 data-title="<?= htmlspecialchars($photo['title'] ?: 'Announcement') ?>"
+                                 data-description="<?= htmlspecialchars($photo['description'] ?: '') ?>"
+                                 data-image="<?= base_url('assets/uploads/carousel/' . $photo['file_name']) ?>">
+                                <img src="<?= base_url('assets/uploads/carousel/' . $photo['file_name']) ?>" alt="SDCA Flyer">
                             </div>
                         <?php endforeach; ?>
                     </div>
-
-                    <!-- Navigation Controls (Bottom) -->
-                    <?php if (count($chunks) > 1): ?>
-                        <div class="carousel-navigation">
-                            <a class="btn btn-prev" href="#<?= $type ?>Carousel" role="button" data-slide="prev">Previous</a>
-                            <a class="btn btn-next" href="#<?= $type ?>Carousel" role="button" data-slide="next">Next</a>
-                        </div>
-                    <?php endif; ?>
+                    <a class="carousel-control-prev" href="#carouselExample" role="button" data-slide="prev">
+                        <span class="carousel-control-prev-icon"></span>
+                    </a>
+                    <a class="carousel-control-next" href="#carouselExample" role="button" data-slide="next">
+                        <span class="carousel-control-next-icon"></span>
+                    </a>
                 </div>
-            <?php else: ?>
-                <p>No <?= $type ?> posts available.</p>
             <?php endif; ?>
         </div>
-    <?php endforeach; ?>
+
+        <div class="posts-section">
+            <?php foreach ($grouped_posts as $type => $posts): ?>
+                <?php
+                $post_list = [];
+                foreach ($posts as $p) {
+                    $post_list[] = [
+                        'id' => $p->id,
+                        'title' => htmlspecialchars($p->title),
+                        'content' => nl2br(htmlspecialchars($p->content ?? 'No description available.')),
+                        'date' => date('M d, Y', strtotime($p->created_at)),
+                        'category' => $type,
+                        'image' => !empty($p->image) ? base_url('assets/uploads/post/' . htmlspecialchars($p->image)) : ''
+                    ];
+                }
+                $json_data = htmlspecialchars(json_encode($post_list), ENT_QUOTES, 'UTF-8');
+                ?>
+
+                <section class="post-card" data-posts="<?= $json_data ?>" data-idx="0">
+                    <div class="post-image-container">
+                        <?php if (!empty($posts) && !empty($posts[0]->image)): ?>
+                            <img src="<?= base_url('assets/uploads/post/' . htmlspecialchars($posts[0]->image)) ?>" alt="<?= htmlspecialchars($posts[0]->title) ?>">
+                        <?php else: ?>
+                            <div class="post-image-placeholder">
+                                <i class="fas fa-image"></i>
+                            </div>
+                        <?php endif; ?>
+                    </div>
+
+                    <div class="post-content">
+                        <div>
+                            <div class="flex justify-between items-center">
+                                <span class="post-category"><?= $type ?></span>
+                                <span class="post-date text-gray-400 text-[10px] font-bold"><?= !empty($posts) ? date('M d, Y', strtotime($posts[0]->created_at)) : '' ?></span>
+                            </div>
+
+                            <div class="post-content-container animate-in">
+                                <h4 class="post-title"><?= !empty($posts) ? $posts[0]->title : 'No Recent Updates' ?></h4>
+                            </div>
+                        </div>
+
+                        <div class="flex justify-between items-center mt-2">
+                            <?php if (!empty($posts)): ?>
+                                <button class="btn-details open-details-btn">
+                                    DETAILS <i class="fas fa-external-link-alt ml-1"></i>
+                                </button>
+                                
+                                <?php if (count($posts) > 1): ?>
+                                    <button class="btn-next next-post-btn">
+                                        NEXT <i class="fas fa-chevron-right ml-1"></i>
+                                    </button>
+                                <?php endif; ?>
+                            <?php endif; ?>
+                        </div>
+                    </div>
+                </section>
+            <?php endforeach; ?>
+        </div>
+    </div>
 </div>
 
-<!-- Footer Section -->
-<footer>
-    <p>&copy; 2025 Aconnect. All rights reserved.</p>
-</footer>
+<!-- Carousel Detail Modal -->
+<div class="modal fade" id="carouselDetailModal" tabindex="-1" role="dialog" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered modal-lg" role="document">
+        <div class="modal-content shadow-2xl">
+            <div class="modal-header" style="background: linear-gradient(135deg, var(--accent) 0%, var(--primary) 100%); color: white;">
+                <h5 class="modal-title font-bold" id="c-title">Flash Update</h5>
+                <button type="button" class="close text-white" data-dismiss="modal">&times;</button>
+            </div>
+            <div class="modal-body">
+                <div id="c-image-container" style="width: 100%; height: 400px; background: #000;">
+                    <img id="c-image" src="" style="width: 100%; height: 100%; object-fit: contain;">
+                </div>
+                <div class="modal-body-text p-5">
+                    <h3 id="c-title-display" class="font-extrabold text-2xl mb-3 text-gray-900"></h3>
+                    <div style="height: 4px; width: 60px; background: var(--primary); margin-bottom: 24px; border-radius: 2px;"></div>
+                    <div id="c-description" class="text-gray-700 text-lg leading-relaxed"></div>
+                </div>
+            </div>
+            <div class="modal-footer bg-gray-50">
+                <button type="button" class="btn btn-secondary px-5 py-2.5 rounded-xl font-bold" data-dismiss="modal" style="background: #e2e8f0; color: #475569; border: none;">Close</button>
+            </div>
+        </div>
+    </div>
+</div>
 
-<!-- Scroll Script -->
+<div class="modal fade" id="postDetailModal" tabindex="-1" role="dialog" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered modal-lg" role="document">
+        <div class="modal-content shadow-2xl">
+            <div class="modal-header">
+                <h5 class="modal-title font-bold" id="m-title">Post Title</h5>
+                <button type="button" class="close text-white" data-dismiss="modal">&times;</button>
+            </div>
+            <div class="modal-body">
+                <div id="m-image-container"></div>
+                <div class="modal-body-text">
+                    <div class="flex justify-between items-center mb-4">
+                        <span id="m-category" class="post-category">Category</span>
+                        <span id="m-date" class="font-semibold text-gray-500 italic">Date</span>
+                    </div>
+                    <div id="m-content" class="text-gray-700"></div>
+                </div>
+            </div>
+            <div class="modal-footer bg-gray-50">
+                <button type="button" class="btn btn-secondary px-4 py-2 rounded-lg font-bold" data-dismiss="modal">Close</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js"></script>
+
 <script>
-  function scrollCarousel(direction) {
-    const container = document.getElementById('cardCarousel');
-    const cardWidth = container.querySelector('.flex-shrink-0').offsetWidth;
-    container.scrollBy({
-      left: direction * cardWidth,
-      behavior: 'smooth'
+$(document).ready(function() {
+    $('.next-post-btn').on('click', function() {
+        const $card = $(this).closest('.post-card');
+        const $content = $card.find('.post-content-container');
+        const $title = $card.find('.post-title');
+        const $date = $card.find('.post-date');
+        const $imageContainer = $card.find('.post-image-container');
+        
+        const posts = $card.data('posts');
+        let idx = ($card.data('idx') + 1) % posts.length;
+        const next = posts[idx];
+
+        $content.addClass('animate-out');
+
+        setTimeout(() => {
+            $title.text(next.title);
+            $date.text(next.date);
+            
+            $imageContainer.empty();
+            if (next.image && next.image.trim() !== '') {
+                const img = $('<img>').attr('src', next.image).attr('alt', next.title);
+                $imageContainer.append(img);
+            } else {
+                $imageContainer.html('<div class="post-image-placeholder"><i class="fas fa-image"></i></div>');
+            }
+            
+            $card.data('idx', idx);
+            $content.removeClass('animate-out').addClass('animate-in');
+        }, 300);
     });
-  }
+
+    $('.open-details-btn').on('click', function() {
+        const $card = $(this).closest('.post-card');
+        const posts = $card.data('posts');
+        const idx = $card.data('idx');
+        const currentPost = posts[idx];
+
+        $('#m-title').text(currentPost.title);
+        $('#m-category').text(currentPost.category);
+        $('#m-date').text(currentPost.date);
+        
+        const $mImageContainer = $('#m-image-container');
+        $mImageContainer.empty();
+        if (currentPost.image && currentPost.image.trim() !== '') {
+            const img = $('<img>').attr('src', currentPost.image).attr('alt', currentPost.title);
+            $mImageContainer.append(img);
+        } else {
+            $mImageContainer.html('<div class="post-image-placeholder"><i class="fas fa-image" style="font-size: 64px;"></i></div>');
+        }
+        
+        $('#m-content').html(currentPost.content);
+        $('#postDetailModal').modal('show');
+    });
+
+    $('.open-carousel-details').on('click', function() {
+        const title = $(this).data('title');
+        const description = $(this).data('description');
+        const image = $(this).data('image');
+
+        if (!description && !title) return; // Don't show modal if no info
+
+        $('#c-title').text(title || 'Announcement');
+        $('#c-title-display').text(title || 'Network Update');
+        $('#c-image').attr('src', image);
+        $('#c-description').html(description.replace(/\n/g, '<br>'));
+        
+        $('#carouselDetailModal').modal('show');
+    });
+});
 </script>
 
-</div>
-<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

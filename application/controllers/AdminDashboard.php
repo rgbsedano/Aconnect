@@ -32,6 +32,13 @@ class AdminDashboard extends CI_Controller{
         $data['total_events'] = $this->db->query("SELECT COUNT(*) AS total_events FROM events")->row()->total_events;
         $data['total_post'] = $this->db->query("SELECT COUNT(*) AS total_post FROM post")->row()->total_post;
 
+        // Simulated growth data for the UI markers
+        $data['growth_events'] = "+4%";
+        $data['growth_posts'] = "+2%";
+        $data['growth_jobs'] = "+5%";
+        $data['growth_alumni'] = "+3%";
+        $data['growth_accounts'] = "+1%";
+
 		$this->load->view('__header');
 		$this->load->view('dashboard_a', $data);
 

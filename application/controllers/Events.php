@@ -17,7 +17,8 @@ class Events extends CI_Controller{
 	function index(){
 		$this->load->view('__header');
 
-		$data['events'] = $this->Event_model->get_all_events();
+		$alumni_id = $this->session->userdata('alumni_id');
+		$data['events'] = $this->Event_model->get_all_events($alumni_id);
         $this->load->view('user/events', $data);
 		
 		$this->load->view('__footer');
@@ -41,7 +42,8 @@ class Events extends CI_Controller{
     function previous(){
 		$this->load->view('__header');
 
-		$data['events'] = $this->Event_model->get_all_events();
+		$alumni_id = $this->session->userdata('alumni_id');
+		$data['events'] = $this->Event_model->get_all_events($alumni_id);
         $this->load->view('user/events_previous', $data);
 		
 		$this->load->view('__footer');

@@ -1,184 +1,489 @@
-<style>
-    .container-fluid {
-        padding: 30px;
-        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-        background-color: #f8f9fa;
-    }
-
-    .about-us-card {
-        background-color: #fff;
-        padding: 30px;
-        margin-bottom: 30px;
-        border-radius: 12px;
-        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
-        border: 1px solid #eee;
-    }
-
-    .section-title {
-        color: #333;
-        font-size: 2.5rem;
-        font-weight: 600;
-        margin-bottom: 25px;
-        text-align: center;
-    }
-
-    .section-text {
-        color: #555;
-        font-size: 1.1rem;
-        line-height: 1.8;
-        margin-bottom: 20px;
-    }
-
-    .story-image {
-        width: 100%;
-        max-width: 400px;
-        border-radius: 8px;
-        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
-        margin-bottom: 20px;
-        float: left;
-        margin-right: 25px;
-    }
-
-    .quote-container {
-        background-color: #e9ecef;
-        padding: 25px;
-        border-radius: 8px;
-        margin-bottom: 30px;
-        text-align: center;
-        font-size: 1.2rem;
-        color: #495057;
-        font-style: italic;
-    }
-
-    .mission-vision-grid {
-        display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-        gap: 30px;
-        margin-bottom: 30px;
-    }
-
-    .mission-card, .vision-card {
-        background-color: #fff;
-        padding: 30px;
-        border-radius: 12px;
-        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
-        border: 1px solid #eee;
-    }
-
-    .mission-card .section-title, .vision-card .section-title {
-        font-size: 2rem;
-        text-align: left;
-        margin-bottom: 20px;
-    }
-
-    .facebook-card {
-        background-color: #f0f2f5;
-        padding: 30px;
-        border-radius: 12px;
-        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
-        border: 1px solid #eee;
-        text-align: center;
-    }
-
-    .facebook-card .section-title {
-        font-size: 2rem;
-        margin-bottom: 20px;
-    }
-
-    .facebook-card .section-text {
-        margin-bottom: 20px;
-    }
-
-    .facebook-card a button {
-        padding: 12px 25px;
-        background-color: #1877f2;
-        color: white;
-        border: none;
-        border-radius: 8px;
-        cursor: pointer;
-        font-size: 1rem;
-        transition: background-color 0.2s ease-in-out;
-    }
-
-    .facebook-card a button:hover {
-        background-color: #1462c4;
-    }
-
-    /* Responsive adjustments */
-    @media (max-width: 768px) {
-        .story-image {
-            float: none;
-            margin-right: 0;
-            margin-bottom: 20px;
-            max-width: 100%;
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About - St. Dominic College of Asia</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+    
+    <style>
+        :root {
+            --primary: #8B1538;
+            --primary-dark: #6B0F2A;
+            --accent: #D4A574;
+            --bg-page: #FAFAF8;
+            --white: #FFFFFF;
+            --text-main: #1F2937;
+            --text-muted: #6B7280;
+            --border: #E5E7EB;
+            --shadow-sm: 0 1px 2px rgba(0,0,0,0.05);
+            --shadow-md: 0 4px 6px rgba(0,0,0,0.07);
+            --shadow-lg: 0 10px 15px rgba(0,0,0,0.1);
+            --radius-md: 8px;
+            --radius-lg: 12px;
         }
 
-        .section-title {
-            font-size: 2rem;
+        * {
+            box-sizing: border-box;
         }
 
-        .mission-vision-grid {
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            background-color: var(--bg-page);
+            font-family: 'Inter', sans-serif;
+            margin: 0;
+            padding: 0;
+            color: var(--text-main);
+            line-height: 1.6;
+        }
+
+        .header-spacing {
+            height: 70px;
+        }
+
+        .container {
+            max-width: 1400px;
+            width: 100%;
+            margin: -40px auto 40px 280px;
+            display: grid;
             grid-template-columns: 1fr;
+            gap: 32px;
+            padding: 0 20px;
         }
 
-        .mission-card .section-title, .vision-card .section-title {
+        @media (min-width: 1024px) {
+            .container {
+                grid-template-columns: 1fr 320px;
+                margin: -40px auto 40px 280px;
+            }
+        }
+
+        .story-section {
+            background: var(--white);
+            border-radius: var(--radius-lg);
+            border: 1px solid var(--border);
+            box-shadow: var(--shadow-md);
+            overflow: hidden;
+            transition: box-shadow 0.3s ease;
+        }
+
+        .story-section:hover {
+            box-shadow: var(--shadow-lg);
+        }
+
+        .hero-banner {
+            position: relative;
+            width: 100%;
+            background: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%);
+            overflow: hidden;
+        }
+
+        .hero-banner img {
+            width: 100%;
+            height: 600px;
+            display: block;
+            object-fit: cover;
+            transition: transform 0.6s ease;
+        }
+
+        .hero-banner:hover img {
+            transform: scale(1.02);
+        }
+
+        .hero-overlay {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            padding: 32px;
+            background: linear-gradient(to top, rgba(0,0,0,0.9) 0%, rgba(0,0,0,0.4) 50%, transparent);
+            color: white;
+        }
+
+        .hero-overlay h1 {
+            font-size: clamp(24px, 5vw, 36px);
+            font-weight: 800;
+            margin: 0;
+            line-height: 1.3;
+            letter-spacing: -0.5px;
+        }
+
+        .story-content {
+            padding: 48px;
+        }
+
+        .story-content p {
+            margin-bottom: 24px;
+            font-size: 1.02rem;
+            color: var(--text-main);
+            line-height: 1.8;
+        }
+
+        .story-content p strong {
+            color: var(--primary);
+            font-weight: 700;
+        }
+
+        .drop-cap::first-letter {
+            float: left;
+            font-size: 3.2rem;
+            font-weight: 900;
+            line-height: 0.8;
+            padding-right: 16px;
+            color: var(--primary);
+            margin-top: 4px;
+        }
+
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 20px;
+            margin: 32px 0;
+        }
+
+        .stat-card {
+            background: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%);
+            color: white;
+            padding: 24px;
+            border-radius: var(--radius-lg);
             text-align: center;
+            transition: transform 0.3s ease;
         }
-    }
-</style>
 
-<div class="container-fluid">
+        .stat-card:hover {
+            transform: translateY(-4px);
+        }
 
-    <div class="about-us-card">
-        <h1 class="section-title"><b>Our Journey</b></h1>
-        <p class="section-text">
-            <img src="<?= base_url('assets/images/andaman-family.png') ?>" alt="Graduation" class="story-image">
-            The story of St. Dominic College of Asia (SDCA) is a shining example of what a dedicated family is capable of achieving through perseverance, hard work, and cooperation. The College traces its roots with the establishment of the St. Dominic Medical Center (SDMC) in 1992 by founders Don Gregorio and Dona Dominga Andaman. Named in honor of Dominga, the SDMC has proven itself capable of meeting the medical demands of the community with its modern facilities and excellent services.<br><br>
+        .stat-number {
+            font-size: 2.5rem;
+            font-weight: 900;
+            margin-bottom: 8px;
+        }
 
-            In 2003, 12 years after the realization of the dream hospital in Cavite, St. Dominic College of Arts & Sciences was founded. The College is the family’s gift to the community and the manifestation of their commitment to provide excellent but affordable education in Bacoor and neighboring communities.<br><br>
+        .stat-label {
+            font-size: 0.9rem;
+            opacity: 0.9;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
 
-            Initially offering programs in Caregiving and BS Nursing in collaboration with the SDMC, St. Dominic has evolved into a full-fledged collegiate institution with four schools: School of Health Science Professions (SHSP), School of Arts, Sciences, Criminology & Education (SASCE), School of International Hospitality & Tourism Management (SIHTM), and School of Business & Computer Studies (SBCS).<br><br>
+        .programs-showcase {
+            background: var(--bg-page);
+            padding: 32px;
+            border-radius: var(--radius-lg);
+            margin: 32px 0;
+        }
 
-            In 2007, the College embarked on an ambitious long-term goal which aims to achieve university status within the next 20 years. The plan for “The March Towards Excellence” was presented to the academic community and became the blueprint for development. Preparations towards accreditation of the academic programs were pursued in earnest. Rebranding strategies were also explored to make the College more relevant, responsive, and congruent with the current trends and practices of a highly globalized educational system. In 2009, St. Dominic College of Arts & Sciences was officially renamed St. Dominic College of Asia. The change of name was made to allow the College to grow and provide more room for expansion in its programs and services in the years to come. This change redounds to the benefit of the students as it will eventually give them a positional advantage in the crowded workplace in the competitive world for its name reflects the global standards that the College stands for.<br><br>
+        .programs-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 24px;
+            margin-top: 24px;
+        }
 
-            In 2011, Dr. Marita A. Andaman-Rillo, eldest daughter of the founders, passed on the presidency of SDCA to the equally dynamic and capable youngest Andaman son, Dr. Gregorio A. Andaman, Jr. Constantly pushing for continuous change and improvement, Dr. Andaman, in his first year of presidency, launched the institution’s battlecry “Revolutionizing Education”, a campaign reflective of the Caviteno’s aggressiveness and fighting spirit. Highlights of this academic transformation include the launch of the Basic Education Unit (Preschool, Elementary, and High School), and accreditation of Business Administration, Information Technology, Education, Psychology, Hospitality Management, and Nursing programs by the Philippine Association of Colleges and Universities Commission on Accreditation (PACUCOA), both in 2012.
-        </p>
-    </div>
+        .program-card {
+            background: var(--white);
+            padding: 20px;
+            border-radius: var(--radius-md);
+            border-left: 4px solid var(--primary);
+            transition: all 0.3s ease;
+        }
 
-    <div class="quote-container">
-        <strong>"Your Vision of the future, is our Mission today."</strong>
-    </div>
+        .program-card:hover {
+            box-shadow: var(--shadow-md);
+            transform: translateX(4px);
+        }
 
-    <div class="mission-vision-grid">
-        <div class="mission-card about-us-card">
-            <h2 class="section-title"><b>Our Mission</b></h2>
-            <p class="section-text">
-                To revolutionize education by purposively linking the quality of education,
-                training, and research with community service in pursuing the holistic
-                development of individuals through innovative programs and productive
-                activities attuned to local and global demands.
-            </p>
+        .program-icon {
+            color: var(--primary);
+            font-size: 1.5rem;
+            margin-bottom: 12px;
+        }
+
+        .program-title {
+            font-weight: 700;
+            color: var(--text-main);
+            margin-bottom: 8px;
+        }
+
+        .program-list {
+            font-size: 0.85rem;
+            color: var(--text-muted);
+            line-height: 1.5;
+        }
+
+        .sidebar {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+            height: 100%;
+        }
+
+        .sidebar-card {
+            background: var(--white);
+            border-radius: var(--radius-lg);
+            border: 1px solid var(--border);
+            padding: 28px;
+            box-shadow: var(--shadow-md);
+            transition: all 0.3s ease;
+        }
+
+        .sidebar-card:hover {
+            box-shadow: var(--shadow-lg);
+            border-color: var(--accent);
+        }
+
+        .quote-widget {
+            background: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%);
+            color: white;
+            border: none;
+            text-align: center;
+            padding: 32px 28px;
+        }
+
+        .quote-widget blockquote {
+            margin: 0;
+            font-size: 1.25rem;
+            font-weight: 700;
+            font-style: italic;
+            line-height: 1.6;
+            letter-spacing: -0.3px;
+        }
+
+        .mv-widget h3 {
+            font-size: 0.75rem;
+            text-transform: uppercase;
+            letter-spacing: 1.2px;
+            color: var(--primary);
+            margin-bottom: 12px;
+            margin-top: 0;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            font-weight: 700;
+        }
+
+        .mv-widget h3 i {
+            color: var(--accent);
+            font-size: 1.1rem;
+        }
+
+        .mv-widget p {
+            font-size: 0.9rem;
+            color: var(--text-muted);
+            margin: 0;
+            line-height: 1.6;
+        }
+
+        .divider {
+            height: 1px;
+            background: var(--border);
+            margin: 20px 0;
+        }
+
+        .btn-primary {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+            background: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%);
+            color: white;
+            padding: 12px 24px;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 0.95rem;
+            transition: all 0.3s ease;
+            width: 100%;
+            border: none;
+            cursor: pointer;
+            box-shadow: var(--shadow-md);
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-2px);
+            box-shadow: var(--shadow-lg);
+        }
+
+        .btn-primary i {
+            font-size: 1rem;
+        }
+
+        .footer-info {
+            text-align: center;
+            padding: 16px 12px;
+            color: var(--text-muted);
+            font-size: 0.8rem;
+            line-height: 1.6;
+            border-top: 1px solid var(--border);
+            margin-top: auto;
+            margin-bottom: 0;
+        }
+
+        @media (max-width: 1023px) {
+            .container {
+                margin: 30px auto;
+            }
+
+            .story-content {
+                padding: 32px;
+            }
+        }
+
+        @media (max-width: 640px) {
+            .header-spacing {
+                height: 60px;
+            }
+
+            .container {
+                gap: 20px;
+                margin: 20px auto;
+            }
+
+            .story-content {
+                padding: 24px;
+            }
+
+            .sidebar-card {
+                padding: 20px;
+            }
+
+            .hero-overlay {
+                padding: 24px;
+            }
+
+            .hero-overlay h1 {
+                font-size: 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<div class="header-spacing"></div>
+
+<div class="container">
+    <main class="story-section">
+        <div class="hero-banner">
+            <img src="assets/images/andaman-family.png" 
+                 alt="The Andaman Family" 
+                 onerror="this.src='https://placehold.co/1200x400/8B1538/FFFFFF?text=SDCA+Heritage';">
+            <div class="hero-overlay">
+                <h1>Our Heritage & Mission</h1>
+            </div>
         </div>
 
-        <div class="vision-card about-us-card">
-            <h2 class="section-title"><b>Our Vision</b></h2>
-            <p class="section-text">
-                A dynamic and proactive university in Asia dedicated to excellence in
-                providing learner-centered education, research, and sustainable community
-                service towards development.
+        <div class="story-content">
+            <p class="drop-cap">
+                <strong>St. Dominic College of Asia (SDCA)</strong> traces its roots to the establishment of St. Dominic Medical Center in 1991 by founders Don Gregorio and Doña Dominga Andaman. In 2003, what began as a healthcare vision evolved into a comprehensive educational institution that has been transforming lives for over two decades in Bacoor, Cavite.
+            </p>
+
+            <div class="stats-grid">
+                <div class="stat-card">
+                    <div class="stat-number">30+</div>
+                    <div class="stat-label">Years of Excellence</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-number">5</div>
+                    <div class="stat-label">Specialized Schools</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-number">50+</div>
+                    <div class="stat-label">Academic Programs</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-number">100%</div>
+                    <div class="stat-label">Commitment to Quality</div>
+                </div>
+            </div>
+
+            <p>
+                Under the visionary leadership of <strong>Dr. Gregorio A. Andaman, Jr.</strong>, SDCA has embraced the battlecry "<span style="color: var(--primary); font-weight: 700;">Revolutionizing Education</span>" since 2011. This philosophy drives our innovative approach to learner-centered education, cutting-edge research, and meaningful community engagement.
+            </p>
+
+            <div class="programs-showcase">
+                <h3 style="color: var(--primary); font-size: 1.5rem; font-weight: 700; margin-bottom: 8px;">Our Academic Excellence</h3>
+                <p style="color: var(--text-muted); margin-bottom: 24px;">Five specialized schools offering comprehensive programs from basic education to graduate studies:</p>
+                
+                <div class="programs-grid">
+                    <div class="program-card">
+                        <div class="program-icon"><i class="fas fa-heartbeat"></i></div>
+                        <div class="program-title">School of Nursing & Allied Health Studies</div>
+                        <div class="program-list">• BS Nursing<br>• BS Radiologic Technology<br>• BS Physical Therapy</div>
+                    </div>
+                    <div class="program-card">
+                        <div class="program-icon"><i class="fas fa-flask"></i></div>
+                        <div class="program-title">School of Medical Laboratory Science</div>
+                        <div class="program-list">• BS Biology<br>• BS Pharmacy<br>• BS Medical Laboratory Science</div>
+                    </div>
+                    <div class="program-card">
+                        <div class="program-icon"><i class="fas fa-calculator"></i></div>
+                        <div class="program-title">School of Accountancy, Sciences & Education</div>
+                        <div class="program-list">• BS Accountancy<br>• BS Psychology<br>• BS Education</div>
+                    </div>
+                    <div class="program-card">
+                        <div class="program-icon"><i class="fas fa-utensils"></i></div>
+                        <div class="program-title">School of International Hospitality & Tourism</div>
+                        <div class="program-list">• BS Tourism Management<br>• BS Hospitality Management<br>• Culinary Arts</div>
+                    </div>
+                    <div class="program-card">
+                        <div class="program-icon"><i class="fas fa-laptop"></i></div>
+                        <div class="program-title">School of Business & Computer Studies</div>
+                        <div class="program-list">• BS Business Administration<br>• BS Information Technology<br>• BA Communication</div>
+                    </div>
+                    <div class="program-card">
+                        <div class="program-icon"><i class="fas fa-graduation-cap"></i></div>
+                        <div class="program-title">Graduate Studies & Medicine</div>
+                        <div class="program-list">• MBA<br>• MA in Psychology<br>• Doctor of Medicine</div>
+                    </div>
+                </div>
+            </div>
+
+            <p>
+                Our commitment to excellence is reflected in our <strong>PACUCOA accreditation</strong> for multiple programs and our consistent achievement of high passing rates in licensure examinations. From our <strong>Basic Education Unit</strong> (Preschool to Senior High School) to our <strong>Graduate Studies</strong>, we prepare students not just for careers, but for meaningful contributions to society through holistic development and community service.
+            </p>
+
+            <p>
+                Located in the heart of <strong>Bacoor, Cavite</strong>, SDCA continues to revolutionize education by linking training and research with community service, pursuing the holistic development of individuals through innovative programs that meet global standards while serving local needs.
             </p>
         </div>
-    </div>
+    </main>
 
-    <div class="facebook-card about-us-card">
-        <h2 class="section-title"><strong>Connect with Us on Facebook</strong></h2>
-        <p class="section-text">
-            Stay up-to-date with the latest news, events, and announcements from St. Dominic College of Asia by following our official Facebook page. Join our online community to engage with students, faculty, and alumni.
-        </p>
-        <a href="https://www.facebook.com/sdcaofficial" target="_blank">
-            <button>
-                Visit Our Facebook Page
-            </button>
-        </a>
-    </div>
-    </div>
+    <aside class="sidebar">
+        <div class="sidebar-card quote-widget">
+            <blockquote translate="no">
+                "Your Vision of the future, is our Mission today."
+            </blockquote>
+        </div>
+
+        <div class="sidebar-card mv-widget">
+            <h3><i class="fas fa-bullseye"></i> Our Mission</h3>
+            <p>To revolutionize education by linking training and research with community service, pursuing the holistic development of individuals through innovative programs.</p>
+            
+            <div class="divider"></div>
+            
+            <h3><i class="fas fa-eye"></i> Our Vision</h3>
+            <p>A dynamic and proactive university in Asia dedicated to excellence in providing learner-centered education and sustainable community service.</p>
+        </div>
+
+        <div class="sidebar-card">
+            <h4 style="margin: 0 0 12px 0; font-size: 1.05rem; font-weight: 700; color: var(--text-main);">Connect With Us</h4>
+            <p style="font-size: 0.9rem; color: var(--text-muted); margin-bottom: 16px; line-height: 1.6;">Join our community and stay informed about campus achievements and opportunities.</p>
+            <a href="https://www.facebook.com/stdominiccollege" target="_blank" class="btn-primary">
+                <i class="fab fa-facebook-f"></i> Follow SDCA
+            </a>
+        </div>
+
+        <div class="footer-info">
+            <strong style="color: var(--text-main);">Est. 2003</strong> • Bacoor, Cavite<br>
+            © 2026 St. Dominic College of Asia
+        </div>
+    </aside>
+</div>
+
+</body>
+</html>

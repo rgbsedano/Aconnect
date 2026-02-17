@@ -1,273 +1,382 @@
+<?php
+$primary_color = '#700A0A';
+$secondary_color = '#C90000';
+$accent_color = '#70ADBC';
+$text_light = '#FFFFFF';
+
+// Getting account details from session
+$display_full_name = $this->session->userdata('first_name') . ' ' . $this->session->userdata('last_name');
+$student_number = $this->session->userdata('student_number') ? $this->session->userdata('student_number') : 'N/A';
+
+$current_uri_segment_1 = property_exists($this, 'uri') ? $this->uri->segment(1) : '';
+$current_uri_segment_2 = property_exists($this, 'uri') ? $this->uri->segment(2) : '';
+
+// Helper function for active states
+function is_active_segment($segment1, $segment2 = null) {
+    global $current_uri_segment_1, $current_uri_segment_2;
+    if ($segment2 !== null) {
+        return $current_uri_segment_1 === $segment1 && $current_uri_segment_2 === $segment2;
+    }
+    return $current_uri_segment_1 === $segment1;
+}
+
+// Precise active state logic
+$is_home = (empty($current_uri_segment_1) || in_array($current_uri_segment_1, ['PostController', 'postcontroller']));
+$is_network = in_array($current_uri_segment_1, ['alumni', 'alumni_request']);
+$is_jobs = ($current_uri_segment_1 === 'jobs');
+$is_messaging = ($current_uri_segment_1 === 'chat');
+$is_events = in_array($current_uri_segment_1, ['events', 'eventsprevious']);
+$admin_management_active = in_array($current_uri_segment_1, ['adminalumni', 'AdminJobPosting', 'AdminEvents', 'AdminPost']);
+$admin_system_active = in_array($current_uri_segment_1, ['AdminManageAccounts', 'AdminActivityLog']);
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <meta name="description" content="">
-    <meta name="author" content="">
-
-    <title>APP NAME</title>
+    <title>AConnect</title>
     <link href="<?php echo base_url('assets/fontawesome-free/css/all.min.css'); ?>" rel="stylesheet" type="text/css">
-    <link href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Nunito:200,400,600,700,800" rel="stylesheet">
     <link href="<?php echo base_url('assets/css/sb-admin-2.min.css'); ?>" rel="stylesheet">
-    <link href="<?php echo base_url('assets/css/user/post.css'); ?>" rel="stylesheet">
-    
-    <link rel="stylesheet" href="https://cdn.datatables.net/1.13.6/css/jquery.dataTables.min.css">
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"> 
 
+    <style>
+        :root {
+            --primary-color: <?php echo $primary_color; ?>;
+            --secondary-color: <?php echo $secondary_color; ?>;
+            --nav-bg: #ffffff;
+            --nav-text: #666666;
+            --nav-height: 55px;
+        }
+
+        body { 
+            background-color: #f3f2ef; 
+            padding-top: 0 !important;
+            font-size: 1.05rem;
+        }
+
+        #ac-main-header {
+            position: sticky;
+            top: 0;
+            width: 100%;
+            z-index: 2000;
+            background-color: var(--nav-bg);
+            border-bottom: 1px solid rgba(0,0,0,0.08);
+            height: var(--nav-height);
+        }
+
+        .ac-container {
+            max-width: 1185px;
+            margin: 0 auto;
+            width: 100%;
+            display: flex;
+            align-items: center;
+            padding: 0 25px;
+            height: 100%;
+        }
+
+        .primary-nav, .primary-nav ul {
+            height: 100%;
+            display: flex;
+            margin: 0;
+            padding: 0;
+            list-style: none;
+        }
+
+        .primary-nav { margin-left: auto; }
+
+        .nav-item {
+            height: 100%;
+            display: flex;
+            align-items: center;
+        }
+
+        .nav-link-item {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            color: var(--nav-text);
+            text-decoration: none !important;
+            min-width: 84px;
+            height: 100%;
+            font-size: 13px;
+            transition: all 0.2s ease-in-out;
+            position: relative;
+            padding-top: 4px;
+            border-bottom: 2px solid transparent;
+        }
+
+        .nav-link-item i {
+            font-size: 20px;
+            margin-bottom: 4px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 20px;
+            height: 20px;
+            min-width: 20px;
+            min-height: 20px;
+            transition: all 0.2s ease-in-out;
+        }
+
+        .nav-link-item span {
+            font-weight: 500;
+            letter-spacing: 0.3px;
+            display: flex;
+            align-items: center;
+            gap: 4px;
+        }
+
+        .nav-link-item:hover {
+            color: #000000;
+        }
+
+        .nav-link-item.active-link {
+            color: #000000;
+            border-bottom: 2px solid #000000;
+        }
+
+        .nav-item.dropdown .nav-link-item span::after {
+            content: '';
+            margin-left: 6px;
+            display: inline-block;
+            width: 0;
+            height: 0;
+            border-left: 4px solid transparent;
+            border-right: 4px solid transparent;
+            border-top: 4px solid currentColor;
+            transition: transform 0.2s ease-in-out;
+        }
+
+        .nav-item.dropdown .nav-link-item:hover span::after,
+        .nav-item.dropdown .nav-link-item.active-link span::after {
+            transform: rotate(-180deg);
+        }
+
+        .dropdown-toggle::after {
+            display: none !important;
+        }
+
+        .dropdown-menu {
+            margin-top: 0 !important;
+            border: none;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+            border-radius: 0 0 4px 4px;
+            z-index: 2100;
+            font-size: 0.95rem;
+        }
+
+        .dropdown-menu .dropdown-item {
+            padding: 10px 18px;
+            color: #333;
+            transition: all 0.2s ease-in-out;
+            border-left: 3px solid transparent;
+        }
+
+        .dropdown-menu .dropdown-item:hover {
+            background-color: #f8f9fa;
+            border-left-color: var(--primary-color);
+            color: var(--primary-color);
+            font-weight: 600;
+        }
+
+        .user-logout-area {
+            display: flex;
+            align-items: center;
+            border-left: 1px solid rgba(0,0,0,0.08);
+            margin-left: 13px;
+            padding-left: 13px;
+            height: 100%;
+        }
+
+        .account-info-display {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+            justify-content: center;
+            height: 100%;
+            padding: 0 11px;
+            color: var(--nav-text);
+            text-decoration: none !important;
+            transition: all 0.2s ease-in-out;
+            cursor: pointer;
+        }
+
+        .account-info-display:hover {
+            color: var(--primary-color);
+        }
+
+        .student-id-label {
+            font-size: 11px;
+            font-weight: 700;
+            color: var(--primary-color);
+            line-height: 1;
+            margin-bottom: 3px;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .account-name-label {
+            font-size: 15px;
+            font-weight: 600;
+            color: #333;
+            line-height: 1;
+            display: flex;
+            align-items: center;
+            gap: 6px;
+        }
+
+        .account-name-label i {
+            font-size: 10px;
+            transition: transform 0.2s ease-in-out;
+        }
+
+        .account-info-display:hover .account-name-label i {
+            transform: rotate(-180deg);
+        }
+
+        .logout-link {
+            padding-left: 11px;
+            color: var(--nav-text);
+            font-size: 19px;
+            display: flex;
+            align-items: center;
+            text-decoration: none !important;
+            transition: all 0.2s ease-in-out;
+            position: relative;
+        }
+
+        .logout-link i {
+            transition: all 0.2s ease-in-out;
+        }
+
+        .logout-link:hover {
+            color: var(--secondary-color);
+        }
+
+        .logout-link:hover i {
+            transform: scale(1.2);
+        }
+
+        @media (max-width: 768px) {
+            .nav-link-item span { display: none; }
+            .nav-link-item { min-width: 53px; }
+            .student-id-label { display: none; }
+        }
+    </style>
 </head>
+<body>
 
-<body id="page-top">
-<?php if($this->session->userdata('role') == 'alumni'){ ?>
-    <div id="wrapper">
-        <ul class="navbar-nav bg-gradient-primary sidebar sidebar-dark accordion" id="accordionSidebar">
-            <a class="sidebar-brand d-flex align-items-center justify-content-center" style="padding-top: 50px; padding-bottom: 40px;" href="profile">
-                <div class="sidebar-brand-icon rotate-n-0">
-
-                    <?php if ($this->session->userdata('profile_image')): ?>
-                        <img class="img-profile rounded-circle" src="<?php echo base_url('assets/uploads/alumni/' . $this->session->userdata('profile_image')); ?>" style="width: 4rem; height: 4rem; object-fit: cover;">
-                    <?php else: ?>
-                        <img  style="border-radius: 50%;" src="<?php echo base_url('assets/images/person-male.png'); ?>" alt="My Photo">
-                    <?php endif; ?>
-                </div>
-                <div class="sidebar-brand-text mx-3 " style="color: #fff;">
-                    <?php echo $this->session->userdata('first_name') . ' ' . $this->session->userdata('last_name'); ?>
-                </div>
-            </a>
-            <div class="sidebar-brand-text mx-3" style="width:100%; color: #fff;">
-                    Alumni ID: <?php echo $this->session->userdata('alumni_number'); ?><br>
-
-                </div>
-            <hr class="sidebar-divider my-0">
-
-
-           
-
-            <li class="nav-item <?php echo ($this->uri->segment(1) == 'PostController') ? 'active' : ''; ?>">
-                <a class="nav-link collapsed " href="PostController" >
-                    <i class="fas fa-fw fas fa-chalkboard "></i>
-                    <span>Homepage</span>
+<header id="ac-main-header">
+    <div class="ac-container">
+        <div class="logo-area">
+            <?php if($this->session->userdata('role') == 'administrator'): ?>
+                <a href="<?php echo base_url('AdminDashboard'); ?>">
+                    <img src="<?php echo base_url('assets/images/logo.png'); ?>" alt="Admin Logo" style="height:52px;">
                 </a>
-            </li>
-
-            <hr class="sidebar-divider">
-            <div class="sidebar-heading">
-                Menu
-            </div>
-
-            <li class="nav-item <?php echo ($this->uri->segment(1) == 'profile') ? 'active' : ''; ?>">
-                <a class="nav-link collapsed" href="profile" >
-                    <i class="fas fa-fw fas fa-address-card"></i>
-                    <span>My Profile</span>
+            <?php else: ?>
+                <a href="<?php echo base_url('PostController'); ?>">
+                    <img src="<?php echo base_url('assets/images/small_logo.png'); ?>" alt="Logo" style="height:52px;">
                 </a>
-            </li>
+            <?php endif; ?>
+        </div>
 
-            <li class="nav-item <?php echo ($this->uri->segment(1) == 'jobs') ? 'active' : ''; ?>">
-                <a class="nav-link collapsed" href="jobs" >
-                    <i class="fas fa-fw fas fa-suitcase "></i>
-                    <span>Jobs</span>
-                </a>
-            </li>
-
-            <?php
-            $seg1 = $this->uri->segment(1); // e.g. "user"
-            $seg2 = $this->uri->segment(2); // e.g. "profile"
-            $seg3 = $this->uri->segment(3); // e.g. "profile"
-            ?>
-
-            <li class="nav-item <?php echo ($seg1 == 'alumni' && $seg2 == 'alumni_request') ? 'active' : ''; ?>">
-                <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseUtilities" aria-expanded="true" aria-controls="collapseUtilities">
-                    <i class="fas fa-fw fas fa-users "></i>
-                    <span>Connect</span>
-                </a>
-                <div id="collapseUtilities" class="collapse" aria-labelledby="headingUtilities" data-parent="#accordionSidebar">
-                    <div class="bg-white py-2 collapse-inner rounded">
-                        <a class="collapse-item <?php echo ($this->uri->segment(1) == 'alumni') ? 'active' : ''; ?>" href="alumni">Search</a>
-                        <a class="collapse-item <?php echo ($this->uri->segment(1) == 'alumni_request') ? 'active' : ''; ?>" href="alumni_request">Connect Request</a>
-                        <a class="collapse-item <?php echo ($this->uri->segment(1) == 'chat') ? 'active' : ''; ?>" href="chat">Inbox</a>
-                    </div>
-                </div>
-            </li>
-
-            <li class="nav-item <?php echo ($seg1 == 'alumni' && $seg2 == 'alumni_request') ? 'active' : ''; ?>">
-                <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseUtilities2" aria-expanded="true" aria-controls="collapseUtilities2">
-                    <i class="fas fa-fw fas fa-calendar-alt "></i>
-                    <span>Events</span>
-                </a>
-                <div id="collapseUtilities2" class="collapse" aria-labelledby="headingUtilities" data-parent="#accordionSidebar">
-                    <div class="bg-white py-2 collapse-inner rounded">
-                        <a class="collapse-item <?php echo ($this->uri->segment(1) == 'events') ? 'active' : ''; ?>" href="events">Upcoming Events</a>
-                        <a class="collapse-item <?php echo ($this->uri->segment(1) == 'alumni_request') ? 'active' : ''; ?>" href="eventsprevious">Previous Events</a>
-                        
-                    </div>
-                </div>
-            </li>
-
-            <li class="nav-item <?php echo ($this->uri->segment(1) == 'dashboard') ? 'active' : ''; ?>">
-                <a class="nav-link" href="dashboard">
-                    <i class="fas fa-fw fas fa-info-circle"></i>
-                    <span>About Us</span></a>
-            </li>
-
-            <li class="nav-item <?php echo ($this->uri->segment(1) == 'support') ? 'active' : ''; ?>">
-                <a class="nav-link" href="support">
-                    <i class="fas fa-fw fas fa-comment"></i>
-                    <span>Chat Support</span></a>
-            </li>
-
-    
-            <hr class="sidebar-divider">
-
-            <li class="nav-item">
-                <a class="nav-link" href="<?php echo base_url('login/logout'); ?>">
-                    <i class="fas fa-sign-out-alt fa-sm fa-fw mr-2"></i>
-                    <span>Logout</span>
-                </a>
-            </li>
-            <div class="text-center d-none d-md-inline">
-                <button class="rounded-circle border-0" id="sidebarToggle"></button>
-            </div>
-
-        </ul>
-        <div id="content-wrapper" class="d-flex flex-column">
-
-            <div id="content">
-
-                <nav class="navbar navbar-expand navbar-light bg-white topbar mb-4 static-top shadow">
-
-                    <button id="sidebarToggleTop" class="btn btn-link d-md-none rounded-circle mr-3">
-                        <i class="fa fa-bars"></i>
-                    </button>
-
-                    <ul class="navbar-nav ml-auto">
-
-                        <div class="topbar-divider d-none d-sm-block"></div>
-
-                    </ul>
-
-                </nav>
-
-<?php }?>
-
-
-<?php if($this->session->userdata('role') == 'administrator'){ ?>
-                <div id="wrapper">
-                    <ul class="navbar-nav bg-gradient-primary sidebar sidebar-dark accordion" id="accordionSidebar">
-                        <a class="sidebar-brand d-flex align-items-center justify-content-center" style="padding-top: 80px; padding-bottom: 50px;" href="#">
-                            <div class="sidebar-brand-icon rotate-n-0">
-
-                                <?php if ($this->session->userdata('profile_image')): ?>
-                                    <img class="img-profile rounded-circle" src="<?php echo base_url('uploads/alumni/' . $this->session->userdata('profile_image')); ?>" style="width: 2rem; height: 2rem; object-fit: cover;">
-                                <?php else: ?>
-                                    <img  style="border-radius: 50%;" src="<?php echo base_url('assets/images/person-male.png'); ?>" alt="My Photo">
-                                <?php endif; ?>
-                            </div>
-                            <div class="sidebar-brand-text mx-3">
-                                <?php echo $this->session->userdata('first_name') . ' ' . $this->session->userdata('last_name'); ?>
-                            </div>
+        <nav class="primary-nav">
+            <ul>
+                <?php if($this->session->userdata('role') == 'alumni'): ?>
+                    <li class="nav-item">
+                        <a href="<?php echo base_url('postcontroller'); ?>" class="nav-link-item <?php echo $is_home ? 'active-link' : ''; ?>">
+                            <i class="fas fa-house-user"></i><span>Home</span>
                         </a>
-                        <div class="sidebar-brand-text mx-3" style="width:100%; color: #fff;">
-                         Email: <?php echo $this->session->userdata('email'); ?><br>
-                            </div>
-                        <hr class="sidebar-divider my-0">
+                    </li>
+                    <li class="nav-item">
+                        <a href="<?php echo base_url('alumni'); ?>" class="nav-link-item <?php echo $is_network ? 'active-link' : ''; ?>">
+                            <i class="fas fa-user-friends"></i><span>Network</span>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="<?php echo base_url('jobs'); ?>" class="nav-link-item <?php echo $is_jobs ? 'active-link' : ''; ?>">
+                            <i class="fas fa-briefcase"></i><span>Jobs</span>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="javascript:void(0)" id="navbar-messaging-btn" class="nav-link-item <?php echo $is_messaging ? 'active-link' : ''; ?>">
+                            <i class="fas fa-comment-dots"></i><span>Messaging</span>
+                        </a>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link-item dropdown-toggle <?php echo $is_events ? 'active-link' : ''; ?>" href="#" id="eventsDropdown" data-toggle="dropdown">
+                            <i class="fas fa-calendar-alt"></i><span>Events</span>
+                        </a>
+                        <div class="dropdown-menu dropdown-menu-right" aria-labelledby="eventsDropdown">
+                            <a class="dropdown-item" href="<?php echo base_url('events'); ?>">Upcoming</a>
+                            <a class="dropdown-item" href="<?php echo base_url('eventsprevious'); ?>">Previous</a>
+                        </div>
+                    </li>
 
+                <?php elseif($this->session->userdata('role') == 'administrator'): ?>
+                    <li class="nav-item">
+                        <a href="<?php echo base_url('AdminDashboard'); ?>" class="nav-link-item <?php echo is_active_segment('AdminDashboard') ? 'active-link' : ''; ?>">
+                            <i class="fas fa-tachometer-alt"></i><span>Dashboard</span>
+                        </a>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link-item dropdown-toggle <?php echo $admin_management_active ? 'active-link' : ''; ?>" href="#" id="mgmtDropdown" data-toggle="dropdown">
+                            <i class="fas fa-tasks"></i><span>Management</span>
+                        </a>
+                        <div class="dropdown-menu dropdown-menu-right" aria-labelledby="mgmtDropdown">
+                            <a class="dropdown-item" href="<?php echo base_url('adminalumni'); ?>">Alumni List</a>
+                            <a class="dropdown-item" href="<?php echo base_url('AdminJobPosting'); ?>">Job Posting</a>
+                            <a class="dropdown-item" href="<?php echo base_url('AdminEvents'); ?>">Events</a>
+                            <a class="dropdown-item" href="<?php echo base_url('AdminPost'); ?>">Posting</a>
+                        </div>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link-item dropdown-toggle <?php echo $admin_system_active ? 'active-link' : ''; ?>" href="#" id="sysDropdown" data-toggle="dropdown">
+                            <i class="fas fa-cogs"></i><span>System</span>
+                        </a>
+                        <div class="dropdown-menu dropdown-menu-right" aria-labelledby="sysDropdown">
+                            <a class="dropdown-item" href="<?php echo base_url('AdminManageAccounts'); ?>">User Accounts</a>
+                            <a class="dropdown-item" href="<?php echo base_url('AdminActivityLog'); ?>">Activity Log</a>
+                        </div>
+                    </li>
+                    <li class="nav-item">
+                        <a href="<?php echo base_url('support/admin_inbox'); ?>" class="nav-link-item <?php echo is_active_segment('support', 'admin_inbox') ? 'active-link' : ''; ?>">
+                            <i class="fas fa-headset"></i><span>Support</span>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="<?php echo base_url('AdminReports'); ?>" class="nav-link-item <?php echo is_active_segment('AdminReports') ? 'active-link' : ''; ?>">
+                            <i class="fas fa-chart-bar"></i><span>Analytics</span>
+                        </a>
+                    </li>
+                <?php endif; ?>
 
-            <li class="nav-item <?php echo ($this->uri->segment(1) == 'AdminDashboard') ? 'active' : ''; ?>">
-                <a class="nav-link collapsed " href="<?php echo base_url('AdminDashboard'); ?>" >
-                    <i class="fas fa-fw fa-tachometer-alt "></i>
-                    <span>Dashboard</span>
-                </a>
-            </li>
+                <div class="user-logout-area">
+                    <li class="nav-item">
+                        <a href="<?php echo ($this->session->userdata('role') == 'administrator') ? '#' : base_url('profile'); ?>" class="account-info-display">
+                            <span class="student-id-label"><?php echo ($this->session->userdata('role') == 'administrator') ? 'ADMIN' : $student_number; ?></span>
+                            <span class="account-name-label"><?php echo $display_full_name; ?> <i class="fas fa-caret-down" style="font-size: 11px;"></i></span>
+                        </a>
+                    </li>
+                    <a href="<?php echo base_url('login/logout'); ?>" class="logout-link" title="Logout">
+                        <i class="fas fa-sign-out-alt"></i>
+                    </a>
+                </div>
+            </ul>
+        </nav>
+    </div>
+</header>
 
-            <hr class="sidebar-divider">
-            <div class="sidebar-heading">
-                Menu
-            </div>
+<script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.2/dist/js/bootstrap.bundle.min.js"></script>
 
-            <li class="nav-item <?php echo ($this->uri->segment(1) == 'adminalumni') ? 'active' : ''; ?>">
-                <a class="nav-link collapsed" href="<?php echo base_url('adminalumni'); ?>" >
-                    <i class="fas fa-fw fa-database "></i>
-                    <span>Alumni List</span>
-                </a>
-            </li>
+<script>
+    $(document).ready(function() {
+        $('.dropdown-toggle').dropdown();
+    });
+</script>
 
-            <li class="nav-item <?php echo ($this->uri->segment(1) == 'AdminJobPosting') ? 'active' : ''; ?>">
-                <a class="nav-link collapsed" href="<?php echo base_url('AdminJobPosting'); ?>" >
-                    <i class="fas fa-fw fa-suitcase "></i>
-                    <span>Job Posting</span>
-                </a>
-            </li>
-
-            <li class="nav-item <?php echo ($this->uri->segment(1) == 'AdminEvents') ? 'active' : ''; ?>">
-                <a class="nav-link collapsed" href="<?php echo base_url('AdminEvents'); ?>" >
-                    <i class="fas fa-fw fa-calendar-alt "></i>
-                    <span>Events</span>
-                </a>
-            </li>
-
-            <li class="nav-item <?php echo ($this->uri->segment(1) == 'AdminPost') ? 'active' : ''; ?>">
-                <a class="nav-link" href="<?php echo base_url('AdminPost'); ?>">
-                    <i class="fas fa-fw fas fa-pen-square"></i>
-                    <span>Posting</span></a>
-            </li>
-            <hr class="sidebar-divider">
-            <div class="sidebar-heading">
-                Options
-            </div>
-
-            <li class="nav-item <?php echo ($this->uri->segment(1) == 'AdminManageAccounts') ? 'active' : ''; ?>">
-                <a class="nav-link" href="<?php echo base_url('AdminManageAccounts'); ?>">
-                    <i class="fas fa-fw fa-user"></i>
-                    <span>User Management</span></a>
-            </li>
-
-            <li class="nav-item <?php echo ($this->uri->segment(1) == 'AdminActivityLog') ? 'active' : ''; ?>">
-                <a class="nav-link" href="<?php echo base_url('AdminActivityLog'); ?>">
-                    <i class="fas fa-fw fas fa-eye"></i>
-                    <span>Activity Log</span></a>
-            </li>
-
-            <li class="nav-item <?php echo ($this->uri->segment(1) == 'support/admin_inbox') ? 'active' : ''; ?>">
-                <a class="nav-link" href="<?php echo base_url('support/admin_inbox'); ?>">
-                    <i class="fas fa-fw fas fa-comment"></i>
-                    <span>Chat Support</span></a>
-            </li>
-
-            <hr class="sidebar-divider d-none d-md-block">
-
-       
-        <li class="nav-item">
-                <a class="nav-link" href="<?php echo base_url('AdminLogin/logout'); ?>">
-                    <i class="fas fa-sign-out-alt fa-sm fa-fw mr-2"></i>
-                    <span>Logout</span>
-                </a>
-            </li>
-   
-
-
-            <div class="text-center d-none d-md-inline">
-                <button class="rounded-circle border-0" id="sidebarToggle"></button>
-            </div>
-
-        </ul>
-        <div id="content-wrapper" class="d-flex flex-column">
-
-            <div id="content">
-
-                <nav class="navbar navbar-expand navbar-light bg-white topbar mb-4 static-top shadow">
-
-                    <button id="sidebarToggleTop" class="btn btn-link d-md-none rounded-circle mr-3">
-                        <i class="fa fa-bars"></i>
-                    </button>
-
-
-                    <ul class="navbar-nav ml-auto">
-
-
-                        <div class="topbar-divider d-none d-sm-block"></div>
-
-                    </ul>
-
-                </nav>
-<?php }?>
+</body>
+</html>

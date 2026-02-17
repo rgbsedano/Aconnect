@@ -1,134 +1,591 @@
 <style>
+    @import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap');
+
+    :root {
+        --primary-bg: #f8fafc;
+        --card-bg: #ffffff;
+        --text-main: #1e293b;
+        --text-muted: #64748b;
+        --accent-red: #700a0a;
+        --accent-green: #04b373;
+        --accent-blue: #3b59ff;
+        --accent-pink: #ff2d55;
+        --accent-orange: #ff9500;
+        --accent-teal: #00a28a;
+        --accent-purple: #5856d6;
+        --dark-footer: #1a1e2e;
+        --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+
+    body {
+        background-color: var(--primary-bg);
+        font-family: 'Plus Jakarta Sans', sans-serif;
+        color: var(--text-main);
+    }
+
+    .dashboard-wrapper {
+        max-width: 1400px;
+        margin: 0 auto;
+        padding: 20px 24px;
+        animation: fadeIn 0.8s ease-out;
+    }
+
+    @keyframes fadeIn {
+        from { opacity: 0; transform: translateY(10px); }
+        to { opacity: 1; transform: translateY(0); }
+    }
+
+    .header-section {
+        margin-bottom: 24px;
+    }
+
+    .header-section h1 {
+        font-size: 28px;
+        font-weight: 700;
+        margin-bottom: 4px;
+    }
+
+    .header-section h1 span {
+        color: var(--accent-red);
+    }
+
+    .header-section p {
+        color: var(--text-muted);
+        font-size: 14px;
+    }
+
+    .main-grid {
+        display: grid;
+        grid-template-columns: 300px 1fr;
+        gap: 20px;
+        margin-bottom: 0;
+    }
+
+    /* Left Column: Alumni Status */
+    .status-card {
+        background: var(--card-bg);
+        border-radius: 24px;
+        padding: 24px;
+        box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05), 0 2px 4px -1px rgba(0, 0, 0, 0.03);
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        transition: var(--transition);
+        height: fit-content;
+    }
+
+    .status-card:hover {
+        transform: translateY(-8px) scale(1.01);
+        box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.15);
+    }
+
+    .status-card-header {
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-bottom: 20px;
+    }
+
+    .status-card-header h3 {
+        font-size: 16px;
+        font-weight: 700;
+        margin: 0;
+    }
+
+    .status-card-header p {
+        font-size: 11px;
+        color: var(--text-muted);
+        text-transform: uppercase;
+        letter-spacing: 1px;
+        font-weight: 600;
+        margin: 2px 0 0 0;
+    }
+
+    .chart-container {
+        position: relative;
+        width: 180px;
+        height: 180px;
+        margin: 10px 0;
+    }
+
+    .chart-center-text {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        text-align: center;
+    }
+
+    .chart-center-text .total-num {
+        font-size: 32px;
+        font-weight: 800;
+        line-height: 1;
+        display: block;
+    }
+
+    .chart-center-text .total-label {
+        font-size: 8px;
+        font-weight: 700;
+        text-transform: uppercase;
+        color: var(--text-muted);
+        letter-spacing: 0.5px;
+    }
+
+    .legend-container {
+        width: 100%;
+        margin-top: 20px;
+    }
+
+    .legend-row {
+        display: flex;
+        justify-content: center;
+        gap: 16px;
+        margin-bottom: 20px;
+    }
+
+    .legend-item {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-bottom: 10px;
+        font-size: 13px;
+        font-weight: 600;
+        width: 100%;
+    }
+
+    .legend-label {
+        display: flex;
+        align-items: center;
+        gap: 8px;
+    }
+
+    .dot {
+        width: 10px;
+        height: 10px;
+        border-radius: 50%;
+        flex-shrink: 0;
+    }
+
+    .dot.active { background-color: var(--accent-green); box-shadow: 0 0 8px rgba(4, 179, 115, 0.2); }
+    .dot.inactive { background-color: var(--accent-pink); box-shadow: 0 0 8px rgba(255, 45, 85, 0.2); }
+
+    /* Right Column: Metrics Grid */
+    .metrics-grid {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        grid-template-rows: repeat(2, 1fr);
+        gap: 20px;
+    }
+
+    .metric-card {
+        background: var(--card-bg);
+        border-radius: 24px;
+        padding: 20px;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        text-decoration: none;
+        color: inherit;
+        transition: var(--transition);
+        border: 1px solid transparent;
+        position: relative;
+        overflow: hidden;
+        min-height: 160px;
+    }
+
+    .metric-card:hover {
+        transform: translateY(-8px);
+        box-shadow: 0 15px 30px -5px rgba(0, 0, 0, 0.1);
+        border-color: #f1f5f9;
+    }
     
-
-.dashboard-widgets {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); /* Creates a responsive grid */
-    gap: 1.5rem;
-    margin-top: 2rem;
-}
-
-.widget {
-    background-color: white;
-    border-radius: 0.5rem;
-    padding: 1.5rem;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    text-align: center;
-}
-
-.widget-icon img {
-    width: 2rem;
-    height: 2rem;
-    margin-bottom: 0.5rem;
-    /* Add styling for your icons */
-}
-
-.widget-value {
-    font-size: 1.75rem;
-    font-weight: bold;
-    color: #232d42;
-}
-
-.widget-title {
-    color: #8a92a6;
-    font-size: 0.875rem;
-    margin-bottom: 1rem;
-}
-
-.widget-button {
-    background-color: #700A0A; /* Example button color */
-    color: white;
-    border: none;
-    padding: 0.5rem 1rem;
-    border-radius: 0.25rem;
-    cursor: pointer;
-    font-size: 0.875rem;
-    transition: background-color 0.2s ease;
-}
-
-.widget-button:hover {
-    background-color: #e94040;
+    .metric-card::after {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 4px;
+        background: currentColor;
+        opacity: 0;
+        transition: var(--transition);
+    }
     
-}
+    .metric-card:hover::after {
+        opacity: 0.5;
+    }
 
-.job-section { padding: 20px; background-color: #fff; border-radius: 8px; box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); margin-bottom: 20px; }
+    .icon-box {
+        width: 40px;
+        height: 40px;
+        border-radius: 10px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: white;
+        font-size: 18px;
+        transition: var(--transition);
+    }
+    
+    .metric-card:hover .icon-box {
+        transform: scale(1.1) rotate(-5deg);
+    }
+
+    .arrow-icon {
+        color: var(--text-muted);
+        opacity: 0.3;
+        font-size: 14px;
+        transition: var(--transition);
+    }
+    
+    .metric-card:hover .arrow-icon {
+        opacity: 1;
+        transform: translateX(5px);
+    }
+
+    .metric-content h4 {
+        font-size: 11px;
+        text-transform: uppercase;
+        color: var(--text-muted);
+        letter-spacing: 0.5px;
+        margin-bottom: 6px;
+        font-weight: 700;
+    }
+
+    .metric-value-box {
+        display: flex;
+        align-items: baseline;
+        gap: 6px;
+    }
+
+    .metric-value {
+        font-size: 28px;
+        font-weight: 700;
+        transition: var(--transition);
+    }
+    
+    .metric-card:hover .metric-value {
+        color: var(--accent-red);
+    }
+
+    .growth {
+        font-size: 11px;
+        font-weight: 600;
+        color: var(--accent-green);
+        display: flex;
+        align-items: center;
+        gap: 2px;
+        background: rgba(4, 179, 115, 0.1);
+        padding: 1px 6px;
+        border-radius: 8px;
+    }
+
+    /* System Audit Section */
+    .audit-card {
+        background: var(--dark-footer);
+        border-radius: 24px;
+        padding: 20px;
+        color: white;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        transition: var(--transition);
+        position: relative;
+    }
+
+    .audit-card:hover {
+        transform: translateY(-8px);
+        box-shadow: 0 20px 40px -10px rgba(0, 0, 0, 0.4);
+    }
+
+    .audit-info h5 {
+        font-size: 10px;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+        opacity: 0.7;
+        margin-bottom: 4px;
+    }
+
+    .audit-info h2 {
+        font-size: 18px;
+        font-weight: 700;
+        margin-bottom: 4px;
+    }
+
+    .audit-info p {
+        font-size: 13px;
+        opacity: 0.6;
+        margin: 0;
+    }
+
+    .audit-action {
+        width: 40px;
+        height: 40px;
+        background: rgba(255,255,255,0.1);
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: white;
+        text-decoration: none;
+        font-size: 18px;
+        transition: var(--transition);
+        align-self: flex-end;
+    }
+
+    .audit-action:hover {
+        background: white;
+        color: var(--dark-footer);
+        transform: rotate(90deg);
+    }
+
+    @media (max-width: 1200px) {
+        .metrics-grid {
+            grid-template-columns: repeat(2, 1fr);
+        }
+    }
+
+    @media (max-width: 1024px) {
+        .main-grid {
+            grid-template-columns: 1fr;
+        }
+        .status-card {
+            max-width: 300px;
+            margin: 0 auto 20px;
+        }
+    }
+
+    @media (max-width: 640px) {
+        .metrics-grid {
+            grid-template-columns: 1fr;
+        }
+        .legend-row {
+            flex-direction: column;
+            gap: 12px;
+            align-items: flex-start;
+        }
+    }
 </style>
 
-<!-- edit content start here-->
+<div class="dashboard-wrapper">
+    <header class="header-section">
+        <h1>Platform <span>Overview</span></h1>
+        <p>Welcome back, Administrator. Here's what's happening today.</p>
+    </header>
 
-<div class="container-fluid">
-          <!-- Page Heading -->
-         
+    <div class="main-grid">
+        <!-- Alumni Status Card -->
+        <aside class="status-card">
+            <div class="status-card-header">
+                <div>
+                    <h3>Alumni Status</h3>
+                    <p>Real-time metrics</p>
+                </div>
+                <div class="text-muted"><i class="fas fa-chart-pie"></i></div>
+            </div>
 
-<!-- Content Row 1 -->
-<div class="dashboard-container">
-      
-        <main class="main-content" class>
-            
-            <div class="content-area">
+            <div class="chart-container">
+                <canvas id="statusChart"></canvas>
+                <div class="chart-center-text">
+                    <span class="total-num"><?= $total_users ?></span>
+                    <span class="total-label">Members</span>
+                </div>
+            </div>
+
+            <div class="legend-container">
+                <div class="legend-row">
+                    <span class="legend-label" style="font-size: 12px; font-weight: 600; color: var(--text-main);">
+                        <span class="dot active"></span>
+                        Active
+                    </span>
+                    <span class="legend-label" style="font-size: 12px; font-weight: 600; color: var(--text-main);">
+                        <span class="dot inactive"></span>
+                        Inactive
+                    </span>
+                </div>
                 
-                <h2>📊 Alumni Status Overview</h2>
-                <canvas id="alumniChart" style=" width: 50%;
-  max-height: 60%;" ></canvas>
+                <div class="legend-item">
+                    <span class="legend-label">
+                        <span class="dot active"></span> Active
+                    </span>
+                    <span><?= $total_users > 0 ? round(($active_users / $total_users) * 100) : 0 ?>%</span>
+                </div>
+                <div class="legend-item">
+                    <span class="legend-label">
+                        <span class="dot inactive"></span> Inactive
+                    </span>
+                    <span><?= $total_users > 0 ? round(($inactive_users / $total_users) * 100) : 0 ?>%</span>
+                </div>
+            </div>
+        </aside>
 
-                <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-                <script>
-                    const ctx = document.getElementById('alumniChart').getContext('2d');
-                    new Chart(ctx, {
-                        type: 'doughnut',
-                        data: {
-                            labels: ['Active Users', 'Inactive Users'],
-                            datasets: [{
-                                label: 'Alumni Status',
-                                data: [<?= $active_users ?>, <?= $inactive_users ?>],
-                                backgroundColor: ['#4CAF50', '#FF7043'],
-                                borderColor: ['#388E3C', '#E64A19'],
-                                borderWidth: 1
-                            }]
-                        },
-                        options: {
-                            responsive: true,
-                            plugins: {
-                                legend: { position: 'bottom' },
-                                title: { display: true, text: 'Active vs Inactive Alumni' }
-                            }
-                        }
-                    });
-                </script>
+        <!-- Metrics Grid -->
+        <main class="metrics-grid">
+            <!-- Community Events -->
+            <a href="<?= site_url('AdminEvents') ?>" class="metric-card" style="color: var(--accent-blue);">
+                <div class="metric-top">
+                    <div class="icon-box" style="background-color: var(--accent-blue);">
+                        <i class="fas fa-calendar-alt"></i>
+                    </div>
+                    <i class="fas fa-chevron-right arrow-icon"></i>
+                </div>
+                <div class="metric-content">
+                    <h4>Community Events</h4>
+                    <div class="metric-value-box">
+                        <span class="metric-value"><?= $total_events ?></span>
+                        <span class="growth"><i class="fas fa-caret-up"></i> <?= $growth_events ?></span>
+                    </div>
+                </div>
+            </a>
 
-                <div class="dashboard-widgets">
-                    <?php
-                    function widget($icon, $value, $title, $link) {
-                        echo "
-                        <div class='widget'>
-                            <div class='widget-icon'><img src='" . base_url("/assets/icons/$icon") . "' alt='$title'></div>
-                            <div class='widget-info'>
-                                <span class='widget-value'>$value</span><br>
-                                <span class='widget-title'>$title</span>
-                            </div>
-                            <a href='" . site_url($link) . "' class='widget-button'>View Details</a>
-                        </div>";
-                    }
+            <!-- Platform Posts -->
+            <a href="<?= site_url('AdminPost') ?>" class="metric-card" style="color: var(--accent-pink);">
+                <div class="metric-top">
+                    <div class="icon-box" style="background-color: var(--accent-pink);">
+                        <i class="fas fa-rss"></i>
+                    </div>
+                    <i class="fas fa-chevron-right arrow-icon"></i>
+                </div>
+                <div class="metric-content">
+                    <h4>Platform Posts</h4>
+                    <div class="metric-value-box">
+                        <span class="metric-value"><?= $total_post ?></span>
+                        <span class="growth"><i class="fas fa-caret-up"></i> <?= $growth_posts ?></span>
+                    </div>
+                </div>
+            </a>
 
-                    widget('events.png', $total_events, 'Total Events', 'AdminEvents');
-                    widget('post.png', $total_post, 'Post', 'AdminPost');
-                    widget('job.png', $total_jobs, 'Total Job Posts', 'AdminJobPosting');
-                    widget('user.svg', $total_alumni, 'Total Alumni Members', 'AdminAlumni');
-                    widget('user.svg', $total_accounts, 'Total Active Users', 'AdminManageAccounts');
-                    ?>
-                </div>  
+            <!-- Job Opportunities -->
+            <a href="<?= site_url('AdminJobPosting') ?>" class="metric-card" style="color: var(--accent-orange);">
+                <div class="metric-top">
+                    <div class="icon-box" style="background-color: var(--accent-orange);">
+                        <i class="fas fa-briefcase"></i>
+                    </div>
+                    <i class="fas fa-chevron-right arrow-icon"></i>
+                </div>
+                <div class="metric-content">
+                    <h4>Job Opportunities</h4>
+                    <div class="metric-value-box">
+                        <span class="metric-value"><?= $total_jobs ?></span>
+                        <span class="growth"><i class="fas fa-caret-up"></i> <?= $growth_jobs ?></span>
+                    </div>
+                </div>
+            </a>
+
+            <!-- Verified Alumni -->
+            <a href="<?= site_url('AdminAlumni') ?>" class="metric-card" style="color: var(--accent-teal);">
+                <div class="metric-top">
+                    <div class="icon-box" style="background-color: var(--accent-teal);">
+                        <i class="fas fa-user-graduate"></i>
+                    </div>
+                    <i class="fas fa-chevron-right arrow-icon"></i>
+                </div>
+                <div class="metric-content">
+                    <h4>Verified Alumni</h4>
+                    <div class="metric-value-box">
+                        <span class="metric-value"><?= $total_alumni ?></span>
+                        <span class="growth"><i class="fas fa-caret-up"></i> <?= $growth_alumni ?></span>
+                    </div>
+                </div>
+            </a>
+
+            <!-- Support Chat -->
+            <a href="<?= site_url('support/admin_inbox') ?>" class="metric-card" style="color: var(--accent-purple);">
+                <div class="metric-top">
+                    <div class="icon-box" style="background-color: var(--accent-purple);">
+                        <i class="fas fa-headset"></i>
+                    </div>
+                    <i class="fas fa-chevron-right arrow-icon"></i>
+                </div>
+                <div class="metric-content">
+                    <h4>Support Chat</h4>
+                    <div class="metric-value-box">
+                        <span class="metric-value">View</span>
+                    </div>
+                </div>
+            </a>
+
+            <!-- Admin Access -->
+            <a href="<?= site_url('AdminManageAccounts') ?>" class="metric-card" style="color: var(--accent-teal);">
+                <div class="metric-top">
+                    <div class="icon-box" style="background-color: var(--accent-teal);">
+                        <i class="fas fa-shield-alt"></i>
+                    </div>
+                    <i class="fas fa-chevron-right arrow-icon"></i>
+                </div>
+                <div class="metric-content">
+                    <h4>Admin Access</h4>
+                    <div class="metric-value-box">
+                        <span class="metric-value"><?= $total_accounts ?></span>
+                        <span class="growth"><i class="fas fa-caret-up"></i> <?= $growth_accounts ?></span>
+                    </div>
+                </div>
+            </a>
+            
+            <div class="audit-card">
+                <div class="audit-info">
+                    <h5>System Audit</h5>
+                    <h2>Integrity Check</h2>
+                    <p>Review activities.</p>
+                </div>
+                <a href="<?= site_url('AdminActivityLog') ?>" class="audit-action">
+                    <i class="fas fa-history"></i>
+                </a>
             </div>
         </main>
     </div>
-
-
-  
-
-</div> <!-- /.container-fluid -->
-<!-- end of content-->
 </div>
 
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+<script>
+    document.addEventListener("DOMContentLoaded", function() {
+        const ctx = document.getElementById('statusChart').getContext('2d');
+        
+        const statusChart = new Chart(ctx, {
+            type: 'doughnut',
+            data: {
+                labels: ['Active', 'Inactive'],
+                datasets: [{
+                    data: [<?= $active_users ?>, <?= $inactive_users ?>],
+                    backgroundColor: ['#04b373', '#ff2d55'],
+                    borderWidth: 0,
+                    hoverOffset: 12
+                }]
+            },
+            options: {
+                responsive: true,
+                maintainAspectRatio: false,
+                cutout: '80%',
+                legend: { display: false }, 
+                plugins: {
+                    legend: { display: false },
+                    tooltip: {
+                        enabled: true,
+                        backgroundColor: '#1a1e2e',
+                        padding: 10,
+                        cornerRadius: 10
+                    }
+                },
+                animation: {
+                    animateScale: true,
+                    animateRotate: true,
+                    duration: 1200,
+                    easing: 'easeOutQuart'
+                }
+            }
+        });
 
+        const cards = document.querySelectorAll('.metric-card, .status-card, .audit-card');
+        cards.forEach((card, index) => {
+            card.style.opacity = '0';
+            card.style.transform = 'translateY(20px)';
+            card.style.transition = 'all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275)';
+            setTimeout(() => {
+                card.style.opacity = '1';
+                card.style.transform = 'translateY(0)';
+            }, 60 * (index + 1));
+        });
+    });
+</script>
+```

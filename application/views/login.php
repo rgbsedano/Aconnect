@@ -6,242 +6,158 @@ defined('BASEPATH') OR exit('No direct script access allowed');
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta name="description" content="User Login Page">
-    <title>User Login</title>
+    <title>AConnect | Alumni Login</title>
 
+    <!-- Bootstrap CSS -->
     <link href="<?php echo base_url('assets/css/bootstrap.min.css'); ?>" rel="stylesheet">
+
+    <!-- FontAwesome (icons) -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" rel="stylesheet">
+
+    <!-- SweetAlert2 -->
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
     <style>
-    html,
-    body {
-      height: 100%;
-      margin: 0;
-      /* Remove default body margin */
-      overflow: hidden;
-      /* Prevent scrollbars if content overflows */
+    /* (your existing styles — kept identical) */
+    html, body { height: 100%; margin: 0; font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif; overflow: hidden; }
+    .login-page { display: flex; min-height: 100vh; background-color: #f7f7f7; }
+    .container-fluid { display: flex; width: 100%; max-width: none !important; height: 100vh; padding: 0 !important; margin: 0 !important; }
+    .row_container { display: flex !important; width: 100%; margin: 0 !important; }
+    .image-container { flex: 0 0 50vw; display: flex; align-items: center; justify-content: center; overflow: hidden; height: 100vh; background-color: #920E0E; padding: 0 !important; }
+    .login-image { display: block; width: 100%; height: 100%; object-fit: cover; }
+    .form-container { flex: 0 0 50vw; display: flex; flex-direction: column; align-items: center; justify-content: center; padding: 30px; min-height: 100vh; background-color: #fff; }
+    .login-logo-container { text-align: center; margin-bottom: 0.5rem; }
+    .login-logo { max-width: 200px; height: auto; }
+    .branding-text { text-align: center; margin-bottom: 2rem; max-width: 350px; }
+    .branding-text h1 { font-size: 1.8rem; font-weight: 700; color: #333; margin-bottom: 0.5rem; }
+    .branding-text p { font-size: 0.95rem; color: #6c757d; }
+    .form-signin { width: 100%; max-width: 350px; }
+    .form-control { border-radius: 5px; height: 48px; padding: 10px 15px; margin-bottom: 15px; width: 100%; transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out; border: 1px solid #ddd; }
+    .form-control:focus { border-color: #700A0A; box-shadow: 0 0 0 0.15rem rgba(112, 10, 10, 0.2); }
+    .form-label-group label { display: none; }
+    .checkbox.mb-3 { margin-bottom: 1rem !important; display: flex; align-items: center; font-size: 0.9rem; }
+    .checkbox.mb-3 input[type="checkbox"] { margin-right: 8px; width: 16px; height: 16px; }
+    .btn-block { width: 100%; background-color: #700A0A !important; border: none; height: 48px; font-size: 1rem; text-transform: uppercase; font-weight: 600; border-radius: 5px; transition: background-color 0.2s ease; }
+    .btn-block:hover { background-color: #550808 !important; }
+    .register-link { margin-top: 2rem !important; padding-top: 15px; border-top: 1px solid #eee; }
+    .register-link p { text-align: center; font-size: 0.9rem; margin-bottom: 5px; color: #6c757d; }
+    .register-link a { color: #700A0A; text-decoration: none; font-weight: 600; transition: text-decoration 0.2s ease; }
+    .register-link a:hover { text-decoration: underline; }
+    .btn-outline-dark { color: #000; border: 1px solid #ccc; background-color: transparent; padding: 8px 15px; font-size: 0.9rem; line-height: 1.2; border-radius: 5px; transition: all 0.2s ease; }
+    .btn-outline-dark:hover { background-color: #f0f0f0; border-color: #700A0A; color: #000; }
+    @media screen and (max-width: 767.98px) {
+        .image-container { display: none !important; }
+        .form-container { flex: 0 0 100vw; }
     }
-
-    .login-page {
-      display: flex;
-      min-height: 100vh;
-      /* Ensure it takes the full viewport height */
-      background-color: #f8f9fa;
-      /* Optional: Light background color for the whole page */
-    }
-
-    .container-fluid {
-      display: flex;
-      width: 100%;
-      max-width: none !important;
-      /* Override Bootstrap's max-width */
-      height: 100vh;
-      /* Make it full viewport height */
-      box-shadow: none !important;
-      /* Remove container shadow */
-      border-radius: 0 !important;
-      /* Remove container border-radius */
-      overflow: hidden;
-      /* Hide any image overflow */
-      background-color: transparent;
-      /* Make container background transparent */
-      margin: 0 !important;
-      /* Remove container margins */
-      padding: 0 !important;
-      /* Remove container padding */
-    }
-
-    .row_container{
-        display: flex !important;
-
-      }
-
-    @media screen and (max-width: 676px) {
-      .image-container {
-        
-        /* Take up 50% of the viewport width */
-        display: none !important;
-    
-        /* Make the image container take the full viewport height */
-      }
-
-      .row_container{
-        display: block !important;
-        width: 100%;
-      }
-      .form-container {
-        flex: 0 0 50vw;
-        /* Take up 50% of the viewport width */
-        display: flex;
-        flex-direction: column;
-        /* Arrange items vertically */
-        align-items: center;
-        justify-content: center;
-        /* Center items vertically */
-        padding: 30px;
-        /* Add some padding around the form */
-        min-height: 100vh;
-        /* Make the form container also take full viewport height */
-        background-color: #fff;
-        /* Optional: Background color for the form container */
-
-      }
-    }
-
-    .image-container {
-      flex: 0 0 50vw;
-      /* Take up 50% of the viewport width */
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      overflow: hidden;
-      /* Ensure the image doesn't overflow */
-      height: 100vh;
-      /* Make the image container take the full viewport height */
-    }
-
-    .login-image {
-      display: block;
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      /* Maintain aspect ratio and cover the container */
-    }
-
-    .form-container {
-      flex: 0 0 50vw;
-      /* Take up 50% of the viewport width */
-      display: flex;
-      flex-direction: column;
-      /* Arrange items vertically */
-      align-items: center;
-      justify-content: center;
-      /* Center items vertically */
-      padding: 30px;
-      /* Add some padding around the form */
-      min-height: 100vh;
-      /* Make the form container also take full viewport height */
-      background-color: #fff;
-      /* Optional: Background color for the form container */
-
-    }
-
-    .login-logo-container {
-      text-align: center;
-      /* Center the logo */
-     
-
-      /* Add some space below the logo */
-    }
-
-    .login-logo {
-      max-width: 300px;
-      /* Adjust the maximum width of the logo */
-      height: auto;
-      /* Maintain aspect ratio */
-    }
-
-    .form-signin {
-      width: 100%;
-      max-width: 400px;
-      /* Adjust the maximum width of the form */
-    }
-
-    .form-signin .checkbox {
-      font-weight: 400;
-    }
-
-    .form-signin .form-control {
-      position: relative;
-      box-sizing: border-box;
-      height: auto;
-      padding: 10px;
-      font-size: 16px;
-    }
-
-    .form-signin .form-control:focus {
-      z-index: 2;
-    }
-
-    .form-signin input[type="text"] {
-      margin-bottom: -1px;
-      border-bottom-right-radius: 0;
-      border-bottom-left-radius: 0;
-    }
-
-    .form-signin input[type="password"] {
-      margin-bottom: 10px;
-      border-top-left-radius: 0;
-      border-top-right-radius: 0;
-    }
-
-    .text-center.mb-4 {
-      text-align: center !important;
-      /* Center the heading */
-      margin-bottom: 2rem !important;
-      /* Add more space below the heading */
-    }
-
-    .text-center.mb-4 h1 {
-      font-size: 2.5rem;
-      /* Adjust as needed */
-      margin-bottom: 0.5rem;
-      /* Adjust spacing */
-    }
-
-    .btn-primary {
-      background-color: rgb(255, 0, 0);
-      /* Bootstrap primary color */
-      border-color: rgb(83, 1, 1);
-    }
-
-    .btn-primary:hover {
-      background-color: rgb(83, 1, 1);
-      border-color: rgb(83, 1, 1);
-    }
-
-    .mt-5.mb-3.text-muted.text-center {
-      font-size: 0.8rem;
-      color: #6c757d;
-    }
-  </style>
     </style>
 </head>
 <body class="login-page">
     <div class="container-fluid">
-        <div class="row row_container" style="margin: 0;">
-            <div class="col-md-6 image-container" style="padding: 0 !important; margin: 0 !important;">
-                <img src="<?php echo base_url('assets/images/circles.png'); ?>" class="login-image" alt="Circles Background">
+        <div class="row row_container">
+            <div class="col-md-6 image-container">
+                <img src="<?php echo base_url('assets/images/welcome.png'); ?>" class="login-image" alt="AConnect Platform Visual">
             </div>
+
             <div class="col-md-6 form-container">
                 <div class="login-logo-container">
-                    <img src="<?php echo base_url('assets/images/logo.png'); ?>" alt="Your Logo" class="login-logo">
-                </div>
-                <div class="text-center mb-4">
-                    <p class="text-muted"></p>
+                    <img src="<?php echo base_url('assets/images/logo.png'); ?>" alt="AC Connect Logo" class="login-logo">
                 </div>
 
+                <div class="branding-text">
+                    <h1>AConnect: Alumni & Career Platform</h1>
+                    <p>Connect with your fellow alumni and unlock exclusive career opportunities. Sign in to continue your journey.</p>
+                </div>
+
+                <!-- Flash messages via SweetAlert2 -->
+                <?php if ($this->session->flashdata('success_message')): ?>
+                    <script>
+                    document.addEventListener('DOMContentLoaded', function() {
+                        Swal.fire({ icon: 'success', title: 'Success', text: <?= json_encode($this->session->flashdata('success_message')) ?>, confirmButtonText: 'OK' });
+                    });
+                    </script>
+                <?php endif; ?>
+
+                <?php if ($this->session->flashdata('error_message')): ?>
+                    <script>
+                    document.addEventListener('DOMContentLoaded', function() {
+                        Swal.fire({ icon: 'error', title: 'Error', text: <?= json_encode($this->session->flashdata('error_message')) ?>, confirmButtonText: 'OK' });
+                    });
+                    </script>
+                <?php endif; ?>
+
+                <!-- If controller passes $error_message variable, show it inline too (backup) -->
+                <?php if (isset($error_message)): ?>
+                    <div class="alert alert-danger text-center" role="alert" style="width:100%;max-width:350px;margin-bottom:1rem;border-radius:5px;">
+                        <?php echo $error_message; ?>
+                    </div>
+                <?php endif; ?>
+
+                <!-- Login Form -->
                 <form class="form-signin" method="post" action="<?php echo site_url('Login/user'); ?>">
                     <div class="form-label-group">
-                        <input type="text" id="student_number" name="student_number" class="form-control" placeholder="Student Number" required autofocus>
-                        <label for="student_number"></label>
+                        <input type="text" id="student_number" name="student_number" class="form-control" placeholder="Student Number" required autofocus value="<?= set_value('student_number') ?>">
                     </div>
 
                     <div class="form-label-group">
                         <input type="password" id="inputPassword" name="password" class="form-control" placeholder="Password" required>
-                        <label for="inputPassword"></label>
                     </div>
 
                     <div class="checkbox mb-3">
                         <label>
-                            <input type="checkbox" value="remember-me"> Remember me
+                            <input type="checkbox" value="remember-me"> Keep me signed in
                         </label>
                     </div>
-                    <button class="btn btn-lg btn-primary btn-block" style="background: #700A0A" type="submit">Sign in</button>
 
-                    <div class="register-link mt-3">
-                        <p>Don't have an account? <a href="<?= base_url('register') ?>">Register here</a></p>
+                    <button class="btn btn-lg btn-primary btn-block" type="submit">Log in to AConnect</button>
+
+                    <div class="register-link">
+                        <p>New to AConnect? <a href="<?= base_url('register') ?>">Create an Account</a></p>
+                    </div>
+
+                    <div class="text-center mt-3">
+                        <a href="<?= base_url('adminlogin'); ?>" class="btn btn-sm btn-outline-dark">
+                            Admin Portal
+                        </a>
+                    </div>
+
+                    <div class="text-center mt-3">
+                        <a href="#" data-toggle="modal" data-target="#resendModal">Resend verification email</a>
                     </div>
                 </form>
             </div>
         </div>
     </div>
+
+    <!-- Resend Verification Modal -->
+    <div class="modal fade" id="resendModal" tabindex="-1" role="dialog" aria-labelledby="resendModalLabel" aria-hidden="true">
+      <div class="modal-dialog modal-sm modal-dialog-centered" role="document">
+        <div class="modal-content">
+          <form method="post" action="<?= base_url('register/resend_verification') ?>">
+            <div class="modal-header">
+              <h5 class="modal-title" id="resendModalLabel">Resend Verification</h5>
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close">&times;</button>
+            </div>
+            <div class="modal-body">
+                <div class="form-group">
+                    <label for="resend_email">Enter your registered email</label>
+                    <input type="email" name="email" id="resend_email" class="form-control" required placeholder="name@domain.com" value="<?= set_value('email') ?>">
+                </div>
+            </div>
+            <div class="modal-footer">
+              <button type="submit" class="btn btn-primary" style="background:#700A0A;border:none">Resend</button>
+              <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+
+    <?php if($this->session->flashdata('email_debug')): ?>
+  <pre><?php echo $this->session->flashdata('email_debug'); ?></pre>
+<?php endif; ?>
+
+    <!-- JS: jQuery + Bootstrap Bundle -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="<?php echo base_url('assets/js/bootstrap.bundle.min.js'); ?>"></script>
 </body>
 </html>

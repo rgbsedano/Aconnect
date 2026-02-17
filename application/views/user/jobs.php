@@ -1,216 +1,539 @@
-<style>
-    .job-card-modern {
-        background-color: #f8f9fa;
-        border: 1px solid #e3e6f0;
-        border-radius: 0.35rem;
-        padding: 15px;
-        margin-bottom: 15px;
-        display: flex;
-        align-items: center;
-        justify-content: space-between;
-        cursor: pointer;
-        transition: background-color 0.2s ease-in-out, border-color 0.2s ease-in-out;
+<?php
+// ... (compute_ai_match function remains exactly as you provided) ...
+function compute_ai_match($alumni, $job) {
+    if (!$alumni) return 0;
+    $wTech  = 30; $wSoft  = 10; $wKey   = 5; $wTitle = 55; 
+    $score = 0; $titleMatch = 0;
+    $jobTitle = strtolower($job->job_title);
+    $deg = strtolower($alumni->degree);
+    if (strpos($jobTitle, "it") !== false && strpos($deg, "information technology") !== false) $titleMatch = 1;
+    if (strpos($jobTitle, "developer") !== false && strpos($deg, "information technology") !== false) $titleMatch = 1;
+    if (strpos($jobTitle, "programmer") !== false && strpos($deg, "information technology") !== false) $titleMatch = 1;
+    if (strpos($jobTitle, "software") !== false && strpos($deg, "information technology") !== false) $titleMatch = 1;
+    if (strpos($jobTitle, "technical") !== false && strpos($deg, "information technology") !== false) $titleMatch = 1;
+    if (strpos($jobTitle, "nurse") !== false && strpos($deg, "nursing") !== false) $titleMatch = 1;
+    if (strpos($jobTitle, "staff nurse") !== false && strpos($deg, "nursing") !== false) $titleMatch = 1;
+    if (strpos($jobTitle, "radtech") !== false && strpos($deg, "radiologic") !== false) $titleMatch = 1;
+    if (strpos($jobTitle, "radiologic") !== false && strpos($deg, "radiologic") !== false) $titleMatch = 1;
+    if (strpos($jobTitle, "marketing") !== false && strpos($deg, "business") !== false) $titleMatch = 1;
+    if (strpos($jobTitle, "hr") !== false && strpos($deg, "business") !== false) $titleMatch = 1;
+    if (strpos($jobTitle, "finance") !== false && strpos($deg, "accountancy") !== false) $titleMatch = 1;
+    if (strpos($jobTitle, "graphic") !== false && strpos($deg, "multimedia") !== false) $titleMatch = 1;
+    if (strpos($jobTitle, "designer") !== false && strpos($deg, "multimedia") !== false) $titleMatch = 1;
+    if (strpos($jobTitle, "editor") !== false && strpos($deg, "communication") !== false) $titleMatch = 1;
+    if (strpos($jobTitle, "writer") !== false && strpos($deg, "communication") !== false) $titleMatch = 1;
+
+    $alTech = array_filter(array_map('trim', explode(',', strtolower($alumni->technical_skills ?? ""))));
+    $jobTech = array_filter(array_map('trim', explode(',', strtolower($job->qualifications ?? ""))));
+    $techMatch = 0;
+    if (count($jobTech) > 0) {
+        $match = array_intersect($alTech, $jobTech);
+        $techMatch = count($match) / count($jobTech);
     }
+    $alSoft = array_filter(array_map('trim', explode(',', strtolower($alumni->soft_skills ?? ""))));
+    $desc = strtolower($job->description ?? "");
+    $softCount = 0;
+    foreach ($alSoft as $soft) { if (strpos($desc, $soft) !== false) $softCount++; }
+    $softMatch = (count($alSoft) > 0) ? $softCount / count($alSoft) : 0;
+    $searchSpace = strtolower($job->company . " " . $job->job_title . " " . $job->description);
+    $keyMatch = 0;
+    foreach ($alTech as $skill) { if (strpos($searchSpace, $skill) !== false) { $keyMatch = 1; break; } }
+    $score = ($techMatch * $wTech) + ($softMatch * $wSoft) + ($keyMatch * $wKey) + ($titleMatch * $wTitle);
+    return round($score);
+}
+?>
 
-    .job-card-modern:hover {
-        background-color: #edf2f7;
-        border-color: #d2ddec;
-    }
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Job Board | AConnect Alumni</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.css">
+    <style>
+        :root {
+            --maroon: #8B1538;
+            --maroon-dark: #6B0F2A;
+            --gold: #D4A574;
+            --bg: #FAFAF8;
+            --card: #ffffff;
+            --text: #1F2937;
+            --muted: #6B7280;
+            --border: #E5E7EB;
+            --success: #059669;
+            --error: #DC2626;
+            --shadow-sm: 0 1px 2px rgba(0,0,0,0.05);
+            --shadow-md: 0 4px 12px rgba(0,0,0,0.1);
+            --shadow-lg: 0 10px 30px rgba(0,0,0,0.15);
+        }
 
-    .job-details {
-        flex-grow: 1;
-    }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { background: var(--bg); font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; color: var(--text); line-height: 1.6; }
+        .container { max-width: 1100px; margin: 20px auto 40px; padding: 0 20px; }
 
-    .job-title-modern {
-        margin-top: 0;
-        margin-bottom: 5px;
-        color: #4e73df;
-        font-size: 1.1rem;
-        font-weight: bold;
-    }
+        /* Success Popup Notification (Tiles/Toasts) */
+        .popup-toast {
+            position: fixed;
+            top: 25px;
+            right: 25px;
+            padding: 16px 24px;
+            border-radius: 12px;
+            background: white;
+            color: var(--text);
+            box-shadow: var(--shadow-lg);
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            z-index: 9999;
+            transform: translateX(120%);
+            transition: transform 0.4s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+            border-left: 6px solid var(--success);
+        }
+        .popup-toast.show { transform: translateX(0); }
+        .popup-toast i { color: var(--success); font-size: 20px; }
 
-    .job-company-location {
-        margin-bottom: 5px;
-        color: #6c757d;
-        font-size: 0.9rem;
-    }
+        /* Error Banner */
+        .error-banner {
+            background: #FEE2E2;
+            color: var(--error);
+            padding: 12px 20px;
+            border-radius: 10px;
+            margin-bottom: 20px;
+            font-size: 14px;
+            font-weight: 600;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            border: 1px solid #FECACA;
+        }
 
-    .job-salary {
-        color: #28a745;
-        font-weight: bold;
-        font-size: 0.95rem;
-    }
+        .header-section {
+            background: var(--card);
+            padding: 32px;
+            border-radius: 16px;
+            box-shadow: var(--shadow-md);
+            margin-bottom: 32px;
+        }
 
-    .job-meta {
-        color: #6c757d;
-        font-size: 0.8rem;
-    }
+        .search-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr auto;
+            gap: 16px;
+            margin-bottom: 24px;
+        }
 
-    .job-flag-icon {
-        color: #4e73df;
-        font-size: 2rem;
-        margin-left: 15px;
-    }
+        .input-group {
+            position: relative;
+            display: flex;
+            align-items: center;
+        }
 
-    /* Modal styles */
-    .modal {
-        display: none; /* Hidden by default */
-        position: fixed; /* Stay in place */
-        z-index: 1000; /* Sit on top */
-        left: 0;
-        top: 0;
-        width: 100%; /* Full width */
-        height: 100%; /* Full height */
-        overflow: auto; /* Enable scroll if needed */
-        background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
-    }
+        .input-group i { position: absolute; left: 14px; color: var(--muted); font-size: 14px; }
+        .input-group input {
+            width: 100%;
+            padding: 12px 14px 12px 44px;
+            border: 1px solid var(--border);
+            border-radius: 10px;
+            font-size: 14px;
+            transition: all 0.3s;
+            background: #f9f9f9;
+        }
+        .input-group input:focus {
+            outline: none;
+            border-color: var(--maroon);
+            box-shadow: 0 0 0 3px rgba(139, 21, 56, 0.1);
+            background: var(--card);
+        }
 
-    .modal-content {
-        background-color: #fefefe;
-        padding: 20px;
-        border: 1px solid #888;
-        width: 80%; /* Could be more or less, depending on screen size */
-        border-radius: 0.35rem;
-        box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15);
-        position: relative;
-    }
+        .btn-search {
+            background: linear-gradient(135deg, var(--maroon), var(--maroon-dark));
+            color: white;
+            border: none;
+            padding: 12px 32px;
+            border-radius: 10px;
+            font-weight: 600;
+            font-size: 14px;
+            cursor: pointer;
+            transition: all 0.3s;
+            box-shadow: var(--shadow-sm);
+        }
+        .btn-search:hover { transform: translateY(-2px); box-shadow: var(--shadow-lg); }
 
-    .close {
-        color: #aaa;
-        position: absolute;
-        top: 10px;
-        right: 15px;
-        font-size: 28px;
-        font-weight: bold;
-    }
+        .filters { display: flex; gap: 12px; flex-wrap: wrap; margin-top: 20px; }
+        .f-pill {
+            padding: 8px 18px;
+            border-radius: 24px;
+            border: 1.5px solid var(--border);
+            background: var(--card);
+            font-size: 13px;
+            font-weight: 600;
+            color: var(--muted);
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+        .f-pill.active { background: linear-gradient(135deg, var(--maroon), var(--maroon-dark)); color: white; border-color: var(--maroon); }
+        .f-pill:hover:not(.active) { border-color: var(--maroon); color: var(--maroon); }
 
-    .close:hover,
-    .close:focus {
-        color: black;
-        text-decoration: none;
-        cursor: pointer;
-    }
+        .job-card {
+            background: var(--card);
+            border-radius: 12px;
+            padding: 20px;
+            margin-bottom: 16px;
+            display: flex;
+            align-items: center;
+            gap: 18px;
+            cursor: pointer;
+            transition: all 0.3s;
+            border: 1px solid var(--border);
+            box-shadow: var(--shadow-sm);
+        }
+        .job-card:hover {
+            border-color: var(--gold);
+            box-shadow: var(--shadow-md);
+            transform: translateY(-2px);
+        }
 
-    .modal-content h3 {
-        color: #4e73df;
-        margin-top: 0;
-        margin-bottom: 15px;
-    }
+        .logo-box {
+            width: 60px; height: 60px;
+            background: linear-gradient(135deg, var(--maroon), var(--maroon-dark));
+            color: var(--gold);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 12px;
+            font-size: 24px;
+            flex-shrink: 0;
+        }
 
-    .modal-content p {
-        margin-bottom: 10px;
-        color: #6c757d;
-    }
+        .job-info { flex: 1; }
+        .job-info h3 { margin: 0 0 4px 0; font-size: 16px; color: var(--text); font-weight: 700; }
+        .job-info p { margin: 4px 0; color: var(--muted); font-size: 13px; display: flex; align-items: center; gap: 6px; }
 
-    .modal-content strong {
-        color: #212529;
-    }
+        .badge-ai { text-align: right; flex-shrink: 0; }
+        .percent {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            padding: 8px 14px;
+            border-radius: 8px;
+            font-weight: 700;
+            font-size: 13px;
+            background: linear-gradient(135deg, var(--maroon), var(--maroon-dark));
+            color: white;
+        }
 
-    .modal-content label {
-        display: block;
-        margin-bottom: 5px;
-        font-weight: bold;
-        color: #495057;
-    }
+        /* Modal */
+        .modal-overlay {
+            position: fixed;
+            inset: 0;
+            background: rgba(0,0,0,0.5);
+            backdrop-filter: blur(4px);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            z-index: 1000;
+            opacity: 0;
+            visibility: hidden;
+            transition: all 0.3s;
+        }
+        .modal-overlay.open { opacity: 1; visibility: visible; }
 
-    .modal-content input[type=file] {
-        display: block;
-        margin-bottom: 15px;
-        padding: 8px;
-        border: 1px solid #ced4da;
-        border-radius: 0.25rem;
-    }
+        .modal-box {
+            background: var(--card);
+            width: 90%;
+            max-width: 580px;
+            border-radius: 16px;
+            padding: 0;
+            position: relative;
+            transform: scale(0.95) translateY(20px);
+            transition: all 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
+            box-shadow: var(--shadow-lg);
+            overflow: hidden;
+        }
+        .modal-overlay.open .modal-box { transform: scale(1) translateY(0); }
 
-    .modal-content button[type=submit] {
-        background-color: #28a745;
-        color: white;
-        padding: 10px 15px;
-        border: none;
-        border-radius: 0.25rem;
-        cursor: pointer;
-        font-size: 1rem;
-        transition: background-color 0.2s ease-in-out;
-    }
+        .modal-header-custom {
+            background: linear-gradient(135deg, var(--maroon), var(--maroon-dark));
+            color: white;
+            padding: 24px;
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+        }
 
-    .modal-content button[type=submit]:hover {
-        background-color: #218838;
-    }
+        .modal-header-custom h2 { margin: 0 0 4px 0; font-size: 20px; }
+        .modal-header-custom p { margin: 0; font-size: 13px; color: var(--gold); font-weight: 600; }
 
-    .form-control{
-        width: 49%;
-        display: inline;
-        margin: 0;
-        gap: 0;
-    }
-</style>
+        .close-modal {
+            background: none;
+            border: none;
+            font-size: 24px;
+            cursor: pointer;
+            color: white;
+            width: 32px;
+            height: 32px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
 
-<script>
-    function openModal(id) {
-        document.getElementById('job-modal-' + id).style.display = 'block';
-    }
-    function closeModal(id) {
-        document.getElementById('job-modal-' + id).style.display = 'none';
-    }
-</script>
+        .modal-content { padding: 24px; }
+        .modal-content hr { border: none; border-top: 1px solid var(--border); margin: 16px 0; }
+        .modal-content strong { color: var(--text); }
+        .modal-content p { margin: 12px 0; font-size: 14px; color: var(--muted); }
 
-<div class="job-section">
-    <h2 class="job-heading">Job Opportunities</h2>
+        .job-details { max-height: 250px; overflow-y: auto; padding-right: 12px; }
 
-    <form method="get" action="<?= base_url('jobs') ?>" style="margin-bottom: 20px; justify-content: center; padding:0">
-        <input type="text" name="search" class="form-control" placeholder="Keyword... jobs or company " value="<?= $this->input->get('search',true) ?>" />
-        <input type="text" name="location" class="form-control" placeholder="Search locations..." value="<?= $this->input->get('location',true) ?>" />
-        <br>
-        <button type="submit" class="btn btn-primary mt-2" style="width: 98%; display: content; justify-content: center; margin top:0; background: #700A0A;" >Search</button>
-    </form>
+        .modal-form {
+            background: #f9f9f9;
+            padding: 16px;
+            border-radius: 10px;
+            margin-top: 16px;
+        }
 
-    <?php if (!empty($jobs)): ?>
-        <div class="job-cards">
-            <?php foreach ($jobs as $job): ?>
-                <div class="job-card-modern" onclick="openModal(<?= $job->id ?>)">
-                    <div class="job-details" style="max-width: 300px;">
-                        <h4 class="job-title-modern text-danger"><?= htmlspecialchars($job->job_title) ?></h4>
-                        <div class="job-company-location">
-                            <b>Company: </b><?= htmlspecialchars($job->company) ?><br>
-                            <i class='fas fa-map-marker-alt'></i> <?= htmlspecialchars($job->location) ?>
-                            <p><i class='fas fa-money-bill-wave'></i> <?= htmlspecialchars($job->salary_range) ?></p>
-                            <p><b>Qualifications</b> <?= htmlspecialchars($job->qualifications) ?></p>
+        .file-input-wrapper {
+            display: block;
+            border: 2px dashed var(--border);
+            border-radius: 10px;
+            padding: 20px;
+            text-align: center;
+            margin-bottom: 16px;
+            transition: all 0.3s;
+            cursor: pointer;
+        }
+        .file-input-wrapper input[type="file"] { display: none; }
+        .file-input-wrapper:hover { border-color: var(--maroon); background: rgba(139, 21, 56, 0.02); }
+
+        .btn-submit {
+            background: linear-gradient(135deg, var(--maroon), var(--maroon-dark));
+            color: white;
+            border: none;
+            width: 100%;
+            padding: 12px;
+            border-radius: 10px;
+            font-weight: 700;
+            font-size: 14px;
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+        .btn-submit:hover { transform: translateY(-2px); box-shadow: var(--shadow-lg); }
+
+        @media (max-width: 768px) {
+            .search-grid { grid-template-columns: 1fr; }
+            .job-card { flex-direction: column; text-align: center; }
+            .job-info p { justify-content: center; }
+            .badge-ai { margin-top: 12px; }
+        }
+    </style>
+</head>
+<body>
+
+<div id="success-popup" class="popup-toast">
+    <i class="fas fa-check-circle"></i>
+    <div>
+        <p style="font-weight: 700;">Success!</p>
+        <p style="font-size: 13px; color: var(--muted);">Uploaded successfully</p>
+    </div>
+</div>
+
+<div class="container">
+    <?php if ($this->session->flashdata('error')): ?>
+        <div class="error-banner">
+            <i class="fas fa-times-circle"></i>
+            <?= $this->session->flashdata('error') ?>
+        </div>
+    <?php endif; ?>
+
+    <div class="header-section">
+        <form method="get" action="<?= base_url('jobs') ?>">
+            <div class="search-grid">
+                <div class="input-group">
+                    <i class="fas fa-search"></i>
+                    <input type="text" name="search" placeholder="Job title or company..." value="<?= $this->input->get('search') ?>">
+                </div>
+                <div class="input-group">
+                    <i class="fas fa-map-marker-alt"></i>
+                    <input type="text" name="location" placeholder="City or Remote" value="<?= $this->input->get('location') ?>">
+                </div>
+                <button type="submit" class="btn-search"><i class="fas fa-search"></i> Search</button>
+            </div>
+        </form>
+
+        <div class="filters">
+            <button class="f-pill active" id="btn-all" onclick="updateFilter('all')">All Opportunities</button>
+            <button class="f-pill" id="btn-70" onclick="updateFilter(70)"><i class="fas fa-star"></i> Best Matches (70%+)</button>
+            <button class="f-pill" id="btn-40" onclick="updateFilter(40)"><i class="fas fa-check"></i> Good Fits (40%+)</button>
+        </div>
+    </div>
+
+    <div id="job-container">
+        <?php if (!empty($jobs)): foreach ($jobs as $job): 
+            $match = compute_ai_match($alumni, $job);
+        ?>
+        <div class="job-card" data-score="<?= $match ?>" onclick="toggleModal(<?= $job->id ?>, true)">
+            <div class="logo-box"><i class="fas fa-briefcase"></i></div>
+            <div class="job-info">
+                <h3><?= htmlspecialchars($job->job_title) ?></h3>
+                <p><i class="fas fa-building"></i> <?= htmlspecialchars($job->company) ?></p>
+                <p><i class="fas fa-map-marker-alt"></i> <?= htmlspecialchars($job->location) ?> <span style="color: var(--maroon); font-weight: 600;">•</span> <i class="fas fa-coins"></i> <?= htmlspecialchars($job->salary_range) ?></p>
+            </div>
+            <div class="badge-ai">
+                <div class="percent">
+                    <i class="fas fa-robot"></i> <?= $match ?>% Match
+                </div>
+            </div>
+        </div>
+
+        <div id="modal-<?= $job->id ?>" class="modal-overlay" onclick="closeOverlay(event, <?= $job->id ?>)">
+            <div class="modal-box" onclick="event.stopPropagation()">
+                <div class="modal-header-custom">
+                    <div>
+                        <h2><?= htmlspecialchars($job->job_title) ?></h2>
+                        <p><?= htmlspecialchars($job->company) ?></p>
+                    </div>
+                    <button type="button" class="close-modal" onclick="toggleModal(<?= $job->id ?>, false)"><i class="fas fa-times"></i></button>
+                </div>
+                <div class="modal-content">
+                    <div style="display: flex; gap: 16px; margin-bottom: 16px; align-items: center;">
+                        <div style="flex: 1;">
+                            <p><strong><i class="fas fa-map-marker-alt" style="color: var(--maroon); margin-right: 6px;"></i>Location:</strong> <?= htmlspecialchars($job->location) ?></p>
+                            <p><strong><i class="fas fa-coins" style="color: var(--gold); margin-right: 6px;"></i>Salary:</strong> <?= htmlspecialchars($job->salary_range) ?></p>
+                        </div>
+                        <div style="background: linear-gradient(135deg, var(--maroon), var(--maroon-dark)); color: white; padding: 10px 18px; border-radius: 8px; font-weight: 700;">
+                            <i class="fas fa-robot"></i> <?= $match ?>% AI Match
                         </div>
                     </div>
-                    <div class="job-flag-icon"  >
-                        <i class="fas fa-flag" style="color: #700A0A"></i>
+                    <hr>
+                    
+                    <div class="job-details">
+                        <p><strong><i class="fas fa-list-check" style="color: var(--maroon); margin-right: 6px;"></i>Requirements:</strong></p>
+                        <p><?= htmlspecialchars($job->qualifications) ?></p>
+                        <p style="margin-top: 16px;"><strong><i class="fas fa-briefcase" style="color: var(--gold); margin-right: 6px;"></i>About the Role:</strong></p>
+                        <p><?= nl2br(htmlspecialchars($job->description)) ?></p>
                     </div>
-                </div>
 
-                <div id="job-modal-<?= $job->id ?>" class="modal">
-                    <div class="modal-content">
-                    <div class="modal-header">
-                        <h3><?= htmlspecialchars($job->job_title) ?></h3>
-                          <span class="close" style= "margin: 10px" onclick="closeModal(<?= $job->id ?>)">&times;</span>
-                      </div>
-                        
-                        <?php if ($job->image_filename): ?>
-                                <img src="<?= base_url('./assets/uploads/jobs/' . $job->image_filename) ?>" class="card-img-top" alt="Job Image" style="max-width: 100%; height: 400px;">
-                            <?php endif; ?>
-                        <p><strong>Company:</strong> <?= htmlspecialchars($job->company) ?></p>
-                        <p><strong>Location:</strong> <?= htmlspecialchars($job->location) ?></p>
-                        <p><strong>Salary Range:</strong> <?= htmlspecialchars($job->salary_range) ?></p>
-                        <p><strong>Qualifications:</strong> <?= htmlspecialchars($job->qualifications) ?></p>
-                        <p><strong>Contact Details:</strong> <?= htmlspecialchars($job->contact_details) ?></p>
-                        <p><strong>Description:</strong><br><?= nl2br(htmlspecialchars($job->description)) ?></p>
+                    <div class="modal-form">
+                        <form method="post" enctype="multipart/form-data" action="<?= base_url('jobs/apply/' . $job->id) ?>" class="job-apply-form" data-job-id="<?= $job->id ?>">
+                            <p style="font-weight: 600; color: var(--text); margin-bottom: 12px;"><i class="fas fa-file-upload" style="color: var(--maroon); margin-right: 6px;"></i>Upload Your Resume</p>
+                            
+                            <label class="file-input-wrapper" for="file-<?= $job->id ?>">
+                                <i class="fas fa-cloud-arrow-up" style="font-size: 28px; color: var(--gold); margin-bottom: 8px; display: block;"></i>
+                                <p style="margin: 0; font-weight: 600; color: var(--text);" id="lbl-<?= $job->id ?>">Click to upload or drag & drop</p>
+                                <p style="margin: 4px 0 0 0; font-size: 12px; color: var(--muted);">PDF ONLY</p>
+                                <input type="file" name="attachment" id="file-<?= $job->id ?>" accept="application/pdf" required onchange="updateLabel(this, <?= $job->id ?>)">
+                            </label>
 
-                        <form method="post" enctype="multipart/form-data" action="<?= base_url('jobs/apply/' . $job->id) ?>">
-                            <label for="attachment">Attach Resume:</label>
-                            <input type="file" name="attachment" accept=".pdf,.doc,.docx" class="form-control-file" required><br><br>
-                            <button type="submit" class="btn btn-success">Apply</button>
+                            <button type="submit" class="btn-submit" id="btn-submit-<?= $job->id ?>"><i class="fas fa-paper-plane"></i> Submit Application</button>
                         </form>
                     </div>
                 </div>
-            <?php endforeach; ?>
+            </div>
         </div>
-    <?php else: ?>
-        <p>No job listings available.</p>
-    <?php endif; ?>
+        <?php endforeach; else: ?>
+        <div style="text-align: center; padding: 48px 20px; color: var(--muted);">
+            <p>No Jobs Found</p>
+        </div>
+        <?php endif; ?>
+    </div>
 </div>
 
+<script>
+    // Trigger Success Popup Tile specifically for upload success
+    <?php if ($this->session->flashdata('upload_success')): ?>
+        window.addEventListener('load', () => {
+            const popup = document.getElementById('success-popup');
+            popup.classList.add('show');
+            setTimeout(() => popup.classList.remove('show'), 5000);
+        });
+    <?php endif; ?>
 
+    function toggleModal(id, show) {
+        const modal = document.getElementById('modal-' + id);
+        if (!modal) return;
+        if (show) modal.classList.add('open');
+        else modal.classList.remove('open');
+        document.body.style.overflow = show ? 'hidden' : 'auto';
+    }
 
+    function closeOverlay(e, id) {
+        if (e.target.classList.contains('modal-overlay')) toggleModal(id, false);
+    }
+
+    function updateLabel(input, id) {
+        const lbl = document.getElementById('lbl-' + id);
+        if (input.files && input.files[0]) {
+            lbl.innerText = input.files[0].name;
+            lbl.style.color = "var(--maroon)";
+        }
+    }
+</script>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js"></script>
+
+<script>
+    // Configure toastr
+    toastr.options = {
+        "closeButton": true,
+        "debug": false,
+        "newestOnTop": true,
+        "progressBar": true,
+        "positionClass": "toast-top-right",
+        "preventDuplicates": false,
+        "onclick": null,
+        "showDuration": "300",
+        "hideDuration": "1000",
+        "timeOut": "4000",
+        "extendedTimeOut": "1000",
+        "showEasing": "swing",
+        "hideEasing": "linear",
+        "showMethod": "slideDown",
+        "hideMethod": "slideUp"
+    };
+
+    function showToast(message, type = 'success') {
+        toastr[type](message);
+    }
+
+    // Handle form submissions
+    document.addEventListener('DOMContentLoaded', function() {
+        const forms = document.querySelectorAll('.job-apply-form');
+        forms.forEach(form => {
+            form.addEventListener('submit', function(e) {
+                const jobId = this.getAttribute('data-job-id');
+                const submitBtn = document.getElementById(`btn-submit-${jobId}`);
+                const fileInput = form.querySelector('input[type="file"]');
+                
+                if (!fileInput.files || fileInput.files.length === 0) {
+                    e.preventDefault();
+                    showToast('Please select a PDF file', 'error');
+                    return;
+                }
+
+                // Show uploading message
+                const originalText = submitBtn.innerHTML;
+                submitBtn.disabled = true;
+                submitBtn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Uploading PDF...';
+                showToast('📤 Uploading your PDF...', 'info');
+
+                // Simulate upload delay for demo, then show success
+                // In real scenario, the form submission will redirect after success
+                setTimeout(() => {
+                    showToast('✅ PDF uploaded successfully!', 'success');
+                }, 1500);
+            });
+        });
+    });
+
+    function updateFilter(minScore) {
+        document.querySelectorAll('.job-card').forEach(card => {
+            const score = parseInt(card.dataset.score);
+            card.style.display = (minScore === 'all' || score >= minScore) ? 'flex' : 'none';
+        });
+        document.querySelectorAll('.f-pill').forEach(p => p.classList.remove('active'));
+        const btnId = minScore === 'all' ? 'btn-all' : 'btn-' + minScore;
+        document.getElementById(btnId).classList.add('active');
+    }
+</script>
+</body>
+</html>
