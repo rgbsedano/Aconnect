@@ -186,6 +186,19 @@
         .modal-header { padding: 20px; }
     }
 </style>
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
+<?php if($this->session->flashdata('success')): ?>
+<script>
+Swal.fire({
+    icon: 'success',
+    title: 'Success',
+    text: '<?= $this->session->flashdata('success') ?>',
+    timer: 2000,
+    showConfirmButton: false
+});
+</script>
+<?php endif; ?>
 
 <div class="dashboard-wrapper">
     <div class="header-section">
@@ -287,7 +300,7 @@
                 <h5 class="modal-title" style="font-weight: 700;" id="modalTitle">Create Event</h5>
                 <button type="button" class="close text-white" data-dismiss="modal">&times;</button>
             </div>
-            <form id="eventForm">
+            <form id="eventForm" method="POST">
                 <div class="modal-body">
                     <input type="hidden" name="event_id" id="event_id">
                     <div class="row">
@@ -326,6 +339,7 @@
     </div>
 </div>
 
+
 <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
 <script>
     function prepareCreate() {
@@ -356,29 +370,48 @@
         }
     }
 
+    function prepareCreate() {
+    $('#modalTitle').text('New Event Initiative');
+    $('#eventForm')[0].reset();
+    $('#event_id').val('');
+
+    // ✅ IMPORTANT
+    $('#eventForm').attr(
+        'action',
+        '<?= base_url('AdminEvents/create') ?>'
+    );
+
+    $('#eventModal').modal('show');
+    }
+
+    function editEvent(data) {
+    $('#modalTitle').text('Edit Event Details');
+    $('#event_id').val(data.id);
+    $('#event_name').val(data.event_name);
+
+    if (data.event_date) {
+        let date = new Date(data.event_date);
+        $('#event_date').val(date.toISOString().slice(0, 16));
+    }
+
+    $('#location').val(data.location);
+    $('#event_time_duration').val(data.event_time_duration ?? '');
+    $('#contact_person').val(data.contact_person ?? '');
+    $('#description').val(data.description ?? '');
+
+    // ✅ IMPORTANT
+    $('#eventForm').attr(
+        'action',
+        '<?= base_url('AdminEvents/update/') ?>' + data.id
+    );
+
+    $('#eventModal').modal('show');
+    }
+
+
+
     $(document).ready(function() {
-        $('#eventForm').on('submit', function(e) {
-            e.preventDefault();
-            const btn = $('#saveBtn');
-            const originalText = btn.text();
-            btn.prop('disabled', true).text('Saving...');
-
-            const eventId = $('#event_id').val();
-            const action = eventId ? '<?= base_url('AdminEvents/update/') ?>' + eventId : '<?= base_url('AdminEvents/create') ?>';
-
-            $.ajax({
-                url: action,
-                type: 'POST',
-                data: $(this).serialize(),
-                success: function(response) {
-                    location.reload();
-                },
-                error: function() {
-                    alert('An error occurred. Please try again.');
-                    btn.prop('disabled', false).text(originalText);
-                }
-            });
-        });
+        
 
         $("#eventSearchInput").on("keyup", function() {
             var value = $(this).val().toLowerCase();
@@ -404,3 +437,4 @@
         });
     });
 </script>
+

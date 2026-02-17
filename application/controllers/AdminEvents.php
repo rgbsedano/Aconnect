@@ -9,12 +9,20 @@ public function __construct() {
 
 public function index() {
     
+    $data['events'] = $this->db->get('events')->result();
+
+    // ✅ FIX UPCOMING COUNT
+    $now = date('Y-m-d H:i:s');
+
+    $this->db->where('event_date >=', $now);
+    $data['upcoming_count'] = $this->db->count_all_results('events');
+
+    // optional reach fallback
+    $data['total_participants_all'] = 0;
 
     $this->load->view('__header');
-    $data['events'] = $this->db->get('events')->result();
     $this->load->view('admin/manage_events', $data);
-
-	$this->load->view('__footer');
+    $this->load->view('__footer');
 }
 
 public function update($id) {
@@ -43,11 +51,13 @@ public function update($id) {
     }
 
     $this->db->where('id', $id)->update('events', $data);
+    $this->session->set_flashdata('success', 'Event updated successfully.');
     redirect('AdminEvents');
 }
 
 public function delete($id) {
     $this->db->where('id', $id)->delete('events');
+    $this->session->set_flashdata('success', 'Event deleted successfully.');
     redirect('AdminEvents');
 }
 
@@ -76,6 +86,9 @@ public function create() {
     }
 
     $this->db->insert('events', $data);
+
+    $this->session->set_flashdata('success', 'Event created successfully.');
+
     redirect('AdminEvents');
 }
 
