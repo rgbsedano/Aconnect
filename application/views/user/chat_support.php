@@ -1,4 +1,4 @@
-
+<?php $support_email = 'aconnectsupport@gmail.com'; ?>
 <div class="container-fluid">
 
 <div class="chat-container">
@@ -6,14 +6,23 @@
         <?= isset($user_id) ? "Chat with Alumni #$user_id" : "Chat Support" ?>
     </div>
 
-    <div class="chat-box " id="chatBox">
-        <?php foreach ($messages as $msg): ?>
-            <div class="message <?= $msg->is_admin ? 'admin' : 'alumni' ?>">
-                <strong><?= $msg->is_admin ? 'Admin' : 'You' ?>:</strong><br>
-                <?= htmlspecialchars($msg->message) ?>
-            </div>
-        <?php endforeach; ?>
+    <div class="chat-box" id="chatBox">
+
+    <!-- ✅ AUTO SUPPORT NOTICE -->
+    <div class="message system-notice">
+        <strong>📩 Need faster help?</strong><br>
+        For urgent concerns, please email us at:<br>
+        <strong><?= $support_email ?></strong>
     </div>
+
+    <?php foreach ($messages as $msg): ?>
+        <div class="message <?= $msg->is_admin ? 'admin' : 'alumni' ?>">
+            <strong><?= $msg->is_admin ? 'Admin' : 'You' ?>:</strong><br>
+            <?= htmlspecialchars($msg->message) ?>
+        </div>
+    <?php endforeach; ?>
+</div>
+
 
     <form class="chat-form" method="post" action="<?= isset($user_id) ? base_url('support/admin_reply') : base_url('support/send_message') ?>">
         <?php if (isset($user_id)): ?>
@@ -35,6 +44,18 @@
 </script>
 
 <style>
+
+    /* ===== SYSTEM NOTICE ===== */
+.message.system-notice {
+    background: #fff7ed;
+    border: 1px solid #fed7aa;
+    color: #9a3412;
+    align-self: center;
+    text-align: center;
+    max-width: 90%;
+    font-size: 13px;
+    font-weight: 600;
+}
 .container-fluid {
     padding: 30px;
     background-color: #f4f4f4;

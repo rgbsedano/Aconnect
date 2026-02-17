@@ -66,6 +66,7 @@ class Register extends CI_Controller {
 
             $config['upload_path']   = './assets/uploads/alumni/';
             $config['allowed_types'] = 'jpg|jpeg|png|gif';
+            $config['max_size']      = 7048;
             $config['encrypt_name']  = TRUE; // safer filename
 
             $this->load->library('upload', $config);

@@ -1,4 +1,4 @@
-
+<?php $support_email = 'AconnectSupport@gmail.com'; ?>
       <!-- End of Footer -->
 
     </div>
@@ -135,12 +135,48 @@
             <button id="send-support-btn" style="background: linear-gradient(135deg, #8B1538, #6B0F2A); color: white; border: none; border-radius: 50%; width: 44px; height: 44px; cursor: pointer; display: flex; align-items: center; justify-content: center; box-shadow: 0 2px 8px rgba(139, 21, 56, 0.3);">
                 <i class="fas fa-paper-plane"></i>
             </button>
-        </div>
+            
     </div>
 </div>
 
 <style>
+
+    /* ===== Support System Notice (Modal) ===== */
+    .support-notice {
+    align-self: center;
+    background: #fff7ed;
+    border: 1px solid #fed7aa;
+    color: #9a3412;
+    padding: 10px 14px;
+    border-radius: 14px;
+    font-size: 12px;
+    font-weight: 600;
+    text-align: center;
+    max-width: 85%;
+    margin-bottom: 8px;
+    }
+
     /* Contact Item Styling */
+
+    #friends-chat-messages {
+    scroll-behavior: smooth;
+    }
+
+    #friends-chat-messages {
+    flex: 1;
+    overflow-y: auto;
+    padding: 20px 16px;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    background: linear-gradient(to bottom, #F5F5F5, #FAFAFA);
+
+    /* 🔥 CRITICAL FIX */
+    min-height: 0;
+    height: 100%;
+}
+
+
     .contact-item { 
         display: flex; 
         align-items: center; 
@@ -300,6 +336,17 @@
     #back-to-friends:hover {
         background: rgba(255,255,255,0.3);
     }
+
+    #active-friends-chat {
+    display: none;
+    flex: 1;
+    flex-direction: column;
+    background: #F5F5F5;
+
+    /* 🔥 ADD THIS */
+    min-height: 0;
+}
+
 </style>
 
 <script>
@@ -383,31 +430,37 @@ $(document).ready(function() {
     }
 
     function loadFriendsMessages() {
-        if(!currentFriendId) return;
-        $.get('<?= site_url("chat/get_messages_ajax/") ?>' + currentFriendId, function(res) {
-            let data = typeof res === 'string' ? JSON.parse(res) : res;
-            let html = '';
-            data.forEach(m => {
-                let isSent = m.sender_id == '<?= $this->session->userdata("alumni_id") ?>';
-                let dateStr = m.sent_at ? m.sent_at.replace(/-/g, "/") : new Date();
-                let timeStr = new Date(dateStr).toLocaleTimeString([], {hour: '2-digit', minute:'2-digit'});
-                
-                html += `
-                    <div class="fb-bubble ${isSent ? 'fb-sent' : 'fb-received'}">
-                        <div class="msg-text"></div>
-                        <span class="bubble-time">${timeStr}</span>
-                    </div>
-                `;
-            });
-            $('#friends-chat-messages').html(html);
-            
-            // Set text separately for safety
-            data.forEach((m, i) => {
-                $('#friends-chat-messages .msg-text').eq(i).text(m.message);
-            });
-            $('#friends-chat-messages').scrollTop($('#friends-chat-messages')[0].scrollHeight);
+    if (!currentFriendId) return;
+
+    $.get('<?= site_url("chat/get_messages_ajax/") ?>' + currentFriendId, function(res) {
+        let data = typeof res === 'string' ? JSON.parse(res) : res;
+        let html = '';
+
+        data.forEach(m => {
+            let isSent = m.sender_id == '<?= $this->session->userdata("alumni_id") ?>';
+            let dateStr = m.sent_at ? m.sent_at.replace(/-/g, "/") : new Date();
+            let timeStr = new Date(dateStr).toLocaleTimeString([], {hour: '2-digit', minute:'2-digit'});
+
+            html += `
+                <div class="fb-bubble ${isSent ? 'fb-sent' : 'fb-received'}">
+                    <div class="msg-text"></div>
+                    <span class="bubble-time">${timeStr}</span>
+                </div>
+            `;
         });
+
+        const container = $('#friends-chat-messages');
+        container.html(html);
+
+        // safe text insert
+        data.forEach((m, i) => {
+            container.find('.msg-text').eq(i).text(m.message);
+        });
+
+       
+    });
     }
+
 
     function startFriendsPoll() { if(friendsPoll) clearInterval(friendsPoll); friendsPoll = setInterval(loadFriendsMessages, 3000); }
     function stopFriendsPoll() { if(friendsPoll) clearInterval(friendsPoll); friendsPoll = null; }
@@ -439,22 +492,52 @@ $(document).ready(function() {
     }
 
     function loadSupportMessages() {
-        $.get('<?= site_url("support/get_chat_json_alumni") ?>', function(res) {
-            let data = typeof res === 'string' ? JSON.parse(res) : res;
-            let html = '';
-            data.forEach(m => {
-                let isSent = m.is_admin == 0;
-                html += `
-                    <div class="bubble ${isSent ? 'bubble-sent' : 'bubble-received'}">
-                        ${m.message}
-                        <span class="bubble-time">${new Date(m.created_at).toLocaleTimeString([], {hour: '2-digit', minute:'2-digit'})}</span>
-                    </div>
-                `;
-            });
-            $('#support-messages').html(html);
-            $('#support-messages').scrollTop($('#support-messages')[0].scrollHeight);
+    $.get('<?= site_url("support/get_chat_json_alumni") ?>', function(res) {
+        let data = typeof res === 'string' ? JSON.parse(res) : res;
+        let html = '';
+
+        // ✅ AUTO EMAIL NOTICE (always on top)
+        html += `
+            <div class="support-notice">
+                📩 For faster assistance, please email us at:<br>
+                <strong><?= $support_email ?></strong>
+            </div>
+        `;
+
+        data.forEach(m => {
+            let isSent = m.is_admin == 0;
+
+            // ✅ escape message for safety
+            let safeMsg = $('<div>').text(m.message).html();
+
+            html += `
+                <div class="bubble ${isSent ? 'bubble-sent' : 'bubble-received'}">
+                    ${safeMsg}
+                    <span class="bubble-time">${new Date(m.created_at).toLocaleTimeString([], {hour: '2-digit', minute:'2-digit'})}</span>
+                </div>
+            `;
+        });
+
+        $('#support-messages').html(html);
+        $('#support-messages').scrollTop($('#support-messages')[0].scrollHeight);
+    });
+}
+
+    function scrollFriendsToBottom(force = false) {
+    const container = $('#friends-chat-messages')[0];
+    if (!container) return;
+
+    const isNearBottom =
+        container.scrollHeight - container.scrollTop - container.clientHeight < 120;
+
+    // ✅ only auto-scroll if user is near bottom OR forced
+    if (force || isNearBottom) {
+        requestAnimationFrame(() => {
+            container.scrollTop = container.scrollHeight;
         });
     }
+    }
+
 
     function startSupportPoll() { if(supportPoll) clearInterval(supportPoll); supportPoll = setInterval(loadSupportMessages, 4000); }
     function stopSupportPoll() { if(supportPoll) clearInterval(supportPoll); supportPoll = null; }
