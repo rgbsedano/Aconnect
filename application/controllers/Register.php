@@ -63,17 +63,29 @@ class Register extends CI_Controller {
 
         // HANDLE PROFILE IMAGE UPLOAD
         if (!empty($_FILES['profile_image']['name'])) {
+
             $config['upload_path']   = './assets/uploads/alumni/';
             $config['allowed_types'] = 'jpg|jpeg|png|gif';
-            $config['file_name']     = uniqid() . '_' . $_FILES['profile_image']['name'];
+            $config['encrypt_name']  = TRUE; // safer filename
 
             $this->load->library('upload', $config);
 
             if ($this->upload->do_upload('profile_image')) {
+
                 $uploadData = $this->upload->data();
-                $data['profile_image'] = $uploadData['file_name'];
+                $file_name = $uploadData['file_name'];
+
+                // ✅ UPDATE the alumni record with image
+                $this->db->where('id', $alumni_id);
+                $this->db->update('alumni', [
+                    'profile_image' => $file_name
+                ]);
+
+            } else {
+                log_message('error', $this->upload->display_errors());
             }
         }
+
 
         // SEND VERIFICATION EMAIL
         $verify_link = base_url("register/verify_email?token=" . $token);

@@ -151,9 +151,10 @@ public function get_connections($alumni_id) {
     return $this->db->get()->result();
     }
 
-    public function insert($data) {
-        return $this->db->insert('alumni', $data);
-    }
+  public function insert($data) {
+    $this->db->insert('alumni', $data);
+    return $this->db->insert_id(); // ✅ THIS IS THE KEY
+}
 
     public function get_alumni_count($search = '')
     {

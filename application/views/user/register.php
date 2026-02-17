@@ -85,7 +85,6 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                     <form method="post" action="<?= base_url('register/submit') ?>" enctype="multipart/form-data">
 
 
-
                         <div class="form-group">
                             <input type="text" name="student_number" placeholder="Student Number (e.g., 2017-00001)" value="<?= set_value('student_number') ?>" required autocomplete="off">
                         </div>

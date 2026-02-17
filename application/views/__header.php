@@ -344,7 +344,7 @@ $admin_management_active = in_array($current_uri_segment_1, ['adminalumni', 'Adm
                         </a>
                         <div class="dropdown-menu dropdown-menu-right" aria-labelledby="eventsDropdown">
                             <a class="dropdown-item" href="<?php echo base_url('events'); ?>">Upcoming</a>
-                            <a class="dropdown-item" href="<?php echo base_url('eventsprevious'); ?>">Previous</a>
+                            <a class="dropdown-item" href="<?php echo base_url('EventsPrevious'); ?>">Previous</a>
                         </div>
                     </li>
 

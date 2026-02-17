@@ -129,9 +129,15 @@ class AdminManageAccounts extends CI_Controller {
 
     public function delete($id) {
 
-    // delete dependencies first (safe)
+    // 🔥 delete messages first
+    $this->db->where('sender_id', $id)->delete('messages');
+    $this->db->where('receiver_id', $id)->delete('messages');
+
+    // 🔥 delete connection requests
     $this->db->where('sender_id', $id)->delete('connection_requests');
     $this->db->where('receiver_id', $id)->delete('connection_requests');
+
+    // 🔥 delete other dependencies
     $this->db->where('alumni_id', $id)->delete('job_applications');
     $this->db->where('alumni_id', $id)->delete('event_registrations');
 
