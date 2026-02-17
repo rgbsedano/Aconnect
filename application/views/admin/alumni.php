@@ -34,11 +34,11 @@
         font-size: 28px;
         font-weight: 700;
         margin-bottom: 4px;
-        color: var(--text-main);
+        color: white;
     }
 
-    .header-section h1 span { color: var(--accent-red); }
-    .header-section p { color: var(--text-muted); font-size: 14px; margin: 0; }
+    .header-section h1 span { color: #ff6b6b; }
+    .header-section p { color: rgba(255, 255, 255, 0.85); font-size: 14px; margin: 0; }
 
     .main-card {
         background: var(--card-bg);
@@ -147,7 +147,7 @@
 <div class="dashboard-wrapper">
     <div class="header-section">
         <div>
-            <h1>Alumni <span>Management</span></h1>
+            <h1>Alumni <span>Records</span></h1>
             <p>Maintain and verify alumni records and professional profiles.</p>
         </div>
         <div class="actions">

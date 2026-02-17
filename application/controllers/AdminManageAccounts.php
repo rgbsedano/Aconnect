@@ -85,8 +85,11 @@ class AdminManageAccounts extends CI_Controller {
         $alumni = $this->db->get('alumni')->row_array();
 
         if ($alumni) {
+            $this->load->model('user/Alumni_model');
             $this->load->model('Employment_model');
+            
             $employment = $this->Employment_model->get_by_alumni($alumni_id);
+            $certifications = $this->Alumni_model->get_certifications($alumni_id);
 
             $details = '
                 <div class="row">
@@ -115,8 +118,29 @@ class AdminManageAccounts extends CI_Controller {
                         <div class="bg-light p-3 rounded-lg border">' . htmlspecialchars($alumni['graduation_year']) . '</div>
                     </div>
                 </div>
+
                 <hr class="my-4">
-                <h5 class="mb-4 font-weight-bold"><i class="fas fa-briefcase mr-2 text-primary"></i> Employment History</h5>';
+                <h5 class="mb-3 font-weight-bold" style="color: #8B1538;"><i class="fas fa-shapes mr-2"></i> Areas of Expertise</h5>
+                <div class="expertise-container mb-4">';
+            
+            $all_skills = array_merge(
+                explode(',', $alumni['soft_skills'] ?? ""),
+                explode(',', $alumni['technical_skills'] ?? "")
+            );
+            $all_skills = array_filter(array_unique(array_map('trim', $all_skills)));
+
+            if (!empty($all_skills)) {
+                foreach ($all_skills as $skill) {
+                    $details .= '<span class="badge badge-light border p-2 mb-2 mr-2" style="font-size: 13px; font-weight: 500;">' . htmlspecialchars($skill) . '</span>';
+                }
+            } else {
+                $details .= '<p class="text-muted italic small">No expertise areas listed.</p>';
+            }
+
+            $details .= '</div>
+
+                <hr class="my-4">
+                <h5 class="mb-3 font-weight-bold" style="color: #8B1538;"><i class="fas fa-briefcase mr-2"></i> Career Summary</h5>';
 
             if ($employment) {
                 $details .= '
@@ -133,15 +157,36 @@ class AdminManageAccounts extends CI_Controller {
                             <label class="form-label text-muted small text-uppercase font-weight-bold">Job Title</label>
                             <div class="bg-light p-3 rounded-lg border font-weight-bold text-dark">' . htmlspecialchars($employment['job_title']) . '</div>
                         </div>
-                        <div class="col-md-12">
-                            <label class="form-label text-muted small text-uppercase font-weight-bold">Description</label>
-                            <div class="bg-light p-3 rounded-lg border">' . nl2br(htmlspecialchars($employment['job_description'])) . '</div>
+                        <div class="col-md-12 mb-3">
+                            <label class="form-label text-muted small text-uppercase font-weight-bold">Professional Experience Summary</label>
+                            <div class="bg-light p-3 rounded-lg border" style="line-height: 1.6;">' . nl2br(htmlspecialchars($employment['job_description'])) . '</div>
                         </div>
                     </div>';
             } else {
                 $details .= '<div class="alert alert-info border-0 rounded-lg"><i class="fas fa-info-circle mr-2"></i> No active employment record found for this profile.</div>';
             }
-            
+
+            $details .= '
+                <hr class="my-4">
+                <h5 class="mb-3 font-weight-bold" style="color: #8B1538;"><i class="fas fa-certificate mr-2"></i> Professional Certifications</h5>';
+
+            if (!empty($certifications)) {
+                $details .= '<div class="row">';
+                foreach ($certifications as $cert) {
+                    $details .= '
+                        <div class="col-md-6 mb-3">
+                            <div class="p-3 border rounded-lg bg-white shadow-sm h-100">
+                                <div class="font-weight-bold text-dark" style="font-size: 14px;">' . htmlspecialchars($cert->title) . '</div>
+                                <div class="text-muted small">' . htmlspecialchars($cert->issuer) . '</div>
+                                <div class="text-secondary small mt-1"><i class="fas fa-calendar-alt mr-1"></i> ' . htmlspecialchars($cert->date_issued) . '</div>
+                            </div>
+                        </div>';
+                }
+                $details .= '</div>';
+            } else {
+                $details .= '<p class="text-muted italic small">No professional certifications listed.</p>';
+            }
+
             echo $details;
         }
     }

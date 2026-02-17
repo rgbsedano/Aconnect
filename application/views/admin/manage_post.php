@@ -7,6 +7,7 @@
         --text-main: #1e293b;
         --text-muted: #64748b;
         --accent-red: #700a0a;
+        --accent-light-red: #ff6b6b;
         --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
         --border-radius: 24px;
     }
@@ -24,7 +25,7 @@
     }
 
     .header-section {
-        margin-bottom: 30px;
+        margin-bottom: 24px;
         display: flex;
         justify-content: space-between;
         align-items: flex-end;
@@ -34,225 +35,88 @@
         font-size: 28px;
         font-weight: 700;
         margin-bottom: 4px;
-        color: var(--text-main);
-    }
-
-    .header-section h1 span { color: var(--accent-red); }
-    .header-section p { color: var(--text-muted); font-size: 14px; margin: 0; }
-
-    .section-title {
-        display: flex;
-        align-items: center;
-        gap: 12px;
-        margin-bottom: 20px;
-        margin-top: 40px;
-    }
-
-    .section-title h2 {
-        font-size: 18px;
-        font-weight: 700;
-        text-transform: uppercase;
-        letter-spacing: 1px;
-        color: var(--text-main);
-        margin: 0;
-    }
-
-    .section-title .badge {
-        background: #fef2f2;
-        color: var(--accent-red);
-        font-size: 11px;
-        font-weight: 700;
-        padding: 4px 10px;
-        border-radius: 8px;
-    }
-
-    /* Horizontal Scroller */
-    .cards-scroller {
-        display: flex;
-        gap: 20px;
-        overflow-x: auto;
-        padding: 10px 5px 25px;
-        scrollbar-width: none; /* Firefox */
-        -ms-overflow-style: none;  /* IE and Edge */
-    }
-
-    .cards-scroller::-webkit-scrollbar { display: none; }
-
-    /* Post Card */
-    .post-card {
-        min-width: 320px;
-        max-width: 320px;
-        background: var(--card-bg);
-        border-radius: 20px;
-        padding: 24px;
-        box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
-        border: 1px solid #f1f5f9;
-        transition: var(--transition);
-        display: flex;
-        flex-direction: column;
-        position: relative;
-    }
-
-    .post-card:hover {
-        transform: translateY(-8px);
-        box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1);
-        border-color: var(--accent-red);
-    }
-
-    .post-type-badge {
-        font-size: 10px;
-        font-weight: 800;
-        text-transform: uppercase;
-        color: var(--accent-red);
-        letter-spacing: 1px;
-        margin-bottom: 12px;
-        display: block;
-    }
-
-    .post-title {
-        font-size: 17px;
-        font-weight: 700;
-        color: var(--text-main);
-        margin-bottom: 12px;
-        line-height: 1.4;
-        height: 48px;
-        overflow: hidden;
-        display: -webkit-box;
-        -webkit-line-clamp: 2;
-        -webkit-box-orient: vertical;
-    }
-
-    .post-meta {
-        display: flex;
-        align-items: center;
-        gap: 12px;
-        font-size: 12px;
-        color: var(--text-muted);
-        margin-bottom: 20px;
-    }
-
-    .post-meta i { font-size: 14px; color: #cbd5e1; }
-
-    .btn-review {
-        width: 100%;
-        padding: 10px;
-        border-radius: 12px;
-        font-size: 13px;
-        font-weight: 700;
-        text-align: center;
-        background: #f8fafc;
-        border: 1px solid #e2e8f0;
-        color: var(--text-main);
-        transition: var(--transition);
-        margin-bottom: 12px;
-    }
-
-    .btn-review:hover {
-        background: var(--accent-red);
         color: white;
-        border-color: var(--accent-red);
-        text-decoration: none;
     }
 
-    .card-footer {
-        margin-top: auto;
-        padding-top: 15px;
-        border-top: 1px solid #f1f5f9;
+    .header-section h1 span { color: var(--accent-light-red); }
+    .header-section p { color: rgba(255, 255, 255, 0.9); font-size: 14px; margin: 0; }
+
+    /* Content Switcher Styles */
+    .switcher-wrapper {
         display: flex;
-        justify-content: space-between;
-        background: transparent;
+        gap: 12px;
+        margin-bottom: 24px;
+        overflow-x: auto;
+        padding-bottom: 8px;
+        scrollbar-width: none;
     }
+    .switcher-wrapper::-webkit-scrollbar { display: none; }
 
-    .action-btn {
-        font-size: 12px;
+    .switch-btn {
+        padding: 10px 24px;
+        border-radius: 12px;
+        font-size: 14px;
         font-weight: 700;
-        color: var(--text-muted);
-        display: flex;
-        align-items: center;
-        gap: 6px;
+        background: rgba(255, 255, 255, 0.1);
+        color: white;
+        border: 1px solid rgba(255, 255, 255, 0.2);
         cursor: pointer;
         transition: var(--transition);
-        border: none;
-        background: none;
+        white-space: nowrap;
+        backdrop-filter: blur(4px);
     }
 
-    .action-btn:hover { color: var(--accent-red); }
-    .action-btn.delete:hover { color: #ef4444; }
+    .switch-btn:hover {
+        background: rgba(255, 255, 255, 0.2);
+        transform: translateY(-2px);
+    }
+
+    .switch-btn.active {
+        background: white;
+        color: var(--accent-red);
+        border-color: white;
+        box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    }
+
+    /* Main Card Styling */
+    .main-card {
+        background: var(--card-bg);
+        border-radius: var(--border-radius);
+        padding: 30px;
+        box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
+        border: 1px solid #f1f5f9;
+        margin-bottom: 30px;
+    }
+
+    /* Custom Table Style */
+    .custom-table { width: 100%; border-collapse: separate; border-spacing: 0 10px; }
+    .custom-table th { padding: 12px 20px; font-size: 11px; font-weight: 700; text-transform: uppercase; color: var(--text-muted); border: none; }
+    .custom-table tr.data-row { background: white; transition: var(--transition); }
+    .custom-table tr.data-row:hover { transform: scale(1.005); box-shadow: 0 4px 12px rgba(0,0,0,0.05); }
+    .custom-table td { padding: 16px 20px; vertical-align: middle; border-top: 1px solid #f1f5f9; border-bottom: 1px solid #f1f5f9; }
+    .custom-table td:first-child { border-left: 1px solid #f1f5f9; border-top-left-radius: 14px; border-bottom-left-radius: 14px; }
+    .custom-table td:last-child { border-right: 1px solid #f1f5f9; border-top-right-radius: 14px; border-bottom-right-radius: 14px; }
+
+    .post-title-cell { font-weight: 700; color: var(--text-main); font-size: 15px; }
+    .post-type-label { font-size: 11px; font-weight: 800; text-transform: uppercase; color: var(--accent-red); background: #fef2f2; padding: 2px 8px; border-radius: 6px; }
+
+    .btn-action {
+        width: 36px; height: 36px; border-radius: 10px; display: inline-flex; align-items: center; justify-content: center;
+        background: #f8fafc; color: var(--text-muted); border: 1px solid #e2e8f0; transition: var(--transition);
+        margin-left: 5px;
+    }
+    .btn-action:hover { background: var(--accent-red); color: white; border-color: var(--accent-red); transform: translateY(-2px); }
+    .btn-action.delete:hover { background: #ef4444; border-color: #ef4444; }
 
     /* Modal Styling */
     .modal-content { border-radius: 24px; border: none; overflow: hidden; }
     .modal-header { background: var(--accent-red); color: white; padding: 25px; border: none; }
+    .modal-body { padding: 30px; }
     .form-label { font-size: 11px; font-weight: 700; color: var(--text-muted); text-transform: uppercase; margin-bottom: 8px; display: block; }
     .form-input { border-radius: 12px; padding: 12px; font-size: 14px; font-weight: 500; border: 1px solid #e2e8f0; }
     .form-input:focus { border-color: var(--accent-red); box-shadow: 0 0 0 4px rgba(112, 10, 10, 0.05); }
 
-    /* Normalize select appearance and ensure caret aligns correctly */
-    select.form-input {
-        -webkit-appearance: none;
-        -moz-appearance: none;
-        appearance: none;
-        background-color: #fff;
-        background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='14' height='10' viewBox='0 0 14 10'><path fill='%2364748b' d='M7 10L0 0h14z'/></svg>");
-        background-repeat: no-repeat;
-        background-position: right 12px center;
-        background-size: 14px 10px;
-        padding-right: 44px;
-        line-height: 1.4;
-        height: auto;
-        display: block;
-    }
-
-    /* Hide IE/Edge default dropdown arrow */
-    select.form-input::-ms-expand { display: none; }
-
-    /* Make file inputs more visible and easier to interact with */
-    input.form-input[type="file"], .custom-file {
-        font-size: 14px;
-        line-height: 1.4;
-    }
-
-    /* Native file input styling (for non-bootstrap controls) */
-    input.form-input[type="file"] {
-        padding: 10px 12px;
-        min-height: 44px;
-        border-radius: 12px;
-        background: #fff;
-        border: 1px solid #e2e8f0;
-    }
-
-    /* Bootstrap custom-file wrapper adjustments */
-    .custom-file {
-        display: flex;
-        align-items: center;
-        justify-content: center;
-    }
-
-    .custom-file-input {
-        position: absolute;
-        width: 100%;
-        height: 100%;
-        opacity: 0;
-        z-index: 2;
-        cursor: pointer;
-    }
-
-    .custom-file-label {
-        display: block;
-        width: 100%;
-        padding: 10px 12px;
-        border-radius: 12px;
-        border: 1px solid #e2e8f0;
-        background: #fff;
-        color: var(--text-main);
-        text-align: left;
-        overflow: hidden;
-        white-space: nowrap;
-        text-overflow: ellipsis;
-    }
-
-    /* Slight hover/focus for visibility */
-    .custom-file-label:hover, input.form-input[type="file"]:hover { border-color: var(--accent-red); }
-    /* Carousel Manager Styles */
+    /* Carousel Item Grid */
     .carousel-grid {
         display: grid;
         grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
@@ -267,11 +131,6 @@
         border: 1px solid #e2e8f0;
         position: relative;
         transition: var(--transition);
-    }
-
-    .carousel-item-card:hover {
-        border-color: var(--accent-red);
-        transform: translateY(-4px);
     }
 
     .carousel-item-card img {
@@ -296,61 +155,19 @@
         justify-content: center;
         cursor: pointer;
         transition: var(--transition);
-        box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
-    }
-
-    .delete-carousel-btn:hover {
-        background: #dc2626;
-        transform: scale(1.1);
     }
 
     @media (max-width: 768px) {
-        .header-section {
-            flex-direction: column;
-            align-items: flex-start;
-            gap: 20px;
-        }
-
-        .header-section .actions {
-            width: 100%;
-            display: flex;
-            gap: 10px;
-        }
-
-        .header-section .actions .btn {
-            flex: 1;
-            margin: 0 !important;
-            padding: 10px;
-            font-size: 13px;
-        }
-
-        .cards-scroller {
-            flex-direction: column;
-            overflow-x: hidden;
-            padding: 10px 0;
-        }
-
-        .post-card {
-            min-width: 100%;
-            max-width: 100%;
-            margin-bottom: 10px;
-        }
-
-        .dashboard-wrapper {
-            padding: 15px;
-        }
+        .header-section { flex-direction: column; align-items: flex-start; gap: 20px; }
+        .header-section .actions { width: 100%; display: flex; gap: 10px; }
+        .header-section .actions .btn { flex: 1; margin: 0 !important; }
+        .switcher-wrapper { width: 100%; }
+        .switch-btn { flex: 1; text-align: center; }
     }
-
-    @media (max-width: 576px) {
-        .header-section h1 {
-            font-size: 22px;
-        }
-    }
-
 </style>
 
 <div class="dashboard-wrapper">
-    <div class="header-section">
+    <header class="header-section">
         <div>
             <h1>Alumni <span>Content</span></h1>
             <p>Publish announcements, news, and success stories to the network.</p>
@@ -359,57 +176,68 @@
             <button class="btn btn-danger" data-toggle="modal" data-target="#createPostModal" style="background: var(--accent-red); border-radius: 12px; font-weight: 700; padding: 10px 24px;">
                 <i class="fas fa-plus mr-2"></i> Create Post
             </button>
-            <button class="btn btn-outline-secondary ml-2" data-toggle="modal" data-target="#uploadCarouselModal" style="border-radius: 12px; font-weight: 600; padding: 10px 20px;">
+            <button class="btn btn-outline-light ml-2" data-toggle="modal" data-target="#uploadCarouselModal" style="border-radius: 12px; font-weight: 600; padding: 10px 20px; color: white; border-color: rgba(255,255,255,0.4);">
                 <i class="fas fa-images mr-2"></i> Carousel
             </button>
         </div>
+    </header>
+
+    <div class="switcher-wrapper">
+        <button class="switch-btn active" onclick="switchCategory('announcements')">Announcements</button>
+        <button class="switch-btn" onclick="switchCategory('news')">Campus News</button>
+        <button class="switch-btn" onclick="switchCategory('stories')">Alumni Stories</button>
     </div>
 
-    <?php function render_modern_section($title, $items, $type) { ?>
-        <div class="section-title">
-            <h2><?= $title ?></h2>
-            <span class="badge"><?= count($items) ?> POSTS</span>
+    <div class="main-card">
+        <div class="table-responsive">
+            <table class="custom-table">
+                <thead>
+                    <tr>
+                        <th>Content Details</th>
+                        <th>Created At</th>
+                        <th class="text-right">Actions</th>
+                    </tr>
+                </thead>
+                <tbody id="contentTableBody">
+                    <?php 
+                    $all_posts = array_merge(
+                        array_map(function($p){ $p['type_label']='Announcement'; return $p; }, $announcements),
+                        array_map(function($p){ $p['type_label']='Campus News'; return $p; }, $news),
+                        array_map(function($p){ $p['type_label']='Success Story'; return $p; }, $stories)
+                    );
+                    foreach($all_posts as $post): ?>
+                        <tr class="data-row post-item" data-type="<?= $post['post_type'] ?>" style="<?= $post['post_type'] == 'announcements' ? '' : 'display:none;' ?>">
+                            <td>
+                                <div class="post-title-cell" onclick='reviewDetails(<?= json_encode($post) ?>)' 
+                                     style="cursor: pointer; transition: var(--transition);" 
+                                     onmouseover="this.style.textDecoration='underline'" 
+                                     onmouseout="this.style.textDecoration='none'">
+                                    <?= htmlspecialchars($post['title']) ?>
+                                </div>
+                                <span class="post-type-label"><?= $post['type_label'] ?></span>
+                            </td>
+                            <td>
+                                <span class="text-muted small font-weight-bold">
+                                    <i class="fas fa-calendar-alt mr-1"></i> <?= date('M d, Y', strtotime($post['created_at'])) ?>
+                                </span>
+                            </td>
+                            <td class="text-right">
+                                <button onclick='editPost(<?= json_encode($post) ?>)' class="btn-action" title="Edit Post">
+                                    <i class="fas fa-pen"></i>
+                                </button>
+                                <button onclick="deletePost(<?= $post['id'] ?>)" class="btn-action delete" title="Delete Post">
+                                    <i class="fas fa-trash"></i>
+                                </button>
+                            </td>
+                        </tr>
+                    <?php endforeach; ?>
+                </tbody>
+            </table>
         </div>
-
-        <div class="cards-scroller" id="<?= $type ?>Wrapper">
-            <?php if (empty($items)): ?>
-                <div class="py-5 text-center w-100" style="background: white; border-radius: 20px; border: 2px dashed #e2e8f0;">
-                    <i class="fas fa-folder-open fa-3x text-light mb-3"></i>
-                    <p class="text-muted font-weight-bold">No <?= strtolower($title) ?> found.</p>
-                </div>
-            <?php else: foreach($items as $post): ?>
-                <div class="post-card">
-                    <span class="post-type-badge"><?= $type ?></span>
-                    <h5 class="post-title"><?= htmlspecialchars($post['title']) ?></h5>
-                    
-                    <div class="post-meta">
-                        <div><i class="fas fa-calendar-alt mr-1"></i> <?= date('M d, Y', strtotime($post['created_at'] ?? 'now')) ?></div>
-                        <div><i class="fas fa-tag mr-1"></i> Admin</div>
-                    </div>
-
-                    <a href="javascript:void(0)" onclick='reviewDetails(<?= json_encode($post) ?>)' class="btn-review">
-                        <i class="fas fa-eye mr-2"></i> Full Details
-                    </a>
-
-                    <div class="card-footer">
-                        <button onclick='editPost(<?= json_encode($post) ?>)' class="action-btn">
-                            <i class="fas fa-pen"></i> Edit
-                        </button>
-                        <button onclick="deletePost(<?= $post['id'] ?>)" class="action-btn delete">
-                            <i class="fas fa-trash"></i> Delete
-                        </button>
-                    </div>
-                </div>
-            <?php endforeach; endif; ?>
-        </div>
-    <?php } ?>
-
-    <?php render_modern_section('Announcements', $announcements ?? [], 'announcements'); ?>
-    <?php render_modern_section('Campus News', $news ?? [], 'news'); ?>
-    <?php render_modern_section('Alumni Stories', $stories ?? [], 'stories'); ?>
+    </div>
 </div>
 
-<!-- Modals -->
+<!-- CREATE POST MODAL -->
 <div class="modal fade" id="createPostModal" tabindex="-1">
     <div class="modal-dialog modal-lg modal-dialog-centered">
         <div class="modal-content">
@@ -431,11 +259,11 @@
                         </div>
                         <div class="col-md-6 mb-3">
                             <label class="form-label">Post Title</label>
-                            <input type="text" name="title" class="form-control form-input" required>
+                            <input type="text" name="title" class="form-control form-input" placeholder="Enter headline..." required>
                         </div>
                         <div class="col-12 mb-3">
                             <label class="form-label">Content Description</label>
-                            <textarea name="content" class="form-control form-input" rows="6" required></textarea>
+                            <textarea name="content" class="form-control form-input" rows="6" placeholder="Write your content here..." required></textarea>
                         </div>
                         <div class="col-12">
                             <label class="form-label">Cover Image (Optional)</label>
@@ -452,6 +280,7 @@
     </div>
 </div>
 
+<!-- EDIT POST MODAL -->
 <div class="modal fade" id="editPostModal" tabindex="-1">
     <div class="modal-dialog modal-lg modal-dialog-centered">
         <div class="modal-content">
@@ -494,30 +323,31 @@
     </div>
 </div>
 
+<!-- VIEW POST MODAL -->
 <div class="modal fade" id="viewPostModal" tabindex="-1">
     <div class="modal-dialog modal-lg modal-dialog-centered">
         <div class="modal-content">
-            <div class="modal-header" style="height: 100px; display: flex; align-items: center;">
+            <div class="modal-header" style="height: 100px; display: flex; align-items: center; background: #2d3436;">
                 <div>
-                    <span id="view_post_type" class="post-type-badge text-white-50 mb-1" style="color: rgba(255,255,255,0.7) !important;"></span>
+                    <span id="view_post_type" class="post-type-label mb-1" style="background: rgba(255,255,255,0.1); color: white; border: 1px solid rgba(255,255,255,0.2);"></span>
                     <h3 id="view_title" class="modal-title m-0" style="font-weight: 700; color: white;"></h3>
                 </div>
                 <button type="button" class="close text-white" data-dismiss="modal">&times;</button>
             </div>
             <div class="modal-body">
-                <div id="view_image_container" class="mb-4" style="display:none;">
-                    <img id="view_image" src="" class="img-fluid" style="width: 100%; max-height: 400px; object-fit: cover; border-radius: 16px;">
+                <div id="view_image_container" class="mb-4 text-center" style="display:none;">
+                    <img id="view_image" src="" class="img-fluid" style="border-radius: 16px; box-shadow: 0 10px 30px rgba(0,0,0,0.1); max-height: 400px; object-fit: cover;">
                 </div>
-                <div class="p-4" style="background: #f8fafc; border-radius: 16px; min-height: 200px; white-space: pre-wrap; line-height: 1.8; color: var(--text-main);" id="view_content"></div>
+                <div id="view_content" style="font-size: 15px; line-height: 1.8; color: var(--text-main); white-space: pre-wrap; padding: 20px; background: #f8fafc; border-radius: 16px;"></div>
             </div>
             <div class="modal-footer" style="background: #f8fafc;">
-                <button type="button" class="btn btn-light" data-dismiss="modal" style="border-radius: 12px; font-weight: 600;">Close</button>
-                <button type="button" id="edit_from_view" class="btn btn-danger" style="background: var(--accent-red); border-radius: 12px; font-weight: 700; padding: 10px 24px;">Edit This Post</button>
+                <button type="button" class="btn btn-secondary" data-dismiss="modal" style="border-radius: 12px; font-weight: 600;">Close</button>
             </div>
         </div>
     </div>
 </div>
 
+<!-- CAROUSEL MODAL -->
 <div class="modal fade" id="uploadCarouselModal" tabindex="-1">
     <div class="modal-dialog modal-lg modal-dialog-centered">
         <div class="modal-content">
@@ -525,56 +355,41 @@
                 <h5 class="modal-title" style="font-weight: 700;"><i class="fas fa-images mr-2"></i> Carousel Manager</h5>
                 <button type="button" class="close text-white" data-dismiss="modal">&times;</button>
             </div>
-            <div class="modal-body p-4">
-                <div class="mb-4">
-                    <label class="form-label mb-3">Currently Active Banners</label>
-                    <div class="carousel-grid">
-                        <?php if (!empty($carousel)): foreach($carousel as $item): ?>
-                            <div class="carousel-item-card">
-                                <img src="<?= base_url('assets/uploads/carousel/' . $item['file_name']) ?>" alt="Carousel">
-                                <div class="mt-2 text-center">
-                                    <button onclick='editCarousel(<?= json_encode($item) ?>)' class="btn btn-sm btn-link text-primary p-0" style="font-size: 11px; font-weight: 700;">EDIT INFO</button>
-                                </div>
-                                <button onclick="deleteCarousel(<?= $item['id'] ?>)" class="delete-carousel-btn" title="Delete Banner">
-                                    <i class="fas fa-times"></i>
-                                </button>
+            <div class="modal-body">
+                <div class="carousel-grid">
+                    <?php foreach($carousel as $item): ?>
+                        <div class="carousel-item-card">
+                            <img src="<?= base_url('assets/uploads/carousel/' . $item['file_name']) ?>" alt="Carousel">
+                            <button onclick="deleteCarousel(<?= $item['id'] ?>)" class="delete-carousel-btn">
+                                <i class="fas fa-times"></i>
+                            </button>
+                            <div class="mt-2 text-center">
+                                <button onclick='editCarousel(<?= json_encode($item) ?>)' class="btn btn-sm btn-link text-danger p-0" style="font-size: 10px; font-weight: 700;">EDIT TEXT</button>
                             </div>
-                        <?php endforeach; else: ?>
-                            <div class="col-12 py-4 text-center text-muted" style="background: #f8fafc; border-radius: 16px; border: 2px dashed #e2e8f0;">
-                                <i class="fas fa-images fa-2x mb-2 opacity-25"></i>
-                                <p class="small m-0">No carousel banners active.</p>
-                            </div>
-                        <?php endif; ?>
-                    </div>
+                        </div>
+                    <?php endforeach; ?>
                 </div>
 
-                <div style="height: 1px; background: #f1f5f9; margin-bottom: 24px;"></div>
+                <hr class="my-4">
 
-                <form id="carouselForm" method="POST" enctype="multipart/form-data">
+                <form id="carouselForm" enctype="multipart/form-data">
                     <input type="hidden" name="carousel_id" id="carousel_id">
-                    <div id="carouselFormTitle" class="form-label mb-3">Add New Banner</div>
-                    
                     <div class="row">
-                        <div class="col-md-12 mb-3">
+                        <div class="col-md-6 mb-3">
                             <label class="form-label">Banner Title</label>
-                            <input type="text" name="title" id="carouselTitle" class="form-control form-input" placeholder="e.g. Welcome to SDCA">
+                            <input type="text" name="title" id="carouselTitle" class="form-control form-input" placeholder="e.g. Welcome Back">
                         </div>
-                        <div class="col-md-12 mb-3">
-                            <label class="form-label">Short Description</label>
-                            <textarea name="description" id="carouselDescription" class="form-control form-input" rows="3" placeholder="Clicking the banner will show this in a modal..."></textarea>
+                        <div class="col-md-6 mb-3">
+                            <label class="form-label">Banner Image</label>
+                            <input type="file" name="carousel_photo" id="carouselInput" class="form-control form-input" accept="image/*">
                         </div>
-                    </div>
-
-                    <div class="p-4 text-center" style="background: #f8fafc; border-radius: 20px; border: 2px dashed #e2e8f0;">
-                        <i class="fas fa-cloud-upload-alt fa-2x text-light mb-3"></i>
-                        <p class="text-muted small mb-3">Recommended size: 1920x600px (16:9 ratio)</p>
-                        <div class="custom-file text-left" style="max-width: 300px; margin: 0 auto;">
-                            <input type="file" name="carousel_photo" class="custom-file-input" id="carouselInput" accept="image/*">
-                            <label class="custom-file-label">Choose file...</label>
+                        <div class="col-12 mb-3">
+                            <label class="form-label">Description (Optional)</label>
+                            <textarea name="description" id="carouselDescription" class="form-control form-input" rows="2"></textarea>
                         </div>
                     </div>
-                    <div class="mt-4 text-right">
-                        <button type="button" id="resetCarouselForm" class="btn btn-light" style="border-radius: 12px; font-weight: 600; display:none;">Cancel Edit</button>
+                    <div class="text-right mt-2">
+                        <button type="button" id="resetCarouselForm" class="btn btn-light mr-2" style="display:none; border-radius: 10px;">Reset</button>
                         <button type="submit" id="carouselSubmitBtn" class="btn btn-danger" style="background: var(--accent-red); border-radius: 12px; font-weight: 700; padding: 10px 24px;">Upload Banner</button>
                     </div>
                 </form>
@@ -585,23 +400,25 @@
 
 <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
 <script>
+    function switchCategory(type) {
+        $('.switch-btn').removeClass('active');
+        $(`.switch-btn[onclick="switchCategory('${type}')"]`).addClass('active');
+        
+        $('.post-item').hide();
+        $(`.post-item[data-type="${type}"]`).fadeIn(300);
+    }
+
     function reviewDetails(post) {
         $('#view_title').text(post.title);
-        $('#view_post_type').text(post.post_type.toUpperCase());
+        $('#view_post_type').text(post.type_label);
         $('#view_content').text(post.content);
 
-        if (post.image_path) {
-            $('#view_image').attr('src', '<?= base_url('uploads/posts/') ?>' + post.image_path);
+        if (post.image) {
+            $('#view_image').attr('src', '<?= base_url('assets/uploads/post/') ?>' + post.image);
             $('#view_image_container').show();
         } else {
             $('#view_image_container').hide();
         }
-
-        $('#edit_from_view').off('click').on('click', function() {
-            $('#viewPostModal').modal('hide');
-            setTimeout(() => editPost(post), 400); 
-        });
-
         $('#viewPostModal').modal('show');
     }
 
@@ -613,89 +430,75 @@
         $('#editPostModal').modal('show');
     }
 
+    function deletePost(id) {
+        if(confirm('Delete this post permanently?')) {
+            window.location.href = '<?= base_url("AdminPost/delete/") ?>' + id;
+        }
+    }
+
+    function deleteCarousel(id) {
+        if(confirm('Delete this banner?')) {
+            window.location.href = '<?= base_url("AdminPost/delete_carousel/") ?>' + id;
+        }
+    }
+
     function editCarousel(item) {
         $('#carousel_id').val(item.id);
         $('#carouselTitle').val(item.title);
         $('#carouselDescription').val(item.description);
-        $('#carouselFormTitle').text('Editing Banner: ' + (item.title || 'Untitled'));
         $('#carouselSubmitBtn').text('Save Changes');
-        $('#carouselInput').removeAttr('required');
         $('#resetCarouselForm').show();
-        $('#carouselForm').attr('action', '<?= base_url('AdminPost/update_carousel/') ?>' + item.id);
-    }
-
-    $('#resetCarouselForm').on('click', function() {
-        $('#carousel_id').val('');
-        $('#carouselTitle').val('');
-        $('#carouselDescription').val('');
-        $('#carouselFormTitle').text('Add New Banner');
-        $('#carouselSubmitBtn').text('Upload Banner');
-        $('#carouselInput').attr('required', 'required');
-        $(this).hide();
-        $('#carouselForm').attr('action', '<?= base_url('AdminPost/upload') ?>');
-    });
-
-    function deleteCarousel(id) {
-        if(confirm('Are you sure you want to remove this banner from the carousel?')) {
-            window.location.href = '<?= base_url('AdminPost/delete_carousel/') ?>' + id;
-        }
-    }
-
-    function deletePost(id) {
-        if(confirm('Are you sure you want to delete this post permanently?')) {
-            window.location.href = '<?= base_url('AdminPost/delete/') ?>' + id;
-        }
+        $('#carouselForm').attr('action', '<?= base_url("AdminPost/update_carousel/") ?>' + item.id);
     }
 
     $(document).ready(function() {
-        $('#createPostForm').on('submit', function(e) {
+        $('#resetCarouselForm').click(function() {
+            $('#carouselForm')[0].reset();
+            $('#carousel_id').val('');
+            $('#carouselSubmitBtn').text('Upload Banner');
+            $(this).hide();
+            $('#carouselForm').attr('action', '<?= base_url("AdminPost/upload") ?>');
+        });
+
+        $('#createPostForm').submit(function(e) {
             e.preventDefault();
             const btn = $(this).find('button[type="submit"]');
             btn.prop('disabled', true).text('Publishing...');
             $.ajax({
-                url: '<?= base_url('AdminPost/create') ?>',
+                url: '<?= base_url("AdminPost/create") ?>',
                 type: 'POST',
                 data: new FormData(this),
                 contentType: false, processData: false,
                 success: function() { location.reload(); },
-                error: function() { alert('Failed to create post.'); btn.prop('disabled', false).text('Publish Now'); }
+                error: function() { alert('Error publishing.'); btn.prop('disabled', false).text('Publish Now'); }
             });
         });
 
-        $('#editPostForm').on('submit', function(e) {
+        $('#editPostForm').submit(function(e) {
             e.preventDefault();
             const btn = $(this).find('button[type="submit"]');
             btn.prop('disabled', true).text('Saving...');
             $.ajax({
-                url: '<?= base_url('AdminPost/update/') ?>' + $('#edit_post_id').val(),
+                url: '<?= base_url("AdminPost/update/") ?>' + $('#edit_post_id').val(),
                 type: 'POST',
                 data: new FormData(this),
                 contentType: false, processData: false,
                 success: function() { location.reload(); },
-                error: function() { alert('Failed to update post.'); btn.prop('disabled', false).text('Update Changes'); }
+                error: function() { alert('Error updating.'); btn.prop('disabled', false).text('Update Changes'); }
             });
         });
 
-        $('#carouselForm').on('submit', function(e) {
+        $('#carouselForm').submit(function(e) {
             e.preventDefault();
-            const btn = $(this).find('button[type="submit"]');
-            btn.prop('disabled', true).text('Processing...');
-            
-            const action = $(this).attr('action') || '<?= base_url('AdminPost/upload') ?>';
-            
+            const actionUrl = $(this).attr('action') || '<?= base_url("AdminPost/upload") ?>';
             $.ajax({
-                url: action,
+                url: actionUrl,
                 type: 'POST',
                 data: new FormData(this),
                 contentType: false, processData: false,
                 success: function() { location.reload(); },
-                error: function() { alert('Failed to process carousel item.'); btn.prop('disabled', false).text('Try Again'); }
+                error: function() { alert('Error processing carousel.'); }
             });
-        });
-
-        $('.custom-file-input').on('change', function() {
-            let fileName = $(this).val().split('\\').pop();
-            $(this).next('.custom-file-label').html(fileName);
         });
     });
 </script>

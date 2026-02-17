@@ -44,10 +44,14 @@
         }
 
         .main-header h2 { 
-            color: var(--maroon); 
+            color: white; 
             font-weight: 800; 
             font-size: 24px;
             letter-spacing: -0.5px;
+        }
+
+        .main-header h2 span {
+            color: #ff6b6b;
         }
 
         /* Unified Action Buttons */
@@ -190,8 +194,9 @@
     <div class="alumni-card">
         <div class="main-header d-flex flex-wrap justify-content-between align-items-center mb-4">
             <div>
-                <h2 class="mb-0"><i class="fas fa-briefcase mr-3"></i>Job Management</h2>
-                <p class="text-muted mt-2 mb-0">Publish opportunities and track applicant engagement</p>
+                <div class="main-header">
+                <h2>Job <span>Opportunities</span></h2>
+                <p class="text-white">Publish job vacancies and career opportunities to the community.</p>
             </div>
             <div class="mt-3 mt-lg-0">
                 <button class="btn btn-modern-search shadow-sm" data-toggle="modal" data-target="#createJobModal">

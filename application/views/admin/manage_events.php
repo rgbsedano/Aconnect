@@ -36,11 +36,11 @@
         font-size: 28px;
         font-weight: 700;
         margin-bottom: 4px;
-        color: var(--text-main);
+        color: white;
     }
 
-    .header-section h1 span { color: var(--accent-red); }
-    .header-section p { color: var(--text-muted); font-size: 14px; margin: 0; }
+    .header-section h1 span { color: #ff6b6b; }
+    .header-section p { color: rgba(255, 255, 255, 0.9); font-size: 14px; margin: 0; }
 
     /* Stats Section */
     .stats-grid {
@@ -165,8 +165,8 @@
 <div class="dashboard-wrapper">
     <div class="header-section">
         <div>
-            <h1>Event <span>Management</span></h1>
-            <p>Coordinate, schedule, and oversee alumni engagement events.</p>
+            <h1>Community <span>Events</span></h1>
+            <p>Organize gatherings, webinars, and networking opportunities.</p>
         </div>
         <div class="actions">
             <button class="btn btn-danger" onclick="prepareCreate()" style="background: var(--accent-red); border-radius: 12px; font-weight: 700; padding: 10px 24px;">

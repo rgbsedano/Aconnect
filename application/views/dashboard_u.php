@@ -42,13 +42,13 @@
         }
 
         .header-spacing {
-            height: 70px;
+            height: 0px;
         }
 
         .container {
             max-width: 1400px;
             width: 100%;
-            margin: 20px auto;
+            margin: 0 auto;
             display: grid;
             grid-template-columns: 1fr;
             gap: 32px;
@@ -114,7 +114,7 @@
         }
 
         .story-content {
-            padding: 48px;
+            padding: 32px;
         }
 
         .story-content p {
@@ -365,7 +365,6 @@
 </head>
 <body>
 
-<div class="header-spacing"></div>
 
 <div class="container">
     <main class="story-section">

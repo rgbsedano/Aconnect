@@ -52,6 +52,23 @@ $admin_management_active = in_array($current_uri_segment_1, ['adminalumni', 'Adm
             background-color: #f3f2ef; 
             padding-top: 0 !important;
             font-size: 1.05rem;
+            position: relative;
+        }
+
+        body::before {
+            content: "";
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-image: url('<?php echo base_url('assets/images/background.png'); ?>');
+            background-size: cover;
+            background-attachment: fixed;
+            background-position: center;
+            background-repeat: no-repeat;
+            filter: blur(8px);
+            z-index: -1;
         }
 
         #ac-main-header {
@@ -280,9 +297,13 @@ $admin_management_active = in_array($current_uri_segment_1, ['adminalumni', 'Adm
 <header id="ac-main-header">
     <div class="ac-container">
         <div class="logo-area d-flex align-items-center">
-            <a href="<?php echo base_url('dashboard'); ?>">
+            <?php if($this->session->userdata('role') == 'administrator'): ?>
                 <img src="<?php echo base_url('assets/images/schoollogo.jpg'); ?>" alt="School Logo" class="mr-2" style="height:52px; border-radius: 4px;">
-            </a>
+            <?php else: ?>
+                <a href="<?php echo base_url('dashboard'); ?>">
+                    <img src="<?php echo base_url('assets/images/schoollogo.jpg'); ?>" alt="School Logo" class="mr-2" style="height:52px; border-radius: 4px;">
+                </a>
+            <?php endif; ?>
             <?php if($this->session->userdata('role') == 'administrator'): ?>
                 <a href="<?php echo base_url('AdminDashboard'); ?>">
                     <img src="<?php echo base_url('assets/images/logo.png'); ?>" alt="Admin Logo" style="height:52px;">

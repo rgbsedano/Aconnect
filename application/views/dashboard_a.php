@@ -43,14 +43,15 @@
         font-size: 28px;
         font-weight: 700;
         margin-bottom: 4px;
+        color: white;
     }
 
     .header-section h1 span {
-        color: var(--accent-red);
+        color: #ff6b6b;
     }
 
     .header-section p {
-        color: var(--text-muted);
+        color: rgba(255, 255, 255, 0.85);
         font-size: 14px;
     }
 
@@ -91,6 +92,7 @@
         font-size: 16px;
         font-weight: 700;
         margin: 0;
+        color: var(--text-main);
     }
 
     .status-card-header p {

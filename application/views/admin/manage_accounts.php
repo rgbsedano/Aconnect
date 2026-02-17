@@ -34,11 +34,11 @@
         font-size: 28px;
         font-weight: 700;
         margin-bottom: 4px;
-        color: var(--text-main);
+        color: white;
     }
 
-    .header-section h1 span { color: var(--accent-red); }
-    .header-section p { color: var(--text-muted); font-size: 14px; margin: 0; }
+    .header-section h1 span { color: #ff6b6b; }
+    .header-section p { color: rgba(255, 255, 255, 0.85); font-size: 14px; margin: 0; }
 
     /* Main Table Card */
     .main-card {

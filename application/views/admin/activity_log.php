@@ -34,11 +34,11 @@
         font-size: 28px;
         font-weight: 700;
         margin-bottom: 4px;
-        color: var(--text-main);
+        color: white;
     }
 
-    .header-section h1 span { color: var(--accent-red); }
-    .header-section p { color: var(--text-muted); font-size: 14px; margin: 0; }
+    .header-section h1 span { color: #ff6b6b; }
+    .header-section p { color: rgba(255, 255, 255, 0.9); font-size: 14px; margin: 0; }
 
     /* Action Buttons */
     .btn-export {
@@ -151,8 +151,8 @@
 <div class="dashboard-wrapper">
     <div class="header-section">
         <div>
-            <h1>Activity <span>Logs</span></h1>
-            <p>Monitor system activities, alumni actions, and administrative changes.</p>
+            <h1>Platform <span>Activity</span></h1>
+            <p>Monitored system actions and administrative logs.</p>
         </div>
         <div class="d-flex gap-2">
             <button onclick="window.print()" class="btn-export">
