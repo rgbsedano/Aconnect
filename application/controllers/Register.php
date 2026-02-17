@@ -26,7 +26,7 @@ class Register extends CI_Controller {
         $this->form_validation->set_rules('gender', 'Gender', 'required');
         $this->form_validation->set_rules('degree_other', 'Other Degree', 'callback_check_degree_other');
         $this->form_validation->set_rules('graduation_year', 'Graduation Year', 'required|integer|trim');
-        
+        $this->form_validation->set_rules('telephone', 'Telephone', 'trim');
 
 
         if ($this->form_validation->run() == FALSE) {

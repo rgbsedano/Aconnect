@@ -99,7 +99,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                         </div>
                         
                         <div class="form-group">
-                            <input type="email" name="email" placeholder="Email - (Use Personal Email)" value="<?= set_value('email') ?>" required autocomplete="email">
+                            <input type="email" name="email" placeholder="Email - (Do not use the SDCA Email)" value="<?= set_value('email') ?>" required autocomplete="email">
                         </div>
                         <div class="form-group">
                             <input type="email" name="alternative_email" placeholder="Alternate Email" 
@@ -109,7 +109,10 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                         <div class="form-group">
                             <input type="tel" name="phone" placeholder="Phone Number (e.g., 09xxxxxxxxx)" value="<?= set_value('phone') ?>" required autocomplete="tel">
                         </div>
-                       
+                        <div class="form-group">
+                            <input type="text" name="telephone" placeholder="Telephone Number ( e.g., 02-8123-4567)" 
+                                value="<?= set_value('telephone') ?>" autocomplete="off">
+                        </div>
 
                         
                         <div class="form-group">
