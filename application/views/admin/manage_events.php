@@ -160,6 +160,23 @@
         .actions, .actions .btn { width: 100%; }
         .filter-pills { overflow-x: auto; padding-bottom: 5px; }
     }
+
+    /* Modal Spacing for Header */
+    .modal-dialog { margin-top: 100px !important; margin-bottom: 50px !important; }
+
+    @media (min-width: 992px) {
+        /* Desktop: Wide for event details, adaptive for others */
+        .modal-wide { max-width: 950px !important; }
+        .modal-adaptive { max-width: 650px !important; }
+    }
+
+    @media (max-width: 768px) {
+        /* Mobile Modal Adjustments */
+        .modal-dialog { margin-top: 60px !important; margin-left: 12px; margin-right: 12px; margin-bottom: 30px !important; }
+        .modal-content { border-radius: 20px; }
+        .modal-body { padding: 20px; }
+        .modal-header { padding: 20px; }
+    }
 </style>
 
 <div class="dashboard-wrapper">
@@ -256,7 +273,7 @@
 
 <!-- Modal -->
 <div class="modal fade" id="eventModal" tabindex="-1" role="dialog">
-    <div class="modal-dialog modal-dialog-centered modal-lg" role="document">
+    <div class="modal-dialog modal-wide" role="document">
         <div class="modal-content">
             <div class="modal-header">
                 <h5 class="modal-title" style="font-weight: 700;" id="modalTitle">Create Event</h5>

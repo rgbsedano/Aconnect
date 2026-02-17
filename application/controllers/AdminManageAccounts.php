@@ -48,20 +48,83 @@ class AdminManageAccounts extends CI_Controller {
         $this->load->view('__footer');
     }
 
+    public function create() {
+        $degree = $this->input->post('degree');
+        $degree_value = ($degree === "Other") ? $this->input->post('degree_other') : $degree;
+
+        $data = [
+            'first_name' => $this->input->post('first_name'),
+            'last_name' => $this->input->post('last_name'),
+            'email' => $this->input->post('email'),
+            'alternative_email' => $this->input->post('alternative_email'),
+            'phone' => $this->input->post('phone'),
+            'telephone' => $this->input->post('telephone'),
+            'graduation_year' => $this->input->post('graduation_year'),
+            'student_number' => $this->input->post('student_number'),
+            'degree' => $degree_value,
+            'gender' => $this->input->post('gender'),
+            'status' => 'active',
+            'password' => password_hash($this->input->post('password'), PASSWORD_BCRYPT),
+            'email_verified' => 1
+        ];
+
+        if (!empty($_FILES['profile_image']['name'])) {
+            $config['upload_path']   = './assets/uploads/alumni/';
+            $config['allowed_types'] = 'jpg|jpeg|png|gif';
+            $config['file_name']     = uniqid() . '_' . $_FILES['profile_image']['name'];
+
+            $this->load->library('upload', $config);
+            if ($this->upload->do_upload('profile_image')) {
+                $uploadData = $this->upload->data();
+                $data['profile_image'] = $uploadData['file_name'];
+            }
+        }
+
+        $this->db->insert('alumni', $data);
+        $this->session->set_flashdata('success', 'Account created successfully!');
+        redirect('AdminManageAccounts');
+    }
+
     public function update($id) {
-    $data = [
-        'first_name' => $this->input->post('first_name'),
-        'last_name' => $this->input->post('last_name'),
-        'phone' => $this->input->post('phone'),
-        'graduation_year' => $this->input->post('graduation_year'),
-        'student_number' => $this->input->post('student_number'),
-    ];
+        $degree = $this->input->post('degree');
+        $degree_value = ($degree === "Other") ? $this->input->post('degree_other') : $degree;
 
-    $this->db->where('id', $id)->update('alumni', $data);
+        $data = [
+            'first_name' => $this->input->post('first_name'),
+            'last_name' => $this->input->post('last_name'),
+            'email' => $this->input->post('email'),
+            'alternative_email' => $this->input->post('alternative_email'),
+            'phone' => $this->input->post('phone'),
+            'telephone' => $this->input->post('telephone'),
+            'graduation_year' => $this->input->post('graduation_year'),
+            'student_number' => $this->input->post('student_number'),
+            'degree' => $degree_value,
+            'gender' => $this->input->post('gender'),
+        ];
 
-    $this->session->set_flashdata('success', 'Account updated successfully!');
-    redirect('AdminManageAccounts');
-}
+        // Only update password if provided
+        $password = $this->input->post('password');
+        if (!empty($password)) {
+            $data['password'] = password_hash($password, PASSWORD_BCRYPT);
+        }
+
+        if (!empty($_FILES['profile_image']['name'])) {
+            $config['upload_path']   = './assets/uploads/alumni/';
+            $config['allowed_types'] = 'jpg|jpeg|png|gif';
+            $config['file_name']     = uniqid() . '_' . $_FILES['profile_image']['name'];
+
+            $this->load->library('upload', $config);
+            if ($this->upload->do_upload('profile_image')) {
+                $uploadData = $this->upload->data();
+                $data['profile_image'] = $uploadData['file_name'];
+            }
+        }
+
+        $this->db->where('id', $id)->update('alumni', $data);
+
+        $this->session->set_flashdata('success', 'Account updated successfully!');
+        redirect('AdminManageAccounts');
+    }
 
 
     public function delete($id) {
@@ -78,6 +141,12 @@ class AdminManageAccounts extends CI_Controller {
     redirect('AdminManageAccounts');
 }
 
+    public function get_edit_data() {
+        $id = $this->input->post('id');
+        $alumni = $this->db->get_where('alumni', ['id' => $id])->row_array();
+        echo json_encode($alumni);
+    }
+
 
     public function details() {
         $alumni_id = $this->input->post('id');
@@ -91,31 +160,45 @@ class AdminManageAccounts extends CI_Controller {
             $employment = $this->Employment_model->get_by_alumni($alumni_id);
             $certifications = $this->Alumni_model->get_certifications($alumni_id);
 
+            $img = (!empty($alumni['profile_image'])) 
+                ? base_url('assets/uploads/alumni/' . $alumni['profile_image']) 
+                : base_url('assets/images/' . (strtolower($alumni['gender'] ?? 'male') === 'female' ? 'person-female.png' : 'person-male.png'));
+
             $details = '
+                <div class="text-center mb-4">
+                    <img src="' . $img . '" class="rounded-circle border shadow-sm" style="width: 100px; height: 100px; object-fit: cover;">
+                    <h4 class="mt-3 font-weight-bold mb-1">' . htmlspecialchars($alumni['first_name'] . ' ' . $alumni['last_name']) . '</h4>
+                    <span class="badge badge-pill badge-danger" style="background: #8B1538;">' . htmlspecialchars($alumni['student_number']) . '</span>
+                </div>
+
                 <div class="row">
                     <div class="col-md-6 mb-3">
-                        <label class="form-label text-muted small text-uppercase font-weight-bold">Full Name</label>
-                        <div class="bg-light p-3 rounded-lg border">' . htmlspecialchars($alumni['first_name'] . ' ' . $alumni['last_name']) . '</div>
+                        <label class="form-label text-muted small text-uppercase font-weight-bold">Primary Email</label>
+                        <div class="bg-light p-3 rounded-lg border" style="font-size: 14px;">' . htmlspecialchars($alumni['email']) . '</div>
                     </div>
                     <div class="col-md-6 mb-3">
-                        <label class="form-label text-muted small text-uppercase font-weight-bold">Student Number</label>
-                        <div class="bg-light p-3 rounded-lg border">' . htmlspecialchars($alumni['student_number']) . '</div>
+                        <label class="form-label text-muted small text-uppercase font-weight-bold">Alternate Email</label>
+                        <div class="bg-light p-3 rounded-lg border" style="font-size: 14px;">' . htmlspecialchars($alumni['alternative_email'] ?? 'N/A') . '</div>
                     </div>
                     <div class="col-md-6 mb-3">
-                        <label class="form-label text-muted small text-uppercase font-weight-bold">Email</label>
-                        <div class="bg-light p-3 rounded-lg border">' . htmlspecialchars($alumni['email']) . '</div>
+                        <label class="form-label text-muted small text-uppercase font-weight-bold">Phone Number</label>
+                        <div class="bg-light p-3 rounded-lg border" style="font-size: 14px;">' . htmlspecialchars($alumni['phone']) . '</div>
                     </div>
                     <div class="col-md-6 mb-3">
-                        <label class="form-label text-muted small text-uppercase font-weight-bold">Phone</label>
-                        <div class="bg-light p-3 rounded-lg border">' . htmlspecialchars($alumni['phone']) . '</div>
+                        <label class="form-label text-muted small text-uppercase font-weight-bold">Telephone</label>
+                        <div class="bg-light p-3 rounded-lg border" style="font-size: 14px;">' . htmlspecialchars($alumni['telephone'] ?? 'N/A') . '</div>
                     </div>
-                    <div class="col-md-6 mb-3">
+                    <div class="col-md-4 mb-3">
                         <label class="form-label text-muted small text-uppercase font-weight-bold">Degree</label>
-                        <div class="bg-light p-3 rounded-lg border">' . htmlspecialchars($alumni['degree']) . '</div>
+                        <div class="bg-light p-3 rounded-lg border" style="font-size: 14px;">' . htmlspecialchars($alumni['degree']) . '</div>
                     </div>
-                    <div class="col-md-6 mb-3">
+                    <div class="col-md-4 mb-3">
                         <label class="form-label text-muted small text-uppercase font-weight-bold">Batch</label>
-                        <div class="bg-light p-3 rounded-lg border">' . htmlspecialchars($alumni['graduation_year']) . '</div>
+                        <div class="bg-light p-3 rounded-lg border" style="font-size: 14px;">' . htmlspecialchars($alumni['graduation_year']) . '</div>
+                    </div>
+                    <div class="col-md-4 mb-3">
+                        <label class="form-label text-muted small text-uppercase font-weight-bold">Gender</label>
+                        <div class="bg-light p-3 rounded-lg border" style="font-size: 14px;">' . htmlspecialchars($alumni['gender'] ?? 'N/A') . '</div>
                     </div>
                 </div>
 
@@ -159,11 +242,11 @@ class AdminManageAccounts extends CI_Controller {
                         </div>
                         <div class="col-md-12 mb-3">
                             <label class="form-label text-muted small text-uppercase font-weight-bold">Professional Experience Summary</label>
-                            <div class="bg-light p-3 rounded-lg border" style="line-height: 1.6;">' . nl2br(htmlspecialchars($employment['job_description'])) . '</div>
+                            <div class="bg-light p-3 rounded-lg border" style="line-height: 1.6; font-size: 14px;">' . nl2br(htmlspecialchars($employment['job_description'])) . '</div>
                         </div>
                     </div>';
             } else {
-                $details .= '<div class="alert alert-info border-0 rounded-lg"><i class="fas fa-info-circle mr-2"></i> No active employment record found for this profile.</div>';
+                $details .= '<div class="alert alert-info border-0 rounded-lg" style="font-size: 14px;"><i class="fas fa-info-circle mr-2"></i> No active employment record found for this profile.</div>';
             }
 
             $details .= '

@@ -157,12 +157,27 @@
         transition: var(--transition);
     }
 
+    /* Modal Spacing for Header */
+    .modal-dialog { margin-top: 100px !important; margin-bottom: 50px !important; }
+
+    @media (min-width: 992px) {
+        /* Desktop: Wide for content viewing, adaptive for forms */
+        .modal-wide { max-width: 950px !important; }
+        .modal-adaptive { max-width: 650px !important; }
+    }
+
     @media (max-width: 768px) {
         .header-section { flex-direction: column; align-items: flex-start; gap: 20px; }
         .header-section .actions { width: 100%; display: flex; gap: 10px; }
         .header-section .actions .btn { flex: 1; margin: 0 !important; }
         .switcher-wrapper { width: 100%; }
         .switch-btn { flex: 1; text-align: center; }
+        
+        /* Mobile Modal Adjustments */
+        .modal-dialog { margin-top: 60px !important; margin-left: 12px; margin-right: 12px; margin-bottom: 30px !important; }
+        .modal-content { border-radius: 20px; }
+        .modal-body { padding: 20px; }
+        .modal-header { padding: 20px; }
     }
 </style>
 
@@ -239,7 +254,7 @@
 
 <!-- CREATE POST MODAL -->
 <div class="modal fade" id="createPostModal" tabindex="-1">
-    <div class="modal-dialog modal-lg modal-dialog-centered">
+    <div class="modal-dialog modal-adaptive">
         <div class="modal-content">
             <form id="createPostForm" enctype="multipart/form-data">
                 <div class="modal-header">
@@ -282,7 +297,7 @@
 
 <!-- EDIT POST MODAL -->
 <div class="modal fade" id="editPostModal" tabindex="-1">
-    <div class="modal-dialog modal-lg modal-dialog-centered">
+    <div class="modal-dialog modal-adaptive">
         <div class="modal-content">
             <form id="editPostForm" enctype="multipart/form-data">
                 <div class="modal-header">
@@ -325,7 +340,7 @@
 
 <!-- VIEW POST MODAL -->
 <div class="modal fade" id="viewPostModal" tabindex="-1">
-    <div class="modal-dialog modal-lg modal-dialog-centered">
+    <div class="modal-dialog modal-wide">
         <div class="modal-content">
             <div class="modal-header" style="height: 100px; display: flex; align-items: center; background: #2d3436;">
                 <div>
@@ -349,7 +364,7 @@
 
 <!-- CAROUSEL MODAL -->
 <div class="modal fade" id="uploadCarouselModal" tabindex="-1">
-    <div class="modal-dialog modal-lg modal-dialog-centered">
+    <div class="modal-dialog modal-adaptive">
         <div class="modal-content">
             <div class="modal-header">
                 <h5 class="modal-title" style="font-weight: 700;"><i class="fas fa-images mr-2"></i> Carousel Manager</h5>
@@ -431,15 +446,35 @@
     }
 
     function deletePost(id) {
-        if(confirm('Delete this post permanently?')) {
-            window.location.href = '<?= base_url("AdminPost/delete/") ?>' + id;
-        }
+        Swal.fire({
+            title: 'Delete post?',
+            text: "This action cannot be undone.",
+            icon: 'warning',
+            showCancelButton: true,
+            confirmButtonColor: '#700a0a',
+            cancelButtonColor: '#64748b',
+            confirmButtonText: 'Confirm Delete'
+        }).then((result) => {
+            if (result.isConfirmed) {
+                window.location.href = '<?= base_url("AdminPost/delete/") ?>' + id;
+            }
+        });
     }
 
     function deleteCarousel(id) {
-        if(confirm('Delete this banner?')) {
-            window.location.href = '<?= base_url("AdminPost/delete_carousel/") ?>' + id;
-        }
+        Swal.fire({
+            title: 'Delete banner?',
+            text: "This action cannot be undone.",
+            icon: 'warning',
+            showCancelButton: true,
+            confirmButtonColor: '#700a0a',
+            cancelButtonColor: '#64748b',
+            confirmButtonText: 'Confirm Delete'
+        }).then((result) => {
+            if (result.isConfirmed) {
+                window.location.href = '<?= base_url("AdminPost/delete_carousel/") ?>' + id;
+            }
+        });
     }
 
     function editCarousel(item) {
@@ -452,6 +487,21 @@
     }
 
     $(document).ready(function() {
+        const Toast = Swal.mixin({
+            toast: true,
+            position: 'top-end',
+            showConfirmButton: false,
+            timer: 3000,
+            timerProgressBar: true
+        });
+
+        <?php if($this->session->flashdata('success')): ?>
+            Toast.fire({
+                icon: 'success',
+                title: '<?= $this->session->flashdata('success') ?>'
+            });
+        <?php endif; ?>
+
         $('#resetCarouselForm').click(function() {
             $('#carouselForm')[0].reset();
             $('#carousel_id').val('');
@@ -469,8 +519,13 @@
                 type: 'POST',
                 data: new FormData(this),
                 contentType: false, processData: false,
-                success: function() { location.reload(); },
-                error: function() { alert('Error publishing.'); btn.prop('disabled', false).text('Publish Now'); }
+                success: function() { 
+                    Toast.fire({ icon: 'success', title: 'Post published!' }).then(() => location.reload());
+                },
+                error: function() { 
+                    Swal.fire('Error', 'Failed to publish post.', 'error');
+                    btn.prop('disabled', false).text('Publish Now'); 
+                }
             });
         });
 
@@ -483,8 +538,13 @@
                 type: 'POST',
                 data: new FormData(this),
                 contentType: false, processData: false,
-                success: function() { location.reload(); },
-                error: function() { alert('Error updating.'); btn.prop('disabled', false).text('Update Changes'); }
+                success: function() { 
+                    Toast.fire({ icon: 'success', title: 'Post updated!' }).then(() => location.reload());
+                },
+                error: function() { 
+                    Swal.fire('Error', 'Failed to update post.', 'error');
+                    btn.prop('disabled', false).text('Update Changes'); 
+                }
             });
         });
 
@@ -496,8 +556,12 @@
                 type: 'POST',
                 data: new FormData(this),
                 contentType: false, processData: false,
-                success: function() { location.reload(); },
-                error: function() { alert('Error processing carousel.'); }
+                success: function() { 
+                    Toast.fire({ icon: 'success', title: 'Carousel updated!' }).then(() => location.reload());
+                },
+                error: function() { 
+                    Swal.fire('Error', 'Failed to process carousel.', 'error');
+                }
             });
         });
     });

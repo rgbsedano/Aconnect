@@ -62,7 +62,11 @@ class AdminJobPosting extends CI_Controller {
             'updated_at'      => date('Y-m-d H:i:s'),
         ];
 
-        $this->db->where('id', $id)->update('jobs', $data);
+        if ($this->db->where('id', $id)->update('jobs', $data)) {
+            $this->session->set_flashdata('success', 'Job posting updated successfully!');
+        } else {
+            $this->session->set_flashdata('error', 'Failed to update job posting.');
+        }
 
         redirect('AdminJobPosting');
     }
@@ -97,9 +101,12 @@ public function run_worker()
 }
 
 
-    /** DELETE JOB */
     public function delete($id) {
-        $this->db->where('id', $id)->delete('jobs');
+        if ($this->db->where('id', $id)->delete('jobs')) {
+            $this->session->set_flashdata('success', 'Job posting deleted successfully!');
+        } else {
+            $this->session->set_flashdata('error', 'Failed to delete job posting.');
+        }
         redirect('AdminJobPosting');
     }
 
@@ -139,8 +146,14 @@ public function run_worker()
         ];
 
         // Insert job
-        $this->db->insert('jobs', $job_data);
-        $job_id = $this->db->insert_id();
+        if ($this->db->insert('jobs', $job_data)) {
+            $job_id = $this->db->insert_id();
+            $this->session->set_flashdata('success', 'New job opportunity published successfully!');
+        } else {
+            $this->session->set_flashdata('error', 'Failed to publish job opportunity.');
+            redirect('AdminJobPosting');
+            return;
+        }
 
         /** ===============================
          *  TARGET SPECIFIC ALUMNI EMAIL

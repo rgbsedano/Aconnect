@@ -57,7 +57,7 @@
 
     .main-grid {
         display: grid;
-        grid-template-columns: 300px 1fr;
+        grid-template-columns: minmax(auto, 300px) 1fr;
         gap: 20px;
         margin-bottom: 0;
     }
@@ -72,7 +72,8 @@
         flex-direction: column;
         align-items: center;
         transition: var(--transition);
-        height: fit-content;
+        height: 100%;
+        width: 100%;
     }
 
     .status-card:hover {
@@ -295,8 +296,8 @@
             grid-template-columns: 1fr;
         }
         .status-card {
-            max-width: 300px;
-            margin: 0 auto 20px;
+            max-width: none;
+            margin: 0 0 20px;
         }
     }
 
@@ -305,13 +306,14 @@
             grid-template-columns: 1fr;
         }
         .legend-row {
-            flex-direction: column;
-            gap: 12px;
-            align-items: flex-start;
+            flex-direction: row;
+            gap: 16px;
+            justify-content: center;
         }
         .header-section h1 { font-size: 24px; }
         .dashboard-wrapper { padding: 15px; }
         .metric-card { min-height: 140px; }
+        .chart-container { width: 150px; height: 150px; }
     }
 </style>
 

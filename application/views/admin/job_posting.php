@@ -1,444 +1,237 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Job Posting Admin | Alumni Management</title>
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
-    <style>
-        :root {
-            --maroon: #8B1538;
-            --maroon-dark: #6B0F2A;
-            --gold: #f5f5f5;
-            --bg: #f8f5f3;
-            --card: #ffffff;
-            --text: #1F2937;
-            --muted: #6B7280;
-            --border: #E5E7EB;
-            --shadow-sm: 0 1px 2px rgba(0,0,0,0.05);
-            --shadow-md: 0 4px 12px rgba(0,0,0,0.1);
-            --shadow-lg: 0 10px 30px rgba(0,0,0,0.15);
-        }
+<style>
+    :root {
+        --primary-color: #8B1538;
+        --accent-red: #ff6b6b;
+        --text-main: #1e293b;
+        --text-muted: #64748b;
+        --card-bg: rgba(255, 255, 255, 0.95);
+        --border-radius: 24px;
+        --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    }
 
-        body { 
-            background: var(--bg); 
-            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; 
-            color: var(--text); 
-            line-height: 1.6; 
-        }
+    .admin-wrapper { 
+        max-width: 1400px; 
+        margin: 0 auto; 
+        padding: 20px 24px;
+        animation: fadeIn 0.8s ease-out;
+    }
 
-        /* Consistent Margin & Padding Patterns with Alumni Panel */
-        .admin-wrapper { 
-            max-width: 1400px; 
-            margin: 40px auto; 
-            padding: 0 20px; 
-        }
+    @keyframes fadeIn {
+        from { opacity: 0; transform: translateY(10px); }
+        to { opacity: 1; transform: translateY(0); }
+    }
 
-        .alumni-card {
-            background: var(--card);
-            padding: 32px;
-            border-radius: 16px;
-            box-shadow: var(--shadow-md);
-            border: 1px solid var(--border);
-        }
+    /* Header Styling */
+    .header-section {
+        margin-bottom: 24px;
+        display: flex;
+        justify-content: space-between;
+        align-items: flex-end;
+    }
 
-        .main-header h2 { 
-            color: white; 
-            font-weight: 800; 
-            font-size: 24px;
-            letter-spacing: -0.5px;
-        }
+    .header-section h1 {
+        font-size: 28px;
+        font-weight: 700;
+        margin-bottom: 4px;
+        color: white;
+    }
 
-        .main-header h2 span {
-            color: #ff6b6b;
-        }
+    .header-section h1 span { color: #ff6b6b; }
+    .header-section p { color: rgba(255, 255, 255, 0.85); font-size: 14px; margin: 0; }
 
-        /* Unified Action Buttons */
-        .btn-modern-search {
-            background: linear-gradient(135deg, var(--maroon), var(--maroon-dark));
-            color: white;
-            border: none;
-            padding: 10px 24px;
-            border-radius: 10px;
-            font-weight: 600;
-            transition: all 0.3s;
-        }
+    /* Action Buttons */
+    .btn-header {
+        padding: 10px 20px;
+        border-radius: 12px;
+        font-weight: 700;
+        font-size: 13px;
+        transition: var(--transition);
+        display: flex;
+        align-items: center;
+        gap: 8px;
+        border: none;
+        box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    }
 
-        .btn-modern-search:hover {
-            transform: translateY(-1px);
-            box-shadow: var(--shadow-md);
-            color: white;
-        }
+    .btn-create { background: white; color: var(--primary-color); }
+    .btn-create:hover { transform: translateY(-2px); background: #f8fafc; }
 
-        .btn-outline-custom {
-            border: 1px solid var(--maroon);
-            color: var(--maroon);
-            border-radius: 10px;
-            font-weight: 600;
-            padding: 10px 24px;
-            transition: all 0.3s;
-        }
+    .btn-notify { background: var(--accent-red); color: white; }
+    .btn-notify:hover { transform: translateY(-2px); background: #ff5252; color: white; }
 
-        .btn-outline-custom:hover {
-            background: rgba(139, 21, 56, 0.05);
-            color: var(--maroon-dark);
-        }
+    /* Main Table Card */
+    .main-card {
+        background: var(--card-bg);
+        border-radius: var(--border-radius);
+        padding: 30px;
+        box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
+        border: 1px solid #f1f5f9;
+        backdrop-filter: blur(10px);
+    }
 
-        /* Standardized Search Box Wrapper */
-        .search-box-wrapper {
-            background: #f9f9f9;
-            border: 1px solid var(--border);
-            border-radius: 12px;
-            padding: 8px 8px 8px 20px;
-            transition: all 0.3s;
-        }
+    /* Custom Table */
+    .custom-table { width: 100%; border-collapse: separate; border-spacing: 0 10px; }
+    .custom-table th { padding: 12px 20px; font-size: 11px; font-weight: 700; text-transform: uppercase; color: var(--text-muted); border: none; }
+    .custom-table tr.data-row { background: white; transition: var(--transition); }
+    .custom-table tr.data-row:hover { transform: scale(1.005); box-shadow: 0 4px 12px rgba(0,0,0,0.05); }
+    .custom-table td { padding: 16px 20px; vertical-align: middle; border-top: 1px solid #f1f5f9; border-bottom: 1px solid #f1f5f9; }
+    .custom-table td:first-child { border-left: 1px solid #f1f5f9; border-top-left-radius: 14px; border-bottom-left-radius: 14px; }
+    .custom-table td:last-child { border-right: 1px solid #f1f5f9; border-top-right-radius: 14px; border-bottom-right-radius: 14px; }
 
-        .search-box-wrapper:focus-within {
-            border-color: var(--maroon);
-            background: white;
-            box-shadow: 0 0 0 3px rgba(139, 21, 56, 0.1);
-        }
+    .job-title-cell { font-weight: 700; color: var(--text-main); font-size: 15px; cursor: pointer; transition: var(--transition); }
+    .job-title-cell:hover { text-decoration: underline; color: var(--primary-color); }
+    .company-label { display: block; font-size: 12px; color: var(--text-muted); font-weight: 500; }
 
-        .search-input-clean {
-            border: none !important;
-            background: transparent !important;
-            box-shadow: none !important;
-            font-size: 14px;
-        }
+    .applicant-badge { background: rgba(139, 21, 56, 0.1); color: var(--primary-color); padding: 6px 14px; border-radius: 10px; font-size: 12px; font-weight: 700; }
 
-        /* Refined Job Cards */
-        .job-card-custom {
-            border: 1px solid var(--border);
-            border-radius: 16px;
-            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-            background: var(--card);
-            overflow: hidden;
-        }
+    .btn-action {
+        width: 38px; height: 38px; border-radius: 10px; display: inline-flex; align-items: center; justify-content: center;
+        border: 1px solid #f1f5f9; background: white; color: var(--text-muted); transition: var(--transition);
+        margin-left: 5px; cursor: pointer;
+    }
 
-        .job-card-custom:hover {
-            transform: translateY(-5px);
-            box-shadow: var(--shadow-lg);
-            border-color: var(--maroon);
-        }
+    .btn-action:hover { background: #f8fafc; color: var(--primary-color); border-color: var(--primary-color); transform: translateY(-2px); }
+    .btn-action.delete:hover { background: #fff5f5; color: #ef4444; border-color: #ef4444; }
 
-        .applicant-badge {
-            background: rgba(139, 21, 56, 0.1);
-            color: var(--maroon);
-            padding: 4px 12px;
-            border-radius: 8px;
-            font-size: 0.75rem;
-            font-weight: 700;
-        }
+    /* Modal Styling */
+    .modal-content { border-radius: 24px; border: none; box-shadow: 0 20px 25px -5px rgba(0,0,0,0.1); }
+    .modal-header { background: var(--primary-color); color: white; padding: 25px; border: none; }
+    .form-input { border-radius: 12px; border: 1px solid #e2e8f0; padding: 12px; font-size: 14px; transition: var(--transition); }
+    .form-input:focus { border-color: var(--primary-color); box-shadow: 0 0 0 4px rgba(139, 21, 56, 0.05); }
 
-        /* Modal Customization (Matching Alumni Profile) */
-        .modal-modern .modal-content {
-            border: none;
-            border-radius: 24px;
-            overflow: hidden;
-            box-shadow: var(--shadow-lg);
-        }
+    .targeted-tag { background: #f8fafc; border: 1px solid #e2e8f0; padding: 15px; border-radius: 14px; margin-top: 10px; }
 
-        .modal-modern .modal-header {
-            background: linear-gradient(135deg, var(--maroon), var(--maroon-dark));
-            color: #fff;
-            padding: 25px;
-            border: none;
-        }
+    /* Modal Spacing for Header */
+    .modal-dialog { margin-top: 100px !important; margin-bottom: 50px !important; }
 
-        .form-group label {
-            font-size: 0.75rem;
-            text-transform: uppercase;
-            color: var(--muted);
-            font-weight: 700;
-            margin-bottom: 8px;
-            letter-spacing: 0.5px;
-        }
+    @media (min-width: 992px) {
+        /* Desktop: Wide for profile/applicants, adaptive for others */
+        .modal-wide { max-width: 1000px !important; }
+        .modal-adaptive { max-width: 650px !important; }
+    }
 
-        .form-control {
-            border-radius: 10px;
-            border: 1px solid var(--border);
-            padding: 12px;
-            font-size: 0.9rem;
-        }
-
-        .form-control:focus {
-            border-color: var(--maroon);
-            box-shadow: 0 0 0 3px rgba(139, 21, 56, 0.1);
-        }
-
-        .info-item {
-            padding: 12px;
-            background: #f8fafc;
-            border-radius: 12px;
-            border: 1px solid var(--border);
-        }
-
-        @media (max-width: 768px) {
-            .admin-wrapper { margin: 20px auto; padding: 0 10px; }
-            .alumni-card { padding: 20px; }
-            .main-header h2 { font-size: 20px; }
-            .btn-modern-search, .btn-outline-custom { padding: 8px 16px; font-size: 14px; }
-        }
-
-        @media (max-width: 576px) {
-            .main-header { flex-direction: column; align-items: flex-start !important; }
-            .main-header .mt-3 { width: 100%; display: flex; flex-direction: column; gap: 10px; }
-            .main-header .btn { width: 100%; margin-left: 0 !important; }
-        }
-    </style>
-</head>
-<body>
+    @media (max-width: 768px) {
+        /* Mobile Modal Adjustments */
+        .modal-dialog { margin-top: 60px !important; margin-left: 12px; margin-right: 12px; margin-bottom: 30px !important; }
+        .modal-content { border-radius: 20px; }
+        .modal-body { padding: 20px; }
+        .modal-header { padding: 20px; }
+    }
+</style>
 
 <div class="admin-wrapper">
-    <div class="alumni-card">
-        <div class="main-header d-flex flex-wrap justify-content-between align-items-center mb-4">
-            <div>
-                <div class="main-header">
-                <h2>Job <span>Opportunities</span></h2>
-                <p class="text-white">Publish job vacancies and career opportunities to the community.</p>
-            </div>
-            <div class="mt-3 mt-lg-0">
-                <button class="btn btn-modern-search shadow-sm" data-toggle="modal" data-target="#createJobModal">
-                    <i class="fas fa-plus-circle mr-2"></i> Create New Posting
-                </button>
-                <a href="<?= base_url('AdminJobPosting/run_worker') ?>" class="btn btn-outline-custom ml-2">
-                    <i class="fas fa-paper-plane mr-2"></i> Notify Alumni
-                </a>
-            </div>
+    <div class="header-section">
+        <div class="header-title">
+            <h1>Job <span>Management</span></h1>
+            <p>Publish and manage career postings for the alumni network.</p>
         </div>
-
-        <div class="page-guide">
-            <i class="fas fa-circle-info mr-2"></i>
-            <strong>Admin Guide:</strong> Manage active job listings below. You can filter by title or company, view applicant lists, or export data for reporting.
+        <div class="d-flex gap-3">
+            <button class="btn-header btn-create" data-toggle="modal" data-target="#createJobModal">
+                <i class="fas fa-plus"></i> NEW POSTING
+            </button>
+            <a href="<?= base_url('AdminJobPosting/run_worker') ?>" class="btn-header btn-notify" style="text-decoration:none;">
+                <i class="fas fa-paper-plane"></i> NOTIFY ALUMNI
+            </a>
         </div>
+    </div>
 
-        <div class="row mb-5">
-            <div class="col-md-5">
-                <div class="search-box-wrapper d-flex align-items-center">
-                    <i class="fas fa-magnifying-glass text-muted"></i>
-                    <input type="text" class="form-control search-input-clean" placeholder="Filter jobs by title, company, or location..." id="jobSearchInput">
-                </div>
-            </div>
-        </div>
-
-        <div class="row" id="jobListContainer">
-            <?php if (!empty($jobs)): ?>
-                <?php foreach($jobs as $job): 
-                    $this->db->where('job_id', $job->id);
-                    $applicant_count = $this->db->count_all_results('job_applications');
-                ?>
-                    <div class="col-md-6 col-lg-4 mb-4 job-card-item">
-                        <div class="card job-card-custom h-100 shadow-sm">
-                            <div class="card-body d-flex flex-column p-4">
-                                <div class="d-flex justify-content-between align-items-start mb-3">
-                                    <div>
-                                        <small class="text-uppercase font-weight-bold" style="color: var(--gold); letter-spacing: 1px;"><?= htmlspecialchars($job->company) ?></small>
-                                        <h5 class="card-title font-weight-bold mt-1 mb-0" style="font-size: 1.1rem;"><?= htmlspecialchars($job->job_title) ?></h5>
+    <div class="main-card">
+        <div class="table-responsive">
+            <table class="custom-table">
+                <thead>
+                    <tr>
+                        <th width="35%">POSITION DETAILS</th>
+                        <th width="15%">ALUMNI APPLICANTS</th>
+                        <th width="35%">META INFORMATION</th>
+                        <th width="15%" class="text-right">ACTIONS</th>
+                    </tr>
+                </thead>
+                <tbody id="jobListBody">
+                    <?php if (!empty($jobs)): ?>
+                        <?php foreach($jobs as $job): 
+                            $this->db->where('job_id', $job->id);
+                            $applicant_count = $this->db->count_all_results('job_applications');
+                        ?>
+                            <tr class="data-row job-item">
+                                <td>
+                                    <div class="job-title-cell" data-toggle="modal" data-target="#applicantModal<?= $job->id ?>">
+                                        <?= htmlspecialchars($job->job_title) ?>
                                     </div>
-                                    <span class="applicant-badge"><?= $applicant_count ?> Applicants</span>
-                                </div>
-                                
-                                <div class="mb-4">
-                                    <p class="small text-muted mb-2"><i class="fas fa-location-dot mr-2 text-maroon"></i> <?= htmlspecialchars($job->location) ?></p>
-                                    <p class="small text-muted mb-0"><i class="fas fa-wallet mr-2 text-maroon"></i> <?= htmlspecialchars($job->salary_range) ?></p>
-                                </div>
-
-                                <div class="mt-auto pt-3 border-top">
-                                    <button class="btn btn-block btn-outline-custom btn-sm mb-3" data-toggle="modal" data-target="#applicantModal<?= $job->id ?>">
-                                        <i class="fas fa-users-viewfinder mr-2"></i> Review Applicants
+                                    <span class="company-label"><?= htmlspecialchars($job->company) ?></span>
+                                </td>
+                                <td>
+                                    <span class="applicant-badge">
+                                        <i class="fas fa-users mr-1"></i> <?= $applicant_count ?> candidates
+                                    </span>
+                                </td>
+                                <td>
+                                    <div class="meta-info" style="font-size: 13px; color: var(--text-muted); font-weight: 600; display: flex; align-items: center; gap: 15px;">
+                                        <span><i class="fas fa-map-marker-alt text-danger mr-1"></i> <?= htmlspecialchars($job->location) ?></span>
+                                        <span><i class="fas fa-wallet text-danger mr-1"></i> <?= htmlspecialchars($job->salary_range) ?></span>
+                                    </div>
+                                </td>
+                                <td class="text-right">
+                                    <button class="btn-action" data-toggle="modal" data-target="#applicantModal<?= $job->id ?>" title="View Applicants">
+                                        <i class="fas fa-users"></i>
                                     </button>
-                                    <div class="d-flex justify-content-between align-items-center px-1">
-                                        <button class="btn btn-link text-muted btn-sm p-0 font-weight-bold" data-toggle="modal" data-target="#editModal<?= $job->id ?>" style="text-decoration:none;"><i class="fas fa-pen-to-square mr-1"></i> Edit</button>
-                                        <button class="btn btn-link text-danger btn-sm p-0 font-weight-bold" data-toggle="modal" data-target="#deleteModal<?= $job->id ?>" style="text-decoration:none;"><i class="fas fa-trash-can mr-1"></i> Delete</button>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="modal fade modal-modern" id="editModal<?= $job->id ?>" tabindex="-1" role="dialog" aria-hidden="true">
-                        <div class="modal-dialog modal-lg modal-dialog-centered">
-                            <div class="modal-content">
-                                <form action="<?= base_url('AdminJobPosting/update/'.$job->id) ?>" method="post">
-                                    <div class="modal-header">
-                                        <h5 class="modal-title font-weight-bold text-white"><i class="fas fa-pen-to-square mr-2"></i> Update Posting</h5>
-                                        <button type="button" class="close text-white" data-dismiss="modal">&times;</button>
-                                    </div>
-                                    <div class="modal-body p-4">
-                                        <div class="row">
-                                            <div class="col-md-6">
-                                                <div class="form-group">
-                                                    <label>Position Title</label>
-                                                    <input type="text" name="job_title" class="form-control" value="<?= htmlspecialchars($job->job_title) ?>" required>
-                                                </div>
-                                                <div class="form-group">
-                                                    <label>Organization</label>
-                                                    <input type="text" name="company" class="form-control" value="<?= htmlspecialchars($job->company) ?>" required>
-                                                </div>
-                                                <div class="form-group">
-                                                    <label>Telephone Number</label>
-                                                    <input type="text" name="telephone" class="form-control" value="<?= htmlspecialchars($job->telephone ?? '') ?>" placeholder="02-8000-0000">
-                                                </div>
-                                                <div class="form-group">
-                                                    <label>Phone Number</label>
-                                                    <input type="text" name="phone" class="form-control" value="<?= htmlspecialchars($job->phone ?? '') ?>" placeholder="0917-000-0000">
-                                                </div>
-                                            </div>
-                                            <div class="col-md-6">
-                                                <div class="form-group">
-                                                    <label>Work Location</label>
-                                                    <input type="text" name="location" class="form-control" value="<?= htmlspecialchars($job->location) ?>" required>
-                                                </div>
-                                                <div class="form-group">
-                                                    <label>Compensation Range</label>
-                                                    <input type="text" name="salary_range" class="form-control" value="<?= htmlspecialchars($job->salary_range) ?>" required>
-                                                </div>
-                                                <div class="form-group">
-                                                    <label>Description</label>
-                                                    <textarea name="description" class="form-control" rows="4" required><?= htmlspecialchars($job->description) ?></textarea>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="modal-footer" style="background: #f8fafc;">
-                                        <button type="button" class="btn btn-light px-4" data-dismiss="modal">Cancel</button>
-                                        <button type="submit" class="btn btn-modern-search px-5">Save Changes</button>
-                                    </div>
-                                </form>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="modal fade modal-modern" id="applicantModal<?= $job->id ?>" tabindex="-1" role="dialog" aria-hidden="true">
-                        <div class="modal-dialog modal-xl modal-dialog-centered">
-                            <div class="modal-content">
-                                <div class="modal-header">
-                                    <h5 class="modal-title font-weight-bold"><i class="fas fa-clipboard-list mr-2"></i> Candidates: <?= htmlspecialchars($job->job_title) ?></h5>
-                                    <button type="button" class="close text-white" data-dismiss="modal">&times;</button>
-                                </div>
-                                <div class="modal-body p-4">
-                                    <?php
-                                    $this->db->select('alumni.first_name, alumni.last_name, alumni.email, job_applications.applied_at, alumni.id as alumni_id');
-                                    $this->db->from('job_applications');
-                                    $this->db->join('alumni', 'alumni.id = job_applications.alumni_id');
-                                    $this->db->where('job_applications.job_id', $job->id);
-                                    $applicants = $this->db->get()->result();
-                                    ?>
-
-                                    <?php if (!empty($applicants)): ?>
-                                        <div class="table-responsive">
-                                            <table class="table table-hover border-0">
-                                                <thead style="background: #f8fafc;">
-                                                    <tr class="text-uppercase small font-weight-bold text-muted">
-                                                        <th class="border-0">Full Name</th>
-                                                        <th class="border-0">Email</th>
-                                                        <th class="border-0">Applied On</th>
-                                                        <th class="border-0 text-right">Profile</th>
-                                                    </tr>
-                                                </thead>
-                                                <tbody>
-                                                    <?php foreach($applicants as $app): ?>
-                                                        <tr>
-                                                            <td class="align-middle font-weight-bold"><?= htmlspecialchars($app->first_name . ' ' . $app->last_name) ?></td>
-                                                            <td class="align-middle"><?= htmlspecialchars($app->email) ?></td>
-                                                            <td class="align-middle text-muted"><?= date('M d, Y', strtotime($app->applied_at)) ?></td>
-                                                            <td class="text-right">
-                                                                <a href="<?= base_url('AdminJobPosting/view_profile/'.$app->alumni_id) ?>" class="btn btn-sm btn-light" style="border-radius: 8px; color: var(--maroon);">
-                                                                    <i class="fas fa-user-circle"></i>
-                                                                </a>
-                                                            </td>
-                                                        </tr>
-                                                    <?php endforeach; ?>
-                                                </tbody>
-                                            </table>
-                                        </div>
-                                    <?php else: ?>
-                                        <div class="text-center py-5">
-                                            <i class="fas fa-inbox fa-3x text-light mb-3"></i>
-                                            <h5 class="text-muted">No applications found for this role.</h5>
-                                        </div>
-                                    <?php endif; ?>
-                                </div>
-                                <div class="modal-footer" style="background: #f8fafc;">
-                                    <button type="button" class="btn btn-light px-4" data-dismiss="modal">Close</button>
-                                    <?php if (!empty($applicants)): ?>
-                                        <a href="<?= base_url('AdminJobPosting/export/'.$job->id) ?>" class="btn btn-success px-4" style="border-radius: 10px;"><i class="fas fa-file-excel mr-2"></i>Export CSV</a>
-                                    <?php endif; ?>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="modal fade" id="deleteModal<?= $job->id ?>" tabindex="-1" role="dialog" aria-hidden="true">
-                        <div class="modal-dialog modal-dialog-centered">
-                            <div class="modal-content" style="border-radius: 20px;">
-                                <div class="modal-body text-center p-5">
-                                    <div class="mx-auto mb-4 d-flex align-items-center justify-content-center" style="width: 70px; height: 70px; background: #FFF5F5; border-radius: 50%;">
-                                        <i class="fas fa-trash-can fa-2x text-danger"></i>
-                                    </div>
-                                    <h4 class="font-weight-bold">Remove Posting?</h4>
-                                    <p class="text-muted mb-4">You are about to delete the <strong><?= htmlspecialchars($job->job_title) ?></strong> position. This action is permanent.</p>
-                                    <div class="d-flex justify-content-center">
-                                        <button class="btn btn-light px-4 mr-2" data-dismiss="modal" style="border-radius: 10px;">Keep Posting</button>
-                                        <a href="<?= base_url('AdminJobPosting/delete/'.$job->id) ?>" class="btn btn-danger px-4" style="border-radius: 10px;">Confirm Delete</a>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                <?php endforeach; ?>
-            <?php endif; ?>
+                                    <button class="btn-action" data-toggle="modal" data-target="#editModal<?= $job->id ?>" title="Edit Posting">
+                                        <i class="fas fa-pen"></i>
+                                    </button>
+                                    <button class="btn-action delete" onclick="confirmDelete(<?= $job->id ?>, '<?= htmlspecialchars($job->job_title) ?>')" title="Delete Posting">
+                                        <i class="fas fa-trash"></i>
+                                    </button>
+                                </td>
+                            </tr>
+                        <?php endforeach; ?>
+                    <?php else: ?>
+                        <tr>
+                            <td colspan="4" class="text-center py-5 text-muted">
+                                <i class="fas fa-briefcase fa-3x mb-3 d-block opacity-20"></i>
+                                <p class="font-weight-bold">No active job opportunities found.</p>
+                            </td>
+                        </tr>
+                    <?php endif; ?>
+                </tbody>
+            </table>
         </div>
     </div>
 </div>
 
-<div class="modal fade modal-modern" id="createJobModal" tabindex="-1" role="dialog" aria-hidden="true">
-    <div class="modal-dialog modal-lg modal-dialog-centered">
+<!-- CREATE JOB MODAL -->
+<div class="modal fade" id="createJobModal" tabindex="-1">
+    <div class="modal-dialog modal-adaptive">
         <div class="modal-content">
             <form action="<?= base_url('AdminJobPosting/create') ?>" method="post" enctype="multipart/form-data">
                 <div class="modal-header">
-                    <h5 class="modal-title font-weight-bold text-white"><i class="fas fa-plus-circle mr-2"></i> Publish New Opportunity</h5>
+                    <h5 class="modal-title font-weight-bold"><i class="fas fa-plus-circle mr-2"></i> Publish New Opportunity</h5>
                     <button type="button" class="close text-white" data-dismiss="modal">&times;</button>
                 </div>
                 <div class="modal-body p-4">
                     <div class="row">
-                        <div class="col-md-6">
-                            <div class="form-group">
-                                <label><i class="fas fa-id-badge mr-2"></i> Position Title</label>
-                                <input type="text" name="job_title" class="form-control" placeholder="e.g. Senior Medical Analyst" required>
-                            </div>
-                            <div class="form-group">
-                                <label><i class="fas fa-building-ngo mr-2"></i> Organization</label>
-                                <input type="text" name="company" class="form-control" placeholder="Company Name" required>
-                            </div>
-                            <div class="form-group">
-                                <label><i class="fas fa-phone mr-2"></i> Telephone Number</label>
-                                <input type="text" name="telephone" class="form-control" placeholder="e.g. 02-8000-0000">
-                            </div>
-                            <div class="form-group">
-                                <label><i class="fas fa-mobile-screen mr-2"></i> Phone Number</label>
-                                <input type="text" name="phone" class="form-control" placeholder="e.g. 0917-000-0000">
-                            </div>
+                        <div class="col-md-6 mb-3">
+                            <label class="small font-weight-bold text-muted uppercase">JOB TITLE</label>
+                            <input type="text" name="job_title" class="form-control form-input" placeholder="e.g. Senior Medical Analyst" required>
                         </div>
-                        <div class="col-md-6">
-                            <div class="form-group">
-                                <label><i class="fas fa-map-location-dot mr-2"></i> Work Location</label>
-                                <input type="text" name="location" class="form-control" placeholder="City, Country" required>
-                            </div>
-                            <div class="form-group">
-                                <label><i class="fas fa-hand-holding-dollar mr-2"></i> Compensation Range</label>
-                                <input type="text" name="salary_range" class="form-control" placeholder="e.g. ₱40,000 - ₱60,000" required>
-                            </div>
-                            <div class="form-group">
-                                <label><i class="fas fa-file-signature mr-2"></i> Detailed Description</label>
-                                <textarea name="description" class="form-control" rows="4" placeholder="Briefly describe the role..." required></textarea>
-                            </div>
+                        <div class="col-md-6 mb-3">
+                            <label class="small font-weight-bold text-muted uppercase">COMPANY NAME</label>
+                            <input type="text" name="company" class="form-control form-input" placeholder="Organization" required>
                         </div>
-                        <div class="col-12 mt-3">
-                            <div class="info-item">
-                                <label class="text-maroon font-weight-bold"><i class="fas fa-graduation-cap mr-2"></i> Targeted Alumni Notification:</label>
-                                <select name="target_schools[]" multiple class="form-control mt-2" style="height: 150px; border: none; background: transparent;">
+                        <div class="col-md-6 mb-3">
+                            <label class="small font-weight-bold text-muted uppercase">LOCATION</label>
+                            <input type="text" name="location" class="form-control form-input" placeholder="City, Country" required>
+                        </div>
+                        <div class="col-md-6 mb-3">
+                            <label class="small font-weight-bold text-muted uppercase">COMPENSATION RANGE</label>
+                            <input type="text" name="salary_range" class="form-control form-input" placeholder="e.g. ₱40,000 - ₱60,000" required>
+                        </div>
+                        <div class="col-12 mb-3">
+                            <label class="small font-weight-bold text-muted uppercase">DESCRIPTION & QUALIFICATIONS</label>
+                            <textarea name="description" class="form-control form-input" rows="4" placeholder="Briefly describe the role..." required></textarea>
+                        </div>
+                        <div class="col-12">
+                            <div class="targeted-tag">
+                                <label class="font-weight-bold text-dark mb-2 d-block"><i class="fas fa-graduation-cap mr-2"></i> TARGETED ALUMNI GROUPS</label>
+                                <select name="target_schools[]" multiple class="form-control" style="height: 120px; border-radius: 10px;">
                                     <optgroup label="Nursing & Allied Health">
                                         <option value="BS in Nursing">BS in Nursing</option>
                                         <option value="BS in Physical Therapy">BS in Physical Therapy</option>
@@ -452,33 +245,172 @@
                                         <option value="Bachelor of Multimedia Arts">Bachelor of Multimedia Arts</option>
                                     </optgroup>
                                 </select>
-                                <small class="text-muted d-block mt-2">Use Ctrl/Cmd click to select multiple target groups.</small>
+                                <small class="text-muted d-block mt-2">Hold Ctrl (Cmd) to select multiple target degrees.</small>
                             </div>
                         </div>
                     </div>
                 </div>
-                <div class="modal-footer" style="background: #f8fafc;">
-                    <button type="button" class="btn btn-light px-4" data-dismiss="modal">Cancel</button>
-                    <button type="submit" class="btn btn-modern-search px-5">Publish Now</button>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-light px-4" style="border-radius: 12px; font-weight: 700;" data-dismiss="modal">CANCEL</button>
+                    <button type="submit" class="btn btn-danger px-5" style="background: var(--primary-color); border-radius: 12px; font-weight: 700;">PUBLISH NOW</button>
                 </div>
             </form>
         </div>
     </div>
 </div>
 
-<script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
-<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+<?php foreach($jobs as $job): ?>
+    <!-- EDIT MODAL -->
+    <div class="modal fade" id="editModal<?= $job->id ?>" tabindex="-1">
+        <div class="modal-dialog modal-adaptive">
+            <div class="modal-content">
+                <form action="<?= base_url('AdminJobPosting/update/'.$job->id) ?>" method="post">
+                    <div class="modal-header">
+                        <h5 class="modal-title font-weight-bold"><i class="fas fa-pen mr-2"></i> Update Posting</h5>
+                        <button type="button" class="close text-white" data-dismiss="modal">&times;</button>
+                    </div>
+                    <div class="modal-body p-4">
+                        <div class="row">
+                            <div class="col-md-6 mb-3">
+                                <label class="small font-weight-bold text-muted uppercase">JOB TITLE</label>
+                                <input type="text" name="job_title" class="form-control form-input" value="<?= htmlspecialchars($job->job_title) ?>" required>
+                            </div>
+                            <div class="col-md-6 mb-3">
+                                <label class="small font-weight-bold text-muted uppercase">COMPANY</label>
+                                <input type="text" name="company" class="form-control form-input" value="<?= htmlspecialchars($job->company) ?>" required>
+                            </div>
+                            <div class="col-md-6 mb-3">
+                                <label class="small font-weight-bold text-muted uppercase">LOCATION</label>
+                                <input type="text" name="location" class="form-control form-input" value="<?= htmlspecialchars($job->location) ?>" required>
+                            </div>
+                            <div class="col-md-6 mb-3">
+                                <label class="small font-weight-bold text-muted uppercase">COMPENSATION</label>
+                                <input type="text" name="salary_range" class="form-control form-input" value="<?= htmlspecialchars($job->salary_range) ?>" required>
+                            </div>
+                            <div class="col-12">
+                                <label class="small font-weight-bold text-muted uppercase">DESCRIPTION</label>
+                                <textarea name="description" class="form-control form-input" rows="4" required><?= htmlspecialchars($job->description) ?></textarea>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-light px-4" data-dismiss="modal">CANCEL</button>
+                        <button type="submit" class="btn btn-danger px-5" style="background: var(--primary-color);">SAVE CHANGES</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
 
+    <!-- APPLICANT LIST MODAL -->
+    <div class="modal fade" id="applicantModal<?= $job->id ?>" tabindex="-1">
+        <div class="modal-dialog modal-wide">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title font-weight-bold"><i class="fas fa-users-viewfinder mr-2"></i> Candidates: <?= htmlspecialchars($job->job_title) ?></h5>
+                    <button type="button" class="close text-white" data-dismiss="modal">&times;</button>
+                </div>
+                <div class="modal-body p-0">
+                    <?php
+                    $this->db->select('alumni.first_name, alumni.last_name, alumni.email, job_applications.applied_at, alumni.id as alumni_id');
+                    $this->db->from('job_applications');
+                    $this->db->join('alumni', 'alumni.id = job_applications.alumni_id');
+                    $this->db->where('job_applications.job_id', $job->id);
+                    $applicants = $this->db->get()->result();
+                    ?>
+
+                    <?php if (!empty($applicants)): ?>
+                        <div class="table-responsive">
+                            <table class="table table-hover mb-0" style="border: none;">
+                                <thead class="bg-light">
+                                    <tr class="small font-weight-bold text-muted uppercase">
+                                        <th class="pl-4 py-3 border-0">FULL NAME</th>
+                                        <th class="py-3 border-0">EMAIL ADDRESS</th>
+                                        <th class="py-3 border-0">APPLIED ON</th>
+                                        <th class="pr-4 py-3 border-0 text-right">PROFILE</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <?php foreach($applicants as $app): ?>
+                                        <tr>
+                                            <td class="pl-4 py-3 font-weight-bold align-middle"><?= htmlspecialchars($app->first_name . ' ' . $app->last_name) ?></td>
+                                            <td class="py-3 align-middle"><?= htmlspecialchars($app->email) ?></td>
+                                            <td class="py-3 align-middle text-muted"><?= date('M d, Y', strtotime($app->applied_at)) ?></td>
+                                            <td class="pr-4 py-3 text-right">
+                                                <a href="<?= base_url('AdminAlumni/view_profile/'.$app->alumni_id) ?>" class="btn-action" title="View Profile">
+                                                    <i class="fas fa-id-card"></i>
+                                                </a>
+                                            </td>
+                                        </tr>
+                                    <?php endforeach; ?>
+                                </tbody>
+                            </table>
+                        </div>
+                    <?php else: ?>
+                        <div class="text-center py-5">
+                            <i class="fas fa-inbox fa-3x text-light mb-3"></i>
+                            <h5 class="text-muted">No applications found for this role.</h5>
+                        </div>
+                    <?php endif; ?>
+                </div>
+                <div class="modal-footer bg-light">
+                    <button type="button" class="btn btn-light px-4 font-weight-bold" data-dismiss="modal">CLOSE</button>
+                    <?php if (!empty($applicants)): ?>
+                        <a href="<?= base_url('AdminJobPosting/export/'.$job->id) ?>" class="btn btn-success px-4" style="border-radius: 12px; font-weight: 700;">
+                            <i class="fas fa-file-csv mr-2"></i> EXPORT LIST
+                        </a>
+                    <?php endif; ?>
+                </div>
+            </div>
+        </div>
+    </div>
+<?php endforeach; ?>
+
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 <script>
-$(document).ready(function(){
-    $("#jobSearchInput").on("keyup", function() {
-        var value = $(this).val().toLowerCase();
-        $(".job-card-item").filter(function() {
-            $(this).toggle($(this).text().toLowerCase().indexOf(value) > -1)
+    function confirmDelete(id, title) {
+        Swal.fire({
+            title: 'Delete Posting?',
+            text: "Are you sure you want to permanently remove '" + title + "'?",
+            icon: 'warning',
+            showCancelButton: true,
+            confirmButtonColor: '#8B1538',
+            cancelButtonColor: '#64748b',
+            confirmButtonText: 'CONFIRM DELETE',
+            padding: '2em',
+            customClass: {
+                popup: 'modal-content',
+                confirmButton: 'btn btn-danger px-4',
+                cancelButton: 'btn btn-light px-4 mr-2'
+            }
+        }).then((result) => {
+            if (result.isConfirmed) {
+                window.location.href = "<?= base_url('AdminJobPosting/delete/') ?>" + id;
+            }
         });
+    }
+
+    document.addEventListener('DOMContentLoaded', function() {
+        const Toast = Swal.mixin({
+            toast: true,
+            position: 'top-end',
+            showConfirmButton: false,
+            timer: 3000,
+            timerProgressBar: true
+        });
+
+        <?php if($this->session->flashdata('success')): ?>
+            Toast.fire({
+                icon: 'success',
+                title: '<?= $this->session->flashdata('success') ?>'
+            });
+        <?php endif; ?>
+
+        <?php if($this->session->flashdata('error')): ?>
+            Toast.fire({
+                icon: 'error',
+                title: '<?= $this->session->flashdata('error') ?>'
+            });
+        <?php endif; ?>
     });
-});
 </script>
-</body>
-</html>

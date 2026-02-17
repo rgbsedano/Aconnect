@@ -34,6 +34,10 @@ $student_number = $this->session->userdata('student_number') ? $this->session->u
             margin: 0;
             padding: 0;
             background-color: var(--bg-page);
+            background-image: url('assets/images/background.png');
+            background-attachment: fixed;
+            background-size: cover;
+            background-position: center;
             display: flex;
             flex-direction: column;
             font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
@@ -54,6 +58,15 @@ $student_number = $this->session->userdata('student_number') ? $this->session->u
             display: grid;
             grid-template-columns: 1.3fr 1fr;
             gap: 32px;
+        }
+
+        @media (min-width: 768px) and (max-width: 1200px) {
+            .dashboard-container {
+                grid-template-columns: 1fr;
+            }
+            .carousel-section {
+                height: 500px;
+            }
         }
 
         .carousel-section { min-height: 0; }

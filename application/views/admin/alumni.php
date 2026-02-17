@@ -142,6 +142,22 @@
     .info-value { font-size: 16px; font-weight: 600; color: var(--text-main); }
     .profile-section { border-bottom: 1px solid #f1f5f9; padding-bottom: 15px; margin-bottom: 15px; }
 
+    /* Modal Spacing for Header */
+    .modal-dialog { margin-top: 100px !important; margin-bottom: 50px !important; }
+
+    @media (min-width: 992px) {
+        /* Desktop: Wide for profile, adaptive for others */
+        .modal-wide { max-width: 900px !important; }
+        .modal-adaptive { max-width: 650px !important; }
+    }
+
+    @media (max-width: 768px) {
+        /* Mobile Modal Adjustments */
+        .modal-dialog { margin-top: 60px !important; margin-left: 12px; margin-right: 12px; margin-bottom: 30px !important; }
+        .modal-content { border-radius: 20px; }
+        .modal-body { padding: 20px; }
+        .modal-header { padding: 20px; }
+    }
 </style>
 
 <div class="dashboard-wrapper">
@@ -241,7 +257,7 @@
 <?php if (!empty($alumni_list)): ?>
     <?php foreach ($alumni_list as $alumni): ?>
         <div class="modal fade" id="viewModal<?= $alumni['id'] ?>" tabindex="-1" role="dialog" aria-hidden="true">
-            <div class="modal-dialog modal-lg modal-dialog-centered" role="document">
+            <div class="modal-dialog modal-wide" role="document">
                 <div class="modal-content">
                     <div class="modal-header">
                         <div class="d-flex align-items-center">
@@ -293,7 +309,7 @@
 
 <!-- Edit Modal -->
 <div class="modal fade" id="editModal" tabindex="-1" role="dialog" aria-hidden="true">
-    <div class="modal-dialog modal-lg modal-dialog-centered" role="document">
+    <div class="modal-dialog modal-wide" role="document">
         <div class="modal-content">
             <form action="<?= site_url('AdminAlumni/update') ?>" method="post">
                 <input type="hidden" name="id" id="edit_alumni_id">
@@ -352,8 +368,24 @@
     </div>
 </div>
 
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 <script>
 $(document).ready(function() {
+    const Toast = Swal.mixin({
+        toast: true,
+        position: 'top-end',
+        showConfirmButton: false,
+        timer: 3000,
+        timerProgressBar: true
+    });
+
+    <?php if($this->session->flashdata('success')): ?>
+        Toast.fire({
+            icon: 'success',
+            title: '<?= $this->session->flashdata('success') ?>'
+        });
+    <?php endif; ?>
+
     $('.btn-edit-alumni').on('click', function() {
         var id = $(this).data('id');
         $.ajax({
