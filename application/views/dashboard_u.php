@@ -1,259 +1,280 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Dashboard - St. Dominic College of Asia</title>
-    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
-    
-    <style>
-        :root {
-            --primary: #700a0a;
-            --primary-light: #8b1538;
-            --accent: #d4a574;
-            --bg-page: #f8fafc;
-            --card-bg: rgba(255, 255, 255, 0.9);
-            --text-main: #1e293b;
-            --text-muted: #64748b;
-            --transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
-            --shadow-premium: 0 10px 30px -5px rgba(0, 0, 0, 0.05);
-            --radius-xl: 32px;
-        }
+<style>
+    :root {
+        --primary: #700a0a;
+        --primary-light: #8b1538;
+        --accent: #d4a574;
+        --bg-page: #f8fafc;
+        --card-bg: rgba(255, 255, 255, 0.9);
+        --text-main: #1e293b;
+        --text-muted: #64748b;
+        --transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+        --shadow-premium: 0 10px 30px -5px rgba(0, 0, 0, 0.05);
+        --radius-xl: 32px;
+    }
 
-        * { box-sizing: border-box; }
+    .dashboard-container {
+        max-width: 1200px;
+        margin: 40px auto;
+        padding: 0 24px;
+    }
 
-        body {
-            background-color: var(--bg-page);
-            background-image: radial-gradient(at 0% 0%, rgba(112, 10, 10, 0.03) 0px, transparent 50%),
-                              radial-gradient(at 100% 100%, rgba(212, 165, 116, 0.03) 0px, transparent 50%);
-            font-family: 'Plus Jakarta Sans', sans-serif;
-            margin: 0;
-            padding: 0;
-            color: var(--text-main);
-            line-height: 1.7;
-            overflow-x: hidden;
-        }
+    /* Scroll Reveal Animation Styles */
+    .reveal {
+        position: relative;
+        transform: translateY(30px);
+        opacity: 0;
+        transition: all 0.8s ease-out;
+    }
 
-        .dashboard-container {
-            max-width: 1200px;
-            margin: 40px auto;
-            padding: 0 24px;
-            animation: slideUp 0.8s ease-out;
-        }
+    .reveal.active {
+        transform: translateY(0);
+        opacity: 1;
+    }
 
-        @keyframes slideUp {
-            from { opacity: 0; transform: translateY(30px); }
-            to { opacity: 1; transform: translateY(0); }
-        }
+    /* Hero Image Section */
+    .hero-section {
+        position: relative;
+        border-radius: var(--radius-xl);
+        overflow: hidden;
+        margin-bottom: 40px;
+        box-shadow: var(--shadow-premium);
+        background: #000; /* Darker background for transition */
+        display: flex;
+    }
 
-        /* Hero Image Section */
-        .hero-section {
-            position: relative;
-            height: 480px;
-            border-radius: var(--radius-xl);
-            overflow: hidden;
-            margin-bottom: 40px;
-            box-shadow: var(--shadow-premium);
-            background: #700a0a; /* Fallback/Letterbox background */
-        }
+    .hero-image {
+        width: 100%;
+        height: auto;
+        display: block;
+        transition: transform 1.2s ease;
+    }
 
-        .hero-image {
-            width: 100%;
-            height: 100%;
-            object-fit: contain; /* Ensure fully visible */
-            transition: transform 1.2s ease;
-        }
+    .hero-section:hover .hero-image {
+        transform: scale(1.05);
+    }
 
-        .hero-section:hover .hero-image {
-            transform: scale(1.05);
-        }
+    .hero-glass {
+        position: absolute;
+        inset: 0;
+        background: linear-gradient(to top, rgba(0,0,0,0.8) 0%, transparent 60%);
+        display: flex;
+        align-items: flex-end;
+        padding: 48px;
+    }
 
-        .hero-glass {
-            position: absolute;
-            inset: 0;
-            background: linear-gradient(to top, rgba(0,0,0,0.8) 0%, transparent 60%);
-            display: flex;
-            align-items: flex-end;
-            padding: 48px;
-        }
+    .hero-text h1 {
+        color: white;
+        font-size: clamp(32px, 5vw, 48px);
+        font-weight: 800;
+        margin: 0;
+        letter-spacing: -1px;
+        line-height: 1.1;
+    }
 
-        .hero-text h1 {
-            color: white;
-            font-size: clamp(32px, 5vw, 48px);
-            font-weight: 800;
-            margin: 0;
-            letter-spacing: -1px;
-            line-height: 1.1;
-        }
+    .hero-text h1 span {
+        color: var(--accent);
+        display: block;
+        font-size: 0.4em;
+        text-transform: uppercase;
+        letter-spacing: 4px;
+        margin-bottom: 8px;
+    }
 
-        .hero-text h1 span {
-            color: var(--accent);
-            display: block;
-            font-size: 0.4em;
-            text-transform: uppercase;
-            letter-spacing: 4px;
-            margin-bottom: 8px;
-        }
+    /* Quick Links Section */
+    .links-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+        gap: 20px;
+        margin-bottom: 40px;
+    }
 
-        /* Stats Section */
-        .stats-row {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-            gap: 24px;
-            margin-bottom: 40px;
-        }
+    .link-card {
+        background: white;
+        padding: 24px;
+        border-radius: 20px;
+        display: flex;
+        align-items: center;
+        gap: 16px;
+        text-decoration: none !important;
+        color: var(--text-main);
+        box-shadow: 0 4px 6px -1px rgba(0,0,0,0.05);
+        transition: var(--transition);
+        border: 1px solid rgba(0,0,0,0.05);
+    }
 
-        .stat-card {
-            background: var(--card-bg);
-            backdrop-filter: blur(10px);
-            padding: 32px;
-            border-radius: 24px;
-            border: 1px solid rgba(255, 255, 255, 0.5);
-            text-align: center;
-            transition: var(--transition);
-            box-shadow: 0 4px 6px -1px rgba(0,0,0,0.02);
-        }
+    .link-card:hover {
+        transform: translateY(-5px);
+        box-shadow: var(--shadow-premium);
+        border-color: var(--primary-light);
+    }
 
-        .stat-card:hover {
-            transform: translateY(-8px);
-            box-shadow: var(--shadow-premium);
-            background: white;
-        }
+    .link-card i {
+        font-size: 24px;
+        width: 48px;
+        height: 48px;
+        border-radius: 12px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: white;
+    }
 
-        .stat-card i {
-            font-size: 24px;
-            color: var(--accent);
-            margin-bottom: 16px;
-        }
+    .link-card .fb-btn { background: #1877F2; }
+    .link-card .web-btn { background: var(--primary); }
 
-        .stat-card h2 {
-            font-size: 36px;
-            font-weight: 800;
-            margin: 0;
-            color: var(--primary);
-        }
+    .link-info h4 { margin: 0; font-size: 16px; font-weight: 700; }
+    .link-info p { margin: 0; font-size: 12px; color: var(--text-muted); }
 
-        .stat-card p {
-            font-size: 14px;
-            font-weight: 600;
-            color: var(--text-muted);
-            text-transform: uppercase;
-            letter-spacing: 1px;
-            margin: 4px 0 0 0;
-        }
+    /* Content Section */
+    .content-card {
+        background: white;
+        border-radius: var(--radius-xl);
+        padding: 64px 48px;
+        margin-bottom: 40px;
+        box-shadow: var(--shadow-premium);
+    }
 
-        /* Content Section */
-        .content-card {
-            background: white;
-            border-radius: var(--radius-xl);
-            padding: 56px;
-            margin-bottom: 40px;
-            box-shadow: var(--shadow-premium);
-        }
+    .section-header {
+        margin-bottom: 48px;
+        max-width: 700px;
+    }
 
-        .section-header {
-            margin-bottom: 48px;
-            max-width: 700px;
-        }
+    .section-header h2 {
+        font-size: 32px;
+        font-weight: 800;
+        color: var(--primary);
+        margin-bottom: 16px;
+    }
 
-        .section-header h2 {
-            font-size: 32px;
-            font-weight: 800;
-            color: var(--primary);
-            margin-bottom: 16px;
-        }
+    .section-header p {
+        font-size: 18px;
+        color: var(--text-muted);
+    }
 
-        .section-header p {
-            font-size: 18px;
-            color: var(--text-muted);
-        }
+    /* Programs Grid / Features Grid */
+    .features-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
+        gap: 32px;
+    }
 
-        /* Programs Grid */
-        .programs-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 32px;
-        }
+    .feature-card {
+        background: white;
+        border-radius: 24px;
+        overflow: hidden;
+        border: 1px solid rgba(0,0,0,0.05);
+        transition: var(--transition);
+        display: flex;
+        flex-direction: column;
+        box-shadow: 0 4px 6px -1px rgba(0,0,0,0.02);
+    }
 
-        .program-item {
-            display: flex;
-            gap: 24px;
-            padding: 24px;
-            border-radius: 20px;
-            transition: var(--transition);
-            border: 1px solid transparent;
-        }
+    .feature-card:hover {
+        transform: translateY(-10px);
+        box-shadow: var(--shadow-premium);
+        border-color: rgba(112, 10, 10, 0.1);
+    }
 
-        .program-item:hover {
-            background: #fffcfc;
-            border-color: rgba(112, 10, 10, 0.1);
-            transform: translateX(10px);
-        }
+    .feature-img-box {
+        width: 100%;
+        height: 200px;
+        overflow: hidden;
+        background: #f0f2f5;
+    }
 
-        .program-icon {
-            width: 56px;
-            height: 56px;
-            background: rgba(112, 10, 10, 0.05);
-            border-radius: 16px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: var(--primary);
-            font-size: 20px;
-            flex-shrink: 0;
-        }
+    .feature-img-box img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        transition: transform 0.8s ease;
+    }
 
-        .program-item h4 {
-            margin: 0 0 8px 0;
-            font-size: 18px;
-            font-weight: 700;
-        }
+    .feature-card:hover .feature-img-box img {
+        transform: scale(1.1);
+    }
 
-        .program-item p {
-            margin: 0;
-            font-size: 14px;
-            color: var(--text-muted);
-            line-height: 1.6;
-        }
+    .feature-content {
+        padding: 30px;
+        flex-grow: 1;
+    }
 
-        /* Heritage Text */
-        .heritage-text {
-            font-size: 20px;
-            line-height: 1.8;
-            color: var(--text-main);
-            margin-bottom: 48px;
-            position: relative;
-            padding-left: 32px;
-            border-left: 4px solid var(--accent);
-        }
+    .feature-content h3 {
+        color: var(--primary);
+        font-size: 16px;
+        font-weight: 800;
+        margin-bottom: 12px;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+        line-height: 1.3;
+    }
 
-        .heritage-text strong {
-            color: var(--primary);
-        }
+    .feature-content p {
+        margin: 0;
+        font-size: 15px;
+        color: #475569;
+        line-height: 1.7;
+    }
 
-        /* Footer info */
-        .page-footer {
-            text-align: center;
-            padding: 40px 0;
-            color: white; /* Changed to white */
-            font-size: 14px;
-        }
+    /* Staggered Animation Delay for grid items */
+    .features-grid > *:nth-child(1) { transition-delay: 0.1s; }
+    .features-grid > *:nth-child(2) { transition-delay: 0.2s; }
+    .features-grid > *:nth-child(3) { transition-delay: 0.3s; }
+    .features-grid > *:nth-child(4) { transition-delay: 0.4s; }
+    .features-grid > *:nth-child(5) { transition-delay: 0.5s; }
+    .features-grid > *:nth-child(6) { transition-delay: 0.6s; }
 
-        @media (max-width: 768px) {
-            .dashboard-container { margin: 20px auto; }
-            .content-card { padding: 32px; }
-            .hero-section { height: 350px; }
-            .hero-glass { padding: 24px; }
-            .program-item:hover { transform: none; }
-        }
-    </style>
-</head>
-<body>
+    /* Heritage Text */
+    .heritage-text {
+        font-size: 20px;
+        line-height: 1.8;
+        color: var(--text-main);
+        margin-bottom: 48px;
+        position: relative;
+        padding-left: 32px;
+        border-left: 4px solid var(--accent);
+    }
+
+    .heritage-text strong {
+        color: var(--primary);
+    }
+
+    .page-footer {
+        text-align: center;
+        padding: 40px 0;
+        color: var(--text-muted);
+        font-size: 14px;
+    }
+
+    @media (max-width: 992px) {
+        .dashboard-container { padding: 0 20px; }
+        .content-card { padding: 48px 32px; }
+    }
+
+    @media (max-width: 768px) {
+        :root { --radius-xl: 24px; }
+        .dashboard-container { margin: 20px auto; }
+        .content-card { padding: 32px 20px; border-radius: 20px; }
+        .hero-section { border-radius: 20px; }
+        .hero-glass { padding: 32px 24px; }
+        .hero-text h1 { font-size: 32px; }
+        .features-grid { grid-template-columns: 1fr; gap: 24px; }
+        .feature-img-box { height: 180px; }
+        .links-grid { grid-template-columns: 1fr; }
+        .section-header h2 { font-size: 26px; }
+    }
+
+    @media (max-width: 480px) {
+        .hero-glass { padding: 24px 16px; }
+        .hero-text h1 { font-size: 24px; }
+        .feature-content { padding: 24px 20px; }
+        .feature-content h3 { font-size: 14px; }
+        .feature-content p { font-size: 14px; }
+    }
+</style>
 
 <div class="dashboard-container">
-    <!-- Hero Banner -->
-    <section class="hero-section">
+    <!-- Hero Banner (Reveals immediately) -->
+    <section class="hero-section reveal active">
         <img src="assets/images/andaman-family.png" 
              alt="SDCA Heritage" 
              class="hero-image"
@@ -265,76 +286,93 @@
         </div>
     </section>
 
+    <!-- Quick Links (New Section) -->
+    <div class="links-grid reveal">
+        <a href="https://stdominiccollege.edu.ph/" target="_blank" class="link-card">
+            <i class="fas fa-globe web-btn"></i>
+            <div class="link-info">
+                <h4>SDCA Website</h4>
+                <p>Official Institutional Site</p>
+            </div>
+        </a>
+        <a href="https://www.facebook.com/StDominicCollege" target="_blank" class="link-card">
+            <i class="fab fa-facebook-f fb-btn"></i>
+            <div class="link-info">
+                <h4>Official Facebook</h4>
+                <p>Stay updated on social</p>
+            </div>
+        </a>
+    </div>
+
     <!-- Heritage Narrative -->
-    <section class="content-card">
+    <section class="content-card reveal">
         <div class="heritage-text">
             <strong>St. Dominic College of Asia (SDCA)</strong> traces its roots to the establishment of St. Dominic Medical Center in 1991. What began as a healthcare vision evolved into a comprehensive educational institution that has been transforming lives for over two decades in Bacoor, Cavite.
         </div>
 
-        <div class="stats-row">
-            <div class="stat-card">
-                <i class="fas fa-history"></i>
-                <h2>30+</h2>
-                <p>Years of Service</p>
-            </div>
-            <div class="stat-card">
-                <i class="fas fa-university"></i>
-                <h2>5</h2>
-                <p>Specialized Schools</p>
-            </div>
-            <div class="stat-card">
-                <i class="fas fa-award"></i>
-                <h2>100%</h2>
-                <p>Quality Focused</p>
-            </div>
-        </div>
-
         <div class="section-header">
-            <h2>Academic Excellence</h2>
-            <p>Our commitment to holistic development through innovative programs and specialized learning hubs.</p>
+            <h2>Experience SDCA</h2>
+            <p>Discover what makes St. Dominic College of Asia a leader in holistic and innovative education.</p>
         </div>
 
-        <div class="programs-grid">
-            <div class="program-item">
-                <div class="program-icon"><i class="fas fa-user-md"></i></div>
-                <div>
-                    <h4>Health & Nursing</h4>
-                    <p>Advanced clinical training in Nursing, Physical Therapy, and Radiologic Technology.</p>
+        <div class="features-grid">
+            <div class="feature-card reveal">
+                <div class="feature-img-box">
+                    <img src="assets/dashboard/Screenshot 2026-02-18 090553.png" alt="Student Life">
+                </div>
+                <div class="feature-content">
+                    <h3>FUN AND COLORFUL STUDENT LIFE</h3>
+                    <p>Experience a vibrant student life at St. Dominic College of Asia, where fun institutional events, exciting program activities, and student-centric celebrations create unforgettable memories. Be part of a lively community that fosters friendships, creativity, and personal growth.</p>
                 </div>
             </div>
-            <div class="program-item">
-                <div class="program-icon"><i class="fas fa-microscope"></i></div>
-                <div>
-                    <h4>Medical Sciences</h4>
-                    <p>Cutting-edge laboratory studies in Pharmacy, Biology, and Medical Technology.</p>
+
+            <div class="feature-card reveal">
+                <div class="feature-img-box">
+                    <img src="assets/dashboard/Screenshot 2026-02-18 090630.png" alt="Graduates">
+                </div>
+                <div class="feature-content">
+                    <h3>GLOBALLY-COMPETITIVE GRADUATES</h3>
+                    <p>Join the ranks of St. Dominic College of Asia’s globally-competitive graduates—recognized as board exam topnotchers, 100% passers, and highly employable professionals. With success stories spanning industries worldwide, our alumni are equipped to lead and thrive anywhere.</p>
                 </div>
             </div>
-            <div class="program-item">
-                <div class="program-icon"><i class="fas fa-chart-line"></i></div>
-                <div>
-                    <h4>Business & IT</h4>
-                    <p>Nurturing the next generation of digital leaders and business strategists.</p>
+
+            <div class="feature-card reveal">
+                <div class="feature-img-box">
+                    <img src="assets/dashboard/Screenshot 2026-02-18 091047.png" alt="Quality Programs">
+                </div>
+                <div class="feature-content">
+                    <h3>QUALITY PROGRAM OFFERINGS</h3>
+                    <p>Achieve academic excellence at St. Dominic College of Asia, home to PACUCOA-accredited programs and an Autonomous Status recognized institution. With ISO certification, WURI Award, Green Gown Award, and ICONS Award, our programs are designed to meet global standards of quality and innovation.</p>
                 </div>
             </div>
-            <div class="program-item">
-                <div class="program-icon"><i class="fas fa-globe-asia"></i></div>
-                <div>
-                    <h4>Hospitality & Tourism</h4>
-                    <p>International standards in Culinary Arts and Tourism management.</p>
+
+            <div class="feature-card reveal">
+                <div class="feature-img-box">
+                    <img src="assets/dashboard/Screenshot 2026-02-18 090618.png" alt="Safe & Secure">
+                </div>
+                <div class="feature-content">
+                    <h3>ACCESSIBLE, SAFE, AND SECURE</h3>
+                    <p>Experience learning made easy at St. Dominic College of Asia’s digital campus, complete with campus-wide Wi-Fi access. Located along the highway with convenient transportation options and enhanced by tight security measures, SDCA offers a safe and connected space for academic success.</p>
                 </div>
             </div>
-            <div class="program-item">
-                <div class="program-icon"><i class="fas fa-book-reader"></i></div>
-                <div>
-                    <h4>Education & Sciences</h4>
-                    <p>Foundation building through Psychology, Accountancy, and Teacher education.</p>
+
+            <div class="feature-card reveal">
+                <div class="feature-img-box">
+                    <img src="assets/dashboard/Screenshot 2026-02-18 090607.png" alt="International Partners">
+                </div>
+                <div class="feature-content">
+                    <h3>INTERNATIONAL PARTNERS AND LINKAGES</h3>
+                    <p>Gain a global edge with St. Dominic College of Asia’s international programs and immersion opportunities. Through partnerships with local corporations and global institutions, we provide students with industry-relevant experiences and cross-cultural learning opportunities.</p>
                 </div>
             </div>
-            <div class="program-item">
-                <div class="program-icon"><i class="fas fa-user-graduate"></i></div>
-                <div>
-                    <h4>Medicine & Graduate</h4>
-                    <p>Professional excellence in MBA, MA Psychology, and Medicine.</p>
+
+            <div class="feature-card reveal">
+                <div class="feature-img-box">
+                    <img src="assets/dashboard/Screenshot 2026-02-18 090445.png" alt="Faculty">
+                </div>
+                <div class="feature-content">
+                    <h3>INDUSTRY-SEASONED FACULTY MEMBERS AND ADMINISTRATORS</h3>
+                    <p>Learn from competitive faculty members and administrators at St. Dominic College of Asia. Our experienced educators bring real-world expertise and insights to prepare students for success in their chosen fields.</p>
                 </div>
             </div>
         </div>
@@ -346,5 +384,33 @@
     </footer>
 </div>
 
-</body>
-</html>
+<script>
+    // Scroll Reveal Script
+    function reveal() {
+        var reveals = document.querySelectorAll(".reveal");
+        for (var i = 0; i < reveals.length; i++) {
+            var windowHeight = window.innerHeight;
+            var elementTop = reveals[i].getBoundingClientRect().top;
+            var elementVisible = 150;
+            if (elementTop < windowHeight - elementVisible) {
+                reveals[i].classList.add("active");
+            }
+        }
+    }
+
+    if ('IntersectionObserver' in window) {
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('active');
+                }
+            });
+        }, { threshold: 0.1 });
+
+        document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+    } else {
+        window.addEventListener("scroll", reveal);
+        // Initial check
+        reveal();
+    }
+</script>
