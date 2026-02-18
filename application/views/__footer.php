@@ -7,10 +7,6 @@
   </div>
   <!-- End of Page Wrapper -->
 
-  <!-- Scroll to Top Button-->
-  <a class="scroll-to-top rounded" href="#page-top">
-    <i class="fas fa-angle-up"></i>
-  </a>
 
   <!-- Logout Modal-->
   <div class="modal fade" id="logoutModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
@@ -107,10 +103,11 @@
     </div>
 </div>
 
-<!-- Support Chat (Bottom Right) -->
-<div id="support-chat-container" style="display: none; position: fixed; bottom: 20px; right: 25px; z-index: 10000; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', sans-serif;">
-    <button id="support-toggle-btn" style="width: 50px; height: 50px; border-radius: 50%; background: linear-gradient(135deg, #8B1538, #6B0F2A); color: white; border: none; box-shadow: 0 4px 15px rgba(139, 21, 56, 0.4); cursor: pointer; display: flex; align-items: center; justify-content: center; transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);">
-        <i class="fas fa-headset fa-lg"></i>
+<!-- Support Chat Widget (Bottom Right) -->
+<div id="support-chat-container" style="position: fixed; bottom: 25px; right: 30px; z-index: 10000; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', sans-serif;">
+    <button id="support-toggle-btn" class="support-widget-btn">
+        <i class="fas fa-headset"></i>
+        <span class="support-label">AConnect Support</span>
     </button>
 
     <div id="support-chat-window" style="display: none; position: absolute; bottom: 80px; right: 0; width: 380px; height: 550px; background: white; border-radius: 16px; box-shadow: 0 12px 48px rgba(0,0,0,0.15); overflow: hidden; border: 1px solid rgba(0,0,0,0.08); flex-direction: column;">
@@ -139,7 +136,57 @@
     </div>
 </div>
 
+    </div>
+</div>
+
 <style>
+    .support-widget-btn {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        padding: 12px 20px;
+        border-radius: 30px;
+        background: linear-gradient(135deg, #8B1538, #6B0F2A);
+        color: white;
+        border: none;
+        box-shadow: 0 8px 24px rgba(139, 21, 56, 0.4);
+        cursor: pointer;
+        transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        border: 1px solid rgba(255, 255, 255, 0.2);
+    }
+
+    .support-widget-btn:hover {
+        transform: translateY(-5px) scale(1.05);
+        box-shadow: 0 12px 32px rgba(139, 21, 56, 0.5);
+    }
+
+    .support-widget-btn .support-label {
+        font-weight: 700;
+        font-size: 14px;
+        letter-spacing: 0.5px;
+        white-space: nowrap;
+    }
+
+    .support-widget-btn i {
+        font-size: 18px;
+    }
+
+    @media (max-width: 576px) {
+        .support-widget-btn {
+            padding: 12px;
+            width: 50px;
+            height: 50px;
+            justify-content: center;
+            border-radius: 50%;
+        }
+        .support-widget-btn .support-label {
+            display: none;
+        }
+        #support-chat-container {
+            bottom: 20px;
+            right: 20px;
+        }
+    }
 
     /* ===== Support System Notice (Modal) ===== */
     .support-notice {
@@ -634,7 +681,18 @@ $(document).ready(function() {
     function startSupportPoll() { if(supportPoll) clearInterval(supportPoll); supportPoll = setInterval(loadSupportMessages, 4000); }
     function stopSupportPoll() { if(supportPoll) clearInterval(supportPoll); supportPoll = null; }
 
-    // --- SUPPORT CHAT TRIGGERS ---
+    // --- MODAL AWARE HIDE LOGIC ---
+    $(document).on('show.bs.modal', '.modal', function () {
+        $('#support-chat-container').fadeOut(200);
+    });
+
+    $(document).on('hidden.bs.modal', '.modal', function () {
+        // Only show if no other modals are open (Bootstrap 4 handles this, but it's safe)
+        if ($('.modal.show').length === 0) {
+            $('#support-chat-container').fadeIn(200);
+        }
+    });
+
     $(document).on('click', '.open-support-chat', function(e) {
         e.preventDefault();
         e.stopPropagation();

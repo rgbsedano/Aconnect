@@ -139,7 +139,7 @@ $admin_management_active = in_array($current_uri_segment_1, ['adminalumni', 'Adm
             min-width: 84px;
             height: 100%;
             font-size: 13px;
-            transition: all 0.2s ease-in-out;
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
             position: relative;
             padding-top: 4px;
             border-bottom: 2px solid transparent;
@@ -155,7 +155,7 @@ $admin_management_active = in_array($current_uri_segment_1, ['adminalumni', 'Adm
             height: 20px;
             min-width: 20px;
             min-height: 20px;
-            transition: all 0.2s ease-in-out;
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
         }
 
         .nav-link-item span {
@@ -168,6 +168,12 @@ $admin_management_active = in_array($current_uri_segment_1, ['adminalumni', 'Adm
 
         .nav-link-item:hover {
             color: #000000;
+            transform: translateY(-2px);
+        }
+
+        .nav-link-item:hover i {
+            transform: scale(1.15);
+            color: #8B1538;
         }
 
         .nav-link-item.active-link {
@@ -197,12 +203,30 @@ $admin_management_active = in_array($current_uri_segment_1, ['adminalumni', 'Adm
         }
 
         .dropdown-menu {
-            margin-top: 0 !important;
+            margin-top: 5px !important;
             border: none;
-            box-shadow: 0 4px 12px rgba(0,0,0,0.15);
-            border-radius: 0 0 4px 4px;
+            box-shadow: 0 12px 28px rgba(0,0,0,0.15), 0 8px 10px rgba(0,0,0,0.1);
+            border-radius: 8px;
             z-index: 2100;
             font-size: 0.95rem;
+            display: none;
+            transform-origin: top;
+        }
+
+        .dropdown-menu.show {
+            display: block;
+            animation: dropdownReveal 0.25s cubic-bezier(0.1, 0.9, 0.2, 1);
+        }
+
+        @keyframes dropdownReveal {
+            from {
+                opacity: 0;
+                transform: translateY(-12px) scale(0.95);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0) scale(1);
+            }
         }
 
         .dropdown-menu .dropdown-item {
