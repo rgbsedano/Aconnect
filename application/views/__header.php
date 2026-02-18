@@ -20,6 +20,19 @@ function is_active_segment($segment1, $segment2 = null) {
     return $current_uri_segment_1 === $segment1;
 }
 
+// Fetch full alumni details for profile picture
+$alumni_id = $this->session->userdata('alumni_id');
+$profile_image_url = base_url('assets/images/person-male.png');
+if ($alumni_id) {
+    $CI =& get_instance();
+    $CI->load->model('user/Alumni_model');
+    $user_data = $CI->Alumni_model->get_alumni_by_id($alumni_id);
+    if ($user_data && $user_data->profile_image) {
+        $profile_image_url = base_url('assets/uploads/alumni/' . $user_data->profile_image);
+    }
+}
+
+
 // Precise active state logic
 $is_home = (empty($current_uri_segment_1) || in_array($current_uri_segment_1, ['PostController', 'postcontroller']));
 $is_network = in_array($current_uri_segment_1, ['alumni', 'alumni_request']);
@@ -58,7 +71,7 @@ $admin_management_active = in_array($current_uri_segment_1, ['adminalumni', 'Adm
 
         body { 
             background-color: #f3f2ef; 
-            padding-top: 0 !important;
+            padding-top: var(--nav-height) !important;
             font-size: 1.05rem;
             position: relative;
         }
@@ -80,7 +93,7 @@ $admin_management_active = in_array($current_uri_segment_1, ['adminalumni', 'Adm
         }
 
         #ac-main-header {
-            position: sticky;
+            position: fixed;
             top: 0;
             width: 100%;
             z-index: 2000;
@@ -284,21 +297,148 @@ $admin_management_active = in_array($current_uri_segment_1, ['adminalumni', 'Adm
             transform: scale(1.2);
         }
 
+        /* Updated Dropdown Styling */
+        .dropdown-menu {
+            margin-top: 10px !important;
+            border: none;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.15);
+            border-radius: 8px;
+            padding: 8px;
+            min-width: 240px;
+        }
+
+        .dropdown-item {
+            border-radius: 6px;
+            padding: 10px 12px;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            font-weight: 500;
+        }
+
+        /* Messaging Dropdown Specifics */
+        #messaging-dropdown-menu {
+            width: 360px;
+            padding: 0;
+            overflow: hidden;
+        }
+
+        .msg-dropdown-header {
+            padding: 16px;
+            border-bottom: 1px solid #eee;
+        }
+
+        .msg-dropdown-search {
+            padding: 8px 16px;
+        }
+
+        .msg-dropdown-search input {
+            background: #f0f2f5;
+            border: none;
+            border-radius: 20px;
+            padding: 8px 12px;
+            width: 100%;
+            font-size: 14px;
+        }
+
+        .msg-dropdown-filters {
+            display: flex;
+            padding: 8px 16px;
+            gap: 8px;
+            border-bottom: 1px solid #eee;
+            overflow-x: auto;
+        }
+
+        .msg-filter-btn {
+            background: #f0f2f5;
+            border: none;
+            padding: 6px 12px;
+            border-radius: 16px;
+            font-size: 13px;
+            font-weight: 600;
+            color: #65676b;
+            cursor: pointer;
+            white-space: nowrap;
+        }
+
+        .msg-filter-btn.active {
+            background: #fde8e8;
+            color: var(--primary-color);
+        }
+
+        .msg-dropdown-list {
+            max-height: 400px;
+            overflow-y: auto;
+        }
+
+        .msg-item {
+            padding: 12px 16px;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            cursor: pointer;
+            transition: background 0.2s;
+        }
+
+        .msg-item:hover { background: #f2f2f2; }
+
+        .msg-item img {
+            width: 48px;
+            height: 48px;
+            border-radius: 50%;
+            object-fit: cover;
+        }
+
+        .msg-item-info { flex: 1; min-width: 0; }
+        .msg-item-name { font-weight: 600; color: #050505; font-size: 15px; }
+        .msg-item-text { font-size: 13px; color: #65676b; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+
+        /* Profile Dropdown Specifics */
+        .profile-user-header {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            padding: 12px;
+            margin-bottom: 8px;
+            border-bottom: 1px solid #eee;
+        }
+
+        .profile-user-header img {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            object-fit: cover;
+        }
+
+        /* Mobile Adjustments */
         @media (max-width: 768px) {
             .nav-link-item span { display: none; }
-            .nav-link-item { min-width: 53px; }
-            .student-id-label { display: none; }
+            .nav-link-item { min-width: 50px; }
             .ac-container { padding: 0 10px; }
             .logo-area img { height: 40px !important; }
-            .user-logout-area { margin-left: 5px; padding-left: 5px; }
-            .account-info-display { padding: 0 5px; }
+            .user-logout-area { margin-left: 5px; padding-left: 5px; border: none; }
+            #messaging-dropdown-menu, #menu-dropdown-menu { 
+                width: 90vw; 
+                max-width: 360px;
+                position: fixed !important; 
+                left: 50% !important; 
+                transform: translateX(-50%) !important; 
+                top: 55px !important; 
+            }
+            .desktop-only { display: none !important; }
+        }
+
+        @media (min-width: 769px) {
+            .mobile-only { display: none !important; }
         }
 
         @media (max-width: 576px) {
-            .nav-link-item { min-width: 45px; }
-            .primary-nav { margin-left: 0; width: 100%; justify-content: space-around; }
-            .logo-area { display: none; }
+            .nav-link-item { min-width: 42px; }
+            .primary-nav { margin-left: 0; flex: 1; justify-content: space-around; }
+            .logo-area { display: flex; }
+            .logo-area img { height: 35px !important; }
         }
+
     </style>
 </head>
 <body>
@@ -332,30 +472,90 @@ $admin_management_active = in_array($current_uri_segment_1, ['adminalumni', 'Adm
                             <i class="fas fa-house-user"></i><span>Home</span>
                         </a>
                     </li>
-                    <li class="nav-item">
+                    <li class="nav-item desktop-only">
                         <a href="<?php echo base_url('alumni'); ?>" class="nav-link-item <?php echo $is_network ? 'active-link' : ''; ?>">
                             <i class="fas fa-user-friends"></i><span>Network</span>
                         </a>
                     </li>
-                    <li class="nav-item">
+                    <li class="nav-item desktop-only">
                         <a href="<?php echo base_url('jobs'); ?>" class="nav-link-item <?php echo $is_jobs ? 'active-link' : ''; ?>">
                             <i class="fas fa-briefcase"></i><span>Jobs</span>
                         </a>
                     </li>
-                    <li class="nav-item">
-                        <a href="javascript:void(0)" id="navbar-messaging-btn" class="nav-link-item <?php echo $is_messaging ? 'active-link' : ''; ?>">
+                    <li class="nav-item dropdown mobile-only">
+                        <a href="#" class="nav-link-item dropdown-toggle" data-toggle="dropdown">
+                            <i class="fas fa-th"></i>
+                        </a>
+                        <div class="dropdown-menu dropdown-menu-right shadow border-0" id="menu-dropdown-menu" style="min-width: 280px; padding: 16px;">
+                            <div class="msg-dropdown-search mb-3" style="padding: 0;">
+                                <input type="text" placeholder="Search menu" style="background: #f0f2f5; border: none; border-radius: 20px; padding: 8px 12px; width: 100%;">
+                            </div>
+                            <div class="mb-2 font-weight-bold text-muted small uppercase">Social</div>
+                            <a class="dropdown-item" href="<?php echo base_url('alumni'); ?>" style="padding: 12px; gap: 15px;">
+                                <div style="background: #31a24c; width: 36px; height: 36px; border-radius: 50%; display: flex; align-items: center; justify-content: center; color: white;">
+                                    <i class="fas fa-user-friends"></i>
+                                </div>
+                                <div>
+                                    <div style="font-weight: 600;">Network</div>
+                                    <div style="font-size: 11px; color: #65676b; font-weight: 400;">Connect with alumni</div>
+                                </div>
+                            </a>
+                            <a class="dropdown-item" href="<?php echo base_url('jobs'); ?>" style="padding: 12px; gap: 15px;">
+                                <div style="background: #1877f2; width: 36px; height: 36px; border-radius: 50%; display: flex; align-items: center; justify-content: center; color: white;">
+                                    <i class="fas fa-briefcase"></i>
+                                </div>
+                                <div>
+                                    <div style="font-weight: 600;">Jobs</div>
+                                    <div style="font-size: 11px; color: #65676b; font-weight: 400;">Find opportunities</div>
+                                </div>
+                            </a>
+                            <a class="dropdown-item open-support-chat" href="#" style="padding: 12px; gap: 15px;">
+                                <div style="background: #8B1538; width: 36px; height: 36px; border-radius: 50%; display: flex; align-items: center; justify-content: center; color: white;">
+                                    <i class="fas fa-headset"></i>
+                                </div>
+                                <div>
+                                    <div style="font-weight: 600;">Chat Support</div>
+                                    <div style="font-size: 11px; color: #65676b; font-weight: 400;">Talk to our team</div>
+                                </div>
+                            </a>
+                        </div>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a href="#" class="nav-link-item <?php echo $is_messaging ? 'active-link' : ''; ?> dropdown-toggle" data-toggle="dropdown">
                             <i class="fas fa-comment-dots"></i><span>Messaging</span>
                         </a>
+                        <div class="dropdown-menu dropdown-menu-right" id="messaging-dropdown-menu">
+                            <div class="msg-dropdown-search">
+                                <input type="text" placeholder="Search Messenger" id="msg-search-input">
+                            </div>
+                            <div class="msg-dropdown-filters">
+                                <button class="msg-filter-btn active" data-filter="all">All</button>
+                                <button class="msg-filter-btn" data-filter="unread">Unread</button>
+                            </div>
+                            <div class="msg-dropdown-list" id="msg-dropdown-list">
+                                <!-- Static Support Item -->
+                                <div class="msg-item open-support-chat">
+                                    <img src="<?php echo base_url('assets/images/schoollogo.jpg'); ?>" style="border: 1px solid #eee;">
+                                    <div class="msg-item-info">
+                                        <div class="msg-item-name">AConnect Support</div>
+                                        <div class="msg-item-text">Official Support Channel</div>
+                                    </div>
+                                </div>
+                                <!-- Populated via JS -->
+                                <div class="p-4 text-center text-muted">Loading chats...</div>
+                            </div>
+                        </div>
                     </li>
                     <li class="nav-item dropdown">
                         <a class="nav-link-item dropdown-toggle <?php echo $is_events ? 'active-link' : ''; ?>" href="#" id="eventsDropdown" data-toggle="dropdown">
                             <i class="fas fa-calendar-alt"></i><span>Events</span>
                         </a>
                         <div class="dropdown-menu dropdown-menu-right" aria-labelledby="eventsDropdown">
-                            <a class="dropdown-item" href="<?php echo base_url('events'); ?>">Upcoming</a>
-                            <a class="dropdown-item" href="<?php echo base_url('EventsPrevious'); ?>">Previous</a>
+                            <a class="dropdown-item" href="<?php echo base_url('events'); ?>"><i class="fas fa-calendar-check" style="width: 20px;"></i> Upcoming</a>
+                            <a class="dropdown-item" href="<?php echo base_url('EventsPrevious'); ?>"><i class="fas fa-history" style="width: 20px;"></i> Previous</a>
                         </div>
                     </li>
+
 
                 <?php elseif($this->session->userdata('role') == 'administrator'): ?>
                     <li class="nav-item">
@@ -390,16 +590,35 @@ $admin_management_active = in_array($current_uri_segment_1, ['adminalumni', 'Adm
                 <?php endif; ?>
 
                 <div class="user-logout-area">
-                    <li class="nav-item">
-                        <a href="<?php echo ($this->session->userdata('role') == 'administrator') ? '#' : base_url('profile'); ?>" class="account-info-display">
-                            <span class="student-id-label"><?php echo ($this->session->userdata('role') == 'administrator') ? 'ADMIN' : $student_number; ?></span>
-                            <span class="account-name-label"><?php echo $display_full_name; ?> <i class="fas fa-caret-down" style="font-size: 11px;"></i></span>
+                    <li class="nav-item dropdown">
+                        <a href="#" class="nav-link-item dropdown-toggle" data-toggle="dropdown" style="min-width: 50px; padding: 0;">
+                            <img src="<?php echo $profile_image_url; ?>" style="width: 38px; height: 38px; border-radius: 50%; object-fit: cover; border: 1px solid #ddd;">
                         </a>
+                        <div class="dropdown-menu dropdown-menu-right shadow border-0" style="min-width: 280px; padding: 12px;">
+                            <div class="profile-user-header">
+                                <img src="<?php echo $profile_image_url; ?>" alt="Profile">
+                                <div>
+                                    <div style="font-weight: 700; font-size: 16px;"><?php echo $display_full_name; ?></div>
+                                    <div style="font-size: 12px; color: #65676b;"><?php echo ($this->session->userdata('role') == 'administrator') ? 'Administrator' : $student_number; ?></div>
+                                </div>
+                            </div>
+                            <a class="dropdown-item" href="<?php echo ($this->session->userdata('role') == 'administrator') ? '#' : base_url('profile'); ?>">
+                                <div style="background: #e4e6eb; width: 36px; height: 36px; border-radius: 50%; display: flex; align-items: center; justify-content: center;">
+                                    <i class="fas fa-user"></i>
+                                </div>
+                                <span>View Profile</span>
+                            </a>
+                            <div class="dropdown-divider"></div>
+                            <a class="dropdown-item" href="<?php echo base_url('login/logout'); ?>">
+                                <div style="background: #e4e6eb; width: 36px; height: 36px; border-radius: 50%; display: flex; align-items: center; justify-content: center;">
+                                    <i class="fas fa-sign-out-alt"></i>
+                                </div>
+                                <span>Log Out</span>
+                            </a>
+                        </div>
                     </li>
-                    <a href="<?php echo base_url('login/logout'); ?>" class="logout-link" title="Logout">
-                        <i class="fas fa-sign-out-alt"></i>
-                    </a>
                 </div>
+
             </ul>
         </nav>
     </div>

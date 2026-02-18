@@ -50,10 +50,10 @@
 <!-- Dual Floating Chat Widgets -->
 <?php if ($this->session->userdata('alumni_id')): ?>
 <!-- Friends Chat (Bottom Right, Stacked Above Support) -->
-<div id="friends-chat-container" style="position: fixed; bottom: 100px; right: 30px; z-index: 10000; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', sans-serif;">
-    <button id="friends-toggle-btn" style="width: 60px; height: 60px; border-radius: 50%; background: linear-gradient(135deg, #8B1538, #A52A2A); color: white; border: none; box-shadow: 0 6px 20px rgba(139, 21, 56, 0.4); cursor: pointer; display: flex; align-items: center; justify-content: center; transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275); position: relative;">
-        <i class="fas fa-comment-dots fa-lg"></i>
-        <span style="position: absolute; top: -5px; right: -5px; background: #FF4444; color: white; border-radius: 50%; width: 20px; height: 20px; font-size: 11px; font-weight: 700; display: none; align-items: center; justify-content: center;" id="friends-unread-badge">0</span>
+<div id="friends-chat-container" style="display: none; position: fixed; bottom: 100px; right: 30px; z-index: 10000; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', sans-serif;">
+    <button id="friends-toggle-btn" style="width: 50px; height: 50px; border-radius: 50%; background: linear-gradient(135deg, #8B1538, #A52A2A); color: white; border: none; box-shadow: 0 4px 15px rgba(139, 21, 56, 0.4); cursor: pointer; display: flex; align-items: center; justify-content: center; transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275); position: relative;">
+        <i class="fas fa-comment-dots"></i>
+        <span style="position: absolute; top: -2px; right: -2px; background: #FF4444; color: white; border-radius: 50%; width: 18px; height: 18px; font-size: 10px; font-weight: 700; display: none; align-items: center; justify-content: center;" id="friends-unread-badge">0</span>
     </button>
 
     <div id="friends-chat-window" style="display: none; position: absolute; bottom: 75px; right: 0; width: 380px; height: 550px; background: white; border-radius: 16px; box-shadow: 0 12px 48px rgba(0,0,0,0.15); overflow: hidden; border: 1px solid rgba(0,0,0,0.08); flex-direction: column; transform-origin: right bottom;">
@@ -108,9 +108,9 @@
 </div>
 
 <!-- Support Chat (Bottom Right) -->
-<div id="support-chat-container" style="position: fixed; bottom: 20px; right: 25px; z-index: 10000; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', sans-serif;">
-    <button id="support-toggle-btn" style="width: 64px; height: 64px; border-radius: 50%; background: linear-gradient(135deg, #8B1538, #6B0F2A); color: white; border: none; box-shadow: 0 6px 24px rgba(139, 21, 56, 0.4); cursor: pointer; display: flex; align-items: center; justify-content: center; transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);">
-        <i class="fas fa-headset fa-2x"></i>
+<div id="support-chat-container" style="display: none; position: fixed; bottom: 20px; right: 25px; z-index: 10000; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', sans-serif;">
+    <button id="support-toggle-btn" style="width: 50px; height: 50px; border-radius: 50%; background: linear-gradient(135deg, #8B1538, #6B0F2A); color: white; border: none; box-shadow: 0 4px 15px rgba(139, 21, 56, 0.4); cursor: pointer; display: flex; align-items: center; justify-content: center; transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);">
+        <i class="fas fa-headset fa-lg"></i>
     </button>
 
     <div id="support-chat-window" style="display: none; position: absolute; bottom: 80px; right: 0; width: 380px; height: 550px; background: white; border-radius: 16px; box-shadow: 0 12px 48px rgba(0,0,0,0.15); overflow: hidden; border: 1px solid rgba(0,0,0,0.08); flex-direction: column;">
@@ -356,18 +356,82 @@ $(document).ready(function() {
     let friendsPoll = null;
     let lastFriendsHash = '';
 
+    // Handle Navbar Messaging Dropdown population
+    $('.nav-item.dropdown').on('show.bs.dropdown', function(e) {
+        if ($(e.target).find('#messaging-dropdown-menu').length) {
+            loadMessagingDropdown();
+        }
+    });
+
+    function loadMessagingDropdown(filter = 'all', search = '') {
+        $.get('<?= site_url("chat/get_connections") ?>', function(res) {
+            let data = typeof res === 'string' ? JSON.parse(res) : res;
+            let html = `
+                <!-- Static Support Item -->
+                <div class="msg-item open-support-chat">
+                    <img src="<?= base_url('assets/images/schoollogo.jpg') ?>" style="border: 1px solid #eee;">
+                    <div class="msg-item-info">
+                        <div class="msg-item-name">AConnect Support</div>
+                        <div class="msg-item-text">Official Support Channel</div>
+                    </div>
+                </div>
+            `;
+
+            // Search filter
+            if (search) {
+                data = data.filter(f => 
+                    (f.first_name + ' ' + f.last_name).toLowerCase().includes(search.toLowerCase())
+                );
+            }
+
+            // Tabs filter logic
+            if (data.length === 0) {
+                html = '<div class="p-4 text-center text-muted">No connections found.</div>';
+            } else {
+                data.forEach(friend => {
+                    let img = friend.profile_image ? '<?= base_url("assets/uploads/alumni/") ?>' + friend.profile_image : '<?= base_url("assets/images/person-male.png") ?>';
+                    html += `
+                        <div class="msg-item browse-friend" data-id="${friend.id}" data-name="${friend.first_name} ${friend.last_name}" data-img="${img}">
+                            <img src="${img}">
+                            <div class="msg-item-info">
+                                <div class="msg-item-name">${friend.first_name} ${friend.last_name}</div>
+                                <div class="msg-item-text">Click to message</div>
+                            </div>
+                        </div>
+                    `;
+                });
+            }
+            $('#msg-dropdown-list').html(html);
+        });
+    }
+
+    // Filter clicks
+    $('.msg-filter-btn').on('click', function(e) {
+        e.stopPropagation();
+        $('.msg-filter-btn').removeClass('active');
+        $(this).addClass('active');
+        loadMessagingDropdown($(this).data('filter'), $('#msg-search-input').val());
+    });
+
+    // Search input
+    $('#msg-search-input').on('click', e => e.stopPropagation());
+    $('#msg-search-input').on('input', function() {
+        let filter = $('.msg-filter-btn.active').data('filter');
+        loadMessagingDropdown(filter, $(this).val());
+    });
+
     $('#friends-toggle-btn').on('click', function() {
         $('#friends-chat-window').fadeToggle(200).css('display', 'flex');
         if ($('#friends-chat-window').is(':visible')) loadFriends();
     });
 
-    // Navbar Messaging button handler
-    $('#navbar-messaging-btn').on('click', function() {
-        $('#friends-chat-window').fadeIn(200).css('display', 'flex');
-        loadFriends();
+    // Close button for friends chat
+    $('#close-friends-chat').on('click', function() { 
+        $('#friends-chat-window').fadeOut(200); 
+        $('#friends-chat-container').fadeOut(200);
+        stopFriendsPoll(); 
     });
 
-    $('#close-friends-chat').on('click', function() { $('#friends-chat-window').fadeOut(200); stopFriendsPoll(); });
     $('#back-to-friends').on('click', function() {
         $('#active-friends-chat').hide();
         $('#friends-contacts').show();
@@ -377,6 +441,7 @@ $(document).ready(function() {
         stopFriendsPoll();
         loadFriends();
     });
+
 
     function loadFriends() {
         $.get('<?= site_url("chat/get_connections") ?>', function(res) {
@@ -406,6 +471,12 @@ $(document).ready(function() {
         currentFriendId = $(this).data('id');
         let name = $(this).data('name');
         let img = $(this).data('img');
+
+        // Ensure the chat window is visible
+        if (!$('#friends-chat-window').is(':visible')) {
+            $('#friends-chat-container').fadeIn(200);
+            $('#friends-chat-window').fadeIn(200).css('display', 'flex');
+        }
 
         $('#friends-chat-user-name').text(name);
         $('#friends-chat-avatar').attr('src', img).show();
@@ -503,7 +574,11 @@ $(document).ready(function() {
         }
     });
 
-    $('#close-support-chat').on('click', function() { $('#support-chat-window').fadeOut(200); stopSupportPoll(); });
+    $('#close-support-chat').on('click', function() { 
+        $('#support-chat-window').fadeOut(200); 
+        $('#support-chat-container').fadeOut(200);
+        stopSupportPoll(); 
+    });
 
     $('#send-support-btn').on('click', sendSupportMsg);
     $('#support-input').on('keypress', function(e) { if(e.which === 13) sendSupportMsg(); });
@@ -567,6 +642,22 @@ $(document).ready(function() {
 
     function startSupportPoll() { if(supportPoll) clearInterval(supportPoll); supportPoll = setInterval(loadSupportMessages, 4000); }
     function stopSupportPoll() { if(supportPoll) clearInterval(supportPoll); supportPoll = null; }
+
+    // --- SUPPORT CHAT TRIGGERS ---
+    $(document).on('click', '.open-support-chat', function(e) {
+        e.preventDefault();
+        e.stopPropagation();
+        
+        // Hide friends chat if it interferes
+        $('#friends-chat-window').fadeOut(200);
+        
+        // Open support chat
+        $('#support-chat-window').fadeIn(200).css('display', 'flex');
+        $('#support-chat-container').fadeIn(200); // Ensure container is visible
+        
+        loadSupportMessages();
+        startSupportPoll();
+    });
 
     // Expose Global Function for Profile "Message" button
     window.openDirectChat = function(friendId, name, img) {
