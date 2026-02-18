@@ -202,8 +202,8 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                         </div>
 
                         <div class="form-group d-flex align-items-start mb-3" style="font-size: 0.85rem; color: #555;">
-                            <input type="checkbox" id="privacyConsent" name="privacy_consent" style="width: 18px; height: 18px; margin-right: 10px; margin-top: 2px; pointer-events: none;" required>
-                            <label for="privacyConsentLabel" id="triggerPrivacyModal" style="cursor: pointer;">
+                            <input type="checkbox" id="privacyConsent" name="privacy_consent" style="width: 18px; height: 18px; margin-right: 10px; margin-top: 2px;" required>
+                            <label for="privacyConsent" id="triggerPrivacyModal" style="cursor: pointer;">
                                 I have read and agree to the <a href="#" style="color: #700A0A; border-bottom: 1px dashed #700A0A;">Data Privacy Terms</a>.
                             </label>
                         </div>
