@@ -23,15 +23,46 @@ defined('BASEPATH') OR exit('No direct script access allowed');
     .login-page { display: flex; min-height: 100vh; background-color: #f7f7f7; }
     .container-fluid { display: flex; width: 100%; max-width: none !important; height: 100vh; padding: 0 !important; margin: 0 !important; }
     .row_container { display: flex !important; width: 100%; margin: 0 !important; }
-    .image-container { flex: 0 0 50vw; display: flex; align-items: center; justify-content: center; overflow: hidden; height: 100vh; background-color: #920E0E; padding: 0 !important; }
-    .login-image { display: block; width: 100%; height: 100%; object-fit: cover; }
-    .form-container { flex: 0 0 50vw; display: flex; flex-direction: column; align-items: center; justify-content: center; padding: 30px; min-height: 100vh; background-color: #fff; }
+    .image-container {
+        flex: 0 0 50vw;
+        position: relative;
+        overflow: hidden;
+        height: 100vh;
+        background-color: #920E0E;
+        padding: 0 !important;
+    }
+
+    .login-image {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+
+    .form-container { 
+    flex: 0 0 50vw; 
+    display: flex; 
+    flex-direction: column; 
+    align-items: center;
+    justify-content: center;
+    padding: 30px;
+    min-height: 100vh;
+    background-color: #fff;
+
+    /* 🔥 ADD THESE */
+    text-align: center;
+}
+
     .login-logo-container { text-align: center; margin-bottom: 0.5rem; }
     .login-logo { max-width: 200px; height: auto; }
     .branding-text { text-align: center; margin-bottom: 2rem; max-width: 350px; }
     .branding-text h1 { font-size: 1.8rem; font-weight: 700; color: #333; margin-bottom: 0.5rem; }
     .branding-text p { font-size: 0.95rem; color: #6c757d; }
-    .form-signin { width: 100%; max-width: 350px; }
+    .form-signin {
+    width: 100%;
+    max-width: 380px;
+    margin: 0 auto; /* 🔥 THIS CENTERS THE CARD */
+}
+
     .form-control { border-radius: 5px; height: 48px; padding: 10px 15px; margin-bottom: 15px; width: 100%; transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out; border: 1px solid #ddd; }
     .form-control:focus { border-color: #700A0A; box-shadow: 0 0 0 0.15rem rgba(112, 10, 10, 0.2); }
     .form-label-group label { display: none; }
@@ -46,12 +77,128 @@ defined('BASEPATH') OR exit('No direct script access allowed');
     .btn-outline-dark { color: #000; border: 1px solid #ccc; background-color: transparent; padding: 8px 15px; font-size: 0.9rem; line-height: 1.2; border-radius: 5px; transition: all 0.2s ease; }
     .btn-outline-dark:hover { background-color: #f0f0f0; border-color: #700A0A; color: #000; }
     @media screen and (max-width: 767.98px) {
-        html, body { overflow: auto; height: auto; }
-        .image-container { display: none !important; }
-        .form-container { flex: 0 0 100vw; height: auto; min-height: 100vh; padding: 40px 20px; }
-        .branding-text h1 { font-size: 1.5rem; }
-        .branding-text p { font-size: 0.9rem; }
+
+    html, body {
+        overflow: auto;
+        height: auto;
     }
+    body.login-page {
+    overflow-y: auto;
+    }
+    .login-page {
+        min-height: 100dvh; /* 🔥 modern mobile fix */
+    }
+
+
+    /* 🔥 IMAGE BECOMES FULL BACKGROUND */
+    .image-container {
+        display: block !important;
+        position: fixed;
+        inset: 0;
+        width: 100vw;
+        height: 100vh;
+        z-index: 0;
+    }
+
+    .image-container::after {
+        content: "";
+        position: absolute;
+        inset: 0;
+        background: rgba(0,0,0,0.45); /* dark overlay for readability */
+    }
+
+    /* 🔥 FLOATING CENTER FORM */
+    .form-container {
+    position: relative;
+    z-index: 2;
+    flex: 0 0 100vw;
+
+    /* 🔥 CRITICAL FIX */
+    min-height: auto;
+    height: auto;
+    padding: 40px 20px;
+
+    background: transparent;
+
+    display: flex;
+    align-items: flex-start; /* 🔥 WAS center */
+    justify-content: center;
+
+    overflow-y: auto; /* 🔥 ALLOW SCROLL */
+}
+
+       
+
+
+    /* 🔥 GLASS LOGIN CARD EFFECT */
+    .form-signin {
+        width: 100%;
+        max-width: 380px;
+        background: rgba(255,255,255,0.95);
+        backdrop-filter: blur(10px);
+        padding: 28px;
+        border-radius: 16px;
+        box-shadow: 0 20px 60px rgba(0,0,0,0.25);
+    }
+
+    /* 🔥 LOGIN HEADER (inside card) */
+    .login-header {
+        width: 100%;
+        text-align: center;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        margin-bottom: 18px;
+    }
+
+    /* 🔥 RESPONSIVE CENTERED LOGO */
+    .login-logo {
+        display: block;
+        margin: 0 auto 10px auto;
+        max-width: 110px;
+        width: 100%;
+        height: auto;
+        object-fit: contain;
+    }
+
+    /* 🔥 BRANDING TEXT ALIGNMENT */
+    .branding-text {
+        text-align: center;
+        margin: 0 auto;
+        max-width: 280px;
+    }
+
+    .branding-text p {
+        font-size: 0.85rem;
+        color: #6c757d;
+        margin-bottom: 0;
+    }
+    /* 📱 MOBILE LOGO TUNING */
+    @media screen and (max-width: 767.98px) {
+
+        .login-logo {
+            max-width: 150px;
+            margin-bottom: 8px;
+        }
+
+        .login-header {
+            margin-bottom: 14px;
+        }
+
+        .branding-text {
+            max-width: 260px;
+        }
+        
+    }
+
+        @media (min-width: 992px) {
+            .login-logo {
+                max-width: 130px;
+            }
+        }
+    
+
     </style>
 </head>
 <body class="login-page">
@@ -62,14 +209,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
             </div>
 
             <div class="col-md-6 form-container">
-                <div class="login-logo-container">
-                    <img src="<?php echo base_url('assets/images/logo.png'); ?>" alt="AC Connect Logo" class="login-logo">
-                </div>
-
-                <div class="branding-text">
-                    <h1>AConnect: Alumni & Career Platform</h1>
-                    <p>Connect with your fellow alumni and unlock exclusive career opportunities. Sign in to continue your journey.</p>
-                </div>
+               
 
                 <!-- Flash messages via SweetAlert2 -->
                 <?php if ($this->session->flashdata('success_message')): ?>
@@ -96,7 +236,18 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                 <?php endif; ?>
 
                 <!-- Login Form -->
-                <form class="form-signin" method="post" action="<?php echo site_url('Login/user'); ?>">
+                    <form class="form-signin" method="post" action="<?php echo site_url('Login/user'); ?>">
+
+                    <!-- 🔥 LOGO + BRANDING INSIDE CARD -->
+                    <div class="login-header">
+                        <img src="<?php echo base_url('assets/images/logo.png'); ?>" alt="AC Connect Logo" class="login-logo">
+
+                        <div class="branding-text">
+                            
+                            <p>Connect with your fellow alumni and unlock exclusive career opportunities.</p>
+                        </div>
+                    </div>
+
                     <div class="form-label-group">
                         <input type="text" id="student_number" name="student_number" class="form-control" placeholder="Student Number" required autofocus value="<?= set_value('student_number') ?>">
                     </div>
@@ -112,7 +263,6 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                     </div>
 
                     <button class="btn btn-lg btn-primary btn-block" type="submit">Log in to AConnect</button>
-
                     <div class="register-link">
                         <p>New to AConnect? <a href="<?= base_url('register') ?>">Create an Account</a></p>
                     </div>
@@ -126,7 +276,9 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                     <div class="text-center mt-3">
                         <a href="#" data-toggle="modal" data-target="#resendModal">Resend verification email</a>
                     </div>
+                    
                 </form>
+                
             </div>
         </div>
     </div>
