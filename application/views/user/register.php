@@ -348,7 +348,7 @@ $(document).ready(function() {
             Swal.fire({
                 icon: 'warning',
                 title: 'Consent Required',
-                text: 'Please check the "Accept all" box to continue.',
+                text: 'Please read all privacy terms and check the "Accept all" box in the bottom to continue.',
                 target: document.getElementById('privacyModal')
             });
         }
