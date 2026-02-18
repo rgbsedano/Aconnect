@@ -314,48 +314,56 @@ defined('BASEPATH') OR exit('No direct script access allowed');
     <?php endif; ?>
 
     <script>
-    $(document).ready(function() {
-        // Handle privacy modal submission
-        $('#submitPrivacy').on('click', function() {
-            if ($('#acceptAllPrivacy').is(':checked')) {
-                $('#privacyConsent').prop('checked', true);
-                $('#btnRegister').prop('disabled', false);
-                $('#privacyModal').modal('hide');
-            } else {
-                Swal.fire({
-                    icon: 'warning',
-                    title: 'Consent Required',
-                    text: 'Please check the "Accept all" box to continue.',
-                    target: document.getElementById('privacyModal')
-                });
-            }
-        });
+$(document).ready(function() {
 
-        // Trigger modal on label/link click
-        $('#triggerPrivacyModal, #triggerPrivacyModal a').on('click', function(e) {
+    // 🚫 prevent manual checking of main checkbox
+    $('#privacyConsent').on('click', function(e) {
+        if (!$(this).data('approved')) {
             e.preventDefault();
             $('#privacyModal').modal('show');
-        });
-
-        // Sync main checkbox with button state (only allows checking via JS)
-        $('#privacyConsent').on('click', function(e) {
-            if (!$(this).is(':checked')) {
-                $('#btnRegister').prop('disabled', true);
-            } else {
-                // Prevent manual checking
-                e.preventDefault();
-                $('#privacyModal').modal('show');
-            }
-        });
-
-        // Prevent registration submission if not checked
-        $('form').on('submit', function(e) {
-            if (!$('#privacyConsent').is(':checked')) {
-                e.preventDefault();
-                $('#privacyModal').modal('show');
-            }
-        });
+        }
     });
+
+    // 📖 open modal when text is clicked
+    $('#triggerPrivacyModal, #triggerPrivacyModal a').on('click', function(e) {
+        e.preventDefault();
+        $('#privacyModal').modal('show');
+    });
+
+    // ✅ when user clicks SUBMIT inside modal
+    $('#submitPrivacy').on('click', function() {
+        if ($('#acceptAllPrivacy').is(':checked')) {
+
+            // mark as approved
+            $('#privacyConsent')
+                .prop('checked', true)
+                .data('approved', true);
+
+            // enable register button
+            $('#btnRegister').prop('disabled', false);
+
+            $('#privacyModal').modal('hide');
+
+        } else {
+            Swal.fire({
+                icon: 'warning',
+                title: 'Consent Required',
+                text: 'Please check the "Accept all" box to continue.',
+                target: document.getElementById('privacyModal')
+            });
+        }
+    });
+
+    // 🛡 final submit guard
+    $('form').on('submit', function(e) {
+        if (!$('#privacyConsent').data('approved')) {
+            e.preventDefault();
+            $('#privacyModal').modal('show');
+        }
+    });
+
+});
 </script>
+
 </body>
 </html>
