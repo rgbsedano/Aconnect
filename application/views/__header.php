@@ -223,8 +223,8 @@ $admin_management_active = in_array($current_uri_segment_1, ['adminalumni', 'Adm
             display: flex;
             align-items: center;
             border-left: 1px solid rgba(0,0,0,0.08);
-            margin-left: 13px;
-            padding-left: 13px;
+            margin-left: 15px;
+            padding-left: 15px;
             height: 100%;
         }
 
@@ -415,8 +415,8 @@ $admin_management_active = in_array($current_uri_segment_1, ['adminalumni', 'Adm
             .nav-link-item span { display: none; }
             .nav-link-item { min-width: 50px; }
             .ac-container { padding: 0 10px; }
-            .logo-area img { height: 40px !important; }
-            .user-logout-area { margin-left: 5px; padding-left: 5px; border: none; }
+            .logo-area img { height: 52px !important; }
+            .user-logout-area { margin-left: 10px; padding-left: 10px; border: none; }
             #messaging-dropdown-menu, #menu-dropdown-menu { 
                 width: 90vw; 
                 max-width: 360px;
@@ -434,9 +434,11 @@ $admin_management_active = in_array($current_uri_segment_1, ['adminalumni', 'Adm
 
         @media (max-width: 576px) {
             .nav-link-item { min-width: 42px; }
-            .primary-nav { margin-left: 0; flex: 1; justify-content: space-around; }
+            .primary-nav { margin-left: 0; flex: 1; }
+            .primary-nav ul { width: 100%; justify-content: flex-end; }
             .logo-area { display: flex; }
-            .logo-area img { height: 35px !important; }
+            .logo-area img { height: 46px !important; }
+            .user-logout-area { margin-left: 8px; padding-left: 8px; }
         }
 
     </style>
@@ -509,13 +511,22 @@ $admin_management_active = in_array($current_uri_segment_1, ['adminalumni', 'Adm
                                     <div style="font-size: 11px; color: #65676b; font-weight: 400;">Find opportunities</div>
                                 </div>
                             </a>
-                            <a class="dropdown-item open-support-chat" href="#" style="padding: 12px; gap: 15px;">
-                                <div style="background: #8B1538; width: 36px; height: 36px; border-radius: 50%; display: flex; align-items: center; justify-content: center; color: white;">
-                                    <i class="fas fa-headset"></i>
+                            <a class="dropdown-item" href="<?php echo base_url('events'); ?>" style="padding: 12px; gap: 15px;">
+                                <div style="background: #e4e6eb; width: 36px; height: 36px; border-radius: 50%; display: flex; align-items: center; justify-content: center; color: #050505;">
+                                    <i class="fas fa-calendar-check"></i>
                                 </div>
                                 <div>
-                                    <div style="font-weight: 600;">Chat Support</div>
-                                    <div style="font-size: 11px; color: #65676b; font-weight: 400;">Talk to our team</div>
+                                    <div style="font-weight: 600;">Upcoming Events</div>
+                                    <div style="font-size: 11px; color: #65676b; font-weight: 400;">Stay updated with latest activities</div>
+                                </div>
+                            </a>
+                            <a class="dropdown-item" href="<?php echo base_url('EventsPrevious'); ?>" style="padding: 12px; gap: 15px;">
+                                <div style="background: #e4e6eb; width: 36px; height: 36px; border-radius: 50%; display: flex; align-items: center; justify-content: center; color: #050505;">
+                                    <i class="fas fa-history"></i>
+                                </div>
+                                <div>
+                                    <div style="font-weight: 600;">Previous Events</div>
+                                    <div style="font-size: 11px; color: #65676b; font-weight: 400;">Review our past success stories</div>
                                 </div>
                             </a>
                         </div>
@@ -533,26 +544,9 @@ $admin_management_active = in_array($current_uri_segment_1, ['adminalumni', 'Adm
                                 <button class="msg-filter-btn" data-filter="unread">Unread</button>
                             </div>
                             <div class="msg-dropdown-list" id="msg-dropdown-list">
-                                <!-- Static Support Item -->
-                                <div class="msg-item open-support-chat">
-                                    <img src="<?php echo base_url('assets/images/schoollogo.jpg'); ?>" style="border: 1px solid #eee;">
-                                    <div class="msg-item-info">
-                                        <div class="msg-item-name">AConnect Support</div>
-                                        <div class="msg-item-text">Official Support Channel</div>
-                                    </div>
-                                </div>
                                 <!-- Populated via JS -->
                                 <div class="p-4 text-center text-muted">Loading chats...</div>
                             </div>
-                        </div>
-                    </li>
-                    <li class="nav-item dropdown">
-                        <a class="nav-link-item dropdown-toggle <?php echo $is_events ? 'active-link' : ''; ?>" href="#" id="eventsDropdown" data-toggle="dropdown">
-                            <i class="fas fa-calendar-alt"></i><span>Events</span>
-                        </a>
-                        <div class="dropdown-menu dropdown-menu-right" aria-labelledby="eventsDropdown">
-                            <a class="dropdown-item" href="<?php echo base_url('events'); ?>"><i class="fas fa-calendar-check" style="width: 20px;"></i> Upcoming</a>
-                            <a class="dropdown-item" href="<?php echo base_url('EventsPrevious'); ?>"><i class="fas fa-history" style="width: 20px;"></i> Previous</a>
                         </div>
                     </li>
 

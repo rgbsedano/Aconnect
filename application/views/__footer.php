@@ -366,16 +366,7 @@ $(document).ready(function() {
     function loadMessagingDropdown(filter = 'all', search = '') {
         $.get('<?= site_url("chat/get_connections") ?>', function(res) {
             let data = typeof res === 'string' ? JSON.parse(res) : res;
-            let html = `
-                <!-- Static Support Item -->
-                <div class="msg-item open-support-chat">
-                    <img src="<?= base_url('assets/images/schoollogo.jpg') ?>" style="border: 1px solid #eee;">
-                    <div class="msg-item-info">
-                        <div class="msg-item-name">AConnect Support</div>
-                        <div class="msg-item-text">Official Support Channel</div>
-                    </div>
-                </div>
-            `;
+            let html = ``;
 
             // Search filter
             if (search) {
