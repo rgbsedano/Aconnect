@@ -35,4 +35,12 @@ class Event_model extends CI_Model {
             ]);
         }
     }
+    public function unregister_from_event($event_id, $alumni_id)
+{
+    return $this->db
+        ->where('event_id', $event_id)
+        ->where('alumni_id', $alumni_id)
+        ->delete('event_registrations');
+}
+
 }

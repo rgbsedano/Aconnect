@@ -39,6 +39,34 @@ class Events extends CI_Controller{
         }
         redirect('events');
     }
+
+	public function unregister($event_id) {
+		if (!$this->session->userdata('student_number')) {
+			redirect('login');
+		}
+
+		$this->load->model('Activity_log_model');
+
+		$alumni_id = $this->Event_model
+			->get_alumni_id_by_student_number(
+				$this->session->userdata('student_number')
+			);
+
+		if ($alumni_id) {
+			$this->Event_model->unregister_from_event($event_id, $alumni_id);
+			$this->Activity_log_model->log_activity(
+				$alumni_id,
+				'Unregistered from an event'
+			);
+			$this->session->set_flashdata('success', 'You have unregistered from the event.');
+			redirect('events');
+		}
+		
+		
+	}
+
+
+
     function previous(){
 		$this->load->view('__header');
 
@@ -48,4 +76,5 @@ class Events extends CI_Controller{
 		
 		$this->load->view('__footer');
 	}
+	
 }

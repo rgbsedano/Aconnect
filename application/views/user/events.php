@@ -54,6 +54,36 @@
             to { opacity: 1; transform: translateY(0); }
         }
         .animate-list { animation: slideUp 0.4s ease-out forwards; }
+
+        /* ===== REGISTER HOVER SWAP ===== */
+        .registered-wrapper {
+            position: relative;
+            width: 100%;
+        }
+
+        .registered-default,
+        .registered-hover {
+            transition: all 0.25s ease;
+        }
+
+        /* hide unregister by default */
+        .registered-hover {
+            position: absolute;
+            inset: 0;
+            opacity: 0;
+            pointer-events: none;
+        }
+
+        /* on hover → swap */
+        .registered-wrapper:hover .registered-default {
+            opacity: 0;
+        }
+
+        .registered-wrapper:hover .registered-hover {
+            opacity: 1;
+            pointer-events: auto;
+        }
+
     </style>
 </head>
 <body class="bg-pattern text-slate-900 antialiased">
@@ -198,10 +228,28 @@
 
                             <div class="flex items-center gap-3 w-full md:w-auto border-t md:border-t-0 pt-4 md:pt-0 border-slate-50">
                                 ${event.is_registered == 1 ? 
-                                    `<button disabled class="w-full bg-emerald-600 text-white text-xs font-bold px-6 py-2.5 rounded-xl flex items-center justify-center gap-2 cursor-default">
-                                        <svg class="w-3.5 h-3.5" fill="currentColor" viewBox="0 0 20 20"><path d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"/></svg>
+                                    `<div class="registered-wrapper w-full md:w-auto" onclick="event.stopPropagation()">
+
+                                    <!-- GREEN REGISTERED -->
+                                    <button disabled
+                                        class="registered-default w-full bg-emerald-600 text-white text-xs font-bold px-6 py-2.5 rounded-xl flex items-center justify-center gap-2">
+                                        <svg class="w-3.5 h-3.5" fill="currentColor" viewBox="0 0 20 20">
+                                            <path d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"/>
+                                        </svg>
                                         Registered
-                                    </button>` : 
+                                    </button>
+
+                                    <!-- 🔥 HOVER UNREGISTER -->
+                                    <form action="<?= base_url('events/unregister/') ?>${event.id}"
+                                        method="post"
+                                        class="registered-hover w-full">
+                                        <button type="submit"
+                                            class="w-full bg-rose-600 text-white text-xs font-bold px-6 py-2.5 rounded-xl hover:bg-rose-700 transition">
+                                            Unregister
+                                        </button>
+                                    </form>
+
+                                </div>` :
                                     `<form action="<?= base_url('events/register/') ?>${event.id}" method="post" class="w-full md:w-auto" onclick="event.stopPropagation()">
                                         <button type="submit" class="w-full bg-rose-700 text-white text-xs font-bold px-6 py-2.5 rounded-xl hover:bg-rose-800 transition shadow-md shadow-rose-100">Register Now</button>
                                     </form>`
@@ -267,10 +315,28 @@
                                 <div class="flex gap-3 w-full sm:w-auto">
                                     <button onclick="closeModal(${event.id})" class="flex-1 sm:flex-none px-6 py-3 text-xs font-bold text-slate-600 bg-slate-50 rounded-xl hover:bg-slate-100 transition">Close</button>
                                     ${event.is_registered == 1 ? 
-                                        `<button disabled class="flex-1 sm:flex-none bg-emerald-600 text-white text-xs font-bold px-8 py-3 rounded-xl flex items-center justify-center gap-2 cursor-default">
-                                            <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 20 20"><path d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"/></svg>
-                                            Registered
-                                        </button>` : 
+                                        `<div class="registered-wrapper flex-1 sm:flex-none">
+
+                                            <!-- GREEN -->
+                                            <button disabled
+                                                class="registered-default w-full bg-emerald-600 text-white text-xs font-bold px-8 py-3 rounded-xl flex items-center justify-center gap-2">
+                                                <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 20 20">
+                                                    <path d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"/>
+                                                </svg>
+                                                Registered
+                                            </button>
+
+                                            <!-- 🔥 HOVER -->
+                                            <form action="<?= base_url('events/unregister/') ?>${event.id}"
+                                                method="post"
+                                                class="registered-hover w-full">
+                                                <button type="submit"
+                                                    class="w-full bg-rose-600 text-white text-xs font-bold px-8 py-3 rounded-xl hover:bg-rose-700 transition">
+                                                    Unregister
+                                                </button>
+                                            </form>
+
+                                        </div>` : 
                                         `<form action="<?= base_url('events/register/') ?>${event.id}" method="post" class="flex-1 sm:flex-none">
                                             <button type="submit" class="w-full bg-rose-700 text-white text-xs font-bold px-8 py-3 rounded-xl hover:bg-rose-800 transition shadow-lg shadow-rose-100">Confirm Registration</button>
                                         </form>`
