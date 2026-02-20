@@ -117,8 +117,8 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                                 <option value="" disabled <?= (set_value('graduation_year')=='')?'selected':'' ?> >Graduation Year</option>
                                 <?php 
                                 $current_year = date('Y');
-                                $start_year = $current_year - 10;
-                                $end_year = $current_year + 5;
+                                $start_year = $current_year - 20;
+                                $end_year = $current_year;
                                 for ($year = $end_year; $year >= $start_year; $year--): ?>
                                     <option value="<?= $year ?>" <?= (set_value('graduation_year') == $year) ? 'selected' : '' ?>>
                                         <?= $year ?>
