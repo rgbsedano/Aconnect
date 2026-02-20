@@ -168,10 +168,13 @@ $admin_management_active = in_array($current_uri_segment_1, ['adminalumni', 'Adm
 
         .nav-link-item:hover {
             color: #000000;
-            transform: translateY(-2px);
         }
 
-        .nav-link-item:hover i {
+        /* Only apply translateY on non-dropdown nav links */
+        .nav-item:not(.dropdown) .nav-link-item:hover {
+            transform: translateY(-2px);
+        }
+        .nav-item:not(.dropdown) .nav-link-item:hover i {
             transform: scale(1.15);
             color: #8B1538;
         }
@@ -203,30 +206,17 @@ $admin_management_active = in_array($current_uri_segment_1, ['adminalumni', 'Adm
         }
 
         .dropdown-menu {
-            margin-top: 5px !important;
+            margin-top: 0 !important;
             border: none;
             box-shadow: 0 12px 28px rgba(0,0,0,0.15), 0 8px 10px rgba(0,0,0,0.1);
             border-radius: 8px;
             z-index: 2100;
             font-size: 0.95rem;
             display: none;
-            transform-origin: top;
         }
 
         .dropdown-menu.show {
             display: block;
-            animation: dropdownReveal 0.25s cubic-bezier(0.1, 0.9, 0.2, 1);
-        }
-
-        @keyframes dropdownReveal {
-            from {
-                opacity: 0;
-                transform: translateY(-12px) scale(0.95);
-            }
-            to {
-                opacity: 1;
-                transform: translateY(0) scale(1);
-            }
         }
 
         .dropdown-menu .dropdown-item {
@@ -295,7 +285,7 @@ $admin_management_active = in_array($current_uri_segment_1, ['adminalumni', 'Adm
         }
 
         .account-info-display:hover .account-name-label i {
-            transform: rotate(-180deg);
+            /* animation removed */
         }
 
         .logout-link {
@@ -508,6 +498,31 @@ $admin_management_active = in_array($current_uri_segment_1, ['adminalumni', 'Adm
                             <i class="fas fa-briefcase"></i><span>Jobs</span>
                         </a>
                     </li>
+                    <li class="nav-item dropdown desktop-only">
+                        <a href="#" class="nav-link-item dropdown-toggle <?php echo $is_events ? 'active-link' : ''; ?>" data-toggle="dropdown">
+                            <i class="fas fa-calendar-check"></i><span>Events</span>
+                        </a>
+                        <div class="dropdown-menu dropdown-menu-right shadow border-0" style="min-width: 220px; padding: 8px;">
+                            <a class="dropdown-item" href="<?php echo base_url('events'); ?>">
+                                <div style="background: #8B1538; width: 36px; height: 36px; border-radius: 50%; display: flex; align-items: center; justify-content: center; color: white;">
+                                    <i class="fas fa-calendar-check"></i>
+                                </div>
+                                <div>
+                                    <div style="font-weight: 600;">Current Events</div>
+                                    <div style="font-size: 11px; color: #65676b; font-weight: 400;">Upcoming activities</div>
+                                </div>
+                            </a>
+                            <a class="dropdown-item" href="<?php echo base_url('EventsPrevious'); ?>">
+                                <div style="background: #e4e6eb; width: 36px; height: 36px; border-radius: 50%; display: flex; align-items: center; justify-content: center; color: #050505;">
+                                    <i class="fas fa-history"></i>
+                                </div>
+                                <div>
+                                    <div style="font-weight: 600;">Past Events</div>
+                                    <div style="font-size: 11px; color: #65676b; font-weight: 400;">Previous activities</div>
+                                </div>
+                            </a>
+                        </div>
+                    </li>
                     <li class="nav-item dropdown mobile-only">
                         <a href="#" class="nav-link-item dropdown-toggle" data-toggle="dropdown">
                             <i class="fas fa-th"></i>
@@ -555,24 +570,7 @@ $admin_management_active = in_array($current_uri_segment_1, ['adminalumni', 'Adm
                             </a>
                         </div>
                     </li>
-                    <li class="nav-item dropdown">
-                        <a href="#" class="nav-link-item <?php echo $is_messaging ? 'active-link' : ''; ?> dropdown-toggle" data-toggle="dropdown">
-                            <i class="fas fa-comment-dots"></i><span>Messaging</span>
-                        </a>
-                        <div class="dropdown-menu dropdown-menu-right" id="messaging-dropdown-menu">
-                            <div class="msg-dropdown-search">
-                                <input type="text" placeholder="Search Messenger" id="msg-search-input">
-                            </div>
-                            <div class="msg-dropdown-filters">
-                                <button class="msg-filter-btn active" data-filter="all">All</button>
-                                <button class="msg-filter-btn" data-filter="unread">Unread</button>
-                            </div>
-                            <div class="msg-dropdown-list" id="msg-dropdown-list">
-                                <!-- Populated via JS -->
-                                <div class="p-4 text-center text-muted">Loading chats...</div>
-                            </div>
-                        </div>
-                    </li>
+
 
 
                 <?php elseif($this->session->userdata('role') == 'administrator'): ?>
