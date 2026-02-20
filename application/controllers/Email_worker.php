@@ -66,8 +66,10 @@ class Email_worker extends CI_Controller
             $this->email->clear(TRUE); // clear attachment + headers
 
             // FROM values (fallback)
-            $from_email = $this->config->item('smtp_user') ?? "no-reply@yourdomain.com";
-            $from_name  = "Aconnect Alumni System";
+            $email_config = $this->config->item('email');
+            $from_email = 'aconnect_admin@sdcaconnect.online';
+
+            $from_name = 'AConnect Alumni System';
 
             $this->email->from($from_email, $from_name);
             $this->email->to($email->recipient);

@@ -66,7 +66,7 @@ class Register extends CI_Controller {
 
             $config['upload_path']   = './assets/uploads/alumni/';
             $config['allowed_types'] = 'jpg|jpeg|png|gif';
-            $config['max_size']      = 7048;
+            $config['max_size']      = 5120;
             $config['encrypt_name']  = TRUE; // safer filename
 
             $this->load->library('upload', $config);
@@ -166,15 +166,15 @@ class Register extends CI_Controller {
     // EDIT these with your SMTP provider (or use Mailtrap test credentials)
     $config = [
         'protocol'  => 'smtp',
-        'smtp_host' => 'smtp.gmail.com',
-        'smtp_port' => 587,
-        'smtp_user' => 'argiezxc@gmail.com',      // CHANGE
-        'smtp_pass' => 'diaw dbve attk goka',        // CHANGE (use App Password for Gmail)
+        'smtp_host' => 'smtp.hostinger.com',
+        'smtp_port' => 465,
+        'smtp_user' => 'aconnect_admin@sdcaconnect.online',      
+        'smtp_pass' => 'Aconnecthostinger@123',        
         'mailtype'  => 'html',
         'charset'   => 'utf-8',
         'newline'   => "\r\n",
         'crlf'      => "\r\n",
-        'smtp_crypto' => 'tls',
+        'smtp_crypto' => 'ssl',
         'smtp_timeout' => 30,
         'wordwrap' => TRUE
     ];

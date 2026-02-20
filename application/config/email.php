@@ -2,15 +2,17 @@
 defined('BASEPATH') OR exit('No direct script access allowed');
 
 $config['email'] = array(
+
     'protocol'    => 'smtp',
-    'smtp_host'   => 'smtp.gmail.com',
-    'smtp_port'   => 587,
-    'smtp_user'   => 'argiezxc@gmail.com',
-    'smtp_pass'   => 'diaw dbve attk goka',
-    'smtp_crypto' => 'tls',
+    'smtp_host'   => 'smtp.hostinger.com',
+    'smtp_port'   => 465,
+    'smtp_user'   => 'aconnect_admin@sdcaconnect.online',
+    'smtp_pass'   => 'Aconnecthostinger@123',
+    'smtp_crypto' => 'ssl',
     'mailtype'    => 'html',
     'charset'     => 'utf-8',
     'newline'     => "\r\n",
     'crlf'        => "\r\n",
-    'wordwrap'    => TRUE
+    'wordwrap'    => TRUE,
+    'smtp_timeout' => 30, // seconds
 );
