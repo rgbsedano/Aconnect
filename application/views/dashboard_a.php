@@ -423,7 +423,7 @@
             </a>
 
             <!-- Verified Alumni -->
-            <a href="<?= site_url('AdminAlumni') ?>" class="metric-card" style="color: var(--accent-teal);">
+            <a href="<?= site_url('AdminOfficers') ?>" class="metric-card" style="color: var(--accent-teal);">
                 <div class="metric-top">
                     <div class="icon-box" style="background-color: var(--accent-teal);">
                         <i class="fas fa-user-graduate"></i>
@@ -431,10 +431,10 @@
                     <i class="fas fa-chevron-right arrow-icon"></i>
                 </div>
                 <div class="metric-content">
-                    <h4>Verified Alumni</h4>
+                    <h4>Active Officers</h4>
                     <div class="metric-value-box">
-                        <span class="metric-value"><?= $total_alumni ?></span>
-                        <span class="growth"><i class="fas fa-caret-up"></i> <?= $growth_alumni ?></span>
+                        <span class="metric-value"><?= $total_officers ?></span>
+                        <span class="growth"><i class="fas fa-caret-up"></i> <?= $growth_officers ?></span>
                     </div>
                 </div>
             </a>
@@ -466,7 +466,7 @@
                 <div class="metric-content">
                     <h4>Admin Access</h4>
                     <div class="metric-value-box">
-                        <span class="metric-value"><?= $total_accounts ?></span>
+                        <span class="metric-value"><?= $total_alumni ?></span>
                         <span class="growth"><i class="fas fa-caret-up"></i> <?= $growth_accounts ?></span>
                     </div>
                 </div>

@@ -113,8 +113,8 @@ class AdminAlumni extends CI_Controller {
     public function update() {
         $id = $this->input->post('id');
         $data = [
-            'first_name' => $this->input->post('first_name'),
-            'last_name' => $this->input->post('last_name'),
+            'first_name' => ucwords(strtolower(trim($this->input->post('first_name')))),
+            'last_name' => ucwords(strtolower(trim($this->input->post('last_name')))),
             'email' => $this->input->post('email'),
             'phone' => $this->input->post('phone'),
             'student_number' => $this->input->post('student_number'),

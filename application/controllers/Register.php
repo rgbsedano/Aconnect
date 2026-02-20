@@ -42,8 +42,8 @@ class Register extends CI_Controller {
         $token = bin2hex(random_bytes(32));
 
         $data = [
-            'first_name'       => $this->input->post('first_name'),
-            'last_name'        => $this->input->post('last_name'),
+            'first_name' => ucwords(strtolower(trim($this->input->post('first_name')))),
+            'last_name' => ucwords(strtolower(trim($this->input->post('last_name')))),
             'email'            => $this->input->post('email'),
             'password'         => password_hash($this->input->post('password'), PASSWORD_BCRYPT),
             'phone'            => $this->input->post('phone'),

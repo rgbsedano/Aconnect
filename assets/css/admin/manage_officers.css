@@ -1,0 +1,222 @@
+<style>
+/* ===== SCOPED ONLY TO OFFICERS PAGE ===== */
+.officers-page {
+    --primary-bg: #f8fafc;
+    --card-bg: #ffffff;
+    --text-main: #1e293b;
+    --text-muted: #64748b;
+    --accent-red: #700a0a;
+    --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    --border-radius: 24px;
+}
+
+.officers-page .dashboard-wrapper {
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 20px 24px;
+}
+
+.officers-page .header-section {
+    margin-bottom: 24px;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+}
+
+.officers-page .header-section h1 {
+    font-size: 28px;
+    font-weight: 700;
+    margin-bottom: 4px;
+    color: white;
+}
+
+.officers-page .header-section h1 span { color: #ff6b6b; }
+.officers-page .header-section p { color: rgba(255, 255, 255, 0.85); font-size: 14px; margin: 0; }
+
+.officers-page .main-card {
+    background: var(--card-bg);
+    border-radius: var(--border-radius);
+    padding: 30px;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
+    border: 1px solid #f1f5f9;
+}
+
+/* ===== TABLE ===== */
+.officers-page .custom-table { width: 100%; border-collapse: separate; border-spacing: 0 10px; }
+.officers-page .custom-table th {
+    padding: 12px 20px;
+    font-size: 11px;
+    font-weight: 700;
+    text-transform: uppercase;
+    color: var(--text-muted);
+}
+
+.officers-page .custom-table tr.data-row {
+    background: white;
+    transition: var(--transition);
+}
+
+.officers-page .custom-table tr.data-row:hover {
+    transform: scale(1.005);
+    box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+}
+
+.officers-page .custom-table td {
+    padding: 16px 20px;
+    vertical-align: middle;
+    border-top: 1px solid #f1f5f9;
+    border-bottom: 1px solid #f1f5f9;
+}
+
+.officers-page .user-name {
+    font-weight: 700;
+    color: var(--text-main);
+    font-size: 15px;
+}
+
+.officers-page .student-id {
+    font-size: 12px;
+    font-weight: 600;
+    color: var(--accent-red);
+    background: #fef2f2;
+    padding: 2px 8px;
+    border-radius: 6px;
+    display: inline-block;
+    margin-top: 2px;
+}
+
+.officers-page .badge-status {
+    padding: 4px 12px;
+    border-radius: 20px;
+    font-size: 11px;
+    font-weight: 700;
+    text-transform: uppercase;
+}
+
+.officers-page .badge-active { background: #dcfce7; color: #166534; }
+.officers-page .badge-inactive { background: #f1f5f9; color: var(--text-muted); }
+
+.officers-page .btn-action {
+    width: 36px;
+    height: 36px;
+    border-radius: 10px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    background: #f8fafc;
+    color: var(--text-muted);
+    border: 1px solid #e2e8f0;
+    transition: var(--transition);
+    margin-left: 5px;
+}
+
+.officers-page .btn-action:hover {
+    background: var(--accent-red);
+    color: white;
+    border-color: var(--accent-red);
+    transform: translateY(-2px);
+}
+
+.officers-page .btn-action.delete:hover {
+    background: #ef4444;
+    border-color: #ef4444;
+}
+
+/* ===== MODAL FIX ===== */
+.officers-page .modal-dialog {
+    margin-top: 10vh !important;
+    margin-bottom: 40px;
+}
+
+.officers-page .modal-content {
+    border-radius: 24px;
+    border: none;
+    overflow: hidden;
+}
+
+.officers-page .modal-header {
+    background: var(--accent-red);
+    color: white;
+    padding: 22px 26px;
+    border: none;
+}
+
+.officers-page .modal-body { padding: 26px; }
+.officers-page .modal-footer {
+    background: #f8fafc;
+    border-top: 1px solid #f1f5f9;
+    padding: 18px 24px;
+}
+
+/* ===== PAGINATION STYLE ===== */
+.officers-page .pagination-wrapper {
+    margin-top: 28px;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.officers-page .pagination-wrapper a,
+.officers-page .pagination-wrapper strong {
+    padding: 8px 14px;
+    margin: 4px;
+    border-radius: 10px;
+    font-weight: 600;
+    font-size: 13px;
+    border: 1px solid #e2e8f0;
+    color: var(--accent-red);
+    background: #ffffff;
+    text-decoration: none;
+    transition: var(--transition);
+}
+
+/* current page */
+.officers-page .pagination-wrapper strong {
+    background: var(--accent-red);
+    border-color: var(--accent-red);
+    color: white;
+}
+
+/* hover */
+.officers-page .pagination-wrapper a:hover {
+    background: #f8fafc;
+    border-color: var(--accent-red);
+    color: var(--accent-red);
+    transform: translateY(-1px);
+}
+
+/* ===== EVEN ROW STRIPING ===== */
+.officers-page .custom-table tbody tr.data-row:nth-child(even) {
+    background: #f9fafb;
+}
+
+/* keep hover stronger than stripe */
+.officers-page .custom-table tr.data-row:hover {
+    background: #ffffff;
+}
+
+/* sticky header */
+.officers-page .table-responsive {
+    max-height: 520px;
+    overflow-y: auto;
+}
+
+.officers-page .custom-table thead th {
+    position: sticky;
+    top: 0;
+    background: #ffffff;
+    z-index: 5;
+    box-shadow: 0 1px 0 #f1f5f9;
+}
+
+/* smoother hover */
+.officers-page .custom-table tr.data-row {
+    transition: all 0.18s ease;
+}
+
+/* search box polish */
+.officers-page #officerSearch {
+    border-radius: 12px;
+    font-size: 13px;
+}
+</style>

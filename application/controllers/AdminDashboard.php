@@ -27,6 +27,7 @@ class AdminDashboard extends CI_Controller{
         $data['inactive_users'] = $data['total_users'] - $data['active_users'];
 
         $data['total_alumni'] = $this->db->query("SELECT COUNT(*) AS total_alumni FROM alumni")->row()->total_alumni;
+        $data['total_officers'] = $this->db->query("SELECT COUNT(*) AS total_officers FROM alumni_officers")->row()->total_officers;
         $data['total_accounts'] = $this->db->query("SELECT COUNT(*) AS total_active_users FROM alumni WHERE status = 'active'")->row()->total_active_users;
         $data['total_jobs'] = $this->db->query("SELECT COUNT(*) AS total_job_post FROM jobs")->row()->total_job_post;
         $data['total_events'] = $this->db->query("SELECT COUNT(*) AS total_events FROM events")->row()->total_events;
@@ -37,6 +38,7 @@ class AdminDashboard extends CI_Controller{
         $data['growth_posts'] = "+2%";
         $data['growth_jobs'] = "+5%";
         $data['growth_alumni'] = "+3%";
+        $data['growth_officers'] = "+2%";
         $data['growth_accounts'] = "+1%";
 
 		$this->load->view('__header');

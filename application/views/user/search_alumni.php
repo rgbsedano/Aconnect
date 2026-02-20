@@ -2,8 +2,7 @@
 $display_full_name = $this->session->userdata('first_name') . ' ' . $this->session->userdata('last_name');
 $student_number = $this->session->userdata('student_number') ? $this->session->userdata('student_number') : 'N/A';
 ?>
-<!DOCTYPE html>
-<html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -291,9 +290,7 @@ $student_number = $this->session->userdata('student_number') ? $this->session->u
     <nav class="bg-white/80 backdrop-blur-md border-b border-slate-200 sticky top-0 z-40">
         <div class="max-w-6xl mx-auto px-6 py-4 flex items-center justify-between">
             <div class="flex items-center gap-3">
-                <div class="w-10 h-10 bg-rose-700 rounded-xl flex items-center justify-center shadow-lg shadow-rose-200">
-                    <svg class="w-6 h-6 text-amber-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z"/></svg>
-                </div>
+                
                 <div>
                     <h1 class="text-xl font-bold tracking-tight text-slate-900">Alumni <span class="text-rose-700">Network</span></h1>
                     <p class="text-[11px] font-semibold text-slate-500 uppercase tracking-widest">AConnect Community Hub</p>
