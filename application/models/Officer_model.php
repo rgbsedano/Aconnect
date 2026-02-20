@@ -76,32 +76,34 @@ class Officer_model extends CI_Model {
     }
 
     public function count_search($keyword = null)
-{
-    if (!empty($keyword)) {
-        $this->db->group_start()
-            ->like('full_name', $keyword)
-            ->or_like('position', $keyword)
-            ->or_like('email', $keyword)
-        ->group_end();
-    }
+    {
+        if (!empty($keyword)) {
+            $this->db->group_start()
+                ->like('full_name', $keyword)
+                ->or_like('gender', $keyword) // ⭐ ADD
+                ->or_like('position', $keyword)
+                ->or_like('email', $keyword)
+            ->group_end();
+        }
 
-    return $this->db->count_all_results($this->table);
-}
+        return $this->db->count_all_results($this->table);
+    }
 
 public function search_paginated($limit, $start, $keyword = null)
-{
-    if (!empty($keyword)) {
-        $this->db->group_start()
-            ->like('full_name', $keyword)
-            ->or_like('position', $keyword)
-            ->or_like('email', $keyword)
-        ->group_end();
-    }
+    {
+        if (!empty($keyword)) {
+            $this->db->group_start()
+                ->like('full_name', $keyword)
+                ->or_like('gender', $keyword) // ⭐ ADD
+                ->or_like('position', $keyword)
+                ->or_like('email', $keyword)
+            ->group_end();
+        }
 
-    return $this->db
-        ->order_by('id', 'DESC')
-        ->limit($limit, $start)
-        ->get($this->table)
-        ->result();
-}
+        return $this->db
+            ->order_by('id', 'DESC')
+            ->limit($limit, $start)
+            ->get($this->table)
+            ->result();
+    }
 }

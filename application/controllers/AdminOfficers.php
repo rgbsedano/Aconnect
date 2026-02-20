@@ -50,6 +50,7 @@ class AdminOfficers extends CI_Controller {
 
         $data = [
             'full_name' => ucwords(strtolower(trim($this->input->post('full_name')))),
+            'gender'    => $this->input->post('gender'), 
             'position'  => $this->input->post('position'),
             'email'     => $this->input->post('email'),
             'bio'       => $this->input->post('bio'),
@@ -94,6 +95,7 @@ class AdminOfficers extends CI_Controller {
 
         $data = [
             'full_name' => ucwords(strtolower(trim($this->input->post('full_name')))),
+            'gender'    => $this->input->post('gender'), 
             'position'  => $this->input->post('position'),
             'email'     => $this->input->post('email'),
             'bio'       => $this->input->post('bio'),
@@ -146,6 +148,10 @@ class AdminOfficers extends CI_Controller {
     // ===============================
    private function _upload_photo()
     {
+
+        if (empty($_FILES['photo']['name'])) {
+                return null;
+            }
         $ext = strtolower(pathinfo($_FILES['photo']['name'], PATHINFO_EXTENSION));
 
         $allowed_ext = ['jpg','jpeg','png','gif','jfif','webp'];
@@ -156,9 +162,7 @@ class AdminOfficers extends CI_Controller {
             return null;
         }
 
-        if (empty($_FILES['photo']['name'])) {
-            return null;
-        }
+        
 
         // ⭐ normalize mime
         if (function_exists('mime_content_type') && !empty($_FILES['photo']['tmp_name'])) {

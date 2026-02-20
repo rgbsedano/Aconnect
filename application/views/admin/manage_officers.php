@@ -286,7 +286,15 @@
                             <label class="form-label">Full Name</label>
                             <input type="text" name="full_name" id="off_full_name" class="form-control form-input" required>
                         </div>
-
+                        <div class="form-group mb-3">
+                            <label class="form-label">Gender</label>
+                            <select name="gender" id="off_gender" class="form-control form-input">
+                                <option value="">-- Select Gender --</option>
+                                <option value="Male">Male</option>
+                                <option value="Female">Female</option>
+                                <option value="Other">Other</option>
+                            </select>
+                        </div>
                         <div class="form-group mb-3">
                             <label class="form-label">Position</label>
                             <select name="position" id="off_position" class="form-control form-input" required>
@@ -351,13 +359,15 @@
 
             <div class="modal-body text-center">
 
-                <img id="view_photo"
-                     src=""
-                     style="width:90px;height:90px;border-radius:50%;object-fit:cover;margin-bottom:12px;">
+                <div style="display:flex; justify-content:center; margin-bottom:12px;">
+                    <img id="view_photo"
+                        src=""
+                        style="width:90px;height:90px;border-radius:50%;object-fit:cover;">
+                </div>
 
                 <h4 id="view_name" style="font-weight:700;"></h4>
                 <div id="view_position" style="color:var(--accent-red);font-weight:600;margin-bottom:10px;"></div>
-
+                
                 <p id="view_email" style="font-size:14px;color:#64748b;"></p>
 
                 <hr>
@@ -404,6 +414,7 @@ function openEditOfficer(id) {
             );
 
             $('#off_full_name').val(o.full_name);
+            $('#off_gender').val(o.gender); 
             $('#off_position').val(o.position);
             $('#off_email').val(o.email);
             $('#off_status').val(o.status);
@@ -419,22 +430,33 @@ $(document).on('click', '.officer-row', function () {
     const id = $(this).data('id');
 
     $.ajax({
-        url: '<?= site_url("AdminOfficers/get_officer") ?>', // ✅ FIXED
+        url: '<?= site_url("AdminOfficers/get_officer") ?>', 
         type: 'POST',
         data: { id: id },
         dataType: 'json',
         success: function(o) {
 
-            $('#view_photo').attr(
-                'src',
-                o.photo ? '<?= base_url() ?>' + o.photo : 'https://via.placeholder.com/90'
-            );
+            let photoPath = '';
+
+            if (o.photo) {
+                photoPath = '<?= base_url() ?>' + o.photo;
+            } else {
+                if (o.gender === 'Male') {
+                    photoPath = '<?= base_url("assets/images/person-male.png") ?>';
+                } else if (o.gender === 'Female') {
+                    photoPath = '<?= base_url("assets/images/person-female.png") ?>';
+                } else {
+                    photoPath = '<?= base_url("assets/images/person-default.png") ?>';
+                }
+            }
+
+            $('#view_photo').attr('src', photoPath);
 
             $('#view_name').text(o.full_name);
             $('#view_position').text(o.position);
+            $('#view_gender').text(o.gender ?? '');
             $('#view_email').text(o.email ?? '');
             $('#view_bio').text(o.bio ?? '');
-
             $('#viewOfficerModal').modal('show');
         }
     });
@@ -479,7 +501,7 @@ $(document).on('click', '.pagination-wrapper a', function (e) {
 
     let url = $(this).attr('href');
 
-    // ✅ ONLY AJAX when clicking SEARCH pagination
+    
     if (url.includes('AdminOfficers/search')) {
         e.preventDefault();
 
@@ -503,7 +525,6 @@ $(document).on('click', '.pagination-wrapper a', function (e) {
         });
     }
 
-    // ❗ if it's index pagination → allow normal navigation
 });
 
 </script>

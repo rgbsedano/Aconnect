@@ -20,12 +20,26 @@
 
                     <td>
                         <div style="display:flex;align-items:center;gap:12px;">
-                            <?php if (!empty($o->photo)): ?>
-                                <img src="<?= base_url($o->photo) ?>"
-                                     style="width:44px;height:44px;border-radius:50%;object-fit:cover;">
-                            <?php else: ?>
-                                <div style="width:44px;height:44px;border-radius:50%;background:#e2e8f0;"></div>
-                            <?php endif; ?>
+                           <?php
+                            // ✅ normalize gender safely
+                            $gender = isset($o->gender) ? strtolower(trim($o->gender)) : '';
+
+                            if (!empty($o->photo)) {
+                                $photo = base_url($o->photo);
+                            } else {
+                                if ($gender === 'male') {
+                                    $photo = base_url('assets/images/person-male.png');
+                                } elseif ($gender === 'female') {
+                                    $photo = base_url('assets/images/person-female.png');
+                                } else {
+                                    $photo = base_url('assets/images/person-default.png');
+                                }
+                            }
+                            ?>
+
+                                <img src="<?= $photo ?>"
+                                    onerror="this.src='<?= base_url('assets/images/person_default.png') ?>'"
+                                    style="width:44px;height:44px;border-radius:50%;object-fit:cover;">
 
                             <div>
                                 <div class="user-name"><?= $o->full_name ?></div>
