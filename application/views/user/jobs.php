@@ -83,14 +83,7 @@ function normalize_skill($skill) {
 
 ?>
 
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Job Board | AConnect Alumni</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.css">
+
     <style>
         :root {
             --maroon: #8B1538;
@@ -375,8 +368,7 @@ function normalize_skill($skill) {
             .job-info h3 { font-size: 15px; }
         }
     </style>
-</head>
-<body>
+
 
 <div id="success-popup" class="popup-toast">
     <i class="fas fa-check-circle"></i>
