@@ -197,8 +197,326 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                 max-width: 130px;
             }
         }
-    
 
+        /* ===== ACONNECT MODAL STYLE ===== */
+
+        /* smooth fade */
+        .modal.fade .modal-dialog {
+            transform: translateY(-20px);
+            transition: all 0.25s ease;
+        }
+
+        .modal.fade.show .modal-dialog {
+            transform: translateY(0);
+        }
+
+        /* modal card */
+        .modal-content {
+            border-radius: 16px;
+            border: none;
+            box-shadow: 0 25px 60px rgba(0,0,0,0.25);
+            overflow: hidden;
+        }
+
+        /* header */
+        .modal-header {
+            background: linear-gradient(135deg, #700A0A, #C90000);
+            color: #fff;
+            border-bottom: none;
+            padding: 16px 20px;
+        }
+
+        .modal-title {
+            font-weight: 600;
+            font-size: 1.05rem;
+        }
+
+        /* close button */
+        .modal-header .close {
+            color: #fff;
+            opacity: 0.9;
+            text-shadow: none;
+        }
+
+        .modal-header .close:hover {
+            opacity: 1;
+        }
+
+        /* body */
+        .modal-body {
+            padding: 22px;
+        }
+
+        /* footer */
+        .modal-footer {
+            border-top: none;
+            padding: 16px 20px 20px;
+        }
+
+        /* input inside modal */
+        .modal-content .form-control {
+            height: 46px;
+            border-radius: 8px;
+            border: 1px solid #ddd;
+            transition: all 0.2s ease;
+        }
+
+        .modal-content .form-control:focus {
+            border-color: #700A0A;
+            box-shadow: 0 0 0 0.15rem rgba(112, 10, 10, 0.15);
+        }
+
+        /* primary button */
+        .modal-content .btn-primary {
+            background: linear-gradient(135deg, #700A0A, #C90000);
+            border: none;
+            font-weight: 600;
+            border-radius: 8px;
+            padding: 10px 18px;
+            transition: all 0.2s ease;
+        }
+
+        .modal-content .btn-primary:hover {
+            background: linear-gradient(135deg, #550808, #a30000);
+            transform: translateY(-1px);
+        }
+
+        /* cancel button */
+        .modal-content .btn-secondary {
+            border-radius: 8px;
+        }
+
+        /* mobile polish */
+        @media (max-width: 576px) {
+            .modal-dialog {
+                margin: 1rem;
+            }
+        }
+    
+    /* ========================================
+    🔥 LOGIN OPTIONS — CLEAN PROFESSIONAL
+    ======================================== */
+
+    .login-options {
+    display: flex;              /* ⭐ REQUIRED */
+    align-items: center;        /* ⭐ vertical alignment */
+    justify-content: space-between; /* ⭐ push apart */
+    margin-top: 6px;
+    margin-bottom: 18px;
+    gap: 12px;
+}
+
+    /* remember me container */
+    .remember-me {
+        display: flex;
+        gap: 7px;
+        font-size: 0.9rem;
+        color: #555;
+        cursor: pointer;
+        margin: 0;
+        user-select: none;
+    }
+
+    /* checkbox polish */
+    .remember-me input[type="checkbox"] {
+        width: 16px;
+        height: 16px;
+        accent-color: #700A0A; /* modern browsers */
+        cursor: pointer;
+    }
+
+    /* forgot password link */
+    .forgot-link {
+        font-size: 0.9rem;
+        font-weight: 600;
+        color: #700A0A;
+        text-decoration: none;
+        transition: all 0.18s ease;
+        white-space: nowrap;
+        position: relative;
+    }
+
+    /* underline animation */
+    .forgot-link::after {
+        content: "";
+        position: absolute;
+        left: 0;
+        bottom: -2px;
+        width: 0%;
+        height: 2px;
+        background: #700A0A;
+        transition: width 0.25s ease;
+    }
+
+    .forgot-link:hover::after {
+        width: 100%;
+    }
+
+    .forgot-link:hover {
+        color: #a30000;
+    }
+
+    /* mobile behavior */
+    @media (max-width: 420px) {
+        .login-options {
+            flex-direction: column;
+            align-items: flex-start;
+            gap: 6px;
+        }
+    }
+
+        /* ===== EXTRA MODAL PREMIUM FEEL ===== */
+
+    .modal-backdrop.show {
+        backdrop-filter: blur(4px);
+    }
+
+    /* subtle pop animation */
+    .modal.fade .modal-dialog {
+        transform: scale(0.96) translateY(-8px);
+    }
+
+    .modal.fade.show .modal-dialog {
+        transform: scale(1) translateY(0);
+    }
+
+    /* label polish */
+    .modal-body label {
+        font-weight: 600;
+        font-size: 0.9rem;
+        color: #444;
+    }
+
+    /* input hover */
+    .modal-content .form-control:hover {
+        border-color: #bbb;
+    }
+    
+    html, body { min-height:100%; margin:0; font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif;}
+    .login-page{display:flex;min-height:100vh;background:#f7f7f7;}
+    .container-fluid{display:flex;width:100%;height:100vh;padding:0;margin:0;}
+    .row_container{display:flex!important;width:100%;margin:0;}
+
+    .image-container{
+        flex:0 0 50vw;
+        position:relative;
+        overflow:hidden;
+        height:100vh;
+        background:#920E0E;
+    }
+    .login-image{width:100%;height:100%;object-fit:cover;}
+
+    .form-container{
+        flex:0 0 50vw;
+        display:flex;
+        flex-direction:column;
+        align-items:center;
+        justify-content:center;
+        padding:30px;
+        background:#fff;
+        text-align:center;
+    }
+
+    /* CARD */
+    .form-signin{
+        width:100%;
+        max-width:380px;
+        background:rgba(255,255,255,0.95);
+        backdrop-filter:blur(10px);
+        padding:28px;
+        border-radius:16px;
+        box-shadow:0 20px 60px rgba(0,0,0,0.25);
+    }
+
+    .login-header{margin-bottom:18px;text-align:center;}
+    .login-logo{max-width:120px;margin-bottom:10px;}
+    .branding-text p{font-size:.9rem;color:#6c757d;margin-bottom:0;}
+
+    .form-control{
+        border-radius:8px;
+        height:48px;
+        border:1px solid #ddd;
+    }
+    .form-control:focus{
+        border-color:#700A0A;
+        box-shadow:0 0 0 .15rem rgba(112,10,10,.2);
+    }
+
+    /* BUTTON */
+    .btn-block{
+        width:100%;
+        background:#700A0A!important;
+        border:none;
+        height:48px;
+        font-weight:600;
+        border-radius:8px;
+    }
+    .btn-block:hover{background:#550808!important;}
+
+    /* 🔥 LOGIN OPTIONS */
+  
+
+
+
+
+    .forgot-link{
+        font-size:.9rem;
+        font-weight:600;
+        color:#700A0A;
+        text-decoration:none;
+        position:relative;
+    }
+
+    .forgot-link::after{
+        content:"";
+        position:absolute;
+        left:0;
+        bottom:-2px;
+        width:0%;
+        height:2px;
+        background:#700A0A;
+        transition:.25s;
+    }
+    .forgot-link:hover::after{width:100%;}
+
+    /* REGISTER */
+    .register-link{
+        margin-top:20px;
+        padding-top:15px;
+        border-top:1px solid #eee;
+    }
+    .register-link a{color:#700A0A;font-weight:600;}
+
+    /* ===== MODAL POLISH ===== */
+    .modal.fade .modal-dialog{
+        transform:scale(.96) translateY(-8px);
+        transition:.25s;
+    }
+    .modal.fade.show .modal-dialog{
+        transform:scale(1) translateY(0);
+    }
+    .modal-content{
+        border-radius:16px;
+        border:none;
+        box-shadow:0 25px 60px rgba(0,0,0,.25);
+    }
+    .modal-header{
+        background:linear-gradient(135deg,#700A0A,#C90000);
+        color:#fff;
+        border-bottom:none;
+    }
+    .modal-content .btn-primary{
+        background:linear-gradient(135deg,#700A0A,#C90000);
+        border:none;
+        border-radius:8px;
+    }
+
+    /* MOBILE */
+    @media(max-width:767px){
+        .image-container{display:none;}
+        .form-container{flex:0 0 100vw;}
+    }
+    
     </style>
 </head>
 <body class="login-page">
@@ -249,18 +567,23 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                     </div>
 
                     <div class="form-label-group">
-                        <input type="text" id="student_number" name="student_number" class="form-control" placeholder="Student Number" required autofocus value="<?= set_value('student_number') ?>">
+                        <input type="text" id="student_number" name="student_number" class="form-control" placeholder="Student Number" required  value="<?= set_value('student_number') ?>">
                     </div>
 
                     <div class="form-label-group">
                         <input type="password" id="inputPassword" name="password" class="form-control" placeholder="Password" required>
                     </div>
-
-                    <div class="checkbox mb-3">
-                        <label>
-                            <input type="checkbox" value="remember-me"> Keep me signed in
+                    <div class="login-options">
+                        <label class="remember-me">
+                            <input type="checkbox" value="remember-me">
+                            <span>Keep me signed in</span>
                         </label>
+
+                        <a href="#" class="forgot-link" data-toggle="modal" data-target="#forgotModal">
+                            Forgot password?
+                        </a>
                     </div>
+
 
                     <button class="btn btn-lg btn-primary btn-block" type="submit">Log in to AConnect</button>
                     <div class="register-link">
@@ -281,6 +604,48 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                 
             </div>
         </div>
+    </div>
+
+    <!-- Forgot Password Modal -->
+    <div class="modal fade" id="forgotModal" tabindex="-1" role="dialog">
+    <div class="modal-dialog modal-sm modal-dialog-centered" role="document">
+        <div class="modal-content">
+
+        <form method="post" action="<?= base_url('login/send_reset_link') ?>">
+
+            <div class="modal-header">
+            <h5 class="modal-title">Forgot Password</h5>
+            <button type="button" class="close" data-dismiss="modal">&times;</button>
+            </div>
+
+            <div class="modal-body">
+            <div class="form-group">
+                <label>Enter your registered email</label>
+                <input type="email"
+                    name="email"
+                    class="form-control"
+                    required
+                    placeholder="name@domain.com">
+            </div>
+            </div>
+
+            <div class="modal-footer">
+            <button type="submit"
+                    class="btn btn-primary"
+                    style="background:#700A0A;border:none">
+                Send Reset Link
+            </button>
+            <button type="button"
+                    class="btn btn-secondary"
+                    data-dismiss="modal">
+                Cancel
+            </button>
+            </div>
+
+        </form>
+
+        </div>
+    </div>
     </div>
 
     <!-- Resend Verification Modal -->
@@ -314,5 +679,19 @@ defined('BASEPATH') OR exit('No direct script access allowed');
     <!-- JS: jQuery + Bootstrap Bundle -->
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
     <script src="<?php echo base_url('assets/js/bootstrap.bundle.min.js'); ?>"></script>
+
+
+    <script>
+document.addEventListener('DOMContentLoaded', function () {
+    // focus login field on page load
+    const loginInput = document.getElementById('student_number');
+    if (loginInput) loginInput.focus();
+
+    // focus email when forgot modal opens
+    $('#forgotModal').on('shown.bs.modal', function () {
+        $(this).find('input[name="email"]').trigger('focus');
+    });
+});
+</script>
 </body>
 </html>

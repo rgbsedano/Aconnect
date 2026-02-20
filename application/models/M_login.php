@@ -21,4 +21,33 @@ class M_login extends CI_Model {
         $query = $this->db->get('admin_users');
         return $query->row();
     }
+
+    public function get_user_by_email($email)
+    {
+        return $this->db->get_where('alumni', ['email' => $email])->row();
+    }
+
+    public function save_reset_token($email, $token)
+    {
+        $this->db->where('email', $email);
+        $this->db->update('alumni', [
+            'reset_token' => $token,
+            'token_created_at' => date('Y-m-d H:i:s')
+        ]);
+    }
+
+    public function get_user_by_token($token)
+    {
+        return $this->db->get_where('alumni', ['reset_token' => $token])->row();
+    }
+
+    public function update_password_by_token($token, $password)
+    {
+        $this->db->where('reset_token', $token);
+        $this->db->update('alumni', [
+            'password' => $password,
+            'reset_token' => NULL,
+            'token_created_at' => NULL
+        ]);
+    }
 }
