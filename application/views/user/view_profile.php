@@ -237,7 +237,7 @@
         color: var(--text-muted);
         margin: 0;
     }
-
+    
     @media (max-width: 768px) {
         .profile-container { padding: 20px 15px; }
         .cover-photo { height: 140px; }
@@ -251,9 +251,10 @@
         .col-md-5 { min-height: 200px !important; }
         .header-actions .d-flex { flex-direction: column; width: 100%; gap: 10px; }
         .header-actions .btn { width: 100%; justify-content: center; }
-        .dropdown, .dropdown-toggle { width: 100%; }
+        
         .modal-body .p-4 { padding: 15px !important; }
     }
+
 </style>
 
 <div class="profile-container">

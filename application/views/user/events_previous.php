@@ -1,10 +1,4 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <script src="https://cdn.tailwindcss.com"></script>
-    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+
     <style>
         :root {
             --brand-red: #BE123C;
@@ -55,7 +49,7 @@
         }
         .animate-list { animation: slideUp 0.4s ease-out forwards; }
     </style>
-</head>
+
 <body class="bg-pattern text-slate-900 antialiased">
 
     <nav class="bg-white/80 backdrop-blur-md border-b border-slate-200 sticky top-0 z-40">

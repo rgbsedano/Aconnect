@@ -4,6 +4,9 @@ $display_full_name = $this->session->userdata('first_name') . ' ' . $this->sessi
 $student_number = $this->session->userdata('student_number') ? $this->session->userdata('student_number') : 'N/A';
 ?>
 
+
+<script src="https://cdn.tailwindcss.com"></script>
+
     <style>
         :root {
             --primary: #8B1538;

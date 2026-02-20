@@ -34,12 +34,17 @@ if ($alumni_id) {
 
 
 // Precise active state logic
+$is_events_group = in_array($current_uri_segment_1, ['events', 'Events', 'eventsprevious', 'EventsPrevious']);
+$is_events_upcoming = in_array($current_uri_segment_1, ['events', 'Events']);
+$is_events_previous = in_array($current_uri_segment_1, ['eventsprevious', 'EventsPrevious']);
 $is_home = (empty($current_uri_segment_1) || in_array($current_uri_segment_1, ['PostController', 'postcontroller']));
 $is_network = in_array($current_uri_segment_1, ['alumni', 'alumni_request']);
 $is_jobs = ($current_uri_segment_1 === 'jobs');
+$is_officers = ($current_uri_segment_1 === 'Officers');
 $is_messaging = ($current_uri_segment_1 === 'chat');
 $is_events = in_array($current_uri_segment_1, ['events', 'eventsprevious']);
 $admin_management_active = in_array($current_uri_segment_1, ['adminalumni', 'AdminJobPosting', 'AdminEvents', 'AdminPost', 'AdminManageAccounts', 'AdminActivityLog']);
+
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -51,7 +56,7 @@ $admin_management_active = in_array($current_uri_segment_1, ['adminalumni', 'Adm
     <link href="https://fonts.googleapis.com/css?family=Nunito:200,400,600,700,800" rel="stylesheet">
     <link href="<?php echo base_url('assets/css/sb-admin-2.min.css'); ?>" rel="stylesheet">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"> 
-
+    <script src="https://cdn.tailwindcss.com"></script>
     <style>
         :root {
             --primary-color: <?php echo $primary_color; ?>;
@@ -168,10 +173,13 @@ $admin_management_active = in_array($current_uri_segment_1, ['adminalumni', 'Adm
 
         .nav-link-item:hover {
             color: #000000;
-            transform: translateY(-2px);
         }
 
-        .nav-link-item:hover i {
+        /* Only apply translateY on non-dropdown nav links */
+        .nav-item:not(.dropdown) .nav-link-item:hover {
+            transform: translateY(-2px);
+        }
+        .nav-item:not(.dropdown) .nav-link-item:hover i {
             transform: scale(1.15);
             color: #8B1538;
         }
@@ -203,31 +211,17 @@ $admin_management_active = in_array($current_uri_segment_1, ['adminalumni', 'Adm
         }
 
         .dropdown-menu {
-            margin-top: 5px !important;
+            margin-top: 0 !important;
             border: none;
             box-shadow: 0 12px 28px rgba(0,0,0,0.15), 0 8px 10px rgba(0,0,0,0.1);
             border-radius: 8px;
             z-index: 2100;
             font-size: 0.95rem;
             display: none;
-            transform-origin: top;
         }
 
         .dropdown-menu.show {
             display: block;
-            animation: dropdownFadeIn 0.18s ease-out forwards;
-            transform-origin: top center;
-        }
-
-        @keyframes dropdownFadeIn {
-            from {
-                opacity: 0;
-                transform: translateY(-6px);
-            }
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
         }
 
         .dropdown-menu .dropdown-item {
@@ -235,6 +229,8 @@ $admin_management_active = in_array($current_uri_segment_1, ['adminalumni', 'Adm
             color: #333;
             transition: all 0.2s ease-in-out;
             border-left: 3px solid transparent;
+            align-items: center;
+            display: flex;
         }
 
         .dropdown-menu .dropdown-item:hover {
@@ -242,6 +238,8 @@ $admin_management_active = in_array($current_uri_segment_1, ['adminalumni', 'Adm
             border-left-color: var(--primary-color);
             color: var(--primary-color);
             font-weight: 600;
+            align-items: center;
+            display: flex;
         }
 
         .user-logout-area {
@@ -296,7 +294,7 @@ $admin_management_active = in_array($current_uri_segment_1, ['adminalumni', 'Adm
         }
 
         .account-info-display:hover .account-name-label i {
-            transform: rotate(-180deg);
+            /* animation removed */
         }
 
         .logout-link {
@@ -330,12 +328,6 @@ $admin_management_active = in_array($current_uri_segment_1, ['adminalumni', 'Adm
             border-radius: 8px;
             padding: 8px;
             min-width: 240px;
-        }
-
-        @media (min-width: 769px) {
-            .dropdown-menu {
-                margin-top: 55px !important;
-            }
         }
 
         .dropdown-item {
@@ -434,11 +426,12 @@ $admin_management_active = in_array($current_uri_segment_1, ['adminalumni', 'Adm
             border-bottom: 1px solid #eee;
         }
 
-        .profile-user-header img {
+        .dropdown-item img {
             width: 40px;
             height: 40px;
             border-radius: 50%;
             object-fit: cover;
+             align-items: center;
         }
 
         /* Mobile Adjustments */
@@ -472,6 +465,94 @@ $admin_management_active = in_array($current_uri_segment_1, ['adminalumni', 'Adm
             .user-logout-area { margin-left: 8px; padding-left: 8px; }
         }
 
+                /* ================= MOBILE MENU CLEAN STYLE ================= */
+
+        .mobile-menu-item {
+            padding: 12px !important;
+            gap: 14px !important;
+            border-radius: 10px;
+            transition: all .25s ease;
+        }
+
+        .mobile-menu-item:hover {
+            background: #f8fafc;
+            transform: translateX(4px);
+        }
+
+        /* icon container */
+        .mobile-icon {
+            width: 38px;
+            height: 38px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 15px;
+            flex-shrink: 0;
+        }
+
+        /* icon colors */
+        .bg-network { background: #8B1538; }
+        .bg-jobs { background: #8B1538; }
+        .bg-events { background: #8B1538; }
+        .bg-history { background: #8B1538; }
+        .bg-officers { background: #8B1538; }
+
+        /* text */
+        .mobile-title {
+            font-weight: 600;
+            font-size: 14px;
+        }
+
+        .mobile-sub {
+            font-size: 11px;
+            color: #6b7280;
+            font-weight: 400;
+        }
+
+        /* ================= MOBILE MENU INTERACTION ================= */
+
+        .mobile-menu-item {
+            padding: 12px !important;
+            gap: 14px !important;
+            border-radius: 10px;
+            transition: all .25s ease;
+            position: relative;
+        }
+
+        /* 🖱 DESKTOP hover */
+        .mobile-menu-item:hover {
+            background: #f1f5f9;
+            transform: translateX(4px);
+        }
+
+        /* 👆 MOBILE press */
+        .mobile-menu-item:active {
+            background: #e2e8f0;
+            transform: scale(.98);
+        }
+
+        /* ⭐ ACTIVE PAGE (current route) */
+        .mobile-menu-item.active-mobile {
+            background: #fef2f2;
+            border-left: 4px solid var(--primary-color);
+        }
+
+        /* icon color when active */
+        .mobile-menu-item.active-mobile .mobile-icon {
+            transform: scale(1.05);
+            box-shadow: 0 4px 10px rgba(139,21,56,.25);
+        }
+
+        /* text color when active */
+        .mobile-menu-item.active-mobile .mobile-title {
+            color: var(--primary-color);
+            font-weight: 700;
+        }
+
+        
+        
     </style>
 </head>
 <body>
@@ -516,78 +597,93 @@ $admin_management_active = in_array($current_uri_segment_1, ['adminalumni', 'Adm
                         </a>
                     </li>
                     <li class="nav-item dropdown desktop-only">
-                        <a href="#" class="nav-link-item <?php echo ($is_events) ? 'active-link' : ''; ?> dropdown-toggle" data-toggle="dropdown">
+                        <a href="#" class="nav-link-item dropdown-toggle <?php echo $is_events ? 'active-link' : ''; ?>" data-toggle="dropdown">
                             <i class="fas fa-calendar-check"></i><span>Events</span>
                         </a>
-                        <div class="dropdown-menu dropdown-menu-right shadow border-0" style="min-width: 240px; padding: 8px;">
+                        <div class="dropdown-menu dropdown-menu-right shadow border-0" style="min-width: 220px; padding: 8px;">
                             <a class="dropdown-item" href="<?php echo base_url('events'); ?>">
-                                <div style="background: #700A0A; width: 36px; height: 36px; border-radius: 50%; display: flex; align-items: center; justify-content: center; color: white;">
+                                <div style="background: #8B1538; width: 36px; height: 36px; border-radius: 50%; display: flex; align-items: center; justify-content: center; color: white;">
                                     <i class="fas fa-calendar-check"></i>
                                 </div>
                                 <div>
-                                    <div style="font-weight: 600;">Upcoming Events</div>
-                                    <div style="font-size: 11px; color: #65676b; font-weight: 400;">Stay updated with latest activities</div>
+                                    <div style="font-weight: 600;">Current Events</div>
+                                    <div style="font-size: 11px; color: #65676b; font-weight: 400;">Upcoming activities</div>
                                 </div>
                             </a>
                             <a class="dropdown-item" href="<?php echo base_url('EventsPrevious'); ?>">
-                                <div style="background: #555; width: 36px; height: 36px; border-radius: 50%; display: flex; align-items: center; justify-content: center; color: white;">
+                                <div style="background: #e4e6eb; width: 36px; height: 36px; border-radius: 50%; display: flex; align-items: center; justify-content: center; color: #050505;">
                                     <i class="fas fa-history"></i>
                                 </div>
                                 <div>
-                                    <div style="font-weight: 600;">Previous Events</div>
-                                    <div style="font-size: 11px; color: #65676b; font-weight: 400;">Review our past success stories</div>
+                                    <div style="font-weight: 600;">Past Events</div>
+                                    <div style="font-size: 11px; color: #65676b; font-weight: 400;">Previous activities</div>
                                 </div>
                             </a>
-                        </div>
+                    <li class="nav-item desktop-only">
+                        <a href="<?php echo base_url('Officers'); ?>" class="nav-link-item <?php echo $is_officers ? 'active-link' : ''; ?>">
+                            <i class="fas fa-user-tie"></i>
+                            <span>Officers</span>
+                        </a>
                     </li>
+
                     <li class="nav-item dropdown mobile-only">
                         <a href="#" class="nav-link-item dropdown-toggle" data-toggle="dropdown">
                             <i class="fas fa-th"></i>
                         </a>
                         <div class="dropdown-menu dropdown-menu-right shadow border-0" id="menu-dropdown-menu" style="min-width: 280px; padding: 16px;">
-                            <div class="msg-dropdown-search mb-3" style="padding: 0;">
-                                <input type="text" placeholder="Search menu" style="background: #f0f2f5; border: none; border-radius: 20px; padding: 8px 12px; width: 100%;">
-                            </div>
+                            
                             <div class="mb-2 font-weight-bold text-muted small uppercase">Social</div>
-                            <a class="dropdown-item" href="<?php echo base_url('alumni'); ?>" style="padding: 12px; gap: 15px;">
-                                <div style="background: #31a24c; width: 36px; height: 36px; border-radius: 50%; display: flex; align-items: center; justify-content: center; color: white;">
+                            <a class="dropdown-item mobile-menu-item <?= $is_network ? 'active-mobile' : '' ?>" href="<?= base_url('alumni'); ?>">
+                                <div class="mobile-icon bg-network">
                                     <i class="fas fa-user-friends"></i>
                                 </div>
                                 <div>
-                                    <div style="font-weight: 600;">Network</div>
-                                    <div style="font-size: 11px; color: #65676b; font-weight: 400;">Connect with alumni</div>
+                                    <div class="mobile-title">Network</div>
+                                    <div class="mobile-sub">Connect with alumni</div>
                                 </div>
                             </a>
-                            <a class="dropdown-item" href="<?php echo base_url('jobs'); ?>" style="padding: 12px; gap: 15px;">
-                                <div style="background: #1877f2; width: 36px; height: 36px; border-radius: 50%; display: flex; align-items: center; justify-content: center; color: white;">
+                            
+                            <a class="dropdown-item mobile-menu-item <?= $is_officers ? 'active-mobile' : '' ?>" href="<?= base_url('Officers'); ?>">
+                                <div class="mobile-icon bg-officers">
+                                    <i class="fas fa-user-tie"></i>
+                                </div>
+                                <div>
+                                    <div class="mobile-title">Officers</div>
+                                    <div class="mobile-sub">Meet alumni leaders</div>
+                                </div>
+                            </a>
+                            <div class="mb-2 font-weight-bold text-muted small uppercase">Careers</div>
+                           <a class="dropdown-item mobile-menu-item <?= $is_jobs ? 'active-mobile' : '' ?>" href="<?= base_url('jobs'); ?>">
+                                <div class="mobile-icon bg-jobs">
                                     <i class="fas fa-briefcase"></i>
                                 </div>
                                 <div>
-                                    <div style="font-weight: 600;">Jobs</div>
-                                    <div style="font-size: 11px; color: #65676b; font-weight: 400;">Find opportunities</div>
+                                    <div class="mobile-title">Jobs</div>
+                                    <div class="mobile-sub">Find opportunities</div>
                                 </div>
                             </a>
-                            <a class="dropdown-item" href="<?php echo base_url('events'); ?>" style="padding: 12px; gap: 15px;">
-                                <div style="background: #e4e6eb; width: 36px; height: 36px; border-radius: 50%; display: flex; align-items: center; justify-content: center; color: #050505;">
+                            <div class="mb-2 font-weight-bold text-muted small uppercase">Events</div>
+                            <a class="dropdown-item mobile-menu-item <?= $is_events_upcoming ? 'active-mobile' : '' ?>" href="<?= base_url('events'); ?>">
+                                <div class="mobile-icon bg-events">
                                     <i class="fas fa-calendar-check"></i>
                                 </div>
                                 <div>
-                                    <div style="font-weight: 600;">Upcoming Events</div>
-                                    <div style="font-size: 11px; color: #65676b; font-weight: 400;">Stay updated with latest activities</div>
+                                    <div class="mobile-title">Current Events</div>
+                                    <div class="mobile-sub">Stay updated</div>
                                 </div>
                             </a>
-                            <a class="dropdown-item" href="<?php echo base_url('EventsPrevious'); ?>" style="padding: 12px; gap: 15px;">
-                                <div style="background: #e4e6eb; width: 36px; height: 36px; border-radius: 50%; display: flex; align-items: center; justify-content: center; color: #050505;">
+                            <a class="dropdown-item mobile-menu-item <?= $is_events_previous ? 'active-mobile' : '' ?>" href="<?= base_url('EventsPrevious'); ?>">
+                                <div class="mobile-icon bg-history">
                                     <i class="fas fa-history"></i>
                                 </div>
                                 <div>
-                                    <div style="font-weight: 600;">Previous Events</div>
-                                    <div style="font-size: 11px; color: #65676b; font-weight: 400;">Review our past success stories</div>
+                                    <div class="mobile-title">Past Events</div>
+                                    <div class="mobile-sub">Past activities</div>
                                 </div>
                             </a>
                         </div>
                     </li>
-                    <li class="nav-item dropdown">
+                     <li class="nav-item dropdown">
                         <a href="#" class="nav-link-item <?php echo $is_messaging ? 'active-link' : ''; ?> dropdown-toggle" data-toggle="dropdown">
                             <i class="fas fa-comment-dots"></i><span>Messaging</span>
                         </a>
@@ -607,6 +703,7 @@ $admin_management_active = in_array($current_uri_segment_1, ['adminalumni', 'Adm
                     </li>
 
 
+
                 <?php elseif($this->session->userdata('role') == 'administrator'): ?>
                     <li class="nav-item">
                         <a href="<?php echo base_url('AdminDashboard'); ?>" class="nav-link-item <?php echo is_active_segment('AdminDashboard') ? 'active-link' : ''; ?>">
@@ -619,6 +716,7 @@ $admin_management_active = in_array($current_uri_segment_1, ['adminalumni', 'Adm
                         </a>
                         <div class="dropdown-menu dropdown-menu-right" aria-labelledby="mgmtDropdown">
                             <a class="dropdown-item" href="<?php echo base_url('AdminManageAccounts'); ?>">User Accounts</a>
+                            <a class="dropdown-item" href="<?php echo base_url('AdminOfficers'); ?>">Alumni Officers</a>
                             <div class="dropdown-divider"></div>
                             <!-- <a class="dropdown-item" href="<?php echo base_url('adminalumni'); ?>">Alumni List</a> -->
                             <a class="dropdown-item" href="<?php echo base_url('AdminJobPosting'); ?>">Job Posting</a>
@@ -627,6 +725,7 @@ $admin_management_active = in_array($current_uri_segment_1, ['adminalumni', 'Adm
                             <!-- <a class="dropdown-item" href="<?php echo base_url('AdminActivityLog'); ?>">Activity Log</a> -->
                         </div>
                     </li>
+                    
                     <li class="nav-item">
                         <a href="<?php echo base_url('support/admin_inbox'); ?>" class="nav-link-item <?php echo is_active_segment('support', 'admin_inbox') ? 'active-link' : ''; ?>">
                             <i class="fas fa-headset"></i><span>Support</span>
@@ -645,19 +744,15 @@ $admin_management_active = in_array($current_uri_segment_1, ['adminalumni', 'Adm
                             <img src="<?php echo $profile_image_url; ?>" style="width: 38px; height: 38px; border-radius: 50%; object-fit: cover; border: 1px solid #ddd;">
                         </a>
                         <div class="dropdown-menu dropdown-menu-right shadow border-0" style="min-width: 280px; padding: 12px;">
-                            <div class="profile-user-header">
+
+                            <a class="dropdown-item" href="<?php echo ($this->session->userdata('role') == 'administrator') ? '#' : base_url('profile'); ?>">
                                 <img src="<?php echo $profile_image_url; ?>" alt="Profile">
                                 <div>
                                     <div style="font-weight: 700; font-size: 16px;"><?php echo $display_full_name; ?></div>
                                     <div style="font-size: 12px; color: #65676b;"><?php echo ($this->session->userdata('role') == 'administrator') ? 'Administrator' : $student_number; ?></div>
                                 </div>
-                            </div>
-                            <a class="dropdown-item" href="<?php echo ($this->session->userdata('role') == 'administrator') ? '#' : base_url('profile'); ?>">
-                                <div style="background: #e4e6eb; width: 36px; height: 36px; border-radius: 50%; display: flex; align-items: center; justify-content: center;">
-                                    <i class="fas fa-user"></i>
-                                </div>
-                                <span>View Profile</span>
                             </a>
+
                             <div class="dropdown-divider"></div>
                             <a class="dropdown-item" href="<?php echo base_url('login/logout'); ?>">
                                 <div style="background: #e4e6eb; width: 36px; height: 36px; border-radius: 50%; display: flex; align-items: center; justify-content: center;">
