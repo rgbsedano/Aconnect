@@ -50,18 +50,18 @@ else                $greeting_time = 'Good Evening';
         display: flex;
         flex-direction: column;
         align-items: center;
-        background: linear-gradient(135deg, #4a0606 0%, #700a0a 40%, #8b1538 75%, #900c0c 100%);
-        box-shadow: 0 20px 60px -10px rgba(112, 10, 10, 0.40);
+        background: #ffffff;
+        box-shadow: 0 10px 40px -10px rgba(0, 0, 0, 0.10);
+        border: 1px solid rgba(0,0,0,0.06);
     }
 
-    /* Subtle radial glow overlay */
+    /* Subtle top accent bar */
     .hero-personalized::before {
         content: '';
         position: absolute;
-        inset: 0;
-        background: radial-gradient(ellipse at 30% 30%, rgba(255,255,255,0.08) 0%, transparent 60%),
-                    radial-gradient(ellipse at 75% 10%, rgba(255,255,255,0.06) 0%, transparent 50%);
-        pointer-events: none;
+        top: 0; left: 0; right: 0;
+        height: 4px;
+        background: linear-gradient(90deg, #700a0a, #8b1538);
         z-index: 1;
     }
 
@@ -142,12 +142,12 @@ else                $greeting_time = 'Good Evening';
         width: 88px;
         height: 88px;
         border-radius: 50%;
-        border: 3px solid rgba(255,255,255,0.55);
-        box-shadow: 0 0 0 4px rgba(255,255,255,0.18);
+        border: 3px solid #700a0a;
+        box-shadow: 0 0 0 4px rgba(112,10,10,0.10);
         overflow: hidden;
         margin-bottom: 22px;
         flex-shrink: 0;
-        background: rgba(255,255,255,0.15);
+        background: #f8f8f8;
     }
 
     .hero-avatar-wrap img {
@@ -162,42 +162,40 @@ else                $greeting_time = 'Good Evening';
         display: inline-flex;
         align-items: center;
         gap: 7px;
-        background: rgba(255, 255, 255, 0.15);
-        border: 1px solid rgba(255, 255, 255, 0.30);
-        backdrop-filter: blur(8px);
-        -webkit-backdrop-filter: blur(8px);
+        background: rgba(112,10,10,0.07);
+        border: 1px solid rgba(112,10,10,0.18);
         border-radius: 999px;
         padding: 6px 16px;
         font-size: 13px;
         font-weight: 600;
-        color: rgba(255, 255, 255, 0.92);
+        color: #700a0a;
         letter-spacing: 0.3px;
         margin-bottom: 22px;
     }
 
     .hero-badge i {
         font-size: 12px;
-        color: #ffd966;
+        color: #700a0a;
     }
 
     /* Main heading */
     .hero-heading {
         font-size: clamp(28px, 5vw, 48px);
         font-weight: 800;
-        color: #ffffff;
+        color: #1e293b;
         margin: 0 0 14px;
         line-height: 1.12;
         letter-spacing: -0.5px;
     }
 
     .hero-heading .hero-name {
-        color: #ffd966;
+        color: #700a0a;
     }
 
     /* Subtitle */
     .hero-subtitle {
         font-size: clamp(14px, 2vw, 17px);
-        color: rgba(255, 255, 255, 0.78);
+        color: #64748b;
         margin: 0 0 34px;
         line-height: 1.65;
         max-width: 540px;
@@ -216,23 +214,23 @@ else                $greeting_time = 'Good Evening';
         display: inline-flex;
         align-items: center;
         gap: 8px;
-        background: #ffffff;
-        color: #700a0a;
+        background: #700a0a;
+        color: #ffffff;
         font-size: 14px;
         font-weight: 700;
         padding: 11px 26px;
         border-radius: 8px;
         text-decoration: none !important;
         transition: all 0.3s ease;
-        box-shadow: 0 4px 15px rgba(0,0,0,0.12);
+        box-shadow: 0 4px 15px rgba(112,10,10,0.25);
         border: 2px solid transparent;
     }
 
     .hero-btn-primary:hover {
-        background: #fdf0f0;
+        background: #8b1538;
         transform: translateY(-2px);
-        box-shadow: 0 8px 24px rgba(0,0,0,0.15);
-        color: #700a0a;
+        box-shadow: 0 8px 24px rgba(112,10,10,0.30);
+        color: #ffffff;
     }
 
     .hero-btn-secondary {
@@ -240,20 +238,20 @@ else                $greeting_time = 'Good Evening';
         align-items: center;
         gap: 8px;
         background: transparent;
-        color: rgba(255,255,255,0.92);
+        color: #700a0a;
         font-size: 14px;
         font-weight: 600;
         padding: 11px 26px;
         border-radius: 8px;
         text-decoration: none !important;
         transition: all 0.3s ease;
-        border: 2px solid rgba(255,255,255,0.40);
+        border: 2px solid rgba(112,10,10,0.30);
     }
 
     .hero-btn-secondary:hover {
-        background: rgba(255,255,255,0.12);
-        border-color: rgba(255,255,255,0.70);
-        color: #ffffff;
+        background: rgba(112,10,10,0.07);
+        border-color: #700a0a;
+        color: #700a0a;
         transform: translateY(-2px);
     }
 
