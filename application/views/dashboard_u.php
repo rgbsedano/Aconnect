@@ -1,3 +1,25 @@
+﻿<?php
+// --- Personalization data ---
+$first_name          = $this->session->userdata('first_name');
+$last_name           = $this->session->userdata('last_name');
+$alumni_id           = $this->session->userdata('alumni_id');
+$hero_profile_image  = base_url('assets/images/person-male.png');
+
+if ($alumni_id) {
+    $CI =& get_instance();
+    $CI->load->model('user/Alumni_model');
+    $hero_user = $CI->Alumni_model->get_alumni_by_id($alumni_id);
+    if ($hero_user && $hero_user->profile_image) {
+        $hero_profile_image = base_url('assets/uploads/alumni/' . $hero_user->profile_image);
+    }
+}
+
+$hour = (int) date('G');
+if ($hour < 12)     $greeting_time = 'Good Morning';
+elseif ($hour < 18) $greeting_time = 'Good Afternoon';
+else                $greeting_time = 'Good Evening';
+?>
+
 <style>
     :root {
         --primary: #700a0a;
@@ -18,7 +40,224 @@
         padding: 0 24px;
     }
 
-    /* Scroll Reveal Animation Styles */
+    /* ======= PERSONALIZED HERO ======= */
+    .hero-personalized {
+        position: relative;
+        width: 100%;
+        border-radius: var(--radius-xl);
+        overflow: hidden;
+        margin-bottom: 40px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        background: linear-gradient(135deg, #4a0606 0%, #700a0a 40%, #8b1538 75%, #900c0c 100%);
+        box-shadow: 0 20px 60px -10px rgba(112, 10, 10, 0.40);
+    }
+
+    /* Subtle radial glow overlay */
+    .hero-personalized::before {
+        content: '';
+        position: absolute;
+        inset: 0;
+        background: radial-gradient(ellipse at 30% 30%, rgba(255,255,255,0.08) 0%, transparent 60%),
+                    radial-gradient(ellipse at 75% 10%, rgba(255,255,255,0.06) 0%, transparent 50%);
+        pointer-events: none;
+        z-index: 1;
+    }
+
+    .hero-personalized-inner {
+        position: relative;
+        z-index: 2;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        padding: 56px 32px 48px;
+        gap: 0;
+        width: 100%;
+        max-width: 720px;
+    }
+
+    /* Hero picture — standalone section below hero */
+    .hero-picture {
+        position: relative;
+        width: 100%;
+        border-radius: var(--radius-xl);
+        overflow: hidden;
+        margin-bottom: 40px;
+        box-shadow: 0 20px 50px -10px rgba(0,0,0,0.20);
+    }
+
+    .hero-picture::before {
+        display: none;
+    }
+
+    @keyframes kenBurns {
+        0%   { transform: scale(1)    translate(0, 0); }
+        40%  { transform: scale(1.06) translate(-1%, 0.5%); }
+        70%  { transform: scale(1.04) translate(1%, -0.5%); }
+        100% { transform: scale(1)    translate(0, 0); }
+    }
+
+    .hero-picture img {
+        width: 100%;
+        height: auto;
+        display: block;
+        animation: kenBurns 14s ease-in-out infinite;
+        transform-origin: center center;
+    }
+
+    /* Bottom-left glass text overlay */
+    .hero-glass {
+        position: absolute;
+        inset: 0;
+        background: linear-gradient(to top, rgba(0,0,0,0.72) 0%, rgba(0,0,0,0.15) 50%, transparent 100%);
+        display: flex;
+        align-items: flex-end;
+        padding: 40px 48px;
+    }
+
+    .hero-text-small {
+        color: var(--accent);
+        font-size: clamp(11px, 1.5vw, 14px);
+        font-weight: 700;
+        text-transform: uppercase;
+        letter-spacing: 4px;
+        display: block;
+        margin-bottom: 8px;
+        opacity: 0.9;
+    }
+
+    .hero-text-main {
+        color: #ffffff;
+        font-size: clamp(26px, 4.5vw, 42px);
+        font-weight: 800;
+        margin: 0;
+        line-height: 1.15;
+        letter-spacing: -0.5px;
+    }
+
+    /* Avatar ring */
+    .hero-avatar-wrap {
+        width: 88px;
+        height: 88px;
+        border-radius: 50%;
+        border: 3px solid rgba(255,255,255,0.55);
+        box-shadow: 0 0 0 4px rgba(255,255,255,0.18);
+        overflow: hidden;
+        margin-bottom: 22px;
+        flex-shrink: 0;
+        background: rgba(255,255,255,0.15);
+    }
+
+    .hero-avatar-wrap img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        display: block;
+    }
+
+    /* Welcome badge */
+    .hero-badge {
+        display: inline-flex;
+        align-items: center;
+        gap: 7px;
+        background: rgba(255, 255, 255, 0.15);
+        border: 1px solid rgba(255, 255, 255, 0.30);
+        backdrop-filter: blur(8px);
+        -webkit-backdrop-filter: blur(8px);
+        border-radius: 999px;
+        padding: 6px 16px;
+        font-size: 13px;
+        font-weight: 600;
+        color: rgba(255, 255, 255, 0.92);
+        letter-spacing: 0.3px;
+        margin-bottom: 22px;
+    }
+
+    .hero-badge i {
+        font-size: 12px;
+        color: #ffd966;
+    }
+
+    /* Main heading */
+    .hero-heading {
+        font-size: clamp(28px, 5vw, 48px);
+        font-weight: 800;
+        color: #ffffff;
+        margin: 0 0 14px;
+        line-height: 1.12;
+        letter-spacing: -0.5px;
+    }
+
+    .hero-heading .hero-name {
+        color: #ffd966;
+    }
+
+    /* Subtitle */
+    .hero-subtitle {
+        font-size: clamp(14px, 2vw, 17px);
+        color: rgba(255, 255, 255, 0.78);
+        margin: 0 0 34px;
+        line-height: 1.65;
+        max-width: 540px;
+    }
+
+    /* CTA Buttons */
+    .hero-cta-group {
+        display: flex;
+        align-items: center;
+        gap: 14px;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    .hero-btn-primary {
+        display: inline-flex;
+        align-items: center;
+        gap: 8px;
+        background: #ffffff;
+        color: #700a0a;
+        font-size: 14px;
+        font-weight: 700;
+        padding: 11px 26px;
+        border-radius: 8px;
+        text-decoration: none !important;
+        transition: all 0.3s ease;
+        box-shadow: 0 4px 15px rgba(0,0,0,0.12);
+        border: 2px solid transparent;
+    }
+
+    .hero-btn-primary:hover {
+        background: #fdf0f0;
+        transform: translateY(-2px);
+        box-shadow: 0 8px 24px rgba(0,0,0,0.15);
+        color: #700a0a;
+    }
+
+    .hero-btn-secondary {
+        display: inline-flex;
+        align-items: center;
+        gap: 8px;
+        background: transparent;
+        color: rgba(255,255,255,0.92);
+        font-size: 14px;
+        font-weight: 600;
+        padding: 11px 26px;
+        border-radius: 8px;
+        text-decoration: none !important;
+        transition: all 0.3s ease;
+        border: 2px solid rgba(255,255,255,0.40);
+    }
+
+    .hero-btn-secondary:hover {
+        background: rgba(255,255,255,0.12);
+        border-color: rgba(255,255,255,0.70);
+        color: #ffffff;
+        transform: translateY(-2px);
+    }
+
+    /* ======= Scroll Reveal ======= */
     .reveal {
         position: relative;
         transform: translateY(30px);
@@ -31,56 +270,7 @@
         opacity: 1;
     }
 
-    /* Hero Image Section */
-    .hero-section {
-        position: relative;
-        border-radius: var(--radius-xl);
-        overflow: hidden;
-        margin-bottom: 40px;
-        box-shadow: var(--shadow-premium);
-        background: #000; /* Darker background for transition */
-        display: flex;
-    }
-
-    .hero-image {
-        width: 100%;
-        height: auto;
-        display: block;
-        transition: transform 1.2s ease;
-    }
-
-    .hero-section:hover .hero-image {
-        transform: scale(1.05);
-    }
-
-    .hero-glass {
-        position: absolute;
-        inset: 0;
-        background: linear-gradient(to top, rgba(0,0,0,0.8) 0%, transparent 60%);
-        display: flex;
-        align-items: flex-end;
-        padding: 48px;
-    }
-
-    .hero-text h1 {
-        color: white;
-        font-size: clamp(32px, 5vw, 48px);
-        font-weight: 800;
-        margin: 0;
-        letter-spacing: -1px;
-        line-height: 1.1;
-    }
-
-    .hero-text h1 span {
-        color: var(--accent);
-        display: block;
-        font-size: 0.4em;
-        text-transform: uppercase;
-        letter-spacing: 4px;
-        margin-bottom: 8px;
-    }
-
-    /* Quick Links Section */
+    /* ======= Quick Links ======= */
     .links-grid {
         display: grid;
         grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
@@ -119,13 +309,13 @@
         color: white;
     }
 
-    .link-card .fb-btn { background: #1877F2; }
+    .link-card .fb-btn  { background: #1877F2; }
     .link-card .web-btn { background: var(--primary); }
 
     .link-info h4 { margin: 0; font-size: 16px; font-weight: 700; }
-    .link-info p { margin: 0; font-size: 12px; color: var(--text-muted); }
+    .link-info p  { margin: 0; font-size: 12px; color: var(--text-muted); }
 
-    /* Content Section */
+    /* ======= Content Card ======= */
     .content-card {
         background: white;
         border-radius: var(--radius-xl);
@@ -151,7 +341,7 @@
         color: var(--text-muted);
     }
 
-    /* Programs Grid / Features Grid */
+    /* ======= Features Grid ======= */
     .features-grid {
         display: grid;
         grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
@@ -189,14 +379,9 @@
         transition: transform 0.8s ease;
     }
 
-    .feature-card:hover .feature-img-box img {
-        transform: scale(1.1);
-    }
+    .feature-card:hover .feature-img-box img { transform: scale(1.1); }
 
-    .feature-content {
-        padding: 30px;
-        flex-grow: 1;
-    }
+    .feature-content { padding: 30px; flex-grow: 1; }
 
     .feature-content h3 {
         color: var(--primary);
@@ -215,7 +400,6 @@
         line-height: 1.7;
     }
 
-    /* Staggered Animation Delay for grid items */
     .features-grid > *:nth-child(1) { transition-delay: 0.1s; }
     .features-grid > *:nth-child(2) { transition-delay: 0.2s; }
     .features-grid > *:nth-child(3) { transition-delay: 0.3s; }
@@ -223,7 +407,6 @@
     .features-grid > *:nth-child(5) { transition-delay: 0.5s; }
     .features-grid > *:nth-child(6) { transition-delay: 0.6s; }
 
-    /* Heritage Text */
     .heritage-text {
         font-size: 20px;
         line-height: 1.8;
@@ -234,9 +417,7 @@
         border-left: 4px solid var(--accent);
     }
 
-    .heritage-text strong {
-        color: var(--primary);
-    }
+    .heritage-text strong { color: var(--primary); }
 
     .page-footer {
         text-align: center;
@@ -245,6 +426,7 @@
         font-size: 14px;
     }
 
+    /* ======= Responsive ======= */
     @media (max-width: 992px) {
         .dashboard-container { padding: 0 20px; }
         .content-card { padding: 48px 32px; }
@@ -254,39 +436,84 @@
         :root { --radius-xl: 24px; }
         .dashboard-container { margin: 20px auto; }
         .content-card { padding: 32px 20px; border-radius: 20px; }
-        .hero-section { border-radius: 20px; }
-        .hero-glass { padding: 32px 24px; }
-        .hero-text h1 { font-size: 32px; }
+        .hero-personalized { border-radius: 20px; }
+        .hero-personalized-inner { padding: 40px 20px 36px; }
+        .hero-picture { border-radius: 20px; }
+        .hero-glass { padding: 28px 24px; }
         .features-grid { grid-template-columns: 1fr; gap: 24px; }
         .feature-img-box { height: 180px; }
         .links-grid { grid-template-columns: 1fr; }
         .section-header h2 { font-size: 26px; }
+        .hero-avatar-wrap { width: 72px; height: 72px; }
     }
 
     @media (max-width: 480px) {
-        .hero-glass { padding: 24px 16px; }
-        .hero-text h1 { font-size: 24px; }
+        .hero-personalized-inner { padding: 28px 16px 24px; }
+        .hero-glass { padding: 20px 18px; }
+        .hero-cta-group { gap: 10px; }
+        .hero-btn-primary,
+        .hero-btn-secondary { padding: 10px 20px; font-size: 13px; }
         .feature-content { padding: 24px 20px; }
         .feature-content h3 { font-size: 14px; }
-        .feature-content p { font-size: 14px; }
+        .feature-content p  { font-size: 14px; }
     }
 </style>
 
 <div class="dashboard-container">
-    <!-- Hero Banner (Reveals immediately) -->
-    <section class="hero-section reveal active">
-        <img src="assets/images/andaman-family.png" 
-             alt="SDCA Heritage" 
-             class="hero-image"
-             onerror="this.src='https://placehold.co/1200x600/700a0a/FFFFFF?text=SDCA+HERITAGE';">
-        <div class="hero-glass">
-            <div class="hero-text">
-                <h1><span>Preserving the Legacy</span>Revolutionizing Education</h1>
+
+    <!-- ====== PERSONALIZED HERO ====== -->
+    <section class="hero-personalized reveal active">
+        <div class="hero-personalized-inner">
+            <!-- User avatar -->
+            <div class="hero-avatar-wrap">
+                <img src="<?php echo $hero_profile_image; ?>" alt="<?php echo htmlspecialchars($first_name); ?>'s avatar"
+                     onerror="this.src='<?php echo base_url('assets/images/person-male.png'); ?>'">
+            </div>
+
+            <!-- Welcome badge -->
+            <div class="hero-badge">
+                <i class="fas fa-star"></i>
+                Welcome to AConnect
+            </div>
+
+            <!-- Personalized heading -->
+            <h1 class="hero-heading">
+                <?php echo $greeting_time; ?>,<br>
+                <span class="hero-name"><?php echo htmlspecialchars($first_name . ' ' . $last_name); ?>!</span>
+            </h1>
+
+            <!-- Subtitle -->
+            <p class="hero-subtitle">
+                Connect with fellow alumni, explore job opportunities, and stay in the loop<br class="d-none d-md-block">
+                with the latest events from St. Dominic College of Asia.
+            </p>
+
+            <!-- CTA Buttons -->
+            <div class="hero-cta-group">
+                <a href="<?php echo base_url('postcontroller'); ?>" class="hero-btn-primary">
+                    <i class="fas fa-home"></i> Go to Feed
+                </a>
+                <a href="<?php echo base_url('profile'); ?>" class="hero-btn-secondary">
+                    <i class="fas fa-user"></i> View My Profile
+                </a>
             </div>
         </div>
     </section>
 
-    <!-- Quick Links (New Section) -->
+    <!-- ====== HERITAGE PHOTO ====== -->
+    <div class="hero-picture reveal">
+        <img src="<?php echo base_url('assets/images/andaman-family.png'); ?>"
+             alt="SDCA Heritage"
+             onerror="this.src='https://placehold.co/1200x500/700a0a/FFFFFF?text=SDCA+Heritage';">
+        <div class="hero-glass">
+            <div>
+                <span class="hero-text-small">Preserving the Legacy</span>
+                <h2 class="hero-text-main">Revolutionizing Education</h2>
+            </div>
+        </div>
+    </div>
+
+    <!-- Quick Links -->
     <div class="links-grid reveal">
         <a href="https://stdominiccollege.edu.ph/" target="_blank" class="link-card">
             <i class="fas fa-globe web-btn"></i>
@@ -332,7 +559,7 @@
                 </div>
                 <div class="feature-content">
                     <h3>GLOBALLY-COMPETITIVE GRADUATES</h3>
-                    <p>Join the ranks of St. Dominic College of Asia’s globally-competitive graduates—recognized as board exam topnotchers, 100% passers, and highly employable professionals. With success stories spanning industries worldwide, our alumni are equipped to lead and thrive anywhere.</p>
+                    <p>Join the ranks of St. Dominic College of Asia's globally-competitive graduatesâ€”recognized as board exam topnotchers, 100% passers, and highly employable professionals. With success stories spanning industries worldwide, our alumni are equipped to lead and thrive anywhere.</p>
                 </div>
             </div>
 
@@ -352,7 +579,7 @@
                 </div>
                 <div class="feature-content">
                     <h3>ACCESSIBLE, SAFE, AND SECURE</h3>
-                    <p>Experience learning made easy at St. Dominic College of Asia’s digital campus, complete with campus-wide Wi-Fi access. Located along the highway with convenient transportation options and enhanced by tight security measures, SDCA offers a safe and connected space for academic success.</p>
+                    <p>Experience learning made easy at St. Dominic College of Asia's digital campus, complete with campus-wide Wi-Fi access. Located along the highway with convenient transportation options and enhanced by tight security measures, SDCA offers a safe and connected space for academic success.</p>
                 </div>
             </div>
 
@@ -362,7 +589,7 @@
                 </div>
                 <div class="feature-content">
                     <h3>INTERNATIONAL PARTNERS AND LINKAGES</h3>
-                    <p>Gain a global edge with St. Dominic College of Asia’s international programs and immersion opportunities. Through partnerships with local corporations and global institutions, we provide students with industry-relevant experiences and cross-cultural learning opportunities.</p>
+                    <p>Gain a global edge with St. Dominic College of Asia's international programs and immersion opportunities. Through partnerships with local corporations and global institutions, we provide students with industry-relevant experiences and cross-cultural learning opportunities.</p>
                 </div>
             </div>
 
@@ -379,25 +606,12 @@
     </section>
 
     <footer class="page-footer">
-        <strong>Est. 2003</strong> • Bacoor, Cavite<br>
-        © 2026 St. Dominic College of Asia
+        <strong>Est. 2003</strong> â€¢ Bacoor, Cavite<br>
+        Â© 2026 St. Dominic College of Asia
     </footer>
 </div>
 
 <script>
-    // Scroll Reveal Script
-    function reveal() {
-        var reveals = document.querySelectorAll(".reveal");
-        for (var i = 0; i < reveals.length; i++) {
-            var windowHeight = window.innerHeight;
-            var elementTop = reveals[i].getBoundingClientRect().top;
-            var elementVisible = 150;
-            if (elementTop < windowHeight - elementVisible) {
-                reveals[i].classList.add("active");
-            }
-        }
-    }
-
     if ('IntersectionObserver' in window) {
         const observer = new IntersectionObserver((entries) => {
             entries.forEach(entry => {
@@ -409,8 +623,19 @@
 
         document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
     } else {
+        function reveal() {
+            var reveals = document.querySelectorAll(".reveal");
+            for (var i = 0; i < reveals.length; i++) {
+                var windowHeight = window.innerHeight;
+                var elementTop = reveals[i].getBoundingClientRect().top;
+                if (elementTop < windowHeight - 150) {
+                    reveals[i].classList.add("active");
+                }
+            }
+        }
         window.addEventListener("scroll", reveal);
-        // Initial check
         reveal();
     }
 </script>
+
+

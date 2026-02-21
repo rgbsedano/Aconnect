@@ -19,16 +19,25 @@
     .back-link {
         display: inline-flex;
         align-items: center;
-        color: var(--text-muted);
+        background-color: var(--maroon-main);
+        color: white !important;
         text-decoration: none !important;
         font-size: 14px;
         font-weight: 600;
         margin-bottom: 20px;
-        transition: color 0.2s;
+        padding: 8px 20px;
+        border-radius: 20px;
+        transition: background-color 0.2s, transform 0.2s, box-shadow 0.2s;
+        gap: 8px;
     }
 
-    .back-link:hover { color: var(--maroon-main); }
-    .back-link i { margin-right: 8px; }
+    .back-link:hover {
+        background-color: var(--maroon-hover);
+        color: white !important;
+        transform: scale(1.02);
+        box-shadow: 0 4px 8px rgba(0,0,0,0.15);
+    }
+    .back-link i { margin-right: 0; }
 
     /* Cover and Header */
     .profile-card {
@@ -344,6 +353,139 @@
         .modal-footer { padding: 10px 14px; }
     }
 
+    /* ── Add Certification Modal ── */
+    .add-cert-modal .modal-content {
+        border-radius: 20px;
+        border: none;
+        overflow: hidden;
+        box-shadow: 0 30px 60px -12px rgba(0,0,0,0.3);
+    }
+    .add-cert-modal .modal-header {
+        background: linear-gradient(135deg, var(--maroon-main), var(--maroon-hover));
+        color: white;
+        border: none;
+        padding: 22px 28px;
+    }
+    .add-cert-modal .modal-title {
+        font-weight: 700;
+        font-size: 18px;
+        letter-spacing: 0.3px;
+    }
+    .add-cert-modal .close {
+        color: white;
+        opacity: 0.85;
+        text-shadow: none;
+        font-size: 22px;
+    }
+    .add-cert-modal .close:hover { opacity: 1; }
+    .add-cert-modal .modal-body { padding: 28px; background: #fff; }
+    .add-cert-modal .modal-footer {
+        background: #f8fafc;
+        border-top: 1px solid #e2e8f0;
+        padding: 16px 28px;
+    }
+    .cert-form-label {
+        font-size: 12px;
+        font-weight: 700;
+        text-transform: uppercase;
+        letter-spacing: 0.8px;
+        color: #64748b;
+        margin-bottom: 6px;
+        display: block;
+    }
+    .cert-form-control {
+        border: 1.5px solid #e2e8f0;
+        border-radius: 10px;
+        padding: 10px 14px;
+        font-size: 14px;
+        color: #1e293b;
+        transition: border-color 0.2s, box-shadow 0.2s;
+        width: 100%;
+        background: #f8fafc;
+    }
+    .cert-form-control:focus {
+        outline: none;
+        border-color: var(--maroon-main);
+        box-shadow: 0 0 0 3px rgba(128,0,32,0.1);
+        background: #fff;
+    }
+    .cert-upload-zone {
+        border: 2px dashed #cbd5e1;
+        border-radius: 12px;
+        padding: 28px 20px;
+        text-align: center;
+        cursor: pointer;
+        transition: border-color 0.2s, background 0.2s;
+        background: #f8fafc;
+        position: relative;
+    }
+    .cert-upload-zone:hover, .cert-upload-zone.drag-over {
+        border-color: var(--maroon-main);
+        background: #fff5f5;
+    }
+    .cert-upload-zone input[type="file"] {
+        position: absolute;
+        inset: 0;
+        opacity: 0;
+        cursor: pointer;
+        width: 100%;
+        height: 100%;
+    }
+    .cert-upload-icon {
+        font-size: 36px;
+        color: #cbd5e1;
+        margin-bottom: 10px;
+        transition: color 0.2s;
+    }
+    .cert-upload-zone:hover .cert-upload-icon { color: var(--maroon-main); }
+    .cert-upload-preview {
+        display: none;
+        width: 100%;
+        max-height: 180px;
+        object-fit: contain;
+        border-radius: 8px;
+        border: 1px solid #e2e8f0;
+        margin-top: 10px;
+    }
+    .btn-add-cert-save {
+        background: linear-gradient(135deg, var(--maroon-main), var(--maroon-hover));
+        color: white;
+        border: none;
+        border-radius: 10px;
+        padding: 10px 28px;
+        font-weight: 700;
+        font-size: 14px;
+        transition: opacity 0.2s, transform 0.2s, box-shadow 0.2s;
+        cursor: pointer;
+    }
+    .btn-add-cert-save:hover {
+        opacity: 0.92;
+        transform: translateY(-1px);
+        box-shadow: 0 6px 16px rgba(128,0,32,0.25);
+        color: white;
+    }
+    .btn-add-cert-cancel {
+        background: transparent;
+        border: 1.5px solid #cbd5e1;
+        border-radius: 10px;
+        padding: 10px 22px;
+        font-weight: 600;
+        font-size: 14px;
+        color: #64748b;
+        transition: all 0.2s;
+        cursor: pointer;
+    }
+    .btn-add-cert-cancel:hover {
+        background: #f1f5f9;
+        border-color: #94a3b8;
+        color: #334155;
+    }
+    .add-cert-section-divider {
+        height: 1px;
+        background: #f1f5f9;
+        margin: 20px 0;
+    }
+
 </style>
 
 <div class="profile-container">
@@ -431,7 +573,15 @@
 
     <!-- Certifications -->
     <div class="content-card">
-        <h2><i class="fas fa-certificate"></i> Professional Certifications</h2>
+        <div class="d-flex align-items-center justify-content-between mb-3">
+            <h2 class="mb-0" style="border:none;"><i class="fas fa-certificate"></i> Professional Certifications</h2>
+            <?php if ($alumni->id == $this->session->userdata('alumni_id')): ?>
+            <button class="btn" id="openAddCertBtn"
+                style="background:linear-gradient(135deg,var(--maroon-main),var(--maroon-hover));color:white;border-radius:10px;padding:7px 18px;font-weight:700;font-size:13px;border:none;display:inline-flex;align-items:center;gap:7px;">
+                <i class="fas fa-plus"></i> Add Certification
+            </button>
+            <?php endif; ?>
+        </div>
         <div class="section-divider"></div>
         <?php if (!empty($certifications)): ?>
             <div class="cert-list">
@@ -480,6 +630,76 @@
             <?php else: ?>
                 <p class="empty-text w-100">No expertise listed</p>
             <?php endif; ?>
+        </div>
+    </div>
+</div>
+
+<!-- Add Certification Modal -->
+<div class="modal fade add-cert-modal" id="addCertModal" tabindex="-1" role="dialog" aria-labelledby="addCertModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered" role="document" style="max-width:520px;">
+        <div class="modal-content">
+            <div class="modal-header">
+                <div class="d-flex align-items-center" style="gap:12px;">
+                    <div style="background:rgba(255,255,255,0.2);border-radius:10px;width:40px;height:40px;display:flex;align-items:center;justify-content:center;">
+                        <i class="fas fa-medal" style="font-size:18px;"></i>
+                    </div>
+                    <div>
+                        <h5 class="modal-title mb-0" id="addCertModalLabel">Add Certification</h5>
+                        <small style="opacity:0.75;font-size:12px;">Showcase your professional credentials</small>
+                    </div>
+                </div>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <form id="addCertForm" enctype="multipart/form-data" action="<?= site_url('alumni/add_certification') ?>" method="POST">
+                    <?= $this->security->get_csrf_token_name() ?>
+                    <input type="hidden" name="<?= $this->security->get_csrf_token_name() ?>" value="<?= $this->security->get_csrf_hash() ?>">
+
+                    <!-- Title -->
+                    <div class="form-group mb-4">
+                        <label class="cert-form-label"><i class="fas fa-award mr-1"></i> Certification Title <span style="color:var(--maroon-main);">*</span></label>
+                        <input type="text" name="title" class="cert-form-control" placeholder="e.g. AWS Certified Solutions Architect" required>
+                    </div>
+
+                    <!-- Issuer -->
+                    <div class="form-group mb-4">
+                        <label class="cert-form-label"><i class="fas fa-building mr-1"></i> Issuing Organization <span style="color:var(--maroon-main);">*</span></label>
+                        <input type="text" name="issuer" class="cert-form-control" placeholder="e.g. Amazon Web Services" required>
+                    </div>
+
+                    <!-- Date Issued -->
+                    <div class="form-group mb-4">
+                        <label class="cert-form-label"><i class="fas fa-calendar-alt mr-1"></i> Date Issued</label>
+                        <input type="date" name="date_issued" class="cert-form-control">
+                    </div>
+
+                    <div class="add-cert-section-divider"></div>
+
+                    <!-- Certificate Image Upload -->
+                    <div class="form-group mb-0">
+                        <label class="cert-form-label"><i class="fas fa-image mr-1"></i> Certificate Image <span style="color:#94a3b8;font-weight:400;text-transform:none;letter-spacing:0;">(optional)</span></label>
+                        <div class="cert-upload-zone" id="certUploadZone">
+                            <input type="file" name="certificate_image" id="certImageInput" accept="image/*">
+                            <div id="certUploadPlaceholder">
+                                <div class="cert-upload-icon"><i class="fas fa-cloud-upload-alt"></i></div>
+                                <p class="mb-1" style="font-weight:600;color:#334155;font-size:14px;">Click or drag &amp; drop image here</p>
+                                <p class="mb-0" style="font-size:12px;color:#94a3b8;">PNG, JPG, JPEG &mdash; max 5MB</p>
+                            </div>
+                            <img src="" id="certUploadPreview" class="cert-upload-preview" alt="Preview">
+                        </div>
+                        <button type="button" id="certRemoveImg" style="display:none;margin-top:8px;background:none;border:none;color:#ef4444;font-size:12px;font-weight:600;cursor:pointer;padding:0;"><i class="fas fa-times-circle mr-1"></i> Remove image</button>
+                    </div>
+                </form>
+            </div>
+            <div class="modal-footer d-flex justify-content-between align-items-center">
+                <small style="color:#94a3b8;font-size:12px;"><i class="fas fa-lock mr-1"></i> Visible on your profile</small>
+                <div style="display:flex;gap:10px;">
+                    <button type="button" class="btn-add-cert-cancel" data-dismiss="modal">Cancel</button>
+                    <button type="submit" form="addCertForm" class="btn-add-cert-save"><i class="fas fa-check mr-1"></i> Save Certification</button>
+                </div>
+            </div>
         </div>
     </div>
 </div>
@@ -593,6 +813,39 @@ $(document).ready(function() {
         } else {
             window.location.href = '<?= site_url("chat/chat_with/") ?>' + id;
         }
+    });
+
+    // Open Add Cert Modal
+    $('#openAddCertBtn').on('click', function() {
+        $('#addCertModal').modal('show');
+    });
+
+    // Certificate image preview
+    $('#certImageInput').on('change', function() {
+        const file = this.files[0];
+        if (file) {
+            const reader = new FileReader();
+            reader.onload = function(e) {
+                $('#certUploadPreview').attr('src', e.target.result).show();
+                $('#certUploadPlaceholder').hide();
+                $('#certRemoveImg').show();
+            };
+            reader.readAsDataURL(file);
+        }
+    });
+
+    $('#certRemoveImg').on('click', function() {
+        $('#certImageInput').val('');
+        $('#certUploadPreview').hide().attr('src', '');
+        $('#certUploadPlaceholder').show();
+        $(this).hide();
+    });
+
+    // Drag-over styling
+    $('#certUploadZone').on('dragover dragenter', function() {
+        $(this).addClass('drag-over');
+    }).on('dragleave drop', function() {
+        $(this).removeClass('drag-over');
     });
 
     $('#congratulateBtn').on('click', function() {
