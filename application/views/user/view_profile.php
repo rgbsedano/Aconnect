@@ -62,6 +62,7 @@
         position: absolute;
         top: -110px;
         left: 24px;
+        z-index: 0;
     }
 
     .profile-avatar {
@@ -76,8 +77,37 @@
 
     .header-actions {
         display: flex;
-        justify-content: flex-end;
-        margin-top: 16px;
+        justify-content: flex-start;
+        margin-top: 24px;
+        padding-top: 20px;
+        border-top: 1px solid var(--border-color);
+    }
+
+    .header-action-btns {
+        display: inline-flex;
+        flex-direction: row;
+        align-items: center;
+        gap: 10px;
+        flex-wrap: nowrap;
+    }
+
+    .message-direct-btn {
+        background-color: var(--maroon-main) !important;
+        color: white !important;
+        border-radius: 20px;
+        padding: 6px 20px;
+        font-weight: 600;
+        border: none;
+        display: inline-flex;
+        align-items: center;
+        gap: 8px;
+        white-space: nowrap;
+    }
+    .message-direct-btn:hover {
+        background-color: var(--maroon-hover) !important;
+        color: white !important;
+        transform: scale(1.02);
+        box-shadow: 0 4px 8px rgba(0,0,0,0.1);
     }
 
     .btn-connect {
@@ -110,6 +140,11 @@
 
     .profile-intro {
         margin-top: 60px;
+        margin-left: 208px;
+    }
+
+    .profile-header-main .header-actions {
+        margin-left: 208px;
     }
 
     .profile-intro h1 {
@@ -264,20 +299,32 @@
     }
     .modal-header { flex-shrink: 0; }
     .modal-footer { flex-shrink: 0; }
+
+    @media (min-width: 769px) {
+        .profile-avatar-container { top: -50px; }
+    }
     
     @media (max-width: 768px) {
         .profile-container { padding: 20px 15px; }
         .cover-photo { height: 140px; }
         .profile-avatar-container { top: -60px; left: 50%; transform: translateX(-50%); }
         .profile-avatar { width: 120px; height: 120px; border-width: 3px; }
-        .header-actions { justify-content: center; margin-top: 70px; }
-        .profile-intro { margin-top: 15px; text-align: center; }
+        .profile-header-main {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 0 16px 24px;
+        }
+        .profile-intro { margin-top: 80px; margin-left: 0; text-align: center; width: 100%; }
         .profile-intro .sub-meta { justify-content: center; flex-direction: column; gap: 5px; }
+        .header-actions { justify-content: center; margin-top: 16px; padding-top: 16px; margin-left: 0; width: 100%; }
+        .header-action-btns { justify-content: center; }
+        .profile-header-main .header-actions { margin-left: 0; }
         .cert-list { grid-template-columns: 1fr; }
         .row.no-gutters { flex-direction: column; }
         .col-md-5 { min-height: 200px !important; }
-        .header-actions .d-flex { flex-direction: column; width: 100%; gap: 10px; }
-        .header-actions .btn { width: 100%; justify-content: center; }
+        .header-actions .header-action-btns { width: auto; }
+        .header-actions .header-action-btns .btn { width: auto; min-width: auto; }
         .modal-body .p-4 { padding: 15px !important; }
         .modal { padding-top: 72px; padding-bottom: 0.5rem; }
         .modal-dialog { margin: 0.5rem auto; max-width: calc(100vw - 1rem); width: auto; max-height: calc(100vh - 72px - 1rem); }
@@ -322,14 +369,26 @@
                 <img src="<?= $profile_img ?>" class="profile-avatar" alt="Avatar">
             </div>
 
+            <div class="profile-intro">
+                <h1><?= ucwords(strtolower($alumni->first_name . ' ' . $alumni->last_name)) ?></h1>
+                <div class="headline"><?= !empty($alumni->degree) ? $alumni->degree : 'Alumni' ?></div>
+                
+                <div class="sub-meta">
+                    <?php if (!empty($alumni->graduation_year)): ?>
+                        <span><i class="fas fa-graduation-cap"></i> Graduated <?= $alumni->graduation_year ?></span>
+                    <?php endif; ?>
+                    <span><i class="fas fa-id-badge"></i> Class of <?= $alumni->graduation_year ?></span>
+                </div>
+            </div>
+
             <div class="header-actions">
                 <?php if ($alumni->id != $this->session->userdata('alumni_id')): ?>
                     <?php if ($connection_status == 'accepted'): ?>
-                        <div class="d-flex align-items-center">
-                            <button class="btn btn-connect message-direct-btn mr-2" 
+                        <div class="d-flex align-items-center header-action-btns">
+                            <button type="button" class="btn message-direct-btn" 
                                     data-id="<?= $alumni->id ?>" 
-                                    data-name="<?= $alumni->first_name . ' ' . $alumni->last_name ?>"
-                                    data-img="<?= $profile_img ?>">
+                                    data-name="<?= htmlspecialchars($alumni->first_name . ' ' . $alumni->last_name) ?>"
+                                    data-img="<?= htmlspecialchars($profile_img) ?>">
                                 <i class="fas fa-comment"></i> Message
                             </button>
                             <div class="dropdown">
@@ -351,18 +410,6 @@
                         </button>
                     <?php endif; ?>
                 <?php endif; ?>
-            </div>
-
-            <div class="profile-intro">
-                <h1><?= ucwords(strtolower($alumni->first_name . ' ' . $alumni->last_name)) ?></h1>
-                <div class="headline"><?= !empty($alumni->degree) ? $alumni->degree : 'Alumni' ?></div>
-                
-                <div class="sub-meta">
-                    <?php if (!empty($alumni->graduation_year)): ?>
-                        <span><i class="fas fa-graduation-cap"></i> Graduated <?= $alumni->graduation_year ?></span>
-                    <?php endif; ?>
-                    <span><i class="fas fa-id-badge"></i> Class of <?= $alumni->graduation_year ?></span>
-                </div>
             </div>
         </div>
     </div>
