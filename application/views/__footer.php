@@ -81,7 +81,7 @@
         </div>
 
         <!-- Active Chat -->
-        <div id="active-friends-chat" style="display: none; flex: 1; flex-direction: column; background: #F5F5F5;">
+        <div id="active-friends-chat" style="display: none; flex: 1; flex-direction: column; background: #F5F5F5; min-height: 0;">
             <div id="friends-chat-header" style="padding: 12px 16px; background: white; border-bottom: 1px solid #E8E8E8; display: flex; align-items: center; gap: 12px;">
                 <button id="back-to-friends" style="background: transparent; border: none; color: #8B1538; cursor: pointer; font-size: 18px; width: 36px; height: 36px; border-radius: 50%; display: flex; align-items: center; justify-content: center; transition: background 0.2s;">
                     <i class="fas fa-chevron-left"></i>
@@ -89,7 +89,7 @@
                 <div style="flex: 1; font-weight: 600; font-size: 15px; color: #1a1a1a;" id="friends-chat-user-name"></div>
             </div>
             
-            <div id="friends-chat-messages" style="flex: 1; overflow-y: auto; padding: 20px 16px; display: flex; flex-direction: column; gap: 12px; background: linear-gradient(to bottom, #F5F5F5, #FAFAFA);">
+            <div id="friends-chat-messages" style="flex: 1; overflow-y: auto; padding: 20px 16px; display: flex; flex-direction: column; gap: 12px; background: linear-gradient(to bottom, #F5F5F5, #FAFAFA); min-height: 0; height: 100%;">
                 <!-- Messages load here -->
             </div>
             
@@ -132,10 +132,7 @@
             <button id="send-support-btn" style="background: linear-gradient(135deg, #8B1538, #6B0F2A); color: white; border: none; border-radius: 50%; width: 44px; height: 44px; cursor: pointer; display: flex; align-items: center; justify-content: center; box-shadow: 0 2px 8px rgba(139, 21, 56, 0.3);">
                 <i class="fas fa-paper-plane"></i>
             </button>
-            
-    </div>
-</div>
-
+        </div>
     </div>
 </div>
 
@@ -171,58 +168,25 @@
         font-size: 18px;
     }
 
-    @media (max-width: 576px) {
-        .support-widget-btn {
-            padding: 12px;
-            width: 50px;
-            height: 50px;
-            justify-content: center;
-            border-radius: 50%;
-        }
-        .support-widget-btn .support-label {
-            display: none;
-        }
-        #support-chat-container {
-            bottom: 20px;
-            right: 20px;
-        }
-    }
-
     /* ===== Support System Notice (Modal) ===== */
     .support-notice {
-    align-self: center;
-    background: #fff7ed;
-    border: 1px solid #fed7aa;
-    color: #9a3412;
-    padding: 10px 14px;
-    border-radius: 14px;
-    font-size: 12px;
-    font-weight: 600;
-    text-align: center;
-    max-width: 85%;
-    margin-bottom: 8px;
+        align-self: center;
+        background: #fff7ed;
+        border: 1px solid #fed7aa;
+        color: #9a3412;
+        padding: 10px 14px;
+        border-radius: 14px;
+        font-size: 12px;
+        font-weight: 600;
+        text-align: center;
+        max-width: 85%;
+        margin-bottom: 8px;
     }
 
     /* Contact Item Styling */
-
     #friends-chat-messages {
-    scroll-behavior: smooth;
+        scroll-behavior: smooth;
     }
-
-    #friends-chat-messages {
-    flex: 1;
-    overflow-y: auto;
-    padding: 20px 16px;
-    display: flex;
-    flex-direction: column;
-    gap: 12px;
-    background: linear-gradient(to bottom, #F5F5F5, #FAFAFA);
-
-    /* 🔥 CRITICAL FIX */
-    min-height: 0;
-    height: 100%;
-}
-
 
     .contact-item { 
         display: flex; 
@@ -384,16 +348,55 @@
         background: rgba(255,255,255,0.3);
     }
 
-    #active-friends-chat {
-    display: none;
-    flex: 1;
-    flex-direction: column;
-    background: #F5F5F5;
+    /* Mobile Chat Widget Fixes - Keep below navbar */
+    @media (max-width: 768px) {
+        .support-widget-btn {
+            padding: 12px;
+            width: 50px;
+            height: 50px;
+            justify-content: center;
+            border-radius: 50%;
+        }
+        .support-widget-btn .support-label {
+            display: none;
+        }
 
-    /* 🔥 ADD THIS */
-    min-height: 0;
-}
+        #friends-chat-container {
+            bottom: 90px !important;
+            right: 20px !important;
+        }
 
+        #support-chat-container {
+            bottom: 20px !important;
+            right: 20px !important;
+        }
+
+        #friends-chat-window,
+        #support-chat-window {
+            width: calc(100vw - 40px) !important;
+            max-width: 380px !important;
+            height: auto !important;
+            max-height: calc(100vh - 75px - 140px) !important;
+            bottom: 65px !important;
+            right: 0 !important;
+        }
+
+        #support-chat-window {
+            bottom: 65px !important;
+            max-height: calc(100vh - 75px - 100px) !important;
+        }
+
+        #friends-chat-messages,
+        #support-messages {
+            max-height: calc(100vh - 75px - 280px) !important;
+        }
+
+        #friends-chat-container,
+        #support-chat-container {
+            top: auto !important;
+            max-height: calc(100vh - 75px) !important;
+        }
+    }
 </style>
 
 <script>
@@ -480,7 +483,6 @@ $(document).ready(function() {
         loadFriends();
     });
 
-
     function loadFriends() {
         $.get('<?= site_url("chat/get_connections") ?>', function(res) {
             let data = typeof res === 'string' ? JSON.parse(res) : res;
@@ -539,67 +541,54 @@ $(document).ready(function() {
     }
 
     function loadFriendsMessages() {
-    if (!currentFriendId) return;
+        if (!currentFriendId) return;
 
-    $.get('<?= site_url("chat/get_messages_ajax/") ?>' + currentFriendId, function(res) {
-        let data = typeof res === 'string' ? JSON.parse(res) : res;
-        let html = '';
+        $.get('<?= site_url("chat/get_messages_ajax/") ?>' + currentFriendId, function(res) {
+            let data = typeof res === 'string' ? JSON.parse(res) : res;
+            let html = '';
 
-        data.forEach(m => {
-            let isSent = m.sender_id == '<?= $this->session->userdata("alumni_id") ?>';
-            let timeStr = '';
+            data.forEach(m => {
+                let isSent = m.sender_id == '<?= $this->session->userdata("alumni_id") ?>';
+                let timeStr = '';
 
-            if (m.sent_at) {
-                // expected format: YYYY-MM-DD HH:MM:SS
-                const parts = m.sent_at.split(/[- :]/);
-                const d = new Date(
-                    parts[0],        // year
-                    parts[1] - 1,    // month (0-based)
-                    parts[2],        // day
-                    parts[3],        // hour
-                    parts[4],        // minute
-                    parts[5] || 0
-                );
+                if (m.sent_at) {
+                    const parts = m.sent_at.split(/[- :]/);
+                    const d = new Date(
+                        parts[0],
+                        parts[1] - 1,
+                        parts[2],
+                        parts[3],
+                        parts[4],
+                        parts[5] || 0
+                    );
+                    timeStr = d.toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' });
+                }
 
-                timeStr = d.toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' });
-            }
+                html += `
+                    <div class="fb-bubble ${isSent ? 'fb-sent' : 'fb-received'}">
+                        <div class="msg-text"></div>
+                        <span class="bubble-time">${timeStr}</span>
+                    </div>
+                `;
+            });
 
+            const container = $('#friends-chat-messages');
+            const newHash = JSON.stringify(data.map(m => m.id + m.message + m.sent_at));
 
-            html += `
-                <div class="fb-bubble ${isSent ? 'fb-sent' : 'fb-received'}">
-                    <div class="msg-text"></div>
-                    <span class="bubble-time">${timeStr}</span>
-                </div>
-            `;
+            if (newHash === lastFriendsHash) return;
+            lastFriendsHash = newHash;
+
+            container.html(html);
+            scrollFriendsToBottom(true);
+
+            data.forEach((m, i) => {
+                container.find('.msg-text').eq(i).text(m.message);
+            });
         });
-
-        const container = $('#friends-chat-messages');
-
-        // ✅ prevent blinking if same messages
-        const newHash = JSON.stringify(data.map(m => m.id + m.message + m.sent_at));
-
-        if (newHash === lastFriendsHash) return;
-        lastFriendsHash = newHash;
-
-        container.html(html);
-
-        // ✅ auto scroll smoothly
-        scrollFriendsToBottom(true);
-
-
-        // safe text insert
-        data.forEach((m, i) => {
-            container.find('.msg-text').eq(i).text(m.message);
-        });
-
-       
-    });
     }
-
 
     function startFriendsPoll() { if(friendsPoll) clearInterval(friendsPoll); friendsPoll = setInterval(loadFriendsMessages, 5000); }
     function stopFriendsPoll() { if(friendsPoll) clearInterval(friendsPoll); friendsPoll = null; }
-
 
     // --- SUPPORT CHAT LOGIC ---
     let supportPoll = null;
@@ -631,52 +620,46 @@ $(document).ready(function() {
     }
 
     function loadSupportMessages() {
-    $.get('<?= site_url("support/get_chat_json_alumni") ?>', function(res) {
-        let data = typeof res === 'string' ? JSON.parse(res) : res;
-        let html = '';
-
-        // ✅ AUTO EMAIL NOTICE (always on top)
-        html += `
-            <div class="support-notice">
-                📩 For faster assistance, please email us at:<br>
-                <strong><?= $support_email ?></strong>
-            </div>
-        `;
-
-        data.forEach(m => {
-            let isSent = m.is_admin == 0;
-
-            // ✅ escape message for safety
-            let safeMsg = $('<div>').text(m.message).html();
+        $.get('<?= site_url("support/get_chat_json_alumni") ?>', function(res) {
+            let data = typeof res === 'string' ? JSON.parse(res) : res;
+            let html = '';
 
             html += `
-                <div class="bubble ${isSent ? 'bubble-sent' : 'bubble-received'}">
-                    ${safeMsg}
-                    <span class="bubble-time">${new Date(m.created_at).toLocaleTimeString([], {hour: '2-digit', minute:'2-digit'})}</span>
+                <div class="support-notice">
+                    📩 For faster assistance, please email us at:<br>
+                    <strong><?= $support_email ?></strong>
                 </div>
             `;
-        });
 
-        $('#support-messages').html(html);
-        $('#support-messages').scrollTop($('#support-messages')[0].scrollHeight);
-    });
-}
+            data.forEach(m => {
+                let isSent = m.is_admin == 0;
+                let safeMsg = $('<div>').text(m.message).html();
+
+                html += `
+                    <div class="bubble ${isSent ? 'bubble-sent' : 'bubble-received'}">
+                        ${safeMsg}
+                        <span class="bubble-time">${new Date(m.created_at).toLocaleTimeString([], {hour: '2-digit', minute:'2-digit'})}</span>
+                    </div>
+                `;
+            });
+
+            $('#support-messages').html(html);
+            $('#support-messages').scrollTop($('#support-messages')[0].scrollHeight);
+        });
+    }
 
     function scrollFriendsToBottom(force = false) {
-    const container = $('#friends-chat-messages')[0];
-    if (!container) return;
+        const container = $('#friends-chat-messages')[0];
+        if (!container) return;
 
-    const isNearBottom =
-        container.scrollHeight - container.scrollTop - container.clientHeight < 120;
+        const isNearBottom = container.scrollHeight - container.scrollTop - container.clientHeight < 120;
 
-    // ✅ only auto-scroll if user is near bottom OR forced
-    if (force || isNearBottom) {
-        requestAnimationFrame(() => {
-            container.scrollTop = container.scrollHeight;
-        });
+        if (force || isNearBottom) {
+            requestAnimationFrame(() => {
+                container.scrollTop = container.scrollHeight;
+            });
+        }
     }
-    }
-
 
     function startSupportPoll() { if(supportPoll) clearInterval(supportPoll); supportPoll = setInterval(loadSupportMessages, 4000); }
     function stopSupportPoll() { if(supportPoll) clearInterval(supportPoll); supportPoll = null; }
@@ -687,7 +670,6 @@ $(document).ready(function() {
     });
 
     $(document).on('hidden.bs.modal', '.modal', function () {
-        // Only show if no other modals are open (Bootstrap 4 handles this, but it's safe)
         if ($('.modal.show').length === 0) {
             $('#support-chat-container').fadeIn(200);
         }
@@ -696,14 +678,9 @@ $(document).ready(function() {
     $(document).on('click', '.open-support-chat', function(e) {
         e.preventDefault();
         e.stopPropagation();
-        
-        // Hide friends chat if it interferes
         $('#friends-chat-window').fadeOut(200);
-        
-        // Open support chat
         $('#support-chat-window').fadeIn(200).css('display', 'flex');
-        $('#support-chat-container').fadeIn(200); // Ensure container is visible
-        
+        $('#support-chat-container').fadeIn(200);
         loadSupportMessages();
         startSupportPoll();
     });
@@ -711,20 +688,12 @@ $(document).ready(function() {
     // Expose Global Function for Profile "Message" button
     window.openDirectChat = function(friendId, name, img) {
         currentFriendId = friendId;
-        
-        // Ensure chat window is open
         $('#friends-chat-window').fadeIn(200).css('display', 'flex');
-        
-        // Set header info
         $('#friends-chat-user-name').text(name);
         $('#friends-chat-avatar').attr('src', img || '<?= base_url("assets/images/person-male.png") ?>').show();
         $('#friends-chat-title').text(name);
-        
-        // Toggle views
         $('#friends-contacts').hide();
         $('#active-friends-chat').show().css('display', 'flex');
-        
-        // Start conversation
         loadFriendsMessages();
         startFriendsPoll();
     };
