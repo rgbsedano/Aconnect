@@ -1,4 +1,6 @@
-<style>
+
+
+    <style>
         :root {
             --maroon: #8B1538;
             --maroon-dark: #6B0F2A;
@@ -170,22 +172,19 @@
             color: white;
         }
 
-        /* Modal: space for header, fixed in viewport, only inner content scrolls */
+        /* Modal */
         .modal-overlay {
             position: fixed;
             inset: 0;
             background: rgba(0,0,0,0.5);
             backdrop-filter: blur(4px);
             display: flex;
-            align-items: flex-start;
+            align-items: center;
             justify-content: center;
             z-index: 1000;
             opacity: 0;
             visibility: hidden;
             transition: all 0.3s;
-            padding: 72px 1rem 1rem 1rem;
-            overflow-y: auto;
-            -webkit-overflow-scrolling: touch;
         }
         .modal-overlay.open { opacity: 1; visibility: visible; }
 
@@ -193,7 +192,6 @@
             background: var(--card);
             width: 90%;
             max-width: 580px;
-            max-height: calc(100vh - 72px - 2rem);
             border-radius: 16px;
             padding: 0;
             position: relative;
@@ -201,10 +199,6 @@
             transition: all 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
             box-shadow: var(--shadow-lg);
             overflow: hidden;
-            display: flex;
-            flex-direction: column;
-            flex-shrink: 0;
-            margin: 0 auto;
         }
         .modal-overlay.open .modal-box { transform: scale(1) translateY(0); }
 
@@ -215,18 +209,10 @@
             display: flex;
             justify-content: space-between;
             align-items: flex-start;
-            flex-shrink: 0;
         }
 
         .modal-header-custom h2 { margin: 0 0 4px 0; font-size: 20px; }
         .modal-header-custom p { margin: 0; font-size: 13px; color: var(--gold); font-weight: 600; }
-
-        .modal-box .modal-content {
-            overflow-y: auto;
-            flex: 1 1 auto;
-            min-height: 0;
-            -webkit-overflow-scrolling: touch;
-        }
 
         .close-modal {
             background: none;
@@ -289,18 +275,13 @@
             .badge-ai { margin-top: 12px; }
             .header-section { padding: 20px; }
             .f-pill { padding: 6px 14px; font-size: 12px; }
-            .modal-overlay { padding: 72px 0.5rem 0.5rem; align-items: flex-start; }
-            .modal-box { width: 100%; max-width: none; max-height: calc(100vh - 72px - 1rem); margin: 0 auto; }
         }
 
         @media (max-width: 576px) {
             .modal-header-custom { padding: 16px; }
-            .modal-box .modal-content { padding: 16px; }
-            .modal-overlay { padding: 64px 0.25rem 0.25rem; }
-            .modal-box { max-height: calc(100vh - 64px - 0.5rem); margin: 0 auto; }
+            .modal-content { padding: 16px; }
             .percent { padding: 6px 10px; font-size: 11px; }
             .job-info h3 { font-size: 15px; }
-            .modal-header-custom h2 { font-size: 17px; }
         }
     </style>
 

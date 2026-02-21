@@ -241,32 +241,6 @@ $student_number = $this->session->userdata('student_number') ? $this->session->u
         .modal-content { border-radius: 16px; border: none; overflow: hidden; }
         .modal-header { background: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%); color: white; }
         .modal-body { padding: 0; color: var(--text-main); line-height: 1.8; }
-        /* Responsive modals: space for header, viewport-fit, body scrolls only */
-        .modal { overflow-x: auto; align-items: flex-start; padding-top: 72px; padding-bottom: 1rem; }
-        .modal.show .modal-dialog {
-            margin-top: 0;
-            margin-bottom: 0;
-            max-height: calc(100vh - 72px - 2rem);
-            margin-left: auto;
-            margin-right: auto;
-            display: flex;
-            flex-direction: column;
-        }
-        .modal-dialog { max-height: calc(100vh - 72px - 2rem); }
-        .modal-content {
-            max-height: calc(100vh - 72px - 2rem);
-            display: flex;
-            flex-direction: column;
-            overflow: hidden;
-        }
-        .modal-body {
-            overflow-y: auto;
-            flex: 1 1 auto;
-            min-height: 0;
-            -webkit-overflow-scrolling: touch;
-        }
-        .modal-header { flex-shrink: 0; }
-        .modal-footer { flex-shrink: 0; }
         
         #m-image-container {
             width: 100%;
@@ -320,24 +294,6 @@ $student_number = $this->session->userdata('student_number') ? $this->session->u
             .post-title {
                 font-size: 1rem;
             }
-            .modal { padding-top: 72px; padding-bottom: 0.5rem; }
-            .modal-dialog { margin: 0.5rem auto; max-width: calc(100vw - 1rem); width: auto; max-height: calc(100vh - 72px - 1rem); }
-            .modal.show .modal-dialog { margin: 0.5rem auto; max-height: calc(100vh - 72px - 1rem); }
-            .modal-content { max-height: calc(100vh - 72px - 1rem); }
-            .modal-header { padding: 14px 16px; }
-            .modal-body-text { padding: 12px 16px; }
-            #m-image-container { height: 200px; }
-            #c-image-container { height: 220px !important; }
-        }
-        @media (max-width: 576px) {
-            .modal { padding-top: 64px; padding-bottom: 0.25rem; }
-            .modal-dialog { margin: 0.25rem auto; max-width: calc(100vw - 0.5rem); max-height: calc(100vh - 64px - 0.5rem); }
-            .modal.show .modal-dialog { max-height: calc(100vh - 64px - 0.5rem); }
-            .modal-content { max-height: calc(100vh - 64px - 0.5rem); }
-            .modal-header { padding: 12px 14px; }
-            .modal-body-text { padding: 10px 14px; }
-            #m-image-container { height: 180px; }
-            #c-image-container { height: 180px !important; }
         }
     </style>
 
