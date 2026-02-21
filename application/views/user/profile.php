@@ -323,33 +323,6 @@
             border-radius: 0 0 12px 12px;
         }
 
-        /* Responsive modals: space for header, viewport-fit, body scrolls only */
-        .modal { overflow-x: auto; align-items: flex-start; padding-top: 72px; padding-bottom: 1rem; }
-        .modal.show .modal-dialog {
-            margin-top: 0;
-            margin-bottom: 0;
-            margin-left: auto;
-            margin-right: auto;
-            max-height: calc(100vh - 72px - 2rem);
-            display: flex;
-            flex-direction: column;
-        }
-        .modal-dialog { max-height: calc(100vh - 72px - 2rem); }
-        .modal-content {
-            max-height: calc(100vh - 72px - 2rem);
-            display: flex;
-            flex-direction: column;
-            overflow: hidden;
-        }
-        .modal-body {
-            overflow-y: auto;
-            flex: 1 1 auto;
-            min-height: 0;
-            -webkit-overflow-scrolling: touch;
-        }
-        .modal-header { flex-shrink: 0; }
-        .modal-footer { flex-shrink: 0; }
-
         .btn-primary {
             background: linear-gradient(135deg, var(--maroon), var(--maroon-dark));
             border: none;
@@ -393,24 +366,6 @@
             .job-meta { justify-content: center; }
             .row.no-gutters { flex-direction: column; }
             .col-md-5 { min-height: 200px !important; }
-            /* Modal: space for header, full width, adaptive */
-            .modal { padding-top: 72px; padding-bottom: 0.5rem; }
-            .modal-dialog { margin: 0.5rem auto; max-width: calc(100vw - 1rem); width: auto; max-height: calc(100vh - 72px - 1rem); }
-            .modal.show .modal-dialog { margin: 0.5rem auto; max-height: calc(100vh - 72px - 1rem); }
-            .modal-content { max-height: calc(100vh - 72px - 1rem); }
-            .modal-header { padding: 14px 16px; }
-            .modal-header .modal-title { font-size: 16px; }
-            .modal-body { padding: 16px; }
-            .modal-footer { padding: 12px 16px; }
-        }
-        @media (max-width: 576px) {
-            .modal { padding-top: 64px; padding-bottom: 0.25rem; }
-            .modal-dialog { margin: 0.25rem auto; max-width: calc(100vw - 0.5rem); max-height: calc(100vh - 64px - 0.5rem); }
-            .modal.show .modal-dialog { margin: 0.25rem auto; max-height: calc(100vh - 64px - 0.5rem); }
-            .modal-content { max-height: calc(100vh - 64px - 0.5rem); }
-            .modal-header { padding: 12px 14px; }
-            .modal-body { padding: 12px 14px; }
-            .modal-footer { padding: 10px 14px; }
         }
     </style>
 
