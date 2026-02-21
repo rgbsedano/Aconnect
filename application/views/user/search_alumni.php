@@ -239,6 +239,33 @@ $student_number = $this->session->userdata('student_number') ? $this->session->u
         .noti-box.error { border-left: 6px solid #EF4444; color: #7F1D1D; }
         .noti-box.info { border-left: 6px solid #3B82F6; color: #1E40AF; }
 
+        /* Responsive modals: space for header, viewport-fit, body scrolls only */
+        .modal { overflow-x: auto; align-items: flex-start; padding-top: 72px; padding-bottom: 1rem; }
+        .modal.show .modal-dialog {
+            margin-top: 0;
+            margin-bottom: 0;
+            max-height: calc(100vh - 72px - 2rem);
+            margin-left: auto;
+            margin-right: auto;
+            display: flex;
+            flex-direction: column;
+        }
+        .modal-dialog { max-height: calc(100vh - 72px - 2rem); }
+        .modal-content {
+            max-height: calc(100vh - 72px - 2rem);
+            display: flex;
+            flex-direction: column;
+            overflow: hidden;
+        }
+        .modal-body {
+            overflow-y: auto;
+            flex: 1 1 auto;
+            min-height: 0;
+            -webkit-overflow-scrolling: touch;
+        }
+        .modal-header { flex-shrink: 0; }
+        .modal-footer { flex-shrink: 0; }
+
         @media (max-width: 768px) {
             .alumni-grid {
                 grid-template-columns: 1fr;
@@ -263,6 +290,12 @@ $student_number = $this->session->userdata('student_number') ? $this->session->u
             .btn-tile {
                 width: 100%;
             }
+            .modal { padding-top: 72px; padding-bottom: 0.5rem; }
+            .modal-dialog { margin: 0.5rem auto; max-width: calc(100vw - 1rem); width: auto; max-height: calc(100vh - 72px - 1rem); }
+            .modal.show .modal-dialog { margin: 0.5rem auto; max-height: calc(100vh - 72px - 1rem); }
+            .modal-content { max-height: calc(100vh - 72px - 1rem); }
+            .modal-header { padding: 14px 16px; height: auto; min-height: 60px; }
+            .modal-body { padding: 16px; }
         }
 
         @media (max-width: 480px) {
@@ -274,6 +307,12 @@ $student_number = $this->session->userdata('student_number') ? $this->session->u
                 height: 80px;
                 margin-top: -40px;
             }
+            .modal { padding-top: 64px; padding-bottom: 0.25rem; }
+            .modal-dialog { margin: 0.25rem auto; max-width: calc(100vw - 0.5rem); max-height: calc(100vh - 64px - 0.5rem); }
+            .modal.show .modal-dialog { max-height: calc(100vh - 64px - 0.5rem); }
+            .modal-content { max-height: calc(100vh - 64px - 0.5rem); }
+            .modal-header { padding: 12px 14px; min-height: 56px; }
+            .modal-body { padding: 12px 14px; }
         }
     </style>
   
