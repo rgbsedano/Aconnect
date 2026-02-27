@@ -116,7 +116,7 @@
                 <svg class="w-5 h-5 text-slate-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"/></svg>
                 <input type="text" id="search-input" onkeyup="renderEvents()" placeholder="Search events, workshops, or topics..." class="w-full py-3 bg-transparent outline-none text-sm font-medium">
             </div>
-            <div class="flex flex-wrap md:flex-nowrap gap-2 p-1">
+            <div class="flex flex-wrap md:flex-nowraimgp gap-2 p-1">
                 <select id="filter-type" onchange="renderEvents()" class="bg-slate-50 border-none text-slate-600 text-xs font-bold py-2 px-4 rounded-xl outline-none focus:ring-2 focus:ring-rose-700/20 cursor-pointer">
                     <option value="all">All Categories</option>
                     <option value="workshop">Workshop</option>
@@ -261,7 +261,7 @@
                 const html = `
                     <div id="modal-${event.id}" class="modal-overlay fixed inset-0 items-center justify-center p-4" onclick="closeModal(${event.id})">
                         <div class="bg-white w-full max-w-2xl rounded-3xl overflow-hidden shadow-2xl" onclick="event.stopPropagation()">
-                            ${event.image ? `<div class="w-full h-56 overflow-hidden"><img src="<?= base_url('assets/uploads/events/') ?>${event.image}" class="w-full h-full object-cover"></div>` : `<div class="h-32 bg-rose-700 relative">
+                            ${event.image ? `<div class="w-full h-56 overflow-hidden"><img src="<?= base_url('assets/uploads/events/') ?>${event.image}" style="max-height:224px;width:100%;object-fit:cover;" class="modal-event-image"></div>` : `<div class="h-32 bg-rose-700 relative">
                                 <div class="absolute -bottom-8 left-8 w-20 h-20 rounded-2xl bg-white p-1 shadow-xl">
                                     <div class="w-full h-full rounded-xl bg-slate-100 overflow-hidden flex items-center justify-center font-bold text-rose-700 text-2xl">
                                         ${event.event_name.charAt(0)}
