@@ -17,86 +17,150 @@ defined('BASEPATH') OR exit('No direct script access allowed');
     <!-- SweetAlert2 -->
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 
-    <style>
-    /* (your existing styles — kept identical) */
-    html, body { min-height: 100%; margin: 0; font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif; }
-    .login-page { display: flex; min-height: 100vh; background-color: #f7f7f7; }
-    .container-fluid { display: flex; width: 100%; max-width: none !important; height: 100vh; padding: 0 !important; margin: 0 !important; }
-    .row_container { display: flex !important; width: 100%; margin: 0 !important; }
-    .image-container {
-        flex: 0 0 50vw;
-        position: relative;
-        overflow: hidden;
-        height: 100vh;
-        background-color: #920E0E;
-        padding: 0 !important;
-    }
+<style>
 
-    .login-image {
-        width: 100%;
-        height: 100%;
-        object-fit: cover;
-    }
+/* ================= GLOBAL ================= */
+html, body {
+    min-height: 100%;
+    margin: 0;
+    font-family: -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif;
+}
 
-    .form-container { 
-    flex: 0 0 50vw; 
-    display: flex; 
-    flex-direction: column; 
+.login-page {
+    min-height: 100vh;
+    background: #f7f7f7;
+}
+
+.container-fluid,
+.row_container {
+    width: 100%;
+    margin: 0 !important;
+    padding: 0 !important;
+}
+
+
+/* ================= DESKTOP ================= */
+/* Default = SPLIT SCREEN */
+
+.image-container {
+    position: relative;
+    height: 100vh;
+    overflow: hidden;
+    background: #920E0E;
+}
+
+.login-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.form-container {
+    display: flex;
     align-items: center;
     justify-content: center;
-    padding: 30px;
     min-height: 100vh;
-    background-color: #fff;
-
-    /* 🔥 ADD THESE */
-    text-align: center;
+    background: #fff;
+    padding: 30px;
 }
 
-    .login-logo-container { text-align: center; margin-bottom: 0.5rem; }
-    .login-logo { max-width: 200px; height: auto; }
-    .branding-text { text-align: center; margin-bottom: 2rem; max-width: 350px; }
-    .branding-text h1 { font-size: 1.8rem; font-weight: 700; color: #333; margin-bottom: 0.5rem; }
-    .branding-text p { font-size: 0.95rem; color: #6c757d; }
-    .form-signin {
+
+/* ================= CARD ================= */
+.form-signin {
     width: 100%;
     max-width: 380px;
-    margin: 0 auto; /* 🔥 THIS CENTERS THE CARD */
+    background: #fff;
+    padding: 28px;
+    border-radius: 16px;
+    box-shadow: 0 20px 60px rgba(0,0,0,0.15);
 }
 
-    .form-control { border-radius: 5px; height: 48px; padding: 10px 15px; margin-bottom: 15px; width: 100%; transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out; border: 1px solid #ddd; }
-    .form-control:focus { border-color: #700A0A; box-shadow: 0 0 0 0.15rem rgba(112, 10, 10, 0.2); }
-    .form-label-group label { display: none; }
-    .checkbox.mb-3 { margin-bottom: 1rem !important; display: flex; align-items: center; font-size: 0.9rem; }
-    .checkbox.mb-3 input[type="checkbox"] { margin-right: 8px; width: 16px; height: 16px; }
-    .btn-block { width: 100%; background-color: #700A0A !important; border: none; height: 48px; font-size: 1rem; text-transform: uppercase; font-weight: 600; border-radius: 5px; transition: background-color 0.2s ease; }
-    .btn-block:hover { background-color: #550808 !important; }
-    .register-link { margin-top: 2rem !important; padding-top: 15px; border-top: 1px solid #eee; }
-    .register-link p { text-align: center; font-size: 0.9rem; margin-bottom: 5px; color: #6c757d; }
-    .register-link a { color: #700A0A; text-decoration: none; font-weight: 600; transition: text-decoration 0.2s ease; }
-    .register-link a:hover { text-decoration: underline; }
-    .btn-outline-dark { color: #000; border: 1px solid #ccc; background-color: transparent; padding: 8px 15px; font-size: 0.9rem; line-height: 1.2; border-radius: 5px; transition: all 0.2s ease; }
-    .btn-outline-dark:hover { background-color: #f0f0f0; border-color: #700A0A; color: #000; }
-    @media screen and (max-width: 767.98px) {
+.login-header {
+    text-align: center;
+    margin-bottom: 18px;
+}
 
-    html, body {
-        overflow: auto;
-        height: auto;
-    }
-    body.login-page {
-    overflow-y: auto;
-    }
+.login-logo {
+    max-width: 120px;
+    margin-bottom: 10px;
+}
+
+.branding-text p {
+    font-size: .9rem;
+    color: #6c757d;
+}
+
+
+/* ================= FORM ================= */
+.form-control {
+    border-radius: 8px;
+    height: 48px;
+    border: 1px solid #ddd;
+    margin-bottom: 15px;
+}
+
+.form-control:focus {
+    border-color: #700A0A;
+    box-shadow: 0 0 0 .15rem rgba(112,10,10,.2);
+}
+
+.btn-block {
+    width: 100%;
+    background: #700A0A !important;
+    border: none;
+    height: 48px;
+    font-weight: 600;
+    border-radius: 8px;
+}
+
+.btn-block:hover {
+    background: #550808 !important;
+}
+
+
+/* ================= LOGIN OPTIONS ================= */
+.login-options {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-top: 6px;
+    margin-bottom: 18px;
+    gap: 12px;
+}
+
+.remember-me {
+    display: flex;
+    gap: 7px;
+    font-size: 0.9rem;
+    color: #555;
+}
+
+.remember-me input {
+    accent-color: #700A0A;
+}
+
+.forgot-link {
+    font-size: .9rem;
+    font-weight: 600;
+    color: #700A0A;
+    text-decoration: none;
+}
+
+
+/* ================= MOBILE ================= */
+/* Switch to BACKGROUND MODE */
+
+@media (max-width: 767px) {
+
     .login-page {
-        min-height: 100dvh; /* 🔥 modern mobile fix */
+        position: relative;
+        overflow: hidden;
     }
 
-
-    /* 🔥 IMAGE BECOMES FULL BACKGROUND */
+    /* image becomes background */
     .image-container {
-        display: block !important;
         position: fixed;
         inset: 0;
-        width: 100vw;
-        height: 100vh;
         z-index: 0;
     }
 
@@ -104,420 +168,40 @@ defined('BASEPATH') OR exit('No direct script access allowed');
         content: "";
         position: absolute;
         inset: 0;
-        background: rgba(0,0,0,0.45); /* dark overlay for readability */
+        background: rgba(0,0,0,0.45);
     }
 
-    /* 🔥 FLOATING CENTER FORM */
+    /* form floats */
     .form-container {
-    position: relative;
-    z-index: 2;
-    flex: 0 0 100vw;
+        position: relative;
+        z-index: 2;
+        background: transparent;
+        min-height: 100vh;
+        align-items: flex-start;
+        padding: 40px 20px;
+    }
 
-    /* 🔥 CRITICAL FIX */
-    min-height: auto;
-    height: auto;
-    padding: 40px 20px;
-
-    background: transparent;
-
-    display: flex;
-    align-items: flex-start; /* 🔥 WAS center */
-    justify-content: center;
-
-    overflow-y: auto; /* 🔥 ALLOW SCROLL */
-}
-
-       
-
-
-    /* 🔥 GLASS LOGIN CARD EFFECT */
+    /* glass effect on mobile */
     .form-signin {
-        width: 100%;
-        max-width: 380px;
         background: rgba(255,255,255,0.95);
         backdrop-filter: blur(10px);
-        padding: 28px;
-        border-radius: 16px;
-        box-shadow: 0 20px 60px rgba(0,0,0,0.25);
+        box-shadow: 0 25px 60px rgba(0,0,0,0.25);
     }
-
-    /* 🔥 LOGIN HEADER (inside card) */
-    .login-header {
-        width: 100%;
-        text-align: center;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        justify-content: center;
-        margin-bottom: 18px;
-    }
-
-    /* 🔥 RESPONSIVE CENTERED LOGO */
-    .login-logo {
-        display: block;
-        margin: 0 auto 10px auto;
-        max-width: 110px;
-        width: 100%;
-        height: auto;
-        object-fit: contain;
-    }
-
-    /* 🔥 BRANDING TEXT ALIGNMENT */
-    .branding-text {
-        text-align: center;
-        margin: 0 auto;
-        max-width: 280px;
-    }
-
-    .branding-text p {
-        font-size: 0.85rem;
-        color: #6c757d;
-        margin-bottom: 0;
-    }
-    /* 📱 MOBILE LOGO TUNING */
-    @media screen and (max-width: 767.98px) {
-
-        .login-logo {
-            max-width: 150px;
-            margin-bottom: 8px;
-        }
-
-        .login-header {
-            margin-bottom: 14px;
-        }
-
-        .branding-text {
-            max-width: 260px;
-        }
-        
-    }
-
-        @media (min-width: 992px) {
-            .login-logo {
-                max-width: 130px;
-            }
-        }
-
-        /* ===== ACONNECT MODAL STYLE ===== */
-
-        /* smooth fade */
-        .modal.fade .modal-dialog {
-            transform: translateY(-20px);
-            transition: all 0.25s ease;
-        }
-
-        .modal.fade.show .modal-dialog {
-            transform: translateY(0);
-        }
-
-        /* modal card */
-        .modal-content {
-            border-radius: 16px;
-            border: none;
-            box-shadow: 0 25px 60px rgba(0,0,0,0.25);
-            overflow: hidden;
-        }
-
-        /* header */
-        .modal-header {
-            background: linear-gradient(135deg, #700A0A, #C90000);
-            color: #fff;
-            border-bottom: none;
-            padding: 16px 20px;
-        }
-
-        .modal-title {
-            font-weight: 600;
-            font-size: 1.05rem;
-        }
-
-        /* close button */
-        .modal-header .close {
-            color: #fff;
-            opacity: 0.9;
-            text-shadow: none;
-        }
-
-        .modal-header .close:hover {
-            opacity: 1;
-        }
-
-        /* body */
-        .modal-body {
-            padding: 22px;
-        }
-
-        /* footer */
-        .modal-footer {
-            border-top: none;
-            padding: 16px 20px 20px;
-        }
-
-        /* input inside modal */
-        .modal-content .form-control {
-            height: 46px;
-            border-radius: 8px;
-            border: 1px solid #ddd;
-            transition: all 0.2s ease;
-        }
-
-        .modal-content .form-control:focus {
-            border-color: #700A0A;
-            box-shadow: 0 0 0 0.15rem rgba(112, 10, 10, 0.15);
-        }
-
-        /* primary button */
-        .modal-content .btn-primary {
-            background: linear-gradient(135deg, #700A0A, #C90000);
-            border: none;
-            font-weight: 600;
-            border-radius: 8px;
-            padding: 10px 18px;
-            transition: all 0.2s ease;
-        }
-
-        .modal-content .btn-primary:hover {
-            background: linear-gradient(135deg, #550808, #a30000);
-            transform: translateY(-1px);
-        }
-
-        /* cancel button */
-        .modal-content .btn-secondary {
-            border-radius: 8px;
-        }
-
-        /* mobile polish */
-        @media (max-width: 576px) {
-            .modal-dialog {
-                margin: 1rem;
-            }
-        }
-    
-    /* ========================================
-    🔥 LOGIN OPTIONS — CLEAN PROFESSIONAL
-    ======================================== */
 
     .login-options {
-    display: flex;              /* ⭐ REQUIRED */
-    align-items: center;        /* ⭐ vertical alignment */
-    justify-content: space-between; /* ⭐ push apart */
-    margin-top: 6px;
-    margin-bottom: 18px;
-    gap: 12px;
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
 }
 
-    /* remember me container */
-    .remember-me {
-        display: flex;
-        gap: 7px;
-        font-size: 0.9rem;
-        color: #555;
-        cursor: pointer;
-        margin: 0;
-        user-select: none;
-    }
+.image-container,
+.form-container {
+    padding-left: 0 !important;
+    padding-right: 0 !important;
+}
 
-    /* checkbox polish */
-    .remember-me input[type="checkbox"] {
-        width: 16px;
-        height: 16px;
-        accent-color: #700A0A; /* modern browsers */
-        cursor: pointer;
-    }
-
-    /* forgot password link */
-    .forgot-link {
-        font-size: 0.9rem;
-        font-weight: 600;
-        color: #700A0A;
-        text-decoration: none;
-        transition: all 0.18s ease;
-        white-space: nowrap;
-        position: relative;
-    }
-
-    /* underline animation */
-    .forgot-link::after {
-        content: "";
-        position: absolute;
-        left: 0;
-        bottom: -2px;
-        width: 0%;
-        height: 2px;
-        background: #700A0A;
-        transition: width 0.25s ease;
-    }
-
-    .forgot-link:hover::after {
-        width: 100%;
-    }
-
-    .forgot-link:hover {
-        color: #a30000;
-    }
-
-    /* mobile behavior */
-    @media (max-width: 420px) {
-        .login-options {
-            flex-direction: column;
-            align-items: flex-start;
-            gap: 6px;
-        }
-    }
-
-        /* ===== EXTRA MODAL PREMIUM FEEL ===== */
-
-    .modal-backdrop.show {
-        backdrop-filter: blur(4px);
-    }
-
-    /* subtle pop animation */
-    .modal.fade .modal-dialog {
-        transform: scale(0.96) translateY(-8px);
-    }
-
-    .modal.fade.show .modal-dialog {
-        transform: scale(1) translateY(0);
-    }
-
-    /* label polish */
-    .modal-body label {
-        font-weight: 600;
-        font-size: 0.9rem;
-        color: #444;
-    }
-
-    /* input hover */
-    .modal-content .form-control:hover {
-        border-color: #bbb;
-    }
-    
-    html, body { min-height:100%; margin:0; font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif;}
-    .login-page{display:flex;min-height:100vh;background:#f7f7f7;}
-    .container-fluid{display:flex;width:100%;height:100vh;padding:0;margin:0;}
-    .row_container{display:flex!important;width:100%;margin:0;}
-
-    .image-container{
-        flex:0 0 50vw;
-        position:relative;
-        overflow:hidden;
-        height:100vh;
-        background:#920E0E;
-    }
-    .login-image{width:100%;height:100%;object-fit:cover;}
-
-    .form-container{
-        flex:0 0 50vw;
-        display:flex;
-        flex-direction:column;
-        align-items:center;
-        justify-content:center;
-        padding:30px;
-        background:#fff;
-        text-align:center;
-    }
-
-    /* CARD */
-    .form-signin{
-        width:100%;
-        max-width:380px;
-        background:rgba(255,255,255,0.95);
-        backdrop-filter:blur(10px);
-        padding:28px;
-        border-radius:16px;
-        box-shadow:0 20px 60px rgba(0,0,0,0.25);
-    }
-
-    .login-header{margin-bottom:18px;text-align:center;}
-    .login-logo{max-width:120px;margin-bottom:10px;}
-    .branding-text p{font-size:.9rem;color:#6c757d;margin-bottom:0;}
-
-    .form-control{
-        border-radius:8px;
-        height:48px;
-        border:1px solid #ddd;
-    }
-    .form-control:focus{
-        border-color:#700A0A;
-        box-shadow:0 0 0 .15rem rgba(112,10,10,.2);
-    }
-
-    /* BUTTON */
-    .btn-block{
-        width:100%;
-        background:#700A0A!important;
-        border:none;
-        height:48px;
-        font-weight:600;
-        border-radius:8px;
-    }
-    .btn-block:hover{background:#550808!important;}
-
-    /* 🔥 LOGIN OPTIONS */
-  
-
-
-
-
-    .forgot-link{
-        font-size:.9rem;
-        font-weight:600;
-        color:#700A0A;
-        text-decoration:none;
-        position:relative;
-    }
-
-    .forgot-link::after{
-        content:"";
-        position:absolute;
-        left:0;
-        bottom:-2px;
-        width:0%;
-        height:2px;
-        background:#700A0A;
-        transition:.25s;
-    }
-    .forgot-link:hover::after{width:100%;}
-
-    /* REGISTER */
-    .register-link{
-        margin-top:20px;
-        padding-top:15px;
-        border-top:1px solid #eee;
-    }
-    .register-link a{color:#700A0A;font-weight:600;}
-
-    /* ===== MODAL POLISH ===== */
-    .modal.fade .modal-dialog{
-        transform:scale(.96) translateY(-8px);
-        transition:.25s;
-    }
-    .modal.fade.show .modal-dialog{
-        transform:scale(1) translateY(0);
-    }
-    .modal-content{
-        border-radius:16px;
-        border:none;
-        box-shadow:0 25px 60px rgba(0,0,0,.25);
-    }
-    .modal-header{
-        background:linear-gradient(135deg,#700A0A,#C90000);
-        color:#fff;
-        border-bottom:none;
-    }
-    .modal-content .btn-primary{
-        background:linear-gradient(135deg,#700A0A,#C90000);
-        border:none;
-        border-radius:8px;
-    }
-
-    /* MOBILE */
-    @media(max-width:767px){
-        .image-container{display:none;}
-        .form-container{flex:0 0 100vw;}
-    }
-    
-    </style>
+</style>
 </head>
 <body class="login-page">
     <div class="container-fluid">
