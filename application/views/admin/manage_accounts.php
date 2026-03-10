@@ -200,6 +200,32 @@
     margin-top: 10vh !important;
     margin-bottom: 40px;
 }
+
+.accounts-page .btn-action {
+    width: 36px;
+    height: 36px;
+    border-radius: 10px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    background: #f8fafc;
+    color: var(--text-muted);
+    border: 1px solid #e2e8f0;
+    transition: var(--transition);
+    margin-left: 5px;
+}
+
+.accounts-page .btn-action:hover {
+    background: var(--accent-red);
+    color: white;
+    border-color: var(--accent-red);
+    transform: translateY(-2px);
+}
+
+.accounts-page .btn-action.delete:hover {
+    background: #ef4444;
+    border-color: #ef4444;
+}
 </style>
 
 <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>

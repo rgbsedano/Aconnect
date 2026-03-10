@@ -69,10 +69,10 @@
 
                         <!-- DELETE -->
                         <form method="post"
-                              class="delete-form"
-                              action="<?= site_url('AdminManageAccounts/delete/'.$a['id']) ?>"
-                              style="display:inline;">
-                            <button type="submit" class="btn-action delete">
+                            class="delete-form"
+                            action="<?= site_url('AdminManageAccounts/delete/'.$a['id']) ?>"
+                            style="display:inline;">
+                            <button type="button" class="btn-action delete-btn">
                                 <i class="fas fa-trash"></i>
                             </button>
                         </form>
@@ -98,3 +98,44 @@
 </div>
 
 </div>
+
+<script>
+document.addEventListener('DOMContentLoaded', function () {
+
+    document.querySelectorAll('.delete-btn').forEach(btn => {
+
+        btn.addEventListener('click', function () {
+
+            let form = this.closest('.delete-form');
+
+            Swal.fire({
+                title: 'Delete Alumni?',
+                text: "This action cannot be undone.",
+                icon: 'warning',
+                showCancelButton: true,
+                confirmButtonColor: '#700A0A',
+                cancelButtonColor: '#6c757d',
+                confirmButtonText: 'Yes, delete',
+                cancelButtonText: 'Cancel'
+            }).then((result) => {
+                if (result.isConfirmed) {
+
+                    Swal.fire({
+                        title: 'Deleting...',
+                        text: 'Please wait',
+                        allowOutsideClick: false,
+                        didOpen: () => {
+                            Swal.showLoading();
+                        }
+                    });
+
+                    form.submit();
+                }
+            });
+
+        });
+
+    });
+
+});
+</script>

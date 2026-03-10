@@ -3,6 +3,86 @@ $display_full_name = $this->session->userdata('first_name') . ' ' . $this->sessi
 $student_number = $this->session->userdata('student_number') ?: 'N/A';
 ?>
 
+<?php
+
+$hierarchy = [
+    'President' => null,
+    'Vice President' => 'President',
+    'Secretary' => 'Vice President',
+    'Treasurer' => 'Secretary',
+    'Auditor' => 'Treasurer',
+    'PRO' => 'Auditor',
+    'Board Member' => 'PRO'
+];
+
+$indexed = [];
+
+foreach ($officers as $o) {
+    $indexed[$o->position][] = $o;
+}
+
+function buildPositionTree($position, $hierarchy, $indexed) {
+
+    $branch = [];
+
+    if (!isset($indexed[$position])) return [];
+
+    foreach ($indexed[$position] as $officer) {
+
+        $node = [
+            'data' => $officer,
+            'children' => []
+        ];
+
+        foreach ($hierarchy as $child => $parent) {
+            if ($parent === $position) {
+                $node['children'] = array_merge(
+                    $node['children'],
+                    buildPositionTree($child, $hierarchy, $indexed)
+                );
+            }
+        }
+
+        $branch[] = $node;
+    }
+
+    return $branch;
+}
+
+$orgTree = buildPositionTree('President', $hierarchy, $indexed);
+
+function renderOrg($nodes) {
+?>
+<ul class="org-tree">
+<?php foreach ($nodes as $n): ?>
+<li>
+
+<div class="org-card">
+
+    <img src="<?= !empty($n['data']->photo)
+        ? base_url($n['data']->photo)
+        : base_url('assets/images/person-default.png'); ?>"
+        class="org-photo">
+
+    <div class="org-name">
+        <?= htmlspecialchars($n['data']->full_name) ?>
+    </div>
+
+    <div class="org-position">
+        <?= htmlspecialchars($n['data']->position) ?>
+    </div>
+
+</div>
+
+<?php if (!empty($n['children'])): ?>
+    <?php renderOrg($n['children']); ?>
+<?php endif; ?>
+
+</li>
+<?php endforeach; ?>
+</ul>
+<?php } ?>
+
 <script src="https://cdn.tailwindcss.com"></script>
 
 <style>
@@ -108,6 +188,115 @@ body {
     text-align: center;
     border: 1px dashed #cbd5e1;
 }
+.org-wrapper {
+    text-align: center;
+    padding: 40px 0;
+}
+
+.org-tree {
+    list-style: none;
+    padding-left: 0;
+    position: relative;
+}
+
+.org-tree ul {
+    padding-top: 20px;
+    position: relative;
+}
+
+.org-tree li {
+    display: inline-block;
+    text-align: center;
+    vertical-align: top;
+    position: relative;
+    padding: 20px 10px 0 10px;
+}
+
+/* vertical line */
+.org-tree li::before,
+.org-tree li::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    right: 50%;
+    border-top: 2px solid #ccc;
+    width: 50%;
+    height: 20px;
+}
+
+.org-tree li::after {
+    right: auto;
+    left: 50%;
+    border-left: 2px solid #ccc;
+}
+
+.org-tree li:only-child::after,
+.org-tree li:only-child::before {
+    display: none;
+}
+
+.org-tree li:only-child {
+    padding-top: 0;
+}
+
+.org-tree li:first-child::before,
+.org-tree li:last-child::after {
+    border: 0 none;
+}
+
+.org-tree li:last-child::before {
+    border-right: 2px solid #ccc;
+    border-radius: 0 5px 0 0;
+}
+
+.org-tree li:first-child::after {
+    border-radius: 5px 0 0 0;
+}
+
+.org-tree ul::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 50%;
+    border-left: 2px solid #ccc;
+    width: 0;
+    height: 20px;
+}
+
+/* card */
+.org-card {
+    background: white;
+    border: 2px solid #700a0a;
+    padding: 12px;
+    border-radius: 14px;
+    display: inline-block;
+    min-width: 140px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.08);
+    transition: 0.2s ease;
+}
+
+.org-card:hover {
+    transform: translateY(-4px);
+}
+
+.org-photo {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-bottom: 6px;
+}
+
+.org-name {
+    font-weight: 700;
+    font-size: 14px;
+}
+
+.org-position {
+    font-size: 11px;
+    color: #700a0a;
+    font-weight: 600;
+}
 </style>
 </head>
 
@@ -131,44 +320,14 @@ body {
     </div>
 </nav>
 
+
 <!-- ✅ MAIN -->
 <main class="max-w-6xl mx-auto px-6 py-12">
 
 <?php if (!empty($officers)): ?>
 
-    <div class="officers-grid">
-
-        <?php foreach ($officers as $o): ?>
-        <div class="officer-card">
-
-            <div class="card-banner"></div>
-
-            <div class="profile-img-container">
-                <img src="<?= !empty($o->photo)
-                    ? base_url($o->photo)
-                    : base_url('assets/images/person-male.png'); ?>">
-            </div>
-
-            <div class="card-body">
-
-                <div class="officer-position">
-                    <?= htmlspecialchars($o->position) ?>
-                </div>
-
-                <h5 class="officer-name">
-                    <?= ucwords(strtolower($o->full_name)) ?>
-                </h5>
-
-                <?php if (!empty($o->email)): ?>
-                    <div class="officer-email">
-                        <?= htmlspecialchars($o->email) ?>
-                    </div>
-                <?php endif; ?>
-
-            </div>
-        </div>
-        <?php endforeach; ?>
-
+    <div class="org-wrapper">
+        <?php renderOrg($orgTree); ?>
     </div>
 
 <?php else: ?>

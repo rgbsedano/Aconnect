@@ -1,55 +1,5 @@
 <style>
-    /* ===== SCOPED ONLY TO ACCOUNTS PAGE ===== */
-.accounts-page {
-    --primary-bg: #f8fafc;
-    --card-bg: #ffffff;
-    --text-main: #1e293b;
-    --text-muted: #64748b;
-    --accent-red: #700a0a;
-    --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-    --border-radius: 24px;
-}
 
-/* ===== LAYOUT ===== */
-.accounts-page .dashboard-wrapper {
-    max-width: 1400px;
-    margin: 0 auto;
-    padding: 20px 24px;
-}
-
-/* ✅ MATCH OFFICERS HEADER */
-.accounts-page .header-section {
-    margin-bottom: 24px;
-    display: flex;
-    justify-content: space-between;
-    align-items: flex-end;
-}
-
-.accounts-page .header-section h1 {
-    font-size: 28px;
-    font-weight: 700;
-    margin-bottom: 4px;
-    color: white;
-}
-
-.accounts-page .header-section h1 span {
-    color: #ff6b6b;
-}
-
-.accounts-page .header-section p {
-    color: rgba(255,255,255,0.85);
-    font-size: 14px;
-    margin: 0;
-}
-
-/* ===== CARD ===== */
-.accounts-page .main-card {
-    background: var(--card-bg);
-    border-radius: var(--border-radius);
-    padding: 30px;
-    box-shadow: 0 4px 6px -1px rgba(0,0,0,0.05);
-    border: 1px solid #f1f5f9;
-}
 
 /* ===== SEARCH POLISH ===== */
 .accounts-page #alumniSearch {
