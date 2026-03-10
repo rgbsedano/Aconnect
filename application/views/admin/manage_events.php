@@ -259,8 +259,17 @@ Swal.fire({
                     ?>
                         <tr class="data-row" id="row-<?= $event->id ?>" data-status="<?= $status_class ?>">
                             <td>
-                                <div class="event-name"><?= htmlspecialchars($event->event_name) ?></div>
-                                <span class="event-date"><?= date('M d, Y • h:i A', strtotime($event->event_date)) ?></span>
+                                <div style="display:flex; align-items:center; gap:12px;">
+                                    <?php if(!empty($event->image)): ?>
+                                        <div style="width:48px; height:48px; overflow:hidden; border-radius:8px; flex-shrink:0;">
+                                            <img src="<?= base_url('assets/uploads/events/') . $event->image ?>" style="width:100%; height:100%; object-fit:cover;">
+                                        </div>
+                                    <?php endif; ?>
+                                    <div>
+                                        <div class="event-name"><?= htmlspecialchars($event->event_name) ?></div>
+                                        <span class="event-date"><?= date('M d, Y • h:i A', strtotime($event->event_date)) ?></span>
+                                    </div>
+                                </div>
                             </td>
                             <td>
                                 <div style="font-size: 13px; font-weight: 600; color: var(--text-main);">
@@ -300,8 +309,13 @@ Swal.fire({
                 <h5 class="modal-title" style="font-weight: 700;" id="modalTitle">Create Event</h5>
                 <button type="button" class="close text-white" data-dismiss="modal">&times;</button>
             </div>
-            <form id="eventForm" method="POST">
+            <form id="eventForm" method="POST" enctype="multipart/form-data">
                 <div class="modal-body">
+                    <div class="form-group mb-3">
+                        <label class="form-label">Event Image</label>
+                        <input type="file" name="image" id="image" class="form-control-file" accept="image/*">
+                        <small class="form-text text-muted">Optional — upload a poster or hero image for the event.</small>
+                    </div>
                     <input type="hidden" name="event_id" id="event_id">
                     <div class="row">
                         <div class="col-12 mb-3">

@@ -25,6 +25,7 @@
             border-radius: 16px 16px 0 0;
             position: relative;
             margin-bottom: 0;
+            margin-top: 48px;
             box-shadow: var(--shadow-md);
             overflow: hidden;
         }
@@ -96,6 +97,53 @@
             display: inline-flex;
             align-items: center;
             gap: 6px;
+        }
+
+        /* Employment Form Styling */
+        .modal-body .form-group {
+            display: block;
+            width: 100%;
+            margin-bottom: 16px;
+        }
+
+        .modal-body .form-group label {
+            display: block;
+            font-weight: 600;
+            font-size: 14px;
+            color: var(--text);
+            margin-bottom: 8px;
+        }
+
+        .modal-body .form-control {
+            width: 100%;
+            padding: 10px 12px;
+            border: 1px solid var(--border);
+            border-radius: 6px;
+            font-size: 14px;
+            color: var(--text);
+            background: white;
+        }
+
+        .modal-body .form-control:focus {
+            border-color: var(--maroon);
+            outline: none;
+            box-shadow: 0 0 0 3px rgba(139, 21, 56, 0.1);
+        }
+
+        /* Fix dropdown visibility */
+        .modal-body {
+            overflow: visible !important;
+        }
+
+        .modal-body select {
+            position: relative;
+            z-index: 1000;
+        }
+
+        .modal-body select option {
+            padding: 8px 12px;
+            line-height: 1.5;
+            display: block;
         }
 
         .btn-edit-primary:hover {
@@ -707,9 +755,9 @@
 
                         <?php $e = isset($employment) ? $employment : []; ?>
 
-                        <div class="form-group">
-                            <label>Employment Status</label>
-                            <select name="employment_status" class="form-control" required>
+                        <div class="form-group" style="margin-bottom: 20px; visibility: visible; display: block;">
+                            <label style="font-weight: 600; font-size: 14px; margin-bottom: 8px; display: block;">Employment Status</label>
+                            <select name="employment_status" class="form-control" required style="width: 100%; padding: 10px 12px; border: 1px solid #E5E7EB; border-radius: 6px;">
                                 <option value="">-- Select Status --</option>
                                 <option value="Employed" <?= (isset($e['employment_status']) && $e['employment_status']=='Employed')? 'selected':'' ?>>Employed</option>
                                 <option value="Unemployed" <?= (isset($e['employment_status']) && $e['employment_status']=='Unemployed')? 'selected':'' ?>>Unemployed</option>

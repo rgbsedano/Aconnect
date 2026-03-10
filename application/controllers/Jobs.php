@@ -29,8 +29,11 @@ class Jobs extends CI_Controller {
             ];
         }
 
-        $search   = $this->input->get('search');
-        $location = $this->input->get('location');
+        $search   = trim($this->input->get('search',TRUE));
+        
+
+       
+        $location = trim($this->input->get('location',TRUE));
         $jobs = $this->Job_model->get_all_jobs($search, $location);
 
         $data = [

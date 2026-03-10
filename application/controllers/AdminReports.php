@@ -33,9 +33,13 @@ class AdminReports extends CI_Controller {
             'date_to'   => $this->input->get('date_to', TRUE),
         ];
 
+       
+
         // Engagement analytics (per graduation year)
         $data['engagement_by_year'] = $this->get_engagement_report_data();
 
+
+     
         // Employment rows (filtered)
         $data['employment_rows'] = $this->get_employment_report_data($filters);
         $data['filters'] = $filters;
@@ -66,6 +70,8 @@ class AdminReports extends CI_Controller {
             ->get()
             ->result_array();
 
+
+            // echo print_r($alumni_by_year);exit;
         // active alumni (last 30 days) per year
         $active_by_year = $this->db
             ->select('graduation_year, COUNT(*) AS active_alumni')
@@ -75,6 +81,8 @@ class AdminReports extends CI_Controller {
             ->get()
             ->result_array();
 
+            // echo print_r($alumni_by_year);exit;
+      
         // job applications per batch (if exists)
         $applications_by_batch = [];
         if ($this->db->table_exists('job_applications')) {

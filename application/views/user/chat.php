@@ -69,13 +69,13 @@
     }
 
     .message-text {
-        font-size: 14px;
+        font-size: clamp(0.9rem, 1.2vw + 0.2rem, 1.1rem);
         line-height: 1.5;
         margin: 0;
     }
 
     .message-time {
-        font-size: 11px;
+        font-size: clamp(0.7rem, 0.9vw + 0.1rem, 0.9rem);
         margin-top: 6px;
         opacity: 0.7;
         text-align: right;
@@ -102,18 +102,18 @@
     }
 
     .empty-chat i {
-        font-size: 56px;
+        font-size: clamp(2.2rem, 6vw, 3.6rem);
         color: var(--border);
         margin-bottom: 16px;
     }
 
     .empty-chat p {
         margin: 8px 0;
-        font-size: 14px;
+        font-size: clamp(0.9rem, 1.1vw + 0.1rem, 1.05rem);
     }
 
     .empty-chat .title {
-        font-size: 16px;
+        font-size: clamp(1rem, 1.4vw + 0.1rem, 1.25rem);
         font-weight: 600;
         color: var(--text);
     }

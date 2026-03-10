@@ -4,6 +4,18 @@
             --brand-red: #BE123C;
             --brand-gold: #D97706;
             --surface-gold: #FFFBEB;
+
+            /* Responsive type & spacing using clamp() */
+            --fs-xs: clamp(0.7rem, 0.9vw, 0.9rem);
+            --fs-sm: clamp(0.9rem, 1.1vw, 1.05rem);
+            --fs-base: clamp(1rem, 1.3vw, 1.15rem);
+            --fs-lg: clamp(1.25rem, 1.8vw, 1.6rem);
+            --fs-xl: clamp(1.6rem, 2.6vw, 2.2rem);
+
+            --space-sm: clamp(0.5rem, 0.8vw, 0.75rem);
+            --space-md: clamp(1rem, 1.6vw, 1.5rem);
+            --space-lg: clamp(1.5rem, 2.4vw, 2.25rem);
+            --card-pad: clamp(0.75rem, 1.6vw, 1.5rem);
         }
 
         body { 
@@ -21,6 +33,7 @@
         .job-card {
             transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
             border: 1px solid #e2e8f0;
+            padding: var(--card-pad); /* responsive padding */
         }
 
         .job-card:hover {
@@ -39,7 +52,7 @@
             display: flex;
         }
 
-        .custom-scrollbar::-webkit-scrollbar { width: 4px; }
+        .custom-scrollbar::-webkit-scrollbar { width: clamp(3px, 0.4vw, 6px); }
         .custom-scrollbar::-webkit-scrollbar-thumb { background: #cbd5e1; border-radius: 10px; }
 
         /* Animation for list entry */
@@ -48,6 +61,61 @@
             to { opacity: 1; transform: translateY(0); }
         }
         .animate-list { animation: slideUp 0.4s ease-out forwards; }
+
+        /* Modal sizing: clamp overall modal height and make inner content scrollable on small screens */
+        .modal-overlay { display: none; }
+        .modal-overlay.active { display: flex; align-items: center; justify-content: center; }
+
+        .modal-overlay > div.bg-white {
+            width: 100%;
+            max-width: clamp(20rem, 92%, 56rem);
+            max-height: clamp(60vh, 80vh, 92vh);
+            display: flex;
+            flex-direction: column;
+            overflow: hidden;
+            border-radius: 1.25rem;
+        }
+
+        /* Image header: clamp height so it doesn't grow too tall */
+        .modal-overlay > div.bg-white > .w-full.h-48,
+        .modal-overlay > div.bg-white > .h-32 {
+            height: clamp(6.5rem, 22vw, 12rem) !important;
+            min-height: clamp(6.5rem, 18vw, 8rem) !important;
+        }
+
+        /* Content area inside modal becomes scrollable if needed */
+        .modal-overlay > div.bg-white > .p-8 {
+            padding: var(--card-pad);
+            overflow-y: auto;
+            -webkit-overflow-scrolling: touch;
+        }
+
+        /* Ensure footer buttons stay visible and layout compresses on small screens */
+        .modal-overlay .pt-6, .modal-overlay .pt-12 {
+            padding-top: clamp(0.75rem, 1.6vw, 1.25rem) !important;
+        }
+
+        /* When active, prevent body from double-scrolling (handled in JS, but enforce here too) */
+        body.modal-open { overflow: hidden; }
+
+        /* Responsive overrides using clamp() to complement utility classes */
+        nav h1 { font-size: var(--fs-lg); }
+        nav p { font-size: var(--fs-xs); }
+
+        #total-counter { font-size: var(--fs-xs); padding: calc(var(--space-sm) / 2) var(--space-sm); }
+
+        #search-input { font-size: var(--fs-base); padding: clamp(0.6rem, 1.2vw, 0.95rem); }
+
+        /* Thumbnail size inside job card */
+        .job-card .w-16.h-16 { width: clamp(3rem, 6vw, 4rem); height: clamp(3rem, 6vw, 4rem); }
+
+        .job-card h3 { font-size: var(--fs-lg); }
+        .job-card .text-xs { font-size: var(--fs-xs) !important; }
+        .job-card .text-sm { font-size: var(--fs-base) !important; }
+
+        .job-card .p-5 { padding: var(--card-pad) !important; }
+
+        .modal-overlay .p-4 { padding: clamp(0.75rem, 1.6vw, 1.5rem) !important; }
     </style>
 
 <body class="bg-pattern text-slate-900 antialiased">
