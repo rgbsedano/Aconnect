@@ -640,7 +640,13 @@
     if (locationInput) {
         locationInput.addEventListener('input', function() {
             clearTimeout(liveSearchTimeout);
-            liveSearchTimeout = setTimeout(performLiveSearch, 300);
+            
+            if (this.value.length === 0 && (!searchInput || searchInput.value.length === 0)) {
+                // Reload page when both search and location are cleared
+                location.reload();
+            } else {
+                liveSearchTimeout = setTimeout(performLiveSearch, 300);
+            }
         });
     }
 </script>
