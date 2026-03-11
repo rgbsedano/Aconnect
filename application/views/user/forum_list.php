@@ -1,492 +1,467 @@
 <style>
+@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap');
 
 :root {
     --brand-red: #BE123C;
-    --brand-gold: #D97706;
+    --brand-red-dark: #881337;
+    --brand-red-light: #FFF1F2;
 }
 
-body { 
-    background-color: #F8FAFC;
+body {
     font-family: 'Plus Jakarta Sans', sans-serif;
-}
-
-.bg-pattern {
     background-color: #f8fafc;
     background-image: radial-gradient(#e2e8f0 0.5px, transparent 0.5px);
     background-size: 24px 24px;
 }
 
+.forum-header-bar {
+    background: rgba(255, 255, 255, 0.7);
+    backdrop-filter: blur(24px);
+    -webkit-backdrop-filter: blur(24px);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+    position: fixed;
+    top: 55px; /* Exactly at the bottom of 55px nav */
+    left: 0;
+    right: 0;
+    width: 100%;
+    z-index: 999;
+}
+
+/* ── Layout ── */
+.forum-layout {
+    max-width: 1100px;
+    margin: 64px auto 0; /* Adjusted for fixed header height approx 64px */
+    padding: 32px 20px 80px;
+    display: grid;
+    grid-template-columns: 1fr 300px;
+    gap: 28px;
+}
+
+@media (max-width: 900px) {
+    .forum-layout { grid-template-columns: 1fr; }
+    .forum-sidebar { display: none; }
+}
+
+/* ── Search bar ── */
+.forum-search-bar {
+    background: #fff;
+    border: 1px solid #e2e8f0;
+    border-radius: 20px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 0 16px;
+    transition: border-color .2s, box-shadow .2s;
+}
+.forum-search-bar:focus-within {
+    border-color: var(--brand-red);
+    box-shadow: 0 0 0 3px rgba(190,18,60,.08);
+}
+.forum-search-bar input {
+    border: none;
+    background: transparent;
+    padding: 12px 0;
+    width: 100%;
+    font-size: 14px;
+    font-weight: 500;
+    outline: none;
+    color: #0f172a;
+}
+
+/* ── Sort Tabs ── */
+.sort-tabs { display: flex; gap: 4px; }
+.sort-tab {
+    padding: 6px 14px;
+    border-radius: 20px;
+    font-size: 12px;
+    font-weight: 700;
+    cursor: pointer;
+    border: none;
+    background: transparent;
+    color: #64748b;
+    transition: all .2s;
+    text-decoration: none;
+}
+.sort-tab:hover { background: #f1f5f9; color: #0f172a; }
+.sort-tab.active { background: var(--brand-red); color: #fff; }
+
+/* ── Post Card ── */
 .post-card {
-    transition: all .25s ease;
-    border:1px solid #e2e8f0;
+    background: #fff;
+    border-radius: 20px;
+    border: 1px solid #e8ecf0;
+    padding: 0;
+    display: flex;
+    overflow: hidden;
+    transition: box-shadow .2s, transform .2s, border-color .2s;
+    cursor: pointer;
+    text-decoration: none !important;
+    color: inherit !important;
+}
+.post-card:hover {
+    box-shadow: 0 8px 30px -8px rgba(190,18,60,.15);
+    transform: translateY(-2px);
+    border-color: #fda4af;
+    text-decoration: none !important;
+    color: inherit !important;
 }
 
-.post-card:hover{
-    transform:translateY(-4px);
-    border-color:#D97706;
-    box-shadow:0 12px 24px -10px rgba(190,18,60,0.1);
+/* Reddit-style vote bar on left */
+.post-vote-bar {
+    width: 52px;
+    flex-shrink: 0;
+    background: #f8fafc;
+    border-right: 1px solid #f1f5f9;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 4px;
+    padding: 16px 0;
+    color: #94a3b8;
+}
+.vote-count {
+    font-size: 13px;
+    font-weight: 800;
+    color: #0f172a;
+    line-height: 1;
 }
 
-@keyframes slideUp {
-    from {opacity:0; transform:translateY(20px);}
-    to {opacity:1; transform:translateY(0);}
+.post-body { padding: 16px 20px; flex-grow: 1; min-width: 0; }
+
+.post-meta { display: flex; align-items: center; gap: 8px; margin-bottom: 6px; flex-wrap: wrap; }
+.post-avatar {
+    width: 28px; height: 28px; border-radius: 50%;
+    object-fit: cover; border: 2px solid #f1f5f9;
+    background: #f1f5f9; flex-shrink: 0;
+    display: flex; align-items: center; justify-content: center;
+    font-weight: 800; font-size: 11px; color: var(--brand-red);
+    overflow: hidden;
+}
+.post-author { font-size: 12px; font-weight: 700; color: #475569; }
+.post-time { font-size: 11px; color: #94a3b8; }
+.anon-badge {
+    background: #f1f5f9; color: #64748b;
+    font-size: 10px; font-weight: 700;
+    padding: 2px 8px; border-radius: 20px;
+    text-transform: uppercase; letter-spacing: 0.5px;
 }
 
-.animate-list{
-    animation:slideUp .4s ease-out forwards;
+.post-title {
+    font-size: 16px; font-weight: 800; color: #0f172a;
+    line-height: 1.4; margin: 0 0 6px;
 }
-.modal-dialog {
-    margin-top: 10vh;
-    transform: translateY(20px);
-}
-.modal-content{
-    border-radius:16px;
-    border:none;
-    box-shadow:0 20px 40px rgba(0,0,0,0.15);
+.post-card:hover .post-title { color: var(--brand-red); }
+
+.post-preview {
+    font-size: 13px; color: #64748b; line-height: 1.6;
+    display: -webkit-box; -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical; overflow: hidden;
+    margin-bottom: 10px;
 }
 
-.modal-header{
-    border-bottom:1px solid #f1f5f9;
+.post-stats { display: flex; align-items: center; gap: 16px; }
+.post-stat {
+    display: flex; align-items: center; gap: 5px;
+    font-size: 12px; font-weight: 600; color: #94a3b8;
+}
+.post-stat svg { width: 14px; height: 14px; }
+.post-stat-likes { color: #f43f5e; }
+
+.post-image-thumb {
+    width: 90px; flex-shrink: 0;
+    margin: 12px 12px 12px 0; border-radius: 12px;
+    overflow: hidden; align-self: center;
+}
+.post-image-thumb img { width: 100%; height: 90px; object-fit: cover; }
+
+/* ── Create Post Button ── */
+.create-post-btn {
+    display: flex; align-items: center; gap: 12px;
+    background: #fff; border: 1px solid #e2e8f0;
+    border-radius: 20px; padding: 10px 16px; width: 100%;
+    cursor: pointer; transition: border-color .2s;
+    margin-bottom: 16px;
+}
+.create-post-btn:hover { border-color: var(--brand-red); }
+.create-post-input {
+    flex-grow: 1; background: #f8fafc; border: 1px solid #e2e8f0;
+    border-radius: 12px; padding: 8px 14px; font-size: 13px;
+    font-weight: 500; color: #94a3b8; cursor: pointer;
+    pointer-events: none;
 }
 
-.modal-footer{
-    border-top:1px solid #f1f5f9;
+/* ── Sidebar ── */
+.forum-sidebar-card {
+    background: #fff; border: 1px solid #e2e8f0;
+    border-radius: 20px; padding: 20px; margin-bottom: 16px;
+}
+.sidebar-title {
+    font-size: 11px; font-weight: 800; color: #94a3b8;
+    text-transform: uppercase; letter-spacing: 1px; margin-bottom: 12px;
 }
 
-.pagination a{
-    display:inline-block;
-    padding:8px 14px;
-    font-size:13px;
-    font-weight:600;
-    border-radius:8px;
-    background:#f1f5f9;
-    color:#475569;
-    text-decoration:none;
-    transition:all .2s ease;
+/* ── Empty state ── */
+.empty-state {
+    text-align: center; padding: 80px 24px;
+    background: #fff; border-radius: 24px;
+    border: 2px dashed #e2e8f0;
 }
 
-.pagination a:hover{
-    background:#BE123C;
-    color:white;
+/* ── Pagination ── */
+.forum-pagination { display: flex; gap: 6px; justify-content: center; margin-top: 24px; }
+.forum-pagination a, .forum-pagination span {
+    display: inline-flex; align-items: center; justify-content: center;
+    width: 36px; height: 36px; border-radius: 10px;
+    font-size: 13px; font-weight: 700; text-decoration: none;
+    background: #fff; color: #475569; border: 1px solid #e2e8f0;
+    transition: all .2s;
 }
+.forum-pagination a:hover { background: #fef2f2; border-color: var(--brand-red); color: var(--brand-red); }
+.forum-pagination span.current { background: var(--brand-red); color: #fff; border-color: var(--brand-red); }
 
-.pagination span{
-    display:inline-block;
-    padding:8px 14px;
+/* ── Modal ── */
+.create-modal .modal-content {
+    border-radius: 24px; border: none;
+    box-shadow: 0 25px 60px -10px rgba(0,0,0,.2);
+    overflow: hidden;
 }
-.pagination a.active{
-    background:#BE123C;
-    color:white;
+.create-modal .modal-header {
+    background: linear-gradient(135deg, var(--brand-red) 0%, var(--brand-red-dark) 100%);
+    border: none; padding: 20px 24px;
 }
+.create-modal .modal-title { color: #fff; font-weight: 800; font-size: 18px; }
+.create-modal .modal-header .close { color: rgba(255,255,255,.7); }
+.create-modal .modal-body { padding: 24px; }
+.create-modal .form-label {
+    font-size: 11px; font-weight: 800; color: #64748b;
+    text-transform: uppercase; letter-spacing: 1px; margin-bottom: 6px;
+}
+.create-modal .form-control {
+    border-radius: 12px; border: 1.5px solid #e2e8f0; padding: 10px 14px;
+    font-size: 14px; font-weight: 500;
+    transition: border-color .2s, box-shadow .2s;
+}
+.create-modal .form-control:focus {
+    border-color: var(--brand-red); box-shadow: 0 0 0 3px rgba(190,18,60,.08);
+    outline: none;
+}
+.create-modal .btn-post {
+    background: var(--brand-red); color: #fff; border: none;
+    border-radius: 14px; padding: 12px 32px; font-weight: 800;
+    font-size: 14px; transition: background .2s; width: 100%;
+}
+.create-modal .btn-post:hover { background: var(--brand-red-dark); }
+
+@keyframes fadeInUp {
+    from { opacity: 0; transform: translateY(16px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+.post-card { animation: fadeInUp .3s ease-out forwards; }
 </style>
 
-
-<body class="bg-pattern text-slate-900">
-
-<nav class="bg-white/80 backdrop-blur-md border-b border-slate-200 sticky top-0 z-40">
-
-<div class="max-w-6xl mx-auto px-6 py-4 flex items-center justify-between">
-
-<div class="flex items-center gap-3">
-
-<div class="w-10 h-10 bg-rose-700 rounded-xl flex items-center justify-center shadow-lg shadow-rose-200">
-
-<i class="fas fa-comments text-amber-400"></i>
-
+<!-- ── Page header bar ── -->
+<div class="forum-header-bar">
+    <div style="max-width:1185px; margin:0 auto; padding:12px 25px; display:flex; align-items:center; justify-content:space-between; gap:16px; flex-wrap:wrap;">
+        <div style="display:flex; align-items:center; gap:12px;">
+            <div style="width:40px;height:40px;background:var(--brand-red);border-radius:14px;display:flex;align-items:center;justify-content:center;box-shadow:0 4px 12px rgba(190,18,60,.25);">
+                <svg style="width:20px;height:20px;color:#fff;fill:none;stroke:#fff;stroke-width:2;" viewBox="0 0 24 24"><path d="M17 8h2a2 2 0 012 2v6a2 2 0 01-2 2h-2v4l-4-4H9a1.994 1.994 0 01-1.414-.586m0 0L11 14h4a2 2 0 002-2V6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2v4l.586-.586z"/></svg>
+            </div>
+            <div>
+                <h1 style="font-size:18px;font-weight:800;color:#0f172a;margin:0;">Forum <span style="color:var(--brand-red);">Discussions</span></h1>
+                <p style="font-size:10px;font-weight:700;color:#94a3b8;text-transform:uppercase;letter-spacing:.15em;margin:0;">Alumni Community · <?= $total_posts ?? 0 ?> Posts</p>
+            </div>
+        </div>
+        <button data-toggle="modal" data-target="#createPostModal"
+            style="background:var(--brand-red);color:#fff;border:none;border-radius:14px;padding:10px 22px;font-weight:800;font-size:13px;display:flex;align-items:center;gap:8px;cursor:pointer;box-shadow:0 4px 12px rgba(190,18,60,.25);transition:background .2s;"
+            onmouseover="this.style.background='#881337'" onmouseout="this.style.background='var(--brand-red)'">
+            <svg width="14" height="14" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-width="2.5" d="M12 4v16m-8-8h16"/></svg>
+            New Post
+        </button>
+    </div>
 </div>
 
-<div>
+<!-- ── Main layout ── -->
+<div class="forum-layout">
 
-<h1 class="text-xl font-bold text-slate-900">
-Forum <span class="text-rose-700">Discussions</span>
-</h1>
+    <!-- ── Main feed ── -->
+    <div>
+        <!-- Search + Sort row -->
+        <div style="display:flex; flex-wrap:wrap; gap:10px; align-items:center; margin-bottom:20px;">
+            <div class="forum-search-bar" style="flex:1; min-width:200px;">
+                <svg width="16" height="16" fill="none" stroke="#94a3b8" viewBox="0 0 24 24"><path stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"/></svg>
+                <input type="text" id="search-input" placeholder="Search discussions..." value="<?= htmlspecialchars($this->input->get('search') ?? '') ?>">
+            </div>
+            <div class="sort-tabs">
+                <a href="<?= base_url('forum?sort=') ?>" class="sort-tab <?= (!$this->input->get('sort') || $this->input->get('sort')=='') ? 'active' : '' ?>">🔥 Latest</a>
+                <a href="<?= base_url('forum?sort=likes') ?>" class="sort-tab <?= $this->input->get('sort')=='likes' ? 'active' : '' ?>">❤️ Top</a>
+                <a href="<?= base_url('forum?sort=comments') ?>" class="sort-tab <?= $this->input->get('sort')=='comments' ? 'active' : '' ?>">💬 Hot</a>
+                <a href="<?= base_url('forum?sort=myposts') ?>" class="sort-tab <?= $this->input->get('sort')=='myposts' ? 'active' : '' ?>">👤 Mine</a>
+            </div>
+        </div>
 
-<p class="text-[11px] font-semibold text-slate-500 uppercase tracking-widest">
-Student Community
-</p>
+        <!-- Create post shortcut -->
+        <div class="create-post-btn" data-toggle="modal" data-target="#createPostModal">
+            <div class="post-avatar" style="width:36px;height:36px;border-radius:50%;background:#f1f5f9;flex-shrink:0;"></div>
+            <div class="create-post-input">Start a discussion...</div>
+            <button style="background:var(--brand-red);color:#fff;border:none;border-radius:10px;padding:7px 16px;font-size:12px;font-weight:800;cursor:pointer;" onclick="event.stopPropagation();" data-toggle="modal" data-target="#createPostModal">Post</button>
+        </div>
 
-</div>
+        <!-- Posts feed -->
+        <?php if (!empty($posts)): ?>
+            <div id="forum-feed" style="display:flex;flex-direction:column;gap:10px;">
+                <?php foreach($posts as $idx => $p): ?>
+                <a href="<?= base_url('forum/view/'.$p->id) ?>" class="post-card" style="animation-delay:<?= $idx * 40 ?>ms;">
+                    <!-- Vote sidebar -->
+                    <div class="post-vote-bar">
+                        <svg width="18" height="18" fill="none" stroke="currentColor" viewBox="0 0 24 24" style="opacity:.4"><path stroke-width="2" d="M5 15l7-7 7 7"/></svg>
+                        <span class="vote-count"><?= $p->like_count ?></span>
+                        <svg width="18" height="18" fill="none" stroke="currentColor" viewBox="0 0 24 24" style="opacity:.2"><path stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+                    </div>
 
-</div>
+                    <!-- Content -->
+                    <div class="post-body">
+                        <div class="post-meta">
+                            <?php if($p->is_anonymous): ?>
+                                <div class="post-avatar">?</div>
+                                <span class="anon-badge">Anonymous</span>
+                            <?php else: ?>
+                                <?php if($p->profile_image): ?>
+                                    <div class="post-avatar"><img src="<?= base_url('assets/uploads/alumni/'.$p->profile_image) ?>" style="width:100%;height:100%;object-fit:cover;"></div>
+                                <?php else: ?>
+                                    <div class="post-avatar"><?= strtoupper(substr($p->first_name,0,1)) ?></div>
+                                <?php endif; ?>
+                                <span class="post-author"><?= htmlspecialchars($p->first_name.' '.$p->last_name) ?></span>
+                            <?php endif; ?>
+                            <span class="post-time">· <?= time_ago($p->created_at) ?></span>
+                        </div>
 
-<a href="#" data-toggle="modal" data-target="#createPostModal"
-class="bg-rose-700 text-white text-xs font-bold px-5 py-2 rounded-xl hover:bg-rose-800 transition shadow-md shadow-rose-100">
+                        <h3 class="post-title"><?= htmlspecialchars($p->title) ?></h3>
+                        <p class="post-preview"><?= htmlspecialchars(strip_tags($p->content)) ?></p>
 
-+ Create Post
+                        <div class="post-stats">
+                            <span class="post-stat post-stat-likes">
+                                <svg fill="currentColor" viewBox="0 0 20 20"><path d="M3.172 5.172a4 4 0 015.656 0L10 6.343l1.172-1.171a4 4 0 115.656 5.656L10 17.657l-6.828-6.829a4 4 0 010-5.656z"/></svg>
+                                <?= $p->like_count ?> likes
+                            </span>
+                            <span class="post-stat">
+                                <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-width="2" d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z"/></svg>
+                                <?= $p->comment_count ?> comments
+                            </span>
+                        </div>
+                    </div>
 
-</a>
-
-</div>
-
-</nav>
-
-
-<main class="max-w-6xl mx-auto px-6 py-12">
-
-
-<!-- SEARCH / FILTER -->
-
-<form method="get" action="<?= base_url('forum') ?>">
-
-<div class="bg-white p-2 rounded-2xl shadow-sm border border-slate-200 mb-10 flex flex-col md:flex-row gap-2">
-
-<div class="flex-grow flex items-center px-4 gap-3 border-r border-slate-100">
-
-<i class="fas fa-search text-slate-400"></i>
-
-<input type="text"
-name="search"
-id="search-input"
-value="<?= $this->input->get('search') ?>"
-placeholder="Search forum discussions..."
-class="w-full py-3 bg-transparent outline-none text-sm font-medium">
-
-</div>
-
-<div class="flex gap-2 p-1">
-
-<select name="sort"
-class="bg-slate-50 text-xs font-bold py-2 px-4 rounded-xl"
-onchange="this.form.submit()">
-
-<option value="">Latest</option>
-
-<option value="likes"
-<?= $this->input->get('sort')=='likes'?'selected':'' ?>>
-Most Liked
-</option>
-
-<option value="comments"
-<?= $this->input->get('sort')=='comments'?'selected':'' ?>>
-Most Commented
-</option>
-
-<option value="myposts"
-<?= $this->input->get('sort')=='myposts'?'selected':'' ?>>
-My Posts
-</option>
-
-</select>
-
-</div>
-
-</div>
-
-</form>
-
-
-<!-- POSTS -->
-<div id="forum-feed" class="space-y-4">
-
-<?php foreach($posts as $idx => $p): ?>
-
-<a href="<?= base_url('forum/view/'.$p->id) ?>">
-<div class="post-card bg-white p-3 rounded-xl flex gap-3 animate-list"
-style="animation-delay:<?= $idx * 50 ?>ms">
-
-    <div class="w-14 h-14 rounded-xl overflow-hidden bg-slate-100 border">
-
-        <?php if($p->is_anonymous): ?>
-
-            <div class="w-full h-full flex items-center justify-center text-gray-400">
-                <i class="fas fa-user-secret text-xl"></i>
+                    <?php if(!empty($p->image)): ?>
+                    <div class="post-image-thumb">
+                        <img src="<?= base_url('assets/uploads/forum/'.$p->image) ?>" alt="">
+                    </div>
+                    <?php endif; ?>
+                </a>
+                <?php endforeach; ?>
             </div>
 
         <?php else: ?>
-
-            <?php if($p->profile_image): ?>
-
-                <img src="<?= base_url('assets/uploads/alumni/'.$p->profile_image) ?>"
-                class="w-full h-full object-cover">
-
-            <?php else: ?>
-
-                <div class="w-full h-full flex items-center justify-center text-rose-700 font-bold">
-                    <?= strtoupper(substr($p->first_name,0,1)) ?>
+            <div class="empty-state">
+                <div style="width:64px;height:64px;background:#fef2f2;border-radius:50%;display:flex;align-items:center;justify-content:center;margin:0 auto 16px;">
+                    <svg width="32" height="32" fill="none" stroke="#fda4af" viewBox="0 0 24 24"><path stroke-width="1.5" d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z"/></svg>
                 </div>
-
-            <?php endif; ?>
-
+                <h3 style="font-size:18px;font-weight:800;color:#0f172a;margin:0 0 6px;">No discussions yet</h3>
+                <p style="font-size:14px;color:#94a3b8;margin:0 0 20px;">Be the first to start a conversation!</p>
+                <button data-toggle="modal" data-target="#createPostModal" style="background:var(--brand-red);color:#fff;border:none;border-radius:12px;padding:10px 24px;font-weight:800;font-size:13px;cursor:pointer;">Start Discussion</button>
+            </div>
         <?php endif; ?>
 
+        <!-- Pagination -->
+        <?php if(!empty($pagination)): ?>
+        <div class="forum-pagination"><?= $pagination ?></div>
+        <?php endif; ?>
     </div>
 
+    <!-- ── Sidebar ── -->
+    <div class="forum-sidebar">
+        <div class="forum-sidebar-card" style="background:linear-gradient(135deg,var(--brand-red) 0%,#881337 100%);border:none;">
+            <h3 style="font-size:16px;font-weight:800;color:#fff;margin:0 0 6px;">Community Rules</h3>
+            <p style="font-size:12px;color:rgba(255,255,255,.8);margin:0 0 16px;line-height:1.6;">A space for alumni to connect, share knowledge, and support each other.</p>
+            <button data-toggle="modal" data-target="#createPostModal" style="width:100%;background:#fff;color:var(--brand-red);border:none;border-radius:12px;padding:10px;font-weight:800;font-size:13px;cursor:pointer;">+ Create Post</button>
+        </div>
 
-<div class="flex-grow">
-
-<h3 class="text-lg font-bold text-slate-900">
-
-<?= htmlspecialchars($p->title) ?>
-
-</h3>
-
-
-
-<div class="flex items-center gap-4 mt-3 text-xs text-slate-500">
-
-<span>
-
-👤 <?= $p->is_anonymous ? "Anonymous" : $p->first_name." ".$p->last_name ?>
-
-</span>
-
-<span>
-
-❤️ <?= $p->like_count ?>
-
-</span>
-
-<span>
-
-💬 <?= $p->comment_count ?>
-
-</span>
-
-<span>
-
-<?= time_ago($p->created_at) ?>
-
-</span>
-
-</div>
-
-</div>
-
-</div>
-
-</a>
-
-<?php endforeach; ?>
-
-</div>
-
-
-<!-- PAGINATION -->
-
-<div class="pagination flex justify-center mt-10">
-<?= $pagination ?>
-</div>
-<!-- CREATE POST MODAL -->
-<div class="modal fade" id="createPostModal" tabindex="-1">
-    <div class="modal-dialog modal-lg">
-        <div class="modal-content">
-
-            <div class="modal-header">
-                <h5 class="modal-title">Create Forum Post</h5>
-                <button type="button" class="close" data-dismiss="modal">
-                    &times;
-                </button>
+        <div class="forum-sidebar-card">
+            <div class="sidebar-title">Community guidelines</div>
+            <?php foreach(['Be respectful and constructive','No spam or self-promotion','Keep it relevant to alumni life'] as $i => $rule): ?>
+            <div style="display:flex;align-items:flex-start;gap:10px;padding:8px 0;border-bottom:1px solid #f1f5f9;font-size:13px;color:#475569;">
+                <span style="font-weight:800;color:var(--brand-red);min-width:20px;"><?= $i+1 ?>.</span>
+                <?= $rule ?>
             </div>
+            <?php endforeach; ?>
+        </div>
 
-            <form method="post" action="<?= base_url('forum/create_post') ?>" enctype="multipart/form-data">
-
-                <div class="modal-body">
-
-                    <div class="form-group">
-                        <label>Title</label>
-                        <input type="text"
-                               name="title"
-                               class="form-control"
-                               placeholder="Enter discussion title"
-                               required>
-                    </div>
-
-                    <div class="form-group">
-                        <label>Content</label>
-                        <textarea name="content"
-                                  class="form-control"
-                                  rows="4"
-                                  placeholder="Write your post..."
-                                  required></textarea>
-                    </div>
-
-                    <div class="form-group">
-                        <label>Upload Image (Optional)</label>
-                        <input type="file"
-                               name="image"
-                               class="form-control">
-                    </div>
-
-                    <div class="form-check">
-                        <input type="checkbox"
-                               name="anonymous"
-                               value="1"
-                               class="form-check-input">
-                        <label class="form-check-label">
-                            Post as Anonymous
-                        </label>
-                    </div>
-
-                </div>
-
-                <div class="modal-footer">
-
-                    <button type="button"
-                            class="btn btn-secondary"
-                            data-dismiss="modal">
-                        Cancel
-                    </button>
-
-                    <button type="submit"
-                            class="btn btn-danger">
-                        Post Discussion
-                    </button>
-
-                </div>
-
-            </form>
-
+        <div class="forum-sidebar-card">
+            <div class="sidebar-title">Sort by</div>
+            <?php
+            $sorts = ['' => '🔥 New — Latest posts first', 'likes' => '❤️ Top — Most liked', 'comments' => '💬 Hot — Most commented', 'myposts' => '👤 Mine — My posts'];
+            $cur = $this->input->get('sort') ?? '';
+            foreach($sorts as $val => $label): ?>
+            <a href="<?= base_url('forum?sort='.$val) ?>"
+               style="display:block;padding:8px 12px;border-radius:10px;font-size:13px;font-weight:600;text-decoration:none;color:<?= $cur==$val ? 'var(--brand-red)' : '#475569' ?>;background:<?= $cur==$val ? '#fef2f2' : 'transparent' ?>;margin-bottom:2px;transition:background .15s;">
+                <?= $label ?>
+            </a>
+            <?php endforeach; ?>
         </div>
     </div>
 </div>
 
-
-
-</main>
-<script>
-
-
-let timer;
-let currentPage = 0;
-
-function loadSearch(page = 0){
-
-    let keyword = document.getElementById("search-input").value.trim();
-    let sort = document.querySelector("select[name='sort']").value;
-
-    /* If search is cleared return to normal pagination page */
-    if(keyword === ""){
-        window.location.href = "<?= base_url('forum') ?>";
-        return;
-    }
-
-    let container = document.getElementById("forum-feed");
-
-    /* Loading indicator */
-    container.innerHTML = `
-        <div class="text-center py-6 text-gray-400">
-            Searching...
-        </div>
-    `;
-
-    fetch(`<?= base_url('forum/live_search') ?>?search=${keyword}&sort=${sort}&page=${page}`)
-    .then(res => res.json())
-    .then(data => {
-
-        container.innerHTML = "";
-
-        if(data.posts.length === 0){
-            container.innerHTML = `
-                <div class="text-center py-10 text-gray-400">
-                    No posts found
-                </div>`;
-            document.querySelector(".pagination").innerHTML = "";
-            return;
-        }
-
-        data.posts.forEach(post => {
-
-            let avatar = '';
-
-            if(post.is_anonymous == 1){
-                avatar = `
-                    <div class="w-14 h-14 rounded-xl overflow-hidden bg-slate-100 border flex items-center justify-center text-gray-400">
-                        <i class="fas fa-user-secret text-xl"></i>
+<!-- ── Create Post Modal ── -->
+<div class="modal fade create-modal" id="createPostModal" tabindex="-1">
+    <div class="modal-dialog modal-lg modal-dialog-centered">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title">
+                    <svg width="18" height="18" fill="none" stroke="currentColor" viewBox="0 0 24 24" style="display:inline;vertical-align:middle;margin-right:8px;"><path stroke-width="2" d="M11 5H6a2 2 0 00-2 2v11a2 2 0 002 2h11a2 2 0 002-2v-5m-1.414-9.414a2 2 0 112.828 2.828L11.828 15H9v-2.828l8.586-8.586z"/></svg>
+                    Create Discussion
+                </h5>
+                <button type="button" class="close" data-dismiss="modal" style="color:rgba(255,255,255,.8);font-size:22px;">&times;</button>
+            </div>
+            <form method="post" action="<?= base_url('forum/create_post') ?>" enctype="multipart/form-data">
+                <div class="modal-body">
+                    <div class="form-group">
+                        <label class="form-label">Discussion Title</label>
+                        <input type="text" name="title" class="form-control" placeholder="What's on your mind?" required>
                     </div>
-                `;
-            }
-            else if(post.profile_image){
-                avatar = `
-                    <img src="<?= base_url('assets/uploads/alumni/') ?>${post.profile_image}"
-                    class="w-14 h-14 rounded-xl object-cover border">
-                `;
-            }
-            else{
-                avatar = `
-                    <div class="w-14 h-14 rounded-xl bg-slate-100 flex items-center justify-center text-rose-700 font-bold border">
-                        ${post.first_name.charAt(0)}
+                    <div class="form-group">
+                        <label class="form-label">Content</label>
+                        <textarea name="content" class="form-control" rows="5" placeholder="Share your thoughts, questions, or insights..." required></textarea>
                     </div>
-                `;
-            }
-
-            container.innerHTML += `
-            <a href="<?= base_url('forum/view/') ?>${post.id}">
-                <div class="post-card bg-white p-3 rounded-xl flex gap-3">
-
-                    ${avatar}
-
-                    <div class="flex-grow">
-
-                        <h3 class="text-lg font-bold text-slate-900">
-                            ${post.title}
-                        </h3>
-
-                        <div class="flex items-center gap-4 mt-3 text-xs text-slate-500">
-
-                            <span>
-                                👤 ${post.is_anonymous ? 'Anonymous' : post.first_name + ' ' + post.last_name}
-                            </span>
-
-                            <span>❤️ ${post.like_count}</span>
-
-                            <span>💬 ${post.comment_count}</span>
-
-                        </div>
-
+                    <div class="form-group">
+                        <label class="form-label">Attach Image (Optional)</label>
+                        <input type="file" name="image" class="form-control" accept="image/jpg,image/jpeg,image/png" style="padding:8px;">
                     </div>
-
+                    <div style="display:flex;align-items:center;gap:10px;padding:12px 16px;background:#f8fafc;border-radius:12px;border:1.5px solid #e2e8f0;">
+                        <input type="checkbox" name="anonymous" value="1" id="anon-check" style="width:16px;height:16px;cursor:pointer;accent-color:var(--brand-red);">
+                        <label for="anon-check" style="margin:0;font-size:13px;font-weight:600;color:#475569;cursor:pointer;">Post as Anonymous</label>
+                        <span style="margin-left:auto;font-size:11px;color:#94a3b8;">Your identity will be hidden</span>
+                    </div>
                 </div>
-            </a>
-            `;
+                <div class="modal-footer" style="border:none;padding:0 24px 24px;">
+                    <button type="button" class="btn btn-light" data-dismiss="modal" style="border-radius:12px;font-weight:700;padding:10px 24px;">Cancel</button>
+                    <button type="submit" class="btn-post">Publish Discussion</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
 
-        });
-
-        renderPagination(data.total, page);
-
-    });
-
-}
-
-function renderPagination(total, currentPage){
-
-    let perPage = 3;
-    let pages = Math.ceil(total / perPage);
-
-    let pagination = document.querySelector(".pagination");
-    pagination.innerHTML = "";
-
-    if(pages <= 1) return;
-
-    for(let i=0;i<pages;i++){
-
-        let link = document.createElement("a");
-
-        link.innerText = i+1;
-        link.href = "javascript:void(0)";
-
-        if(i*perPage === currentPage){
-            link.style.background = "#BE123C";
-            link.style.color = "white";
+<script>
+let searchTimer;
+document.getElementById('search-input').addEventListener('keyup', function() {
+    clearTimeout(searchTimer);
+    const q = this.value.trim();
+    searchTimer = setTimeout(() => {
+        const sort = new URLSearchParams(window.location.search).get('sort') || '';
+        if (q === '') {
+            window.location.href = '<?= base_url('forum') ?>' + (sort ? '?sort='+sort : '');
+        } else {
+            window.location.href = '<?= base_url('forum') ?>?search=' + encodeURIComponent(q) + (sort ? '&sort='+sort : '');
         }
-
-        link.onclick = () => loadSearch(i*perPage);
-
-        pagination.appendChild(link);
-
-    }
-
-}
-
-/* Live search typing */
-document.getElementById("search-input").addEventListener("keyup", function(){
-
-    clearTimeout(timer);
-
-    timer = setTimeout(function(){
-        loadSearch(0);
-    },400);
-
+    }, 400);
 });
-
 </script>
-

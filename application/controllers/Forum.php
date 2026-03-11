@@ -31,31 +31,34 @@ class Forum extends CI_Controller {
         $config['query_string_segment'] = 'page';
         $config['reuse_query_string'] = TRUE;
 
-        $config['full_tag_open'] = '<div class="flex justify-center mt-8"><ul class="flex items-center gap-2">';
-        $config['full_tag_close'] = '</ul></div>';
+        $config['full_tag_open'] = '';
+        $config['full_tag_close'] = '';
 
-        $config['num_tag_open'] = '<li>';
-        $config['num_tag_close'] = '</li>';
+        $config['num_tag_open'] = '';
+        $config['num_tag_close'] = '';
 
-        $config['cur_tag_open'] = '<li><span class="bg-rose-700 text-white px-4 py-2 rounded-lg text-sm font-bold">';
-        $config['cur_tag_close'] = '</span></li>';
+        $config['cur_tag_open'] = '<span class="current">';
+        $config['cur_tag_close'] = '</span>';
 
-        $config['next_tag_open'] = '<li>';
-        $config['next_tag_close'] = '</li>';
+        $config['next_tag_open'] = '';
+        $config['next_tag_close'] = '';
+        $config['next_link'] = '&raquo;';
 
-        $config['prev_tag_open'] = '<li>';
-        $config['prev_tag_close'] = '</li>';
+        $config['prev_tag_open'] = '';
+        $config['prev_tag_close'] = '';
+        $config['prev_link'] = '&laquo;';
 
-        $config['first_tag_open'] = '<li>';
-        $config['first_tag_close'] = '</li>';
+        $config['first_tag_open'] = '';
+        $config['first_tag_close'] = '';
 
-        $config['last_tag_open'] = '<li>';
-        $config['last_tag_close'] = '</li>';
+        $config['last_tag_open'] = '';
+        $config['last_tag_close'] = '';
 
         $this->pagination->initialize($config);
 
         $data['posts'] = $this->Forum_model->get_posts($limit,$offset,$search,$sort);
         $data['pagination'] = $this->pagination->create_links();
+        $data['total_posts'] = $total;
 
         
         $this->load->view('user/forum_list',$data);
