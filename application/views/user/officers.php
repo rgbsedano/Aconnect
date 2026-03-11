@@ -1,7 +1,7 @@
 <?php
 /**
  * Alumni Officers View
- * Modernized with interactive Org Chart and Modal details
+ * Design pattern replicated from Events page with Hexagonal Org Chart
  */
 
 $hierarchy = [
@@ -16,6 +16,14 @@ $hierarchy = [
 
 $indexed = [];
 foreach ($officers as $o) {
+    // Filter out specific officers as requested
+    if (in_array($o->full_name, ['3123123123', 'Maria Santos', '5555555555555555'])) {
+        continue;
+    }
+    // Limit to only 1 officer per position for the infographic look
+    if (isset($indexed[$o->position])) {
+        continue;
+    }
     $indexed[$o->position][] = $o;
 }
 
@@ -42,15 +50,30 @@ function buildPositionTree($position, $hierarchy, $indexed) {
     return $branch;
 }
 
-// Build the tree starting from the President. 
-// We explicitly take only the first result [0] to ensure only 1 tree is displayed on the page.
-$fullTree = buildPositionTree('President', $hierarchy, $indexed);
-$orgTree = !empty($fullTree) ? [$fullTree[0]] : [];
+$orgTree = buildPositionTree('President', $hierarchy, $indexed);
 
-function renderOrg($nodes) {
+// Define colors for levels
+$levelColors = [
+    0 => '#BE123C', // President - Red
+    1 => '#0D9488', // Vice President - Teal
+    2 => '#6D28D9', // Secretary - Purple
+    3 => '#059669', // Treasurer - Green
+    4 => '#4338CA', // Auditor - Indigo
+    5 => '#374151', // PRO - Grey
+    6 => '#64748B'  // Board Member - Slate
+];
+
+$level1Colors = ['#D97706', '#6D28D9', '#0D9488', '#059669'];
+
+function renderOrgHex($nodes, $level = 0, $index = 0) {
+    global $levelColors, $level1Colors;
+    $color = $levelColors[$level] ?? '#64748b';
+    if ($level === 1 && isset($level1Colors[$index])) {
+        $color = $level1Colors[$index];
+    }
 ?>
-    <ul class="org-tree-list">
-        <?php foreach ($nodes as $n): 
+    <ul class="hex-tree-list level-<?= $level ?>">
+        <?php foreach ($nodes as $i => $n): 
             $photo = !empty($n['data']->photo) ? base_url($n['data']->photo) : base_url('assets/images/person-default.png');
             $officerData = htmlspecialchars(json_encode([
                 'name' => $n['data']->full_name,
@@ -59,24 +82,28 @@ function renderOrg($nodes) {
                 'bio' => $n['data']->bio,
                 'photo' => $photo
             ]));
+            $nodeColor = ($level === 1 && isset($level1Colors[$i])) ? $level1Colors[$i] : $color;
         ?>
-        <li>
-            <div class="org-card-modern" 
+        <li class="hex-item">
+            <div class="hex-container" 
                  data-officer='<?= $officerData ?>'
                  onclick="openOfficerModal(this)">
-                <div class="org-card-inner">
-                    <div class="org-card-image">
+                
+                <div class="hex-shape-outer" style="background-color: <?= $nodeColor ?>;">
+                    <div class="hex-shape-inner">
                         <img src="<?= $photo ?>" alt="<?= htmlspecialchars($n['data']->full_name) ?>">
                     </div>
-                    <div class="org-card-content">
-                        <h4 class="org-card-name"><?= htmlspecialchars($n['data']->full_name) ?></h4>
-                        <p class="org-card-role"><?= htmlspecialchars($n['data']->position) ?></p>
-                    </div>
+                </div>
+
+                <div class="hex-label-box" style="background: linear-gradient(90deg, <?= $nodeColor ?> 0%, <?= $nodeColor ?>dd 100%);">
+                    <h4 class="hex-name"><?= htmlspecialchars($n['data']->full_name) ?></h4>
+                    <p class="hex-role"><?= htmlspecialchars($n['data']->position) ?></p>
                 </div>
             </div>
 
             <?php if (!empty($n['children'])): ?>
-                <?php renderOrg($n['children']); ?>
+                <div class="hex-connector-down" style="background-color: <?= $nodeColor ?>;"></div>
+                <?php renderOrgHex($n['children'], $level + 1, $i); ?>
             <?php endif; ?>
         </li>
         <?php endforeach; ?>
@@ -84,363 +111,163 @@ function renderOrg($nodes) {
 <?php } ?>
 
 <style>
+    @import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap');
+
     :root {
-        --brand-rose: #BE123C;
-        --brand-amber: #D97706;
-        --glass-bg: rgba(255, 255, 255, 0.9);
-        --card-shadow: 0 10px 30px -10px rgba(190, 18, 60, 0.15);
-        --tree-line: #e2e8f0;
+        --brand-red: #BE123C;
+        --brand-gold: #D97706;
     }
 
+    /* --- Restore Original Background Pattern --- */
     body {
-        background-color: #F8FAFC;
+        /* background-color removed to reveal global background.png */
+        font-family: 'Plus Jakarta Sans', sans-serif;
     }
-
+    
+    /* Background Pattern from Events Page */
     .bg-pattern {
-        background-color: #f8fafc;
-        background-image: radial-gradient(#e2e8f0 1px, transparent 1px);
-        background-size: 32px 32px;
+        /* background-color removed to reveal global background.png */
+        background-image: radial-gradient(#e2e8f0 0.5px, transparent 0.5px);
+        background-size: 24px 24px;
+        min-height: 100vh;
     }
 
-    .officers-container {
-        padding: 30px 16px;
-        max-width: 1152px;
+    .officers-content-wrapper {
+        max-width: 1200px;
         margin: 0 auto;
+        padding: 48px 24px;
     }
 
-    /* --- Brand Header Style --- */
-    .brand-header-banner {
-        background: rgba(112, 10, 10, 0.04);
-        border: 1px solid rgba(112, 10, 10, 0.1);
-        border-radius: 20px;
-        padding: 24px 32px;
-        display: flex;
-        align-items: center;
-        justify-content: space-between;
-        margin-bottom: 50px;
-        flex-wrap: wrap;
-        gap: 20px;
-    }
-
-    .brand-header-left {
-        display: flex;
-        align-items: center;
-        gap: 20px;
-    }
-
-    .brand-header-icon {
-        width: 56px;
-        height: 56px;
-        background: var(--primary-maroon);
-        border-radius: 16px;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        color: white;
-        font-size: 24px;
-        box-shadow: 0 8px 16px rgba(112, 10, 10, 0.2);
-    }
-
-    .brand-header-text h2 {
-        margin: 0;
-        font-size: 22px;
-        font-weight: 700;
-        color: #1a202c;
-        display: flex;
-        align-items: center;
-        gap: 8px;
-    }
-
-    .brand-header-text h2 span {
-        color: var(--primary-maroon);
-        font-weight: 800;
-    }
-
-    .brand-header-sub {
-        margin: 4px 0 0;
-        font-size: 11px;
-        font-weight: 800;
-        color: #718096;
-        text-transform: uppercase;
-        letter-spacing: 1.5px;
-    }
-
-    .officer-count-pill {
-        background: #fff;
-        border: 1px solid #e2e8f0;
-        padding: 8px 20px;
-        border-radius: 30px;
-        font-size: 13px;
-        font-weight: 700;
-        color: #704214;
-        box-shadow: 0 2px 4px rgba(0,0,0,0.02);
-    }
-
-    /* Org Tree core logic */
-    .org-tree-wrapper {
+    /* --- Hex Tree Styling --- */
+    .hex-tree-wrapper {
         display: flex;
         justify-content: center;
-        padding-top: 20px;
         overflow-x: auto;
+        padding-top: 40px;
+        padding-bottom: 120px;
     }
-
-    .org-tree-list {
-        padding-top: 20px;
-        position: relative;
-        transition: all 0.5s;
-        display: flex;
-        justify-content: center;
-        list-style: none;
-        padding-left: 0;
+    .hex-tree-list {
+        display: flex; justify-content: center; list-style: none;
+        padding: 0; margin: 0; position: relative;
     }
-
-    .org-tree-list li {
-        float: left;
-        text-align: center;
-        list-style-type: none;
-        position: relative;
-        padding: 15px 5px 0 5px;
-        transition: all 0.5s;
+    .hex-item {
+        position: relative; padding: 0 45px;
+        display: flex; flex-direction: column; align-items: center;
     }
-
-    /* Lines */
-    .org-tree-list li::before, .org-tree-list li::after {
-        content: '';
-        position: absolute;
-        top: 0;
-        right: 50%;
-        border-top: 2px solid var(--tree-line);
-        width: 50%;
-        height: 20px;
+    .hex-container {
+        position: relative; width: 180px; height: 200px;
+        cursor: pointer; transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1); z-index: 10;
     }
-
-    .org-tree-list li::after {
-        right: auto;
-        left: 50%;
-        border-left: 2px solid var(--tree-line);
+    .hex-container:hover { transform: translateY(-8px) scale(1.05); }
+    .hex-shape-outer {
+        width: 160px; height: 180px; margin: 0 auto;
+        clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);
+        display: flex; align-items: center; justify-content: center; padding: 5px;
     }
-
-    .org-tree-list li:only-child::after, .org-tree-list li:only-child::before {
-        display: none;
-    }
-
-    .org-tree-list li:only-child { padding-top: 0; }
-
-    .org-tree-list li:first-child::before, .org-tree-list li:last-child::after {
-        border: 0 none;
-    }
-
-    .org-tree-list li:last-child::before {
-        border-right: 2px solid var(--tree-line);
-        border-radius: 0 5px 0 0;
-    }
-
-    .org-tree-list li:first-child::after {
-        border-radius: 5px 0 0 0;
-    }
-
-    .org-tree-list ul::before {
-        content: '';
-        position: absolute;
-        top: 0;
-        left: 50%;
-        border-left: 2px solid var(--tree-line);
-        width: 0;
-        height: 20px;
-    }
-
-    /* Modern Card Design */
-    .org-card-modern {
-        display: inline-block;
-        background: var(--glass-bg);
-        backdrop-filter: blur(8px);
-        border: 1px solid rgba(255, 255, 255, 0.3);
-        padding: 10px;
-        border-radius: 16px;
-        box-shadow: var(--card-shadow);
-        transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-        cursor: pointer;
-        min-width: 170px;
-        max-width: 190px;
-        position: relative;
-        z-index: 2;
-    }
-
-    .org-card-modern:hover {
-        transform: translateY(-8px) scale(1.02);
-        box-shadow: 0 15px 45px rgba(190, 18, 60, 0.15);
-        border-color: var(--brand-rose);
-    }
-
-    .org-card-inner {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        gap: 12px;
-    }
-
-    .org-card-image {
-        width: 60px;
-        height: 60px;
-        border-radius: 50%;
+    .hex-shape-inner {
+        width: 100%; height: 100%; background: #fff;
+        clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);
         overflow: hidden;
-        border: 3px solid #fff;
-        box-shadow: 0 4px 12px rgba(0,0,0,0.1);
     }
-
-    .org-card-image img {
-        width: 100%;
-        height: 100%;
-        object-fit: cover;
+    .hex-shape-inner img { width: 100%; height: 100%; object-fit: cover; }
+    .hex-label-box {
+        position: absolute; bottom: 40px; right: -35px;
+        padding: 8px 16px; min-width: 150px; color: white;
+        box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1); z-index: 11; border-radius: 4px;
+        display: flex; flex-direction: column; align-items: flex-start;
     }
-
-    .org-card-content {
-        text-align: center;
+    .hex-name { margin: 0; font-size: 15px; font-weight: 700; white-space: nowrap; line-height: 1.2; }
+    .hex-role {
+        margin: 2px 0 0; font-size: 11px; font-weight: 600; color: rgba(255,255,255,0.9);
+        text-align: left; width: 100%; text-transform: uppercase; letter-spacing: 0.5px;
     }
-
-    .org-card-name {
-        margin: 0;
-        font-size: 0.95rem;
-        font-weight: 700;
-        color: #1a1a1a;
-        line-height: 1.2;
+    .hex-connector-down { width: 2px; height: 60px; position: relative; margin-top: 15px; }
+    .hex-connector-down::after {
+        content: ''; position: absolute; bottom: -8px; left: 50%;
+        transform: translateX(-50%); border-left: 6px solid transparent;
+        border-right: 6px solid transparent; border-top: 10px solid inherit;
+        border-top-color: inherit;
     }
-
-    .org-card-role {
-        margin: 2px 0 0;
-        font-size: 0.75rem;
-        font-weight: 600;
-        color: var(--brand-rose);
-        text-transform: uppercase;
-        letter-spacing: 0.3px;
+    .hex-tree-list:not(.level-0)::before {
+        content: ''; position: absolute; top: -40px; left: 60px; right: 60px;
+        height: 2px; background: #cbd5e1;
     }
+    .hex-item::before {
+        content: ''; position: absolute; top: -40px; left: 50%;
+        width: 2px; height: 40px; background: #cbd5e1;
+    }
+    .level-0 > .hex-item::before { display: none; }
 
     /* Modal Styling */
-    .modal-officer-detail .modal-content {
-        border-radius: 24px;
-        border: none;
-        overflow: hidden;
-    }
-
-    .modal-officer-header {
-        height: 120px;
-        background: linear-gradient(135deg, var(--brand-rose), #a52a2a);
-        position: relative;
-    }
-
+    .modal-officer-detail .modal-content { border-radius: 24px; border: none; overflow: hidden; }
+    .modal-officer-header { height: 160px; background: #0f172a; position: relative; }
     .modal-officer-photo {
-        width: 120px;
-        height: 120px;
-        border-radius: 50%;
-        border: 6px solid #fff;
-        position: absolute;
-        bottom: -60px;
-        left: 50%;
-        transform: translateX(-50%);
-        box-shadow: 0 8px 25px rgba(0,0,0,0.15);
-        object-fit: cover;
+        width: 140px; height: 140px;
+        clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);
+        border: 5px solid #fff; position: absolute; bottom: -70px; left: 50%;
+        transform: translateX(-50%); background: #fff; object-fit: cover;
     }
 
-    .modal-officer-body {
-        padding: 80px 30px 40px;
-        text-align: center;
-    }
-
-    .modal-officer-name {
-        font-size: 1.8rem;
-        font-weight: 800;
-        color: #1a1a1a;
-        margin-bottom: 5px;
-    }
-
-    .modal-officer-position {
-        font-size: 1.1rem;
-        font-weight: 700;
-        color: var(--brand-rose);
-        margin-bottom: 20px;
-        text-transform: uppercase;
-    }
-
-    .modal-officer-info-item {
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        gap: 10px;
-        margin-bottom: 15px;
-        color: #64748b;
-        font-size: 0.95rem;
-    }
-
-    .modal-officer-bio {
-        margin-top: 25px;
-        padding-top: 25px;
-        border-top: 1px solid #f1f5f9;
-        color: #475569;
-        line-height: 1.6;
-        font-style: italic;
-    }
-
-    .empty-state {
-        text-align: center;
-        padding: 80px 20px;
-        background: #fff;
-        border-radius: 24px;
-        box-shadow: var(--card-shadow);
+    @media (max-width: 992px) {
+        .hex-item { padding: 0 20px; }
+        .hex-container { width: 150px; height: 170px; }
+        .hex-shape-outer { width: 130px; height: 150px; }
+        .hex-label-box { right: -20px; min-width: 120px; }
     }
 </style>
 
-<body class="bg-pattern text-slate-900 antialiased">
-
-<nav class="bg-white/80 backdrop-blur-md border-b border-slate-200 sticky top-0 z-40">
-    <div class="max-w-6xl mx-auto px-6 py-4 flex items-center justify-between">
-        <div class="flex items-center gap-3">
-            <div class="w-10 h-10 bg-rose-700 rounded-xl flex items-center justify-center shadow-lg shadow-rose-200">
-                <svg class="w-6 h-6 text-amber-400" fill="currentColor" viewBox="0 0 20 20"><path d="M7 2a2 2 0 00-2 2v1h10V4a2 2 0 00-2-2H7zM5 7a2 2 0 00-2 2v6a2 2 0 002 2h10a2 2 0 002-2V9a2 2 0 00-2-2H5z"/></svg>
+<div class="bg-pattern" style="min-height: 100vh;">
+    <!-- Header from Events Page Pattern -->
+    <nav class="bg-white/80 backdrop-blur-md border-b border-slate-200 sticky top-0 z-40">
+        <div class="max-w-6xl mx-auto px-6 py-4 flex items-center justify-between">
+            <div class="flex items-center gap-3">
+                <div class="w-10 h-10 bg-rose-700 rounded-xl flex items-center justify-center shadow-lg shadow-rose-200">
+                    <svg class="w-6 h-6 text-amber-400" fill="currentColor" viewBox="0 0 20 20"><path d="M7 2a2 2 0 00-2 2v1h10V4a2 2 0 00-2-2H7zM5 7a2 2 0 00-2 2v6a2 2 0 002 2h10a2 2 0 002-2V9a2 2 0 00-2-2H5z"/></svg>
+                </div>
+                <div>
+                    <h1 class="text-xl font-bold tracking-tight text-slate-900">Leadership <span class="text-rose-700">Team</span></h1>
+                    <p class="text-[11px] font-semibold text-slate-500 uppercase tracking-widest">AConnect Leadership Directory</p>
+                </div>
             </div>
-            <div>
-                <h1 class="text-xl font-bold tracking-tight text-slate-900">Leadership <span class="text-rose-700">Team</span></h1>
-                <p class="text-[11px] font-semibold text-slate-500 uppercase tracking-widest">AConnect Leadership Directory</p>
+            <div class="bg-amber-50 text-amber-700 px-3 py-1 rounded-full text-xs font-bold border border-amber-200">
+                <?= !empty($officers) ? count($officers) : 0 ?> Officers
             </div>
         </div>
-        <div class="bg-amber-50 text-amber-700 px-3 py-1 rounded-full text-xs font-bold border border-amber-200">
-            <?= !empty($officers) ? count($officers) : 0 ?> Officers
-        </div>
-    </div>
-</nav>
+    </nav>
 
-<div class="officers-container">
-
-    <?php if (!empty($officers)): ?>
-        <div class="org-tree-wrapper">
-            <?php renderOrg($orgTree); ?>
-        </div>
-    <?php else: ?>
-        <div class="empty-state">
-            <i class="fas fa-user-tie" style="font-size: 4rem; color: #e2e8f0; margin-bottom: 20px;"></i>
-            <h3>No Officers Recorded</h3>
-            <p>The leadership team information is currently unavailable.</p>
-        </div>
-    <?php endif; ?>
+    <main class="officers-content-wrapper">
+        <?php if (!empty($orgTree)): ?>
+            <div class="hex-tree-wrapper">
+                <?php renderOrgHex($orgTree); ?>
+            </div>
+        <?php else: ?>
+            <div style="text-align: center; padding: 100px 0; background: white; border-radius: 24px; border: 1px dashed #cbd5e1;">
+                <i class="fas fa-sitemap" style="font-size: 4rem; color: #e2e8f0; margin-bottom: 20px;"></i>
+                <h3 class="text-lg font-bold text-slate-900">No leadership structure found</h3>
+                <p class="text-slate-500 text-sm mt-1">The organizational chart is currently being updated.</p>
+            </div>
+        <?php endif; ?>
+    </main>
 </div>
 
 <!-- Officer Detail Modal -->
 <div class="modal fade modal-officer-detail" id="officerModal" tabindex="-1" role="dialog">
     <div class="modal-dialog modal-dialog-centered" role="document">
-        <div class="modal-content">
+        <div class="modal-content shadow-2xl">
             <div class="modal-officer-header">
-                <button type="button" class="close" data-dismiss="modal" style="position: absolute; right: 20px; top: 15px; color: white; opacity: 0.8;">&times;</button>
+                <button type="button" class="close" data-dismiss="modal" style="position: absolute; right: 20px; top: 15px; color: white; border: none; background: none; font-size: 24px;">&times;</button>
                 <img src="" id="modal-photo" class="modal-officer-photo" alt="Officer">
             </div>
-            <div class="modal-officer-body">
-                <h3 id="modal-name" class="modal-officer-name"></h3>
-                <p id="modal-position" class="modal-officer-position"></p>
+            <div class="modal-officer-body" style="padding: 90px 40px 40px; text-align: center;">
+                <h3 id="modal-name" style="font-size: 28px; font-weight: 800; color: #0f172a; margin: 0;"></h3>
+                <p id="modal-position" style="font-size: 15px; font-weight: 700; color: #BE123C; text-transform: uppercase; margin-top: 8px; margin-bottom: 25px;"></p>
                 
-                <div class="modal-officer-info-item">
-                    <i class="fas fa-envelope"></i>
+                <div style="color: #64748b; font-size: 15px; display: flex; align-items: center; justify-content: center; gap: 10px; margin-bottom: 20px;">
+                    <svg class="w-4 h-4 text-slate-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"/></svg>
                     <span id="modal-email"></span>
                 </div>
 
-                <div id="modal-bio" class="modal-officer-bio"></div>
+                <div id="modal-bio" style="margin-top: 25px; font-style: italic; color: #475569; line-height: 1.8; border-top: 1px solid #f1f5f9; padding-top: 25px;"></div>
             </div>
         </div>
     </div>
@@ -454,7 +281,7 @@ function openOfficerModal(element) {
     document.getElementById('modal-name').innerText = data.name;
     document.getElementById('modal-position').innerText = data.position;
     document.getElementById('modal-email').innerText = data.email || 'No email provided';
-    document.getElementById('modal-bio').innerText = data.bio || 'As a dedicated officer, I am committed to fostering a strong and vibrant alumni community, bridging the gap between generations, and creating lasting connections that empower every member of our school family.';
+    document.getElementById('modal-bio').innerText = data.bio || 'Dedicated to the AConnect community.';
 
     $('#officerModal').modal('show');
 }

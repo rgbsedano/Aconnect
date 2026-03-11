@@ -593,6 +593,11 @@ $admin_management_active = in_array($current_uri_segment_1, ['adminalumni', 'Adm
                         </a>
                     </li>
                     <li class="nav-item desktop-only">
+                        <a href="<?php echo base_url('Officers'); ?>" class="nav-link-item <?php echo $is_officers ? 'active-link' : ''; ?>">
+                            <i class="fas fa-user-tie"></i><span>Officers</span>
+                        </a>
+                    </li>
+                    <li class="nav-item desktop-only">
                         <a href="<?php echo base_url('jobs'); ?>" class="nav-link-item <?php echo $is_jobs ? 'active-link' : ''; ?>">
                             <i class="fas fa-briefcase"></i><span>Jobs</span>
                         </a>
