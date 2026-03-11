@@ -42,6 +42,7 @@ $is_network = in_array($current_uri_segment_1, ['alumni', 'alumni_request']);
 $is_jobs = ($current_uri_segment_1 === 'jobs');
 $is_officers = ($current_uri_segment_1 === 'Officers');
 $is_messaging = ($current_uri_segment_1 === 'chat');
+$is_forum = ($current_uri_segment_1 === 'forum');
 $is_events = in_array($current_uri_segment_1, ['events', 'eventsprevious']);
 $admin_management_active = in_array($current_uri_segment_1, ['adminalumni', 'AdminJobPosting', 'AdminEvents', 'AdminPost', 'AdminManageAccounts', 'AdminActivityLog']);
 
@@ -596,6 +597,11 @@ $admin_management_active = in_array($current_uri_segment_1, ['adminalumni', 'Adm
                             <i class="fas fa-briefcase"></i><span>Jobs</span>
                         </a>
                     </li>
+                    <li class="nav-item desktop-only">
+                        <a href="<?php echo base_url('forum'); ?>" class="nav-link-item <?php echo $is_forum ? 'active-link' : ''; ?>">
+                            <i class="fas fa-comments"></i><span>Forum</span>
+                        </a>
+                    </li>
                     <li class="nav-item dropdown desktop-only">
                         <a href="#" class="nav-link-item dropdown-toggle <?php echo $is_events ? 'active-link' : ''; ?>" data-toggle="dropdown">
                             <i class="fas fa-calendar-check"></i><span>Events</span>
@@ -619,10 +625,11 @@ $admin_management_active = in_array($current_uri_segment_1, ['adminalumni', 'Adm
                                     <div style="font-size: 11px; color: #65676b; font-weight: 400;">Previous activities</div>
                                 </div>
                             </a>
+                    
+
                     <li class="nav-item desktop-only">
-                        <a href="<?php echo base_url('Officers'); ?>" class="nav-link-item <?php echo $is_officers ? 'active-link' : ''; ?>">
-                            <i class="fas fa-user-tie"></i>
-                            <span>Officers</span>
+                        <a href="<?php echo base_url('jobs'); ?>" class="nav-link-item <?php echo $is_jobs ? 'active-link' : ''; ?>">
+                            <i class="fas fa-briefcase"></i><span>Jobs</span>
                         </a>
                     </li>
 
@@ -650,6 +657,15 @@ $admin_management_active = in_array($current_uri_segment_1, ['adminalumni', 'Adm
                                 <div>
                                     <div class="mobile-title">Officers</div>
                                     <div class="mobile-sub">Meet alumni leaders</div>
+                                </div>
+                            </a>
+                            <a class="dropdown-item mobile-menu-item <?= $is_forum ? 'active-mobile' : '' ?>" href="<?= base_url('forum'); ?>">
+                                <div class="mobile-icon bg-network">
+                                    <i class="fas fa-comments"></i>
+                                </div>
+                                <div>
+                                    <div class="mobile-title">Forum</div>
+                                    <div class="mobile-sub">Discuss with alumni</div>
                                 </div>
                             </a>
                             <div class="mb-2 font-weight-bold text-muted small uppercase">Careers</div>
