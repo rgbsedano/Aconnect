@@ -10,7 +10,7 @@ class Jobs extends CI_Controller {
             redirect(base_url("Login"));
         }
 
-        $this->load->helper(['form', 'url', 'date']);
+        $this->load->helper(['form', 'url', 'date', 'ai_helper']);
         $this->load->library(['session', 'upload']);
         $this->load->model('user/Job_model');
     }
@@ -43,6 +43,44 @@ class Jobs extends CI_Controller {
 
         $this->load->view('user/jobs', $data);
         $this->load->view('__footer');
+    }
+
+    public function live_search() {
+        // AJAX endpoint for live job search
+        $this->output->set_content_type('application/json');
+
+        $alumni_id = $this->session->userdata('alumni_id');
+        $alumni = $this->db->where('id', $alumni_id)->get('alumni')->row();
+
+        if (!$alumni) {
+            $alumni = (object)[
+                'degree' => '',
+                'technical_skills' => '',
+                'soft_skills' => ''
+            ];
+        }
+
+        $search   = trim($this->input->post('search', TRUE));
+        $location = trim($this->input->post('location', TRUE));
+        
+        $jobs = $this->Job_model->get_all_jobs($search, $location);
+
+        $response = [];
+        foreach ($jobs as $job) {
+            $match = compute_ai_match($alumni, $job);
+            $response[] = [
+                'id' => $job->id,
+                'job_title' => htmlspecialchars($job->job_title),
+                'company' => htmlspecialchars($job->company),
+                'location' => htmlspecialchars($job->location),
+                'salary_range' => htmlspecialchars($job->salary_range),
+                'match' => $match,
+                'qualifications' => htmlspecialchars($job->qualifications),
+                'description' => htmlspecialchars($job->description)
+            ];
+        }
+
+        echo json_encode($response);
     }
 
     public function apply($job_id) {

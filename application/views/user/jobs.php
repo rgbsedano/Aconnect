@@ -305,92 +305,10 @@
     </style>
 
 <?php
-// ... (compute_ai_match function remains exactly as you provided) ...
-
-function compute_ai_match($alumni, $job) {
-    if (!$alumni) return 0;
-    $wTitle = 25;   // reduced
-    $wTech  = 45;   // MOST IMPORTANT
-    $wSoft  = 15;
-    $wKey   = 15;
-    $score = 0; 
-    $titleMatch = 0;
-
-    $titleGroups = [
-        'information technology' => ['it','developer','programmer','software','technical','web'],
-        'nursing' => ['nurse','staff nurse','clinical nurse'],
-        'radiologic' => ['radtech','radiologic','xray'],
-        'business' => ['marketing','hr','human resource','business'],
-        'accountancy' => ['finance','accounting','bookkeeper'],
-        'multimedia' => ['graphic','designer','multimedia','ui','ux'],
-        'communication' => ['editor','writer','content']
-    ];
-
-    $deg = strtolower($alumni->degree);
-    $jobTitle = strtolower($job->job_title);
-
-    foreach ($titleGroups as $degreeKey => $keywords) {
-        if (strpos($deg, $degreeKey) !== false) {
-            foreach ($keywords as $kw) {
-                if (strpos($jobTitle, $kw) !== false) {
-                    $titleMatch = 1;
-                    break 2;
-                }
-            }
-        }
-    }
-
-    $alTech = array_map('normalize_skill',
-    array_filter(array_map('trim', explode(',', strtolower($alumni->technical_skills ?? ""))))
-    );
-
-    $jobTech = array_map('normalize_skill',
-        array_filter(array_map('trim', explode(',', strtolower($job->qualifications ?? ""))))
-    );
-
-    $techMatch = 0;
-    if (count($jobTech) > 0) {
-        $match = array_intersect($alTech, $jobTech);
-        $techMatch = count($match) / count($jobTech);
-    }
-    $alSoft = array_filter(array_map('trim', explode(',', strtolower($alumni->soft_skills ?? ""))));
-    $desc = strtolower($job->description ?? "");
-    $softCount = 0;
-    foreach ($alSoft as $soft) { if (strpos($desc, $soft) !== false) $softCount++; }
-    $softMatch = (count($alSoft) > 0)
-        ? min(1, $softCount / max(3, count($alSoft)))
-        : 0;
-
-    $searchSpace = strtolower($job->company . " " . $job->job_title . " " . $job->description);
-    $keyHits = 0;
-    foreach ($alTech as $skill) {
-        if (strpos($searchSpace, $skill) !== false) {
-            $keyHits++;
-        }
-    }
-
-    $keyMatch = count($alTech) > 0 ? $keyHits / count($alTech) : 0;
-
-    $score = ($techMatch * $wTech) + ($softMatch * $wSoft) + ($keyMatch * $wKey) + ($titleMatch * $wTitle);
-    return round($score);
-}
-function normalize_skill($skill) {
-    $skill = strtolower(trim($skill));
-    $map = [
-        'js' => 'javascript',
-        'nodejs' => 'node.js',
-        'node js' => 'node.js',
-        'mysql' => 'sql',
-        'postgresql' => 'sql',
-        'html5' => 'html',
-        'css3' => 'css',
-    ];
-    return $map[$skill] ?? $skill;
-}
-
 ?>
 
 <script src="https://cdn.tailwindcss.com"></script>
+
 
 
 
@@ -598,6 +516,132 @@ function normalize_skill($skill) {
         document.querySelectorAll('.f-pill').forEach(p => p.classList.remove('active'));
         const btnId = minScore === 'all' ? 'btn-all' : 'btn-' + minScore;
         document.getElementById(btnId).classList.add('active');
+    }
+
+    // ===== LIVE SEARCH FUNCTIONALITY =====
+    let liveSearchTimeout;
+    const searchInput = document.querySelector('input[name="search"]');
+    const locationInput = document.querySelector('input[name="location"]');
+    const jobContainer = document.getElementById('job-container');
+
+    function renderJobCards(jobs) {
+        if (!jobs || jobs.length === 0) {
+            jobContainer.innerHTML = '<div style="text-align: center; padding: 40px; color: var(--muted);"><p>No Jobs Found</p></div>';
+            return;
+        }
+
+        let html = '';
+        jobs.forEach(job => {
+            html += `
+            <div class="job-card" data-score="${job.match}" onclick="toggleModal(${job.id}, true)">
+                <div class="logo-box"><i class="fas fa-briefcase"></i></div>
+                <div class="job-info">
+                    <h3>${job.job_title}</h3>
+                    <p><i class="fas fa-building"></i> ${job.company}</p>
+                    <p><i class="fas fa-map-marker-alt"></i> ${job.location} <span style="color: var(--maroon); font-weight: 600;">•</span> <i class="fas fa-coins"></i> ${job.salary_range}</p>
+                </div>
+                <div class="badge-ai">
+                    <div class="percent">
+                        <i class="fas fa-robot"></i> ${job.match}% Match
+                    </div>
+                </div>
+            </div>
+
+            <div id="modal-${job.id}" class="modal-overlay" onclick="closeOverlay(event, ${job.id})">
+                <div class="modal-box" onclick="event.stopPropagation()">
+                    <div class="modal-header-custom">
+                        <div>
+                            <h2>${job.job_title}</h2>
+                            <p>${job.company}</p>
+                        </div>
+                        <button type="button" class="close-modal" onclick="toggleModal(${job.id}, false)"><i class="fas fa-times"></i></button>
+                    </div>
+                    <div class="modal-content">
+                        <div style="display: flex; gap: 16px; margin-bottom: 16px; align-items: center;">
+                            <div style="flex: 1;">
+                                <p><strong><i class="fas fa-map-marker-alt" style="color: var(--maroon); margin-right: 6px;"></i>Location:</strong> ${job.location}</p>
+                                <p><strong><i class="fas fa-coins" style="color: var(--gold); margin-right: 6px;"></i>Salary:</strong> ${job.salary_range}</p>
+                            </div>
+                            <div style="background: linear-gradient(135deg, var(--maroon), var(--maroon-dark)); color: white; padding: 10px 18px; border-radius: 8px; font-weight: 700;">
+                                <i class="fas fa-robot"></i> ${job.match}% AI Match
+                            </div>
+                        </div>
+                        <hr>
+                        
+                        <div class="job-details">
+                            <p><strong><i class="fas fa-list-check" style="color: var(--maroon); margin-right: 6px;"></i>Requirements:</strong></p>
+                            <p>${job.qualifications}</p>
+                            <p style="margin-top: 16px;"><strong><i class="fas fa-briefcase" style="color: var(--gold); margin-right: 6px;"></i>About the Role:</strong></p>
+                            <p>${job.description.replace(/\n/g, '<br>')}</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            `;
+        });
+
+        jobContainer.innerHTML = html;
+
+        // Reapply filter if one was active
+        const activePill = document.querySelector('.f-pill.active');
+        if (activePill) {
+            const minScore = activePill.id === 'btn-all' ? 'all' : activePill.id.replace('btn-', '');
+            updateFilter(minScore);
+        }
+    }
+
+    function performLiveSearch() {
+        const search = (searchInput && searchInput.value) || '';
+        const location = (locationInput && locationInput.value) || '';
+
+        if (search.length < 3 && location.length === 0) {
+            return;
+        }
+
+        jobContainer.innerHTML = '<div style="text-align: center; padding: 40px; color: var(--muted);"><i class="fas fa-spinner fa-spin"></i> Searching...</div>';
+
+        fetch('<?= base_url("jobs/live_search") ?>', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/x-www-form-urlencoded',
+            },
+            body: 'search=' + encodeURIComponent(search) + '&location=' + encodeURIComponent(location)
+        })
+        .then(response => {
+            if (!response.ok) {
+                throw new Error('Network response was not ok');
+            }
+            return response.json();
+        })
+        .then(jobs => {
+            renderJobCards(jobs);
+        })
+        .catch(error => {
+            console.error('Error:', error);
+            jobContainer.innerHTML = '<div style="text-align: center; padding: 40px; color: var(--muted);"><p>Error loading jobs. Please try again.</p></div>';
+        });
+    }
+
+    // Live search on search input
+    if (searchInput) {
+        searchInput.addEventListener('input', function() {
+            clearTimeout(liveSearchTimeout);
+            
+            if (this.value.length >= 3) {
+                liveSearchTimeout = setTimeout(performLiveSearch, 300);
+            } else if (this.value.length === 0 && (!locationInput || locationInput.value.length === 0)) {
+                // Reload page when both search and location are cleared
+                location.reload();
+            }
+        });
+    }
+
+    // Live search on location input
+    if (locationInput) {
+        locationInput.addEventListener('input', function() {
+            clearTimeout(liveSearchTimeout);
+            liveSearchTimeout = setTimeout(performLiveSearch, 300);
+        });
     }
 </script>
 
