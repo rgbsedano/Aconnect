@@ -1,9 +1,4 @@
 <?php
-/**
- * Alumni Officers View
- * Design pattern replicated from Events page with Hexagonal Org Chart
- */
-
 $hierarchy = [
     'President' => null,
     'Vice President' => 'President',
@@ -16,11 +11,9 @@ $hierarchy = [
 
 $indexed = [];
 foreach ($officers as $o) {
-    // Filter out specific officers as requested
     if (in_array($o->full_name, ['3123123123', 'Maria Santos', '5555555555555555'])) {
         continue;
     }
-    // Limit to only 1 officer per position for the infographic look
     if (isset($indexed[$o->position])) {
         continue;
     }
@@ -52,27 +45,26 @@ function buildPositionTree($position, $hierarchy, $indexed) {
 
 $orgTree = buildPositionTree('President', $hierarchy, $indexed);
 
-// Define colors for levels
 $levelColors = [
-    0 => '#BE123C', // President - Red
-    1 => '#0D9488', // Vice President - Teal
-    2 => '#6D28D9', // Secretary - Purple
-    3 => '#059669', // Treasurer - Green
-    4 => '#4338CA', // Auditor - Indigo
-    5 => '#374151', // PRO - Grey
-    6 => '#64748B'  // Board Member - Slate
+    0 => '#BE123C',
+    1 => '#9F1239',
+    2 => '#881337',
+    3 => '#E11D48',
+    4 => '#FB7185',
+    5 => '#BE123C',
+    6 => '#9F1239'
 ];
 
-$level1Colors = ['#D97706', '#6D28D9', '#0D9488', '#059669'];
+$level1Colors = ['#BE123C', '#9F1239', '#881337', '#E11D48'];
 
-function renderOrgHex($nodes, $level = 0, $index = 0) {
+function renderOrgHex($nodes, $level = 0, $index = 0, $parentColor = '#BE123C') {
     global $levelColors, $level1Colors;
-    $color = $levelColors[$level] ?? '#64748b';
+    $color = $levelColors[$level] ?? '#BE123C';
     if ($level === 1 && isset($level1Colors[$index])) {
         $color = $level1Colors[$index];
     }
 ?>
-    <ul class="hex-tree-list level-<?= $level ?>">
+    <ul class="hex-tree-list level-<?= $level ?>" style="--ul-line-color: <?= $parentColor ?>;">
         <?php foreach ($nodes as $i => $n): 
             $photo = !empty($n['data']->photo) ? base_url($n['data']->photo) : base_url('assets/images/person-default.png');
             $officerData = htmlspecialchars(json_encode([
@@ -84,7 +76,7 @@ function renderOrgHex($nodes, $level = 0, $index = 0) {
             ]));
             $nodeColor = ($level === 1 && isset($level1Colors[$i])) ? $level1Colors[$i] : $color;
         ?>
-        <li class="hex-item">
+        <li class="hex-item" style="--item-line-color: <?= $nodeColor ?>;">
             <div class="hex-container" 
                  data-officer='<?= $officerData ?>'
                  onclick="openOfficerModal(this)">
@@ -94,16 +86,16 @@ function renderOrgHex($nodes, $level = 0, $index = 0) {
                         <img src="<?= $photo ?>" alt="<?= htmlspecialchars($n['data']->full_name) ?>">
                     </div>
                 </div>
+            </div>
 
-                <div class="hex-label-box" style="background: linear-gradient(90deg, <?= $nodeColor ?> 0%, <?= $nodeColor ?>dd 100%);">
-                    <h4 class="hex-name"><?= htmlspecialchars($n['data']->full_name) ?></h4>
-                    <p class="hex-role"><?= htmlspecialchars($n['data']->position) ?></p>
-                </div>
+            <div class="hex-label-box">
+                <h4 class="hex-name"><?= htmlspecialchars($n['data']->full_name) ?></h4>
+                <p class="hex-role" style="color: <?= $nodeColor ?>;"><?= htmlspecialchars($n['data']->position) ?></p>
             </div>
 
             <?php if (!empty($n['children'])): ?>
-                <div class="hex-connector-down" style="background-color: <?= $nodeColor ?>;"></div>
-                <?php renderOrgHex($n['children'], $level + 1, $i); ?>
+                <div class="hex-connector-down" style="color: <?= $nodeColor ?>; background-color: <?= $nodeColor ?>;"></div>
+                <?php renderOrgHex($n['children'], $level + 1, $i, $nodeColor); ?>
             <?php endif; ?>
         </li>
         <?php endforeach; ?>
@@ -118,16 +110,13 @@ function renderOrgHex($nodes, $level = 0, $index = 0) {
         --brand-gold: #D97706;
     }
 
-    /* --- Restore Original Background Pattern --- */
     body {
-        /* background-color removed to reveal global background.png */
         font-family: 'Plus Jakarta Sans', sans-serif;
     }
     
-    /* Background Pattern from Events Page */
     .bg-pattern {
-        /* background-color removed to reveal global background.png */
-        background-image: radial-gradient(#e2e8f0 0.5px, transparent 0.5px);
+        background-color: transparent;
+        background-image: radial-gradient(#BE123C22 0.5px, transparent 0.5px);
         background-size: 24px 24px;
         min-height: 100vh;
     }
@@ -138,11 +127,9 @@ function renderOrgHex($nodes, $level = 0, $index = 0) {
         padding: 48px 24px;
     }
 
-    /* --- Hex Tree Styling --- */
     .hex-tree-wrapper {
         display: flex;
         justify-content: center;
-        overflow-x: auto;
         padding-top: 40px;
         padding-bottom: 120px;
     }
@@ -155,14 +142,16 @@ function renderOrgHex($nodes, $level = 0, $index = 0) {
         display: flex; flex-direction: column; align-items: center;
     }
     .hex-container {
-        position: relative; width: 180px; height: 200px;
-        cursor: pointer; transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1); z-index: 10;
+        position: relative; width: 180px; height: 180px;
+        cursor: pointer; transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275); z-index: 10;
+        flex-shrink: 0;
     }
-    .hex-container:hover { transform: translateY(-8px) scale(1.05); }
+    .hex-container:hover { transform: translateY(-5px) scale(1.02); }
     .hex-shape-outer {
         width: 160px; height: 180px; margin: 0 auto;
         clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);
-        display: flex; align-items: center; justify-content: center; padding: 5px;
+        display: flex; align-items: center; justify-content: center; padding: 4px;
+        transition: all 0.3s ease; border: 2px solid rgba(190, 18, 60, 0.1);
     }
     .hex-shape-inner {
         width: 100%; height: 100%; background: #fff;
@@ -170,67 +159,123 @@ function renderOrgHex($nodes, $level = 0, $index = 0) {
         overflow: hidden;
     }
     .hex-shape-inner img { width: 100%; height: 100%; object-fit: cover; }
+    /* Label is now IN THE FLOW — no absolute positioning */
     .hex-label-box {
-        position: absolute; bottom: 40px; right: -35px;
-        padding: 8px 16px; min-width: 150px; color: white;
-        box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1); z-index: 11; border-radius: 4px;
-        display: flex; flex-direction: column; align-items: flex-start;
+        position: relative;
+        margin-top: 14px;
+        padding: 12px 24px; min-width: 220px; background: #fff;
+        box-shadow: 0 10px 25px -5px rgba(139, 21, 56, 0.2); z-index: 11; border-radius: 16px;
+        display: flex; flex-direction: column; align-items: center;
+        border: 2px solid rgba(190, 18, 60, 0.08);
     }
-    .hex-name { margin: 0; font-size: 15px; font-weight: 700; white-space: nowrap; line-height: 1.2; }
+    .hex-name { margin: 0; font-size: 16px; font-weight: 800; color: #BE123C; white-space: nowrap; line-height: 1.2; text-align: center; }
     .hex-role {
-        margin: 2px 0 0; font-size: 11px; font-weight: 600; color: rgba(255,255,255,0.9);
-        text-align: left; width: 100%; text-transform: uppercase; letter-spacing: 0.5px;
+        margin: 4px 0 0; font-size: 11px; font-weight: 700;
+        text-align: center; width: 100%; text-transform: uppercase; letter-spacing: 1.5px;
     }
-    .hex-connector-down { width: 2px; height: 60px; position: relative; margin-top: 15px; }
+    /* ── Connector: vertical line + arrowhead ── */
+    .hex-connector-down {
+        width: 3px;
+        height: 48px;
+        align-self: center;
+        flex-shrink: 0;
+        margin-top: 14px;
+        position: relative;
+        z-index: 10;
+        border-radius: 2px 2px 0 0;
+    }
+    /* Arrowhead sits at the VERY BOTTOM of the connector bar */
     .hex-connector-down::after {
-        content: ''; position: absolute; bottom: -8px; left: 50%;
-        transform: translateX(-50%); border-left: 6px solid transparent;
-        border-right: 6px solid transparent; border-top: 10px solid inherit;
-        border-top-color: inherit;
-    }
-    .hex-tree-list:not(.level-0)::before {
-        content: ''; position: absolute; top: -40px; left: 60px; right: 60px;
-        height: 2px; background: #cbd5e1;
-    }
-    .hex-item::before {
-        content: ''; position: absolute; top: -40px; left: 50%;
-        width: 2px; height: 40px; background: #cbd5e1;
-    }
-    .level-0 > .hex-item::before { display: none; }
-
-    /* Modal Styling */
-    .modal-officer-detail .modal-content { border-radius: 24px; border: none; overflow: hidden; }
-    .modal-officer-header { height: 160px; background: #0f172a; position: relative; }
-    .modal-officer-photo {
-        width: 140px; height: 140px;
-        clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);
-        border: 5px solid #fff; position: absolute; bottom: -70px; left: 50%;
-        transform: translateX(-50%); background: #fff; object-fit: cover;
+        content: '';
+        position: absolute;
+        bottom: -11px;     /* Sits flush below the bar */
+        left: 50%;
+        transform: translateX(-50%);
+        width: 0; height: 0;
+        border-left: 9px solid transparent;
+        border-right: 9px solid transparent;
+        border-top: 11px solid currentColor;
     }
 
-    @media (max-width: 992px) {
-        .hex-item { padding: 0 20px; }
-        .hex-container { width: 150px; height: 170px; }
+    /* ── Child list: positioned below the arrow tip ── */
+    /* margin-top = arrow extension (11px) + gap (8px) = 19px */
+    .hex-tree-list:not(.level-0) {
+        margin-top: 19px;
+        position: relative;
+    }
+
+    /* Horizontal bar: spans first child's center → last child's center */
+    /* Only shows when there are 2+ children */
+    .hex-tree-list:not(.level-0):has(li + li)::before {
+        content: '';
+        position: absolute;
+        top: -19px;
+        left: 45px; right: 45px;
+        height: 3px;
+        background: var(--ul-line-color, #BE123C);
+        border-radius: 2px;
+    }
+
+    /* Vertical drop from horizontal bar down to each child hex */
+    .hex-tree-list:not(.level-0) > .hex-item::before {
+        content: '';
+        position: absolute;
+        top: -19px;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 3px;
+        height: 19px;
+        background: var(--item-line-color, #BE123C);
+        border-radius: 0 0 2px 2px;
+    }
+
+    /* ── Responsive ── */
+    @media (max-width: 1024px) {
+        .hex-tree-wrapper { overflow-x: auto; justify-content: flex-start; padding-left: 20px; padding-right: 20px; }
+    }
+
+    @media (max-width: 768px) {
+        .hex-tree-wrapper { align-items: center; padding-bottom: 60px; overflow-x: visible; }
+        .hex-tree-list { flex-direction: column; align-items: center; width: 100%; }
+        .hex-item { padding: 0; width: 100%; align-items: center; }
+        /* On mobile: hide horizontal bar + child drop lines; just use the connector arrow */
+        .hex-tree-list:not(.level-0) { margin-top: 19px; }
+        .hex-tree-list:not(.level-0) > .hex-item::before { display: none; }
+        .hex-tree-list:not(.level-0)::before { display: none; }
+        .hex-container { width: 150px; height: 150px; }
         .hex-shape-outer { width: 130px; height: 150px; }
-        .hex-label-box { right: -20px; min-width: 120px; }
+        .hex-label-box { min-width: 200px; padding: 10px 16px; margin-top: 12px; }
+        .hex-name { font-size: 14px; }
+        .hex-role { font-size: 10px; }
+        .hex-connector-down { height: 40px; margin-top: 12px; }
+        .officers-content-wrapper { padding: 24px 16px; }
+    }
+
+    .modal-officer-detail .modal-content { border-radius: 32px; border: none; overflow: hidden; background: rgba(255,255,255,0.9); backdrop-filter: blur(20px); border: 1px solid rgba(255,255,255,0.3); }
+    .modal-officer-header { height: 180px; background: linear-gradient(135deg, #BE123C 0%, #881337 100%); position: relative; }
+    .modal-officer-photo {
+        width: 160px; height: 160px;
+        border-radius: 50%;
+        border: 6px solid #fff; position: absolute; bottom: -80px; left: 50%;
+        transform: translateX(-50%); background: #fff; object-fit: cover;
+        box-shadow: 0 10px 30px rgba(139, 21, 56, 0.2);
     }
 </style>
 
 <div class="bg-pattern" style="min-height: 100vh;">
-    <!-- Header from Events Page Pattern -->
-    <nav class="bg-white/80 backdrop-blur-md border-b border-slate-200 sticky top-0 z-40">
+    <nav class="bg-white/70 backdrop-blur-xl border-b border-white/20 sticky top-0 z-40 transition-all duration-300">
         <div class="max-w-6xl mx-auto px-6 py-4 flex items-center justify-between">
-            <div class="flex items-center gap-3">
-                <div class="w-10 h-10 bg-rose-700 rounded-xl flex items-center justify-center shadow-lg shadow-rose-200">
-                    <svg class="w-6 h-6 text-amber-400" fill="currentColor" viewBox="0 0 20 20"><path d="M7 2a2 2 0 00-2 2v1h10V4a2 2 0 00-2-2H7zM5 7a2 2 0 00-2 2v6a2 2 0 002 2h10a2 2 0 002-2V9a2 2 0 00-2-2H5z"/></svg>
+            <div class="flex items-center gap-4">
+                <div class="w-12 h-12 bg-rose-700 rounded-2xl flex items-center justify-center shadow-xl shadow-rose-200/50 transform rotate-3">
+                    <svg class="w-7 h-7 text-amber-400" fill="currentColor" viewBox="0 0 20 20"><path d="M7 2a2 2 0 00-2 2v1h10V4a2 2 0 00-2-2H7zM5 7a2 2 0 00-2 2v6a2 2 0 002 2h10a2 2 0 002-2V9a2 2 0 00-2-2H5z"/></svg>
                 </div>
                 <div>
-                    <h1 class="text-xl font-bold tracking-tight text-slate-900">Leadership <span class="text-rose-700">Team</span></h1>
-                    <p class="text-[11px] font-semibold text-slate-500 uppercase tracking-widest">AConnect Leadership Directory</p>
+                    <h1 class="text-2xl font-black tracking-tight text-rose-950 leading-none">Leadership <span class="text-rose-700">Team</span></h1>
+                    <p class="text-[10px] font-bold text-rose-700/80 uppercase tracking-[0.2em] mt-1">Directory • Core Council</p>
                 </div>
             </div>
-            <div class="bg-amber-50 text-amber-700 px-3 py-1 rounded-full text-xs font-bold border border-amber-200">
-                <?= !empty($officers) ? count($officers) : 0 ?> Officers
+            <div class="bg-rose-700 text-white px-4 py-1.5 rounded-full text-[10px] font-black uppercase tracking-widest shadow-lg shadow-rose-200">
+                <?= !empty($officers) ? count($officers) : 0 ?> Active members
             </div>
         </div>
     </nav>
@@ -241,33 +286,34 @@ function renderOrgHex($nodes, $level = 0, $index = 0) {
                 <?php renderOrgHex($orgTree); ?>
             </div>
         <?php else: ?>
-            <div style="text-align: center; padding: 100px 0; background: white; border-radius: 24px; border: 1px dashed #cbd5e1;">
-                <i class="fas fa-sitemap" style="font-size: 4rem; color: #e2e8f0; margin-bottom: 20px;"></i>
-                <h3 class="text-lg font-bold text-slate-900">No leadership structure found</h3>
-                <p class="text-slate-500 text-sm mt-1">The organizational chart is currently being updated.</p>
+            <div style="text-align: center; padding: 80px 24px; background: rgba(255,255,255,0.5); backdrop-filter: blur(10px); border-radius: 32px; border: 2px dashed rgba(190, 18, 60, 0.2); max-width: 500px; margin: 40px auto;">
+                <div class="w-20 h-20 bg-rose-50 rounded-3xl flex items-center justify-center mx-auto mb-6">
+                    <svg class="w-10 h-10 text-rose-300" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-width="2" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4"/></svg>
+                </div>
+                <h3 class="text-xl font-bold text-rose-950">Structure pending</h3>
+                <p class="text-rose-900/60 text-sm mt-2">The current organizational chart is being restructured for the 2026 term.</p>
             </div>
         <?php endif; ?>
     </main>
 </div>
 
-<!-- Officer Detail Modal -->
 <div class="modal fade modal-officer-detail" id="officerModal" tabindex="-1" role="dialog">
     <div class="modal-dialog modal-dialog-centered" role="document">
-        <div class="modal-content shadow-2xl">
+        <div class="modal-content shadow-3xl">
             <div class="modal-officer-header">
-                <button type="button" class="close" data-dismiss="modal" style="position: absolute; right: 20px; top: 15px; color: white; border: none; background: none; font-size: 24px;">&times;</button>
+                <button type="button" class="close" data-dismiss="modal" style="position: absolute; right: 24px; top: 20px; color: white; border: none; background: rgba(255,255,255,0.1); width: 32px; height: 32px; border-radius: 50%; display: flex; align-items: center; justify-content: center; backdrop-filter: blur(4px);">&times;</button>
                 <img src="" id="modal-photo" class="modal-officer-photo" alt="Officer">
             </div>
-            <div class="modal-officer-body" style="padding: 90px 40px 40px; text-align: center;">
-                <h3 id="modal-name" style="font-size: 28px; font-weight: 800; color: #0f172a; margin: 0;"></h3>
-                <p id="modal-position" style="font-size: 15px; font-weight: 700; color: #BE123C; text-transform: uppercase; margin-top: 8px; margin-bottom: 25px;"></p>
+            <div class="modal-officer-body" style="padding: 100px 32px 48px; text-align: center;">
+                <h3 id="modal-name" style="font-size: 32px; font-weight: 800; color: #4c0519; margin: 0; letter-spacing: -0.02em;"></h3>
+                <p id="modal-position" style="font-size: 13px; font-weight: 800; color: #BE123C; text-transform: uppercase; margin-top: 10px; margin-bottom: 32px; letter-spacing: 0.1em;"></p>
                 
-                <div style="color: #64748b; font-size: 15px; display: flex; align-items: center; justify-content: center; gap: 10px; margin-bottom: 20px;">
-                    <svg class="w-4 h-4 text-slate-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"/></svg>
-                    <span id="modal-email"></span>
+                <div style="background: #FFF1F2; padding: 12px 24px; border-radius: 16px; color: #BE123C; font-size: 14px; display: inline-flex; align-items: center; gap: 12px; margin-bottom: 32px; border: 1px solid #FFE4E6;">
+                    <svg class="w-5 h-5 text-rose-700" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"/></svg>
+                    <span id="modal-email" font-weight="600"></span>
                 </div>
 
-                <div id="modal-bio" style="margin-top: 25px; font-style: italic; color: #475569; line-height: 1.8; border-top: 1px solid #f1f5f9; padding-top: 25px;"></div>
+                <div id="modal-bio" style="font-size: 16px; color: #881337; line-height: 1.8; border-top: 1px solid #ffe4e6; padding-top: 32px; font-weight: 400; text-align: center; max-width: 400px; margin: 0 auto;"></div>
             </div>
         </div>
     </div>
@@ -280,8 +326,8 @@ function openOfficerModal(element) {
     document.getElementById('modal-photo').src = data.photo;
     document.getElementById('modal-name').innerText = data.name;
     document.getElementById('modal-position').innerText = data.position;
-    document.getElementById('modal-email').innerText = data.email || 'No email provided';
-    document.getElementById('modal-bio').innerText = data.bio || 'Dedicated to the AConnect community.';
+    document.getElementById('modal-email').innerText = data.email || 'direct@aconnect.edu';
+    document.getElementById('modal-bio').innerText = data.bio || 'Leading with vision and purpose for the AConnect alumni community. Dedicated to fostering connections and professional growth.';
 
     $('#officerModal').modal('show');
 }
