@@ -93,6 +93,35 @@
     .btn-action:hover { background: #f8fafc; color: var(--primary-color); border-color: var(--primary-color); transform: translateY(-2px); }
     .btn-action.delete:hover { background: #fff5f5; color: #ef4444; border-color: #ef4444; }
 
+    /* Search Button Styling */
+    .btn-search {
+        background: linear-gradient(135deg, var(--primary-color), var(--accent-red));
+        color: white;
+        border: none;
+        padding: 12px 24px;
+        border-radius: 12px;
+        font-weight: 700;
+        font-size: 14px;
+        cursor: pointer;
+        transition: var(--transition);
+        display: flex;
+        align-items: center;
+        gap: 8px;
+        box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    }
+    .btn-search:hover { transform: translateY(-2px); box-shadow: 0 10px 30px rgba(0,0,0,0.15); }
+
+    /* Search Input Styling */
+    #jobSearch {
+        transition: all 0.3s !important;
+    }
+    #jobSearch:focus {
+        outline: none;
+        border-color: var(--primary-color) !important;
+        box-shadow: 0 0 0 3px rgba(139, 21, 56, 0.1) !important;
+        background: white !important;
+    }
+
     /* Modal Styling */
     .modal-content { border-radius: 24px; border: none; overflow: hidden; }
     .modal-header { background: var(--accent-red); color: white; padding: 25px; border: none; }
@@ -134,6 +163,18 @@
             <a href="<?= base_url('AdminJobPosting/run_worker') ?>" class="btn-header btn-notify" style="text-decoration:none;">
                 <i class="fas fa-paper-plane"></i> NOTIFY ALUMNI
             </a>
+        </div>
+    </div>
+
+    <div class="header-section" style="background: var(--card-bg); padding: 24px 30px; border-radius: 20px; box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05); margin-bottom: 24px; display: block;">
+        <div style="display: flex; gap: 12px; align-items: center;">
+            <div style="flex: 1; position: relative;">
+                <i class="fas fa-search" style="position: absolute; left: 14px; top: 50%; transform: translateY(-50%); color: var(--text-muted); font-size: 14px;"></i>
+                <input type="text" id="jobSearch" placeholder="Search job title or company..." value="" style="width: 100%; padding: 12px 14px 12px 44px; border: 1px solid #e2e8f0; border-radius: 12px; font-size: 14px; transition: all 0.3s;">
+            </div>
+            <button type="button" class="btn-search">
+                <i class="fas fa-search"></i> Search
+            </button>
         </div>
     </div>
 
@@ -370,6 +411,37 @@
 
 <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 <script>
+    // Job Search Functionality
+    document.addEventListener('DOMContentLoaded', function() {
+        const searchInput = document.getElementById('jobSearch');
+        if (searchInput) {
+            searchInput.addEventListener('input', function() {
+                const searchTerm = this.value.toLowerCase();
+                const jobRows = document.querySelectorAll('.job-item');
+                
+                // Only filter if search term has at least 3 characters
+                if (searchTerm.length < 3) {
+                    // Show all rows if less than 3 characters
+                    jobRows.forEach(row => {
+                        row.style.display = '';
+                    });
+                    return;
+                }
+                
+                jobRows.forEach(row => {
+                    const jobTitle = row.querySelector('.job-title-cell')?.textContent.toLowerCase() || '';
+                    const company = row.querySelector('.company-label')?.textContent.toLowerCase() || '';
+                    
+                    if (jobTitle.includes(searchTerm) || company.includes(searchTerm)) {
+                        row.style.display = '';
+                    } else {
+                        row.style.display = 'none';
+                    }
+                });
+            });
+        }
+    });
+
     function confirmDelete(id, title) {
         Swal.fire({
             title: 'Delete Posting?',
