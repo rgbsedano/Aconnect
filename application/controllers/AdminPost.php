@@ -217,7 +217,10 @@ class AdminPost extends CI_Controller {
 
         $this->db->where('id', $id)->delete('post');
         $this->session->set_flashdata('success', 'Post deleted.');
-        redirect('AdminPost');
+        
+        // Preserve the category when redirecting
+        $category = $this->input->get('category', TRUE) ?: 'announcements';
+        redirect('AdminPost?category=' . $category);
     }
 
     /**
@@ -290,6 +293,9 @@ class AdminPost extends CI_Controller {
 
         $this->db->where('id', $id)->update('post', $data);
         $this->session->set_flashdata('success', 'Post updated.');
-        redirect('AdminPost');
+        
+        // Preserve the category when redirecting
+        $redirect_category = $this->input->post('redirect_category', TRUE) ?: 'announcements';
+        redirect('AdminPost?category=' . $redirect_category);
     }
 }

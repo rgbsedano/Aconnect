@@ -111,6 +111,11 @@
     }
     .btn-search:hover { transform: translateY(-2px); box-shadow: 0 10px 30px rgba(0,0,0,0.15); }
 
+    .btn-search:active {
+        transform: translateY(0) scale(0.98);
+        box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    }
+
     /* Search Input Styling */
     #jobSearch {
         transition: all 0.3s !important;
@@ -167,15 +172,15 @@
     </div>
 
     <div class="header-section" style="background: var(--card-bg); padding: 24px 30px; border-radius: 20px; box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05); margin-bottom: 24px; display: block;">
-        <div style="display: flex; gap: 12px; align-items: center;">
+        <form method="get" action="<?= base_url('AdminJobPosting') ?>" style="display: flex; gap: 12px; align-items: center;">
             <div style="flex: 1; position: relative;">
                 <i class="fas fa-search" style="position: absolute; left: 14px; top: 50%; transform: translateY(-50%); color: var(--text-muted); font-size: 14px;"></i>
-                <input type="text" id="jobSearch" placeholder="Search job title or company..." value="" style="width: 100%; padding: 12px 14px 12px 44px; border: 1px solid #e2e8f0; border-radius: 12px; font-size: 14px; transition: all 0.3s;">
+                <input type="text" name="search" id="jobSearch" placeholder="Search job title or company..." value="<?= $this->input->get('search') ?>" style="width: 100%; padding: 12px 14px 12px 44px; border: 1px solid #e2e8f0; border-radius: 12px; font-size: 14px; transition: all 0.3s;">
             </div>
-            <button type="button" class="btn-search">
+            <button type="submit" class="btn-search">
                 <i class="fas fa-search"></i> Search
             </button>
-        </div>
+        </form>
     </div>
 
     <div class="main-card">
@@ -295,7 +300,7 @@
                 </div>
                 <div class="modal-footer">
                     <button type="button" class="btn btn-light px-4" style="border-radius: 12px; font-weight: 700;" data-dismiss="modal">CANCEL</button>
-                    <button type="submit" class="btn btn-danger px-5" style="background: var(--accent-red); border-radius: 12px; font-weight: 700;">PUBLISH NOW</button>
+                    <button type="submit" class="btn btn-danger px-5" style="background-color: #a12124; border-color: #a12124; border-radius: 12px; font-weight: 700;">PUBLISH NOW</button>
                 </div>
             </form>
         </div>
@@ -338,7 +343,7 @@
                     </div>
                     <div class="modal-footer">
                         <button type="button" class="btn btn-light px-4" data-dismiss="modal">CANCEL</button>
-                        <button type="submit" class="btn btn-danger px-5" style="background: var(--accent-red);">SAVE CHANGES</button>
+                        <button type="submit" class="btn btn-danger px-5" style="background-color: #a12124; border-color: #a12124;">SAVE CHANGES</button>
                     </div>
                 </form>
             </div>
@@ -411,17 +416,23 @@
 
 <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 <script>
-    // Job Search Functionality
+    // Live Search with 3+ character threshold
     document.addEventListener('DOMContentLoaded', function() {
         const searchInput = document.getElementById('jobSearch');
         if (searchInput) {
-            searchInput.addEventListener('input', function() {
-                const searchTerm = this.value.toLowerCase();
+            // Function to apply filter
+            const applyFilter = function() {
+                const searchTerm = searchInput.value.toLowerCase();
                 const jobRows = document.querySelectorAll('.job-item');
                 
-                // Only filter if search term has at least 3 characters
+                if (searchTerm.length === 0) {
+                    jobRows.forEach(row => {
+                        row.style.display = '';
+                    });
+                    return;
+                }
+                
                 if (searchTerm.length < 3) {
-                    // Show all rows if less than 3 characters
                     jobRows.forEach(row => {
                         row.style.display = '';
                     });
@@ -438,7 +449,13 @@
                         row.style.display = 'none';
                     }
                 });
-            });
+            };
+            
+            // Apply filter on page load if search term exists
+            applyFilter();
+            
+            // Apply filter on input event
+            searchInput.addEventListener('input', applyFilter);
         }
     });
 

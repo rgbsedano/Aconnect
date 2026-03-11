@@ -62,40 +62,32 @@
     .switcher-wrapper {
         display: flex;
         gap: 12px;
-        margin-bottom: 24px;
-        overflow-x: auto;
-        padding-bottom: 8px;
-        scrollbar-width: none;
-    }
-
-    .switcher-wrapper::-webkit-scrollbar {
-        display: none;
+        flex-wrap: wrap;
+        margin-top: 20px;
     }
 
     .switch-btn {
-        padding: 10px 24px;
-        border-radius: 12px;
-        font-size: 14px;
-        font-weight: 700;
-        background: rgba(255, 255, 255, 0.1);
-        color: white;
-        border: 1px solid rgba(255, 255, 255, 0.2);
+        padding: 8px 18px;
+        border-radius: 24px;
+        border: 1.5px solid #e2e8f0;
+        background: var(--card-bg);
+        font-size: 13px;
+        font-weight: 600;
+        color: var(--text-muted);
         cursor: pointer;
         transition: var(--transition);
         white-space: nowrap;
-        backdrop-filter: blur(4px);
     }
 
     .switch-btn:hover {
-        background: rgba(255, 255, 255, 0.2);
-        transform: translateY(-2px);
+        border-color: var(--accent-red);
+        color: var(--accent-red);
     }
 
     .switch-btn.active {
-        background: white;
-        color: var(--accent-red);
-        border-color: white;
-        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+        background: var(--accent-red);
+        color: white;
+        border-color: var(--accent-red);
     }
 
     /* ================= CARD ================= */
@@ -417,6 +409,86 @@
         background-color: #8a1a1d !important;
         border-color: #8a1a1d !important;
     }
+
+    /* ===== SEARCH BAR STYLING ===== */
+    .search-container {
+        background: var(--card-bg);
+        padding: 24px 30px;
+        border-radius: 20px;
+        box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
+        margin-bottom: 24px;
+        display: flex;
+        flex-wrap: wrap;
+        gap: 12px;
+        align-items: flex-start;
+    }
+
+    .search-input-wrapper {
+        flex: 1;
+        position: relative;
+        min-width: 200px;
+    }
+
+    .search-input-wrapper i {
+        position: absolute;
+        left: 14px;
+        top: 50%;
+        transform: translateY(-50%);
+        color: var(--text-muted);
+        font-size: 14px;
+    }
+
+    #postSearch {
+        width: 100%;
+        padding: 12px 14px 12px 44px;
+        border: 1px solid #e2e8f0;
+        border-radius: 12px;
+        font-size: 14px;
+        transition: all 0.3s;
+    }
+
+    #postSearch:focus {
+        outline: none;
+        border-color: var(--accent-red) !important;
+        box-shadow: 0 0 0 3px rgba(112, 10, 10, 0.1) !important;
+        background: white !important;
+    }
+
+    .search-filters {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 12px;
+        width: 100%;
+        order: 3;
+    }
+
+    /* Search Button Styling */
+    .btn-search-post {
+        background: linear-gradient(135deg, var(--accent-red), #8a1a1d);
+        color: white;
+        border: none;
+        padding: 12px 24px;
+        border-radius: 12px;
+        font-weight: 700;
+        font-size: 14px;
+        cursor: pointer;
+        transition: var(--transition);
+        display: flex;
+        align-items: center;
+        gap: 8px;
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    }
+
+    .btn-search-post:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+        color: white;
+    }
+
+    .btn-search-post:active {
+        transform: translateY(0) scale(0.98);
+        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    }
 </style>
 
 
@@ -439,12 +511,28 @@
         </div>
     </header>
 
-    <!-- ===== SWITCHER ===== -->
-    <div class="switcher-wrapper">
-        <button class="switch-btn active" onclick="switchCategory('announcements')">Announcements</button>
-        <button class="switch-btn" onclick="switchCategory('news')">Campus News</button>
-        <button class="switch-btn" onclick="switchCategory('stories')">Alumni Stories</button>
-    </div>
+    <!-- ===== SEARCH BAR & FILTERS ===== -->
+    <form method="get" action="<?= base_url('AdminPost') ?>" id="searchForm">
+        <div class="search-container">
+            <div class="search-input-wrapper">
+                <i class="fas fa-search"></i>
+                <input type="text" name="search" id="postSearch" placeholder="Search post title..." value="<?= $this->input->get('search') ?>">
+            </div>
+            <button type="button" id="submitSearchBtn" class="btn-search-post">
+                <i class="fas fa-search"></i> Search
+            </button>
+
+            <!-- Hidden input to preserve category across form submission -->
+            <input type="hidden" name="category" id="categoryInput" value="<?= $this->input->get('category') ?: 'announcements' ?>">
+
+            <!-- ===== FILTER BUTTONS ===== -->
+            <div class="search-filters">
+                <button type="button" class="switch-btn active" data-category="announcements" onclick="switchCategory('announcements'); return false;">Announcements</button>
+                <button type="button" class="switch-btn" data-category="news" onclick="switchCategory('news'); return false;">Campus News</button>
+                <button type="button" class="switch-btn" data-category="stories" onclick="switchCategory('stories'); return false;">Alumni Stories</button>
+            </div>
+        </div>
+    </form>
 
     <!-- ===== TABLE ===== -->
     <div class="main-card">
@@ -479,8 +567,7 @@
 
                     <?php foreach ($all_posts as $post): ?>
                         <tr class="data-row post-item"
-                            data-type="<?= $post['post_type'] ?>"
-                            style="<?= $post['post_type'] == 'announcements' ? '' : 'display:none;' ?>">
+                            data-type="<?= $post['post_type'] ?>">
 
                             <td>
                                 <div class="post-title-cell"
@@ -576,6 +663,9 @@
 
                     <label>Replace Image</label>
                     <input type="file" name="image" class="form-control">
+
+                    <!-- Hidden category input to redirect back to same category -->
+                    <input type="hidden" name="redirect_category" id="redirect_category" value="announcements">
 
                 </div>
 
@@ -708,12 +798,98 @@
 <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 
 <script>
-    function switchCategory(type) {
-        $('.switch-btn').removeClass('active');
-        $(`.switch-btn[onclick="switchCategory('${type}')"]`).addClass('active');
-        $('.post-item').hide();
-        $(`.post-item[data-type="${type}"]`).fadeIn(200);
+    let currentActiveCategory = 'announcements';
+
+    function applySearchFilter() {
+        const searchInput = document.getElementById('postSearch');
+        const searchTerm = searchInput.value.toLowerCase();
+        const postRows = document.querySelectorAll('.post-item');
+        
+        // If search is empty/cleared, reset to show active category only
+        if (searchTerm.length === 0) {
+            postRows.forEach(row => {
+                row.style.display = row.dataset.type === currentActiveCategory ? '' : 'none';
+            });
+            return;
+        }
+        
+        // Only filter if search term has at least 3 characters
+        if (searchTerm.length < 3) {
+            postRows.forEach(row => {
+                // Show only active category
+                if (row.dataset.type !== currentActiveCategory) {
+                    row.style.display = 'none';
+                } else {
+                    row.style.display = '';
+                }
+            });
+            return;
+        }
+        
+        // Search within active category only
+        postRows.forEach(row => {
+            // Skip if not in active category
+            if (row.dataset.type !== currentActiveCategory) {
+                row.style.display = 'none';
+                return;
+            }
+            
+            const postTitle = row.querySelector('.post-title-cell')?.textContent.toLowerCase() || '';
+            const postTypeLabel = row.querySelector('.post-type-label')?.textContent.toLowerCase() || '';
+            
+            if (postTitle.includes(searchTerm) || postTypeLabel.includes(searchTerm)) {
+                row.style.display = '';
+            } else {
+                row.style.display = 'none';
+            }
+        });
     }
+
+    function switchCategory(type) {
+        currentActiveCategory = type;
+        // Use data-category attribute for reliable button selection
+        document.querySelectorAll('.switch-btn').forEach(btn => btn.classList.remove('active'));
+        document.querySelector(`.switch-btn[data-category="${type}"]`).classList.add('active');
+        document.getElementById('categoryInput').value = type;
+        
+        // Re-apply search filter when switching categories
+        applySearchFilter();
+    }
+
+    // Post Search Functionality
+    document.addEventListener('DOMContentLoaded', function() {
+        // Restore active category from URL parameter
+        const urlParams = new URLSearchParams(window.location.search);
+        const categoryParam = urlParams.get('category') || 'announcements';
+        
+        currentActiveCategory = categoryParam;
+        
+        // Activate correct category button on page load using data-category
+        document.querySelectorAll('.switch-btn').forEach(btn => btn.classList.remove('active'));
+        document.querySelector(`.switch-btn[data-category="${categoryParam}"]`).classList.add('active');
+        document.getElementById('categoryInput').value = categoryParam;
+        
+        const searchInput = document.getElementById('postSearch');
+        if (searchInput) {
+            // Apply filter on page load to set initial visibility
+            applySearchFilter();
+            
+            // Apply filter on input event for live filtering
+            searchInput.addEventListener('input', applySearchFilter);
+        }
+
+        // Handle search button click - ensure form includes current category
+        const submitBtn = document.getElementById('submitSearchBtn');
+        if (submitBtn) {
+            submitBtn.addEventListener('click', function(e) {
+                e.preventDefault();
+                // Ensure category input has current value
+                document.getElementById('categoryInput').value = currentActiveCategory;
+                // Submit the form
+                document.getElementById('searchForm').submit();
+            });
+        }
+    });
 
     function editPost(post) {
         $('#edit_post_type').html(`
@@ -725,10 +901,13 @@
         $('#edit_post_type').val(post.post_type);
         $('#edit_title').val(post.title);
         $('#edit_content').val(post.content);
+        
+        // Set the redirect category to current category
+        $('#redirect_category').val(currentActiveCategory);
 
         $('#editPostForm').attr(
             'action',
-            '<?= base_url("AdminPost/update/") ?>' + post.id
+            '<?= base_url("AdminPost/update/") ?>' + post.id + '?category=' + currentActiveCategory
         );
 
         $('#editPostModal').modal('show');
@@ -763,7 +942,7 @@
             cancelButtonText: 'Cancel'
         }).then((result) => {
             if (result.isConfirmed) {
-                window.location.href = '<?= base_url("AdminPost/delete/") ?>' + id;
+                window.location.href = '<?= base_url("AdminPost/delete/") ?>' + id + '?category=' + currentActiveCategory;
             }
         });
     }
