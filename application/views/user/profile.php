@@ -361,6 +361,18 @@
             outline: none;
         }
 
+        /* Select2 Styling for Already Selected Options */
+        .already-selected-skill {
+            background-color: #d1d5db !important;
+            color: #4b5563 !important;
+            opacity: 0.6 !important;
+            cursor: not-allowed !important;
+        }
+
+        .already-selected-skill:hover {
+            background-color: #c4c8cc !important;
+        }
+
         .form-row { margin-left: -12px; margin-right: -12px; }
         .form-row .form-group { padding-left: 12px; padding-right: 12px; }
 
@@ -418,10 +430,20 @@
             color: var(--text);
             padding: 10px 24px;
             border-radius: 8px;
+            transition: all 0.3s;
         }
 
         .btn-secondary:hover {
-            background: var(--bg);
+            background: #f3f4f6;
+            color: var(--text);
+            border-color: var(--border);
+            text-decoration: none;
+        }
+
+        .btn-secondary:focus {
+            color: var(--text);
+            background: #f3f4f6;
+            text-decoration: none;
         }
 
         @media (max-width: 768px) {
@@ -819,11 +841,12 @@
                             <label><i class="fas fa-heart"></i> Soft Skills</label>
                             <select class="form-control soft-skills-select" name="soft_skills[]" multiple>
                                 <?php 
-                                    $soft_selected = explode(",", $alumni->soft_skills ?? "");
+                                    $soft_selected = array_map('trim', array_filter(explode(",", $alumni->soft_skills ?? "")));
                                     $soft_list = ["Communication","Teamwork","Leadership","Problem Solving","Adaptability","Creativity","Time Management","Critical Thinking","Work Ethics","Decision Making","Collaboration","Attention to Detail"];
                                     foreach ($soft_list as $skill): 
+                                        $isSelected = in_array($skill, $soft_selected);
                                 ?>
-                                    <option value="<?= $skill ?>" <?= in_array($skill, $soft_selected) ? 'selected' : '' ?>>
+                                    <option value="<?= $skill ?>" <?= $isSelected ? 'selected data-already-selected="true"' : '' ?>>
                                         <?= $skill ?>
                                     </option>
                                 <?php endforeach; ?>
@@ -834,7 +857,7 @@
                             <label><i class="fas fa-code"></i> Technical Skills</label>
                             <select class="form-control tech-skills-select" name="technical_skills[]" multiple>
                                 <?php 
-                                    $tech_selected = explode(",", $alumni->technical_skills ?? "");
+                                    $tech_selected = array_map('trim', array_filter(explode(",", $alumni->technical_skills ?? "")));
                                     $skills_by_category = [
                                         "Information Technology & Programming" => ["HTML","CSS","JavaScript","React","Angular","Vue.js","Node.js","PHP","Laravel","CodeIgniter","Python","Java","C#","C++","SQL","MySQL","PostgreSQL","MongoDB","REST API","Git","Docker","Linux","Cloud Computing","AWS","Azure","Google Cloud Platform"],
                                         "Medical & Laboratory Skills" => ["Phlebotomy","Clinical Laboratory Testing","Hematology","Microbiology","Laboratory Safety","Specimen Processing","Radiographic Imaging","Patient Care","Medication Administration","ECG Interpretation","Medical Terminology"],
@@ -845,8 +868,10 @@
                                     foreach ($skills_by_category as $category => $skills):
                                 ?>
                                     <optgroup label="<?= $category ?>">
-                                        <?php foreach ($skills as $skill): ?>
-                                            <option value="<?= $skill ?>" <?= in_array($skill, $tech_selected) ? 'selected' : '' ?>>
+                                        <?php foreach ($skills as $skill): 
+                                            $isSelected = in_array($skill, $tech_selected);
+                                        ?>
+                                            <option value="<?= $skill ?>" <?= $isSelected ? 'selected data-already-selected="true"' : '' ?>>
                                                 <?= $skill ?>
                                             </option>
                                         <?php endforeach; ?>
@@ -973,18 +998,48 @@
 
 <script>
 $(document).ready(function() {
-    $('.soft-skills-select').select2({
-        placeholder: "Select soft skills",
-        width: '100%',
-        tags: true,
-        tokenSeparators: [',']
+    function initSelect2Skills() {
+        $('.soft-skills-select, .tech-skills-select').select2({
+            placeholder: "Select skills",
+            width: '100%',
+            tags: true,
+            tokenSeparators: [',']
+        });
+    }
+
+    initSelect2Skills();
+
+    // Apply greyed-out styling to already selected skills
+    $(document).on('select2:open', '.soft-skills-select, .tech-skills-select', function() {
+        setTimeout(function() {
+            $('.select2-results__option').each(function() {
+                const $this = $(this);
+                const optionText = $this.text().trim();
+                
+                // Check if this option has the data-already-selected attribute
+                const $originalOption = $('option').filter(function() {
+                    return $(this).text().trim() === optionText && $(this).attr('data-already-selected') === 'true';
+                }).first();
+                
+                if ($originalOption.length && $originalOption.attr('data-already-selected') === 'true') {
+                    $this.css({
+                        'background-color': '#d1d5db',
+                        'color': '#4b5563',
+                        'opacity': '0.6',
+                        'cursor': 'not-allowed'
+                    });
+                    $this.addClass('already-selected-skill');
+                }
+            });
+        }, 50);
     });
 
-    $('.tech-skills-select').select2({
-        placeholder: "Select technical skills",
-        width: '100%',
-        tags: true,
-        tokenSeparators: [',']
+    // Reinitialize when modal is shown
+    $('#editSkillModal').on('shown.bs.modal', function () {
+        setTimeout(function() {
+            $('.soft-skills-select, .tech-skills-select').select2('destroy');
+            initSelect2Skills();
+        }, 100);
     });
 
     <?php if ($this->session->flashdata('show_employment_modal')): ?>
