@@ -326,6 +326,8 @@ class AdminReports extends CI_Controller {
     }
 
     $employment_rate = round(($employed / $total) * 100);
+    $self_rate = round(($self / $total) * 100);
+    $unemployment_rate = round(($unemployed / $total) * 100);
 
     $avg_service = round($total_years_service / $total, 1);
 
@@ -334,6 +336,9 @@ class AdminReports extends CI_Controller {
 
     $insights[] = "$employment_rate% of alumni in the tracer database are currently employed.";
 
+    $insights[] = "$self_rate% of alumni are self-employed, indicating entrepreneurial activity among graduates.";
+
+    
     $insights[] = "Average alumni work experience is approximately $avg_service years.";
 
     if ($top_company_name) {

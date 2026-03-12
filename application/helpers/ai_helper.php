@@ -86,12 +86,15 @@ function normalize_skill($skill) {
  */
 function compute_ai_match($alumni, $job) {
     if (!$alumni) return 0;
-    $wTitle = 25;   // reduced
-    $wTech  = 45;   // MOST IMPORTANT
-    $wSoft  = 15;
-    $wKey   = 15;
+    $wTech = 40;
+    $wTitle = 20;
+    $wSoft = 20;
+    $wKey = 0;
+    $wSemantic = 20;
+
     $score = 0; 
     $titleMatch = 0;
+    
 
     $titleGroups = [
         'information technology' => ['it','developer','programmer','software','technical','web'],
@@ -147,7 +150,23 @@ function compute_ai_match($alumni, $job) {
     }
 
     $keyMatch = count($alTech) > 0 ? $keyHits / count($alTech) : 0;
+    $semanticScore = 0;
 
-    $score = ($techMatch * $wTech) + ($softMatch * $wSoft) + ($keyMatch * $wKey) + ($titleMatch * $wTitle);
+    $profileText = ($alumni->technical_skills ?? '') . " " .
+                ($alumni->soft_skills ?? '') . " " .
+                ($alumni->degree ?? '');
+
+    $jobText = ($job->job_title ?? '') . " " .
+            ($job->qualifications ?? '') . " " .
+            ($job->description ?? '');
+
+    $semanticScore = ai_similarity_score($profileText, $jobText) / 100;
+
+    $score =
+    ($techMatch * $wTech) +
+    ($softMatch * $wSoft) +
+    ($keyMatch * $wKey) +
+    ($titleMatch * $wTitle) +
+    ($semanticScore * $wSemantic);
     return round($score);
 }
