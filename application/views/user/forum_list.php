@@ -258,6 +258,32 @@ body {
     to { opacity: 1; transform: translateY(0); }
 }
 .post-card { animation: fadeInUp .3s ease-out forwards; }
+
+/* ── Mobile Tabs ── */
+.mobile-tabs { display: none; gap: 8px; margin-bottom: 16px; }
+.f-pill {
+    padding: 8px 16px;
+    border-radius: 20px;
+    font-size: 13px;
+    font-weight: 700;
+    cursor: pointer;
+    border: none;
+    background: #f1f5f9;
+    color: #64748b;
+    transition: all .2s;
+}
+.f-pill:hover { background: #e2e8f0; }
+.f-pill.active { background: var(--brand-red); color: #fff; }
+
+.tab-content { display: block; }
+
+@media (max-width: 900px) {
+    .mobile-tabs { display: flex; }
+    .forum-layout { grid-template-columns: 1fr; }
+    .forum-sidebar { display: none; }
+    .tab-content { display: none; }
+    .tab-content.active { display: block; }
+}
 </style>
 
 <!-- ── Page header bar ── -->
@@ -279,7 +305,7 @@ body {
 <div class="forum-layout">
 
     <!-- ── Main feed ── -->
-    <div>
+    <div id="feed-tab" class="tab-content active">
         <!-- Search + Sort row -->
         <div style="display:flex; flex-wrap:wrap; gap:10px; align-items:center; margin-bottom:20px;">
             <div class="forum-search-bar" style="flex:1; min-width:200px;">
@@ -292,6 +318,12 @@ body {
                 <a href="<?= base_url('forum?sort=comments') ?>" class="sort-tab <?= $this->input->get('sort')=='comments' ? 'active' : '' ?>">💬 Hot</a>
                 <a href="<?= base_url('forum?sort=myposts') ?>" class="sort-tab <?= $this->input->get('sort')=='myposts' ? 'active' : '' ?>">👤 Mine</a>
             </div>
+        </div>
+
+        <!-- ── Mobile Tab Buttons ── -->
+        <div class="mobile-tabs" style="margin-bottom: 16px;">
+            <button class="f-pill active" id="btn-feed" onclick="updateForumTab('feed')">Feed</button>
+            <button class="f-pill" id="btn-about" onclick="updateForumTab('about')">About</button>
         </div>
 
         <!-- Create post shortcut -->
@@ -365,8 +397,14 @@ body {
         <?php endif; ?>
     </div>
 
-    <!-- ── Sidebar ── -->
-    <div class="forum-sidebar">
+    <!-- ── Sidebar / About Tab ── -->
+    <div id="about-tab" class="tab-content forum-sidebar">
+        <!-- ── Mobile Tab Buttons ── -->
+        <div class="mobile-tabs" style="margin-bottom: 16px;">
+            <button class="f-pill" id="btn-feed2" onclick="updateForumTab('feed')">Feed</button>
+            <button class="f-pill active" id="btn-about2" onclick="updateForumTab('about')">About</button>
+        </div>
+
         <div class="forum-sidebar-card" style="background:linear-gradient(135deg,var(--brand-red) 0%,#881337 100%);border:none;">
             <h3 style="font-size:16px;font-weight:800;color:#fff;margin:0 0 6px;">Community Rules</h3>
             <p style="font-size:12px;color:rgba(255,255,255,.8);margin:0 0 16px;line-height:1.6;">A space for alumni to connect, share knowledge, and support each other.</p>
@@ -452,4 +490,26 @@ document.getElementById('search-input').addEventListener('keyup', function() {
         }
     }, 400);
 });
+
+// Mobile Tab Switching
+function updateForumTab(tab) {
+    // Remove active from all buttons
+    document.querySelectorAll('.f-pill').forEach(btn => {
+        btn.classList.remove('active');
+    });
+    // Add active to clicked button
+    if(document.getElementById('btn-' + tab)) {
+        document.getElementById('btn-' + tab).classList.add('active');
+    }
+    if(document.getElementById('btn-' + tab + '2')) {
+        document.getElementById('btn-' + tab + '2').classList.add('active');
+    }
+    
+    // Hide all tabs
+    document.querySelectorAll('.tab-content').forEach(content => {
+        content.classList.remove('active');
+    });
+    // Show selected tab
+    document.getElementById(tab + '-tab').classList.add('active');
+}
 </script>
