@@ -216,6 +216,23 @@
             <canvas id="engagementChart"></canvas>
         </div>
     </div>
+    
+    <div class="report-card mb-4">
+        <div class="card-title">
+            <span>AI Analytics Interpretation</span>
+            <span style="font-size:11px;color:var(--text-muted);">
+                Automated System Insights
+            </span>
+        </div>
+
+        <ul style="padding-left:20px; margin:0;">
+            <?php foreach($ai_insights as $insight): ?>
+                <li style="margin-bottom:8px; font-weight:600; color:var(--text-main);">
+                    <?= htmlspecialchars($insight) ?>
+                </li>
+            <?php endforeach; ?>
+        </ul>
+    </div>
 
     <!-- Tracer Records Section -->
     <div class="report-card">
@@ -260,6 +277,8 @@
                 </div>
             </div>
         </form>
+
+        
 
         <div class="table-responsive">
             <table class="custom-table">

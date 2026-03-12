@@ -42,6 +42,10 @@ class AdminReports extends CI_Controller {
      
         // Employment rows (filtered)
         $data['employment_rows'] = $this->get_employment_report_data($filters);
+        $data['ai_insights'] = $this->generate_ai_insights(
+    $data['employment_rows'],
+    $data['engagement_by_year']
+);
         $data['filters'] = $filters;
 
         // whether employment table exists
@@ -280,5 +284,69 @@ class AdminReports extends CI_Controller {
         $dompdf->stream($filename, ['Attachment' => true]);
         exit;
     }
+
+    private function generate_ai_insights($employment_rows, $engagement_by_year)
+{
+    $insights = [];
+
+    $total = count($employment_rows);
+
+    if ($total == 0) {
+        $insights[] = "No employment data available yet.";
+        return $insights;
+    }
+
+    $employed = 0;
+    $unemployed = 0;
+    $self = 0;
+
+    $top_company = [];
+    $total_years_service = 0;
+
+    foreach ($employment_rows as $row) {
+
+        if ($row['employment_status'] == 'Employed') {
+            $employed++;
+        }
+
+        if ($row['employment_status'] == 'Unemployed') {
+            $unemployed++;
+        }
+
+        if ($row['employment_status'] == 'Self-employed') {
+            $self++;
+        }
+
+        if (!empty($row['company_name'])) {
+            $top_company[$row['company_name']] =
+                ($top_company[$row['company_name']] ?? 0) + 1;
+        }
+
+        $total_years_service += (int)$row['year_of_service'];
+    }
+
+    $employment_rate = round(($employed / $total) * 100);
+
+    $avg_service = round($total_years_service / $total, 1);
+
+    arsort($top_company);
+    $top_company_name = key($top_company);
+
+    $insights[] = "$employment_rate% of alumni in the tracer database are currently employed.";
+
+    $insights[] = "Average alumni work experience is approximately $avg_service years.";
+
+    if ($top_company_name) {
+        $insights[] = "$top_company_name appears as the most common employer among graduates.";
+    }
+
+    if ($employment_rate >= 70) {
+        $insights[] = "The employment outcome of graduates is considered strong.";
+    } else {
+        $insights[] = "Employment rate suggests that graduate employability may need improvement.";
+    }
+
+    return $insights;
+}
 
 }

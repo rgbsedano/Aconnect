@@ -880,10 +880,10 @@ commentsToggle.addEventListener("click", function(e){
 
     if(commentsContainer.style.display === "none"){
         commentsContainer.style.display = "block";
-        commentsToggle.innerHTML = " <?= $post->comment_count ?> comments";
+        commentsToggle.innerHTML = " <?= $post->comment_count ?> Comments";
     }else{
         commentsContainer.style.display = "none";
-        commentsToggle.innerHTML = " <?= $post->comment_count ?> comments";
+        commentsToggle.innerHTML = " <?= $post->comment_count ?> Comments";
     }
 
 });

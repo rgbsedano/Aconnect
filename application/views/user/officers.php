@@ -2,11 +2,13 @@
 $hierarchy = [
     'President' => null,
     'Vice President' => 'President',
+
     'Secretary' => 'Vice President',
-    'Treasurer' => 'Secretary',
-    'Auditor' => 'Treasurer',
-    'PRO' => 'Auditor',
-    'Board Member' => 'PRO'
+    'Treasurer' => 'Vice President',
+    'Auditor' => 'Vice President',
+    'PRO' => 'Vice President',
+
+    'Board Member' => 'Vice President'
 ];
 
 $indexed = [];
@@ -67,13 +69,17 @@ function renderOrgHex($nodes, $level = 0, $index = 0, $parentColor = '#BE123C') 
     <ul class="hex-tree-list level-<?= $level ?>" style="--ul-line-color: <?= $parentColor ?>;">
         <?php foreach ($nodes as $i => $n): 
             $photo = !empty($n['data']->photo) ? base_url($n['data']->photo) : base_url('assets/images/person-default.png');
-            $officerData = htmlspecialchars(json_encode([
+            $officerData = htmlspecialchars(
+            json_encode([
                 'name' => $n['data']->full_name,
                 'position' => $n['data']->position,
                 'email' => $n['data']->email,
                 'bio' => $n['data']->bio,
                 'photo' => $photo
-            ]));
+            ]),
+            ENT_QUOTES,
+            'UTF-8'
+        );
             $nodeColor = ($level === 1 && isset($level1Colors[$i])) ? $level1Colors[$i] : $color;
         ?>
         <li class="hex-item" style="--item-line-color: <?= $nodeColor ?>;">
@@ -297,6 +303,7 @@ function renderOrgHex($nodes, $level = 0, $index = 0, $parentColor = '#BE123C') 
     </main>
 </div>
 
+<!-- MODAL OFFICER -->
 <div class="modal fade modal-officer-detail" id="officerModal" tabindex="-1" role="dialog">
     <div class="modal-dialog modal-dialog-centered" role="document">
         <div class="modal-content shadow-3xl">
@@ -321,14 +328,18 @@ function renderOrgHex($nodes, $level = 0, $index = 0, $parentColor = '#BE123C') 
 
 <script>
 function openOfficerModal(element) {
-    const data = JSON.parse(element.getAttribute('data-officer'));
-    
-    document.getElementById('modal-photo').src = data.photo;
-    document.getElementById('modal-name').innerText = data.name;
-    document.getElementById('modal-position').innerText = data.position;
-    document.getElementById('modal-email').innerText = data.email || 'direct@aconnect.edu';
-    document.getElementById('modal-bio').innerText = data.bio || 'Leading with vision and purpose for the AConnect alumni community. Dedicated to fostering connections and professional growth.';
+    try {
+        const data = JSON.parse(element.dataset.officer);
 
-    $('#officerModal').modal('show');
+        document.getElementById('modal-photo').src = data.photo;
+        document.getElementById('modal-name').innerText = data.name;
+        document.getElementById('modal-position').innerText = data.position;
+        document.getElementById('modal-email').innerText = data.email || 'direct@aconnect.edu';
+        document.getElementById('modal-bio').innerText = data.bio || 'Leading with vision and purpose for the AConnect alumni community.';
+
+        $('#officerModal').modal('show');
+    } catch (e) {
+        console.error("Modal data error:", e);
+    }
 }
 </script>
