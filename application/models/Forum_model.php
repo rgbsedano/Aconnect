@@ -9,7 +9,10 @@ class Forum_model extends CI_Model {
             alumni.first_name,
             alumni.last_name,
             alumni.profile_image,
-            (SELECT COUNT(*) FROM forum_comments WHERE post_id=forum_posts.id) as comment_count,
+            (SELECT COUNT(*) 
+            FROM forum_comments 
+            WHERE post_id = forum_posts.id 
+            AND parent_id = 0) as comment_count,
             (SELECT COUNT(*) FROM forum_likes WHERE post_id=forum_posts.id) as like_count
         ");
 
@@ -139,7 +142,10 @@ class Forum_model extends CI_Model {
             alumni.first_name,
             alumni.last_name,
             alumni.profile_image,
-            (SELECT COUNT(*) FROM forum_comments WHERE post_id=forum_posts.id) as comment_count,
+            (SELECT COUNT(*) 
+            FROM forum_comments 
+            WHERE post_id = forum_posts.id 
+            AND parent_id = 0) as comment_count,
             (SELECT COUNT(*) FROM forum_likes WHERE post_id=forum_posts.id) as like_count
         ");
 

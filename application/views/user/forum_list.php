@@ -271,13 +271,7 @@ body {
                 <h1 style="font-size:18px;font-weight:800;color:#0f172a;margin:0;">Forum <span style="color:var(--brand-red);">Discussions</span></h1>
                 <p style="font-size:10px;font-weight:700;color:#94a3b8;text-transform:uppercase;letter-spacing:.15em;margin:0;">Alumni Community · <?= $total_posts ?? 0 ?> Posts</p>
             </div>
-        </div>
-        <button data-toggle="modal" data-target="#createPostModal"
-            style="background:var(--brand-red);color:#fff;border:none;border-radius:14px;padding:10px 22px;font-weight:800;font-size:13px;display:flex;align-items:center;gap:8px;cursor:pointer;box-shadow:0 4px 12px rgba(190,18,60,.25);transition:background .2s;"
-            onmouseover="this.style.background='#881337'" onmouseout="this.style.background='var(--brand-red)'">
-            <svg width="14" height="14" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-width="2.5" d="M12 4v16m-8-8h16"/></svg>
-            New Post
-        </button>
+        </div> 
     </div>
 </div>
 
@@ -304,7 +298,7 @@ body {
         <div class="create-post-btn" data-toggle="modal" data-target="#createPostModal">
             <div class="post-avatar" style="width:36px;height:36px;border-radius:50%;background:#f1f5f9;flex-shrink:0;"></div>
             <div class="create-post-input">Start a discussion...</div>
-            <button style="background:var(--brand-red);color:#fff;border:none;border-radius:10px;padding:7px 16px;font-size:12px;font-weight:800;cursor:pointer;" onclick="event.stopPropagation();" data-toggle="modal" data-target="#createPostModal">Post</button>
+            <button style="background:var(--brand-red);color:#fff;border:none;border-radius:10px;padding:7px 16px;font-size:12px;font-weight:800;cursor:pointer;" data-toggle="modal" data-target="#createPostModal">Post</button>
         </div>
 
         <!-- Posts feed -->
@@ -337,7 +331,7 @@ body {
                         </div>
 
                         <h3 class="post-title"><?= htmlspecialchars($p->title) ?></h3>
-                        <p class="post-preview"><?= htmlspecialchars(strip_tags($p->content)) ?></p>
+                        
 
                         <div class="post-stats">
                             <span class="post-stat post-stat-likes">
@@ -350,12 +344,6 @@ body {
                             </span>
                         </div>
                     </div>
-
-                    <?php if(!empty($p->image)): ?>
-                    <div class="post-image-thumb">
-                        <img src="<?= base_url('assets/uploads/forum/'.$p->image) ?>" alt="">
-                    </div>
-                    <?php endif; ?>
                 </a>
                 <?php endforeach; ?>
             </div>
@@ -382,7 +370,7 @@ body {
         <div class="forum-sidebar-card" style="background:linear-gradient(135deg,var(--brand-red) 0%,#881337 100%);border:none;">
             <h3 style="font-size:16px;font-weight:800;color:#fff;margin:0 0 6px;">Community Rules</h3>
             <p style="font-size:12px;color:rgba(255,255,255,.8);margin:0 0 16px;line-height:1.6;">A space for alumni to connect, share knowledge, and support each other.</p>
-            <button data-toggle="modal" data-target="#createPostModal" style="width:100%;background:#fff;color:var(--brand-red);border:none;border-radius:12px;padding:10px;font-weight:800;font-size:13px;cursor:pointer;">+ Create Post</button>
+            
         </div>
 
         <div class="forum-sidebar-card">

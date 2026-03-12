@@ -123,17 +123,24 @@ class Forum extends CI_Controller {
          redirect('forum');
     }
 
-    public function report($post_id){
+    public function report()
+    {
+        $post_id = $this->input->post('post_id');
+        $reason = $this->input->post('reason');
+
+        if($reason == "Other"){
+            $reason = $this->input->post('other_reason');
+        }
 
         $data = [
-            'post_id'=>$post_id,
-            'alumni_id'=>$this->session->userdata('alumni_id'),
-            'reason'=>'Reported by user'
+        'post_id'=>$post_id,
+        'alumni_id'=>$this->session->userdata('alumni_id'),
+        'reason'=>$reason
         ];
 
         $this->Forum_model->report_post($data);
 
-         redirect('forum/view/'.$post_id);
+        redirect('forum/view/'.$post_id);
     }
 
     public function view($id = null)
@@ -151,22 +158,70 @@ class Forum extends CI_Controller {
     }
 
    public function live_search()
-{
-    $search = $this->input->get('search');
-    $sort   = $this->input->get('sort');
-    $page   = (int) $this->input->get('page');
+    {
+        $search = $this->input->get('search');
+        $sort   = $this->input->get('sort');
+        $page   = (int) $this->input->get('page');
 
-    $limit = 6; // same as your normal pagination
-    $offset = $page ? $page : 0;
+        $limit = 6; // same as your normal pagination
+        $offset = $page ? $page : 0;
 
-    $posts = $this->Forum_model->get_posts($limit,$offset,$search,$sort);
-    $total = $this->Forum_model->count_posts($search,$sort);
+        $posts = $this->Forum_model->get_posts($limit,$offset,$search,$sort);
+        $total = $this->Forum_model->count_posts($search,$sort);
 
-    echo json_encode([
-        "posts" => $posts,
-        "total" => $total
-    ]);
-}
+        echo json_encode([
+            "posts" => $posts,
+            "total" => $total
+        ]);
+    }
+
+   public function delete_comment($comment_id,$post_id)
+    {
+        $alumni_id = $this->session->userdata('alumni_id');
+
+        // get comment
+        $comment = $this->db->where('id',$comment_id)->get('forum_comments')->row();
+
+        if($comment && $comment->alumni_id == $alumni_id){
+
+            // delete replies
+            $this->db->where('parent_id',$comment_id);
+            $this->db->delete('forum_comments');
+
+            // delete comment
+            $this->db->where('id',$comment_id);
+            $this->db->delete('forum_comments');
+
+        }
+
+        redirect('forum/view/'.$post_id);
+    }
+
+    public function edit_comment($id)
+    {
+        $data['comment'] = $this->db
+            ->where('id',$id)
+            ->where('alumni_id',$this->session->userdata('alumni_id'))
+            ->get('forum_comments')
+            ->row();
+
+        $this->load->view('__header');
+        $this->load->view('user/edit_comment',$data);
+        $this->load->view('__footer');
+    }
+
+    public function update_comment()
+    {
+        $id = $this->input->post('comment_id');
+
+        $this->db->where('id',$id);
+        $this->db->where('alumni_id',$this->session->userdata('alumni_id'));
+        $this->db->update('forum_comments',[
+            'comment'=>$this->input->post('comment')
+        ]);
+
+        redirect('forum/view/'.$this->input->post('post_id'));
+    }
 
 
 }
