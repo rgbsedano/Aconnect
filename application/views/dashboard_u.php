@@ -1,4 +1,4 @@
-﻿<?php
+<?php
 // --- Personalization data ---
 $first_name          = $this->session->userdata('first_name');
 $last_name           = $this->session->userdata('last_name');
@@ -557,7 +557,7 @@ else                $greeting_time = 'Good Evening';
                 </div>
                 <div class="feature-content">
                     <h3>GLOBALLY-COMPETITIVE GRADUATES</h3>
-                    <p>Join the ranks of St. Dominic College of Asia's globally-competitive graduatesâ€”recognized as board exam topnotchers, 100% passers, and highly employable professionals. With success stories spanning industries worldwide, our alumni are equipped to lead and thrive anywhere.</p>
+                    <p>Join the ranks of St. Dominic College of Asia's globally-competitive graduates recognized as board exam topnotchers, 100% passers, and highly employable professionals. With success stories spanning industries worldwide, our alumni are equipped to lead and thrive anywhere.</p>
                 </div>
             </div>
 
@@ -603,9 +603,9 @@ else                $greeting_time = 'Good Evening';
         </div>
     </section>
 
-    <footer class="page-footer">
-        <strong>Est. 2003</strong> â€¢ Bacoor, Cavite<br>
-        Â© 2026 St. Dominic College of Asia
+    <footer class="page-footer" style="color: white;">
+        <strong>Est. 2003</strong> Bacoor, Cavite<br>
+        AConnect&copy; 2026 St. Dominic College of Asia
     </footer>
 </div>
 
