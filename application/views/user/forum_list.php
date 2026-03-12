@@ -511,5 +511,16 @@ function updateForumTab(tab) {
     });
     // Show selected tab
     document.getElementById(tab + '-tab').classList.add('active');
+    
+    // Save active tab to localStorage
+    localStorage.setItem('forumListActiveTab', tab);
 }
+
+// Restore active tab on page load
+window.addEventListener('load', function() {
+    const savedTab = localStorage.getItem('forumListActiveTab');
+    if(savedTab && savedTab !== 'feed') {
+        updateForumTab(savedTab);
+    }
+});
 </script>

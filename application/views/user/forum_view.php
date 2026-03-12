@@ -278,6 +278,32 @@ body {
     border-radius:10px;
     font-weight:700;
 }
+
+/* ── Mobile Tabs ── */
+.mobile-tabs { display: none; gap: 8px; margin-bottom: 16px; }
+.f-pill {
+    padding: 8px 16px;
+    border-radius: 20px;
+    font-size: 13px;
+    font-weight: 700;
+    cursor: pointer;
+    border: none;
+    background: #f1f5f9;
+    color: #64748b;
+    transition: all .2s;
+}
+.f-pill:hover { background: #e2e8f0; }
+.f-pill.active { background: var(--brand-red); color: #fff; }
+
+.tab-content { display: block; }
+
+@media (max-width: 900px) {
+    .mobile-tabs { display: flex; }
+    .view-layout { grid-template-columns: 1fr; }
+    .forum-sidebar { display: none; }
+    .tab-content { display: none; }
+    .tab-content.active { display: block; }
+}
 </style>
 
 <!-- ── Consistent Page header bar ── -->
@@ -303,6 +329,13 @@ body {
 <div class="view-layout">
 
     <!-- ── Main content ── -->
+    <div id="feed-tab" class="tab-content active">
+        <!-- ── Mobile Tab Buttons ── -->
+        <div class="mobile-tabs" style="margin-bottom: 16px;">
+            <button class="f-pill active" id="btn-feed" onclick="updateForumTab('feed')">Feed</button>
+            <button class="f-pill" id="btn-about" onclick="updateForumTab('about')">About</button>
+        </div>
+
     <?php if($post): ?>
     <div>
         <div class="post-view-card">
@@ -580,10 +613,18 @@ body {
             </form>
         </div>
     </div>
+    <?php endif; ?>
+    </div>
     
-    <!-- ── Sidebar ── -->
-    <div class="forum-sidebar">
-        <div class="forum-sidebar-card" style="background:linear-gradient(135deg,var(--brand-red) 0%,#881337 100%);border:none;padding:24px;border-radius:24px;">
+    <!-- ── Sidebar / About Tab ── -->
+    <div id="about-tab" class="tab-content forum-sidebar">
+        <!-- ── Mobile Tab Buttons ── -->
+        <div class="mobile-tabs" style="margin-bottom: 16px;">
+            <button class="f-pill" id="btn-feed2" onclick="updateForumTab('feed')">Feed</button>
+            <button class="f-pill active" id="btn-about2" onclick="updateForumTab('about')">About</button>
+        </div>
+
+        <div class="forum-sidebar-card" style="background:linear-gradient(135deg,var(--brand-red) 0%,#881337 100%);border:none;padding:24px;border-radius:24px;margin-bottom:24px;">
             <h3 style="font-size:16px;font-weight:800;color:#fff;margin:0 0 8px;">About Forum</h3>
             <p style="font-size:12px;color:rgba(255,255,255,.8);margin:0 0 16px;line-height:1.6;">Share your experiences, ask for career advice, or just catch up with fellow alumni in this thread.</p>
             <a href="<?= base_url('forum') ?>" style="display:block;text-align:center;background:#fff;color:var(--brand-red);border-radius:12px;padding:10px;font-weight:800;font-size:13px;text-decoration:none;">Jump to Feed</a>
@@ -598,7 +639,6 @@ body {
             </div>
         </div>
     </div>
-    <?php endif; ?>
 
     <!-- UPDATE POST MODAL  -->
     <div class="modal fade" id="editPostModal" tabindex="-1">
@@ -927,6 +967,39 @@ document.querySelectorAll('.toggle-replies').forEach(btn => {
 
     });
 
+});
+
+// Mobile Tab Switching
+function updateForumTab(tab) {
+    // Remove active from all buttons
+    document.querySelectorAll('.f-pill').forEach(btn => {
+        btn.classList.remove('active');
+    });
+    // Add active to clicked button
+    if(document.getElementById('btn-' + tab)) {
+        document.getElementById('btn-' + tab).classList.add('active');
+    }
+    if(document.getElementById('btn-' + tab + '2')) {
+        document.getElementById('btn-' + tab + '2').classList.add('active');
+    }
+    
+    // Hide all tabs
+    document.querySelectorAll('.tab-content').forEach(content => {
+        content.classList.remove('active');
+    });
+    // Show selected tab
+    document.getElementById(tab + '-tab').classList.add('active');
+    
+    // Save active tab to localStorage
+    localStorage.setItem('forumActiveTab', tab);
+}
+
+// Restore active tab on page load
+window.addEventListener('load', function() {
+    const savedTab = localStorage.getItem('forumActiveTab');
+    if(savedTab && savedTab !== 'feed') {
+        updateForumTab(savedTab);
+    }
 });
 
 </script>
