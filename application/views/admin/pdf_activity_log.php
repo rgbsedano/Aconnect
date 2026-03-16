@@ -16,7 +16,7 @@
             text-align: left;
         }
         th {
-            background-color: #700A0A;
+            background-color: #a12124;
             color: white;
         }
     </style>

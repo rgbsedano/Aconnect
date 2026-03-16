@@ -1,5 +1,5 @@
 <?php
-$primary_color = '#700A0A';
+$primary_color = '#a12124';
 $secondary_color = '#C90000';
 $accent_color = '#70ADBC';
 $text_light = '#FFFFFF';
@@ -182,7 +182,7 @@ $admin_management_active = in_array($current_uri_segment_1, ['adminalumni', 'Adm
         }
         .nav-item:not(.dropdown) .nav-link-item:hover i {
             transform: scale(1.15);
-            color: #8B1538;
+            color: #a12124;
         }
 
         .nav-link-item.active-link {
@@ -494,11 +494,11 @@ $admin_management_active = in_array($current_uri_segment_1, ['adminalumni', 'Adm
         }
 
         /* icon colors */
-        .bg-network { background: #8B1538; }
-        .bg-jobs { background: #8B1538; }
-        .bg-events { background: #8B1538; }
-        .bg-history { background: #8B1538; }
-        .bg-officers { background: #8B1538; }
+        .bg-network { background: #a12124; }
+        .bg-jobs { background: #a12124; }
+        .bg-events { background: #a12124; }
+        .bg-history { background: #a12124; }
+        .bg-officers { background: #a12124; }
 
         /* text */
         .mobile-title {
@@ -613,7 +613,7 @@ $admin_management_active = in_array($current_uri_segment_1, ['adminalumni', 'Adm
                         </a>
                         <div class="dropdown-menu dropdown-menu-right shadow border-0" style="min-width: 220px; padding: 8px;">
                             <a class="dropdown-item" href="<?php echo base_url('events'); ?>">
-                                <div style="background: #8B1538; width: 36px; height: 36px; border-radius: 50%; display: flex; align-items: center; justify-content: center; color: white;">
+                                <div style="background: #a12124; width: 36px; height: 36px; border-radius: 50%; display: flex; align-items: center; justify-content: center; color: white;">
                                     <i class="fas fa-calendar-check"></i>
                                 </div>
                                 <div>

@@ -47,14 +47,14 @@
 <?php if ($this->session->userdata('alumni_id')): ?>
 <!-- Friends Chat (Bottom Right, Stacked Above Support) -->
 <div id="friends-chat-container" style="display: none; position: fixed; bottom: 100px; right: 30px; z-index: 10000; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', sans-serif;">
-    <button id="friends-toggle-btn" style="width: 50px; height: 50px; border-radius: 50%; background: linear-gradient(135deg, #8B1538, #A52A2A); color: white; border: none; box-shadow: 0 4px 15px rgba(139, 21, 56, 0.4); cursor: pointer; display: flex; align-items: center; justify-content: center; transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275); position: relative;">
+    <button id="friends-toggle-btn" style="width: 50px; height: 50px; border-radius: 50%; background: linear-gradient(135deg, #a12124, #c71a25); color: white; border: none; box-shadow: 0 4px 15px rgba(161, 33, 36, 0.4); cursor: pointer; display: flex; align-items: center; justify-content: center; transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275); position: relative;">
         <i class="fas fa-comment-dots"></i>
         <span style="position: absolute; top: -2px; right: -2px; background: #FF4444; color: white; border-radius: 50%; width: 18px; height: 18px; font-size: 10px; font-weight: 700; display: none; align-items: center; justify-content: center;" id="friends-unread-badge">0</span>
     </button>
 
     <div id="friends-chat-window" style="display: none; position: absolute; bottom: 75px; right: 0; width: 380px; height: 550px; background: white; border-radius: 16px; box-shadow: 0 12px 48px rgba(0,0,0,0.15); overflow: hidden; border: 1px solid rgba(0,0,0,0.08); flex-direction: column; transform-origin: right bottom;">
         <!-- Header -->
-        <div style="background: linear-gradient(135deg, #8B1538, #A52A2A); color: white; padding: 16px 20px; display: flex; justify-content: space-between; align-items: center; box-shadow: 0 2px 8px rgba(0,0,0,0.1);">
+        <div style="background: linear-gradient(135deg, #a12124, #c71a25); color: white; padding: 16px 20px; display: flex; justify-content: space-between; align-items: center; box-shadow: 0 2px 8px rgba(0,0,0,0.1);">
             <div style="display: flex; align-items: center; gap: 12px;">
                 <img id="friends-chat-avatar" src="<?= base_url('assets/images/person-male.png') ?>" style="width: 40px; height: 40px; border-radius: 50%; border: 2px solid rgba(255,255,255,0.3); display: none; object-fit: cover;">
                 <div>
@@ -74,7 +74,7 @@
             </div>
             <div id="friends-list-container" style="padding: 8px 0;">
                 <div style="text-align: center; color: #999; margin-top: 80px; padding: 0 30px;">
-                    <i class="fas fa-spinner fa-spin fa-2x" style="color: #8B1538;"></i>
+                    <i class="fas fa-spinner fa-spin fa-2x" style="color: #a12124;"></i>
                     <p style="margin-top: 16px; font-size: 14px;">Loading your connections...</p>
                 </div>
             </div>
@@ -83,7 +83,7 @@
         <!-- Active Chat -->
         <div id="active-friends-chat" style="display: none; flex: 1; flex-direction: column; background: #F5F5F5; min-height: 0;">
             <div id="friends-chat-header" style="padding: 12px 16px; background: white; border-bottom: 1px solid #E8E8E8; display: flex; align-items: center; gap: 12px;">
-                <button id="back-to-friends" style="background: transparent; border: none; color: #8B1538; cursor: pointer; font-size: 18px; width: 36px; height: 36px; border-radius: 50%; display: flex; align-items: center; justify-content: center; transition: background 0.2s;">
+                <button id="back-to-friends" style="background: transparent; border: none; color: #a12124; cursor: pointer; font-size: 18px; width: 36px; height: 36px; border-radius: 50%; display: flex; align-items: center; justify-content: center; transition: background 0.2s;">
                     <i class="fas fa-chevron-left"></i>
                 </button>
                 <div style="flex: 1; font-weight: 600; font-size: 15px; color: #1a1a1a;" id="friends-chat-user-name"></div>
@@ -95,7 +95,7 @@
             
             <div style="padding: 16px; background: white; border-top: 1px solid #E8E8E8; display: flex; gap: 10px; align-items: center;">
                 <input type="text" id="friends-chat-input" placeholder="Type a message..." style="flex: 1; border: 1px solid #E0E0E0; border-radius: 24px; padding: 12px 18px; outline: none; font-size: 14px; background: #F8F8F8; transition: all 0.2s;">
-                <button id="send-friends-btn" style="background: linear-gradient(135deg, #8B1538, #A52A2A); color: white; border: none; border-radius: 50%; width: 44px; height: 44px; cursor: pointer; display: flex; align-items: center; justify-content: center; box-shadow: 0 2px 8px rgba(139, 21, 56, 0.3); transition: all 0.2s;">
+                <button id="send-friends-btn" style="background: linear-gradient(135deg, #a12124, #c71a25); color: white; border: none; border-radius: 50%; width: 44px; height: 44px; cursor: pointer; display: flex; align-items: center; justify-content: center; box-shadow: 0 2px 8px rgba(161, 33, 36, 0.3); transition: all 0.2s;">
                     <i class="fas fa-paper-plane"></i>
                 </button>
             </div>
@@ -111,7 +111,7 @@
     </button>
 
     <div id="support-chat-window" style="display: none; position: absolute; bottom: 80px; right: 0; width: 380px; height: 550px; background: white; border-radius: 16px; box-shadow: 0 12px 48px rgba(0,0,0,0.15); overflow: hidden; border: 1px solid rgba(0,0,0,0.08); flex-direction: column;">
-        <div style="background: linear-gradient(135deg, #8B1538, #6B0F2A); color: white; padding: 20px; box-shadow: 0 2px 8px rgba(0,0,0,0.1);">
+        <div style="background: linear-gradient(135deg, #a12124, #7d181b); color: white; padding: 20px; box-shadow: 0 2px 8px rgba(0,0,0,0.1);">
             <div style="display: flex; justify-content: space-between; align-items: center;">
                 <div>
                     <h6 style="margin: 0; font-weight: 700; font-size: 18px; letter-spacing: 0.3px;">AConnect Support</h6>
@@ -129,7 +129,7 @@
 
         <div style="padding: 16px; background: white; border-top: 1px solid #E8E8E8; display: flex; gap: 10px; align-items: center;">
             <input type="text" id="support-input" placeholder="How can we help you?" style="flex: 1; border: 1px solid #E0E0E0; border-radius: 24px; padding: 12px 18px; outline: none; font-size: 14px; background: #F8F8F8;">
-            <button id="send-support-btn" style="background: linear-gradient(135deg, #8B1538, #6B0F2A); color: white; border: none; border-radius: 50%; width: 44px; height: 44px; cursor: pointer; display: flex; align-items: center; justify-content: center; box-shadow: 0 2px 8px rgba(139, 21, 56, 0.3);">
+            <button id="send-support-btn" style="background: linear-gradient(135deg, #a12124, #7d181b); color: white; border: none; border-radius: 50%; width: 44px; height: 44px; cursor: pointer; display: flex; align-items: center; justify-content: center; box-shadow: 0 2px 8px rgba(161, 33, 36, 0.3);">
                 <i class="fas fa-paper-plane"></i>
             </button>
         </div>
@@ -143,7 +143,7 @@
         gap: 10px;
         padding: 12px 20px;
         border-radius: 30px;
-        background: linear-gradient(135deg, #8B1538, #6B0F2A);
+        background: linear-gradient(135deg, #a12124, #7d181b);
         color: white;
         border: none;
         box-shadow: 0 8px 24px rgba(139, 21, 56, 0.4);
@@ -241,7 +241,7 @@
 
     .fb-sent { 
         align-self: flex-end; 
-        background: linear-gradient(135deg, #8B1538, #A52A2A);
+        background: linear-gradient(135deg, #a12124, #c71a25);
         color: white;
         border-bottom-right-radius: 4px;
     }
@@ -275,7 +275,7 @@
     }
     .bubble-sent { 
         align-self: flex-end; 
-        background: linear-gradient(135deg, #8B1538, #A52A2A);
+        background: linear-gradient(135deg, #a12124, #c71a25);
         color: white;
         border-bottom-right-radius: 4px;
     }
@@ -326,7 +326,7 @@
     #friends-chat-input:focus,
     #support-input:focus,
     #friends-search:focus {
-        border-color: #8B1538;
+        border-color: #a12124;
         background: white;
         box-shadow: 0 0 0 3px rgba(139, 21, 56, 0.1);
     }

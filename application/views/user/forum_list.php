@@ -2,8 +2,8 @@
 @import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap');
 
 :root {
-    --brand-red: #BE123C;
-    --brand-red-dark: #881337;
+    --brand-red: #a12124;
+    --brand-red-dark: #7d181b;
     --brand-red-light: #FFF1F2;
 }
 
@@ -55,7 +55,7 @@ body {
 }
 .forum-search-bar:focus-within {
     border-color: var(--brand-red);
-    box-shadow: 0 0 0 3px rgba(190,18,60,.08);
+    box-shadow: 0 0 0 3px rgba(161,33,36,.08);
 }
 .forum-search-bar input {
     border: none;
@@ -99,7 +99,7 @@ body {
     color: inherit !important;
 }
 .post-card:hover {
-    box-shadow: 0 8px 30px -8px rgba(190,18,60,.15);
+    box-shadow: 0 8px 30px -8px rgba(161,33,36,.15);
     transform: translateY(-2px);
     border-color: #fda4af;
     text-decoration: none !important;
@@ -243,7 +243,7 @@ body {
     transition: border-color .2s, box-shadow .2s;
 }
 .create-modal .form-control:focus {
-    border-color: var(--brand-red); box-shadow: 0 0 0 3px rgba(190,18,60,.08);
+    border-color: var(--brand-red); box-shadow: 0 0 0 3px rgba(161,33,36,.08);
     outline: none;
 }
 .create-modal .btn-post {
@@ -290,7 +290,7 @@ body {
 <div class="forum-header-bar">
     <div style="max-width:1185px; margin:0 auto; padding:12px 25px; display:flex; align-items:center; justify-content:space-between; gap:16px; flex-wrap:wrap;">
         <div style="display:flex; align-items:center; gap:12px;">
-            <div style="width:40px;height:40px;background:var(--brand-red);border-radius:14px;display:flex;align-items:center;justify-content:center;box-shadow:0 4px 12px rgba(190,18,60,.25);">
+            <div style="width:40px;height:40px;background:var(--brand-red);border-radius:14px;display:flex;align-items:center;justify-content:center;box-shadow:0 4px 12px rgba(161,33,36,.25);">
                 <svg style="width:20px;height:20px;color:#fff;fill:none;stroke:#fff;stroke-width:2;" viewBox="0 0 24 24"><path d="M17 8h2a2 2 0 012 2v6a2 2 0 01-2 2h-2v4l-4-4H9a1.994 1.994 0 01-1.414-.586m0 0L11 14h4a2 2 0 002-2V6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2v4l.586-.586z"/></svg>
             </div>
             <div>
@@ -405,7 +405,7 @@ body {
             <button class="f-pill active" id="btn-about2" onclick="updateForumTab('about')">About</button>
         </div>
 
-        <div class="forum-sidebar-card" style="background:linear-gradient(135deg,var(--brand-red) 0%,#881337 100%);border:none;">
+        <div class="forum-sidebar-card" style="background:linear-gradient(135deg,var(--brand-red) 0%,#7d181b 100%);border:none;">
             <h3 style="font-size:16px;font-weight:800;color:#fff;margin:0 0 6px;">Community Rules</h3>
             <p style="font-size:12px;color:rgba(255,255,255,.8);margin:0 0 16px;line-height:1.6;">A space for alumni to connect, share knowledge, and support each other.</p>
             

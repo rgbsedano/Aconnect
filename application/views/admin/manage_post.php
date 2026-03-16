@@ -6,7 +6,7 @@
         --card-bg: #ffffff;
         --text-main: #1e293b;
         --text-muted: #64748b;
-        --accent-red: #700a0a;
+        --accent-red: #a12124;
         --accent-light-red: #ff6b6b;
         --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
         --border-radius: 24px;
@@ -936,7 +936,7 @@
             text: "This action cannot be undone!",
             icon: 'warning',
             showCancelButton: true,
-            confirmButtonColor: '#700a0a',
+            confirmButtonColor: '#a12124',
             cancelButtonColor: '#64748b',
             confirmButtonText: 'Yes, delete it!',
             cancelButtonText: 'Cancel'
@@ -953,7 +953,7 @@
             text: "This action cannot be undone!",
             icon: 'warning',
             showCancelButton: true,
-            confirmButtonColor: '#700a0a',
+            confirmButtonColor: '#a12124',
             cancelButtonColor: '#64748b',
             confirmButtonText: 'Yes, delete it!',
             cancelButtonText: 'Cancel'

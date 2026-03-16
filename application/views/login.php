@@ -100,13 +100,13 @@ html, body {
 }
 
 .form-control:focus {
-    border-color: #700A0A;
+    border-color: #a12124;
     box-shadow: 0 0 0 .15rem rgba(112,10,10,.2);
 }
 
 .btn-block {
     width: 100%;
-    background: #700A0A !important;
+    background: #a12124 !important;
     border: none;
     height: 48px;
     font-weight: 600;
@@ -114,7 +114,7 @@ html, body {
 }
 
 .btn-block:hover {
-    background: #550808 !important;
+    background: #7d181b !important;
 }
 
 
@@ -136,13 +136,13 @@ html, body {
 }
 
 .remember-me input {
-    accent-color: #700A0A;
+    accent-color: #a12124;
 }
 
 .forgot-link {
     font-size: .9rem;
     font-weight: 600;
-    color: #700A0A;
+    color: #a12124;
     text-decoration: none;
 }
 
@@ -316,7 +316,7 @@ html, body {
             <div class="modal-footer">
             <button type="submit"
                     class="btn btn-primary"
-                    style="background:#700A0A;border:none">
+                    style="background:#a12124;border:none">
                 Send Reset Link
             </button>
             <button type="button"
@@ -348,7 +348,7 @@ html, body {
                 </div>
             </div>
             <div class="modal-footer">
-              <button type="submit" class="btn btn-primary" style="background:#700A0A;border:none">Resend</button>
+              <button type="submit" class="btn btn-primary" style="background:#a12124;border:none">Resend</button>
               <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
             </div>
           </form>

@@ -1,7 +1,7 @@
 <style>
     :root {
-        --maroon: #8B1538;
-        --maroon-dark: #6B0F2A;
+        --maroon: #a12124;
+        --maroon-dark: #7d181b;
         --gold: #D4A574;
         --bg: #FAFAF8;
         --card: #ffffff;

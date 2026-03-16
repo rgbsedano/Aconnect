@@ -30,11 +30,11 @@ defined('BASEPATH') OR exit('No direct script access allowed');
     .register-form-wrapper h1 { text-align:center; font-size:1.6rem; font-weight:700; color:#333; margin-bottom:1.5rem; }
     .form-group input, .form-control { border-radius:5px; height:40px; padding:8px 15px; margin-bottom:10px; width:100%; border:1px solid #ddd; box-sizing:border-box; }
     .form-group select { border-radius:5px; height:40px; padding:8px 15px; margin-bottom:10px; width:100%; border:1px solid #ddd; box-sizing:border-box; appearance:none; background-position:right 0.75rem center; background-size:14px 14px; }
-    .form-group input:focus, .form-group select:focus { border-color:#700A0A; box-shadow:0 0 0 0.15rem rgba(112,10,10,0.2); outline:0; }
-    .btn-register { width:100%; background-color:#700A0A !important; color:white; border:none; height:48px; font-size:1rem; text-transform:uppercase; font-weight:600; border-radius:5px; cursor:pointer; transition:background-color 0.2s ease; }
-    .btn-register:hover { background-color:#550808 !important; }
+    .form-group input:focus, .form-group select:focus { border-color:#a12124; box-shadow:0 0 0 0.15rem rgba(161,33,36,0.2); outline:0; }
+    .btn-register { width:100%; background-color:#a12124 !important; color:white; border:none; height:48px; font-size:1rem; text-transform:uppercase; font-weight:600; border-radius:5px; cursor:pointer; transition:background-color 0.2s ease; }
+    .btn-register:hover { background-color:#7d181b !important; }
     .login-link-container { margin-top:0.75rem; text-align:center; font-size:0.85rem; padding-top:10px; border-top:1px solid #eee; }
-    .login-link-container a { color:#700A0A; text-decoration:none; font-weight:600; }
+    .login-link-container a { color:#a12124; text-decoration:none; font-weight:600; }
     .validation-error { width:100%; max-width:450px; margin-bottom:0.5rem; padding:0.75rem; color:#721c24; background-color:#f8d7da; border:1px solid #f5c6cb; border-radius:5px; font-size:0.85rem; text-align:left; }
     @media screen and (max-width:767.98px) { 
         html, body { overflow-y:auto; height: auto; } 
@@ -204,7 +204,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                         <div class="form-group d-flex align-items-start mb-3" style="font-size: 0.85rem; color: #555;">
                             <input type="checkbox" id="privacyConsent" name="privacy_consent" style="width: 18px; height: 18px; margin-right: 10px; margin-top: 2px;" required>
                             <label for="privacyConsent" id="triggerPrivacyModal" style="cursor: pointer;">
-                                I have read and agree to the <a href="#" style="color: #700A0A; border-bottom: 1px dashed #700A0A;">Data Privacy Terms</a>.
+                                I have read and agree to the <a href="#" style="color: #a12124; border-bottom: 1px dashed #a12124;">Data Privacy Terms</a>.
                             </label>
                         </div>
 
@@ -225,7 +225,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
     <div class="modal fade" id="privacyModal" tabindex="-1" role="dialog" aria-labelledby="privacyModalLabel" aria-hidden="true">
         <div class="modal-dialog modal-lg modal-dialog-centered" role="document">
             <div class="modal-content" style="border-radius: 12px; border: none; overflow: hidden; box-shadow: 0 10px 30px rgba(0,0,0,0.2);">
-                <div class="modal-header" style="background: #700A0A; color: white; border: none; padding: 15px 25px;">
+                <div class="modal-header" style="background: #a12124; color: white; border: none; padding: 15px 25px;">
                     <h5 class="modal-title" id="privacyModalLabel" style="font-weight: 700;">Data Privacy</h5>
                     <button type="button" class="close text-white" data-dismiss="modal" aria-label="Close">
                         <span aria-hidden="true">&times;</span>
@@ -286,7 +286,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                 </div>
                 <div class="modal-footer" style="padding: 15px 25px; background: #f8f9fa; border-top: 1px solid #eee;">
                     <button type="button" class="btn btn-secondary" data-dismiss="modal" style="border-radius: 8px; font-weight: 600;">Close</button>
-                    <button type="button" id="submitPrivacy" class="btn btn-danger" style="background: #700A0A; border: none; border-radius: 8px; font-weight: 600; padding: 8px 25px;">Submit</button>
+                    <button type="button" id="submitPrivacy" class="btn btn-danger" style="background: #a12124; border: none; border-radius: 8px; font-weight: 600; padding: 8px 25px;">Submit</button>
                 </div>
             </div>
         </div>

@@ -22,8 +22,8 @@ else                $greeting_time = 'Good Evening';
 
 <style>
     :root {
-        --primary: #700a0a;
-        --primary-light: #8b1538;
+        --primary: #a12124;
+        --primary-light: #7d181b;
         --accent: #d4a574;
         --bg-page: #f8fafc;
         --card-bg: rgba(255, 255, 255, 0.9);
@@ -61,7 +61,7 @@ else                $greeting_time = 'Good Evening';
         position: absolute;
         top: 0; left: 0; right: 0;
         height: 4px;
-        background: linear-gradient(90deg, #700a0a, #8b1538);
+        background: linear-gradient(90deg, #a12124, #7d181b);
         z-index: 1;
     }
 
@@ -142,8 +142,8 @@ else                $greeting_time = 'Good Evening';
         width: 88px;
         height: 88px;
         border-radius: 50%;
-        border: 3px solid #700a0a;
-        box-shadow: 0 0 0 4px rgba(112,10,10,0.10);
+        border: 3px solid #a12124;
+        box-shadow: 0 0 0 4px rgba(161,33,36,0.10);
         overflow: hidden;
         margin-bottom: 22px;
         flex-shrink: 0;
@@ -162,20 +162,20 @@ else                $greeting_time = 'Good Evening';
         display: inline-flex;
         align-items: center;
         gap: 7px;
-        background: rgba(112,10,10,0.07);
-        border: 1px solid rgba(112,10,10,0.18);
+        background: rgba(161,33,36,0.07);
+        border: 1px solid rgba(161,33,36,0.18);
         border-radius: 999px;
         padding: 6px 16px;
         font-size: 13px;
         font-weight: 600;
-        color: #700a0a;
+        color: #a12124;
         letter-spacing: 0.3px;
         margin-bottom: 22px;
     }
 
     .hero-badge i {
         font-size: 12px;
-        color: #700a0a;
+        color: #a12124;
     }
 
     /* Main heading */
@@ -189,7 +189,7 @@ else                $greeting_time = 'Good Evening';
     }
 
     .hero-heading .hero-name {
-        color: #700a0a;
+        color: #a12124;
     }
 
     /* Subtitle */
@@ -214,7 +214,7 @@ else                $greeting_time = 'Good Evening';
         display: inline-flex;
         align-items: center;
         gap: 8px;
-        background: #700a0a;
+        background: #a12124;
         color: #ffffff;
         font-size: 14px;
         font-weight: 700;
@@ -222,14 +222,14 @@ else                $greeting_time = 'Good Evening';
         border-radius: 8px;
         text-decoration: none !important;
         transition: all 0.3s ease;
-        box-shadow: 0 4px 15px rgba(112,10,10,0.25);
+        box-shadow: 0 4px 15px rgba(161,33,36,0.25);
         border: 2px solid transparent;
     }
 
     .hero-btn-primary:hover {
-        background: #8b1538;
+        background: #7d181b;
         transform: translateY(-2px);
-        box-shadow: 0 8px 24px rgba(112,10,10,0.30);
+        box-shadow: 0 8px 24px rgba(161,33,36,0.30);
         color: #ffffff;
     }
 
@@ -238,20 +238,20 @@ else                $greeting_time = 'Good Evening';
         align-items: center;
         gap: 8px;
         background: transparent;
-        color: #700a0a;
+        color: #a12124;
         font-size: 14px;
         font-weight: 600;
         padding: 11px 26px;
         border-radius: 8px;
         text-decoration: none !important;
         transition: all 0.3s ease;
-        border: 2px solid rgba(112,10,10,0.30);
+        border: 2px solid rgba(161,33,36,0.30);
     }
 
     .hero-btn-secondary:hover {
-        background: rgba(112,10,10,0.07);
-        border-color: #700a0a;
-        color: #700a0a;
+        background: rgba(161,33,36,0.07);
+        border-color: #a12124;
+        color: #a12124;
         transform: translateY(-2px);
     }
 

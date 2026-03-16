@@ -115,8 +115,8 @@ defined('BASEPATH') OR exit('No direct script access allowed');
     }
     
     .form-control:focus {
-        border-color: #700A0A; /* Maroon border on focus */
-        box-shadow: 0 0 0 0.15rem rgba(112, 10, 10, 0.2); /* Subtle maroon shadow */
+        border-color: #a12124; /* Maroon border on focus */
+        box-shadow: 0 0 0 0.15rem rgba(161, 33, 36, 0.2); /* Subtle maroon shadow */
         outline: 0;
     }
 
@@ -128,7 +128,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
     /* Sign In Button */
     .btn-login {
         width: 100%;
-        background-color: #700A0A !important; 
+        background-color: #a12124 !important; 
         color: white;
         border: none;
         height: 48px;
@@ -141,7 +141,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
     }
 
     .btn-login:hover {
-        background-color: #550808 !important; 
+        background-color: #7d181b !important; 
     }
 
     /* Link to Alumni Login */
@@ -153,7 +153,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
         border-top: 1px solid #eee; 
     }
     .link-container a {
-        color: #700A0A;
+        color: #a12124;
         text-decoration: none;
         font-weight: 600;
         transition: text-decoration 0.2s ease;

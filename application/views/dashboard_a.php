@@ -6,7 +6,7 @@
         --card-bg: #ffffff;
         --text-main: #1e293b;
         --text-muted: #64748b;
-        --accent-red: #700a0a;
+        --accent-red: #a12124;
         --accent-green: #04b373;
         --accent-blue: #3b59ff;
         --accent-pink: #ff2d55;

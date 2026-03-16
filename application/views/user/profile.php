@@ -1,8 +1,8 @@
 
     <style>
         :root {
-            --maroon: #8B1538;
-            --maroon-dark: #6B0F2A;
+            --maroon: #a12124;
+            --maroon-dark: #7d181b;
             --gold: #D4A574;
             --bg: #FAFAF8;
             --card: #ffffff;
@@ -247,7 +247,7 @@
             display: flex;
             align-items: center;
             justify-content: center;
-            background: rgba(139, 21, 56, 0.1);
+            background: rgba(161, 33, 36, 0.1);
             border-radius: 10px;
         }
 
@@ -300,7 +300,7 @@
             display: inline-flex;
             align-items: center;
             gap: 6px;
-            background: linear-gradient(135deg, rgba(139, 21, 56, 0.1), rgba(212, 165, 116, 0.1));
+            background: linear-gradient(135deg, rgba(161, 33, 36, 0.1), rgba(212, 165, 116, 0.1));
             border: 1px solid var(--border);
             color: var(--text);
             padding: 8px 14px;
@@ -314,7 +314,7 @@
 
         .skill-tag:hover {
             border-color: var(--maroon);
-            background: linear-gradient(135deg, rgba(139, 21, 56, 0.2), rgba(212, 165, 116, 0.1));
+            background: linear-gradient(135deg, rgba(161, 33, 36, 0.2), rgba(212, 165, 116, 0.1));
         }
 
         /* Modal Styles */
@@ -357,7 +357,7 @@
 
         .form-control:focus {
             border-color: var(--maroon);
-            box-shadow: 0 0 0 3px rgba(139, 21, 56, 0.1);
+            box-shadow: 0 0 0 3px rgba(161, 33, 36, 0.1);
             outline: none;
         }
 
@@ -968,7 +968,7 @@
     <div class="modal fade" id="coverPhotoModal" tabindex="-1" role="dialog" aria-labelledby="coverPhotoModalLabel" aria-hidden="true">
         <div class="modal-dialog modal-dialog-centered" role="document">
             <div class="modal-content">
-                <div class="modal-header" style="background: linear-gradient(135deg, #8B1538, #6B0F2A); color: white;">
+                <div class="modal-header" style="background: linear-gradient(135deg, #a12124, #7d181b); color: white;">
                     <h5 class="modal-title" id="coverPhotoModalLabel"><i class="fas fa-image"></i> Update Cover Photo</h5>
                     <button type="button" class="close text-white" data-dismiss="modal" aria-label="Close">
                         <span aria-hidden="true">&times;</span>

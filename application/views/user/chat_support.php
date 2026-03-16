@@ -65,7 +65,7 @@
 h2 {
     text-align: center;
     margin-bottom: 20px;
-    color: #700A0A;
+    color: #a12124;
 }
 
 .chat-container {
@@ -81,7 +81,7 @@ h2 {
 }
 
 .chat-header {
-    background-color: #700A0A;
+    background-color: #a12124;
     color: white;
     padding: 15px;
     font-size: 18px;
@@ -112,7 +112,7 @@ h2 {
 }
 
 .message.alumni {
-    background-color: #700A0A;
+    background-color: #a12124;
     color: white;
     align-self: flex-end;
     margin-left: auto;
@@ -142,7 +142,7 @@ h2 {
 
 .chat-form button {
     padding: 10px 20px;
-    background-color: #700A0A;
+    background-color: #a12124;
     color: white;
     border: none;
     border-radius: 8px;
@@ -152,6 +152,6 @@ h2 {
 }
 
 .chat-form button:hover {
-    background-color: #550808;
+    background-color: #7d181b;
 }
 </style>

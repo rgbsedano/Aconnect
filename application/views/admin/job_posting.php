@@ -1,7 +1,7 @@
 <style>
     :root {
-        --primary-color: #8B1538;
-        --accent-red: #700a0a;
+        --primary-color: #a12124;
+        --accent-red: #a12124;
         --text-main: #1e293b;
         --text-muted: #64748b;
         --card-bg: rgba(255, 255, 255, 0.95);
@@ -465,7 +465,7 @@
             text: "Are you sure you want to permanently remove '" + title + "'?",
             icon: 'warning',
             showCancelButton: true,
-            confirmButtonColor: '#8B1538',
+            confirmButtonColor: '#a12124',
             cancelButtonColor: '#64748b',
             confirmButtonText: 'CONFIRM DELETE',
             padding: '2em',

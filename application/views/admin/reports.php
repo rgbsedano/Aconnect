@@ -6,7 +6,7 @@
         --card-bg: #ffffff;
         --text-main: #1e293b;
         --text-muted: #64748b;
-        --accent-red: #700a0a;
+        --accent-red: #a12124;
         --accent-green: #10b981;
         --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
         --border-radius: 24px;
@@ -349,7 +349,7 @@
                 datasets: [
                     { label: 'Total Alumni', data: total, backgroundColor: '#e2e8f0', borderRadius: 8 },
                     { label: 'Active (30d)', data: active, backgroundColor: '#94a3b8', borderRadius: 8 },
-                    { label: 'Event Registrations', data: events, backgroundColor: '#700a0a', borderRadius: 8 },
+                    { label: 'Event Registrations', data: events, backgroundColor: '#a12124', borderRadius: 8 },
                     { label: 'Job Applications', data: apps, backgroundColor: '#1e293b', borderRadius: 8 },
                 ]
             },

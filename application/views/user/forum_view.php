@@ -2,8 +2,8 @@
 @import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap');
 
 :root {
-    --brand-red: #BE123C;
-    --brand-red-dark: #881337;
+    --brand-red: #a12124;
+    --brand-red-dark: #7d181b;
     --brand-red-light: #FFF1F2;
 }
 
@@ -168,7 +168,7 @@ body {
 }
 .comment-textarea:focus {
     border-color: var(--brand-red);
-    box-shadow: 0 0 0 4px rgba(190,18,60,.08);
+    box-shadow: 0 0 0 4px rgba(161,33,36,.08);
 }
 
 /* ── Comment Card ── */
@@ -203,7 +203,7 @@ body {
 /* ===== RED THEME MODAL HEADER ===== */
 
 .modal-header{
-    background: linear-gradient(135deg, #BE123C 0%, #881337 100%);
+    background: linear-gradient(135deg, #a12124 0%, #7d181b 100%);
     color:white;
     border-bottom:none;
     padding:18px 22px;
@@ -245,12 +245,12 @@ body {
 
 .report-option:hover{
     background:#f8fafc;
-    border-color:#BE123C;
+    border-color:#a12124;
 }
 
 /* selected radio */
 .report-option input{
-    accent-color:#BE123C;
+    accent-color:#a12124;
 }
 
 /* other textarea */
@@ -263,7 +263,7 @@ body {
 
 /* buttons */
 .btn-danger{
-    background:#BE123C;
+    background:#a12124;
     border:none;
     border-radius:10px;
     font-weight:700;
@@ -271,7 +271,7 @@ body {
 }
 
 .btn-danger:hover{
-    background:#881337;
+    background:#7d181b;
 }
 
 .btn-secondary{
@@ -319,8 +319,8 @@ body {
             </div>
         </div>
         <a href="<?= base_url('forum') ?>"
-            style="background:var(--brand-red);color:#fff;border:none;border-radius:14px;padding:10px 22px;font-weight:800;font-size:13px;display:flex;align-items:center;gap:8px;cursor:pointer;text-decoration:none;box-shadow:0 4px 12px rgba(190,18,60,.25);transition:background .2s;"
-            onmouseover="this.style.background='#881337'" onmouseout="this.style.background='var(--brand-red)'">
+            style="background:var(--brand-red);color:#fff;border:none;border-radius:14px;padding:10px 22px;font-weight:800;font-size:13px;display:flex;align-items:center;gap:8px;cursor:pointer;text-decoration:none;box-shadow:0 4px 12px rgba(161,33,36,.25);transition:background .2s;"
+            onmouseover="this.style.background='#7d181b'" onmouseout="this.style.background='var(--brand-red)'">
             Back to Feed
         </a>
     </div>
@@ -624,7 +624,7 @@ body {
             <button class="f-pill active" id="btn-about2" onclick="updateForumTab('about')">About</button>
         </div>
 
-        <div class="forum-sidebar-card" style="background:linear-gradient(135deg,var(--brand-red) 0%,#881337 100%);border:none;padding:24px;border-radius:24px;margin-bottom:24px;">
+        <div class="forum-sidebar-card" style="background:linear-gradient(135deg,var(--brand-red) 0%,#7d181b 100%);border:none;padding:24px;border-radius:24px;margin-bottom:24px;">
             <h3 style="font-size:16px;font-weight:800;color:#fff;margin:0 0 8px;">About Forum</h3>
             <p style="font-size:12px;color:rgba(255,255,255,.8);margin:0 0 16px;line-height:1.6;">Share your experiences, ask for career advice, or just catch up with fellow alumni in this thread.</p>
             <a href="<?= base_url('forum') ?>" style="display:block;text-align:center;background:#fff;color:var(--brand-red);border-radius:12px;padding:10px;font-weight:800;font-size:13px;text-decoration:none;">Jump to Feed</a>

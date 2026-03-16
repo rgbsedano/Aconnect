@@ -48,20 +48,20 @@ function buildPositionTree($position, $hierarchy, $indexed) {
 $orgTree = buildPositionTree('President', $hierarchy, $indexed);
 
 $levelColors = [
-    0 => '#BE123C',
-    1 => '#9F1239',
-    2 => '#881337',
-    3 => '#E11D48',
+    0 => '#a12124',
+    1 => '#b91f2a',
+    2 => '#7d181b',
+    3 => '#c71a25',
     4 => '#FB7185',
-    5 => '#BE123C',
-    6 => '#9F1239'
+    5 => '#a12124',
+    6 => '#b91f2a'
 ];
 
-$level1Colors = ['#BE123C', '#9F1239', '#881337', '#E11D48'];
+$level1Colors = ['#a12124', '#b91f2a', '#7d181b', '#c71a25'];
 
-function renderOrgHex($nodes, $level = 0, $index = 0, $parentColor = '#BE123C') {
+function renderOrgHex($nodes, $level = 0, $index = 0, $parentColor = '#a12124') {
     global $levelColors, $level1Colors;
-    $color = $levelColors[$level] ?? '#BE123C';
+    $color = $levelColors[$level] ?? '#a12124';
     if ($level === 1 && isset($level1Colors[$index])) {
         $color = $level1Colors[$index];
     }
@@ -112,7 +112,7 @@ function renderOrgHex($nodes, $level = 0, $index = 0, $parentColor = '#BE123C') 
     @import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap');
 
     :root {
-        --brand-red: #BE123C;
+        --brand-red: #a12124;
         --brand-gold: #D97706;
     }
 
@@ -122,7 +122,7 @@ function renderOrgHex($nodes, $level = 0, $index = 0, $parentColor = '#BE123C') 
     
     .bg-pattern {
         background-color: transparent;
-        background-image: radial-gradient(#BE123C22 0.5px, transparent 0.5px);
+        background-image: radial-gradient(#a1212422 0.5px, transparent 0.5px);
         background-size: 24px 24px;
         min-height: 100vh;
     }
@@ -174,7 +174,7 @@ function renderOrgHex($nodes, $level = 0, $index = 0, $parentColor = '#BE123C') 
         display: flex; flex-direction: column; align-items: center;
         border: 2px solid rgba(190, 18, 60, 0.08);
     }
-    .hex-name { margin: 0; font-size: 16px; font-weight: 800; color: #BE123C; white-space: nowrap; line-height: 1.2; text-align: center; }
+    .hex-name { margin: 0; font-size: 16px; font-weight: 800; color: #a12124; white-space: nowrap; line-height: 1.2; text-align: center; }
     .hex-role {
         margin: 4px 0 0; font-size: 11px; font-weight: 700;
         text-align: center; width: 100%; text-transform: uppercase; letter-spacing: 1.5px;
@@ -218,7 +218,7 @@ function renderOrgHex($nodes, $level = 0, $index = 0, $parentColor = '#BE123C') 
         top: -19px;
         left: 45px; right: 45px;
         height: 3px;
-        background: var(--ul-line-color, #BE123C);
+        background: var(--ul-line-color, #a12124);
         border-radius: 2px;
     }
 
@@ -231,7 +231,7 @@ function renderOrgHex($nodes, $level = 0, $index = 0, $parentColor = '#BE123C') 
         transform: translateX(-50%);
         width: 3px;
         height: 19px;
-        background: var(--item-line-color, #BE123C);
+        background: var(--item-line-color, #a12124);
         border-radius: 0 0 2px 2px;
     }
 
@@ -258,7 +258,7 @@ function renderOrgHex($nodes, $level = 0, $index = 0, $parentColor = '#BE123C') 
     }
 
     .modal-officer-detail .modal-content { border-radius: 32px; border: none; overflow: hidden; background: rgba(255,255,255,0.9); backdrop-filter: blur(20px); border: 1px solid rgba(255,255,255,0.3); }
-    .modal-officer-header { height: 180px; background: linear-gradient(135deg, #BE123C 0%, #881337 100%); position: relative; }
+    .modal-officer-header { height: 180px; background: linear-gradient(135deg, #a12124 0%, #7d181b 100%); position: relative; }
     .modal-officer-photo {
         width: 160px; height: 160px;
         border-radius: 50%;
@@ -313,14 +313,14 @@ function renderOrgHex($nodes, $level = 0, $index = 0, $parentColor = '#BE123C') 
             </div>
             <div class="modal-officer-body" style="padding: 100px 32px 48px; text-align: center;">
                 <h3 id="modal-name" style="font-size: 32px; font-weight: 800; color: #4c0519; margin: 0; letter-spacing: -0.02em;"></h3>
-                <p id="modal-position" style="font-size: 13px; font-weight: 800; color: #BE123C; text-transform: uppercase; margin-top: 10px; margin-bottom: 32px; letter-spacing: 0.1em;"></p>
+                <p id="modal-position" style="font-size: 13px; font-weight: 800; color: #a12124; text-transform: uppercase; margin-top: 10px; margin-bottom: 32px; letter-spacing: 0.1em;"></p>
                 
-                <div style="background: #FFF1F2; padding: 12px 24px; border-radius: 16px; color: #BE123C; font-size: 14px; display: inline-flex; align-items: center; gap: 12px; margin-bottom: 32px; border: 1px solid #FFE4E6;">
+                <div style="background: #FFF1F2; padding: 12px 24px; border-radius: 16px; color: #a12124; font-size: 14px; display: inline-flex; align-items: center; gap: 12px; margin-bottom: 32px; border: 1px solid #FFE4E6;">
                     <svg class="w-5 h-5 text-rose-700" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"/></svg>
                     <span id="modal-email" font-weight="600"></span>
                 </div>
 
-                <div id="modal-bio" style="font-size: 16px; color: #881337; line-height: 1.8; border-top: 1px solid #ffe4e6; padding-top: 32px; font-weight: 400; text-align: center; max-width: 400px; margin: 0 auto;"></div>
+                <div id="modal-bio" style="font-size: 16px; color: #a12124; line-height: 1.8; border-top: 1px solid #ffe4e6; padding-top: 32px; font-weight: 400; text-align: center; max-width: 400px; margin: 0 auto;"></div>
             </div>
         </div>
     </div>

@@ -82,7 +82,7 @@ html, body {
 
 .reset-icon {
     font-size: 42px;
-    color: #700A0A;
+    color: #a12124;
     margin-bottom: 10px;
 }
 
@@ -104,14 +104,14 @@ html, body {
 }
 
 .reset-card .form-control:focus {
-    border-color: #700A0A;
+    border-color: #a12124;
     box-shadow: 0 0 0 0.15rem rgba(112,10,10,0.15);
 }
 
 /* BUTTON */
 .reset-card .btn-primary {
     width: 100%;
-    background: linear-gradient(135deg, #700A0A, #C90000);
+    background: linear-gradient(135deg, #a12124, #C90000);
     border: none;
     height: 48px;
     font-weight: 600;
@@ -119,7 +119,7 @@ html, body {
 }
 
 .reset-card .btn-primary:hover {
-    background: linear-gradient(135deg, #550808, #a30000);
+    background: linear-gradient(135deg, #7d181b, #a30000);
 }
 
 /* BACK LINK */
@@ -128,7 +128,7 @@ html, body {
 }
 
 .back-login a {
-    color: #700A0A;
+    color: #a12124;
     font-weight: 600;
     text-decoration: none;
 }

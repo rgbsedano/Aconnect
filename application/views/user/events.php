@@ -1,7 +1,7 @@
 
     <style>
         :root {
-            --brand-red: #BE123C;
+            --brand-red: #a12124;
             --brand-gold: #D97706;
         }
 
@@ -9,6 +9,17 @@
             background-color: #F8FAFC;
             font-family: 'Plus Jakarta Sans', sans-serif;
         }
+        
+        /* Override Tailwind rose colors to use #a12124 */
+        .bg-rose-700 { background-color: #a12124; }
+        .bg-rose-800 { background-color: #7d181b; }
+        .bg-rose-600 { background-color: #a12124; }
+        .text-rose-700 { color: #a12124; }
+        .hover\:bg-rose-700:hover { background-color: #7d181b; }
+        .hover\:bg-rose-800:hover { background-color: #5f1515; }
+        .shadow-rose-100 { box-shadow: 0 10px 15px -3px rgba(161, 33, 36, 0.1); }
+        .shadow-rose-200 { box-shadow: 0 10px 15px -3px rgba(161, 33, 36, 0.2); }
+        .focus\:ring-rose-700\/20:focus { box-shadow: 0 0 0 3px rgba(161, 33, 36, 0.2); }
         
         /* Job Board Pattern Background */
         .bg-pattern {
@@ -25,7 +36,7 @@
         .job-card:hover {
             transform: translateY(-4px);
             border-color: #D97706;
-            box-shadow: 0 12px 24px -10px rgba(190, 18, 60, 0.1);
+            box-shadow: 0 12px 24px -10px rgba(161, 33, 36, 0.1);
         }
 
         .modal-overlay {

@@ -1,7 +1,7 @@
 <style>
         :root {
-            --maroon: #8B1538;
-            --maroon-dark: #6B0F2A;
+            --maroon: #a12124;
+            --maroon-dark: #7d181b;
             --gold: #D4A574;
             --bg: #FAFAF8;
             --card: #ffffff;
@@ -266,7 +266,7 @@
             cursor: pointer;
         }
         .file-input-wrapper input[type="file"] { display: none; }
-        .file-input-wrapper:hover { border-color: var(--maroon); background: rgba(139, 21, 56, 0.02); }
+        .file-input-wrapper:hover { border-color: var(--maroon); background: rgba(161, 33, 36, 0.02); }
 
         .btn-submit {
             background: linear-gradient(135deg, var(--maroon), var(--maroon-dark));

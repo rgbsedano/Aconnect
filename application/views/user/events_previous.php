@@ -1,7 +1,7 @@
 
     <style>
         :root {
-            --brand-red: #BE123C;
+            --brand-red: #a12124;
             --brand-gold: #D97706;
             --surface-gold: #FFFBEB;
 
@@ -39,7 +39,7 @@
         .job-card:hover {
             transform: translateY(-4px);
             border-color: var(--brand-gold);
-            box-shadow: 0 12px 24px -10px rgba(190, 18, 60, 0.1);
+            box-shadow: 0 12px 24px -10px rgba(161, 33, 36, 0.1);
         }
 
         .modal-overlay {

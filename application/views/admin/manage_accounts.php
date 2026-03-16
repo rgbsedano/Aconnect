@@ -8,7 +8,7 @@
     --card-bg: #ffffff;
     --text-main: #1e293b;
     --text-muted: #64748b;
-    --accent-red: #700a0a;
+    --accent-red: #a12124;
     --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
     --border-radius: 24px;
 }

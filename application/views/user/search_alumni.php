@@ -6,10 +6,10 @@ $student_number = $this->session->userdata('student_number') ? $this->session->u
     
     <style>
         :root {
-            --brand-red: #BE123C;
+            --brand-red: #a12124;
             --brand-gold: #D97706;
-            --primary: #8B1538;
-            --primary-dark: #6B0F2A;
+            --primary: #a12124;
+            --primary-dark: #7d181b;
             --accent: #D4A574;
             --bg-page: #F8FAFC;
             --white: #FFFFFF;
@@ -569,10 +569,10 @@ document.addEventListener('DOMContentLoaded', function() {
     filters.forEach(btn => {
         btn.addEventListener('click', function() {
             filters.forEach(f => {
-                f.classList.remove('active', 'bg-rose-700', 'text-white', 'shadow-md', 'shadow-rose-100');
+                f.classList.remove('active');
                 f.classList.add('bg-slate-50', 'text-slate-600');
             });
-            this.classList.add('active', 'bg-rose-700', 'text-white', 'shadow-md', 'shadow-rose-100');
+            this.classList.add('active');
             this.classList.remove('bg-slate-50', 'text-slate-600');
             
             // Optional: Update URL without reload to make it shareable

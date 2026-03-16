@@ -9,8 +9,8 @@ $student_number = $this->session->userdata('student_number') ? $this->session->u
 
     <style>
         :root {
-            --primary: #8B1538;
-            --primary-dark: #6B0F2A;
+            --primary: #a12124;
+            --primary-dark: #7d181b;
             --accent: #D4A574;
             --bg-page: #FAFAF8;
             --white: #FFFFFF;

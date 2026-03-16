@@ -15,10 +15,10 @@ $student_number = $this->session->userdata('student_number') ? $this->session->u
     
     <style>
         :root {
-            --brand-red: #BE123C;
+            --brand-red: #a12124;
             --brand-gold: #D97706;
-            --primary: #8B1538;
-            --primary-dark: #6B0F2A;
+            --primary: #a12124;
+            --primary-dark: #7d181b;
             --accent: #D4A574;
             --bg-page: #F8FAFC;
             --white: #FFFFFF;
