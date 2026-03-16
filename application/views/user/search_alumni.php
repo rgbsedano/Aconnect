@@ -205,6 +205,22 @@ $student_number = $this->session->userdata('student_number') ? $this->session->u
             margin-right: 6px;
         }
 
+        /* Filter Button Styles */
+        .filter-btn {
+            transition: all 0.3s ease;
+        }
+
+        .filter-btn.active {
+            background-color: #a12124;
+            color: white;
+            box-shadow: 0 4px 6px rgba(161, 33, 36, 0.2);
+        }
+
+        .filter-btn.active:hover {
+            background-color: #8b1b1e;
+            box-shadow: 0 6px 10px rgba(161, 33, 36, 0.3);
+        }
+
         /* Modal Info Styles */
         .info-section {
             background: #F8FAFC;
@@ -342,10 +358,10 @@ $student_number = $this->session->userdata('student_number') ? $this->session->u
             </div>
             <div class="flex flex-wrap md:flex-nowrap gap-2 p-1">
                 <div class="flex gap-2">
-                    <button class="filter-btn active bg-rose-700 text-white text-xs font-bold px-4 py-2 rounded-xl transition shadow-md shadow-rose-100" data-filter="all">All</button>
-                    <button class="filter-btn bg-slate-50 border-none text-slate-600 text-xs font-bold py-2 px-4 rounded-xl outline-none hover:bg-slate-100" data-filter="connectable">Discover</button>
-                    <button class="filter-btn bg-slate-50 border-none text-slate-600 text-xs font-bold py-2 px-4 rounded-xl outline-none hover:bg-slate-100" data-filter="pending">Pending</button>
-                    <button class="filter-btn bg-slate-50 border-none text-slate-600 text-xs font-bold py-2 px-4 rounded-xl outline-none hover:bg-slate-100" data-filter="accepted">Linked</button>
+                    <button class="filter-btn active text-xs font-bold px-4 py-2 rounded-xl" data-filter="all">All</button>
+                    <button class="filter-btn bg-slate-50 text-slate-600 text-xs font-bold py-2 px-4 rounded-xl" data-filter="connectable">Discover</button>
+                    <button class="filter-btn bg-slate-50 text-slate-600 text-xs font-bold py-2 px-4 rounded-xl" data-filter="pending">Pending</button>
+                    <button class="filter-btn bg-slate-50 text-slate-600 text-xs font-bold py-2 px-4 rounded-xl" data-filter="accepted">Linked</button>
 
                 </div>
             </div>
@@ -516,10 +532,10 @@ document.addEventListener('DOMContentLoaded', function() {
 
     function setActiveFilter(filterName) {
         filters.forEach(f => {
-            f.classList.remove('active', 'bg-rose-700', 'text-white', 'shadow-md', 'shadow-rose-100');
+            f.classList.remove('active');
             f.classList.add('bg-slate-50', 'text-slate-600');
             if (f.getAttribute('data-filter') === filterName) {
-                f.classList.add('active', 'bg-rose-700', 'text-white', 'shadow-md', 'shadow-rose-100');
+                f.classList.add('active');
                 f.classList.remove('bg-slate-50', 'text-slate-600');
             }
         });
