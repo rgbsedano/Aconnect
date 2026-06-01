@@ -7,7 +7,7 @@ class AdminOfficers extends CI_Controller {
     {
         parent::__construct();
         $this->load->model('Officer_model');
-        $this->load->helper(['url', 'form','text']);
+        $this->load->helper(['url', 'form','text', 'admin_pagination']);
         $this->load->library(['session']);
         
     }
@@ -16,25 +16,37 @@ class AdminOfficers extends CI_Controller {
     // LIST ALL OFFICERS (ADMIN VIEW)
     // ===============================
     public function index()
-{
-    $this->load->library('pagination');
+    {
+        $results_per_page = 5;
+        $page = (int) $this->input->get('page', TRUE);
+        if ($page < 1) $page = 1;
+        $offset = ($page - 1) * $results_per_page;
 
-    $config['base_url'] = base_url('AdminOfficers/index');
-    $config['total_rows'] = $this->Officer_model->count_all();
-    $config['per_page'] = 8;
-    $config['uri_segment'] = 3;
+        $keyword = trim((string) $this->input->get('keyword', TRUE));
 
-    $this->pagination->initialize($config);
+        $total_records = $keyword !== ''
+            ? $this->Officer_model->count_search($keyword)
+            : $this->Officer_model->count_all();
 
-    $page = $this->uri->segment(3) ?? 0;
+        $total_pages = (int) ceil($total_records / $results_per_page);
+        if ($total_pages < 1) $total_pages = 1;
+        if ($page > $total_pages) {
+            $page = $total_pages;
+            $offset = ($page - 1) * $results_per_page;
+        }
 
-    $data['officers'] = $this->Officer_model->get_paginated($config['per_page'], $page);
-    $data['pagination'] = $this->pagination->create_links();
+        $data['officers'] = $keyword !== ''
+            ? $this->Officer_model->search_paginated($results_per_page, $offset, $keyword)
+            : $this->Officer_model->get_paginated($results_per_page, $offset);
 
-    $this->load->view('__header');
-    $this->load->view('admin/manage_officers', $data);
-    $this->load->view('__footer');
-}
+        $params = [];
+        if ($keyword !== '') $params['keyword'] = $keyword;
+        $data['pagination'] = admin_build_pagination_links(base_url('AdminOfficers'), $params, $page, $total_pages);
+
+        $this->load->view('__header');
+        $this->load->view('admin/manage_officers', $data);
+        $this->load->view('__footer');
+    }
     // ===============================
     // SAVE NEW OFFICER (MODAL)
     // ===============================
@@ -211,7 +223,7 @@ class AdminOfficers extends CI_Controller {
 
         $config['base_url'] = site_url('AdminOfficers/search');
         $config['total_rows'] = $this->Officer_model->count_search($keyword);
-        $config['per_page'] = 8;
+        $config['per_page'] = 5;
 
         // ✅ use query string pagination
         $config['page_query_string'] = TRUE;

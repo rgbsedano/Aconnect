@@ -67,7 +67,7 @@ class Alumni_model extends CI_Model {
         $this->db->where('sender_id', $sender_id);
         $this->db->where('receiver_id', $receiver_id);
         $this->db->where('status', 'pending');
-        $this->db->delete('connection_requests');
+        $this->db->update('connection_requests', ['deleted_at' => date('Y-m-d H:i:s')]);
     }
 
     // Remove an existing connection (unlink)
@@ -75,7 +75,7 @@ class Alumni_model extends CI_Model {
         // Query to find the connection regardless of who sent it
         $this->db->where("(sender_id = $sender_id AND receiver_id = $receiver_id) OR (sender_id = $receiver_id AND receiver_id = $sender_id)");
         $this->db->where('status', 'accepted');
-        $this->db->delete('connection_requests');
+        $this->db->update('connection_requests', ['deleted_at' => date('Y-m-d H:i:s')]);
     }
 
     // Get incoming pending requests for current user
@@ -158,6 +158,9 @@ public function get_connections($alumni_id) {
 
     public function get_alumni_count($search = '')
     {
+        if ($this->db->field_exists('deleted_at', 'alumni')) {
+            $this->db->where('deleted_at IS NULL', null, false);
+        }
         if (!empty($search)) {
             $this->db->group_start()
                 ->like('first_name', $search)
@@ -171,6 +174,9 @@ public function get_connections($alumni_id) {
     
     public function get_alumni_paginated($limit, $start, $search = '')
     {
+        if ($this->db->field_exists('deleted_at', 'alumni')) {
+            $this->db->where('deleted_at IS NULL', null, false);
+        }
         if (!empty($search)) {
             $this->db->group_start()
                 ->like('first_name', $search)
@@ -203,7 +209,7 @@ public function get_connections($alumni_id) {
     }
 
     public function delete_certification($id, $alumni_id) {
-        return $this->db->where(['id' => $id, 'alumni_id' => $alumni_id])->delete('certifications');
+        return $this->db->where(['id' => $id, 'alumni_id' => $alumni_id])->update('certifications', ['deleted_at' => date('Y-m-d H:i:s')]);
     }
 
     // Public Profile fetching

@@ -128,7 +128,7 @@ $student_number = $this->session->userdata('student_number') ? $this->session->u
         .post-image-container img {
             width: 100%;
             height: 100%;
-            object-fit: contain; /* 🔥 key fix */
+            object-fit: cover; /* fills container without black bars */
             object-position: center;
             display: block;
             transition: transform 0.4s ease;

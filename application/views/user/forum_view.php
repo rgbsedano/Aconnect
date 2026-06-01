@@ -66,9 +66,22 @@ body {
     border: none; transition: all .2s; text-decoration: none;
 }
 .vote-btn-like {
-    background: #fef2f2; color: var(--brand-red);
+    background: #f1f5f9; color: #475569;
 }
 .vote-btn-like:hover { background: var(--brand-red); color: #fff; text-decoration: none; }
+.vote-btn-like.active { background: #f1f5f9; color: #475569; }
+.vote-btn-like.active:hover { background: var(--brand-red); color: #fff; text-decoration: none; }
+.vote-btn-dislike {
+    background: #f1f5f9;
+    color: #475569;
+}
+.vote-btn-dislike:hover { background: #2563eb; color: #fff; text-decoration: none; }
+.vote-btn-dislike.active {
+    background: #f1f5f9;
+    color: #475569;
+    text-decoration: none;
+}
+.vote-btn-dislike.active:hover { background: #2563eb; color: #fff; text-decoration: none; }
 .vote-btn-report {
     background: #f8fafc; color: #94a3b8; margin-left: auto;
 }
@@ -77,6 +90,7 @@ body {
     background: #fff1f2; color: #f43f5e;
 }
 .vote-btn-delete:hover { background: #f43f5e; color: #fff; text-decoration: none; }
+.vote-container { transition: background-color .2s; padding: 8px 12px; border-radius: 8px; }
 
 .post-view-body { padding: 28px 28px 20px; }
 
@@ -113,15 +127,6 @@ body {
     border: 1px solid #e2e8f0;
 }
 
-.post-view-stats{
-    display:flex;
-    align-items:center;
-    gap:12px;
-    padding:14px 24px;
-    border-top:1px solid #f1f5f9;
-    background:#fafafa;
-    
-}
 .post-view-stats{
     display:flex;
     align-items:center;
@@ -186,6 +191,110 @@ body {
 .comment-author { font-size: 13px; font-weight: 800; color: #0f172a; }
 .comment-time { font-size: 11px; color: #94a3b8; }
 .comment-body { font-size: 14px; color: #374151; line-height: 1.7; }
+
+/* ── No Comments Empty State ── */
+.comments-empty {
+    background: #f8fafc;
+    border: 1px dashed #e2e8f0;
+    border-radius: 16px;
+    padding: 48px 24px;
+    text-align: center;
+    margin-bottom: 24px;
+}
+.comments-empty svg {
+    width: 64px;
+    height: 64px;
+    margin: 0 auto 16px;
+    opacity: 0.3;
+}
+.comments-empty h4 {
+    font-size: 16px;
+    font-weight: 800;
+    color: #0f172a;
+    margin: 0 0 8px;
+}
+.comments-empty p {
+    font-size: 13px;
+    color: #94a3b8;
+    margin: 0;
+    line-height: 1.5;
+}
+
+/* ── Comment Stats Bar ── */
+.comment-stats {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 12px 0;
+    margin-top: 12px;
+    border-top: 1px solid #f1f5f9;
+    border-bottom: 1px solid #f1f5f9;
+    flex-wrap: wrap;
+}
+.comment-stats a,
+.comment-stats button {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    padding: 7px 16px;
+    font-size: 12px;
+    font-weight: 700;
+    border-radius: 20px;
+    background: #f1f5f9;
+    color: #475569;
+    text-decoration: none;
+    border: none;
+    cursor: pointer;
+    transition: all .2s;
+}
+.comment-stats .vote-btn-like,
+.comment-stats .vote-btn-dislike {
+    background: #f1f5f9;
+    color: #475569;
+    padding: 7px 16px;
+    font-size: 12px;
+}
+.comment-stats .vote-btn-like:hover {
+    background: var(--brand-red);
+    color: #fff;
+}
+.comment-stats .vote-btn-like.active {
+    background: #f1f5f9;
+    color: #475569;
+}
+.comment-stats .vote-btn-like.active:hover {
+    background: var(--brand-red);
+    color: #fff;
+}
+.comment-stats .vote-btn-dislike:hover {
+    background: #2563eb;
+    color: #fff;
+}
+.comment-stats .vote-btn-dislike.active {
+    background: #f1f5f9;
+    color: #475569;
+}
+.comment-stats .vote-btn-dislike.active:hover {
+    background: #2563eb;
+    color: #fff;
+}
+.comment-stats .vote-btn-report {
+    margin-left: auto;
+    background: #f1f5f9;
+    color: #94a3b8;
+}
+.comment-stats .vote-btn-report:hover {
+    background: #fff7ed;
+    color: #fb923c;
+}
+.comment-stats .vote-btn-delete {
+    background: #f1f5f9;
+    color: #646668;
+}
+.comment-stats .vote-btn-delete:hover {
+    background: #f43f5e;
+    color: #fff;
+}
 
 /* ===== MODAL STYLE ===== */
 
@@ -279,6 +388,54 @@ body {
     font-weight:700;
 }
 
+/* ── Comment Action Buttons ── */
+.reply-btn {
+    color: var(--brand-red);
+    font-weight: 700;
+    font-size: 13px;
+    text-decoration: none;
+    cursor: pointer;
+    transition: all .2s ease;
+    padding: 4px 0;
+    border: none;
+    background: none;
+    display: inline;
+}
+.reply-btn:hover {
+    color: var(--brand-red-dark);
+    text-decoration: underline;
+}
+
+.toggle-replies {
+    color: #64748b;
+    font-weight: 600;
+    font-size: 12px;
+    text-decoration: none;
+    cursor: pointer;
+    transition: all .2s ease;
+    padding: 4px 0;
+    border: none;
+    background: none;
+    display: inline-flex;
+    align-items: center;
+    gap: 4px;
+}
+.toggle-replies:hover {
+    color: #475569;
+}
+.toggle-replies::before {
+    content: '⌄';
+    display: inline-block;
+    transition: transform .2s ease;
+}
+.toggle-replies.active::before {
+    transform: rotate(180deg);
+}
+.toggle-replies.active {
+    color: var(--brand-red);
+    outline: none;
+}
+
 /* ── Mobile Tabs ── */
 .mobile-tabs { display: none; gap: 8px; margin-bottom: 16px; }
 .f-pill {
@@ -296,6 +453,34 @@ body {
 .f-pill.active { background: var(--brand-red); color: #fff; }
 
 .tab-content { display: block; }
+
+/* Sort Tab Buttons */
+.sort-tab {
+    padding: 6px 12px;
+    border-radius: 16px;
+    font-size: 12px;
+    font-weight: 700;
+    cursor: pointer;
+    border: none;
+    background: transparent;
+    color: #64748b;
+    transition: all .2s;
+}
+
+.sort-tab.active {
+    background: var(--brand-red);
+    color: #fff;
+}
+
+.sort-tab:hover {
+    background: #f1f5f9;
+    color: #475569;
+}
+
+.sort-tab.active:hover {
+    background: var(--brand-red);
+    color: #fff;
+}
 
 @media (max-width: 900px) {
     .mobile-tabs { display: flex; }
@@ -315,7 +500,7 @@ body {
             </a>
             <div>
                 <h1 style="font-size:18px;font-weight:800;color:#0f172a;margin:0;">Discussion Thread</h1>
-                <p style="font-size:10px;font-weight:700;color:#94a3b8;text-transform:uppercase;letter-spacing:.15em;margin:0;">Alumni Community · Forum</p>
+                <p style="font-size:10px;font-weight:700;color:#343434;text-transform:uppercase;letter-spacing:.15em;margin:0;">Alumni Community · Forum</p>
             </div>
         </div>
         <a href="<?= base_url('forum') ?>"
@@ -360,9 +545,20 @@ body {
 
             <!-- Body -->
             <div class="post-view-body">
+                <?php if(!empty($post->valid) && $post->valid == 0): ?>
+                    <div style="background:#fef2f2;border-left:4px solid #e53e3e;padding:12px 16px;border-radius:6px;margin-bottom:16px;">
+                        <span style="font-size:12px;font-weight:700;color:#e53e3e;">🗑️ This post has been deleted. Only the author can view it.</span>
+                    </div>
+                <?php endif; ?>
                 
-                <h1 class="post-view-title"><?= htmlspecialchars($post->title) ?></h1>
-                <p class="post-view-content"><?= htmlspecialchars($post->content) ?></p>
+                <?php if(!empty($post->has_profanity) && $post->has_profanity): ?>
+                    <div style="background:#fef2f2;border-left:4px solid #e53e3e;padding:12px 16px;border-radius:6px;margin-bottom:16px;">
+                        <span style="font-size:12px;font-weight:700;color:#e53e3e;">⚠ This post contains flagged content and has been censored.</span>
+                    </div>
+                <?php endif; ?>
+                
+                <h1 class="post-view-title"><?= htmlspecialchars($post->censored_title ?? $post->title) ?></h1>
+                <p class="post-view-content"><?= htmlspecialchars($post->censored_content ?? $post->content) ?></p>
 
                 <?php if($post->image): ?>
                 <img src="<?= base_url('assets/uploads/forum/'.htmlspecialchars($post->image)) ?>"
@@ -375,6 +571,11 @@ body {
                 <a href="<?= base_url('forum/like/'.$post->id) ?>" class="vote-btn vote-btn-like">
                     <svg width="15" height="15" fill="currentColor" viewBox="0 0 20 20"><path d="M3.172 5.172a4 4 0 015.656 0L10 6.343l1.172-1.171a4 4 0 115.656 5.656L10 17.657l-6.828-6.829a4 4 0 010-5.656z"/></svg>
                     <?= $post->like_count ?> Likes
+                </a>
+
+                <a href="<?= base_url('forum/dislike/'.$post->id) ?>" class="vote-btn vote-btn-dislike">
+                    <svg width="14" height="14" fill="currentColor" viewBox="0 0 20 20"><path d="M16.828 14.828a4 4 0 01-5.656 0L10 13.657l-1.172 1.171a4 4 0 11-5.656-5.656L10 2.343l6.828 6.829a4 4 0 010 5.656z"/></svg>
+                    <?= $post->dislike_count ?? 0 ?> dislikes
                 </a>
                 
                 <a href="#" id="toggle-comments">
@@ -420,6 +621,15 @@ body {
             </div>
         </div>
 
+        <!-- Comment Sorting Dropdown -->
+        <div style="margin-bottom: 8px; padding: 6px 0;">
+            <select id="commentSortDropdown" onchange="sortCommentsView(this.value)" style="padding: 6px 12px; border-radius: 16px; font-size: 12px; font-weight: 700; border: 1px solid #e2e8f0; background: #fff; color: #64748b; cursor: pointer; transition: all .2s;">
+                <option value="newest">Newest</option>
+                <option value="most_relevant" selected>Most Relevant</option>
+                <option value="oldest">Oldest</option>
+            </select>
+        </div>
+
         <!-- COMMENTS -->
         <div id="comments-container">
         
@@ -437,6 +647,9 @@ body {
         ?>
 
         <div class="comment-card">
+            <?php if(!empty($c->has_profanity) && $c->has_profanity): ?>
+                <div style="background:#fef2f2;border-left:3px solid #f87171;padding:8px 12px;border-radius:4px;margin-bottom:8px;font-size:11px;color:#dc2626;font-weight:700;">⚠ Flagged for content</div>
+            <?php endif; ?>
 
             <div class="comment-header">
                 <div class="comment-avatar">
@@ -454,45 +667,50 @@ body {
             </div>
 
             <p class="comment-body"><?= htmlspecialchars($c->comment) ?></p>
-            <?php if($this->session->userdata('alumni_id') == $c->alumni_id): ?>
-
-            <div style="margin-top:6px;display:flex;gap:10px;font-size:12px;">
-
-                <button 
-                style="border:none;background:none;color:#64748b;font-size:12px;font-weight:700;"
-                data-toggle="modal"
-                data-target="#editCommentModal"
-                data-id="<?= $c->id ?>"
-                data-type="comment"
-                data-comment="<?= htmlspecialchars($c->comment,ENT_QUOTES) ?>"
-                onclick="openEditComment(this)">
-                Edit
-                </button>
-
-                <a href="<?= base_url('forum/delete_comment/'.$c->id.'/'.$post->id) ?>"
-                style="color:#ef4444;font-weight:700;"
-                onclick="return confirm('Delete this comment?')">
-                Delete
+            
+            <!-- Comment stats bar -->
+            <div class="comment-stats">
+                <a href="<?= base_url('forum/like_comment/'.$c->id.'/'.$post->id) ?>" class="vote-btn vote-btn-like <?= $c->user_liked ? 'active' : '' ?>">
+                    <svg width="13" height="13" fill="currentColor" viewBox="0 0 20 20"><path d="M3.172 5.172a4 4 0 015.656 0L10 6.343l1.172-1.171a4 4 0 115.656 5.656L10 17.657l-6.828-6.829a4 4 0 010-5.656z"/></svg>
+                    <?= $c->like_count ?? 0 ?> Likes
                 </a>
+                <a href="<?= base_url('forum/dislike_comment/'.$c->id.'/'.$post->id) ?>" class="vote-btn vote-btn-dislike <?= $c->user_disliked ? 'active' : '' ?>">
+                    <svg width="13" height="13" fill="currentColor" viewBox="0 0 20 20"><path d="M16.828 14.828a4 4 0 01-5.656 0L10 13.657l-1.172 1.171a4 4 0 11-5.656-5.656L10 2.343l6.828 6.829a4 4 0 010 5.656z"/></svg>
+                    <?= $c->dislike_count ?? 0 ?> Dislikes
+                </a>
+                
+                <?php if($this->session->userdata('alumni_id') == $c->alumni_id): ?>
+                    <button 
+                    class="vote-btn vote-btn-report"
+                    style="background:#f1f5f9;color:#475569;"
+                    data-toggle="modal"
+                    data-target="#editCommentModal"
+                    data-id="<?= $c->id ?>"
+                    data-type="comment"
+                    data-comment="<?= htmlspecialchars($c->comment,ENT_QUOTES) ?>"
+                    onclick="openEditComment(this)">
+                    Edit
+                    </button>
 
+                    <a href="<?= base_url('forum/delete_comment/'.$c->id.'/'.$post->id) ?>"
+                    class="vote-btn vote-btn-delete"
+                    onclick="return confirm('Delete this comment?')">
+                    Delete
+                    </a>
+                <?php endif; ?>
             </div>
 
-            <?php endif; ?>
-
-            <div style="margin-top:6px;display:flex;gap:12px;align-items:center;">
+            <div style="margin-top:10px;display:flex;gap:16px;align-items:center;flex-wrap:wrap;">
 
                 <!-- Reply button -->
-                <a href="#" class="reply-btn vote-btn-report" data-id="<?= $c->id ?>"
-                style="font-size:12px;color:var(--brand-red);font-weight:700;">
+                <a href="#" class="reply-btn" data-id="<?= $c->id ?>">
                 Reply
                 </a>
 
-                <!-- Collapse replies -->
+                <!-- View replies toggle -->
                 <?php if($reply_count > 0): ?>
-                <a href="#" class="toggle-replies"
-                data-id="<?= $c->id ?>"
-                style="font-size:12px;color:#64748b;font-weight:700;">
-                ▼ <?= $reply_count ?> Replies
+                <a href="#" class="toggle-replies" data-id="<?= $c->id ?>">
+                <?= $reply_count ?> <?= $reply_count === 1 ? 'Reply' : 'Replies' ?>
                 </a>
                 <?php endif; ?>
 
@@ -501,7 +719,7 @@ body {
             <!-- Reply form -->
            <div class="reply-form" id="reply-form-<?= $c->id ?>" style="display:none;margin-top:10px;">
 
-            <form method="post" action="<?= base_url('forum/comment') ?>">
+            <form method="post" action="<?= base_url('forum/comment') ?>" class="reply-comment-form">
 
             <input type="hidden" name="post_id" value="<?= $post->id ?>">
             <input type="hidden" name="parent_id" value="<?= $c->id ?>">
@@ -534,12 +752,15 @@ body {
             </div>
 
             <!-- Replies container -->
-            <div class="reply-container" id="replies-<?= $c->id ?>" style="display:none;margin-top:12px;">
+            <div class="reply-container" id="replies-list-<?= $c->id ?>" style="display:none;margin-top:12px;">
 
                 <?php foreach($comments as $reply): ?>
                 <?php if($reply->parent_id == $c->id): ?>
 
                 <div style="margin-left:40px;margin-top:10px;padding-left:12px;border-left:2px solid #e2e8f0;">
+                    <?php if(!empty($reply->has_profanity) && $reply->has_profanity): ?>
+                        <div style="background:#fef2f2;border-left:3px solid #f87171;padding:6px 10px;border-radius:3px;margin-bottom:6px;font-size:10px;color:#dc2626;font-weight:700;">⚠ Flagged</div>
+                    <?php endif; ?>
 
                     <div class="comment-header">
                         <div class="comment-avatar">
@@ -557,30 +778,38 @@ body {
                     </div>
 
                     <p class="comment-body"><?= htmlspecialchars($reply->comment) ?></p>
-                    <?php if($this->session->userdata('alumni_id') == $reply->alumni_id): ?>
-
-                    <div style="margin-top:6px;display:flex;gap:10px;font-size:12px;">
-
-                        <button 
-                        style="border:none;background:none;color:#64748b;font-size:12px;font-weight:700;"
-                        data-toggle="modal"
-                        data-target="#editCommentModal"
-                        data-id="<?= $reply->id ?>"
-                        data-type="reply"
-                        data-comment="<?= htmlspecialchars($reply->comment,ENT_QUOTES) ?>"
-                        onclick="openEditComment(this)">
-                        Edit
-                        </button>
-
-                        <a href="<?= base_url('forum/delete_comment/'.$reply->id.'/'.$post->id) ?>"
-                        style="color:#ef4444;font-weight:700;"
-                        onclick="return confirm('Delete this reply?')">
-                        Delete
+                    
+                    <!-- Reply stats bar -->
+                    <div class="comment-stats">
+                        <a href="<?= base_url('forum/like_comment/'.$reply->id.'/'.$post->id) ?>" class="vote-btn vote-btn-like <?= $reply->user_liked ? 'active' : '' ?>">
+                            <svg width="13" height="13" fill="currentColor" viewBox="0 0 20 20"><path d="M3.172 5.172a4 4 0 015.656 0L10 6.343l1.172-1.171a4 4 0 115.656 5.656L10 17.657l-6.828-6.829a4 4 0 010-5.656z"/></svg>
+                            <?= $reply->like_count ?? 0 ?> Likes
                         </a>
+                        <a href="<?= base_url('forum/dislike_comment/'.$reply->id.'/'.$post->id) ?>" class="vote-btn vote-btn-dislike <?= $reply->user_disliked ? 'active' : '' ?>">
+                            <svg width="13" height="13" fill="currentColor" viewBox="0 0 20 20"><path d="M16.828 14.828a4 4 0 01-5.656 0L10 13.657l-1.172 1.171a4 4 0 11-5.656-5.656L10 2.343l6.828 6.829a4 4 0 010 5.656z"/></svg>
+                            <?= $reply->dislike_count ?? 0 ?> Dislikes
+                        </a>
+                        
+                        <?php if($this->session->userdata('alumni_id') == $reply->alumni_id): ?>
+                            <button 
+                            class="vote-btn vote-btn-report"
+                            style="background:#f1f5f9;color:#475569;"
+                            data-toggle="modal"
+                            data-target="#editCommentModal"
+                            data-id="<?= $reply->id ?>"
+                            data-type="reply"
+                            data-comment="<?= htmlspecialchars($reply->comment,ENT_QUOTES) ?>"
+                            onclick="openEditComment(this)">
+                            Edit
+                            </button>
 
+                            <a href="<?= base_url('forum/delete_comment/'.$reply->id.'/'.$post->id) ?>"
+                            class="vote-btn vote-btn-delete"
+                            onclick="return confirm('Delete this reply?')">
+                            Delete
+                            </a>
+                        <?php endif; ?>
                     </div>
-
-                    <?php endif; ?>
 
                 </div>
 
@@ -592,15 +821,25 @@ body {
         </div>
 
         <?php endforeach; ?>
+        
+        <?php if(empty($top_comments)): ?>
+        <div class="comments-empty">
+            <svg fill="none" stroke="#cbd5e1" viewBox="0 0 24 24">
+                <path stroke-width="1.5" d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z"/>
+            </svg>
+            <h4>No comments yet</h4>
+            <p>Be the first to share your thoughts on this discussion!</p>
+        </div>
+        <?php endif; ?>
         </div>
         
         <!-- ── Comment Section ── -->
         <h3 style="font-size:16px;font-weight:800;color:#fff;margin-bottom:16px;">💬 <?= $post->comment_count ?> Comments</h3>
 
         <div class="comment-writer">
-            <form method="post" action="<?= base_url('forum/comment') ?>">
+            <form method="post" action="<?= base_url('forum/comment') ?>" id="main-comment-form">
                 <input type="hidden" name="post_id" value="<?= $post->id ?>">
-                <input type="hidden" name="parent_id" value="">
+                <input type="hidden" name="parent_id" value="0">
                 <textarea name="comment" class="comment-textarea" rows="3"
                           placeholder="What are your thoughts?" required></textarea>
                 <div style="display:flex;align-items:center;justify-content:space-between;margin-top:16px;">
@@ -612,6 +851,77 @@ body {
                 </div>
             </form>
         </div>
+        
+        <script>
+        // Handle comment form submission
+        document.getElementById('main-comment-form')?.addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            // Get textarea element from THIS form only
+            const textarea = this.querySelector('textarea[name="comment"]');
+            const textareaValue = textarea.value;
+            
+            console.log('=== FORM SUBMISSION DEBUG ===');
+            console.log('Textarea element:', textarea);
+            console.log('Textarea value directly:', textareaValue);
+            console.log('Textarea.value type:', typeof textareaValue);
+            console.log('Textarea.value length:', textareaValue.length);
+            
+            const formData = new FormData(this);
+            const post_id = formData.get('post_id');
+            const comment_text = formData.get('comment');
+            const is_anonymous = formData.get('anonymous') ? 1 : 0;
+            
+            console.log('FormData post_id:', post_id);
+            console.log('FormData comment from FormData:', comment_text);
+            console.log('Does it match textarea?', comment_text === textareaValue);
+            console.log('Submitting comment:', {post_id, comment_text, is_anonymous});
+            
+            fetch('<?= base_url("forum/comment") ?>', {
+                method: 'POST',
+                body: formData,
+                headers: {
+                    'X-Requested-With': 'XMLHttpRequest'
+                }
+            })
+            .then(response => {
+                console.log('Response status:', response.status);
+                console.log('Response headers content-type:', response.headers.get('content-type'));
+                return response.text();
+            })
+            .then(text => {
+                console.log('Raw response length:', text.length);
+                console.log('Raw response text:', text.substring(0, 500));
+                
+                const cleanText = text.trim();
+                
+                try {
+                    const data = JSON.parse(cleanText);
+                    console.log('SUCCESS: Parsed JSON:', data);
+                    
+                    if(data.success) {
+                        document.querySelector('.comment-textarea').value = '';
+                        window.location.reload();
+                    } else {
+                        alert(data.message || 'Error posting comment');
+                    }
+                } catch(parseError) {
+                    console.error('JSON Parse Error:', parseError.message);
+                    console.error('Full response was:', text);
+                    
+                    if(text.includes('<!DOCTYPE') || text.includes('<html')) {
+                        alert('Server returned an error page. Check browser console for details.');
+                    } else {
+                        alert('Server response was not valid JSON. Response: ' + text.substring(0, 200));
+                    }
+                }
+            })
+            .catch(error => {
+                console.error('Fetch Error:', error);
+                alert('Network error: ' + error.message);
+            });
+        });
+        </script>
     </div>
     <?php endif; ?>
     </div>
@@ -929,45 +1239,167 @@ commentsToggle.addEventListener("click", function(e){
 });
 
 
-// Toggle reply forms
-document.querySelectorAll('.reply-btn').forEach(btn => {
-
-    btn.addEventListener('click', function(e){
-
-        e.preventDefault();
-
-        let id = this.dataset.id;
-        let form = document.getElementById('reply-form-'+id);
-
-        form.style.display =
-            (form.style.display === "none") ? "block" : "none";
-
-    });
-
-});
-
-
-// Toggle replies
-document.querySelectorAll('.toggle-replies').forEach(btn => {
-
-    btn.addEventListener('click', function(e){
-
-        e.preventDefault();
-
-        let id = this.dataset.id;
-        let replies = document.getElementById('replies-'+id);
-
-        if(replies.style.display === "none"){
-            replies.style.display = "block";
-            this.innerHTML = "▲ Hide Replies";
-        } else {
-            replies.style.display = "none";
-            this.innerHTML = "▼ Show Replies";
+// Toggle reply forms with jQuery slideToggle
+$(document).on('click', '.reply-btn', function(e){
+    e.preventDefault();
+    let id = $(this).data('id');
+    let form = $('#reply-form-' + id);
+    
+    form.slideToggle(300, function(){
+        // Focus textarea if it was just shown
+        if(form.is(':visible')){
+            form.find('textarea').focus();
         }
-
     });
-
 });
+
+// Handle reply form submissions
+$(document).on('submit', '.reply-comment-form', function(e){
+    e.preventDefault();
+    
+    const form = $(this);
+    const formData = new FormData(this);
+    const comment_text = formData.get('comment');
+    
+    console.log('Submitting reply:', {comment_text});
+    
+    fetch('<?= base_url("forum/comment") ?>', {
+        method: 'POST',
+        body: formData,
+        headers: {
+            'X-Requested-With': 'XMLHttpRequest'
+        }
+    })
+    .then(response => {
+        console.log('Response status:', response.status);
+        return response.text();
+    })
+    .then(text => {
+        console.log('Raw response length:', text.length);
+        console.log('Raw response text:', text.substring(0, 500));
+        
+        const cleanText = text.trim();
+        
+        try {
+            const data = JSON.parse(cleanText);
+            console.log('SUCCESS: Parsed JSON:', data);
+            
+            if(data.success) {
+                form.find('textarea').value = '';
+                window.location.reload();
+            } else {
+                alert(data.message || 'Error posting reply');
+            }
+        } catch(parseError) {
+            console.error('JSON Parse Error:', parseError.message);
+            console.error('Full response was:', text);
+            
+            if(text.includes('<!DOCTYPE') || text.includes('<html')) {
+                alert('Server returned an error page. Check browser console for details.');
+            } else {
+                alert('Server response was not valid JSON. Response: ' + text.substring(0, 200));
+            }
+        }
+    })
+    .catch(error => {
+        console.error('Fetch Error:', error);
+        alert('Network error: ' + error.message);
+    });
+});
+
+
+// Toggle replies with jQuery slideToggle
+$(document).on('click', '.toggle-replies', function(e){
+    e.preventDefault();
+    let id = $(this).data('id');
+    let replies = $('#replies-list-' + id);
+    
+    $(this).toggleClass('active');
+    replies.slideToggle(300);
+});
+
+// Store original comment order on page load
+let originalCommentOrder = [];
+
+// Save original comment order on DOM ready and mark each with index
+function initializeCommentOrder() {
+    if (originalCommentOrder.length === 0) {
+        const cards = document.querySelectorAll('#comments-container > .comment-card');
+        cards.forEach((card, index) => {
+            card.dataset.originalIndex = index;
+            originalCommentOrder.push(card);
+        });
+    }
+}
+
+// Initialize on DOMContentLoaded
+document.addEventListener('DOMContentLoaded', function() {
+    initializeCommentOrder();
+    
+    // Restore saved sort preference EARLY before rendering
+    const savedSort = localStorage.getItem('commentSortPreference');
+    if (savedSort) {
+        const dropdown = document.getElementById('commentSortDropdown');
+        if (dropdown) {
+            dropdown.value = savedSort;
+            sortCommentsView(savedSort);
+        }
+    }
+});
+
+// Sort comments on forum view page
+function sortCommentsView(sortType) {
+    let commentCards = Array.from(document.querySelectorAll('#comments-container > .comment-card'));
+    
+    if (commentCards.length === 0) return;
+    
+    // Ensure original order is captured
+    initializeCommentOrder();
+    
+    if (sortType === 'most_relevant') {
+        // Sort by likes (descending - highest first)
+        commentCards.sort((a, b) => {
+            const aLikeBtnText = a.querySelector('.vote-btn-like')?.textContent || '0';
+            const bLikeBtnText = b.querySelector('.vote-btn-like')?.textContent || '0';
+            
+            const aLikes = parseInt(aLikeBtnText.match(/\d+/)?.[0] || 0);
+            const bLikes = parseInt(bLikeBtnText.match(/\d+/)?.[0] || 0);
+            
+            return bLikes - aLikes;
+        });
+    } else if (sortType === 'oldest') {
+        // Sort by original index ascending (oldest first)
+        commentCards.sort((a, b) => {
+            const aIndex = parseInt(a.dataset.originalIndex || 0);
+            const bIndex = parseInt(b.dataset.originalIndex || 0);
+            return aIndex - bIndex;  // Ascending = oldest first
+        });
+    } else if (sortType === 'newest') {
+        // Sort by original index descending (newest first)
+        commentCards.sort((a, b) => {
+            const aIndex = parseInt(a.dataset.originalIndex || 0);
+            const bIndex = parseInt(b.dataset.originalIndex || 0);
+            return bIndex - aIndex;  // Descending = newest first
+        });
+    }
+    
+    // Reorder comments in DOM
+    const container = document.getElementById('comments-container');
+    if (container) {
+        commentCards.forEach(card => {
+            container.appendChild(card);
+        });
+    }
+    
+    // Save sort preference to localStorage
+    localStorage.setItem('commentSortPreference', sortType);
+    
+    // Update dropdown value
+    const dropdown = document.getElementById('commentSortDropdown');
+    if (dropdown) {
+        dropdown.value = sortType;
+    }
+}
 
 // Mobile Tab Switching
 function updateForumTab(tab) {

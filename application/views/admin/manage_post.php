@@ -188,6 +188,44 @@
         border-color: #ef4444;
     }
 
+    /* ================= PAGINATION ================= */
+    .pagination-wrap {
+        margin-top: 18px;
+        display: flex;
+        justify-content: center;
+    }
+
+    .pagination .page-link {
+        border-radius: 10px !important;
+        margin: 0 4px;
+        border: 1px solid #e2e8f0;
+        color: #a12124;
+        font-weight: 700;
+        font-size: 13px;
+        padding: 10px 14px;
+        transition: var(--transition);
+        background: #ffffff;
+    }
+
+    .pagination .page-item.active .page-link {
+        background-color: #a12124;
+        border-color: #a12124;
+        color: #ffffff;
+        box-shadow: 0 6px 16px rgba(161, 33, 36, 0.22);
+    }
+
+    .pagination .page-item.disabled .page-link {
+        opacity: 0.5;
+        cursor: not-allowed;
+        background: #f8fafc;
+    }
+
+    .pagination .page-link:hover {
+        background: rgba(161, 33, 36, 0.08);
+        border-color: rgba(161, 33, 36, 0.35);
+        transform: translateY(-1px);
+    }
+
     /* ================= MODAL ================= */
     .modal-content {
         border-radius: 24px;
@@ -548,24 +586,7 @@
 
                 <tbody>
 
-                    <?php
-                    $all_posts = array_merge(
-                        array_map(function ($p) {
-                            $p['type_label'] = 'Announcement';
-                            return $p;
-                        }, $announcements),
-                        array_map(function ($p) {
-                            $p['type_label'] = 'Campus News';
-                            return $p;
-                        }, $news),
-                        array_map(function ($p) {
-                            $p['type_label'] = 'Success Story';
-                            return $p;
-                        }, $stories)
-                    );
-                    ?>
-
-                    <?php foreach ($all_posts as $post): ?>
+                    <?php foreach (($posts ?? []) as $post): ?>
                         <tr class="data-row post-item"
                             data-type="<?= $post['post_type'] ?>">
 
@@ -595,6 +616,12 @@
                 </tbody>
             </table>
         </div>
+
+        <?php if (!empty($pagination_links)): ?>
+            <div class="pagination-wrap">
+                <?= $pagination_links ?>
+            </div>
+        <?php endif; ?>
     </div>
 </div>
 

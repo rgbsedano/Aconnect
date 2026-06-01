@@ -272,17 +272,7 @@
         color: var(--accent-red);
     }
 
-    .growth {
-        font-size: 11px;
-        font-weight: 600;
-        color: var(--accent-green);
-        display: flex;
-        align-items: center;
-        gap: 2px;
-        background: rgba(4, 179, 115, 0.1);
-        padding: 1px 6px;
-        border-radius: 8px;
-    }
+
 
 
     @media (max-width: 1200px) {
@@ -474,6 +464,7 @@
             
         </main>
     </div>
+
 </div>
 
 <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>

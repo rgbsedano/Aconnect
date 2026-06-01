@@ -67,6 +67,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 
     /* Right Side: Form Container (White) */
     .form-container {
+        position: relative;
         flex: 0 0 50%;
         max-width: 50%;
         display: flex;
@@ -77,6 +78,34 @@ defined('BASEPATH') OR exit('No direct script access allowed');
         background-color: #fff; 
         min-height: 100vh;
         box-sizing: border-box;
+    }
+
+    .back-button-container {
+        position: absolute;
+        top: 20px;
+        right: 20px;
+        z-index: 10;
+    }
+
+    .back-button {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        width: 40px;
+        height: 40px;
+        border-radius: 50%;
+        background-color: #f0f0f0;
+        border: none;
+        color: #333;
+        font-size: 18px;
+        cursor: pointer;
+        transition: background-color 0.2s ease, transform 0.2s ease;
+        text-decoration: none;
+    }
+
+    .back-button:hover {
+        background-color: #e0e0e0;
+        transform: scale(1.05);
     }
 
     .login-logo-container {
@@ -144,22 +173,9 @@ defined('BASEPATH') OR exit('No direct script access allowed');
         background-color: #7d181b !important; 
     }
 
-    /* Link to Alumni Login */
-    .link-container {
-        margin-top: 0.75rem; 
+    .register-link {
+        margin-top: 1rem;
         text-align: center;
-        font-size: 0.85rem;
-        padding-top: 10px;
-        border-top: 1px solid #eee; 
-    }
-    .link-container a {
-        color: #a12124;
-        text-decoration: none;
-        font-weight: 600;
-        transition: text-decoration 0.2s ease;
-    }
-    .link-container a:hover {
-        text-decoration: underline;
     }
 
     /* Responsive adjustments */
@@ -189,6 +205,9 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 
             <!-- Right Half: Admin Login Form -->
             <div class="col-md-6 form-container">
+                <div class="back-button-container">
+                    <a class="back-button" href="<?= base_url('login'); ?>" title="Back to Alumni Login" aria-label="Back to Alumni Login">&#8592;</a>
+                </div>
                 <div class="login-logo-container">
                     <img src="<?php echo base_url('assets/images/logo.png'); ?>" alt="AC Connect Logo" class="login-logo">
                 </div>
@@ -229,8 +248,8 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                         </div>
                     </form>
 
-                    <div class="link-container">
-                        <a href="<?= base_url('login'); ?>">Go back to Alumni Login</a>
+                    <div class="register-link">
+                        <p><a href="<?= base_url('login'); ?>">Go back to Alumni Login</a></p>
                     </div>
                 </div>
             </div>

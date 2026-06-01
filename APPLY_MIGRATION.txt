@@ -1,0 +1,106 @@
+========================================
+ DATABASE MIGRATION - QUICK REFERENCE
+========================================
+
+🔴 REQUIRED: Copy and paste this SQL into HeidiSQL or phpMyAdmin
+
+========================================
+ SECTION 1: Add deleted_at Columns
+========================================
+
+ALTER TABLE `forum_likes` ADD COLUMN `deleted_at` TIMESTAMP NULL DEFAULT NULL AFTER `created_at`;
+ALTER TABLE `forum_dislikes` ADD COLUMN `deleted_at` TIMESTAMP NULL DEFAULT NULL AFTER `created_at`;
+ALTER TABLE `forum_comments` ADD COLUMN `deleted_at` TIMESTAMP NULL DEFAULT NULL AFTER `created_at`;
+ALTER TABLE `forum_posts` ADD COLUMN `deleted_at` TIMESTAMP NULL DEFAULT NULL AFTER `created_at`;
+
+========================================
+ SECTION 2: Create Performance Indexes
+========================================
+
+ALTER TABLE `forum_likes` ADD INDEX `idx_deleted_at` (`deleted_at`);
+ALTER TABLE `forum_dislikes` ADD INDEX `idx_deleted_at` (`deleted_at`);
+ALTER TABLE `forum_comments` ADD INDEX `idx_deleted_at` (`deleted_at`);
+ALTER TABLE `forum_posts` ADD INDEX `idx_deleted_at` (`deleted_at`);
+
+========================================
+ VERIFICATION QUERIES (Run after migration)
+========================================
+
+-- Check that columns exist
+DESCRIBE forum_likes;
+-- Look for: deleted_at | timestamp | YES
+
+DESCRIBE forum_dislikes;
+DESCRIBE forum_comments;
+DESCRIBE forum_posts;
+
+-- Verify no errors occurred
+SHOW TABLE STATUS WHERE name IN ('forum_likes', 'forum_dislikes', 'forum_comments', 'forum_posts');
+
+========================================
+ TESTING (After migration is complete)
+========================================
+
+1. Go to Forum in your app
+2. Click like on any post
+   → Should work without errors
+3. Click like again to unlike
+   → Should work without errors
+4. Like posts a few times
+   → Check database: SELECT * FROM forum_likes WHERE deleted_at IS NULL;
+   → Only active likes should show
+
+========================================
+ IF YOU GET ERRORS
+========================================
+
+Duplicate Key Error?
+→ Skip that ALTER statement (index already exists)
+
+Still seeing "Unknown column 'deleted_at'" error?
+→ The migration didn't apply successfully
+→ Try again or check database permissions
+
+Queries returning too many results?
+→ Check that WHERE clause is filtering correctly
+→ Run: SELECT * FROM forum_likes WHERE deleted_at IS NOT NULL;
+→ You should see old deleted likes here
+
+========================================
+ ONE-LINER FOR TERMINAL (Optional)
+========================================
+
+mysql -h localhost -u root -p aconnect_db < application/migrations/add_soft_delete_columns.sql
+
+(Replace "root" with your database user if different)
+
+========================================
+ HOW TO USE IN HEIDI SQL
+========================================
+
+1. Open HeidiSQL
+2. Connect to your database
+3. In the left sidebar, right-click on "aconnect_db"
+4. Select "New Query Tab" or press Ctrl+N
+5. Copy and paste the SQL from SECTION 1 above
+6. Copy and paste the SQL from SECTION 2 above
+7. Click the green "Execute" button
+8. You should see messages like "Query OK, X rows affected"
+9. Run one DESCRIBE query from VERIFICATION QUERIES to confirm
+
+========================================
+ HOW TO USE IN PHPMYADMIN
+========================================
+
+1. Open phpMyAdmin in browser
+2. Click on "aconnect_db" database on the left
+3. Click the "SQL" tab at the top
+4. Paste all the SQL from SECTION 1 and 2
+5. Click "Go" button
+6. Check for success messages
+
+========================================
+
+STATUS: Ready to deploy ✅
+AFTER MIGRATION: Forum like/dislike features will work perfectly
+

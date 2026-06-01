@@ -103,7 +103,7 @@ $config['charset'] = 'UTF-8';
 | setting this variable to TRUE (boolean).  See the user guide for details.
 |
 */
-$config['enable_hooks'] = FALSE;
+$config['enable_hooks'] = TRUE;
 
 /*
 |--------------------------------------------------------------------------
@@ -527,6 +527,15 @@ $config['proxy_ips'] = '';
 $config['sess_save_path'] = sys_get_temp_dir();
 
 $config['composer_autoload'] = TRUE;
+
+/*
+|--------------------------------------------------------------------------
+| Ollama AI Configuration
+|--------------------------------------------------------------------------
+*/
+$config['ollama_host'] = getenv('OLLAMA_HOST') ?: 'http://127.0.0.1:11434';
+$config['ollama_model'] = getenv('OLLAMA_MODEL') ?: 'gemma:4b';
+
 // Admin Reports
 $route['admin/reports'] = 'AdminReports/index';
 $route['admin/reports/login_activity_data'] = 'AdminReports/login_activity_data';

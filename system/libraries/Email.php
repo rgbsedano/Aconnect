@@ -2265,7 +2265,7 @@ class CI_Email {
 		$data .= $this->newline;
 		for ($written = $timestamp = 0, $length = self::strlen($data); $written < $length; $written += $result)
 		{
-			if (($result = fwrite($this->_smtp_connect, self::substr($data, $written))) === FALSE)
+			if (($result = @fwrite($this->_smtp_connect, self::substr($data, $written))) === FALSE)
 			{
 				break;
 			}
@@ -2277,6 +2277,13 @@ class CI_Email {
 					$timestamp = time();
 				}
 				elseif ($timestamp < (time() - $this->smtp_timeout))
+				{
+					$result = FALSE;
+					break;
+				}
+
+				$meta = stream_get_meta_data($this->_smtp_connect);
+				if ( ! empty($meta['timed_out']))
 				{
 					$result = FALSE;
 					break;
@@ -2309,11 +2316,22 @@ class CI_Email {
 	{
 		$data = '';
 
-		while ($str = fgets($this->_smtp_connect, 512))
+		while (($str = fgets($this->_smtp_connect, 512)) !== FALSE)
 		{
+			if ($str === '')
+			{
+				break;
+			}
+
 			$data .= $str;
 
-			if ($str[3] === ' ')
+			if (isset($str[3]) && $str[3] === ' ')
+			{
+				break;
+			}
+
+			$meta = stream_get_meta_data($this->_smtp_connect);
+			if ( ! empty($meta['timed_out']))
 			{
 				break;
 			}

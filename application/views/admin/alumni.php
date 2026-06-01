@@ -166,6 +166,21 @@
     }
     .pagination-wrapper strong { background: var(--accent-red); border-color: var(--accent-red); color: white; }
     .pagination-wrapper a:hover { background: #f8fafc; color: var(--accent-red); border-color: var(--accent-red); }
+
+    /* Override Bootstrap pagination active color */
+    .pagination .page-item.active .page-link {
+        background-color: #a12124;
+        border-color: #a12124;
+        color: #ffffff;
+    }
+    .pagination .page-link {
+        color: #a12124;
+    }
+    .pagination .page-item:not(.active) .page-link:hover {
+        background-color: #f8fafc;
+        border-color: #a12124;
+        color: #a12124;
+    }
 </style>
 
 <div class="dashboard-wrapper">

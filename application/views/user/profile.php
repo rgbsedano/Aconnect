@@ -151,6 +151,48 @@
             box-shadow: var(--shadow-lg);
         }
 
+        /* Alumni Standing Badge Styles */
+        .badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            padding: 6px 12px;
+            border-radius: 20px;
+            font-size: 13px;
+            font-weight: 600;
+            white-space: nowrap;
+            text-decoration: none;
+        }
+
+        .badge-danger {
+            background-color: #dc3545;
+            color: white;
+        }
+
+        .badge-warning {
+            background-color: #ffc107;
+            color: #333;
+        }
+
+        .badge-info {
+            background-color: #17a2b8;
+            color: white;
+        }
+
+        .badge-success {
+            background-color: #28a745;
+            color: white;
+        }
+
+        .badge-primary {
+            background-color: var(--maroon);
+            color: white;
+        }
+
+        .badge i {
+            font-size: 13px;
+        }
+
         .info-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
@@ -455,6 +497,7 @@
             .profile-name { font-size: 22px; }
             .profile-meta { justify-content: center; gap: 10px; }
             .btn-edit-primary { width: 100%; justify-content: center; margin-top: 15px; }
+            .badge { display: inline-flex; margin-top: 8px; }
             .info-grid { grid-template-columns: 1fr; gap: 15px; }
             .section-card { padding: 20px 15px; }
             .section-header { flex-direction: column; align-items: flex-start; gap: 10px; }
@@ -484,7 +527,6 @@
         }
     </style>
 
-
 <div class="container-fluid">
     <!-- Profile Header -->
     <div class="profile-header" style="<?= (!empty($alumni->cover_photo)) ? 'background: url(\''.base_url('assets/uploads/alumni/'.$alumni->cover_photo).'\') center/cover;' : '' ?>">
@@ -506,15 +548,27 @@
 
         <div class="profile-header-content">
             <div class="profile-name-section">
-                <h1 class="profile-name">
-                    <?= isset($alumni->first_name) && isset($alumni->last_name) ? ucwords(strtolower($alumni->first_name . ' ' . $alumni->last_name)) : 'N/A' ?>
-                </h1>
+                <div style="display: flex; align-items: center; gap: 12px; flex-wrap: wrap;">
+                    <h1 class="profile-name">
+                        <?= isset($alumni->first_name) && isset($alumni->last_name) ? ucwords(strtolower($alumni->first_name . ' ' . $alumni->last_name)) : 'N/A' ?>
+                    </h1>
+                    <?php if (isset($standing_badge)): ?>
+                        <span class="<?= $standing_badge['badge_class'] ?>" title="<?= $standing_badge['description'] ?>">
+                            <i class="<?= $standing_badge['icon'] ?>"></i> <?= $standing_badge['title'] ?>
+                        </span>
+                    <?php endif; ?>
+                </div>
                 <p class="profile-degree">
                     <?= isset($alumni->degree) ? $alumni->degree : 'Degree Not Set' ?>
                 </p>
                 <p class="profile-meta">
                     <span><i class="fas fa-graduation-cap"></i> Graduated <?= isset($alumni->graduation_year) ? $alumni->graduation_year : 'N/A' ?></span>
                     <span><i class="fas fa-id-badge"></i> ID: <?= isset($alumni->student_number) ? $alumni->student_number : 'N/A' ?></span>
+                    <?php if (isset($standing_score)): ?>
+                        <span><i class="fas fa-medal"></i> Standing: <strong><?= $standing_score ?></strong> pts 
+                            <button type="button" class="btn btn-link" data-toggle="modal" data-target="#standingBreakdownModal" style="background: none; border: none; color: #a12124; cursor: pointer; font-size: 12px; margin-left: 8px; padding: 0;" title="View breakdown">📊</button>
+                        </span>
+                    <?php endif; ?>
                 </p>
 
                 <div class="info-grid">
@@ -522,6 +576,9 @@
                         <span class="info-label"><i class="fas fa-envelope"></i> Email</span>
                         <span class="info-value"><?= isset($alumni->email) ? $alumni->email : 'Not Set' ?></span>
                     </div>
+
+
+
                     <div class="info-item">
                         <span class="info-label"><i class="fas fa-envelope-open"></i> Alternate Email</span>
                         <span class="info-value"><?= isset($alumni->alternative_email) ? $alumni->alternative_email : 'Not Set' ?></span>
@@ -960,6 +1017,51 @@
                         <button type="submit" class="btn btn-primary">Add Credential</button>
                     </div>
                 </form>
+            </div>
+        </div>
+    </div>
+
+    <!-- Standing Breakdown Modal -->
+    <div class="modal fade" id="standingBreakdownModal" tabindex="-1" role="dialog" aria-labelledby="standingBreakdownModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-lg modal-dialog-centered" role="document">
+            <div class="modal-content">
+                <div class="modal-header" style="background: linear-gradient(135deg, var(--maroon), var(--maroon-dark)); color: white;">
+                    <h5 class="modal-title" id="standingBreakdownModalLabel" style="font-weight: 700;"><i class="fas fa-medal"></i> Standing Points Breakdown</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close" style="color: white; opacity: 0.8;">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <?php if (isset($standing_breakdown)): ?>
+                    <table style="width: 100%; font-size: 14px; border-collapse: collapse;">
+                        <thead>
+                            <tr style="background: #f9f9f9; border-bottom: 2px solid var(--border);">
+                                <th style="text-align: left; padding: 12px; font-weight: 700; color: var(--text);">Category</th>
+                                <th style="text-align: center; padding: 12px; font-weight: 700; color: var(--text);">Count</th>
+                                <th style="text-align: center; padding: 12px; font-weight: 700; color: var(--text);">Per</th>
+                                <th style="text-align: right; padding: 12px; font-weight: 700; color: var(--text);">Total</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <?php foreach ($standing_breakdown as $key => $data): ?>
+                            <tr style="border-bottom: 1px solid var(--border);">
+                                <td style="text-align: left; padding: 12px; color: var(--text);"><?= ucfirst(str_replace('_', ' ', $key)) ?></td>
+                                <td style="text-align: center; padding: 12px; color: var(--text);"><?= $data['count'] ?></td>
+                                <td style="text-align: center; padding: 12px; color: var(--text);">
+                                    <?= isset($data['points_per']) ? '+' . $data['points_per'] : (isset($data['penalty_per']) ? $data['penalty_per'] : 'N/A') ?>
+                                </td>
+                                <td style="text-align: right; padding: 12px; font-weight: 700; color: <?= $data['total'] < 0 ? '#dc3545' : '#28a745' ?>;">
+                                    <?= $data['total'] >= 0 ? '+' : '' ?><?= $data['total'] ?>
+                                </td>
+                            </tr>
+                            <?php endforeach; ?>
+                        </tbody>
+                    </table>
+                    <?php endif; ?>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                </div>
             </div>
         </div>
     </div>

@@ -1,0 +1,161 @@
+<?php
+defined('BASEPATH') OR exit('No direct script access allowed');
+?>
+
+<style>
+.pending-employers-page {
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 24px;
+}
+
+.pending-employers-page .page-card {
+    background: #ffffff;
+    border-radius: 18px;
+    box-shadow: 0 10px 30px rgba(15, 23, 42, 0.08);
+    border: 1px solid #e2e8f0;
+    overflow: hidden;
+}
+
+.pending-employers-page .page-header {
+    padding: 24px 28px;
+    background: linear-gradient(135deg, #5b0f14 0%, #7a1118 52%, #8f151c 100%);
+    color: #ffffff;
+}
+
+.pending-employers-page .page-header h1 {
+    margin: 0;
+    font-size: 28px;
+    font-weight: 700;
+}
+
+.pending-employers-page .page-header h1 .accent {
+    color: #ff6b6b;
+}
+
+.pending-employers-page .page-header p {
+    margin: 6px 0 0;
+    opacity: 0.9;
+}
+
+.pending-employers-page .page-body {
+    padding: 28px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+}
+
+.pending-employers-page .status-tabs {
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+    margin-bottom: 20px;
+    justify-content: center;
+}
+
+.pending-employers-page .status-tab-btn {
+    border: 1px solid #cbd5e1;
+    background: #ffffff;
+    color: #334155;
+    border-radius: 999px;
+    padding: 9px 14px;
+    font-size: 13px;
+    font-weight: 700;
+    cursor: pointer;
+}
+
+.pending-employers-page .status-tab-btn.active {
+    background: #8f151c;
+    border-color: #8f151c;
+    color: #ffffff;
+}
+
+.pending-employers-page .tab-content {
+    display: none;
+    width: 100%;
+    max-width: 1200px;
+}
+
+.pending-employers-page .tab-content.active {
+    display: block;
+}
+
+.pending-employers-page .section-title {
+    margin: 0 0 12px;
+    font-size: 18px;
+    font-weight: 700;
+    color: #0f172a;
+}
+
+.pending-employers-page .section-subtitle {
+    margin: -4px 0 16px;
+    color: #64748b;
+    font-size: 13px;
+}
+
+.pending-employers-page .approval-table th {
+    font-size: 11px;
+    text-transform: uppercase;
+    letter-spacing: .05em;
+    color: #64748b;
+    border-top: none;
+}
+
+.pending-employers-page .approval-table td {
+    vertical-align: middle;
+}
+
+.pending-employers-page .badge-status {
+    display: inline-flex;
+    align-items: center;
+    padding: 6px 10px;
+    border-radius: 999px;
+    font-size: 12px;
+    font-weight: 700;
+}
+
+.pending-employers-page .badge-pending {
+    background: #fef3c7;
+    color: #92400e;
+}
+
+.pending-employers-page .badge-approved {
+    background: #dcfce7;
+    color: #166534;
+}
+
+.pending-employers-page .badge-rejected {
+    background: #fee2e2;
+    color: #991b1b;
+}
+
+.pending-employers-page .action-group {
+    display: flex;
+    gap: 8px;
+    flex-wrap: wrap;
+}
+
+.pending-employers-page .btn-action {
+    border: none;
+    border-radius: 10px;
+    padding: 8px 14px;
+    font-size: 13px;
+    font-weight: 700;
+    color: #ffffff;
+}
+
+.pending-employers-page .btn-approve {
+    background: #15803d;
+}
+
+.pending-employers-page .btn-reject {
+    background: #b91c1c;
+}
+
+.pending-employers-page .empty-state {
+    padding: 42px 20px;
+    text-align: center;
+    color: #64748b;
+}
+?>

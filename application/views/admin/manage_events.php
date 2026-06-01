@@ -79,6 +79,37 @@
         border: 1px solid #f1f5f9;
     }
 
+    .pagination-wrap {
+        margin-top: 18px;
+        display: flex;
+        justify-content: center;
+    }
+
+    .pagination .page-link {
+        border-radius: 10px !important;
+        margin: 0 4px;
+        border: 1px solid #e2e8f0;
+        color: var(--text-main);
+        font-weight: 700;
+        font-size: 13px;
+        padding: 10px 14px;
+        transition: var(--transition);
+        background: #ffffff;
+    }
+
+    .pagination .page-item.active .page-link {
+        background-color: #a12124;
+        border-color: #a12124;
+        color: #ffffff;
+        box-shadow: 0 6px 16px rgba(161, 33, 36, 0.22);
+    }
+
+    .pagination .page-item.disabled .page-link {
+        opacity: 0.5;
+        cursor: not-allowed;
+        background: #f8fafc;
+    }
+
     .toolbar {
         display: flex;
         justify-content: space-between;
@@ -298,6 +329,12 @@ Swal.fire({
                 </tbody>
             </table>
         </div>
+
+        <?php if (!empty($pagination_links)): ?>
+            <div class="pagination-wrap">
+                <?= $pagination_links ?>
+            </div>
+        <?php endif; ?>
     </div>
 </div>
 

@@ -38,6 +38,19 @@
 require_once __DIR__ . '/vendor/autoload.php';
 $dotenv = Dotenv\Dotenv::createImmutable(__DIR__);
 $dotenv->load();
+
+if (!function_exists('env_value')) {
+	function env_value($key, $default = null)
+	{
+		$value = getenv($key);
+
+		if ($value === false || $value === null || $value === '') {
+			$value = $_ENV[$key] ?? $_SERVER[$key] ?? $default;
+		}
+
+		return $value;
+	}
+}
 /*
  *---------------------------------------------------------------
  * APPLICATION ENVIRONMENT

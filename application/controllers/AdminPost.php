@@ -14,6 +14,52 @@ class AdminPost extends CI_Controller {
         // $this->load->model('Post_model');
     }
 
+    private function build_pagination_links(string $base_url, array $query_params, int $current_page, int $total_pages): string
+    {
+        if ($total_pages <= 1) {
+            return '';
+        }
+
+        $current_page = max(1, min($current_page, $total_pages));
+
+        $build_url = function (int $page) use ($base_url, $query_params): string {
+            $params = $query_params;
+            $params['page'] = $page;
+            return $base_url . (strpos($base_url, '?') === false ? '?' : '&') . http_build_query($params);
+        };
+
+        $items = [];
+
+        // Sliding window: first, last, current, +/-1 sibling
+        $pages = [];
+        $pages[] = 1;
+        $pages[] = $total_pages;
+        for ($p = $current_page - 1; $p <= $current_page + 1; $p++) {
+            if ($p >= 1 && $p <= $total_pages) $pages[] = $p;
+        }
+        $pages = array_values(array_unique($pages));
+        sort($pages);
+
+        $prev_disabled = $current_page <= 1 ? ' disabled' : '';
+        $next_disabled = $current_page >= $total_pages ? ' disabled' : '';
+
+        $items[] = '<li class="page-item' . $prev_disabled . '"><a class="page-link" href="' . ($prev_disabled ? 'javascript:void(0)' : $build_url($current_page - 1)) . '">Prev</a></li>';
+
+        $last_rendered = 0;
+        foreach ($pages as $p) {
+            if ($last_rendered && $p > $last_rendered + 1) {
+                $items[] = '<li class="page-item disabled"><span class="page-link">…</span></li>';
+            }
+            $active = $p === $current_page ? ' active' : '';
+            $items[] = '<li class="page-item' . $active . '"><a class="page-link" href="' . $build_url($p) . '">' . $p . '</a></li>';
+            $last_rendered = $p;
+        }
+
+        $items[] = '<li class="page-item' . $next_disabled . '"><a class="page-link" href="' . ($next_disabled ? 'javascript:void(0)' : $build_url($current_page + 1)) . '">Next</a></li>';
+
+        return '<nav aria-label="Pagination"><ul class="pagination justify-content-center">' . implode('', $items) . '</ul></nav>';
+    }
+
     public function index()
     {
         // Auto-migration for carousel table
@@ -24,9 +70,80 @@ class AdminPost extends CI_Controller {
             $this->db->query("ALTER TABLE carousel_photos ADD COLUMN description TEXT");
         }
 
-        $data['announcements'] = $this->db->get_where('post', ['post_type' => 'announcements'])->result_array();
-        $data['news'] = $this->db->get_where('post', ['post_type' => 'news'])->result_array();
-        $data['stories'] = $this->db->get_where('post', ['post_type' => 'stories'])->result_array();
+        $results_per_page = 5;
+        $page = (int) $this->input->get('page', TRUE);
+        if ($page < 1) $page = 1;
+        $offset = ($page - 1) * $results_per_page;
+
+        $category = $this->input->get('category', TRUE) ?: 'announcements';
+        $search = trim((string) $this->input->get('search', TRUE));
+        $post_has_deleted_at = $this->db->field_exists('deleted_at', 'post');
+        $carousel_has_deleted_at = $this->db->field_exists('deleted_at', 'carousel_photos');
+
+        // COUNT(*) query
+        $this->db->from('post');
+        $this->db->where('post_type', $category);
+        if ($post_has_deleted_at) {
+            $this->db->where('deleted_at IS NULL', null, false);
+        }
+        if ($search !== '') {
+            $this->db->group_start()
+                ->like('title', $search)
+                ->or_like('content', $search)
+            ->group_end();
+        }
+        $total_records = (int) $this->db->count_all_results();
+        $total_pages = (int) ceil($total_records / $results_per_page);
+        if ($total_pages < 1) $total_pages = 1;
+        if ($page > $total_pages) {
+            $page = $total_pages;
+            $offset = ($page - 1) * $results_per_page;
+        }
+
+        // Main fetch query with LIMIT/OFFSET
+        $this->db->from('post');
+        $this->db->where('post_type', $category);
+        if ($post_has_deleted_at) {
+            $this->db->where('deleted_at IS NULL', null, false);
+        }
+        if ($search !== '') {
+            $this->db->group_start()
+                ->like('title', $search)
+                ->or_like('content', $search)
+            ->group_end();
+        }
+        $posts = $this->db
+            ->order_by('created_at', 'DESC')
+            ->limit($results_per_page, $offset)
+            ->get()
+            ->result_array();
+
+        $type_labels = [
+            'announcements' => 'Announcement',
+            'news' => 'Campus News',
+            'stories' => 'Success Story',
+        ];
+        foreach ($posts as &$p) {
+            $p['type_label'] = $type_labels[$p['post_type']] ?? 'Post';
+        }
+        unset($p);
+
+        $data['posts'] = $posts;
+        $data['current_category'] = $category;
+        $data['results_per_page'] = $results_per_page;
+        $data['current_page'] = $page;
+        $data['total_pages'] = $total_pages;
+        $data['total_records'] = $total_records;
+
+        $base_url = base_url('AdminPost');
+        $query_params = [];
+        if ($search !== '') $query_params['search'] = $search;
+        if ($category !== '') $query_params['category'] = $category;
+        $data['pagination_links'] = $this->build_pagination_links($base_url, $query_params, $page, $total_pages);
+
+        if ($carousel_has_deleted_at) {
+            $this->db->where('deleted_at IS NULL', null, false);
+        }
         $data['carousel'] = $this->db->get('carousel_photos')->result_array();
 
         $this->load->view('__header');
@@ -105,7 +222,7 @@ class AdminPost extends CI_Controller {
             if (file_exists($file)) {
                 @unlink($file);
             }
-            $this->db->where('id', $id)->delete('carousel_photos');
+            $this->db->where('id', $id)->update('carousel_photos', ['deleted_at' => date('Y-m-d H:i:s')]);
             $this->session->set_flashdata('success', 'Banner removed successfully.');
         } else {
             $this->session->set_flashdata('error', 'Photo not found.');
@@ -215,7 +332,7 @@ class AdminPost extends CI_Controller {
             }
         }
 
-        $this->db->where('id', $id)->delete('post');
+        $this->db->where('id', $id)->update('post', ['deleted_at' => date('Y-m-d H:i:s')]);
         $this->session->set_flashdata('success', 'Post deleted.');
         
         // Preserve the category when redirecting

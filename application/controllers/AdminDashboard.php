@@ -40,6 +40,13 @@ class AdminDashboard extends CI_Controller{
         $data['growth_alumni'] = "+3%";
         $data['growth_officers'] = "+2%";
         $data['growth_accounts'] = "+1%";
+        $data['recent_updates'] = [
+            'Added AJAX Data Endpoint (Controller) on Employer',
+            'Fixed Visibility Count Mismatch on Employer',
+            'Search Bar Implementation on Employer',
+            'Dynamic Row Count on Employer',
+            'Added group for Employers',
+        ];
 
 		$this->load->view('__header');
 		$this->load->view('dashboard_a', $data);

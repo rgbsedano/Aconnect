@@ -24,17 +24,21 @@ defined('BASEPATH') OR exit('No direct script access allowed');
     .image-container { flex:0 0 50%; max-width:50%; display:flex; align-items:center; justify-content:center; overflow:hidden; min-height:100vh; background-color:#920E0E; padding:0 !important; }
     .login-image { display:block; width:100%; height:100%; object-fit:cover; }
     .form-container { flex:0 0 50%; max-width:50%; display:flex; flex-direction:column; align-items:center; justify-content:flex-start; padding:20px 30px; background-color:#fff; min-height:100vh; box-sizing:border-box; overflow-y:auto; max-height:100vh; }
+    .form-container { position:relative; }
     .login-logo-container { text-align:center; margin-bottom:0.5rem; }
     .login-logo { max-width:150px; height:auto; }
     .register-form-wrapper { width:100%; max-width:450px; }
     .register-form-wrapper h1 { text-align:center; font-size:1.6rem; font-weight:700; color:#333; margin-bottom:1.5rem; }
+    .back-button-container { position:absolute; top:20px; right:20px; z-index:10; }
+    .back-button { display:inline-flex; align-items:center; justify-content:center; width:40px; height:40px; border-radius:50%; background-color:#f0f0f0; border:none; color:#333; font-size:18px; cursor:pointer; transition:background-color 0.2s ease, transform 0.2s ease; text-decoration:none; }
+    .back-button:hover { background-color:#e0e0e0; transform:scale(1.05); }
     .form-group input, .form-control { border-radius:5px; height:40px; padding:8px 15px; margin-bottom:10px; width:100%; border:1px solid #ddd; box-sizing:border-box; }
     .form-group select { border-radius:5px; height:40px; padding:8px 15px; margin-bottom:10px; width:100%; border:1px solid #ddd; box-sizing:border-box; appearance:none; background-position:right 0.75rem center; background-size:14px 14px; }
-    .form-group input:focus, .form-group select:focus { border-color:#a12124; box-shadow:0 0 0 0.15rem rgba(161,33,36,0.2); outline:0; }
+    .form-group input:focus, .form-group select:focus { border-color:#007bff; box-shadow:0 0 0 0.15rem rgba(0,123,255,0.2); outline:0; }
     .btn-register { width:100%; background-color:#a12124 !important; color:white; border:none; height:48px; font-size:1rem; text-transform:uppercase; font-weight:600; border-radius:5px; cursor:pointer; transition:background-color 0.2s ease; }
     .btn-register:hover { background-color:#7d181b !important; }
     .login-link-container { margin-top:0.75rem; text-align:center; font-size:0.85rem; padding-top:10px; border-top:1px solid #eee; }
-    .login-link-container a { color:#a12124; text-decoration:none; font-weight:600; }
+    .login-link-container a { color:#007bff; text-decoration:none; font-weight:600; }
     .validation-error { width:100%; max-width:450px; margin-bottom:0.5rem; padding:0.75rem; color:#721c24; background-color:#f8d7da; border:1px solid #f5c6cb; border-radius:5px; font-size:0.85rem; text-align:left; }
     @media screen and (max-width:767.98px) { 
         html, body { overflow-y:auto; height: auto; } 
@@ -51,6 +55,11 @@ defined('BASEPATH') OR exit('No direct script access allowed');
             </div>
 
             <div class="col-md-6 form-container">
+                <div class="back-button-container">
+                    <button class="back-button" onclick="window.history.back()" title="Go Back">
+                        <i class="fas fa-arrow-left"></i>
+                    </button>
+                </div>
                 <div class="login-logo-container">
                     <img src="<?php echo base_url('assets/images/logo.png'); ?>" alt="AC Connect Logo" class="login-logo">
                 </div>
@@ -204,7 +213,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                         <div class="form-group d-flex align-items-start mb-3" style="font-size: 0.85rem; color: #555;">
                             <input type="checkbox" id="privacyConsent" name="privacy_consent" style="width: 18px; height: 18px; margin-right: 10px; margin-top: 2px;" required>
                             <label for="privacyConsent" id="triggerPrivacyModal" style="cursor: pointer;">
-                                I have read and agree to the <a href="#" style="color: #a12124; border-bottom: 1px dashed #a12124;">Data Privacy Terms</a>.
+                                I have read and agree to the <a href="#" style="color: #007bff; border-bottom: 1px dashed #007bff;">Data Privacy Terms</a>.
                             </label>
                         </div>
 
@@ -225,7 +234,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
     <div class="modal fade" id="privacyModal" tabindex="-1" role="dialog" aria-labelledby="privacyModalLabel" aria-hidden="true">
         <div class="modal-dialog modal-lg modal-dialog-centered" role="document">
             <div class="modal-content" style="border-radius: 12px; border: none; overflow: hidden; box-shadow: 0 10px 30px rgba(0,0,0,0.2);">
-                <div class="modal-header" style="background: #a12124; color: white; border: none; padding: 15px 25px;">
+                <div class="modal-header" style="background: #007bff; color: white; border: none; padding: 15px 25px;">
                     <h5 class="modal-title" id="privacyModalLabel" style="font-weight: 700;">Data Privacy</h5>
                     <button type="button" class="close text-white" data-dismiss="modal" aria-label="Close">
                         <span aria-hidden="true">&times;</span>
@@ -286,7 +295,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                 </div>
                 <div class="modal-footer" style="padding: 15px 25px; background: #f8f9fa; border-top: 1px solid #eee;">
                     <button type="button" class="btn btn-secondary" data-dismiss="modal" style="border-radius: 8px; font-weight: 600;">Close</button>
-                    <button type="button" id="submitPrivacy" class="btn btn-danger" style="background: #a12124; border: none; border-radius: 8px; font-weight: 600; padding: 8px 25px;">Submit</button>
+                    <button type="button" id="submitPrivacy" class="btn btn-danger" style="background: #007bff; border: none; border-radius: 8px; font-weight: 600; padding: 8px 25px;">Submit</button>
                 </div>
             </div>
         </div>

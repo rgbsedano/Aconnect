@@ -462,7 +462,7 @@
         </div>
         <div class="chat-modal-body">
             <div id="chatContent" style="flex: 1; overflow-y: auto;">
-                <p style="text-align:center; color: var(--muted); font-size: 13px;">Loading conversation...</p>
+                <p style="text-align:center; color: var(--muted); font-size: 13px;">Loading your conversation...</p>
             </div>
         </div>
 
@@ -486,7 +486,8 @@ function renderMessages(messagesHtml) {
 }
 
 function loadMessages(friendId) {
-    renderMessages('<p style="text-align:center; color: var(--muted); font-size: 13px;">Loading conversation...</p>');
+    // Messages load instantly via AJAX (backend rate limit: 60 req/min, 429 for bots)
+    renderMessages('');
 
     const url = "<?= site_url('chat/get_messages_ajax/') ?>" + friendId;
 

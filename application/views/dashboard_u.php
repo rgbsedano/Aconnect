@@ -40,29 +40,39 @@ else                $greeting_time = 'Good Evening';
         padding: 0 24px;
     }
 
+    /* ======= PERSONALIZED HERO CONTAINER (Side-by-side) ======= */
+    .hero-container {
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: 24px;
+        margin-bottom: 40px;
+    }
+
     /* ======= PERSONALIZED HERO ======= */
     .hero-personalized {
         position: relative;
         width: 100%;
+        overflow: visible;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        align-items: stretch;
+        gap: 24px;
+        background: transparent;
+        box-shadow: none;
+        border: none;
+        margin-bottom: 40px;
+    }
+
+    .hero-personalized > * {
         border-radius: var(--radius-xl);
         overflow: hidden;
-        margin-bottom: 40px;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        background: #ffffff;
         box-shadow: 0 10px 40px -10px rgba(0, 0, 0, 0.10);
         border: 1px solid rgba(0,0,0,0.06);
     }
 
     /* Subtle top accent bar */
     .hero-personalized::before {
-        content: '';
-        position: absolute;
-        top: 0; left: 0; right: 0;
-        height: 4px;
-        background: linear-gradient(90deg, #a12124, #7d181b);
-        z-index: 1;
+        display: none;
     }
 
     .hero-personalized-inner {
@@ -75,7 +85,25 @@ else                $greeting_time = 'Good Evening';
         padding: 56px 32px 48px;
         gap: 0;
         width: 100%;
-        max-width: 720px;
+        justify-content: center;
+        background: white;
+    }
+
+    /* Hero picture — right side column within personalized */
+    .hero-personalized > .hero-picture {
+        position: relative;
+        width: 100%;
+        border-radius: var(--radius-xl);
+        overflow: hidden;
+        margin-bottom: 0 !important;
+        box-shadow: none !important;
+        height: 100%;
+        background: linear-gradient(135deg, #a12124 0%, #7d181b 100%);
+        border: none !important;
+    }
+
+    .hero-personalized > .hero-picture::before {
+        display: none;
     }
 
     /* Hero picture — standalone section below hero */
@@ -86,6 +114,8 @@ else                $greeting_time = 'Good Evening';
         overflow: hidden;
         margin-bottom: 40px;
         box-shadow: 0 20px 50px -10px rgba(0,0,0,0.20);
+        height: 600px;
+        background: linear-gradient(135deg, #a12124 0%, #7d181b 100%);
     }
 
     .hero-picture::before {
@@ -100,9 +130,13 @@ else                $greeting_time = 'Good Evening';
     }
 
     .hero-picture img {
+        position: absolute;
         width: 100%;
-        height: auto;
-        display: block;
+        height: 100%;
+        object-fit: cover;
+        top: 0;
+        left: 0;
+        z-index: 1;
         animation: kenBurns 14s ease-in-out infinite;
         transform-origin: center center;
     }
@@ -115,6 +149,7 @@ else                $greeting_time = 'Good Evening';
         display: flex;
         align-items: flex-end;
         padding: 40px 48px;
+        z-index: 2;
     }
 
     .hero-text-small {
@@ -307,11 +342,79 @@ else                $greeting_time = 'Good Evening';
         color: white;
     }
 
+    .link-card-logo {
+        width: 48px;
+        height: 48px;
+        border-radius: 12px;
+        object-fit: cover;
+        display: block;
+    }
+
     .link-card .fb-btn  { background: #1877F2; }
     .link-card .web-btn { background: var(--primary); }
 
     .link-info h4 { margin: 0; font-size: 16px; font-weight: 700; }
     .link-info p  { margin: 0; font-size: 12px; color: var(--text-muted); }
+
+    /* Picture card in Quick Links */
+    .picture-card {
+        background: white;
+        border-radius: 20px;
+        overflow: hidden;
+        display: flex;
+        flex-direction: column;
+        box-shadow: 0 4px 6px -1px rgba(0,0,0,0.05);
+        text-decoration: none !important;
+        color: var(--text-main);
+        transition: var(--transition);
+        border: 1px solid rgba(0,0,0,0.05);
+        cursor: default;
+    }
+
+    .picture-card:hover {
+        transform: translateY(-5px);
+        box-shadow: var(--shadow-premium);
+        border-color: var(--primary-light);
+    }
+
+    .picture-card-img {
+        width: 100%;
+        height: 240px;
+        overflow: hidden;
+        background: linear-gradient(135deg, #a12124 0%, #7d181b 100%);
+        position: relative;
+    }
+
+    .picture-card-img img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+
+    .picture-card-overlay {
+        position: absolute;
+        inset: 0;
+        background: linear-gradient(to top, rgba(0,0,0,0.6) 0%, rgba(0,0,0,0.1) 60%, transparent 100%);
+        display: flex;
+        align-items: flex-end;
+        padding: 24px;
+        color: white;
+    }
+
+    .picture-card-text h4 {
+        margin: 0;
+        font-size: 18px;
+        font-weight: 700;
+        color: white;
+    }
+
+    .picture-card-text p {
+        margin: 4px 0 0 0;
+        font-size: 13px;
+        color: var(--accent);
+        font-weight: 600;
+        letter-spacing: 1px;
+    }
 
     /* ======= Content Card ======= */
     .content-card {
@@ -428,15 +531,19 @@ else                $greeting_time = 'Good Evening';
     @media (max-width: 992px) {
         .dashboard-container { padding: 0 20px; }
         .content-card { padding: 48px 32px; }
+        .hero-personalized { grid-template-columns: 1fr 1fr; gap: 20px; }
     }
 
     @media (max-width: 768px) {
         :root { --radius-xl: 24px; }
         .dashboard-container { margin: 20px auto; }
         .content-card { padding: 32px 20px; border-radius: 20px; }
+        .hero-container { grid-template-columns: 1fr; gap: 16px; }
+        .hero-personalized { grid-template-columns: 1fr; gap: 16px; }
         .hero-personalized { border-radius: 20px; }
         .hero-personalized-inner { padding: 40px 20px 36px; }
         .hero-picture { border-radius: 20px; }
+        .picture-card-img { height: 200px; }
         .hero-glass { padding: 28px 24px; }
         .features-grid { grid-template-columns: 1fr; gap: 24px; }
         .feature-img-box { height: 180px; }
@@ -459,57 +566,73 @@ else                $greeting_time = 'Good Evening';
 
 <div class="dashboard-container">
 
-    <!-- ====== PERSONALIZED HERO ====== -->
-    <section class="hero-personalized reveal active">
-        <div class="hero-personalized-inner">
-            <!-- User avatar -->
-            <div class="hero-avatar-wrap">
-                <img src="<?php echo $hero_profile_image; ?>" alt="<?php echo htmlspecialchars($first_name); ?>'s avatar"
-                     onerror="this.src='<?php echo base_url('assets/images/person-male.png'); ?>'">
+    <!-- ====== PERSONALIZED HERO (Side-by-side) ====== -->
+    <div class="hero-container">
+        <!-- HERO CARD 1 -->
+        <section class="hero-personalized reveal active">
+            <div class="hero-personalized-inner">
+                <!-- User avatar -->
+                <div class="hero-avatar-wrap">
+                    <img src="<?php echo $hero_profile_image; ?>" alt="<?php echo htmlspecialchars($first_name); ?>'s avatar"
+                         onerror="this.src='<?php echo base_url('assets/images/person-male.png'); ?>'">
+                </div>
+
+                <!-- Welcome badge -->
+                <div class="hero-badge">
+                    <i class="fas fa-star"></i>
+                    Welcome to AConnect
+                </div>
+
+                <!-- Personalized heading -->
+                <h1 class="hero-heading">
+                    <?php echo $greeting_time; ?>,<br>
+                    <span class="hero-name"><?php echo htmlspecialchars($first_name . ' ' . $last_name); ?>!</span>
+                </h1>
+
+                <!-- Subtitle -->
+                <p class="hero-subtitle">
+                    Connect with fellow alumni, explore job opportunities, and stay in the loop<br class="d-none d-md-block">
+                    with the latest events from St. Dominic College of Asia.
+                </p>
+
+                <!-- CTA Buttons -->
+                <div class="hero-cta-group">
+                    <a href="<?php echo base_url('postcontroller'); ?>" class="hero-btn-primary">
+                        <i class="fas fa-home"></i> Go to Feed
+                    </a>
+                    <a href="<?php echo base_url('profile'); ?>" class="hero-btn-secondary">
+                        <i class="fas fa-user"></i> View My Profile
+                    </a>
+                </div>
             </div>
 
-            <!-- Welcome badge -->
-            <div class="hero-badge">
-                <i class="fas fa-star"></i>
-                Welcome to AConnect
+            <!-- HERO PICTURE (Right side, same size as inner) -->
+            <div class="hero-picture reveal">
+                <img src="<?php echo base_url('assets/images/andaman-family.png'); ?>"
+                     alt="SDCA Heritage"
+                     onerror="this.style.display='none';">
+                <div class="hero-glass">
+                    <div>
+                        <span class="hero-text-small">Preserving the Legacy</span>
+                        <h2 class="hero-text-main">Revolutionizing Education</h2>
+                    </div>
+                </div>
             </div>
-
-            <!-- Personalized heading -->
-            <h1 class="hero-heading">
-                <?php echo $greeting_time; ?>,<br>
-                <span class="hero-name"><?php echo htmlspecialchars($first_name . ' ' . $last_name); ?>!</span>
-            </h1>
-
-            <!-- Subtitle -->
-            <p class="hero-subtitle">
-                Connect with fellow alumni, explore job opportunities, and stay in the loop<br class="d-none d-md-block">
-                with the latest events from St. Dominic College of Asia.
-            </p>
-
-            <!-- CTA Buttons -->
-            <div class="hero-cta-group">
-                <a href="<?php echo base_url('postcontroller'); ?>" class="hero-btn-primary">
-                    <i class="fas fa-home"></i> Go to Feed
-                </a>
-                <a href="<?php echo base_url('profile'); ?>" class="hero-btn-secondary">
-                    <i class="fas fa-user"></i> View My Profile
-                </a>
-            </div>
-        </div>
-    </section>
+        </section>
+    </div>
 
     <!-- ====== HERITAGE PHOTO ====== -->
-    <div class="hero-picture reveal">
+    <!-- <div class="hero-picture reveal">
         <img src="<?php echo base_url('assets/images/andaman-family.png'); ?>"
              alt="SDCA Heritage"
-             onerror="this.src='https://placehold.co/1200x500/700a0a/FFFFFF?text=SDCA+Heritage';">
+             onerror="this.style.display='none';">
         <div class="hero-glass">
             <div>
                 <span class="hero-text-small">Preserving the Legacy</span>
                 <h2 class="hero-text-main">Revolutionizing Education</h2>
             </div>
         </div>
-    </div>
+    </div> -->
 
     <!-- Quick Links -->
     <div class="links-grid reveal">
@@ -525,6 +648,13 @@ else                $greeting_time = 'Good Evening';
             <div class="link-info">
                 <h4>Official Facebook</h4>
                 <p>Stay updated on social</p>
+            </div>
+        </a>
+        <a href="#" class="link-card">
+            <img src="<?php echo base_url('assets/images/schoollogo.jpg'); ?>" alt="SDCA Logo" class="link-card-logo">
+            <div class="link-info">
+                <h4>SDCA Heritage</h4>
+                <p>Preserving the Legacy</p>
             </div>
         </a>
     </div>

@@ -1,0 +1,30 @@
+
+=== NEW REQUEST at 2026-04-10 16:43:24 ===
+Is AJAX (header check): YES
+Is AJAX (CI method): YES
+X-Requested-With header: XMLHttpRequest
+POST data - post_id: 46, parent_id: 0, comment_length: 7, anonymous: 0
+Comment text: test123
+About to insert: {"post_id":"46","parent_id":0,"alumni_id":"50","comment":"test123","is_anonymous":0}
+SUCCESS: Comment ID 44 inserted. Alumni: 50, Text: test123
+Sending JSON response: success=true
+
+=== NEW REQUEST at 2026-04-10 16:54:20 ===
+Is AJAX (header check): YES
+Is AJAX (CI method): YES
+X-Requested-With header: XMLHttpRequest
+POST data - post_id: 46, parent_id: 0, comment_length: 3, anonymous: 0
+Comment text: ads
+About to insert: {"post_id":"46","parent_id":0,"alumni_id":"50","comment":"ads","is_anonymous":0}
+SUCCESS: Comment ID 45 inserted. Alumni: 50, Text: ads
+Sending JSON response: success=true
+
+=== NEW REQUEST at 2026-04-13 09:00:44 ===
+Is AJAX (header check): YES
+Is AJAX (CI method): YES
+X-Requested-With header: XMLHttpRequest
+POST data - post_id: 46, parent_id: 0, comment_length: 7, anonymous: 0
+Comment text: migs123
+About to insert: {"post_id":"46","parent_id":0,"alumni_id":"50","comment":"migs123","is_anonymous":0}
+SUCCESS: Comment ID 46 inserted. Alumni: 50, Text: migs123
+Sending JSON response: success=true

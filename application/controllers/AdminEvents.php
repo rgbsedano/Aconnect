@@ -5,16 +5,68 @@ class AdminEvents extends CI_Controller {
 public function __construct() {
     parent::__construct();
     $this->load->database();
+    $this->load->helper(['url', 'admin_pagination']);
 }
 
 public function index() {
-    
-    $data['events'] = $this->db->get('events')->result();
+    $results_per_page = 5;
+    $page = (int) $this->input->get('page', TRUE);
+    if ($page < 1) $page = 1;
+    $offset = ($page - 1) * $results_per_page;
+
+    $search = trim((string) $this->input->get('search', TRUE));
+    $events_has_deleted_at = $this->db->field_exists('deleted_at', 'events');
+
+    // COUNT(*) query
+    $this->db->from('events');
+    if ($events_has_deleted_at) {
+        $this->db->where('deleted_at IS NULL', null, false);
+    }
+    if ($search !== '') {
+        $this->db->group_start()
+            ->like('event_name', $search)
+            ->or_like('location', $search)
+        ->group_end();
+    }
+    $total_records = (int) $this->db->count_all_results();
+    $total_pages = (int) ceil($total_records / $results_per_page);
+    if ($total_pages < 1) $total_pages = 1;
+    if ($page > $total_pages) {
+        $page = $total_pages;
+        $offset = ($page - 1) * $results_per_page;
+    }
+
+    // Main fetch query with LIMIT/OFFSET
+    $this->db->from('events');
+    if ($events_has_deleted_at) {
+        $this->db->where('deleted_at IS NULL', null, false);
+    }
+    if ($search !== '') {
+        $this->db->group_start()
+            ->like('event_name', $search)
+            ->or_like('location', $search)
+        ->group_end();
+    }
+    $data['events'] = $this->db
+        ->order_by('event_date', 'DESC')
+        ->limit($results_per_page, $offset)
+        ->get()
+        ->result();
+
+    $data['pagination_links'] = admin_build_pagination_links(
+        base_url('AdminEvents'),
+        $search !== '' ? ['search' => $search] : [],
+        $page,
+        $total_pages
+    );
 
     // ✅ FIX UPCOMING COUNT
     $now = date('Y-m-d H:i:s');
 
     $this->db->where('event_date >=', $now);
+    if ($events_has_deleted_at) {
+        $this->db->where('deleted_at IS NULL', null, false);
+    }
     $data['upcoming_count'] = $this->db->count_all_results('events');
 
     // optional reach fallback
@@ -56,7 +108,7 @@ public function update($id) {
 }
 
 public function delete($id) {
-    $this->db->where('id', $id)->delete('events');
+    $this->db->where('id', $id)->update('events', ['deleted_at' => date('Y-m-d H:i:s')]);
     $this->session->set_flashdata('success', 'Event deleted successfully.');
     redirect('AdminEvents');
 }

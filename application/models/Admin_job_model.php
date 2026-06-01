@@ -34,7 +34,7 @@ class Admin_job_model extends CI_Model {
 
     public function delete_job($id)
 {
-    return $this->db->delete('jobs', ['id' => $id]);
+    return $this->db->where('id', $id)->update('jobs', ['deleted_at' => date('Y-m-d H:i:s')]);
 }
 
 }

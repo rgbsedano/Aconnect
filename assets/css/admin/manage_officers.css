@@ -1,11 +1,10 @@
-<style>
 /* ===== SCOPED ONLY TO OFFICERS PAGE ===== */
 .officers-page {
     --primary-bg: #f8fafc;
     --card-bg: #ffffff;
     --text-main: #1e293b;
     --text-muted: #64748b;
-    --accent-red: #700a0a;
+    --accent-red: #a12124;
     --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
     --border-radius: 24px;
 }
@@ -185,6 +184,29 @@
     transform: translateY(-1px);
 }
 
+/* ===== BOOTSTRAP PAGINATION OVERRIDE ===== */
+.officers-page .pagination .page-item.active > .page-link {
+    background-color: #a12124 !important;
+    border-color: #a12124 !important;
+    color: #ffffff !important;
+}
+
+.officers-page .pagination .page-link {
+    color: #a12124 !important;
+    border-color: #e2e8f0;
+}
+
+.officers-page .pagination .page-item:not(.active) .page-link:hover {
+    background-color: #f8fafc;
+    border-color: #a12124;
+    color: #a12124;
+}
+
+.officers-page .pagination .page-item.disabled > .page-link {
+    color: #94a3b8;
+    border-color: #e2e8f0;
+}
+
 /* ===== EVEN ROW STRIPING ===== */
 .officers-page .custom-table tbody tr.data-row:nth-child(even) {
     background: #f9fafb;
@@ -219,4 +241,3 @@
     border-radius: 12px;
     font-size: 13px;
 }
-</style>

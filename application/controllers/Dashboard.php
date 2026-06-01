@@ -5,6 +5,11 @@ class Dashboard extends CI_Controller{
 	function __construct(){
 		parent::__construct();
 	
+		// Prevent employers from accessing user dashboard
+		if ($this->session->userdata('user_type') === 'employer') {
+			redirect(base_url('AdminJobPosting'));
+		}
+
 		if($this->session->userdata('role') == "alumni" OR "Alumni"){
 
 			if($this->session->userdata('login_status') != "AezakmiHesoyamWhosyourdaddy"){

@@ -76,16 +76,16 @@
 }
 
 .officers-page .user-name {
-    font-weight: 700;
-    color: var(--text-main);
-    font-size: 15px;
+    font-weight: 600;
+    color: #64748b;
+    font-size: 14px;
 }
 
 .officers-page .student-id {
     font-size: 12px;
     font-weight: 600;
-    color: var(--accent-red);
-    background: #fef2f2;
+    color: #64748b;
+    background: #f8fafc;
     padding: 2px 8px;
     border-radius: 6px;
     display: inline-block;
@@ -227,6 +227,7 @@
     font-size: 13px;
 }
 </style>
+<link rel="stylesheet" href="<?= base_url('assets/css/admin/manage_officers.css'); ?>">
 <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 <div class="officers-page">
 <div class="dashboard-wrapper">

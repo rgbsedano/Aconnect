@@ -11,13 +11,15 @@ $student_number = $this->session->userdata('student_number') ? $this->session->u
 $current_uri_segment_1 = property_exists($this, 'uri') ? $this->uri->segment(1) : '';
 $current_uri_segment_2 = property_exists($this, 'uri') ? $this->uri->segment(2) : '';
 
-// Helper function for active states
-function is_active_segment($segment1, $segment2 = null) {
-    global $current_uri_segment_1, $current_uri_segment_2;
-    if ($segment2 !== null) {
-        return $current_uri_segment_1 === $segment1 && $current_uri_segment_2 === $segment2;
+// Helper function for active states - only define once
+if (!function_exists('is_active_segment')) {
+    function is_active_segment($segment1, $segment2 = null) {
+        global $current_uri_segment_1, $current_uri_segment_2;
+        if ($segment2 !== null) {
+            return $current_uri_segment_1 === $segment1 && $current_uri_segment_2 === $segment2;
+        }
+        return $current_uri_segment_1 === $segment1;
     }
-    return $current_uri_segment_1 === $segment1;
 }
 
 // Fetch full alumni details for profile picture
@@ -44,7 +46,8 @@ $is_officers = ($current_uri_segment_1 === 'Officers');
 $is_messaging = ($current_uri_segment_1 === 'chat');
 $is_forum = ($current_uri_segment_1 === 'forum');
 $is_events = in_array($current_uri_segment_1, ['events', 'eventsprevious']);
-$admin_management_active = in_array($current_uri_segment_1, ['adminalumni', 'AdminJobPosting', 'AdminEvents', 'AdminPost', 'AdminManageAccounts', 'AdminActivityLog']);
+$is_employer_profile = in_array($current_uri_segment_1, ['employer_profile', 'employerprofile', 'EmployerProfile']);
+$admin_management_active = in_array($current_uri_segment_1, ['adminalumni', 'AdminJobPosting', 'AdminEvents', 'AdminPost', 'AdminManageAccounts', 'AdminActivityLog', 'AdminPageVisibility']);
 
 ?>
 <!DOCTYPE html>
@@ -56,6 +59,7 @@ $admin_management_active = in_array($current_uri_segment_1, ['adminalumni', 'Adm
     <link href="<?php echo base_url('assets/fontawesome-free/css/all.min.css'); ?>" rel="stylesheet" type="text/css">
     <link href="https://fonts.googleapis.com/css?family=Nunito:200,400,600,700,800" rel="stylesheet">
     <link href="<?php echo base_url('assets/css/sb-admin-2.min.css'); ?>" rel="stylesheet">
+    <link rel="shortcut icon" href="<?=  base_url('assets/images/logo.png') ?>" type="image/x-icon">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"> 
     <script src="https://cdn.tailwindcss.com"></script>
     <style>
@@ -80,6 +84,17 @@ $admin_management_active = in_array($current_uri_segment_1, ['adminalumni', 'Adm
             padding-top: var(--nav-height) !important;
             font-size: 1.05rem;
             position: relative;
+        }
+
+        /* Global pagination color override for Bootstrap/SB Admin defaults */
+        .pagination .page-item.active .page-link {
+            background-color: #a12124 !important;
+            border-color: #a12124 !important;
+            color: #ffffff !important;
+        }
+
+        .pagination .page-link {
+            color: #a12124;
         }
 
         body::before {
@@ -190,6 +205,46 @@ $admin_management_active = in_array($current_uri_segment_1, ['adminalumni', 'Adm
             border-bottom: 2px solid #000000;
         }
 
+        /* Settings Dropdown Toggle */
+        .nav-link-item.dropdown-toggle {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            color: var(--nav-text);
+            text-decoration: none !important;
+            min-width: 84px;
+            height: 100%;
+            font-size: 13px;
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            position: relative;
+            padding-top: 4px;
+            border-bottom: 2px solid transparent;
+            cursor: pointer;
+        }
+
+        .nav-link-item.dropdown-toggle:hover {
+            color: #000000;
+            transform: none;
+        }
+
+        .nav-link-item.dropdown-toggle:hover i {
+            transform: scale(1.15);
+            color: #a12124;
+        }
+
+        .nav-link-item.dropdown-toggle span::after {
+            content: '';
+            margin-left: 6px;
+            display: inline-block;
+            width: 0;
+            height: 0;
+            border-left: 4px solid transparent;
+            border-right: 4px solid transparent;
+            border-top: 4px solid currentColor;
+            transition: transform 0.2s ease-in-out;
+        }
+
         .nav-item.dropdown .nav-link-item span::after {
             content: '';
             margin-left: 6px;
@@ -241,6 +296,34 @@ $admin_management_active = in_array($current_uri_segment_1, ['adminalumni', 'Adm
             font-weight: 600;
             align-items: center;
             display: flex;
+        }
+
+        .profile-back-button {
+            min-width: 84px;
+            width: auto;
+            height: 100%;
+            padding-top: 4px;
+            border-radius: 0;
+            background-color: transparent;
+            color: var(--nav-text);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            border: none;
+            text-decoration: none !important;
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            margin-left: 6px;
+        }
+
+        .profile-back-button:hover {
+            color: #000000;
+            transform: translateY(-2px);
+        }
+
+        .profile-back-button i {
+            font-size: 20px;
+            margin-bottom: 4px;
         }
 
         .user-logout-area {
@@ -295,7 +378,7 @@ $admin_management_active = in_array($current_uri_segment_1, ['adminalumni', 'Adm
         }
 
         .account-info-display:hover .account-name-label i {
-            /* animation removed */
+            transform: none;
         }
 
         .logout-link {
@@ -551,9 +634,45 @@ $admin_management_active = in_array($current_uri_segment_1, ['adminalumni', 'Adm
             color: var(--primary-color);
             font-weight: 700;
         }
+        
+        
+    </style>
+    <style>
+        /* Global standardized badge styles for admin pages */
+        .badge-status {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            padding: 6px 12px;
+            border-radius: 18px;
+            font-weight: 700;
+            font-size: 12px;
+            text-transform: uppercase;
+            letter-spacing: .04em;
+        }
 
-        
-        
+        .badge-active, .badge-approved {
+            background: #dcfce7; /* light green */
+            color: #166534;
+        }
+
+        .badge-inactive {
+            background: #f1f5f9;
+            color: #475569;
+        }
+
+        .badge-pending {
+            background: #fef3c7;
+            color: #92400e;
+        }
+
+        .badge-rejected {
+            background: #fee2e2;
+            color: #991b1b;
+        }
+
+        /* Small variant (for compact places) */
+        .badge-status.sm { padding: 4px 8px; font-size: 11px; border-radius: 14px; }
     </style>
 </head>
 <body>
@@ -563,15 +682,20 @@ $admin_management_active = in_array($current_uri_segment_1, ['adminalumni', 'Adm
         <div class="logo-area d-flex align-items-center">
             <?php if($this->session->userdata('role') == 'administrator'): ?>
                 <img src="<?php echo base_url('assets/images/schoollogo.jpg'); ?>" alt="School Logo" class="mr-2" style="height:52px; border-radius: 4px;">
+            <?php elseif($this->session->userdata('user_type') === 'employer'): ?>
+                <img src="<?php echo base_url('assets/images/schoollogo.jpg'); ?>" alt="School Logo" class="mr-2" style="height:52px; border-radius: 4px;">
             <?php else: ?>
                 <a href="<?php echo base_url('dashboard'); ?>">
                     <img src="<?php echo base_url('assets/images/schoollogo.jpg'); ?>" alt="School Logo" class="mr-2" style="height:52px; border-radius: 4px;">
                 </a>
             <?php endif; ?>
+
             <?php if($this->session->userdata('role') == 'administrator'): ?>
                 <a href="<?php echo base_url('AdminDashboard'); ?>">
                     <img src="<?php echo base_url('assets/images/logo.png'); ?>" alt="Admin Logo" style="height:52px;">
                 </a>
+            <?php elseif($this->session->userdata('user_type') === 'employer'): ?>
+                <img src="<?php echo base_url('assets/images/small_logo.png'); ?>" alt="Logo" style="height:52px;">
             <?php else: ?>
                 <a href="<?php echo base_url('PostController'); ?>">
                     <img src="<?php echo base_url('assets/images/small_logo.png'); ?>" alt="Logo" style="height:52px;">
@@ -712,12 +836,76 @@ $admin_management_active = in_array($current_uri_segment_1, ['adminalumni', 'Adm
                                 <button class="msg-filter-btn" data-filter="unread">Unread</button>
                             </div>
                             <div class="msg-dropdown-list" id="msg-dropdown-list">
-                                <!-- Populated via JS -->
-                                <div class="p-4 text-center text-muted">Loading chats...</div>
+                                <!-- Chats load instantly via AJAX. Backend rate limiting prevents abuse -->
                             </div>
                         </div>
                     </li>
 
+                <?php elseif($this->session->userdata('user_type') === 'employer'): ?>
+                    <?php
+                    // Load visibility helper for employer navigation
+                    $this->load->helper('visibility');
+                    $visible_pages = get_visible_pages();
+                    // Render each visible page as a header nav item (no dropdown)
+                    ?>
+                    <?php if(!$is_employer_profile && in_array('user_accounts', $visible_pages)): ?>
+                    <li class="nav-item desktop-only">
+                        <a class="nav-link-item <?php echo is_active_segment('AdminManageAccounts') ? 'active-link' : ''; ?>" href="<?php echo base_url('AdminManageAccounts'); ?>">
+                            <i class="fas fa-users"></i><span>User Accounts</span>
+                        </a>
+                    </li>
+                    <?php endif; ?>
+
+                    <?php if(!$is_employer_profile && in_array('alumni_officers', $visible_pages)): ?>
+
+                    <li class="nav-item desktop-only">
+                        <a class="nav-link-item <?php echo is_active_segment('AdminOfficers') ? 'active-link' : ''; ?>" href="<?php echo base_url('AdminOfficers'); ?>">
+                            <i class="fas fa-user-tie"></i><span>Officers</span>
+                        </a>
+                    </li>
+                    <?php endif; ?>
+
+                    <?php if(!$is_employer_profile && in_array('job_posting', $visible_pages)): ?>
+                    <li class="nav-item desktop-only">
+                        <a class="nav-link-item <?php echo is_active_segment('AdminJobPosting') ? 'active-link' : ''; ?>" href="<?php echo base_url('AdminJobPosting'); ?>">
+                            <i class="fas fa-briefcase"></i><span>Jobs</span>
+                        </a>
+                    </li>
+                    <?php endif; ?>
+
+                    <?php if(!$is_employer_profile && in_array('events', $visible_pages)): ?>
+
+                    <li class="nav-item desktop-only">
+                        <a class="nav-link-item <?php echo is_active_segment('events') ? 'active-link' : ''; ?>" href="<?php echo base_url('events'); ?>">
+                            <i class="fas fa-calendar-check"></i><span>Events</span>
+                        </a>
+                    </li>
+                    <?php endif; ?>
+
+                    <?php if(!$is_employer_profile && in_array('posting', $visible_pages)): ?>
+                    <li class="nav-item desktop-only">
+                        <a class="nav-link-item <?php echo is_active_segment('AdminPost') ? 'active-link' : ''; ?>" href="<?php echo base_url('AdminPost'); ?>">
+                            <i class="fas fa-edit"></i><span>Posting</span>
+                        </a>
+                    </li>
+                    <?php endif; ?>
+
+                    <?php if(!$is_employer_profile && in_array('support', $visible_pages)): ?>
+
+                    <li class="nav-item desktop-only">
+                        <a class="nav-link-item <?php echo is_active_segment('support', 'admin_inbox') ? 'active-link' : ''; ?>" href="<?php echo base_url('AdminSupport'); ?>">
+                            <i class="fas fa-headset"></i><span>Support</span>
+                        </a>
+                    </li>
+                    <?php endif; ?>
+
+                    <?php if(!$is_employer_profile && in_array('reports', $visible_pages)): ?>
+                    <li class="nav-item desktop-only">
+                        <a class="nav-link-item <?php echo is_active_segment('AdminReports') ? 'active-link' : ''; ?>" href="<?php echo base_url('AdminReports'); ?>">
+                            <i class="fas fa-chart-bar"></i><span>Reports</span>
+                        </a>
+                    </li>
+                    <?php endif; ?>
 
 
                 <?php elseif($this->session->userdata('role') == 'administrator'): ?>
@@ -733,12 +921,15 @@ $admin_management_active = in_array($current_uri_segment_1, ['adminalumni', 'Adm
                         <div class="dropdown-menu dropdown-menu-right" aria-labelledby="mgmtDropdown">
                             <a class="dropdown-item" href="<?php echo base_url('AdminManageAccounts'); ?>">User Accounts</a>
                             <a class="dropdown-item" href="<?php echo base_url('AdminOfficers'); ?>">Alumni Officers</a>
+                            <a class="dropdown-item" href="<?php echo base_url('AdminPageVisibility'); ?>">Employer Accounts</a>
+                            <a class="dropdown-item" href="<?php echo base_url('Admin/pending_employers'); ?>">Pending Employers</a>
                             <div class="dropdown-divider"></div>
                             <!-- <a class="dropdown-item" href="<?php echo base_url('adminalumni'); ?>">Alumni List</a> -->
                             <a class="dropdown-item" href="<?php echo base_url('AdminJobPosting'); ?>">Job Posting</a>
                             <a class="dropdown-item" href="<?php echo base_url('AdminEvents'); ?>">Events</a>
                             <a class="dropdown-item" href="<?php echo base_url('AdminPost'); ?>">Posting</a>
                             <!-- <a class="dropdown-item" href="<?php echo base_url('AdminActivityLog'); ?>">Activity Log</a> -->
+                            <div class="dropdown-divider"></div>
                         </div>
                     </li>
                     
@@ -754,6 +945,34 @@ $admin_management_active = in_array($current_uri_segment_1, ['adminalumni', 'Adm
                     </li>
                 <?php endif; ?>
 
+                <?php if(in_array($current_uri_segment_1, ['employer_profile', 'employerprofile', 'EmployerProfile'])): ?>
+                <li class="nav-item">
+                    <a class="nav-link-item" href="#" onclick="switchSection(event, 'account')">
+                        <i class="fas fa-user-circle"></i><span>Account</span>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link-item" href="#" onclick="switchSection(event, 'security')">
+                        <i class="fas fa-lock"></i><span>Security</span>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link-item" href="#" onclick="switchSection(event, 'communications')">
+                        <i class="fas fa-envelope"></i><span>Communication</span>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link-item" href="#" onclick="switchSection(event, 'groups')">
+                        <i class="fas fa-users"></i><span>My Groups</span>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link-item profile-back-button" href="<?php echo base_url('AdminJobPosting'); ?>" title="Back to Job Posting">
+                        <i class="fas fa-arrow-left"></i><span>Back</span>
+                    </a>
+                </li>
+                <?php endif; ?>
+
                 <div class="user-logout-area">
                     <li class="nav-item dropdown">
                         <a href="#" class="nav-link-item dropdown-toggle" data-toggle="dropdown" style="min-width: 50px; padding: 0;">
@@ -761,16 +980,16 @@ $admin_management_active = in_array($current_uri_segment_1, ['adminalumni', 'Adm
                         </a>
                         <div class="dropdown-menu dropdown-menu-right shadow border-0" style="min-width: 280px; padding: 12px;">
 
-                            <a class="dropdown-item" href="<?php echo ($this->session->userdata('role') == 'administrator') ? '#' : base_url('profile'); ?>">
+                            <a class="dropdown-item" href="<?php echo ($this->session->userdata('role') == 'administrator') ? '#' : (($this->session->userdata('user_type') == 'employer') ? base_url('employer_profile') : base_url('profile')); ?>">
                                 <img src="<?php echo $profile_image_url; ?>" alt="Profile">
                                 <div>
                                     <div style="font-weight: 700; font-size: 16px;"><?php echo $display_full_name; ?></div>
-                                    <div style="font-size: 12px; color: #65676b;"><?php echo ($this->session->userdata('role') == 'administrator') ? 'Administrator' : $student_number; ?></div>
+                                    <div style="font-size: 12px; color: #65676b;"><?php echo ($this->session->userdata('role') == 'administrator') ? 'Administrator' : (($this->session->userdata('user_type') == 'employer') ? 'Employer' : $student_number); ?></div>
                                 </div>
                             </a>
 
                             <div class="dropdown-divider"></div>
-                            <a class="dropdown-item" href="<?php echo base_url('login/logout'); ?>">
+                            <a class="dropdown-item" href="<?php echo ($this->session->userdata('user_type') == 'employer') ? base_url('employer_login/logout') : base_url('login/logout'); ?>">
                                 <div style="background: #e4e6eb; width: 36px; height: 36px; border-radius: 50%; display: flex; align-items: center; justify-content: center;">
                                     <i class="fas fa-sign-out-alt"></i>
                                 </div>

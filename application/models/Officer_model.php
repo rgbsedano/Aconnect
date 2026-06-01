@@ -54,29 +54,40 @@ class Officer_model extends CI_Model {
     }
 
     // ===============================
-    // DELETE OFFICER
+    // DELETE OFFICER (SOFT DELETE)
     // ===============================
     public function delete($id)
     {
         return $this->db->where('id', $id)
-                        ->delete($this->table);
+                        ->update($this->table, ['deleted_at' => date('Y-m-d H:i:s')]);
     }
     public function count_all()
     {
-        return $this->db->count_all($this->table);
+        $has_deleted_at = $this->db->field_exists('deleted_at', $this->table);
+        $this->db->from($this->table);
+        if ($has_deleted_at) {
+            $this->db->where('deleted_at IS NULL', null, false);
+        }
+        return (int) $this->db->count_all_results();
     }
 
     public function get_paginated($limit, $start)
     {
-        return $this->db
-            ->order_by('id', 'DESC')
-            ->limit($limit, $start)
-            ->get($this->table)
-            ->result();
+        $has_deleted_at = $this->db->field_exists('deleted_at', $this->table);
+        $qb = $this->db->order_by('id', 'DESC')->limit($limit, $start);
+        if ($has_deleted_at) {
+            $qb->where('deleted_at IS NULL', null, false);
+        }
+        return $qb->get($this->table)->result();
     }
 
     public function count_search($keyword = null)
     {
+        $has_deleted_at = $this->db->field_exists('deleted_at', $this->table);
+        $this->db->from($this->table);
+        if ($has_deleted_at) {
+            $this->db->where('deleted_at IS NULL', null, false);
+        }
         if (!empty($keyword)) {
             $this->db->group_start()
                 ->like('full_name', $keyword)
@@ -86,11 +97,15 @@ class Officer_model extends CI_Model {
             ->group_end();
         }
 
-        return $this->db->count_all_results($this->table);
+        return (int) $this->db->count_all_results();
     }
 
 public function search_paginated($limit, $start, $keyword = null)
     {
+        $has_deleted_at = $this->db->field_exists('deleted_at', $this->table);
+        if ($has_deleted_at) {
+            $this->db->where('deleted_at IS NULL', null, false);
+        }
         if (!empty($keyword)) {
             $this->db->group_start()
                 ->like('full_name', $keyword)

@@ -54,3 +54,11 @@ $route['404_override'] = '';
 $route['translate_uri_dashes'] = FALSE;
 
 $route['jobs'] = 'Jobs/index';
+$route['jobs/archived'] = 'Jobs/archived';
+$route['jobs/get_jobs_by_ids'] = 'Jobs/get_jobs_by_ids';
+
+// Employer Profile Routes
+$route['employer_profile'] = 'EmployerProfile/index';
+$route['employer_profile/(:any)'] = 'EmployerProfile/$1';
+$route['employerprofile'] = 'EmployerProfile/index';
+$route['employerprofile/(:any)'] = 'EmployerProfile/$1';

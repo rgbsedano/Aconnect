@@ -23,7 +23,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 html, body {
     min-height: 100%;
     margin: 0;
-    font-family: -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
 }
 
 .login-page {
@@ -101,7 +101,7 @@ html, body {
 
 .form-control:focus {
     border-color: #a12124;
-    box-shadow: 0 0 0 .15rem rgba(112,10,10,.2);
+    box-shadow: 0 0 0 .15rem rgba(161,33,36,.2);
 }
 
 .btn-block {
@@ -136,14 +136,19 @@ html, body {
 }
 
 .remember-me input {
-    accent-color: #a12124;
+    accent-color: #007bff;
 }
 
 .forgot-link {
     font-size: .9rem;
     font-weight: 600;
-    color: #a12124;
+    color: #007bff;
     text-decoration: none;
+}
+
+.btn-post-job {
+    min-width: 100px;
+    display: inline-block;
 }
 
 
@@ -270,11 +275,18 @@ html, body {
 
 
                     <button class="btn btn-lg btn-primary btn-block" type="submit">Log in to AConnect</button>
+                    
                     <div class="register-link">
                         <p>New to AConnect? <a href="<?= base_url('register') ?>">Create an Account</a></p>
                     </div>
 
                     <div class="text-center mt-3">
+                        <a href="<?= base_url('employer_login'); ?>" class="btn btn-sm btn-outline-dark btn-post-job">
+                            Post Job
+                        </a>
+                    </div>
+
+                    <div class="text-center mt-2">
                         <a href="<?= base_url('adminlogin'); ?>" class="btn btn-sm btn-outline-dark">
                             Admin Portal
                         </a>
@@ -316,7 +328,7 @@ html, body {
             <div class="modal-footer">
             <button type="submit"
                     class="btn btn-primary"
-                    style="background:#a12124;border:none">
+                    style="background:#007bff;border:none">
                 Send Reset Link
             </button>
             <button type="button"
@@ -348,7 +360,7 @@ html, body {
                 </div>
             </div>
             <div class="modal-footer">
-              <button type="submit" class="btn btn-primary" style="background:#a12124;border:none">Resend</button>
+              <button type="submit" class="btn btn-primary" style="background:#007bff;border:none">Resend</button>
               <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
             </div>
           </form>

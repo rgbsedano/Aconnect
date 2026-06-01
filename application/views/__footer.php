@@ -73,10 +73,7 @@
                 <input type="text" id="friends-search" placeholder="Search conversations..." style="width: 100%; border: 1px solid #E0E0E0; border-radius: 20px; padding: 10px 16px; font-size: 14px; outline: none; transition: all 0.2s;">
             </div>
             <div id="friends-list-container" style="padding: 8px 0;">
-                <div style="text-align: center; color: #999; margin-top: 80px; padding: 0 30px;">
-                    <i class="fas fa-spinner fa-spin fa-2x" style="color: #a12124;"></i>
-                    <p style="margin-top: 16px; font-size: 14px;">Loading your connections...</p>
-                </div>
+                <!-- Connections load instantly via AJAX. Backend rate limiting prevents abuse (60 req/min, 429 for bots) -->
             </div>
         </div>
 

@@ -166,15 +166,15 @@ class Register extends CI_Controller {
     // EDIT these with your SMTP provider (or use Mailtrap test credentials)
     $config = [
         'protocol'  => 'smtp',
-        'smtp_host' => 'smtp.hostinger.com',
-        'smtp_port' => 465,
-        'smtp_user' => 'aconnect_admin@sdcaconnect.online',      
-        'smtp_pass' => 'Aconnecthostinger@123',        
+        'smtp_host' => env_value('ACONNECT_SMTP_HOST', 'smtp.hostinger.com'),
+        'smtp_port' => (int) env_value('ACONNECT_SMTP_PORT', 465),
+        'smtp_user' => env_value('ACONNECT_SMTP_USER', 'aconnect_admin@sdcaconnect.online'),      
+        'smtp_pass' => env_value('ACONNECT_SMTP_PASS', ''),        
         'mailtype'  => 'html',
         'charset'   => 'utf-8',
         'newline'   => "\r\n",
         'crlf'      => "\r\n",
-        'smtp_crypto' => 'ssl',
+        'smtp_crypto' => env_value('ACONNECT_SMTP_CRYPTO', 'ssl'),
         'smtp_timeout' => 30,
         'wordwrap' => TRUE
     ];
