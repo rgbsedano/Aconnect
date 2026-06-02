@@ -2707,9 +2707,9 @@ abstract class CI_DB_query_builder extends CI_DB_driver {
 	 */
 	protected function _is_literal($str)
 	{
-		$str = trim($str);
+		$str = trim((string) $str);
 
-		if (empty($str) OR ctype_digit($str) OR (string) (float) $str === $str OR in_array(strtoupper($str), array('TRUE', 'FALSE'), TRUE))
+		if (empty($str) OR ctype_digit((string) $str) OR (string) (float) $str === $str OR in_array(strtoupper($str), array('TRUE', 'FALSE'), TRUE))
 		{
 			return TRUE;
 		}

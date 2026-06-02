@@ -937,9 +937,9 @@
                     <div style="display: flex; gap: 12px; align-items: flex-start;">
                         <div class="logo-box" style="width: 48px; height: 48px; font-size: 20px;"><i class="fas fa-briefcase"></i></div>
                         <div class="job-info" style="flex: 1; margin: 0;">
-                            <h3 style="font-size: 15px; margin: 0 0 4px 0;"><?= htmlspecialchars($job->job_title) ?></h3>
-                            <p style="margin: 2px 0; font-size: 12px;"><i class="fas fa-building"></i> <?= htmlspecialchars($job->company) ?></p>
-                            <p style="margin: 2px 0; font-size: 12px;"><i class="fas fa-map-marker-alt"></i> <?= htmlspecialchars($job->location) ?></p>
+                            <h3 style="font-size: 15px; margin: 0 0 4px 0;"><?= htmlspecialchars((string)$job->job_title) ?></h3>
+                            <p style="margin: 2px 0; font-size: 12px;"><i class="fas fa-building"></i> <?= htmlspecialchars((string)$job->company) ?></p>
+                            <p style="margin: 2px 0; font-size: 12px;"><i class="fas fa-map-marker-alt"></i> <?= htmlspecialchars((string)$job->location) ?></p>
                         </div>
                     </div>
                     <div class="badge-ai">
@@ -965,8 +965,8 @@
             ?>
             <div class="detail-header">
                 <div class="detail-title">
-                    <h2><?= htmlspecialchars($first_job->job_title) ?></h2>
-                    <p><?= htmlspecialchars($first_job->company) ?></p>
+                    <h2><?= htmlspecialchars((string)$first_job->job_title) ?></h2>
+                    <p><?= htmlspecialchars((string)$first_job->company) ?></p>
                 </div>
                 <div class="percent" style="cursor: pointer;" onclick="showMatchExplanation(<?= $first_job->id ?>, <?= $first_match ?>)">
                     <i class="fas fa-robot"></i> <?= $first_match ?>% Match
@@ -978,7 +978,7 @@
                 <div class="info-cards-grid">
                     <div class="info-card">
                         <p class="info-card-label">Pay</p>
-                        <p class="info-card-value"><?= htmlspecialchars($first_job->salary_range) ?></p>
+                        <p class="info-card-value"><?= htmlspecialchars((string)$first_job->salary_range) ?></p>
                     </div>
                     <div class="info-card" style="border-left-color: var(--gold);">
                         <p class="info-card-label">Job Type</p>
@@ -986,7 +986,7 @@
                     </div>
                     <div class="info-card" style="border-left-color: var(--success);">
                         <p class="info-card-label"><i class="fas fa-map-marker-alt"></i> Location</p>
-                        <p class="info-card-value"><?= htmlspecialchars($first_job->location) ?></p>
+                        <p class="info-card-value"><?= htmlspecialchars((string)$first_job->location) ?></p>
                     </div>
                     <div class="info-card" style="border-left-color: #3498db;">
                         <p class="info-card-label">Work Location</p>
@@ -997,13 +997,13 @@
                 <!-- Full Description -->
                 <div class="detail-section">
                     <h3><i class="fas fa-briefcase"></i> About the Role</h3>
-                    <p><?= nl2br(htmlspecialchars($first_job->description)) ?></p>
+                    <p><?= nl2br(htmlspecialchars((string)$first_job->description)) ?></p>
                 </div>
 
                 <!-- Qualifications -->
                 <div class="detail-section">
                     <h3><i class="fas fa-list-check"></i> Qualifications</h3>
-                    <p><?= nl2br(htmlspecialchars($first_job->qualifications)) ?></p>
+                    <p><?= nl2br(htmlspecialchars((string)$first_job->qualifications)) ?></p>
                 </div>
 
                 <!-- Education -->
