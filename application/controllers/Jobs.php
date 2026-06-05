@@ -34,11 +34,11 @@ class Jobs extends CI_Controller {
             log_message('info', "Jobs Controller - Alumni loaded: ID={$alumni->id}, Degree={$alumni->degree}, Degree={$alumni->degree}");
         }
 
-        $search   = trim($this->input->get('search',TRUE));
+        $search   = trim((string)$this->input->get('search',TRUE));
         
 
        
-        $location = trim($this->input->get('location',TRUE));
+        $location = trim((string)$this->input->get('location',TRUE));
         $jobs = $this->Job_model->get_all_jobs($search, $location);
         
         log_message('info', "Jobs Controller - Found " . count($jobs) . " jobs to display");
