@@ -602,9 +602,11 @@
                             <td><?= date('M d, Y', strtotime($post['created_at'])) ?></td>
 
                             <td class="text-right">
+                                <?php if ($post['post_type'] !== 'announcements'): ?>
                                 <button onclick='editPost(<?= htmlspecialchars(json_encode($post), ENT_QUOTES, 'UTF-8') ?>)' class="btn-action">
                                     <i class="fas fa-pen"></i>
                                 </button>
+                                <?php endif; ?>
 
                                 <button onclick="deletePost(<?= $post['id'] ?>)" class="btn-action delete">
                                     <i class="fas fa-trash"></i>
