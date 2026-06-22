@@ -57,7 +57,7 @@ $admin_management_active = in_array($current_uri_segment_1, ['adminalumni', 'Adm
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <title>AConnect</title>
     <link href="<?php echo base_url('assets/fontawesome-free/css/all.min.css'); ?>" rel="stylesheet" type="text/css">
-    <link href="https://fonts.googleapis.com/css?family=Nunito:200,400,600,700,800" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
     <link href="<?php echo base_url('assets/css/sb-admin-2.min.css'); ?>" rel="stylesheet">
     <link rel="shortcut icon" href="<?=  base_url('assets/images/logo.png') ?>" type="image/x-icon">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"> 
@@ -80,10 +80,12 @@ $admin_management_active = in_array($current_uri_segment_1, ['adminalumni', 'Adm
         }
 
         body { 
-            background-color: #f3f2ef; 
+            background-color: #f8fafc; 
             padding-top: var(--nav-height) !important;
             font-size: 1.05rem;
             position: relative;
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            color: #1e293b;
         }
 
         /* Global pagination color override for Bootstrap/SB Admin defaults */
@@ -104,12 +106,7 @@ $admin_management_active = in_array($current_uri_segment_1, ['adminalumni', 'Adm
             left: 0;
             width: 100%;
             height: 100%;
-            background-image: url('<?php echo base_url('assets/images/background.png'); ?>');
-            background-size: cover;
-            background-attachment: fixed;
-            background-position: center;
-            background-repeat: no-repeat;
-            filter: blur(8px);
+            background-color: #f8fafc;
             z-index: -1;
         }
 
@@ -119,7 +116,8 @@ $admin_management_active = in_array($current_uri_segment_1, ['adminalumni', 'Adm
             width: 100%;
             z-index: 2000;
             background-color: var(--nav-bg);
-            border-bottom: 1px solid rgba(0,0,0,0.08);
+            border-bottom: 1px solid #e2e8f0;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
             height: var(--nav-height);
         }
 
@@ -180,8 +178,8 @@ $admin_management_active = in_array($current_uri_segment_1, ['adminalumni', 'Adm
         }
 
         .nav-link-item span {
-            font-weight: 500;
-            letter-spacing: 0.3px;
+            font-weight: 600;
+            letter-spacing: 0.2px;
             display: flex;
             align-items: center;
             gap: 4px;
@@ -269,11 +267,12 @@ $admin_management_active = in_array($current_uri_segment_1, ['adminalumni', 'Adm
         .dropdown-menu {
             margin-top: 0 !important;
             border: none;
-            box-shadow: 0 12px 28px rgba(0,0,0,0.15), 0 8px 10px rgba(0,0,0,0.1);
-            border-radius: 8px;
+            box-shadow: 0 10px 25px -5px rgba(0,0,0,0.1), 0 8px 10px -6px rgba(0,0,0,0.1);
+            border-radius: 16px;
             z-index: 2100;
             font-size: 0.95rem;
             display: none;
+            padding: 12px;
         }
 
         .dropdown-menu.show {
@@ -408,9 +407,9 @@ $admin_management_active = in_array($current_uri_segment_1, ['adminalumni', 'Adm
         .dropdown-menu {
             margin-top: 10px !important;
             border: none;
-            box-shadow: 0 4px 20px rgba(0,0,0,0.15);
-            border-radius: 8px;
-            padding: 8px;
+            box-shadow: 0 10px 25px -5px rgba(0,0,0,0.1), 0 8px 10px -6px rgba(0,0,0,0.1);
+            border-radius: 16px;
+            padding: 12px;
             min-width: 240px;
         }
 

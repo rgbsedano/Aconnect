@@ -8,18 +8,21 @@ $student_number = $this->session->userdata('student_number') ? $this->session->u
 <script src="https://cdn.tailwindcss.com"></script>
 
     <style>
+        @import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap');
+
         :root {
             --primary: #a12124;
             --primary-dark: #7d181b;
             --accent: #D4A574;
-            --bg-page: #FAFAF8;
-            --white: #FFFFFF;
-            --text-main: #1F2937;
-            --text-muted: #6B7280;
-            --border: #E5E7EB;
+            --bg-page: #f8fafc;
+            --white: #ffffff;
+            --text-main: #1e293b;
+            --text-muted: #64748b;
+            --border: #f1f5f9;
             --shadow-sm: 0 1px 2px rgba(0,0,0,0.05);
-            --shadow-md: 0 4px 6px rgba(0,0,0,0.07);
-            --shadow-lg: 0 10px 15px rgba(0,0,0,0.1);
+            --shadow-md: 0 4px 6px -1px rgba(0,0,0,0.05);
+            --shadow-lg: 0 20px 25px -5px rgba(0,0,0,0.05);
+            --border-radius: 24px;
         }
 
         html, body {
@@ -34,7 +37,7 @@ $student_number = $this->session->userdata('student_number') ? $this->session->u
             background-position: center;
             display: flex;
             flex-direction: column;
-            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+            font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
         }
 
         .dashboard-wrapper {
@@ -99,15 +102,15 @@ $student_number = $this->session->userdata('student_number') ? $this->session->u
         .post-card {
             flex: 1;
             background: var(--white);
-            border-radius: 12px;
+            border-radius: var(--border-radius);
             padding: 0;
             display: flex;
             flex-direction: column;
             justify-content: space-between;
             box-shadow: var(--shadow-md);
-            border-left: 6px solid var(--primary);
+            border: 1px solid var(--border);
             min-height: 200px;
-            transition: all 0.3s ease;
+            transition: var(--transition);
             overflow: hidden;
         }
         .post-card:hover { box-shadow: var(--shadow-lg); }
@@ -238,8 +241,8 @@ $student_number = $this->session->userdata('student_number') ? $this->session->u
         }
         .btn-next:hover { transform: translateY(-1px); box-shadow: var(--shadow-md); }
 
-        .modal-content { border-radius: 16px; border: none; overflow: hidden; }
-        .modal-header { background: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%); color: white; }
+        .modal-content { border-radius: var(--border-radius); border: none; overflow: hidden; box-shadow: var(--shadow-lg); }
+        .modal-header { background: var(--primary); color: white; padding: 25px; border: none; }
         .modal-body { padding: 0; color: var(--text-main); line-height: 1.8; }
         /* Responsive modals: space for header, viewport-fit, body scrolls only */
         .modal { overflow-x: auto; align-items: flex-start; padding-top: 72px; padding-bottom: 1rem; }
@@ -277,8 +280,8 @@ $student_number = $this->session->userdata('student_number') ? $this->session->u
             justify-content: center;
         }
         .post-image-container {
-            border-top-left-radius: 12px;
-            border-top-right-radius: 12px;
+            border-top-left-radius: var(--border-radius);
+            border-top-right-radius: var(--border-radius);
         }
                 #m-image-container img {
             width: 100%;
