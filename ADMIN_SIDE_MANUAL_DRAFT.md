@@ -239,6 +239,106 @@ Common actions:
 - Add or remove employers from a group
 - Delete a group when it is no longer needed
 
+### C. EMPLOYER APPROVALS (ADMIN)
+
+The Employer Approvals module lets administrators review new employer registrations and either approve or reject them. It provides three status tabs (Pending, Approved, Rejected), a live search box, and pagination.
+
+How to use (Admin):
+1. Open the Pending Employers page in the Admin panel (`Admin -> Pending Employers`).
+2. Switch between the `Pending`, `Approved`, and `Rejected` tabs to review accounts in each state.
+3. Use the search field to find an employer by company name, contact name, or email. The live search triggers when typing 3+ characters or when the field is cleared.
+4. To approve an account, click the approve (check) button on the row. This sends a POST request to the server.
+5. To reject an account, click the reject (X) button on the row. This also sends a POST request to the server.
+6. After an action, a confirmation message is shown and an email notification is attempted to the employer.
+
+Behavior and notes:
+- Approve sets `approval_status` = `approved` and `is_active` = 1.
+- Reject sets `approval_status` = `rejected` and `is_active` = 0.
+- The approve/reject actions are protected and must be performed via POST requests from the admin UI.
+- Pagination is per-tab and query parameters preserve tab state (e.g., `approved_page`, `rejected_page`).
+
+Developer references (where the functionality lives):
+- Controller: [application/controllers/Admin.php](application/controllers/Admin.php#L1)
+- Model: [application/models/Employer_model.php](application/models/Employer_model.php#L1)
+- Main view (tabs, search, approve/reject forms, JS): [application/views/admin/pending_employers.php](application/views/admin/pending_employers.php#L1)
+- AJAX partial used for rendering rows: [application/views/admin/_employer_rows.php](application/views/admin/_employer_rows.php#L1)
+- AJAX endpoint for live search: `Admin/ajax_search_employers` (returns rendered rows)
+- Approve/Reject endpoint: `Admin/verify_employer/{id}/{approve|reject}` (expects POST)
+- Email notifications: `Admin::send_employer_notification()` reads SMTP config from environment variables prefixed with `ACONNECT_SMTP_`.
+
+Troubleshooting tips:
+- If the employer list is empty, confirm the `employers` database table exists and includes an `approval_status` column.
+- If live search does not update rows, check browser console network calls to `Admin/ajax_search_employers` and ensure the response contains valid HTML.
+- If notification emails fail, verify SMTP environment variables and that the application can connect to the SMTP server.
+
+Suggested manual content to include in Admin training:
+- Screenshot of the Pending Employers tab showing the search box and action buttons.
+- Step-by-step approve/reject workflow with expected confirmation messages.
+- Note about the soft-delete / is_active behavior and where to find records in the Approved / Rejected tabs.
+
+### D. EMPLOYER EXPERIENCE — REGISTRATION & LOGIN
+
+This section describes what employers (external users) see and how they interact with the system when creating accounts and signing in.
+
+Employer registration (public):
+1. Visit the Employer Registration page (`/employer_register`).
+2. Fill in required fields: Company name, First/Last name, Phone (country code + number), Email, Password, Confirm Password, and "How did you hear about us".
+3. Submit the form. If validation fails, the form will re-display errors.
+4. On success, the user is shown a success message and can proceed to login.
+5. If email verification is required, the system sends a verification link; users can use the "Resend verification" flow on the login page.
+
+Key behavior and notes:
+- Passwords are hashed using `password_hash(..., PASSWORD_BCRYPT)` on registration.
+- The registration controller ensures unique emails (`is_unique[employers.email]`).
+- The `employers` table may be modified on-the-fly by the controller to add `verification_token` and `verification_sent_at` columns when resending verification emails.
+
+Developer references (employer auth):
+- Registration controller: [application/controllers/Employer_register.php](application/controllers/Employer_register.php#L1)
+- Registration view: [application/views/user/employer_register.php](application/views/user/employer_register.php#L1)
+- Verification/resend flow: `Employer_register::resend_verification()` and `Employer_register::verify_email()`
+
+Employer login (employer-facing):
+1. Visit the Employer Login page (`/employer_login`).
+2. Enter company email and password and submit.
+3. If the account is `pending` or `rejected`, the system displays an informative message and prevents login.
+4. On successful authentication the session is populated with `login_status`, `user_id`, `user_type='employer'`, `company_name`, and cached `employer_groups` for the user.
+5. Employers are redirected to the employer job posting area (controller: `Employer_job_posting`) after login.
+
+Developer references (employer login):
+- Login controller: [application/controllers/Employer_login.php](application/controllers/Employer_login.php#L1)
+- Login view: [application/views/employer/login.php](application/views/employer/login.php#L1)
+
+Troubleshooting tips (auth):
+- If login always fails, check the stored password format in the `employers` table (bcrypt vs plain). The login accepts both hashed and legacy plain passwords but recommend migrating to bcrypt.
+- If verification emails are not sent, verify SMTP environment variables and the `send_email` configuration.
+
+### E. EMPLOYER JOB POSTING & PROFILE (EMPLOYER PORTAL)
+
+Employers who are logged in can post jobs, edit and delete their job listings, and manage profile/settings (including groups they belong to).
+
+Posting a job (employer):
+1. After login, navigate to the Post a Job page (`Employer_job_posting::index` -> view: `application/views/employer/job_posting.php`).
+2. Use the job form to provide Job Title, Description, Category, Salary Range, and Location.
+3. Submit the form to create a job. On success, the job appears in "Your Posted Jobs" below the form.
+4. Employers may edit or delete only their own jobs; access is checked by comparing `jobs.employer_id` with the session `user_id`.
+
+Profile and settings (employer):
+- Access profile and settings at `employer_profile` (controller: [application/controllers/EmployerProfile.php](application/controllers/EmployerProfile.php#L1), view: [application/views/employer/profile.php](application/views/employer/profile.php#L1)).
+- Sections include Account, Security, Communications, Devices, Privacy, and My Groups.
+- Employers can update their email (`update_email()`), view group membership, and refresh/invalidate cached group data.
+
+Developer references (jobs & profile):
+- Employer job controller: [application/controllers/Employer_job_posting.php](application/controllers/Employer_job_posting.php#L1)
+- Job data model: [application/models/Job_model.php](application/models/Job_model.php#L1)
+- Employer profile controller: [application/controllers/EmployerProfile.php](application/controllers/EmployerProfile.php#L1)
+- Employer profile view: [application/views/employer/profile.php](application/views/employer/profile.php#L1)
+
+Notes and troubleshooting (jobs & groups):
+- Jobs table migrations exist under `application/migrations` (see `009_add_employer_id_to_jobs.php`). Ensure `employer_id` exists and has the correct foreign key mapping.
+- Employer groups are stored in `employer_groups` and assignments in `employer_group_assignments`. The system caches group membership in memcached; clear cache if membership changes do not appear.
+- If employers cannot see their posted jobs, confirm `jobs.employer_id` matches the logged-in `user_id` and `jobs.status` is `active`.
+
+
 ## VII. JOB POSTING
 
 **MODULE NAME (JOB POSTING)**  

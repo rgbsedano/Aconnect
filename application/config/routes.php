@@ -56,6 +56,8 @@ $route['translate_uri_dashes'] = FALSE;
 $route['jobs'] = 'Jobs/index';
 $route['jobs/archived'] = 'Jobs/archived';
 $route['jobs/get_jobs_by_ids'] = 'Jobs/get_jobs_by_ids';
+$route['tracer'] = 'Tracer/index';
+$route['tracer/submit'] = 'Tracer/submit';
 
 // Employer Profile Routes
 $route['employer_profile'] = 'EmployerProfile/index';
