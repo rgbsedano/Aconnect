@@ -1,39 +1,10 @@
 <?php
 $survey_response = $response ?? [];
-
 $competency_values = [];
 if (!empty($survey_response['competencies'])) {
     $decoded_competencies = json_decode($survey_response['competencies'], true);
     if (is_array($decoded_competencies)) {
         $competency_values = $decoded_competencies;
-    }
-}
-
-$subject_values = [];
-if (!empty($survey_response['subjects'])) {
-    $decoded_subjects = json_decode($survey_response['subjects'], true);
-    if (is_array($decoded_subjects)) {
-        $subject_values = $decoded_subjects;
-    }
-}
-
-$satisfaction_value = $survey_response['satisfaction'] ?? '';
-$intent_value = $survey_response['intent'] ?? '';
-$other_intent = $survey_response['other_intent'] ?? '';
-
-$performance_values = [];
-if (!empty($survey_response['performance_ratings'])) {
-    $decoded_perf = json_decode($survey_response['performance_ratings'], true);
-    if (is_array($decoded_perf)) {
-        $performance_values = $decoded_perf;
-    }
-}
-
-$further_study = [];
-if (!empty($survey_response['further_study'])) {
-    $decoded_fs = json_decode($survey_response['further_study'], true);
-    if (is_array($decoded_fs)) {
-        $further_study = $decoded_fs;
     }
 }
 
@@ -59,27 +30,6 @@ $competency_options = [
     'Problem Solving skills',
     'Critical thinking skills',
     'Collaboration skills',
-];
-
-$subject_options = [
-    'Communication Skills/Arts',
-    'Computer Programming skills',
-    'Math',
-    'Computer Concepts',
-    'Database Systems',
-    'Logic',
-    'Computer Graphics',
-    'Professional Ethics',
-    'All major subjects',
-];
-
-$performance_statements = [
-    'I am able to complete my tasks in a professional manner.',
-    'I am committed and dedicated to my work at all times.',
-    'I use company resources to their maximum level with initiative & resourcefulness.',
-    'I work harmoniously with my peers, co-employees and superiors.',
-    'I report to work promptly and regularly.',
-    'I join all company activities with enthusiasm.',
 ];
 ?>
 
@@ -312,6 +262,11 @@ $performance_statements = [
 <div class="tracer-page">
     <div class="tracer-hero">
         <div class="tracer-hero-bar">Tracer Survey</div>
+        <div class="tracer-hero-body">
+            <div class="tracer-title">
+                D. How would you rate the contribution of the program of your study at the institution to your personal knowledge, skills and attitudes?
+            </div>
+        </div>
     </div>
 
     <?php if ($this->session->flashdata('tracer_error')): ?>
@@ -320,144 +275,24 @@ $performance_statements = [
         <div class="alert alert-success tracer-alert"><?= $this->session->flashdata('tracer_success'); ?></div>
     <?php endif; ?>
 
-    <form id="tracer-form" action="<?= base_url('tracer/submit') ?>" method="post">
-        <input type="hidden" name="_wizard" value="1">
-
-        <?php // Step wrapper: place multiple tracer-section blocks inside for a cleaner layout ?>
-        <div class="step" data-step="1">
-            <div class="tracer-section">
-                <div class="tracer-section-head">A. How would you rate the contribution of the program of your study at the institution to your personal knowledge, skills and attitudes?</div>
-                <div class="tracer-section-body">
-                    <div class="rating-scale">
-                        <div></div>
-                        <div class="scale-label">5 - Strongly<br>Agree</div>
-                        <div class="scale-label">4 - Agree</div>
-                        <div class="scale-label">3 - Neutral</div>
-                        <div class="scale-label">2 - Disagree</div>
-                        <div class="scale-label">1 - Strongly<br>Disagree</div>
-                    </div>
-
-                    <?php foreach ($question_statements as $index => $statement): ?>
-                        <div class="rating-row">
-                            <div class="rating-question"><?= htmlspecialchars($statement) ?></div>
-                            <?php for ($rating = 5; $rating >= 1; $rating--): ?>
-                                <div class="rating-option" data-label="<?= $rating ?>">
-                                    <input type="radio" name="ratings[<?= $index ?>]" value="<?= $rating ?>" <?= (isset($survey_response['rating_' . ($index + 1)]) && (int)$survey_response['rating_' . ($index + 1)] === $rating) ? 'checked' : '' ?> required>
-                                </div>
-                            <?php endfor; ?>
-                        </div>
-                    <?php endforeach; ?>
-                </div>
-            </div>
-
-            <div class="tracer-section">
-                <div class="tracer-section-head">B. Waiting time to get the first job?</div>
-                <div class="tracer-section-body">
-                    <div class="check-group">
-                        <?php foreach ($waiting_options as $option): ?>
-                            <label class="check-option">
-                                <input type="radio" name="waiting_time" value="<?= htmlspecialchars($option) ?>" <?= (!empty($survey_response['waiting_time']) && $survey_response['waiting_time'] === $option) ? 'checked' : '' ?> required>
-                                <span><?= htmlspecialchars($option) ?></span>
-                            </label>
-                        <?php endforeach; ?>
-                    </div>
-                </div>
-            </div>
-
-            <div class="tracer-section">
-                <div class="tracer-section-head">C. Competencies learned in College useful in present job?</div>
-                <div class="tracer-section-body">
-                    <div class="check-group">
-                        <?php foreach ($competency_options as $option): ?>
-                            <label class="check-option">
-                                <input type="checkbox" name="competencies[]" value="<?= htmlspecialchars($option) ?>" <?= in_array($option, $competency_values, true) ? 'checked' : '' ?>>
-                                <span><?= htmlspecialchars($option) ?></span>
-                            </label>
-                        <?php endforeach; ?>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <?php $base = 2; ?>
-
-        
-            <div class="step" data-step="<?= $base ?>" style="display:none;">
-                <div class="tracer-section">
-                    <div class="tracer-section-head">D. Subjects that greatly helped you in getting your job now?</div>
-                    <div class="tracer-section-body">
-                        <div class="check-group">
-                            <?php foreach ($subject_options as $option): ?>
-                                <label class="check-option">
-                                    <input type="checkbox" name="subjects[]" value="<?= htmlspecialchars($option) ?>" <?= in_array($option, $subject_values, true) ? 'checked' : '' ?>>
-                                    <span><?= htmlspecialchars($option) ?></span>
-                                </label>
-                            <?php endforeach; ?>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="tracer-section">
-                    <div class="tracer-section-head">E. How satisfied are you with your current job?</div>
-                    <div class="tracer-section-body">
-                        <div class="check-group">
-                            <?php $s_options = ['Very Much','Much','A Little','Not Satisfied']; ?>
-                            <?php foreach ($s_options as $opt): ?>
-                                <label class="check-option">
-                                    <input type="radio" name="satisfaction" value="<?= htmlspecialchars($opt) ?>" <?= ($satisfaction_value === $opt) ? 'checked' : '' ?> required>
-                                    <span><?= htmlspecialchars($opt) ?></span>
-                                </label>
-                            <?php endforeach; ?>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="tracer-section">
-                    <div class="tracer-section-head">F. Do you intend to stay in the same job/profession?</div>
-                    <div class="tracer-section-body">
-                        <?php
-                            $i_options = [
-                                'Yes',
-                                'No, I intend to look for better paying employer..',
-                                'No, I intend to change career.',
-                                'No, I intend to open my own business',
-                                'No, I intend to work overseas.',
-                                'No, (state other reason)'
-                            ];
-                        ?>
-                        <div class="check-group">
-                            <?php foreach ($i_options as $opt): ?>
-                                <label class="check-option">
-                                    <input type="radio" name="intent" value="<?= htmlspecialchars($opt) ?>" <?= ($intent_value === $opt) ? 'checked' : '' ?> required>
-                                    <span><?= htmlspecialchars($opt) ?></span>
-                                </label>
-                            <?php endforeach; ?>
-                            <label class="check-option" style="margin-top:8px;">
-                                <input type="text" name="other_intent" placeholder="If other, please explain" value="<?= htmlspecialchars($other_intent) ?>" style="flex:1;padding:8px;border:1px solid var(--tracer-border);border-radius:6px;background:#fff;">
-                            </label>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-        <div class="tracer-section step" data-step="<?= $base + 1 ?>" style="display:none;">
-            <div class="tracer-section-head">G. How do you rate your performance level in your present job?</div>
+    <form action="<?= base_url('tracer/submit') ?>" method="post">
+        <div class="tracer-section">
             <div class="tracer-section-body">
                 <div class="rating-scale">
                     <div></div>
-                    <div class="scale-label">5-Outstanding</div>
-                    <div class="scale-label">4-Very<br>Satisfactory</div>
-                    <div class="scale-label">3-Satisfactory</div>
-                    <div class="scale-label">2-Needs<br>Improvement</div>
-                    <div class="scale-label">1-Poor</div>
+                    <div class="scale-label">5 - Strongly<br>Agree</div>
+                    <div class="scale-label">4 - Agree</div>
+                    <div class="scale-label">3 - Neutral</div>
+                    <div class="scale-label">2 - Disagree</div>
+                    <div class="scale-label">1 - Strongly<br>Disagree</div>
                 </div>
 
-                <?php foreach ($performance_statements as $pindex => $pstmt): ?>
+                <?php foreach ($question_statements as $index => $statement): ?>
                     <div class="rating-row">
-                        <div class="rating-question"><?= htmlspecialchars($pstmt) ?></div>
-                        <?php for ($pr = 5; $pr >= 1; $pr--): ?>
-                            <div class="rating-option" data-label="<?= $pr ?>">
-                                <input type="radio" name="performance_ratings[<?= $pindex ?>]" value="<?= $pr ?>" <?= (isset($performance_values[$pindex]) && (int)$performance_values[$pindex] === $pr) ? 'checked' : '' ?> required>
+                        <div class="rating-question"><?= htmlspecialchars($statement) ?></div>
+                        <?php for ($rating = 5; $rating >= 1; $rating--): ?>
+                            <div class="rating-option" data-label="<?= $rating ?>">
+                                <input type="radio" name="ratings[<?= $index ?>]" value="<?= $rating ?>" <?= (isset($survey_response['rating_' . ($index + 1)]) && (int)$survey_response['rating_' . ($index + 1)] === $rating) ? 'checked' : '' ?> required>
                             </div>
                         <?php endfor; ?>
                     </div>
@@ -465,91 +300,56 @@ $performance_statements = [
             </div>
         </div>
 
-        <div class="tracer-section step" data-step="<?= $base + 2 ?>" style="display:none;">
-            <div class="tracer-section-head">H. If pursuing further study:</div>
+        <div class="tracer-section">
+            <div class="tracer-section-head">E. Waiting time to get the first job?</div>
             <div class="tracer-section-body">
-                <label style="display:block;margin-bottom:8px;">Enrollment Year:</label>
-                <input type="text" name="enrollment_year" value="<?= htmlspecialchars($further_study['enrollment_year'] ?? '') ?>" style="width:100%;padding:8px;border:1px solid var(--tracer-border);border-radius:6px;margin-bottom:10px;background:#fff;">
-
-                <label style="display:block;margin-bottom:8px;">Program:</label>
-                <input type="text" name="program" value="<?= htmlspecialchars($further_study['program'] ?? '') ?>" style="width:100%;padding:8px;border:1px solid var(--tracer-border);border-radius:6px;margin-bottom:10px;background:#fff;">
-
-                <label style="display:block;margin-bottom:8px;">Level:</label>
-                <input type="text" name="level" value="<?= htmlspecialchars($further_study['level'] ?? '') ?>" style="width:100%;padding:8px;border:1px solid var(--tracer-border);border-radius:6px;margin-bottom:10px;background:#fff;">
-
-                <label style="display:block;margin-bottom:8px;">Campus:</label>
-                <input type="text" name="campus" value="<?= htmlspecialchars($further_study['campus'] ?? '') ?>" style="width:100%;padding:8px;border:1px solid var(--tracer-border);border-radius:6px;margin-bottom:10px;background:#fff;">
+                <div class="check-group">
+                    <?php foreach ($waiting_options as $option): ?>
+                        <label class="check-option">
+                            <input type="checkbox" name="waiting_time" value="<?= htmlspecialchars($option) ?>" <?= (!empty($survey_response['waiting_time']) && $survey_response['waiting_time'] === $option) ? 'checked' : '' ?>>
+                            <span><?= htmlspecialchars($option) ?></span>
+                        </label>
+                    <?php endforeach; ?>
+                </div>
             </div>
         </div>
 
-        <div class="tracer-actions" style="justify-content:space-between;">
-            <div>
-                <a href="<?= base_url('profile') ?>" class="btn tracer-btn-secondary">Back to Profile</a>
+        <div class="tracer-section">
+            <div class="tracer-section-head">F. Competencies learned in College useful in present job?</div>
+            <div class="tracer-section-body">
+                <div class="check-group">
+                    <?php foreach ($competency_options as $option): ?>
+                        <label class="check-option">
+                            <input type="checkbox" name="competencies[]" value="<?= htmlspecialchars($option) ?>" <?= in_array($option, $competency_values, true) ? 'checked' : '' ?>>
+                            <span><?= htmlspecialchars($option) ?></span>
+                        </label>
+                    <?php endforeach; ?>
+                </div>
             </div>
-            <div style="display:flex;gap:8px;">
-                <button type="button" id="prev-step" class="btn tracer-btn-secondary" style="display:none;">Previous</button>
-                <button type="button" id="next-step" class="btn tracer-btn-primary">Next</button>
-                <button type="submit" id="submit-btn" class="btn tracer-btn-primary" style="display:none;">Save Tracer Response</button>
-            </div>
+        </div>
+
+        <div class="tracer-actions">
+            <a href="<?= base_url('profile') ?>" class="btn tracer-btn-secondary">Back to Profile</a>
+            <button type="submit" class="btn tracer-btn-primary">Save Tracer Response</button>
         </div>
     </form>
 </div>
 
 <script>
 (function () {
-    var currentStep = 1;
-    var totalSteps = document.querySelectorAll('.step').length;
-    var nextBtn = document.getElementById('next-step');
-    var prevBtn = document.getElementById('prev-step');
-    var submitBtn = document.getElementById('submit-btn');
-
-    function showStep(n) {
-        document.querySelectorAll('.step').forEach(function (el) {
-            el.style.display = el.getAttribute('data-step') == n ? '' : 'none';
-        });
-        prevBtn.style.display = n > 1 ? '' : 'none';
-        nextBtn.style.display = n < totalSteps ? '' : 'none';
-        submitBtn.style.display = n === totalSteps ? '' : 'none';
-        window.scrollTo({top:0,behavior:'smooth'});
-    }
-
-    function validateStep(n) {
-        var step = document.querySelector('.step[data-step="' + n + '"]');
-        if (!step) return true;
-        var required = step.querySelectorAll('input[required]');
-        for (var i=0;i<required.length;i++){
-            var el = required[i];
-            if ((el.type === 'radio' || el.type === 'checkbox')) {
-                var name = el.name;
-                var els = document.getElementsByName(name);
-                var any = false;
-                for (var k=0;k<els.length;k++) { if (els[k].checked) { any = true; break; } }
-                if (!any) return false;
-            } else if (!el.value) {
-                return false;
+    var waitBoxes = document.querySelectorAll('input[name="waiting_time"]');
+    waitBoxes.forEach(function (box) {
+        box.addEventListener('change', function () {
+            if (!this.checked) {
+                return;
             }
-        }
-        return true;
-    }
 
-    nextBtn.addEventListener('click', function () {
-        if (!validateStep(currentStep)) {
-            alert('Please complete required fields on this step.');
-            return;
-        }
-        if (currentStep < totalSteps) {
-            currentStep++;
-            showStep(currentStep);
-        }
+            waitBoxes.forEach(function (other) {
+                if (other !== box) {
+                    other.checked = false;
+                }
+            });
+        });
     });
-
-    prevBtn.addEventListener('click', function () {
-        if (currentStep > 1) {
-            currentStep--;
-            showStep(currentStep);
-        }
-    });
-
-    showStep(currentStep);
 })();
 </script>
