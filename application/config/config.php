@@ -26,7 +26,7 @@ date_default_timezone_set('Asia/Manila');
 | a PHP script and you can easily do that on your own.
 |
 */
-$config['base_url'] = 'http://localhost/Aconnect_ci3';
+$config['base_url'] = env_value('BASE_URL', 'http://localhost:8080');
 
 /*
 |--------------------------------------------------------------------------

@@ -8,9 +8,19 @@ CREATE TABLE `tracer_survey_responses` (
   `rating_4` tinyint(1) NOT NULL DEFAULT 0,
   `waiting_time` varchar(100) DEFAULT NULL,
   `competencies` text DEFAULT NULL,
+  `subjects` text DEFAULT NULL,
+  `satisfaction` varchar(100) DEFAULT NULL,
+  `intent` varchar(255) DEFAULT NULL,
+  `other_intent` text DEFAULT NULL,
+  `performance_ratings` text DEFAULT NULL,
+  `enrollment_year` varchar(10) DEFAULT NULL,
+  `program` varchar(255) DEFAULT NULL,
+  `level` varchar(100) DEFAULT NULL,
+  `campus` varchar(255) DEFAULT NULL,
+  `further_study` text DEFAULT NULL,
   `created_at` datetime DEFAULT current_timestamp(),
   `updated_at` datetime DEFAULT current_timestamp() ON UPDATE current_timestamp(),
   PRIMARY KEY (`id`),
   UNIQUE KEY `alumni_id` (`alumni_id`),
   CONSTRAINT `tracer_survey_responses_ibfk_1` FOREIGN KEY (`alumni_id`) REFERENCES `alumni` (`id`) ON DELETE CASCADE
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
