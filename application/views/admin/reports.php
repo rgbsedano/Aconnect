@@ -197,6 +197,9 @@
                     'date_to'   => $filters['date_to'] ?? ''
                 ]);
             ?>
+            <a href="<?= base_url('AdminReports/tracer_report') ?>" class="btn-action" style="background:#f3e8ff;color:#6b21a8;">
+                <i class="fas fa-graduation-cap"></i> Tracer Study Report
+            </a>
             <a href="<?= base_url('AdminReports/employment_excel') . '?' . $q ?>" class="btn-action btn-excel">
                 <i class="fas fa-file-excel"></i> Export Excel
             </a>
