@@ -1,0 +1,3 @@
+
+*.log
+application/logs/forum_ai_debug.log
