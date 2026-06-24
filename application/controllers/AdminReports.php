@@ -351,6 +351,53 @@ class AdminReports extends CI_Controller {
         $insights[] = "Employment rate suggests that graduate employability may need improvement.";
     }
 
+    // If Ollama is configured and available in the project, prefer AI-generated insights
+    try {
+        // Ensure helper is loaded (defines call_ollama_api)
+        if (!function_exists('call_ollama_api')) {
+            $this->load->helper('ai_helper');
+        }
+
+        // Load config and check enabled flag
+        $this->config->load('ollama');
+        $ollama_enabled = $this->config->item('ollama_enabled', 'ollama');
+
+        if ($ollama_enabled && function_exists('call_ollama_api')) {
+            $payload = [
+                'total' => $total,
+                'employed' => $employed,
+                'unemployed' => $unemployed,
+                'self_employed' => $self,
+                'employment_rate' => $employment_rate,
+                'self_rate' => $self_rate,
+                'unemployment_rate' => $unemployment_rate,
+                'avg_years_service' => $avg_service,
+                'top_companies' => array_slice($top_company, 0, 10),
+                'engagement_by_year' => $engagement_by_year
+            ];
+
+            $prompt = "You are an analytics assistant. Return ONLY valid JSON with a single field `insights` which is an array of short, actionable insight strings (3-6 items).\nReturn nothing else.\n\nData:\n" . json_encode($payload);
+
+            $api_result = call_ollama_api($prompt, [
+                'temperature' => 0.2,
+                'format' => 'json',
+                'max_tokens' => 400,
+                'system' => 'You are an analytics assistant. Respond only with valid JSON: {"insights":["..."]}.'
+            ]);
+
+            if ($api_result && isset($api_result['_parsed_result']) && is_array($api_result['_parsed_result'])) {
+                $parsed = $api_result['_parsed_result'];
+                if (isset($parsed['insights']) && is_array($parsed['insights']) && count($parsed['insights']) > 0) {
+                    return $parsed['insights'];
+                }
+            }
+            // fall through to local insights on any failure
+        }
+    } catch (Exception $e) {
+        // ignore and fallback to local insights
+        log_message('error', 'generate_ai_insights: Ollama call failed: ' . $e->getMessage());
+    }
+
     return $insights;
 }
 

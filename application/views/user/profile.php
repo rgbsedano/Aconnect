@@ -99,6 +99,30 @@
             gap: 6px;
         }
 
+        .profile-action-group {
+            display: flex;
+            gap: 10px;
+            flex-shrink: 0;
+            align-items: flex-start;
+        }
+
+        .btn-tracer-primary {
+            background: linear-gradient(135deg, var(--maroon), var(--maroon-dark));
+            color: white;
+            border: none;
+            padding: 10px 24px;
+            border-radius: 8px;
+            font-weight: 600;
+            font-size: 14px;
+            cursor: pointer;
+            transition: all 0.3s;
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            text-decoration: none;
+            white-space: nowrap;
+        }
+
         /* Employment Form Styling */
         .modal-body .form-group {
             display: block;
@@ -149,6 +173,12 @@
         .btn-edit-primary:hover {
             transform: translateY(-2px);
             box-shadow: var(--shadow-lg);
+        }
+
+        .btn-tracer-primary:hover {
+            transform: translateY(-2px);
+            box-shadow: var(--shadow-lg);
+            text-decoration: none;
         }
 
         /* Alumni Standing Badge Styles */
@@ -496,7 +526,10 @@
             .profile-name-section { padding-left: 0; margin-top: 50px; width: 100%; }
             .profile-name { font-size: 22px; }
             .profile-meta { justify-content: center; gap: 10px; }
-            .btn-edit-primary { width: 100%; justify-content: center; margin-top: 15px; }
+            .profile-action-group { width: 100%; flex-direction: column; margin-top: 15px; }
+            .profile-action-group > * { width: 100%; justify-content: center; }
+            .btn-edit-primary { width: 100%; justify-content: center; }
+            .btn-tracer-primary { width: 100%; justify-content: center; }
             .badge { display: inline-flex; margin-top: 8px; }
             .info-grid { grid-template-columns: 1fr; gap: 15px; }
             .section-card { padding: 20px 15px; }
@@ -591,9 +624,14 @@
                 </div>
             </div>
 
-            <button class="btn-edit-primary" data-toggle="modal" data-target="#editProfileModal">
-                <i class="fas fa-edit"></i> Edit Profile
-            </button>
+            <div class="profile-action-group">
+                <a href="<?= base_url('tracer') ?>" class="btn-tracer-primary">
+                    <i class="fas fa-route"></i> Tracer
+                </a>
+                <button class="btn-edit-primary" data-toggle="modal" data-target="#editProfileModal">
+                    <i class="fas fa-edit"></i> Edit Profile
+                </button>
+            </div>
         </div>
     </div>
     
