@@ -271,11 +271,9 @@ $competency_options = [
 
     <?php if ($this->session->flashdata('tracer_error')): ?>
         <div class="alert alert-danger tracer-alert"><?= $this->session->flashdata('tracer_error'); ?></div>
-    <?php elseif ($this->session->flashdata('tracer_success')): ?>
-        <div class="alert alert-success tracer-alert"><?= $this->session->flashdata('tracer_success'); ?></div>
     <?php endif; ?>
 
-    <form action="<?= base_url('tracer/submit') ?>" method="post">
+    <form action="<?= base_url('tracer/submit') ?>" method="post" id="tracerForm">
         <div class="tracer-section">
             <div class="tracer-section-body">
                 <div class="rating-scale">
@@ -330,13 +328,70 @@ $competency_options = [
 
         <div class="tracer-actions">
             <a href="<?= base_url('profile') ?>" class="btn tracer-btn-secondary">Back to Profile</a>
-            <button type="submit" class="btn tracer-btn-primary">Save Tracer Response</button>
+            <button type="button" class="btn tracer-btn-primary" data-toggle="modal" data-target="#tracerConfirmModal">Save Tracer Response</button>
         </div>
     </form>
 </div>
 
+<!-- Confirm Modal -->
+<div class="modal fade" id="tracerConfirmModal" tabindex="-1" role="dialog" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+        <div class="modal-content" style="border: none; border-radius: 12px; overflow: hidden; box-shadow: 0 25px 50px -12px rgba(0,0,0,0.25);">
+            <div class="modal-header" style="background: linear-gradient(135deg, #a12124, #7d181b); color: white; padding: 20px 24px; border: none;">
+                <h5 class="modal-title font-weight-bold m-0">
+                    <i class="fas fa-save mr-2"></i> Confirm Submission
+                </h5>
+                <button type="button" class="close text-white" data-dismiss="modal" aria-label="Close" style="opacity: 1; text-shadow: none;">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body text-center py-4">
+                <i class="fas fa-question-circle text-warning" style="font-size: 56px; margin-bottom: 12px;"></i>
+                <p style="font-size: 16px; color: #1f2937; margin-bottom: 4px;">Are you sure you want to submit your tracer survey response?</p>
+                <p style="font-size: 13px; color: #6b7280;">You can update it later by submitting again.</p>
+            </div>
+            <div class="modal-footer border-0 justify-content-center pb-4" style="gap: 12px;">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal" style="border-radius: 8px; padding: 10px 28px; font-weight: 600;">Cancel</button>
+                <button type="button" class="btn tracer-btn-primary" id="confirmSubmit" style="border-radius: 8px; padding: 10px 28px; font-weight: 600;">Confirm</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Success Modal -->
+<div class="modal fade" id="tracerSuccessModal" tabindex="-1" role="dialog" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+        <div class="modal-content" style="border: none; border-radius: 12px; overflow: hidden; box-shadow: 0 25px 50px -12px rgba(0,0,0,0.25);">
+            <div class="modal-header" style="background: linear-gradient(135deg, #a12124, #7d181b); color: white; padding: 20px 24px; border: none;">
+                <h5 class="modal-title font-weight-bold m-0">
+                    <i class="fas fa-check-circle mr-2"></i> Success
+                </h5>
+                <button type="button" class="close text-white" data-dismiss="modal" aria-label="Close" style="opacity: 1; text-shadow: none;">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body text-center py-5">
+                <i class="fas fa-check-circle text-success" style="font-size: 64px; margin-bottom: 16px;"></i>
+                <p class="mb-0" style="font-size: 16px; color: #1f2937;"><?= $this->session->flashdata('tracer_success') ?: 'Tracer survey saved successfully.' ?></p>
+            </div>
+            <div class="modal-footer border-0 justify-content-center pb-4">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal" style="border-radius: 8px; padding: 10px 32px; font-weight: 600;">Close</button>
+            </div>
+        </div>
+    </div>
+</div>
+
 <script>
 (function () {
+    <?php if ($this->session->flashdata('tracer_success')): ?>
+    $('#tracerSuccessModal').modal('show');
+    <?php endif; ?>
+
+    $('#confirmSubmit').on('click', function () {
+        $('#tracerConfirmModal').modal('hide');
+        $('#tracerForm')[0].submit();
+    });
+
     var waitBoxes = document.querySelectorAll('input[name="waiting_time"]');
     waitBoxes.forEach(function (box) {
         box.addEventListener('change', function () {
