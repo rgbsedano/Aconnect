@@ -1,7 +1,7 @@
 <?php
 /**
  * View Forum AI Debug Logs
- * Visit: http://localhost/Aconnect_ci3/view_forum_debug.php
+ * Visit: http://localhost/Aconnect_ci3/scripts/view_forum_debug.php
  */
 
 $log_file = 'd:\xamp1\htdocs\Aconnect_ci3\application\logs\forum_ai_debug.log';

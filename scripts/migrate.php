@@ -1,11 +1,11 @@
 <?php
 /**
  * Migration Runner Script
- * Run this file in a browser: http://localhost/Aconnect_ci3/migrate.php
+ * Run this file in a browser: http://localhost/Aconnect_ci3/scripts/migrate.php
  */
 
 // Load CodeIgniter
-require_once 'index.php';
+require_once '../index.php';
 
 // Initialize CodeIgniter
 $CI = &get_instance();

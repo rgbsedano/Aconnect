@@ -8796,3 +8796,153 @@
 [2026-05-29 14:33:16] CACHE HIT: Found cached result = 5%
 [2026-05-29 14:33:16] Starting compute_ai_match for Alumni=50, Job=55
 [2026-05-29 14:33:16] CACHE HIT: Found cached result = 85%
+[2026-06-24 16:16:18] Starting compute_ai_match for Alumni=45, Job=18
+[2026-06-24 16:16:18] CACHE HIT: Found cached result = 70%
+[2026-06-24 16:16:18] Starting compute_ai_match for Alumni=45, Job=19
+[2026-06-24 16:16:18] CACHE HIT: Found cached result = 28%
+[2026-06-24 16:16:18] Starting compute_ai_match for Alumni=45, Job=22
+[2026-06-24 16:16:18] CACHE HIT: Found cached result = 28%
+[2026-06-24 16:16:18] Starting compute_ai_match for Alumni=45, Job=52
+[2026-06-24 16:16:18] CACHE HIT: Found cached result = 70%
+[2026-06-24 16:16:18] Starting compute_ai_match for Alumni=45, Job=53
+[2026-06-24 16:16:18] CACHE HIT: Found cached result = 70%
+[2026-06-24 16:16:18] Starting compute_ai_match for Alumni=45, Job=54
+[2026-06-24 16:16:18] CACHE HIT: Found cached result = 61%
+[2026-06-24 16:16:18] Starting compute_ai_match for Alumni=45, Job=55
+[2026-06-24 16:16:18] CACHE HIT: Found cached result = 70%
+[2026-06-24 16:16:18] Starting compute_ai_match for Alumni=45, Job=18
+[2026-06-24 16:16:18] CACHE HIT: Found cached result = 70%
+[2026-06-24 16:16:18] Starting compute_ai_match for Alumni=45, Job=18
+[2026-06-24 16:16:18] CACHE HIT: Found cached result = 70%
+[2026-06-24 16:16:18] Starting compute_ai_match for Alumni=45, Job=19
+[2026-06-24 16:16:18] CACHE HIT: Found cached result = 28%
+[2026-06-24 16:16:18] Starting compute_ai_match for Alumni=45, Job=22
+[2026-06-24 16:16:18] CACHE HIT: Found cached result = 28%
+[2026-06-24 16:16:18] Starting compute_ai_match for Alumni=45, Job=52
+[2026-06-24 16:16:18] CACHE HIT: Found cached result = 70%
+[2026-06-24 16:16:18] Starting compute_ai_match for Alumni=45, Job=53
+[2026-06-24 16:16:18] CACHE HIT: Found cached result = 70%
+[2026-06-24 16:16:18] Starting compute_ai_match for Alumni=45, Job=54
+[2026-06-24 16:16:18] CACHE HIT: Found cached result = 61%
+[2026-06-24 16:16:18] Starting compute_ai_match for Alumni=45, Job=55
+[2026-06-24 16:16:18] CACHE HIT: Found cached result = 70%
+[2026-06-24 16:16:27] Starting compute_ai_match for Alumni=45, Job=18
+[2026-06-24 16:16:27] CACHE HIT: Found cached result = 70%
+[2026-06-24 16:16:27] Starting compute_ai_match for Alumni=45, Job=19
+[2026-06-24 16:16:27] CACHE HIT: Found cached result = 28%
+[2026-06-24 16:16:27] Starting compute_ai_match for Alumni=45, Job=22
+[2026-06-24 16:16:27] CACHE HIT: Found cached result = 28%
+[2026-06-24 16:16:27] Starting compute_ai_match for Alumni=45, Job=52
+[2026-06-24 16:16:27] CACHE HIT: Found cached result = 70%
+[2026-06-24 16:16:27] Starting compute_ai_match for Alumni=45, Job=53
+[2026-06-24 16:16:27] CACHE HIT: Found cached result = 70%
+[2026-06-24 16:16:27] Starting compute_ai_match for Alumni=45, Job=54
+[2026-06-24 16:16:27] CACHE HIT: Found cached result = 61%
+[2026-06-24 16:16:27] Starting compute_ai_match for Alumni=45, Job=55
+[2026-06-24 16:16:27] CACHE HIT: Found cached result = 70%
+[2026-06-24 16:16:27] Starting compute_ai_match for Alumni=45, Job=18
+[2026-06-24 16:16:27] CACHE HIT: Found cached result = 70%
+[2026-06-24 16:16:27] Starting compute_ai_match for Alumni=45, Job=18
+[2026-06-24 16:16:27] CACHE HIT: Found cached result = 70%
+[2026-06-24 16:16:27] Starting compute_ai_match for Alumni=45, Job=19
+[2026-06-24 16:16:27] CACHE HIT: Found cached result = 28%
+[2026-06-24 16:16:27] Starting compute_ai_match for Alumni=45, Job=22
+[2026-06-24 16:16:27] CACHE HIT: Found cached result = 28%
+[2026-06-24 16:16:27] Starting compute_ai_match for Alumni=45, Job=52
+[2026-06-24 16:16:27] CACHE HIT: Found cached result = 70%
+[2026-06-24 16:16:27] Starting compute_ai_match for Alumni=45, Job=53
+[2026-06-24 16:16:27] CACHE HIT: Found cached result = 70%
+[2026-06-24 16:16:27] Starting compute_ai_match for Alumni=45, Job=54
+[2026-06-24 16:16:27] CACHE HIT: Found cached result = 61%
+[2026-06-24 16:16:27] Starting compute_ai_match for Alumni=45, Job=55
+[2026-06-24 16:16:27] CACHE HIT: Found cached result = 70%
+[2026-06-24 16:20:17] Starting compute_ai_match for Alumni=45, Job=18
+[2026-06-24 16:20:17] CACHE HIT: Found cached result = 70%
+[2026-06-24 16:20:17] Starting compute_ai_match for Alumni=45, Job=19
+[2026-06-24 16:20:17] CACHE HIT: Found cached result = 28%
+[2026-06-24 16:20:17] Starting compute_ai_match for Alumni=45, Job=22
+[2026-06-24 16:20:17] CACHE HIT: Found cached result = 28%
+[2026-06-24 16:20:17] Starting compute_ai_match for Alumni=45, Job=52
+[2026-06-24 16:20:17] CACHE HIT: Found cached result = 70%
+[2026-06-24 16:20:17] Starting compute_ai_match for Alumni=45, Job=53
+[2026-06-24 16:20:17] CACHE HIT: Found cached result = 70%
+[2026-06-24 16:20:17] Starting compute_ai_match for Alumni=45, Job=54
+[2026-06-24 16:20:17] CACHE HIT: Found cached result = 61%
+[2026-06-24 16:20:17] Starting compute_ai_match for Alumni=45, Job=55
+[2026-06-24 16:20:17] CACHE HIT: Found cached result = 70%
+[2026-06-24 16:20:17] Starting compute_ai_match for Alumni=45, Job=18
+[2026-06-24 16:20:17] CACHE HIT: Found cached result = 70%
+[2026-06-24 16:20:17] Starting compute_ai_match for Alumni=45, Job=18
+[2026-06-24 16:20:17] CACHE HIT: Found cached result = 70%
+[2026-06-24 16:20:17] Starting compute_ai_match for Alumni=45, Job=19
+[2026-06-24 16:20:17] CACHE HIT: Found cached result = 28%
+[2026-06-24 16:20:17] Starting compute_ai_match for Alumni=45, Job=22
+[2026-06-24 16:20:17] CACHE HIT: Found cached result = 28%
+[2026-06-24 16:20:17] Starting compute_ai_match for Alumni=45, Job=52
+[2026-06-24 16:20:17] CACHE HIT: Found cached result = 70%
+[2026-06-24 16:20:17] Starting compute_ai_match for Alumni=45, Job=53
+[2026-06-24 16:20:17] CACHE HIT: Found cached result = 70%
+[2026-06-24 16:20:17] Starting compute_ai_match for Alumni=45, Job=54
+[2026-06-24 16:20:17] CACHE HIT: Found cached result = 61%
+[2026-06-24 16:20:17] Starting compute_ai_match for Alumni=45, Job=55
+[2026-06-24 16:20:17] CACHE HIT: Found cached result = 70%
+[2026-06-24 16:20:17] Starting compute_ai_match for Alumni=45, Job=18
+[2026-06-24 16:20:17] CACHE HIT: Found cached result = 70%
+[2026-06-24 16:20:17] Starting compute_ai_match for Alumni=45, Job=19
+[2026-06-24 16:20:17] CACHE HIT: Found cached result = 28%
+[2026-06-24 16:20:17] Starting compute_ai_match for Alumni=45, Job=22
+[2026-06-24 16:20:17] CACHE HIT: Found cached result = 28%
+[2026-06-24 16:20:17] Starting compute_ai_match for Alumni=45, Job=52
+[2026-06-24 16:20:17] CACHE HIT: Found cached result = 70%
+[2026-06-24 16:20:17] Starting compute_ai_match for Alumni=45, Job=53
+[2026-06-24 16:20:17] CACHE HIT: Found cached result = 70%
+[2026-06-24 16:20:17] Starting compute_ai_match for Alumni=45, Job=54
+[2026-06-24 16:20:17] CACHE HIT: Found cached result = 61%
+[2026-06-24 16:20:17] Starting compute_ai_match for Alumni=45, Job=55
+[2026-06-24 16:20:17] CACHE HIT: Found cached result = 70%
+[2026-06-24 16:20:17] Starting compute_ai_match for Alumni=45, Job=18
+[2026-06-24 16:20:17] CACHE HIT: Found cached result = 70%
+[2026-06-24 16:20:17] Starting compute_ai_match for Alumni=45, Job=18
+[2026-06-24 16:20:17] CACHE HIT: Found cached result = 70%
+[2026-06-24 16:20:17] Starting compute_ai_match for Alumni=45, Job=19
+[2026-06-24 16:20:17] CACHE HIT: Found cached result = 28%
+[2026-06-24 16:20:17] Starting compute_ai_match for Alumni=45, Job=22
+[2026-06-24 16:20:17] CACHE HIT: Found cached result = 28%
+[2026-06-24 16:20:17] Starting compute_ai_match for Alumni=45, Job=52
+[2026-06-24 16:20:17] CACHE HIT: Found cached result = 70%
+[2026-06-24 16:20:17] Starting compute_ai_match for Alumni=45, Job=53
+[2026-06-24 16:20:17] CACHE HIT: Found cached result = 70%
+[2026-06-24 16:20:17] Starting compute_ai_match for Alumni=45, Job=54
+[2026-06-24 16:20:17] CACHE HIT: Found cached result = 61%
+[2026-06-24 16:20:17] Starting compute_ai_match for Alumni=45, Job=55
+[2026-06-24 16:20:17] CACHE HIT: Found cached result = 70%
+[2026-06-24 16:21:25] Starting compute_ai_match for Alumni=45, Job=18
+[2026-06-24 16:21:25] CACHE HIT: Found cached result = 70%
+[2026-06-24 16:21:25] Starting compute_ai_match for Alumni=45, Job=19
+[2026-06-24 16:21:25] CACHE HIT: Found cached result = 28%
+[2026-06-24 16:21:25] Starting compute_ai_match for Alumni=45, Job=22
+[2026-06-24 16:21:25] CACHE HIT: Found cached result = 28%
+[2026-06-24 16:21:25] Starting compute_ai_match for Alumni=45, Job=52
+[2026-06-24 16:21:25] CACHE HIT: Found cached result = 70%
+[2026-06-24 16:21:25] Starting compute_ai_match for Alumni=45, Job=53
+[2026-06-24 16:21:25] CACHE HIT: Found cached result = 70%
+[2026-06-24 16:21:25] Starting compute_ai_match for Alumni=45, Job=54
+[2026-06-24 16:21:25] CACHE HIT: Found cached result = 61%
+[2026-06-24 16:21:25] Starting compute_ai_match for Alumni=45, Job=55
+[2026-06-24 16:21:25] CACHE HIT: Found cached result = 70%
+[2026-06-24 16:21:25] Starting compute_ai_match for Alumni=45, Job=18
+[2026-06-24 16:21:25] CACHE HIT: Found cached result = 70%
+[2026-06-24 16:21:25] Starting compute_ai_match for Alumni=45, Job=18
+[2026-06-24 16:21:25] CACHE HIT: Found cached result = 70%
+[2026-06-24 16:21:25] Starting compute_ai_match for Alumni=45, Job=19
+[2026-06-24 16:21:25] CACHE HIT: Found cached result = 28%
+[2026-06-24 16:21:25] Starting compute_ai_match for Alumni=45, Job=22
+[2026-06-24 16:21:25] CACHE HIT: Found cached result = 28%
+[2026-06-24 16:21:25] Starting compute_ai_match for Alumni=45, Job=52
+[2026-06-24 16:21:25] CACHE HIT: Found cached result = 70%
+[2026-06-24 16:21:25] Starting compute_ai_match for Alumni=45, Job=53
+[2026-06-24 16:21:25] CACHE HIT: Found cached result = 70%
+[2026-06-24 16:21:25] Starting compute_ai_match for Alumni=45, Job=54
+[2026-06-24 16:21:25] CACHE HIT: Found cached result = 61%
+[2026-06-24 16:21:25] Starting compute_ai_match for Alumni=45, Job=55
+[2026-06-24 16:21:25] CACHE HIT: Found cached result = 70%

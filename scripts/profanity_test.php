@@ -3,7 +3,7 @@
  * PROFANITY FILTER TEST SCRIPT
  * 
  * Quick test to verify profanity filter is working
- * Run from browser: http://localhost/Aconnect_ci3/profanity_test
+ * Run from browser: http://localhost/Aconnect_ci3/scripts/profanity_test
  */
 
 // Create test forum posts with profanities

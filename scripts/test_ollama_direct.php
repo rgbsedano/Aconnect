@@ -1,7 +1,7 @@
 <?php
 /**
  * Direct Ollama Test - Bypass CodeIgniter
- * Visit: http://localhost/Aconnect_ci3/test_ollama_direct.php
+ * Visit: http://localhost/Aconnect_ci3/scripts/test_ollama_direct.php
  */
 
 error_reporting(E_ALL);

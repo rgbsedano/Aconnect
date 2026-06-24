@@ -1,11 +1,11 @@
 <?php
 /**
  * Add role column to employers table
- * Visit: http://localhost/Aconnect_ci3/add_role_to_employers.php
+ * Visit: http://localhost/Aconnect_ci3/scripts/add_role_to_employers.php
  */
 
 // Define paths FIRST before anything else
-define('FCPATH', __DIR__ . DIRECTORY_SEPARATOR);
+define('FCPATH', __DIR__ . '/..' . DIRECTORY_SEPARATOR);
 define('BASEPATH', FCPATH . 'system' . DIRECTORY_SEPARATOR);
 define('APPPATH', FCPATH . 'application' . DIRECTORY_SEPARATOR);
 define('VIEWPATH', APPPATH . 'views' . DIRECTORY_SEPARATOR);

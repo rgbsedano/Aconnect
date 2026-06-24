@@ -3,11 +3,11 @@
  * Database Migration Runner
  * Add employer_id column to jobs table
  * 
- * Visit: http://localhost/Aconnect_ci3/migrate_employer_id.php
+ * Visit: http://localhost/Aconnect_ci3/scripts/migrate_employer_id.php
  */
 
 // Define paths FIRST before anything else
-define('FCPATH', __DIR__ . DIRECTORY_SEPARATOR);
+define('FCPATH', __DIR__ . '/..' . DIRECTORY_SEPARATOR);
 define('BASEPATH', FCPATH . 'system' . DIRECTORY_SEPARATOR);
 define('APPPATH', FCPATH . 'application' . DIRECTORY_SEPARATOR);
 define('VIEWPATH', APPPATH . 'views' . DIRECTORY_SEPARATOR);

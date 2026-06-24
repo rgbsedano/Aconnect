@@ -1,7 +1,7 @@
 <?php
 /**
  * Debug Ollama Connection
- * Visit: http://localhost/Aconnect_ci3/debug_ollama.php
+ * Visit: http://localhost/Aconnect_ci3/scripts/debug_ollama.php
  */
 
 echo "<!DOCTYPE html>
