@@ -256,3 +256,38 @@
 [2026-06-02 09:08:03] HTTP=0, cURL Error: Failed to connect to 127.0.0.1 port 11434 after 2041 ms: Couldn't connect to server, Response length: 0
 [2026-06-02 09:08:03] Executing cURL request to http://localhost:11434/api/generate
 [2026-06-02 09:08:05] HTTP=0, cURL Error: Failed to connect to localhost port 11434 after 2222 ms: Couldn't connect to server, Response length: 0
+[2026-06-24 16:49:36] call_ollama_api: Hosts=http://127.0.0.1:11434, http://localhost:11434, Model=gemma4:e4b, Timeout=30
+[2026-06-24 16:49:36] Executing cURL request to http://127.0.0.1:11434/api/generate
+[2026-06-24 16:49:36] HTTP=0, cURL Error: Failed to connect to 127.0.0.1 port 11434 after 0 ms: Could not connect to server, Response length: 0
+[2026-06-24 16:49:36] Executing cURL request to http://localhost:11434/api/generate
+[2026-06-24 16:49:36] HTTP=0, cURL Error: Failed to connect to localhost port 11434 after 0 ms: Could not connect to server, Response length: 0
+[2026-06-24 16:49:36] call_ollama_api: Hosts=http://127.0.0.1:11434, http://localhost:11434, Model=gemma4:e4b, Timeout=30
+[2026-06-24 16:49:36] Executing cURL request to http://127.0.0.1:11434/api/generate
+[2026-06-24 16:49:36] HTTP=0, cURL Error: Failed to connect to 127.0.0.1 port 11434 after 0 ms: Could not connect to server, Response length: 0
+[2026-06-24 16:49:36] Executing cURL request to http://localhost:11434/api/generate
+[2026-06-24 16:49:36] HTTP=0, cURL Error: Failed to connect to localhost port 11434 after 0 ms: Could not connect to server, Response length: 0
+[2026-06-24 16:49:36] call_ollama_api: Hosts=http://127.0.0.1:11434, http://localhost:11434, Model=gemma4:e4b, Timeout=30
+[2026-06-24 16:49:36] Executing cURL request to http://127.0.0.1:11434/api/generate
+[2026-06-24 16:49:36] HTTP=0, cURL Error: Failed to connect to 127.0.0.1 port 11434 after 0 ms: Could not connect to server, Response length: 0
+[2026-06-24 16:49:36] Executing cURL request to http://localhost:11434/api/generate
+[2026-06-24 16:49:36] HTTP=0, cURL Error: Failed to connect to localhost port 11434 after 0 ms: Could not connect to server, Response length: 0
+[2026-06-24 16:49:36] call_ollama_api: Hosts=http://127.0.0.1:11434, http://localhost:11434, Model=gemma4:e4b, Timeout=30
+[2026-06-24 16:49:36] Executing cURL request to http://127.0.0.1:11434/api/generate
+[2026-06-24 16:49:36] HTTP=0, cURL Error: Failed to connect to 127.0.0.1 port 11434 after 0 ms: Could not connect to server, Response length: 0
+[2026-06-24 16:49:36] Executing cURL request to http://localhost:11434/api/generate
+[2026-06-24 16:49:36] HTTP=0, cURL Error: Failed to connect to localhost port 11434 after 0 ms: Could not connect to server, Response length: 0
+[2026-06-24 16:49:36] call_ollama_api: Hosts=http://127.0.0.1:11434, http://localhost:11434, Model=gemma4:e4b, Timeout=30
+[2026-06-24 16:49:36] Executing cURL request to http://127.0.0.1:11434/api/generate
+[2026-06-24 16:49:36] HTTP=0, cURL Error: Failed to connect to 127.0.0.1 port 11434 after 0 ms: Could not connect to server, Response length: 0
+[2026-06-24 16:49:36] Executing cURL request to http://localhost:11434/api/generate
+[2026-06-24 16:49:36] HTTP=0, cURL Error: Failed to connect to localhost port 11434 after 0 ms: Could not connect to server, Response length: 0
+[2026-06-24 16:49:36] call_ollama_api: Hosts=http://127.0.0.1:11434, http://localhost:11434, Model=gemma4:e4b, Timeout=30
+[2026-06-24 16:49:36] Executing cURL request to http://127.0.0.1:11434/api/generate
+[2026-06-24 16:49:36] HTTP=0, cURL Error: Failed to connect to 127.0.0.1 port 11434 after 0 ms: Could not connect to server, Response length: 0
+[2026-06-24 16:49:36] Executing cURL request to http://localhost:11434/api/generate
+[2026-06-24 16:49:36] HTTP=0, cURL Error: Failed to connect to localhost port 11434 after 0 ms: Could not connect to server, Response length: 0
+[2026-06-24 16:49:36] call_ollama_api: Hosts=http://127.0.0.1:11434, http://localhost:11434, Model=gemma4:e4b, Timeout=30
+[2026-06-24 16:49:36] Executing cURL request to http://127.0.0.1:11434/api/generate
+[2026-06-24 16:49:36] HTTP=0, cURL Error: Failed to connect to 127.0.0.1 port 11434 after 0 ms: Could not connect to server, Response length: 0
+[2026-06-24 16:49:36] Executing cURL request to http://localhost:11434/api/generate
+[2026-06-24 16:49:36] HTTP=0, cURL Error: Failed to connect to localhost port 11434 after 0 ms: Could not connect to server, Response length: 0
