@@ -1,7 +1,7 @@
 <?php
 /**
  * AConnect Setup Health Check
- * Visit: http://localhost/Aconnect_ci3/test_setup.php
+ * Visit: http://localhost/Aconnect_ci3/scripts/test_setup.php
  */
 
 echo "<!DOCTYPE html>

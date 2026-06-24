@@ -1,11 +1,11 @@
 <?php
 /**
  * Seed Initial Roles and Permissions
- * Visit: http://localhost/Aconnect_ci3/seed_roles.php
+ * Visit: http://localhost/Aconnect_ci3/scripts/seed_roles.php
  */
 
 // Define paths
-define('FCPATH', __DIR__ . DIRECTORY_SEPARATOR);
+define('FCPATH', __DIR__ . '/..' . DIRECTORY_SEPARATOR);
 define('BASEPATH', FCPATH . 'system' . DIRECTORY_SEPARATOR);
 define('APPPATH', FCPATH . 'application' . DIRECTORY_SEPARATOR);
 define('VIEWPATH', APPPATH . 'views' . DIRECTORY_SEPARATOR);

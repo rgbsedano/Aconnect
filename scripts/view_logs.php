@@ -1,10 +1,10 @@
 <?php
 /**
  * View Cache Insert Logs
- * Visit: http://localhost/Aconnect_ci3/view_logs.php
+ * Visit: http://localhost/Aconnect_ci3/scripts/view_logs.php
  */
 
-$log_file = 'application/logs/cache_insert.log';
+$log_file = '../application/logs/cache_insert.log';
 
 if (!file_exists($log_file)) {
     echo "<h2>❌ No logs yet</h2>";

@@ -1,7 +1,7 @@
 <?php
 /**
  * Debug Cache Table - Check if table exists and show stored data
- * Visit: http://localhost/Aconnect_ci3/debug_cache.php
+ * Visit: http://localhost/Aconnect_ci3/scripts/debug_cache.php
  */
 
 // Create connection to aconnect_db
