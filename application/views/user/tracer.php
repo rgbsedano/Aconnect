@@ -278,6 +278,43 @@ $performance_statements = [
         margin-bottom: 14px;
     }
 
+    .field-error {
+        outline: 2px solid #dc2626;
+        outline-offset: 2px;
+        border-radius: 4px;
+        animation: tracer-shake 0.4s ease-in-out;
+    }
+
+    @keyframes tracer-shake {
+        0%, 100% { transform: translateX(0); }
+        20% { transform: translateX(-4px); }
+        40% { transform: translateX(4px); }
+        60% { transform: translateX(-4px); }
+        80% { transform: translateX(4px); }
+    }
+
+    #missingFieldsList {
+        text-align: left;
+        font-size: 13px;
+        color: #dc2626;
+        margin-top: 8px;
+        padding: 0;
+        list-style: none;
+    }
+
+    #missingFieldsList li {
+        padding: 4px 0 4px 20px;
+        position: relative;
+    }
+
+    #missingFieldsList li::before {
+        content: "•";
+        color: #dc2626;
+        font-weight: bold;
+        position: absolute;
+        left: 4px;
+    }
+
     @media (max-width: 768px) {
         .tracer-page { padding: 12px 10px 36px; }
         .rating-scale,
@@ -314,12 +351,9 @@ $performance_statements = [
         <div class="tracer-hero-bar">Tracer Survey</div>
     </div>
 
-    <?php if ($this->session->flashdata('tracer_error')): ?>
-        <div class="alert alert-danger tracer-alert"><?= $this->session->flashdata('tracer_error'); ?></div>
-    <?php elseif ($this->session->flashdata('tracer_success')): ?>
-        <div class="alert alert-success tracer-alert"><?= $this->session->flashdata('tracer_success'); ?></div>
-    <?php endif; ?>
 
+
+    <?php if (empty($survey_response['id'])): ?>
     <form id="tracer-form" action="<?= base_url('tracer/submit') ?>" method="post">
         <input type="hidden" name="_wizard" value="1">
 
@@ -469,16 +503,46 @@ $performance_statements = [
             <div class="tracer-section-head">H. If pursuing further study:</div>
             <div class="tracer-section-body">
                 <label style="display:block;margin-bottom:8px;">Enrollment Year:</label>
-                <input type="text" name="enrollment_year" value="<?= htmlspecialchars($further_study['enrollment_year'] ?? '') ?>" style="width:100%;padding:8px;border:1px solid var(--tracer-border);border-radius:6px;margin-bottom:10px;background:#fff;">
+                <select name="enrollment_year" required style="width:100%;padding:8px;border:1px solid var(--tracer-border);border-radius:6px;margin-bottom:10px;background:#fff;font-size:13px;">
+                    <option value="">-- Select Year --</option>
+                    <?php for ($y = date('Y'); $y >= date('Y') - 15; $y--): ?>
+                        <option value="<?= $y ?>" <?= (($further_study['enrollment_year'] ?? '') == $y) ? 'selected' : '' ?>><?= $y ?></option>
+                    <?php endfor; ?>
+                </select>
 
                 <label style="display:block;margin-bottom:8px;">Program:</label>
-                <input type="text" name="program" value="<?= htmlspecialchars($further_study['program'] ?? '') ?>" style="width:100%;padding:8px;border:1px solid var(--tracer-border);border-radius:6px;margin-bottom:10px;background:#fff;">
+                <select name="program" required style="width:100%;padding:8px;border:1px solid var(--tracer-border);border-radius:6px;margin-bottom:10px;background:#fff;font-size:13px;">
+                    <option value="">-- Select Program --</option>
+                    <option value="BS Computer Science" <?= (($further_study['program'] ?? '') == 'BS Computer Science') ? 'selected' : '' ?>>BS Computer Science</option>
+                    <option value="BS Information Technology" <?= (($further_study['program'] ?? '') == 'BS Information Technology') ? 'selected' : '' ?>>BS Information Technology</option>
+                    <option value="BS Information Systems" <?= (($further_study['program'] ?? '') == 'BS Information Systems') ? 'selected' : '' ?>>BS Information Systems</option>
+                    <option value="BS Computer Engineering" <?= (($further_study['program'] ?? '') == 'BS Computer Engineering') ? 'selected' : '' ?>>BS Computer Engineering</option>
+                    <option value="BS Electrical Engineering" <?= (($further_study['program'] ?? '') == 'BS Electrical Engineering') ? 'selected' : '' ?>>BS Electrical Engineering</option>
+                    <option value="BS Mechanical Engineering" <?= (($further_study['program'] ?? '') == 'BS Mechanical Engineering') ? 'selected' : '' ?>>BS Mechanical Engineering</option>
+                    <option value="BS Civil Engineering" <?= (($further_study['program'] ?? '') == 'BS Civil Engineering') ? 'selected' : '' ?>>BS Civil Engineering</option>
+                    <option value="BS Accountancy" <?= (($further_study['program'] ?? '') == 'BS Accountancy') ? 'selected' : '' ?>>BS Accountancy</option>
+                    <option value="BS Business Administration" <?= (($further_study['program'] ?? '') == 'BS Business Administration') ? 'selected' : '' ?>>BS Business Administration</option>
+                    <option value="BS Nursing" <?= (($further_study['program'] ?? '') == 'BS Nursing') ? 'selected' : '' ?>>BS Nursing</option>
+                    <option value="BS Education" <?= (($further_study['program'] ?? '') == 'BS Education') ? 'selected' : '' ?>>BS Education</option>
+                    <option value="Other" <?= (($further_study['program'] ?? '') == 'Other') ? 'selected' : '' ?>>Other</option>
+                </select>
 
                 <label style="display:block;margin-bottom:8px;">Level:</label>
-                <input type="text" name="level" value="<?= htmlspecialchars($further_study['level'] ?? '') ?>" style="width:100%;padding:8px;border:1px solid var(--tracer-border);border-radius:6px;margin-bottom:10px;background:#fff;">
+                <select name="level" required style="width:100%;padding:8px;border:1px solid var(--tracer-border);border-radius:6px;margin-bottom:10px;background:#fff;font-size:13px;">
+                    <option value="">-- Select Level --</option>
+                    <option value="1st Year" <?= (($further_study['level'] ?? '') == '1st Year') ? 'selected' : '' ?>>1st Year</option>
+                    <option value="2nd Year" <?= (($further_study['level'] ?? '') == '2nd Year') ? 'selected' : '' ?>>2nd Year</option>
+                    <option value="3rd Year" <?= (($further_study['level'] ?? '') == '3rd Year') ? 'selected' : '' ?>>3rd Year</option>
+                    <option value="4th Year" <?= (($further_study['level'] ?? '') == '4th Year') ? 'selected' : '' ?>>4th Year</option>
+                    <option value="Graduate" <?= (($further_study['level'] ?? '') == 'Graduate') ? 'selected' : '' ?>>Graduate</option>
+                </select>
 
                 <label style="display:block;margin-bottom:8px;">Campus:</label>
-                <input type="text" name="campus" value="<?= htmlspecialchars($further_study['campus'] ?? '') ?>" style="width:100%;padding:8px;border:1px solid var(--tracer-border);border-radius:6px;margin-bottom:10px;background:#fff;">
+                <select name="campus" required style="width:100%;padding:8px;border:1px solid var(--tracer-border);border-radius:6px;margin-bottom:10px;background:#fff;font-size:13px;">
+                    <option value="">-- Select Campus --</option>
+                    <option value="Main Campus" <?= (($further_study['campus'] ?? '') == 'Main Campus') ? 'selected' : '' ?>>Main Campus</option>
+                    <option value="Digital Campus" <?= (($further_study['campus'] ?? '') == 'Digital Campus') ? 'selected' : '' ?>>Digital Campus</option>
+                </select>
             </div>
         </div>
 
@@ -489,10 +553,110 @@ $performance_statements = [
             <div style="display:flex;gap:8px;">
                 <button type="button" id="prev-step" class="btn tracer-btn-secondary" style="display:none;">Previous</button>
                 <button type="button" id="next-step" class="btn tracer-btn-primary">Next</button>
-                <button type="submit" id="submit-btn" class="btn tracer-btn-primary" style="display:none;">Save Tracer Response</button>
+                <button type="button" id="submit-btn" class="btn tracer-btn-primary" style="display:none;">Save Tracer Response</button>
             </div>
         </div>
     </form>
+    <?php else: ?>
+    <div class="text-center py-5">
+        <i class="fas fa-check-circle text-success" style="font-size: 64px;"></i>
+        <h4 class="mt-3" style="color: #1f2937;">You have already completed the tracer survey.</h4>
+        <a href="<?= base_url('profile') ?>" class="btn tracer-btn-primary mt-3" style="border-radius: 8px; padding: 10px 28px; font-weight: 600; display: inline-block;">Go to Profile</a>
+    </div>
+    <?php endif; ?>
+</div>
+
+<!-- Already Completed Modal -->
+<div class="modal fade" id="tracerAlreadyModal" tabindex="-1" role="dialog" data-backdrop="static" data-keyboard="false" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+        <div class="modal-content" style="border: none; border-radius: 12px; overflow: hidden; box-shadow: 0 25px 50px -12px rgba(0,0,0,0.25);">
+            <div class="modal-header" style="background: linear-gradient(135deg, #a12124, #7d181b); color: white; padding: 20px 24px; border: none;">
+                <h5 class="modal-title font-weight-bold m-0">
+                    <i class="fas fa-check-circle mr-2"></i> Survey Complete
+                </h5>
+            </div>
+            <div class="modal-body text-center py-5">
+                <i class="fas fa-check-circle text-success" style="font-size: 64px; margin-bottom: 16px;"></i>
+                <p class="mb-0" style="font-size: 16px; color: #1f2937;">You have already completed the tracer survey.</p>
+            </div>
+            <div class="modal-footer border-0 justify-content-center pb-4">
+                <a href="<?= base_url('profile') ?>" class="btn tracer-btn-primary" style="border-radius: 8px; padding: 10px 32px; font-weight: 600; text-decoration: none;">Go to Profile</a>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Error Modal -->
+<div class="modal fade" id="tracerErrorModal" tabindex="-1" role="dialog" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+        <div class="modal-content" style="border: none; border-radius: 12px; overflow: hidden; box-shadow: 0 25px 50px -12px rgba(0,0,0,0.25);">
+            <div class="modal-header" style="background: linear-gradient(135deg, #a12124, #7d181b); color: white; padding: 20px 24px; border: none;">
+                <h5 class="modal-title font-weight-bold m-0">
+                    <i class="fas fa-exclamation-triangle mr-2"></i> Incomplete Fields
+                </h5>
+                <button type="button" class="close text-white" data-dismiss="modal" aria-label="Close" style="opacity: 1; text-shadow: none;">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body text-center py-4">
+                <i class="fas fa-exclamation-circle text-warning" style="font-size: 56px; margin-bottom: 12px;"></i>
+                <p id="tracerErrorMsg" style="font-size: 16px; color: #1f2937; margin-bottom: 4px;">Please complete required fields on this step.</p>
+                <ul id="missingFieldsList"></ul>
+                <p style="font-size: 13px; color: #6b7280;">All required fields must be filled before proceeding.</p>
+            </div>
+            <div class="modal-footer border-0 justify-content-center pb-4" style="gap: 12px;">
+                <button type="button" class="btn tracer-btn-primary" data-dismiss="modal" style="border-radius: 8px; padding: 10px 28px; font-weight: 600;">OK</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Confirm Modal -->
+<div class="modal fade" id="tracerConfirmModal" tabindex="-1" role="dialog" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+        <div class="modal-content" style="border: none; border-radius: 12px; overflow: hidden; box-shadow: 0 25px 50px -12px rgba(0,0,0,0.25);">
+            <div class="modal-header" style="background: linear-gradient(135deg, #a12124, #7d181b); color: white; padding: 20px 24px; border: none;">
+                <h5 class="modal-title font-weight-bold m-0">
+                    <i class="fas fa-save mr-2"></i> Confirm Submission
+                </h5>
+                <button type="button" class="close text-white" data-dismiss="modal" aria-label="Close" style="opacity: 1; text-shadow: none;">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body text-center py-4">
+                <i class="fas fa-question-circle text-warning" style="font-size: 56px; margin-bottom: 12px;"></i>
+                <p style="font-size: 16px; color: #1f2937; margin-bottom: 4px;">Are you sure you want to submit your tracer survey response?</p>
+                <p style="font-size: 13px; color: #6b7280;">You can update it later by submitting again.</p>
+            </div>
+            <div class="modal-footer border-0 justify-content-center pb-4" style="gap: 12px;">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal" style="border-radius: 8px; padding: 10px 28px; font-weight: 600;">Cancel</button>
+                <button type="button" class="btn tracer-btn-primary" id="confirmSubmit" style="border-radius: 8px; padding: 10px 28px; font-weight: 600;">Confirm</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Success Modal -->
+<div class="modal fade" id="tracerSuccessModal" tabindex="-1" role="dialog" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+        <div class="modal-content" style="border: none; border-radius: 12px; overflow: hidden; box-shadow: 0 25px 50px -12px rgba(0,0,0,0.25);">
+            <div class="modal-header" style="background: linear-gradient(135deg, #a12124, #7d181b); color: white; padding: 20px 24px; border: none;">
+                <h5 class="modal-title font-weight-bold m-0">
+                    <i class="fas fa-check-circle mr-2"></i> Success
+                </h5>
+                <button type="button" class="close text-white" data-dismiss="modal" aria-label="Close" style="opacity: 1; text-shadow: none;">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body text-center py-5">
+                <i class="fas fa-check-circle text-success" style="font-size: 64px; margin-bottom: 16px;"></i>
+                <p class="mb-0" style="font-size: 16px; color: #1f2937;">Tracer survey complete.</p>
+            </div>
+            <div class="modal-footer border-0 justify-content-center pb-4">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal" style="border-radius: 8px; padding: 10px 32px; font-weight: 600;">Close</button>
+            </div>
+        </div>
+    </div>
 </div>
 
 <script>
@@ -502,6 +666,12 @@ $performance_statements = [
     var nextBtn = document.getElementById('next-step');
     var prevBtn = document.getElementById('prev-step');
     var submitBtn = document.getElementById('submit-btn');
+
+    <?php if ($this->session->flashdata('tracer_success')): ?>
+    $('#tracerSuccessModal').modal('show');
+    <?php elseif (!empty($survey_response['id'])): ?>
+    $('#tracerAlreadyModal').modal('show');
+    <?php endif; ?>
 
     function showStep(n) {
         document.querySelectorAll('.step').forEach(function (el) {
@@ -515,26 +685,62 @@ $performance_statements = [
 
     function validateStep(n) {
         var step = document.querySelector('.step[data-step="' + n + '"]');
-        if (!step) return true;
-        var required = step.querySelectorAll('input[required]');
-        for (var i=0;i<required.length;i++){
-            var el = required[i];
-            if ((el.type === 'radio' || el.type === 'checkbox')) {
+        if (!step) return { valid: true, missing: [] };
+        var requiredInputs = step.querySelectorAll('input[required], select[required]');
+        var missing = [];
+        var seen = {};
+        for (var i = 0; i < requiredInputs.length; i++) {
+            var el = requiredInputs[i];
+            if (el.type === 'radio') {
                 var name = el.name;
+                if (seen[name]) continue;
+                seen[name] = true;
                 var els = document.getElementsByName(name);
                 var any = false;
-                for (var k=0;k<els.length;k++) { if (els[k].checked) { any = true; break; } }
-                if (!any) return false;
-            } else if (!el.value) {
-                return false;
+                for (var k = 0; k < els.length; k++) {
+                    if (els[k].checked) { any = true; break; }
+                }
+                if (!any) {
+                    var section = el.closest('.tracer-section');
+                    var head = section ? section.querySelector('.tracer-section-head') : null;
+                    var label = head ? head.textContent.trim().replace(/\s+/g, ' ') : name;
+                    missing.push({ label: label, group: els });
+                }
+            } else if (el.tagName === 'SELECT' && !el.value) {
+                var section = el.closest('.tracer-section');
+                var head = section ? section.querySelector('.tracer-section-head') : null;
+                var label = head ? head.textContent.trim().replace(/\s+/g, ' ') : el.name;
+                missing.push({ label: label, group: [el] });
             }
         }
-        return true;
+        return { valid: missing.length === 0, missing: missing };
     }
 
+    function showTracerError(result) {
+        var list = $('#missingFieldsList');
+        list.empty();
+        result.missing.forEach(function (m) {
+            list.append('<li>' + m.label + '</li>');
+            for (var k = 0; k < m.group.length; k++) {
+                m.group[k].classList.add('field-error');
+            }
+        });
+        var firstEl = result.missing[0].group[0];
+        if (firstEl) {
+            var section = firstEl.closest('.tracer-section');
+            if (section) section.scrollIntoView({ behavior: 'smooth', block: 'center' });
+        }
+        $('#tracerErrorModal').modal('show');
+    }
+
+    $('#tracerErrorModal').on('hidden.bs.modal', function () {
+        $('.field-error').removeClass('field-error');
+    });
+
     nextBtn.addEventListener('click', function () {
-        if (!validateStep(currentStep)) {
-            alert('Please complete required fields on this step.');
+        var result = validateStep(currentStep);
+        if (!result.valid) {
+            showTracerError(result);
             return;
         }
         if (currentStep < totalSteps) {
@@ -548,6 +754,25 @@ $performance_statements = [
             currentStep--;
             showStep(currentStep);
         }
+    });
+
+    submitBtn.addEventListener('click', function (e) {
+        e.preventDefault();
+        for (var s = 1; s <= totalSteps; s++) {
+            var result = validateStep(s);
+            if (!result.valid) {
+                showTracerError(result);
+                currentStep = s;
+                showStep(currentStep);
+                return;
+            }
+        }
+        $('#tracerConfirmModal').modal('show');
+    });
+
+    $('#confirmSubmit').on('click', function () {
+        $('#tracerConfirmModal').modal('hide');
+        $('#tracer-form')[0].submit();
     });
 
     showStep(currentStep);
