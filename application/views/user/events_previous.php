@@ -19,16 +19,12 @@
         }
 
         body { 
-            background-color: #F8FAFC;
+            
             font-family: 'Plus Jakarta Sans', sans-serif;
         }
         
         /* Grid Pattern Background */
-        .bg-pattern {
-            background-color: #f8fafc;
-            background-image: radial-gradient(#e2e8f0 0.5px, transparent 0.5px);
-            background-size: 24px 24px;
-        }
+       
 
         .job-card {
             transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);

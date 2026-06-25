@@ -54,12 +54,11 @@ class Officer_model extends CI_Model {
     }
 
     // ===============================
-    // DELETE OFFICER (SOFT DELETE)
+    // DELETE OFFICER (HARD DELETE)
     // ===============================
     public function delete($id)
     {
-        return $this->db->where('id', $id)
-                        ->update($this->table, ['deleted_at' => date('Y-m-d H:i:s')]);
+        return $this->db->where('id', $id)->delete($this->table);
     }
     public function count_all()
     {

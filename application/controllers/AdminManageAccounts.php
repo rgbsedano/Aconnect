@@ -7,6 +7,7 @@ class AdminManageAccounts extends CI_Controller {
     {
         parent::__construct();
 
+        $this->load->database();
         $this->load->model('user/Alumni_model');
         $this->load->helper(['url','form','text','admin_pagination']);
         $this->load->library(['session','pagination']);
@@ -141,15 +142,25 @@ class AdminManageAccounts extends CI_Controller {
             show_404();
         }
 
-        // cleanup dependencies (soft delete)
-        $this->db->where('sender_id', $id)->update('messages', ['deleted_at' => date('Y-m-d H:i:s')]);
-        $this->db->where('receiver_id', $id)->update('messages', ['deleted_at' => date('Y-m-d H:i:s')]);
-        $this->db->where('sender_id', $id)->update('connection_requests', ['deleted_at' => date('Y-m-d H:i:s')]);
-        $this->db->where('receiver_id', $id)->update('connection_requests', ['deleted_at' => date('Y-m-d H:i:s')]);
-        $this->db->where('alumni_id', $id)->update('job_applications', ['deleted_at' => date('Y-m-d H:i:s')]);
-        $this->db->where('alumni_id', $id)->update('event_registrations', ['deleted_at' => date('Y-m-d H:i:s')]);
+        // Temporarily disable FK checks so child rows can be deleted first
+        $this->db->query('SET FOREIGN_KEY_CHECKS = 0');
 
-        $this->db->where('id', $id)->update('alumni', ['deleted_at' => date('Y-m-d H:i:s')]);
+        // Hard delete all dependent records
+        $this->db->where('sender_id', $id)->delete('messages');
+        $this->db->where('receiver_id', $id)->delete('messages');
+        $this->db->where('sender_id', $id)->delete('connection_requests');
+        $this->db->where('receiver_id', $id)->delete('connection_requests');
+        $this->db->where('alumni_id', $id)->delete('job_applications');
+        $this->db->where('alumni_id', $id)->delete('event_registrations');
+        $this->db->where('alumni_id', $id)->delete('tracer_survey_responses');
+        $this->db->where('alumni_id', $id)->delete('forum_posts');
+        $this->db->where('alumni_id', $id)->delete('employment');
+
+        // Hard delete the alumni record itself
+        $this->db->where('id', $id)->delete('alumni');
+
+        // Re-enable FK checks
+        $this->db->query('SET FOREIGN_KEY_CHECKS = 1');
 
         $this->session->set_flashdata('success', 'Account deleted successfully!');
         redirect('AdminManageAccounts');
@@ -161,10 +172,22 @@ class AdminManageAccounts extends CI_Controller {
     public function get_edit_data()
     {
         $id = $this->input->post('id');
-        $alumni = $this->db->get_where('alumni', ['id' => $id])->row_array();
 
-        header('Content-Type: application/json');
-        echo json_encode($alumni);
+        if (!$id) {
+            $this->output
+                ->set_content_type('application/json')
+                ->set_output(json_encode(null));
+            return;
+        }
+
+        $alumni = $this->db
+            ->select('id, student_number, first_name, last_name, email, phone, gender')
+            ->get_where('alumni', ['id' => $id])
+            ->row_array();
+
+        $this->output
+            ->set_content_type('application/json')
+            ->set_output(json_encode($alumni ?: null));
     }
 
     // ===============================

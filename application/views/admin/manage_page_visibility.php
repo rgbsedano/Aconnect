@@ -870,15 +870,16 @@ $this->load->view('__header');
 
     <div class="main-card">
         <!-- Flash Messages -->
-        <?php if ($this->session->flashdata('success')): ?>
+        <?php $flash_success = $this->session->flashdata('success'); $flash_error = $this->session->flashdata('error'); $this->session->unset_userdata('success'); $this->session->unset_userdata('error'); ?>
+        <?php if ($flash_success): ?>
         <div class="alert alert-success">
-            <strong>✓ Success!</strong> <?php echo $this->session->flashdata('success'); ?>
+            <strong>✓ Success!</strong> <?php echo htmlspecialchars($flash_success); ?>
         </div>
         <?php endif; ?>
 
-        <?php if ($this->session->flashdata('error')): ?>
+        <?php if ($flash_error): ?>
         <div class="alert alert-danger">
-            <strong>✗ Error!</strong> <?php echo $this->session->flashdata('error'); ?>
+            <strong>✗ Error!</strong> <?php echo htmlspecialchars($flash_error); ?>
         </div>
         <?php endif; ?>
 

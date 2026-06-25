@@ -219,12 +219,13 @@
 </style>
 <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 
-<?php if($this->session->flashdata('success')): ?>
+<?php $flash_success = $this->session->flashdata('success'); $this->session->unset_userdata('success'); ?>
+<?php if($flash_success): ?>
 <script>
 Swal.fire({
     icon: 'success',
     title: 'Success',
-    text: '<?= $this->session->flashdata('success') ?>',
+    text: '<?= htmlspecialchars($flash_success, ENT_QUOTES) ?>',
     timer: 2000,
     showConfirmButton: false
 });
@@ -488,4 +489,3 @@ Swal.fire({
         });
     });
 </script>
-

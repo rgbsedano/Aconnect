@@ -537,10 +537,9 @@ $(document).on('click', '.pagination-wrapper a', function (e) {
 
 </script>
 
-<?php if (
-    $this->session->flashdata('success') &&
-    $this->session->flashdata('success_source') === 'officers'
-): ?>
+<?php $flash_success = $this->session->flashdata('success'); $flash_success_source = $this->session->flashdata('success_source'); $flash_error = $this->session->flashdata('error'); $flash_error_source = $this->session->flashdata('error_source'); ?>
+
+<?php if ($flash_success && $flash_success_source === 'officers'): ?>
 <script>
 document.addEventListener('DOMContentLoaded', function () {
 
@@ -554,7 +553,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
     Toast.fire({
         icon: 'success',
-        title: '<?= $this->session->flashdata('success') ?>'
+        title: '<?= htmlspecialchars($flash_success, ENT_QUOTES) ?>'
     });
 
 });
@@ -562,10 +561,7 @@ document.addEventListener('DOMContentLoaded', function () {
 </script>
 <?php endif; ?>
 
-<?php if (
-    $this->session->flashdata('error') &&
-    $this->session->flashdata('error_source') === 'officers'
-): ?>
+<?php if ($flash_error && $flash_error_source === 'officers'): ?>
 <script>
 document.addEventListener('DOMContentLoaded', function () {
 
@@ -579,7 +575,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
     Toast.fire({
         icon: 'error',
-        title: '<?= $this->session->flashdata('error') ?>'
+        title: '<?= htmlspecialchars($flash_error, ENT_QUOTES) ?>'
     });
 
 });

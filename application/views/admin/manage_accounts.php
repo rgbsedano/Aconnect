@@ -1,4 +1,3 @@
-
 <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 
 <style>
@@ -510,7 +509,8 @@ $(document).ready(function () {
 });
 </script>
 
-<?php if ($this->session->flashdata('success')): ?>
+<?php $flash_success = $this->session->flashdata('success'); $this->session->unset_userdata('success'); ?>
+<?php if ($flash_success): ?>
 <script>
 document.addEventListener('DOMContentLoaded', function () {
 
@@ -524,7 +524,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
     Toast.fire({
         icon: 'success',
-        title: '<?= $this->session->flashdata('success') ?>'
+        title: '<?= htmlspecialchars($flash_success, ENT_QUOTES) ?>'
     });
 
 });

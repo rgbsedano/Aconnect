@@ -108,7 +108,11 @@ public function update($id) {
 }
 
 public function delete($id) {
-    $this->db->where('id', $id)->update('events', ['deleted_at' => date('Y-m-d H:i:s')]);
+    if ($this->db->field_exists('deleted_at', 'events')) {
+        $this->db->where('id', $id)->update('events', ['deleted_at' => date('Y-m-d H:i:s')]);
+    } else {
+        $this->db->where('id', $id)->delete('events');
+    }
     $this->session->set_flashdata('success', 'Event deleted successfully.');
     redirect('AdminEvents');
 }

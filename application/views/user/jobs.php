@@ -17,7 +17,7 @@
 
         * { margin: 0; padding: 0; box-sizing: border-box; }
         html { scroll-behavior: smooth; }
-        body { background: var(--bg); font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; color: var(--text); line-height: 1.6; }
+        body {  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; color: var(--text); line-height: 1.6; }
         .container { max-width: 1100px; margin: 20px auto 40px; padding: 0 20px; animation: fadeInUp 0.6s ease-out; }
 
         /* Fade-in animations */

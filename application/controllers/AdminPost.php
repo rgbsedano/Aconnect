@@ -198,7 +198,7 @@ class AdminPost extends CI_Controller {
         ];
 
         $this->db->insert('post', $data);
-        $this->session->set_flashdata('success', 'Post created successfully.');
+        $this->session->set_flashdata('post_msg', 'created');
         redirect('AdminPost');
     }
 
@@ -223,7 +223,7 @@ class AdminPost extends CI_Controller {
                 @unlink($file);
             }
             $this->db->where('id', $id)->update('carousel_photos', ['deleted_at' => date('Y-m-d H:i:s')]);
-            $this->session->set_flashdata('success', 'Banner removed successfully.');
+            $this->session->set_flashdata('post_msg', 'banner_removed');
         } else {
             $this->session->set_flashdata('error', 'Photo not found.');
         }
@@ -254,7 +254,7 @@ class AdminPost extends CI_Controller {
                 'description' => $this->input->post('description', TRUE)
             ];
             $this->db->insert('carousel_photos', $insert_data);
-            $this->session->set_flashdata('success', 'Banner added successfully!');
+            $this->session->set_flashdata('post_msg', 'banner_added');
         } else {
             $this->session->set_flashdata('error', strip_tags($this->upload->display_errors()));
         }
@@ -302,7 +302,7 @@ class AdminPost extends CI_Controller {
         ];
 
         $this->db->where('id', $id)->update('carousel_photos', $update_data);
-        $this->session->set_flashdata('success', 'Banner updated successfully!');
+        $this->session->set_flashdata('post_msg', 'banner_updated');
         redirect('AdminPost');
     }
 
@@ -332,11 +332,9 @@ class AdminPost extends CI_Controller {
             }
         }
 
-        $this->db->where('id', $id)->update('post', ['deleted_at' => date('Y-m-d H:i:s')]);
-        $this->session->set_flashdata('success', 'Post deleted.');
-        
-        // Preserve the category when redirecting
+        $this->db->where('id', $id)->delete('post');
         $category = $this->input->get('category', TRUE) ?: 'announcements';
+        $this->session->set_flashdata('post_msg', 'deleted');
         redirect('AdminPost?category=' . $category);
     }
 
@@ -409,10 +407,8 @@ class AdminPost extends CI_Controller {
         ];
 
         $this->db->where('id', $id)->update('post', $data);
-        $this->session->set_flashdata('success', 'Post updated.');
-        
-        // Preserve the category when redirecting
         $redirect_category = $this->input->post('redirect_category', TRUE) ?: 'announcements';
+        $this->session->set_flashdata('post_msg', 'updated');
         redirect('AdminPost?category=' . $redirect_category);
     }
 }

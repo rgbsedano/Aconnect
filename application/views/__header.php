@@ -80,12 +80,22 @@ $admin_management_active = in_array($current_uri_segment_1, ['adminalumni', 'Adm
         }
 
         body { 
-            background-color: #f8fafc; 
+            background-image: url('<?php echo base_url("assets/images/background.png"); ?>');
+            background-attachment: fixed;
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
             padding-top: var(--nav-height) !important;
             font-size: 1.05rem;
             position: relative;
             font-family: 'Plus Jakarta Sans', sans-serif;
             color: #1e293b;
+        }
+
+        /* Make SB Admin's content wrapper transparent so bg image shows through */
+        #content-wrapper,
+        #wrapper #content-wrapper {
+            background-color: transparent !important;
         }
 
         /* Global pagination color override for Bootstrap/SB Admin defaults */
@@ -106,7 +116,7 @@ $admin_management_active = in_array($current_uri_segment_1, ['adminalumni', 'Adm
             left: 0;
             width: 100%;
             height: 100%;
-            background-color: #f8fafc;
+            
             z-index: -1;
         }
 

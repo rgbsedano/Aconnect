@@ -549,7 +549,12 @@ public function run_worker()
             }
         }
         
-        if ($this->db->where('id', $id)->update('jobs', ['deleted_at' => date('Y-m-d H:i:s')])) {
+        if ($this->db->field_exists('deleted_at', 'jobs')) {
+            $result = $this->db->where('id', $id)->update('jobs', ['deleted_at' => date('Y-m-d H:i:s')]);
+        } else {
+            $result = $this->db->where('id', $id)->delete('jobs');
+        }
+        if ($result) {
             $this->session->set_flashdata('success', 'Job posting deleted successfully!');
         } else {
             $this->session->set_flashdata('error', 'Failed to delete job posting.');
@@ -649,9 +654,8 @@ public function run_worker()
                 'send_after' => NULL
             ]);
         }
-        // AUTO RUN EMAIL WORKER IN BACKGROUND
-        $cmd = 'php ' . FCPATH . 'index.php Email_worker send > /dev/null 2>&1 &';
-        exec($cmd);
+        // Email worker must be run via cron job on shared hosting (exec() is disabled)
+        // Emails are queued in email_queue table and will be sent by the cron job
 
         redirect('AdminJobPosting');
     }

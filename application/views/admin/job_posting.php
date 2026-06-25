@@ -1865,17 +1865,18 @@
             timerProgressBar: true
         });
 
-        <?php if($this->session->flashdata('success')): ?>
+        <?php $flash_success = $this->session->flashdata('success'); $flash_error = $this->session->flashdata('error'); $this->session->unset_userdata('success'); $this->session->unset_userdata('error'); ?>
+        <?php if($flash_success): ?>
             Toast.fire({
                 icon: 'success',
-                title: '<?= $this->session->flashdata('success') ?>'
+                title: '<?= htmlspecialchars($flash_success, ENT_QUOTES) ?>'
             });
         <?php endif; ?>
 
-        <?php if($this->session->flashdata('error')): ?>
+        <?php if($flash_error): ?>
             Toast.fire({
                 icon: 'error',
-                title: '<?= $this->session->flashdata('error') ?>'
+                title: '<?= htmlspecialchars($flash_error, ENT_QUOTES) ?>'
             });
         <?php endif; ?>
     });

@@ -765,5 +765,3 @@ else                $greeting_time = 'Good Evening';
         reveal();
     }
 </script>
-
-

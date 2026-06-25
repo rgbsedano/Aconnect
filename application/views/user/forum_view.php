@@ -9,9 +9,7 @@
 
 body {
     font-family: 'Plus Jakarta Sans', sans-serif;
-    background-color: #f8fafc;
-    background-image: radial-gradient(#e2e8f0 0.5px, transparent 0.5px);
-    background-size: 24px 24px;
+    background-image: url('<?php echo base_url("assets/images/background.png"); ?>');
 }
 
 /* ── Page Header ── */

@@ -18,7 +18,7 @@
     }
 
     body {
-        background-color: var(--primary-bg);
+        
         font-family: 'Plus Jakarta Sans', sans-serif;
         color: var(--text-main);
     }

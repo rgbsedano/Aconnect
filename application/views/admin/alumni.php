@@ -402,10 +402,11 @@ $(document).ready(function() {
         timerProgressBar: true
     });
 
-    <?php if($this->session->flashdata('success')): ?>
+    <?php $flash_success = $this->session->flashdata('success'); ?>
+    <?php if($flash_success): ?>
         Toast.fire({
             icon: 'success',
-            title: '<?= $this->session->flashdata('success') ?>'
+            title: '<?= htmlspecialchars($flash_success, ENT_QUOTES) ?>'
         });
     <?php endif; ?>
 

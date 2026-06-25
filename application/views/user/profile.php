@@ -15,7 +15,7 @@
         }
 
         * { margin: 0; padding: 0; box-sizing: border-box; }
-        body { background: var(--bg); font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; color: var(--text); line-height: 1.6; padding-top: 70px; }
+        body {  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; color: var(--text); line-height: 1.6; padding-top: 70px; }
         .container-fluid { max-width: 900px; margin: 0 auto; padding: 0 20px 40px; }
 
         /* Profile Header with Cover */

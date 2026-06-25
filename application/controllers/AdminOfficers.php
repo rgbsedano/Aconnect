@@ -149,10 +149,19 @@ class AdminOfficers extends CI_Controller {
     public function get_officer()
     {
         $id = $this->input->post('id');
+
+        if (!$id) {
+            $this->output
+                ->set_content_type('application/json')
+                ->set_output(json_encode(null));
+            return;
+        }
+
         $officer = $this->Officer_model->get_by_id($id);
 
-        header('Content-Type: application/json');
-        echo json_encode($officer);
+        $this->output
+            ->set_content_type('application/json')
+            ->set_output(json_encode($officer ?: null));
     }
 
     // ===============================

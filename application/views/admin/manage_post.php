@@ -602,11 +602,9 @@
                             <td><?= date('M d, Y', strtotime($post['created_at'])) ?></td>
 
                             <td class="text-right">
-                                <?php if ($post['post_type'] !== 'announcements'): ?>
                                 <button onclick='editPost(<?= htmlspecialchars(json_encode($post), ENT_QUOTES, 'UTF-8') ?>)' class="btn-action">
                                     <i class="fas fa-pen"></i>
                                 </button>
-                                <?php endif; ?>
 
                                 <button onclick="deletePost(<?= $post['id'] ?>)" class="btn-action delete">
                                     <i class="fas fa-trash"></i>
@@ -875,14 +873,11 @@
     }
 
     function switchCategory(type) {
-        currentActiveCategory = type;
-        // Use data-category attribute for reliable button selection
-        document.querySelectorAll('.switch-btn').forEach(btn => btn.classList.remove('active'));
-        document.querySelector(`.switch-btn[data-category="${type}"]`).classList.add('active');
-        document.getElementById('categoryInput').value = type;
-        
-        // Re-apply search filter when switching categories
-        applySearchFilter();
+        // Reload the page with the new category so the server fetches the right posts
+        const url = new URL(window.location.href);
+        url.searchParams.set('category', type);
+        url.searchParams.delete('page'); // reset to page 1
+        window.location.href = url.toString();
     }
 
     // Post Search Functionality
@@ -1019,14 +1014,31 @@
     });
 </script>
 
-<?php if ($this->session->flashdata('success')): ?>
-    <script>
-        Swal.fire({
-            icon: 'success',
-            title: 'Success',
-            text: '<?= $this->session->flashdata('success') ?>',
-            timer: 2000,
-            showConfirmButton: false
-        });
-    </script>
+<?php 
+$post_msg = $this->session->flashdata('post_msg');
+$this->session->unset_userdata('post_msg');
+?>
+<?php if ($post_msg): ?>
+<script>
+    document.addEventListener('DOMContentLoaded', function () {
+        const messages = {
+            'created': 'Post created successfully.',
+            'updated': 'Post updated successfully.',
+            'deleted': 'Post deleted successfully.',
+            'banner_added': 'Banner added successfully.',
+            'banner_updated': 'Banner updated successfully.',
+            'banner_removed': 'Banner removed successfully.',
+        };
+        const msg = '<?= htmlspecialchars($post_msg, ENT_QUOTES) ?>';
+        if (messages[msg]) {
+            Swal.fire({
+                icon: 'success',
+                title: 'Success',
+                text: messages[msg],
+                timer: 2000,
+                showConfirmButton: false
+            });
+        }
+    });
+</script>
 <?php endif; ?>

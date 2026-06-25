@@ -6,7 +6,7 @@
         }
 
         body { 
-            background-color: #F8FAFC;
+            
             font-family: 'Plus Jakarta Sans', sans-serif;
         }
         
@@ -22,11 +22,7 @@
         .focus\:ring-rose-700\/20:focus { box-shadow: 0 0 0 3px rgba(161, 33, 36, 0.2); }
         
         /* Job Board Pattern Background */
-        .bg-pattern {
-            background-color: #f8fafc;
-            background-image: radial-gradient(#e2e8f0 0.5px, transparent 0.5px);
-            background-size: 24px 24px;
-        }
+      
 
         .job-card {
             transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
