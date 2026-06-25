@@ -64,3 +64,20 @@ $route['employer_profile'] = 'EmployerProfile/index';
 $route['employer_profile/(:any)'] = 'EmployerProfile/$1';
 $route['employerprofile'] = 'EmployerProfile/index';
 $route['employerprofile/(:any)'] = 'EmployerProfile/$1';
+
+$route['adminlogin']            = 'AdminLogin/index';
+$route['adminlogin/(:any)']     = 'AdminLogin/$1';
+
+// Admin Page Visibility — URLs use all-lowercase
+$route['adminpagevisibility']           = 'AdminPageVisibility/index';
+$route['adminpagevisibility/(:any)']    = 'AdminPageVisibility/$1';
+
+// These are used in views with lowercase
+$route['adminalumni']           = 'AdminAlumni/index';
+$route['adminalumni/(:any)']    = 'AdminAlumni/$1';
+
+$route['postcontroller']        = 'PostController/index';
+$route['postcontroller/(:any)'] = 'PostController/$1';
+
+// AdminPageVisibility also redirects to 'admin/page_visibility' — fix:
+$route['admin/page_visibility'] = 'AdminPageVisibility/index';

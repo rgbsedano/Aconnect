@@ -716,7 +716,7 @@ $admin_management_active = in_array($current_uri_segment_1, ['adminalumni', 'Adm
             <ul>
                 <?php if($this->session->userdata('role') == 'alumni'): ?>
                     <li class="nav-item">
-                        <a href="<?php echo base_url('postcontroller'); ?>" class="nav-link-item <?php echo $is_home ? 'active-link' : ''; ?>">
+                        <a href="<?php echo base_url('PostController'); ?>" class="nav-link-item <?php echo $is_home ? 'active-link' : ''; ?>">
                             <i class="fas fa-house-user"></i><span>Home</span>
                         </a>
                     </li>
